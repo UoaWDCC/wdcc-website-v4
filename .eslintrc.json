@@ -1,3 +1,21 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+    "extends": ["next/core-web-vitals", "next/typescript"],
+    "plugins": ["tailwindcss", "prettier"],
+    "settings": {
+        "tailwindcss": {
+            "callees": ["cn", "twMerge", "twJoin", "clsx", "tv"], // add tailwind linting and completion to these functions
+            "config": "tailwind.config.js"
+        }
+    },
+    "overrides": [
+        {
+            "files": ["*.ts", "*.tsx"],
+            "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+                "project": "./tsconfig.json" // make eslint use our typescript settings
+            },
+            "plugins": ["@typescript-eslint"],
+            "extends": ["plugin:@typescript-eslint/recommended"]
+        }
+    ]
 }
