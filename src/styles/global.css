@@ -3,20 +3,16 @@
 @tailwind utilities;
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    --background: #f0f6ff;
+    --foreground: #17191c;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+html {
+    color: var(--foreground);
+    background: var(--background);
 }
 
 body {
-    color: var(--foreground);
-    background: var(--background);
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -24,4 +20,8 @@ body {
     .text-balance {
         text-wrap: balance;
     }
+}
+
+.mono {
+    font-family: var(--font-geist-mono);
 }
