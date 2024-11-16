@@ -5,35 +5,34 @@
 
 ---
 ```
-.                                                                                                                 
+.                                                                                                     
 ├── .github                 # contain gh actions                                                      
-├── src /                                                                                                         
-│   ├── app/                                                                                                      
+├── src /                                                                                             
+│   ├── app/                                                                                          
 │   │   └── (route)         # pages route                                                             
 │   ├── assets/             # contains our images, svgs and other file                                
-│   │   ├── image/                                                                                                
-│   │   └── svg/                                                                                                  
+│   │   ├── image/                                                                                    
+│   │   └── svg/                                                                                      
 │   ├── components/         # page components                                                         
 │   │   └── common/         # contains "common" component that are used everywhere                    
 │   ├── data/               # data file or constants e.g. mdx, ts that is immutable                   
 │   ├── fonts/              # contains our fonts assets and file                                      
 │   │   ├── typography/     # contains fonts file                                                     
-│   │   └── index.ts                                                                                              
 │   ├── hooks/              # custom hooks                                                            
 │   ├── libs/               # contains utilities functions and helper                                 
 │   │   ├── enums/          # contains enums key for defining fixed value set, mainly for react query 
-│   │   │   └── query.ts                                                                                          
+│   │   │   └── query.ts                                                                              
 │   │   └── consts.ts       # constant primitive value                                                
 │   │   └── utils.ts        # contains common utilities between all files                             
 │   ├── styles/             # contains styles                                                         
 │   └── types/              # contains all types                                                      
-├── .eslintrc.json                                                                                                
-├── .prettierrc                                                                                                   
-├── next.config.mjs                                                                                               
-├── package.json                                                                                                  
-├── tailwind.config.ts                                                                                            
-└── tsconfig.json                                                                                                                   
+├── .eslintrc.json                                                                                    
+├── .prettierrc                                                                                       
+├── next.config.mjs                                                                                   
+├── package.json                                                                                      
+├── tailwind.config.ts                                                                                
+└── tsconfig.json                                                                                     
 ```
 
 > [!NOTE]  
-> Updated as of 10/11/2024
+> Updated as of 16/11/2024

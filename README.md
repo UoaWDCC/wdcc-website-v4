@@ -2,19 +2,40 @@
 
 This repository hosts the in progress codebase for [WDCC](https://wdcc.co.nz/)'s V4 website! <br/>
 
-<!-- | Developer(s) | Github                           |
-| --------- | -------------------------------- |
-| Andrew     | [here](https://github.com/andrewqqiu) |
-| Anton     | [here](https://github.com/AntGa) |
-| Ashton     | [here](https://github.com/Tulza) |
-| Kevin    | [here](https://github.com/AntGa) |
-| Chris     | [here](https://github.com/AntGa) |
-| Koutaro     | [here](https://github.com/Kot6603) |
-| Nate     | [here](https://github.com/Oculux314) | -->
+> [!NOTE]  
+> **Node version:** v22.11.0 \
+> **Next version:** v14.2.16 \
+> **css-styling:** mainly tailwind \
+> **Path:** src/app/ \
+> **Package Installer:** PnPm
 
-<!-- Didn't want to dox us (maybe) - Anton -->
+## Getting Started
 
-## // Technologies
+```bash
+# cloning the project
+git clone https://github.com/UoaWDCC/wdcc-website-v4.
+
+# change directory
+cd .\wdcc-website-v4\
+
+# install dependencies
+pnpm install
+
+# run development server
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Resources
+
+#### Structure: [here](STRUCTURE.md)
+
+#### Eslint config: [here](.eslintrc.json)
+
+#### Prettier config: [here](.prettierrc)
+
+## Technologies
 
 <div align="center">
     <!-- Next js -->
@@ -42,24 +63,6 @@ This repository hosts the in progress codebase for [WDCC](https://wdcc.co.nz/)'s
     <img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E"/>
 </div>
 
-## // Getting Started
-
-```bash
-# cloning the project
-git clone https://github.com/UoaWDCC/wdcc-website-v4.
-
-# change directory
-cd .\wdcc-website-v4\
-
-# install dependencies
-pnpm install
-
-# run development server
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## // Learn More
+## Learn More
 
 This is a wdcc website for 2025 🔥
