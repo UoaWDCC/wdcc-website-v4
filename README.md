@@ -9,6 +9,8 @@ This repository hosts the in progress codebase for [WDCC](https://wdcc.co.nz/)'s
 > **Path:** src/app/ \
 > **Package Installer:** PnPm
 
+Please install [Volta](https://volta.sh/) and make sure you have pnpm installed (you can use `volta install pnpm` ) before starting development! If it's working correctly, Volta should automatically detect (from package.json) and switch to the correct node version for this project. Check this by running `node --version` in the terminal.
+
 ## Getting Started
 
 ```bash
