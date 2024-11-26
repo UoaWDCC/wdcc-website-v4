@@ -15,9 +15,11 @@
         "list": "pnpm list --depth 0",
         "clear:next": "pnpm dlx rimraf .next",
         "clear:modules": "pnpm dlx rimraf node_modules",
-        "nuke": "pnpm dlx rimraf .next && pnpm dlx rimraf node_modules"
+        "nuke": "pnpm dlx rimraf .next && pnpm dlx rimraf node_modules",
+        "nuke:i": "pnpm dlx rimraf .next && pnpm dlx rimraf node_modules"
     },
     "dependencies": {
+        "@payloadcms/db-postgres": "^3.1.1",
         "@payloadcms/next": "^3.1.1",
         "@payloadcms/richtext-lexical": "^3.1.1",
         "babel-plugin-react-compiler": "19.0.0-beta-df7b47d-20241124",
@@ -26,8 +28,8 @@
         "graphql": "^16.9.0",
         "next": "15.0.3",
         "payload": "^3.1.1",
-        "react": "19.0.0-rc-66855b96-20241106",
-        "react-dom": "19.0.0-rc-66855b96-20241106",
+        "react": "19.0.0-rc-65a56d0e-20241020",
+        "react-dom": "19.0.0-rc-65a56d0e-20241020",
         "sharp": "^0.33.5",
         "tailwind-merge": "^2.5.4",
         "tailwind-variants": "^0.3.0"
@@ -35,8 +37,8 @@
     "devDependencies": {
         "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
         "@types/node": "^22.9.0",
-        "@types/react": "^18",
-        "@types/react-dom": "^18",
+        "@types/react": "npm:types-react@19.0.0-rc.1",
+        "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
         "eslint": "8.57.1",
         "eslint-config-next": "15.0.3",
         "eslint-config-prettier": "^9.1.0",
@@ -48,5 +50,15 @@
         "tailwindcss": "^3.4.1",
         "typescript": "^5",
         "typescript-eslint": "^8.13.0"
+    },
+    "pnpm": {
+        "overrides": {
+        "@types/react": "npm:types-react@19.0.0-rc.1",
+        "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+        }
+    },
+    "overrides": {
+        "@types/react": "npm:types-react@19.0.0-rc.1",
+        "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
     }
 }

@@ -7,11 +7,6 @@
     --foreground: #17191c;
 }
 
-html {
-    color: var(--foreground);
-    background: var(--background);
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
