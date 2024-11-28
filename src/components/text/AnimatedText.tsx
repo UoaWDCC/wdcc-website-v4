@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 import { textVariantDefault } from "@/data/variants/text";
 import { cn } from "@/libs/utils";

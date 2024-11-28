@@ -4,7 +4,7 @@ import config from "@payload-config";
 
 import "@payloadcms/next/css";
 
-import React, { Fragment } from "react";
+import React from "react";
 import { handleServerFunctions, RootLayout } from "@payloadcms/next/layouts";
 import type { ServerFunctionClient } from "payload";
 
