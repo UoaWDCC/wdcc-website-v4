@@ -8,7 +8,7 @@ export default function About() {
     return (
         <div className="m-2">
             {execs.map((exec) => (
-                <div key={exec.name} className="bg-wdcc-blue-600 dark:bg-wdcc-navy mb-4 rounded-sm p-4 shadow-md">
+                <div key={exec.name} className="mb-4 rounded-sm bg-wdcc-blue-600 p-4 shadow-md dark:bg-wdcc-navy">
                     <h2 className="text-xl font-semibold dark:text-white">{exec.name}</h2>
                     <p className="dark:text-white">{exec.description}</p>
                 </div>

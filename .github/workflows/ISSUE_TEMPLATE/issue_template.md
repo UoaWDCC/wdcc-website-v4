@@ -6,12 +6,9 @@ title: "[Feature] <Title>"
 
 ### Description
 
-
-
 ### Tasks
 
-* [ ] Task 1
-* [ ] Tests written (if applicable)
+- [ ] Task 1
+- [ ] Tests written (if applicable)
 
 ### Notes
-
