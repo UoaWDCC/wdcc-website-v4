@@ -17,7 +17,7 @@ interface TextProps extends HTMLAtrributeNoMotion<"p"> {
 const AnimatedText = ({ text, type = "word", variants = textVariantDefault, debug, ...props }: TextProps) => {
     if (debug) {
         console.log(text, type);
-        console.log(text.split(type === "char" ? "" : " "));
+        console.log(text.split(type == "char" ? "" : " "));
     }
 
     return (
