@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --background: #f0f6ff;
-    --foreground: #17191c;
+@layer base {
+    :root {
+        --background: #f0f6ff;
+        --foreground: #17191c;
+    }
+
+    html {
+        background-color: var(--background);
+        color: var(--foreground);
+    }
 }
 
 body {

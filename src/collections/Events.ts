@@ -14,17 +14,5 @@ export const Events: CollectionConfig = {
             required: true,
         },
     ],
-    endpoints: [
-        {
-            method: "get",
-            path: "/api/events/:id",
-
-            handler: async (req) => {
-                return Response.json({
-                    test: req,
-                });
-            },
-        },
-    ],
     upload: true,
 };

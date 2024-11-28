@@ -2,7 +2,7 @@ import { getPayload } from "payload";
 
 import AnimatedText from "@/components/text/AnimatedText";
 import { SLUG } from "@/libs/consts/slug";
-import { User } from "@/payload-types";
+import { Event } from "@/payload-types";
 import payloadConfig from "@/payload.config";
 
 export default async function Home() {
@@ -17,14 +17,14 @@ export default async function Home() {
                 className="mono overflow-hidden text-[2vw] font-bold"
                 text="Web Development & Consulting Club"
             />
-            {(events as User[]).map((event) => (
+            {(events as Event[]).map((event) => (
                 <div key={event.id}>
                     <AnimatedText
                         key={event.id}
                         className="mono overflow-hidden text-[2vw] font-bold"
                         text={event.alt}
                     />
-                    <img src={event.thumbnailURL} alt={event.alt} />
+                    <img src={event.url} alt={event.alt} />
                 </div>
             ))}
         </div>

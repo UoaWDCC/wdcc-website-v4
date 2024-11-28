@@ -1,3 +1,3 @@
 export const SLUG = {
-    EVENTS: "Events",
+    EVENTS: "Events" as string,
 };

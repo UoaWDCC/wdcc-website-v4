@@ -7,12 +7,30 @@ import type { CollectionConfig } from "payload";
 
 // all field will look something like this
 export const Page: CollectionConfig = {
-    slug: SLUG.EXAMPLE, // create a new SLUG enum from lib
+    slug: SLUG.EXAMPLE, // create a new SLUG object under slug.ts
     fields: [
         // ...
     ],
 };
 ```
+
+also make sure to add the slug value to the [gitignore](../../.gitignore),
+
+```ts
+# slug.ts
+export const SLUG = {
+    EVENTS: "Events" as string,
+};
+```
+
+```
+# .gitignore
+/Events
+```
+
+this is because for
+
+[open slug.ts here](../libs/consts/slug.ts)
 
 ### all available field types
 
@@ -43,9 +61,31 @@ after creating a new collection you can just export it then add it into the coll
  collections: [Users, Media, ...]
 ```
 
-### calling payload
+### generating payload type
 
-payload is completely server sided which is cool,
+> [!IMPORTANT]  
+> at the moment payload only supports node version 20.x
+
+if you have any problem with node version on pnpm have a look at this
+https://github.com/volta-cli/volta/issues/1562
+
+tldr; you have to install pnpm with volta
+
+```bash
+# broken
+node -v # output: v20.18.1
+pnpm node -v  # output: v22.11.0
+
+# solution
+echo $VOLTA_FEATURE_PNPM=1
+volta install pnpm
+volta pin pnpm
+pnpm node -v  # output: v20.18.1
+```
+
+### calling collections
+
+payload is completely `server sided` which is cool,
 to use it you can call
 
 ```ts
@@ -55,16 +95,17 @@ const { docs: events } = await payload.find({
 });
 ```
 
-### generating payload type
+### working with slug
 
-if you have any problem with node version on pnpm have a look at this
-https://github.com/volta-cli/volta/issues/1562
+```ts
+// import the types from @/payload-types
+import { Event } from "@/payload-types";
 
-tldr;
-
+{(events as Event[]).map((event) => (
+    do anything with it
+))}
 ```
-pnpm node -v  ->  v22.11.0
-volta install pnpm
-volta pin pnpm
-pnpm node -v  -> v20.18.1
-```
+
+if the types aren't there, but the collection does exist, make sure to check [payload.config.ts](../payload.config.ts) and run
+
+`pnpm run payload generate:types`
