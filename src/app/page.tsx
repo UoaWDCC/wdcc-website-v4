@@ -1,12 +1,32 @@
-import AnimatedText from "@/components/text/AnimatedText";
+import { getPayload } from "payload";
 
-export default function Home() {
+import AnimatedText from "@/components/text/AnimatedText";
+import { SLUG } from "@/libs/consts/slug";
+import { User } from "@/payload-types";
+import payloadConfig from "@/payload.config";
+
+export default async function Home() {
+    const payload = await getPayload({ config: payloadConfig });
+    const { docs: events } = await payload.find({
+        collection: SLUG.EVENTS,
+    });
+    console.log(events);
     return (
         <div className="grid min-h-dvh place-items-center">
             <AnimatedText
                 className="mono overflow-hidden text-[2vw] font-bold"
                 text="Web Development & Consulting Club"
             />
+            {(events as User[]).map((event) => (
+                <div key={event.id}>
+                    <AnimatedText
+                        key={event.id}
+                        className="mono overflow-hidden text-[2vw] font-bold"
+                        text={event.alt}
+                    />
+                    <img src={event.thumbnailURL} alt={event.alt} />
+                </div>
+            ))}
         </div>
     );
 }

@@ -16,7 +16,9 @@
         "clear:next": "pnpm dlx rimraf .next",
         "clear:modules": "pnpm dlx rimraf node_modules",
         "nuke": "pnpm dlx rimraf .next && pnpm dlx rimraf node_modules",
-        "nuke:i": "pnpm dlx rimraf .next && pnpm dlx rimraf node_modules"
+        "nuke:i": "pnpm dlx rimraf .next && pnpm dlx rimraf node_modules",
+        "payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload",
+        "generate:type": "pnpm run payload generate:types"
     },
     "dependencies": {
         "@payloadcms/db-postgres": "^3.1.1",
@@ -24,6 +26,7 @@
         "@payloadcms/richtext-lexical": "^3.1.1",
         "babel-plugin-react-compiler": "19.0.0-beta-df7b47d-20241124",
         "clsx": "^2.1.1",
+        "cross-env": "^7.0.3",
         "framer-motion": "^11.12.0",
         "graphql": "^16.9.0",
         "motion": "^11.12.0",
@@ -54,6 +57,6 @@
         "typescript-eslint": "^8.13.0"
     },
     "volta": {
-        "node": "22.11.0"
+        "node": "20.18.1"
     }
 }
