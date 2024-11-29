@@ -2,8 +2,12 @@ import React from "react";
 
 import GenerateEvents from "@/components/payload/GenerateEvents";
 import AnimatedText from "@/components/text/AnimatedText";
+import { Event } from "@/payload-types";
+import { getAllEvents } from "@/services/actions/events";
 
-export default function Home() {
+export default async function HomePage() {
+    const events = (await getAllEvents()) as Event[];
+
     return (
         <div className="grid min-h-dvh place-items-center">
             <AnimatedText
@@ -11,7 +15,7 @@ export default function Home() {
                 text="Web Development & Consulting Club"
             />
             <div className="flex gap-8">
-                <GenerateEvents />
+                <GenerateEvents events={events} />
             </div>
         </div>
     );

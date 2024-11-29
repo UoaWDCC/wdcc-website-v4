@@ -1,18 +1,11 @@
 import React from "react";
-import { CollectionSlug, getPayload } from "payload";
 
 import { ImageSkeleton } from "@/components/image/ImageSkeleton";
 import { SuspenseImage } from "@/components/image/SuspenseImage";
-import { SLUG } from "@/libs/consts/slug";
 import { Event } from "@/payload-types";
-import payloadConfig from "@/payload.config";
 import AnimatedText from "../text/AnimatedText";
 
-const GenerateEvents = async () => {
-    const payload = await getPayload({ config: await payloadConfig });
-    const { docs: events } = await payload.find({
-        collection: SLUG.EVENTS as CollectionSlug,
-    });
+const GenerateEvents = async ({ events }: { events: Event[] }) => {
     return (
         <>
             {(events as Event[]).map((event) => (

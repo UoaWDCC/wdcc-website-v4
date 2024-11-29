@@ -13,8 +13,6 @@ import { Users } from "./collections/Users";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
-console.log(process.env.PAYLOAD_SECRET);
-
 export default buildConfig({
     admin: {
         user: Users.slug,
@@ -32,6 +30,7 @@ export default buildConfig({
         pool: {
             connectionString: process.env.DATABASE_URI || "",
         },
+        migrationDir: "./src/migrations",
     }),
     sharp,
 });
