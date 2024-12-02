@@ -3,8 +3,8 @@
 This repository hosts the in progress codebase for [WDCC](https://wdcc.co.nz/)'s V4 website! <br/>
 
 > [!NOTE]  
-> **Node version:** v22.11.0 \
-> **Next version:** v14.2.16 \
+> **Node version:** v20.18.1 \
+> **Next version:** v15.0.3 \
 > **css-styling:** mainly tailwind \
 > **Path:** src/app/ \
 > **Package Installer:** PnPm@9.14.2
