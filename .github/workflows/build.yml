@@ -51,3 +51,5 @@ jobs:
             # build the application
             - name: Build Next.js project
               run: pnpm run build
+              env:
+                  PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
