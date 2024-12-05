@@ -1,7 +1,7 @@
 import execsJson from "@/data/execs.json";
 import { Exec } from "@/types/models";
 
-export default function About() {
+export default function AboutPage() {
     const execs = execsJson as Exec[];
 
     // feel free to completely delete
