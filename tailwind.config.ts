@@ -18,6 +18,7 @@ const config: Config = {
                 "wdcc-blue": {
                     500: "#1a68ef",
                     600: "#3a86ff",
+                    temp: "#0E1831",
                 },
                 "wdcc-navy": "#03045e",
                 "wdcc-indigo": "#7209b7",
