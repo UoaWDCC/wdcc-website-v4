@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import "@/styles/global.css";
 
-import { geistMono, geistSans } from "@/fonts";
+import { figtree, geistMono, geistSans } from "@/fonts";
 
 export const metadata: Metadata = {
     title: "Web Development & Consulting Club",
@@ -17,7 +17,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${geistSans.className} ${geistMono.variable} antialiased`}>{children}</body>
+            <body className={`${geistSans.className} ${geistMono.variable} ${figtree.className} antialiased`}>
+                {children}
+            </body>
         </html>
     );
 }

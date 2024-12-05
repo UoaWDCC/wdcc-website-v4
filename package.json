@@ -27,7 +27,7 @@
         "react": "^18",
         "react-dom": "^18",
         "tailwind-merge": "^2.5.4",
-        "tailwind-variants": "^0.2.1",
+        "tailwind-variants": "^0.3.0",
         "three": "^0.170.0"
     },
     "devDependencies": {
