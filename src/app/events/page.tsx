@@ -1,3 +1,5 @@
+import StandardPageLayout from "@/components/nav/StandardPageLayout";
+
 export default function EventsPage() {
-    return <div>EventsPage</div>;
+    return <StandardPageLayout>EventsPage</StandardPageLayout>;
 }

@@ -1,3 +1,4 @@
+import StandardPageLayout from '@/components/nav/StandardPageLayout';
 export default function ProjectsPage() {
-    return <div>ProjectsPage</div>;
+    return <StandardPageLayout>ProjectsPage</StandardPageLayout>;
 }
