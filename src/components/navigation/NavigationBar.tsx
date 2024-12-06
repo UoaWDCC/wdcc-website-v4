@@ -2,7 +2,6 @@ import React from "react";
 
 import { cn } from "@/libs/utils";
 import { ClassName } from "@/types/utils";
-import DiscordLogo from "../logo/DiscordLogo";
 import WDCCLogo from "../logo/WDCCLogo";
 import { Anchor } from "../primitives/Anchor";
 import DropDown from "../primitives/DropDown";
@@ -77,7 +76,7 @@ const NavigationBar = ({ className }: ClassName) => {
                     <Anchor set={{ color: "primary" }} className="rounded-full px-3 py-2" href="/socials  ">
                         Join WDCC
                     </Anchor>
-                    {/* <NavigationMenu className="md:hidden" {...links} /> */}
+                    <NavigationMenu className="md:hidden" links={links} />
                 </div>
             </div>
         </div>
