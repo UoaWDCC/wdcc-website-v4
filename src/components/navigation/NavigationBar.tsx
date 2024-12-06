@@ -2,9 +2,9 @@ import React from "react";
 
 import { cn } from "@/libs/utils";
 import { ClassName } from "@/types/utils";
+import DiscordLogo from "../logo/DiscordLogo";
+import WDCCLogo from "../logo/WDCCLogo";
 import { Anchor } from "../primitives/Anchor";
-import WDCCLogo from "../svg/WDCCLogo";
-import DiscordLogo from "../svg/WDCCLogo copy";
 
 const NavigationBar = ({ className }: ClassName) => {
     return (
@@ -31,7 +31,7 @@ const NavigationBar = ({ className }: ClassName) => {
                         <DiscordLogo className="size-5 fill-white" />
                     </Anchor>
                     <Anchor set={{ color: "primary" }} className="rounded-full px-3" href="/socials  ">
-                        Join Wdcc
+                        Join WDCC
                     </Anchor>
                 </div>
             </div>

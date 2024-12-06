@@ -1,8 +1,10 @@
 import React from "react";
 
 import { cn } from "@/libs/utils";
+import FooterBlock from "./FooterBlock";
+import FooterSocials from "./FooterSocials";
 
-type FooterLink = {
+export type FooterLink = {
     title: string;
     links: {
         label: string;
@@ -39,33 +41,25 @@ const footerLinks: FooterLink[] = [
     },
 ];
 
-const FooterDesc = () => {
+const FooterLinks = () => {
     return (
-        <footer
-            className={cn(
-                "bg-wdcc-blue-temp grid w-full grid-cols-3 whitespace-nowrap p-2 px-10 py-10 pl-40 text-white lg:grid-cols-5"
-            )}
-        >
-            <div className="hidden lg:block"></div>
-            {footerLinks.map((data) => (
-                <div key={data.title}>
-                    <strong className="">{data.title}</strong>
-                    {data.links.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            target={link.external ? "_blank" : "_self"}
-                            className="block"
-                        >
-                            {link.label}
-                        </a>
-                    ))}
-                </div>
-            ))}
-
-            <div className="hidden lg:block"></div>
+        <footer className="bg-wdcc-blue-temp flex flex-col items-center pb-20">
+            <div
+                className={cn(
+                    "grid w-[clamp(300px,100%,1200px)] grid-cols-1 whitespace-nowrap px-10 pt-4 text-white sm:grid-cols-3 lg:grid-cols-5"
+                )}
+            >
+                {/* grid block of 1-3-1 with center being the contents */}
+                <div className="hidden lg:block"></div>
+                {footerLinks.map((data) => (
+                    <FooterBlock key={data.title} {...data} />
+                ))}
+                <div className="hidden lg:block"></div>
+                {/* second row */}
+                <FooterSocials />
+            </div>
         </footer>
     );
 };
 
-export default FooterDesc;
+export default FooterLinks;
