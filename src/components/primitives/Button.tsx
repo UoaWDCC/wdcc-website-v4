@@ -7,7 +7,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 import { cn } from "@/libs/utils";
 
 const button = tv({
-    base: "w-full whitespace-nowrap rounded-full border-4 border-black/20 p-2 px-6",
+    base: "w-full rounded-full p-2 px-6",
     variants: {
         color: {
             primary: "bg-blue-500 text-white",

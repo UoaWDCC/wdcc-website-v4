@@ -1,11 +1,12 @@
 import React from "react";
 
 import { cn } from "@/libs/utils";
+import { NavLink } from "../primitives/NavLink";
 import { FooterLink } from "./FooterLinks";
 
 const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
     return (
-        <div className="flex flex-col">
+        <div className="flex select-none flex-col">
             {/* todo: replace font with real foreground value */}
             <strong className="mb-4 border-b border-white/70 py-4 text-lg text-wdcc-yellow sm:mb-1 sm:border-none sm:pb-0 sm:text-white/70">
                 {data.title}
@@ -17,14 +18,15 @@ const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
                 )}
             >
                 {data.links.map((link) => (
-                    <a
+                    <NavLink
                         key={link.label}
                         href={link.href}
                         target={link.external ? "_blank" : "_self"}
-                        className="block hover:underline"
+                        mode="light"
+                        shift
                     >
                         {link.label}
-                    </a>
+                    </NavLink>
                 ))}
             </div>
         </div>

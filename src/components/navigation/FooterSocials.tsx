@@ -1,14 +1,18 @@
 import React from "react";
 
 import DiscordLogo from "../logo/DiscordLogo";
+import { Button } from "../primitives/Button";
 
 const FooterSocials = () => {
     return (
         // if bigger than sm, span 3 column and start at 2 column else act like a normal div
         <div className="mt-8 flex flex-col sm:col-span-3 lg:col-start-2">
             <div className="to-blue-750 from-blue-brand h-1 w-full rounded-full bg-gradient-to-br" />
-            <div className="mt-8 flex w-full justify-center">
+            <div className="mt-8 flex w-full items-center justify-between">
                 <DiscordLogo className="fill-white" />
+                <Button set={{ color: "primary" }} className="w-min">
+                    Back to Top
+                </Button>
             </div>
         </div>
     );
