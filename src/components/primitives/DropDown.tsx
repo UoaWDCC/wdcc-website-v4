@@ -1,0 +1,86 @@
+"use client";
+
+import React, { HTMLAttributes } from "react";
+import { motion, Variants } from "framer-motion";
+
+import { cn } from "@/libs/utils";
+import { FullLink } from "../navigation/NavigationBar";
+
+interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
+    link: FullLink;
+}
+
+const DropDown = ({ link, ...props }: DropdownProps) => {
+    const [open, setOpen] = React.useState(false);
+
+    const HoverOn = () => {
+        setOpen(true);
+    };
+
+    const HoverOff = () => {
+        setOpen(false);
+    };
+    return (
+        // xd unreadable code sorry not sorry, can't fire me this way
+        <motion.div className="relative flex flex-col gap-4" onHoverStart={HoverOn} onHoverEnd={HoverOff}>
+            <div {...props} className={cn("relative z-10 flex items-center", props.className)}>
+                <p className="cursor-pointer">
+                    <span className={cn("inline-block -translate-x-1 transition-transform", open && "translate-x-0")}>
+                        (
+                    </span>
+                    {link.label}
+                    <span className={cn("inline-block translate-x-1 transition-transform", open && "translate-x-0")}>
+                        )
+                    </span>
+                </p>
+            </div>
+            <motion.div
+                initial="hide"
+                animate={open ? "show" : "hide"}
+                className="absolute flex flex-col whitespace-pre pt-8"
+                transition={{ staggerChildren: 1 }}
+                variants={containerVariant}
+            >
+                {link.drop!.map((link) => (
+                    <motion.a
+                        key={link.label}
+                        href={link.href}
+                        initial="hide"
+                        animate={open ? "show" : "hide"}
+                        className="group relative cursor-pointer transition-[padding-left] *:*:inline-block *:inline-block hover:pl-1"
+                    >
+                        {link.label.split("").map((char) => (
+                            <motion.span key={char} className="overflow-hidden">
+                                <motion.span variants={LetterVariant}>{char}</motion.span>
+                            </motion.span>
+                        ))}
+                        <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-black transition-[width] group-hover:w-1/2" />
+                    </motion.a>
+                ))}
+            </motion.div>
+        </motion.div>
+    );
+};
+
+const LetterVariant: Variants = {
+    hide: {
+        x: "100%",
+    },
+    show: {
+        x: 0,
+        transition: {
+            duration: 0.2,
+        },
+    },
+};
+
+const containerVariant: Variants = {
+    hide: {
+        display: "none",
+    },
+    show: {
+        display: "flex",
+    },
+};
+
+export default DropDown;
