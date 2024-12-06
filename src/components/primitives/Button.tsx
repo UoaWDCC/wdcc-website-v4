@@ -12,7 +12,7 @@ const button = tv({
         color: {
             primary: "bg-blue-500 text-white",
             secondary: "bg-yellow-300 text-white",
-            icon: "bg-blue-950",
+            icon: "bg-blue-900 text-white",
         },
     },
     defaultVariants: {

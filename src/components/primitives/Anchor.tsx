@@ -10,6 +10,7 @@ const anchor = tv({
     base: "flex items-center justify-center whitespace-nowrap",
     variants: {
         color: {
+            muted: "text-blue-750 bg-blue-100",
             ghost: "bg-transparent text-black",
             primary: "bg-blue-500 text-white",
             secondary: "bg-yellow-300 text-white",

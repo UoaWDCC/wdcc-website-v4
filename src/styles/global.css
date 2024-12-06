@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-    --background: #fcfcfd;
+    --background: linear-gradient(0.25turn, var(--blue-050), white);
     --foreground: #2e2b3b;
 
     /* Color primitives below */

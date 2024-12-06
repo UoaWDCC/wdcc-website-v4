@@ -9,7 +9,7 @@ interface AnchorProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 
 const NavLink = ({ mode = "dark", shift, ...props }: AnchorProps) => {
     return (
-        <a {...props} className={cn("group w-min", props.className)}>
+        <a {...props} className={cn("group z-10 w-min", props.className)}>
             <p className={cn(shift && "transition-[padding-left] group-hover:pl-1")}>{props.children}</p>
             <div
                 className={cn(
