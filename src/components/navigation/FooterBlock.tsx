@@ -1,15 +1,21 @@
 import React from "react";
 
-import { FooterLink } from "./FooterDesc";
+import { cn } from "@/libs/utils";
+import { FooterLink } from "./FooterLinks";
 
-const FooterBlock = ({ ...data }: FooterLink) => {
+const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
     return (
         <div className="flex flex-col">
             {/* todo: replace font with real foreground value */}
             <strong className="mb-4 border-b border-white/70 py-4 text-lg text-wdcc-yellow sm:mb-1 sm:border-none sm:pb-0 sm:text-white/70">
                 {data.title}
             </strong>
-            <div className="flex flex-col border-b border-white/70 pb-4 sm:border-none sm:pb-0">
+            <div
+                className={cn(
+                    "flex flex-col border-b border-white/70 pb-4 sm:border-none sm:pb-0",
+                    last && "border-none"
+                )}
+            >
                 {data.links.map((link) => (
                     <a
                         key={link.href}

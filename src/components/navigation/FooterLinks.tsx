@@ -43,7 +43,7 @@ const footerLinks: FooterLink[] = [
 
 const FooterLinks = () => {
     return (
-        <footer className="bg-wdcc-blue-temp flex flex-col items-center pb-20">
+        <footer className="flex flex-col items-center bg-blue-900 pb-20">
             <div
                 className={cn(
                     "grid w-[clamp(300px,100%,1200px)] grid-cols-1 whitespace-nowrap px-10 pt-4 text-white sm:grid-cols-3 lg:grid-cols-5"
@@ -51,8 +51,8 @@ const FooterLinks = () => {
             >
                 {/* grid block of 1-3-1 with center being the contents */}
                 <div className="hidden lg:block"></div>
-                {footerLinks.map((data) => (
-                    <FooterBlock key={data.title} {...data} />
+                {footerLinks.map((data, i) => (
+                    <FooterBlock key={data.title} {...data} last={i === 2} />
                 ))}
                 <div className="hidden lg:block"></div>
                 {/* second row */}
