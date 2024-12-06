@@ -16,8 +16,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body className={`${figtree.className} antialiased`}>{children}</body>
+        <html lang="en" className="h-full">
+            <body className={`${figtree.className} antialiased h-full`}>{children}</body>
         </html>
     );
 }

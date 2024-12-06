@@ -1,10 +1,7 @@
 # See https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/
 
-name: Fly Deploy
-on:
-  push:
-    branches:
-      - main
+name: Fly Deploy Staging
+on: [workflow_dispatch]
 jobs:
   deploy:
     name: Deploy app
@@ -13,6 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only --config fly.toml
+      - run: flyctl deploy --remote-only --config fly.staging.toml
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
