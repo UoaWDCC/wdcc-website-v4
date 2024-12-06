@@ -56,14 +56,14 @@ const links: FullLink[] = [
 const NavigationBar = ({ className }: ClassName) => {
     return (
         <div className={cn("flex select-none flex-col items-center justify-between gap-4 sm:flex-row", className)}>
-            <WDCCLogo className="*:fill-black" />
+            <WDCCLogo className="*:fill-black lg:block" />
             <div className="flex items-center gap-8 font-semibold">
                 <div className="hidden h-full items-center gap-8 md:flex">
                     {links.map((link) =>
                         link.drop ? (
-                            <DropDown link={link} />
+                            <DropDown key={link.label} link={link} />
                         ) : (
-                            <NavLink key={link.href} href={link.href}>
+                            <NavLink key={link.label} href={link.href}>
                                 {link.label}
                             </NavLink>
                         )
@@ -71,8 +71,8 @@ const NavigationBar = ({ className }: ClassName) => {
                     <div className="h-5 w-0.5 rounded bg-black"></div>
                 </div>
                 <div className="flex gap-3">
-                    <Anchor set={{ color: "muted" }} className="rounded-full px-3 py-2" href="/socials  ">
-                        Our socials
+                    <Anchor set={{ color: "muted" }} className="rounded-full" href="/socials  ">
+                        <span className="px-3">Our socials</span>
                     </Anchor>
                     <Anchor set={{ color: "primary" }} className="rounded-full px-3 py-2" href="/socials  ">
                         Join WDCC
