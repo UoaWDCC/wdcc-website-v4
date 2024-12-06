@@ -1,0 +1,8 @@
+[
+    { "href": "/", "label": "Home" },
+    { "href": "/projects", "label": "Projects" },
+    { "href": "/events", "label": "Events" },
+    { "href": "/about", "label": "About" },
+    { "href": "/faq", "label": "FAQ" },
+    { "href": "https://go.wdcc.co.nz", "label": "Linktree", "external": true }
+]
