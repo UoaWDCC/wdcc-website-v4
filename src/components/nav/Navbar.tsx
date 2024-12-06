@@ -1,4 +1,7 @@
+import { HtmlHTMLAttributes } from "react";
 import Link from "next/link";
+
+import { cn } from "@/libs/utils";
 
 const links = [
     { href: "/", label: "Home" },
@@ -9,9 +12,9 @@ const links = [
     { href: "https://go.wdcc.co.nz", label: "Linktree", external: true },
 ];
 
-export default function Navbar() {
+export default function Navbar({ ...props }: HtmlHTMLAttributes<HTMLElement>) {
     return (
-        <header className="flex w-full justify-between bg-blue-600">
+        <header {...props} className={cn("flex w-full justify-between bg-blue-600", props.className)}>
             Navbar
             <ul className="flex gap-10">
                 {links.map((link) => (
