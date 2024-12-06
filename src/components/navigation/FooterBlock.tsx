@@ -18,7 +18,7 @@ const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
             >
                 {data.links.map((link) => (
                     <a
-                        key={link.href}
+                        key={link.label}
                         href={link.href}
                         target={link.external ? "_blank" : "_self"}
                         className="block hover:underline"

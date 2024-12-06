@@ -8,7 +8,7 @@ import { Anchor } from "../primitives/Anchor";
 
 const NavigationBar = ({ className }: ClassName) => {
     return (
-        <div className={cn("flex w-full select-none justify-between", className)}>
+        <div className={cn("flex select-none justify-between", className)}>
             <WDCCLogo className="*:fill-black" />
             <div className="flex items-center gap-8 font-semibold">
                 <Anchor set={{ color: "ghost" }} href="/projects">
