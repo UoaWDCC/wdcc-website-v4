@@ -1,18 +1,31 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-type Position = { x: number; y: number };
+type Position = {
+    position: { x: number; y: number };
+    normal: { rx: number; ry: number };
+};
 
-function useRelativeMouse(ref: React.RefObject<HTMLElement>) {
-    const initial = useRef({ x: 0, y: 0 });
-    const [position, setPosition] = useState<Position>(initial.current);
+type Settings = {
+    persist?: boolean;
+};
+
+function useRelativeMouse(ref: React.RefObject<HTMLElement>, settings = { persist: false } as Settings) {
+    const initial = useRef<Position>({ position: { x: 0, y: 0 }, normal: { rx: 0, ry: 0 } });
+    const [mouse, setMouse] = useState(initial.current);
 
     const updateMousePosition = useCallback(
         (event: MouseEvent) => {
             if (ref.current) {
                 const rect = ref.current.getBoundingClientRect();
-                setPosition({
-                    x: event.clientX - rect.left,
-                    y: event.clientY - rect.top,
+                setMouse({
+                    position: {
+                        x: event.clientX - rect.left,
+                        y: event.clientY - rect.top,
+                    },
+                    normal: {
+                        rx: ((event.clientX - rect.left) / rect.width) * 2 - 1,
+                        ry: ((event.clientY - rect.top) / rect.height) * 2 - 1,
+                    },
                 });
             }
         },
@@ -22,7 +35,7 @@ function useRelativeMouse(ref: React.RefObject<HTMLElement>) {
     useEffect(() => {
         if (ref.current) {
             const { width, height } = ref.current.getBoundingClientRect();
-            initial.current = { x: width / 2, y: height / 2 };
+            initial.current = { position: { x: width / 2, y: height / 2 }, normal: { rx: 0, ry: 0 } };
         }
     });
 
@@ -33,7 +46,9 @@ function useRelativeMouse(ref: React.RefObject<HTMLElement>) {
 
         const handleMouseLeave = () => {
             window.removeEventListener("mousemove", updateMousePosition);
-            setPosition(initial.current);
+            if (!settings.persist) {
+                setMouse(initial.current);
+            }
         };
 
         const element = ref.current;
@@ -50,9 +65,9 @@ function useRelativeMouse(ref: React.RefObject<HTMLElement>) {
             }
             window.removeEventListener("mousemove", updateMousePosition);
         };
-    }, [ref, updateMousePosition]);
+    }, [ref, settings.persist, updateMousePosition]);
 
-    return position;
+    return mouse;
 }
 
 export default useRelativeMouse;

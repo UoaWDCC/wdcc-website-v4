@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <div className="relative flex min-h-dvh flex-col justify-between">
             <NavigationBar className="px-12 pt-8" />
-            <div className="flex w-full justify-center">
+            <div className="mt-8 flex w-full justify-center">
                 <WDCCHero />
             </div>
             <FooterLinks />

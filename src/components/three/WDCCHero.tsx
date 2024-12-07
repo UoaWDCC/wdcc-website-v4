@@ -3,25 +3,22 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion-3d";
 
-import useRelativeMouse from "@/hooks/useMousePos";
+import useRelativeMouse from "@/hooks/useRelativeMouse";
 import Simple from "./Simple";
 import { Common } from "./View";
 import { WDCC } from "./WDCCThreeLogo";
 
 const WDCCHero = () => {
     const container = useRef(null);
-    const mouse = useRelativeMouse(container);
-    console.log(mouse);
+    const mouse = useRelativeMouse(container, { persist: true });
 
     return (
-        <div className="relative size-80 border" ref={container}>
-            <div className="absolute size-2 bg-black" style={{ top: mouse.y, left: mouse.x }} />
+        <div className="relative h-[300px] w-full" ref={container}>
             <Simple>
                 <Common />
                 <motion.group
-                    initial={{ rotateY: 0 }}
-                    animate={{ rotateY: Math.PI * 2 }}
-                    transition={{ repeat: Infinity, duration: 2 }}
+                    animate={{ rotateX: (Math.PI / 6) * mouse.normal.ry, rotateY: (Math.PI / 6) * mouse.normal.rx }}
+                    transition={{ type: "smooth", duration: 0 }}
                 >
                     <WDCC />
                 </motion.group>
