@@ -1,12 +1,14 @@
 import FooterLinks from "@/components/navigation/FooterLinks";
 import NavigationBar from "@/components/navigation/NavigationBar";
-import Hero from "@/components/three/Hero";
+import WDCCHero from "@/components/three/WDCCHero";
 
 export default function Home() {
     return (
-        <div className="relative flex h-dvh flex-col justify-between overflow-y-hidden">
+        <div className="relative flex min-h-dvh flex-col justify-between">
             <NavigationBar className="px-12 pt-8" />
-            <Hero />
+            <div className="flex w-full justify-center">
+                <WDCCHero />
+            </div>
             <FooterLinks />
         </div>
     );

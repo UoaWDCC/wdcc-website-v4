@@ -22,14 +22,14 @@ const NavigationMenu = ({ links, className }: { links: FullLink[]; className?: s
             </Button>
             <motion.div
                 className={cn(
-                    "bg-blue-900/80 absolute left-0 top-0 z-[999] h-full w-full px-10 pt-8 text-white backdrop-blur-lg",
+                    "absolute left-0 top-0 z-[999] h-full w-full bg-blue-900/80 px-10 pt-8 text-white backdrop-blur-lg",
                     className
                 )}
                 initial={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" }}
                 animate={{
                     clipPath: toggle
-                        ? "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)"
-                        : "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                        ? "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
+                        : "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
                 }}
             >
                 <div className="flex flex-col items-center justify-center gap-4">
@@ -57,9 +57,7 @@ const NavigationMenu = ({ links, className }: { links: FullLink[]; className?: s
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="2"
                         >
                             <path d="M18 6 6 18" />
                             <path d="m6 6 12 12" />

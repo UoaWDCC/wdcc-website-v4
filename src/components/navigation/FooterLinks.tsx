@@ -43,7 +43,7 @@ const footerLinks: FooterLink[] = [
 
 const FooterLinks = () => {
     return (
-        <footer className="flex flex-col items-center bg-blue-900 pb-20">
+        <footer className="mt-auto flex flex-col items-center bg-blue-900 pb-20">
             <div
                 className={cn(
                     "grid w-[clamp(300px,100%,1200px)] grid-cols-1 whitespace-nowrap px-10 pt-4 text-white sm:grid-cols-3 lg:grid-cols-5"

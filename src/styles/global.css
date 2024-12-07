@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-    --background: linear-gradient(0.25turn, var(--blue-050), white);
+    --background: linear-gradient(0.25turn, hsl(var(--blue-100)), white);
     --foreground: #2e2b3b;
 
     /* Color primitives below */
@@ -86,7 +86,7 @@
 html {
     color: var(--foreground);
     background: var(--background);
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 body {
