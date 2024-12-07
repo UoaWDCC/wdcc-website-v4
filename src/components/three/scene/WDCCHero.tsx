@@ -4,9 +4,9 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion-3d";
 
 import useRelativeMouse from "@/hooks/useRelativeMouse";
-import Simple from "./Simple";
-import { Common } from "./View";
-import { WDCC } from "./WDCCThreeLogo";
+import { WDCCThreeLogo } from "../primitives";
+import Simple from "../Simple";
+import { Common } from "../View";
 
 const WDCCHero = () => {
     const container = useRef(null);
@@ -20,7 +20,7 @@ const WDCCHero = () => {
                     animate={{ rotateX: (Math.PI / 6) * mouse.normal.ry, rotateY: (Math.PI / 6) * mouse.normal.rx }}
                     transition={{ type: "smooth", duration: 0 }}
                 >
-                    <WDCC />
+                    <WDCCThreeLogo />
                 </motion.group>
             </Simple>
         </div>

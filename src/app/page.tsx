@@ -1,6 +1,6 @@
-import FooterLinks from "@/components/navigation/FooterLinks";
-import NavigationBar from "@/components/navigation/NavigationBar";
-import WDCCHero from "@/components/three/WDCCHero";
+import FooterLinks from "@/components/base/FooterLinks";
+import NavigationBar from "@/components/base/NavigationBar";
+import WDCCHero from "@/components/three/scene/WDCCHero";
 
 export default function Home() {
     return (

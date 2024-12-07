@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import { cn } from "@/libs/utils";
+import { FullLink } from "@/types/links";
 import { Button } from "../primitives/Button";
-import { FullLink } from "./NavigationBar";
 
 // ONLY USE CLASSNAME TO CHANGE MEDIA QUERY
 const NavigationMenu = ({ links, className }: { links: FullLink[]; className?: string }) => {
@@ -20,11 +20,13 @@ const NavigationMenu = ({ links, className }: { links: FullLink[]; className?: s
             <Button set={{ color: "icon" }} className={cn("", className)} onClick={handleToggle}>
                 Menu
             </Button>
+            {/* todo: this should lock scrolling from happening */}
             <motion.div
                 className={cn(
                     "absolute left-0 top-0 z-[999] h-full w-full bg-blue-900/80 px-10 pt-8 text-white backdrop-blur-lg",
                     className
                 )}
+                // animation to make it look like it's opening/closing
                 initial={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" }}
                 animate={{
                     clipPath: toggle
@@ -49,6 +51,7 @@ const NavigationMenu = ({ links, className }: { links: FullLink[]; className?: s
                         className="flex w-1/2 justify-center border border-white/20"
                         onClick={handleToggle}
                     >
+                        {/* X icon */}
                         <svg
                             className="size-12"
                             xmlns="http://www.w3.org/2000/svg"

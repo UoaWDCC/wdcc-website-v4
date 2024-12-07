@@ -1,8 +1,8 @@
 import React, { HtmlHTMLAttributes } from "react";
 
 import { cn } from "@/libs/utils";
-import FooterLinks from "../navigation/FooterLinks";
-import NavigationBar from "../navigation/NavigationBar";
+import FooterLinks from "./FooterLinks";
+import NavigationBar from "./NavigationBar";
 
 type StandardPageLayoutProps = {
     children: React.ReactNode;

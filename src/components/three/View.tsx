@@ -3,6 +3,7 @@
 import React, { Suspense } from "react";
 import { PerspectiveCamera } from "@react-three/drei";
 
+/* default camera and light for a 3d scene */
 export const Common = ({ color }: { color?: string }) => (
     <Suspense fallback={null}>
         {color && <color attach="background" args={[color]} />}

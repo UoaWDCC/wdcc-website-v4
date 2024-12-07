@@ -4,7 +4,7 @@ import React, { HTMLAttributes } from "react";
 import { motion, Variants } from "framer-motion";
 
 import { cn } from "@/libs/utils";
-import { FullLink } from "../navigation/NavigationBar";
+import { FullLink } from "@/types/links";
 
 interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
     link: FullLink;

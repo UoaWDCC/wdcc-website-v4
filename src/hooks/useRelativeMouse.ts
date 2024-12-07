@@ -9,6 +9,11 @@ type Settings = {
     persist?: boolean;
 };
 
+/*
+    this hook is used to get the mouse position inside of an element,
+    position top, left position of the element
+    normal is the mouse position in the range of -1 to 1 in x and y axis
+*/
 function useRelativeMouse(ref: React.RefObject<HTMLElement>, settings = { persist: false } as Settings) {
     const initial = useRef<Position>({ position: { x: 0, y: 0 }, normal: { rx: 0, ry: 0 } });
     const [mouse, setMouse] = useState(initial.current);
@@ -32,6 +37,7 @@ function useRelativeMouse(ref: React.RefObject<HTMLElement>, settings = { persis
         [ref]
     );
 
+    // calculate center of div and set it as initial position
     useEffect(() => {
         if (ref.current) {
             const { width, height } = ref.current.getBoundingClientRect();
@@ -40,6 +46,13 @@ function useRelativeMouse(ref: React.RefObject<HTMLElement>, settings = { persis
     });
 
     useEffect(() => {
+        /* 
+        function to do mouse tracking when on move over the element
+        this would be the ref of the container 
+
+        setting persist will not reset the mouse position when the mouse leaves the container
+        */
+
         const handleMouseEnter = () => {
             window.addEventListener("mousemove", updateMousePosition);
         };
@@ -52,6 +65,10 @@ function useRelativeMouse(ref: React.RefObject<HTMLElement>, settings = { persis
         };
 
         const element = ref.current;
+
+        /* 
+        this will enable mouse tracking if the mouse is hover over the element and disable when mouse leaves
+        */
 
         if (element) {
             element.addEventListener("mouseenter", handleMouseEnter);

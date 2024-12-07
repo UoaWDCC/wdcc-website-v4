@@ -1,56 +1,14 @@
 import React from "react";
 
+import links from "@/data/links/navigationLinks.json";
 import { cn } from "@/libs/utils";
+import { FullLink } from "@/types/links";
 import { ClassName } from "@/types/utils";
 import WDCCLogo from "../logo/WDCCLogo";
+import NavigationMenu from "../navigation/NavigationMenu";
 import { Anchor } from "../primitives/Anchor";
 import DropDown from "../primitives/DropDown";
 import { NavLink } from "../primitives/NavLink";
-import NavigationMenu from "./NavigationMenu";
-
-type Link = {
-    href: string;
-    label: string;
-};
-
-export interface FullLink extends Link {
-    drop?: Link[];
-}
-
-const links: FullLink[] = [
-    {
-        href: "/projects",
-        label: "Projects",
-        drop: [
-            { href: "/learn-more", label: "About Projects" },
-            { href: "/project-roles", label: "Project roles" },
-            { href: "/past-events", label: "All Projects" },
-        ],
-    },
-    {
-        href: "/events",
-        label: "Events",
-        drop: [
-            { href: "/upcoming", label: "Upcoming events" },
-            { href: "/past-events", label: "Past events" },
-        ],
-    },
-    { href: "/about", label: "About" },
-    { href: "/team", label: "team" },
-    { href: "/faq", label: "FAQs" },
-];
-
-// const socials: FullLink = {
-//     href: "/projects",
-//     label: "Socials",
-//     drop: [
-//         { href: "", label: "Discord" },
-//         { href: "", label: "Instagram " },
-//         { href: "", label: "Facebook" },
-//         { href: "", label: "Email" },
-//         { href: "", label: "Github" },
-//     ],
-// };
 
 const NavigationBar = ({ className }: ClassName) => {
     return (
@@ -58,7 +16,7 @@ const NavigationBar = ({ className }: ClassName) => {
             <WDCCLogo className="*:fill-black lg:block" />
             <div className="flex items-center gap-8 font-semibold">
                 <div className="hidden h-full items-center gap-8 md:flex">
-                    {links.map((link) =>
+                    {(links as FullLink[]).map((link) =>
                         link.drop ? (
                             <DropDown key={link.label} link={link} />
                         ) : (
