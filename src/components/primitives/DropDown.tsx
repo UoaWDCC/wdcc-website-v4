@@ -1,10 +1,12 @@
 "use client";
 
 import React, { HTMLAttributes } from "react";
+import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 
-import { cn } from "@/libs/utils";
 import { FullLink } from "@/types/links";
+
+import { cn } from "@/libs/utils";
 
 interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
     link: FullLink;
@@ -37,25 +39,25 @@ const DropDown = ({ link, ...props }: DropdownProps) => {
             <motion.div
                 initial="hide"
                 animate={open ? "show" : "hide"}
-                className="absolute flex flex-col whitespace-pre pt-8"
+                className="absolute z-50 flex flex-col whitespace-pre pt-8"
                 transition={{ staggerChildren: 1 }}
                 variants={containerVariant}
             >
                 {link.drop!.map((link) => (
-                    <motion.a
-                        key={link.label}
-                        href={link.href}
-                        initial="hide"
-                        animate={open ? "show" : "hide"}
-                        className="group relative cursor-pointer transition-[padding-left] *:*:inline-block *:inline-block hover:pl-1"
-                    >
-                        {link.label.split("").map((char, i) => (
-                            <motion.span key={i} className="overflow-hidden">
-                                <motion.span variants={LetterVariant}>{char}</motion.span>
-                            </motion.span>
-                        ))}
-                        <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-black transition-[width] group-hover:w-1/2" />
-                    </motion.a>
+                    <Link key={link.label} href={link.href}>
+                        <motion.div
+                            initial="hide"
+                            animate={open ? "show" : "hide"}
+                            className="group relative cursor-pointer transition-[padding-left] *:*:inline-block *:inline-block hover:pl-1"
+                        >
+                            {link.label.split("").map((char, i) => (
+                                <motion.span key={i} className="overflow-hidden">
+                                    <motion.span variants={LetterVariant}>{char}</motion.span>
+                                </motion.span>
+                            ))}
+                            <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-black transition-[width] group-hover:w-1/2" />
+                        </motion.div>
+                    </Link>
                 ))}
             </motion.div>
         </motion.div>

@@ -11,7 +11,10 @@
         "<THIRD_PARTY_MODULES>",
         "",
         "^types$",
+        "^@/types/(.*)$",
+        "",
         "^@/(.*)$",
+        "",
         "^[./]"
     ],
     "tailwindFunctions": ["tv", "cva"],

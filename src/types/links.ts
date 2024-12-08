@@ -7,6 +7,6 @@ type Link = {
     label: string;
 };
 
-export interface FullLink extends Link {
+export type FullLink = Link & {
     drop?: Link[];
-}
+};

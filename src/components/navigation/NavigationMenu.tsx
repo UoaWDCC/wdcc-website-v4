@@ -3,9 +3,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+import type { FullLink } from "@/types/links";
+
 import { cn } from "@/libs/utils";
-import { FullLink } from "@/types/links";
+
 import { Button } from "../primitives/Button";
+import { GenerateNavigationMenuLinks } from "./generate/GenerateNavigationLinks";
 
 // ONLY USE CLASSNAME TO CHANGE MEDIA QUERY
 const NavigationMenu = ({ links, className }: { links: FullLink[]; className?: string }) => {
@@ -17,22 +20,19 @@ const NavigationMenu = ({ links, className }: { links: FullLink[]; className?: s
 
     return (
         <>
-            <Button set={{ color: "icon" }} className={cn("", className)} onClick={handleToggle}>
+            <Button set={{ type: "primary", color: "blue" }} className={cn("", className)} onClick={handleToggle}>
                 Menu
             </Button>
             {/* todo: this should lock scrolling from happening */}
             <motion.div
                 className={cn(
-                    "absolute left-0 top-0 z-[999] h-full w-full bg-blue-900/80 px-10 pt-8 text-white backdrop-blur-lg",
+                    "fixed left-0 top-0 z-[999] h-full w-full bg-blue-900/80 px-10 pt-8 text-white backdrop-blur-lg",
                     className
                 )}
                 // animation to make it look like it's opening/closing
-                initial={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" }}
-                animate={{
-                    clipPath: toggle
-                        ? "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
-                        : "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-                }}
+                initial="initial"
+                animate="animate"
+                variants={containerVariant(toggle)}
             >
                 <div className="flex flex-col items-center justify-center gap-4">
                     <div className="flex w-full justify-center">
@@ -40,14 +40,10 @@ const NavigationMenu = ({ links, className }: { links: FullLink[]; className?: s
                     </div>
                     <hr className="w-1/2 bg-white" />
                     <div className="my-8 flex flex-col">
-                        {links.map((link) => (
-                            <a key={link.label} href={link.href} className="w-full text-center text-[15vw]">
-                                {link.label}
-                            </a>
-                        ))}
+                        <GenerateNavigationMenuLinks links={links} />
                     </div>
                     <Button
-                        set={{ color: "icon" }}
+                        set={{ type: "icon", color: "none" }}
                         className="flex w-1/2 justify-center border border-white/20"
                         onClick={handleToggle}
                     >
@@ -73,3 +69,14 @@ const NavigationMenu = ({ links, className }: { links: FullLink[]; className?: s
 };
 
 export default NavigationMenu;
+
+const containerVariant = (toggle: boolean) => {
+    return {
+        initial: { clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" },
+        animate: {
+            clipPath: toggle
+                ? "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
+                : "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        },
+    };
+};

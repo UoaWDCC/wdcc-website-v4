@@ -1,8 +1,10 @@
 import React from "react";
 
-import { cn } from "@/libs/utils";
 import { type FooterLink } from "@/types/footerLink";
-import { NavLink } from "../primitives/NavLink";
+
+import { cn } from "@/libs/utils";
+
+import { PageLink } from "../primitives/Anchor";
 
 const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
     return (
@@ -18,7 +20,7 @@ const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
                 )}
             >
                 {data.links.map((link) => (
-                    <NavLink
+                    <PageLink
                         key={link.label}
                         href={link.href}
                         target={link.external ? "_blank" : "_self"}
@@ -26,7 +28,7 @@ const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
                         shift
                     >
                         {link.label}
-                    </NavLink>
+                    </PageLink>
                 ))}
             </div>
         </div>

@@ -1,4 +1,4 @@
-import StandardPageLayout from "@/components/base/StandardPageLayout";
+import StandardPageLayout from "@/components/common/StandardPageLayout";
 import execsJson from "@/data/execs.json";
 import { Exec } from "@/types/models";
 
