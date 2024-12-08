@@ -1,4 +1,5 @@
-import StandardPageLayout from '@/components/nav/StandardPageLayout';
+import StandardPageLayout from "@/components/common/StandardPageLayout";
+
 export default function FaqPage() {
     return <StandardPageLayout>FaqPage</StandardPageLayout>;
 }

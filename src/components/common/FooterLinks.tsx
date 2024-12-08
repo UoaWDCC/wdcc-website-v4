@@ -1,0 +1,30 @@
+import React from "react";
+
+import footerLinks from "@/data/links/footerLinks.json";
+import { cn } from "@/libs/utils";
+import { type FooterLink } from "@/types/footerLink";
+import FooterBlock from "../navigation/FooterBlock";
+import FooterSocials from "../navigation/FooterSocials";
+
+const FooterLinks = () => {
+    return (
+        <footer className="mt-auto flex flex-col items-center bg-blue-900 pb-20">
+            <div
+                className={cn(
+                    "grid w-[clamp(300px,100%,1200px)] grid-cols-1 whitespace-nowrap px-10 pt-4 text-white sm:grid-cols-3 lg:grid-cols-5"
+                )}
+            >
+                {/* grid block of 1-3-1 with center being the contents */}
+                <div className="hidden lg:block"></div>
+                {(footerLinks as FooterLink[]).map((data, i) => (
+                    <FooterBlock key={data.title} {...data} last={i === 2} />
+                ))}
+                <div className="hidden lg:block"></div>
+                {/* second row */}
+                <FooterSocials />
+            </div>
+        </footer>
+    );
+};
+
+export default FooterLinks;

@@ -1,12 +1,12 @@
-import AnimatedText from "@/components/text/AnimatedText";
+import StandardPageLayout from "@/components/common/StandardPageLayout";
+import WDCCHero from "@/components/three/scene/WDCCHero";
 
 export default function Home() {
     return (
-        <div className="grid min-h-dvh place-items-center">
-            <AnimatedText
-                className="mono overflow-hidden text-[2vw] font-bold"
-                text="Web Development & Consulting Club"
-            />
-        </div>
+        <StandardPageLayout>
+            <div className="mt-8 flex w-full justify-center">
+                <WDCCHero />
+            </div>
+        </StandardPageLayout>
     );
 }

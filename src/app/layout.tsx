@@ -2,13 +2,7 @@ import type { Metadata } from "next";
 
 import "@/styles/global.css";
 
-// import { geistMono, geistSans } from "@/fonts";
-import { Figtree } from 'next/font/google'
-
-const figtree = Figtree({
-    subsets: ['latin'],
-    display: 'swap',
-})
+import { figtree } from "@/fonts";
 
 export const metadata: Metadata = {
     title: "Web Development & Consulting Club",
@@ -22,8 +16,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="h-full">
-            <body className={`${figtree.className} antialiased h-full`}>{children}</body>
+        <html lang="en">
+            <body className={`${figtree.className} antialiased`}>{children}</body>
         </html>
     );
 }
