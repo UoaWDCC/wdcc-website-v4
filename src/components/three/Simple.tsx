@@ -7,7 +7,7 @@ import { Common } from "./View";
 
 type SimpleProps = {
     children: ReactNode;
-};
+}
 
 /* simple 3d scene setup */
 const Simple = ({ children }: SimpleProps) => {

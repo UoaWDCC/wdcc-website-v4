@@ -5,9 +5,9 @@ import { motion, Variants } from "framer-motion";
 
 import { easeOutQuad } from "@/libs/ease";
 
-type IntroProps = {
+interface IntroProps {
     children: ReactNode;
-};
+}
 
 const Intro = ({ children }: IntroProps) => {
     return (
