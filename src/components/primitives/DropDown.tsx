@@ -1,6 +1,6 @@
 "use client";
 
-import React, { HTMLAttributes } from "react";
+import React, { HTMLAttributes, useState } from "react";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 
@@ -13,7 +13,7 @@ interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const DropDown = ({ link, ...props }: DropdownProps) => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const HoverOn = () => {
         setOpen(true);

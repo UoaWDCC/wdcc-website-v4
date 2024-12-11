@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Link, { LinkProps } from "next/link";
 import { tv, type VariantProps } from "tailwind-variants";
 
@@ -23,7 +23,7 @@ const anchor = tv({
 interface AnchorProps extends LinkProps<HTMLAnchorElement> {
     set?: VariantProps<typeof anchor>;
     className?: string;
-    children?: React.ReactNode;
+    children?: ReactNode;
 }
 
 const Anchor = ({ set, className, children, ...props }: AnchorProps) => {
@@ -39,7 +39,7 @@ interface PageLinkProps extends LinkProps {
     mode?: "light" | "dark";
     // animate padding left on hover
     shift?: boolean;
-    children?: React.ReactNode;
+    children?: ReactNode;
     target?: string;
 }
 
