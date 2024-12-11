@@ -28,7 +28,8 @@
         "react-dom": "^18",
         "tailwind-merge": "^2.5.5",
         "tailwind-variants": "^0.3.0",
-        "three": "^0.171.0"
+        "three": "^0.171.0",
+        "tunnel-rat": "^0.1.2"
     },
     "devDependencies": {
         "@flydotio/dockerfile": "^0.5.9",
