@@ -24,7 +24,7 @@ const DropDown = ({ link, ...props }: DropdownProps) => {
     };
     return (
         // xd unreadable code sorry not sorry, can't fire me this way
-        <motion.div className="relative flex flex-col gap-4" onHoverStart={HoverOn} onHoverEnd={HoverOff}>
+        <motion.div className="relative z-10 flex flex-col gap-4" onHoverStart={HoverOn} onHoverEnd={HoverOff}>
             <div {...props} className={cn("relative z-10 flex items-center", props.className)}>
                 <p className="cursor-pointer whitespace-nowrap">
                     <span className={cn("inline-block -translate-x-1 transition-transform", open && "translate-x-0")}>
