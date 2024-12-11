@@ -1,3 +1,3 @@
 export default function EventsRoadmap() {
-    return <div>EventsRoadmap</div>;
+    return <div className="h-[40em] bg-slate-300 center-content">EventsRoadmap</div>;
 }

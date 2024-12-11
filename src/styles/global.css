@@ -97,6 +97,10 @@ body {
     .text-balance {
         text-wrap: balance;
     }
+
+    .center-content {
+        @apply flex items-center justify-center;
+    }
 }
 
 .mono {
