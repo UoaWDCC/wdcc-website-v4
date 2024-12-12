@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 import Header from "../primitives/Header";
+
 interface SectionWithHeaderProps {
     children: ReactNode;
     headerText: string;

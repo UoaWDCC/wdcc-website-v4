@@ -1,8 +1,10 @@
 import React from "react";
 
+import { type FooterLink } from "@/types/footerLink";
+
 import footerLinks from "@/data/links/footerLinks.json";
 import { cn } from "@/libs/utils";
-import { type FooterLink } from "@/types/footerLink";
+
 import FooterBlock from "../navigation/FooterBlock";
 import FooterSocials from "../navigation/FooterSocials";
 
