@@ -1,6 +1,10 @@
 import { Exec } from "@/types/models";
 
-export default function ExecList({ execs }: { execs: Exec[] }) {
+interface ExecListProps {
+    execs: Exec[];
+}
+
+export default function ExecList({ execs }: ExecListProps) {
     return (
         <div>
             <h2 className="text-2xl font-semibold dark:text-white">Meet the Execs</h2>

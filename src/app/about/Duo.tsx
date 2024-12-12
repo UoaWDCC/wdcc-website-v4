@@ -1,18 +1,20 @@
 import Image from "next/image";
 
+interface DuoProps {
+    title: string;
+    content: string;
+    imgSrc?: string;
+    imgAlt?: string;
+    imgFirst?: boolean;
+}
+
 export default function Duo({
     title,
     content,
     imgSrc = "https://placehold.co/600x400.png",
     imgAlt = `${title}`,
     imgFirst = false,
-}: {
-    title: string;
-    content: string;
-    imgSrc?: string;
-    imgAlt?: string;
-    imgFirst?: boolean;
-}) {
+}: DuoProps) {
     return (
         <div className="flex flex-col items-center justify-center gap-x-48 gap-y-8 md:flex-row">
             <div className={`order-2 flex-1 ${imgFirst ? "md:order-2" : "md:order-1"}`}>
