@@ -4,7 +4,7 @@ import aboutJson from "./about.json";
 import Duo from "./Duo";
 import ExecList from "./ExecList";
 import execsJson from "./execs.json";
-import Heading from "./Heading";
+import PageHeading from "./PageHeading";
 
 export default function AboutPage() {
     const clubAbout = aboutJson.clubAbout;
@@ -12,8 +12,8 @@ export default function AboutPage() {
 
     return (
         <StandardPageLayout>
-            <div className="flex flex-col gap-10 px-10 sm:px-12">
-                <Heading title="About Us" />
+            <div className="flex flex-col gap-10 p-10 sm:px-12">
+                <PageHeading title="About Us" />
                 <Duo
                     title={clubAbout.title}
                     content={clubAbout.content}
