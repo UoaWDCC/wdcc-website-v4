@@ -3,8 +3,6 @@
 import { MutableRefObject, useRef } from "react";
 import dynamic from "next/dynamic";
 
-import LoadingScreen from "../three/globals/LoadingScreen";
-
 const Scene = dynamic(() => import("@/components/three/scene/Scene"), { ssr: false });
 
 const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
@@ -21,7 +19,6 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
                 touchAction: "auto",
             }}
         >
-            <LoadingScreen />
             <div className="relative flex h-dvh min-h-dvh flex-col overflow-x-hidden">{children}</div>
             {/* @ts-expect-error - no children */}
             <Scene
