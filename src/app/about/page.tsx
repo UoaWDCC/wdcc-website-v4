@@ -27,6 +27,7 @@ export default function AboutPage() {
                     imgAlt={whyJoin.imageAlt}
                     imgFirst
                 />
+                <h2 className="text-2xl font-semibold">Meet the Execs</h2>
                 <ExecList execs={execsJson} />
             </div>
         </StandardPageLayout>
