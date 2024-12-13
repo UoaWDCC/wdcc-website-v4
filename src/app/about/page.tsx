@@ -17,10 +17,16 @@ export default function AboutPage() {
                 <Duo
                     title={clubAbout.title}
                     content={clubAbout.content}
-                    imgSrc={clubAbout.image}
+                    imgSrcPath={clubAbout.image}
                     imgAlt={clubAbout.imageAlt}
                 />
-                <Duo title={whyJoin.title} content={whyJoin.content} imgFirst />
+                <Duo
+                    title={whyJoin.title}
+                    content={whyJoin.content}
+                    imgSrcPath={whyJoin.image}
+                    imgAlt={whyJoin.imageAlt}
+                    imgFirst
+                />
                 <ExecList execs={execsJson} />
             </div>
         </StandardPageLayout>

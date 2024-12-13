@@ -16,6 +16,11 @@ const nextConfig = {
                 hostname: "placehold.co",
                 pathname: "/**",
             },
+            {
+                protocol: "https",
+                hostname: "drive.google.com",
+                pathname: "/**",
+            },
         ],
     },
 };
