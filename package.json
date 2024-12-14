@@ -30,7 +30,8 @@
         "react-dom": "^18",
         "tailwind-merge": "^2.5.5",
         "tailwind-variants": "^0.3.0",
-        "three": "^0.171.0"
+        "three": "0.171.0",
+        "tunnel-rat": "^0.1.2"
     },
     "devDependencies": {
         "@flydotio/dockerfile": "^0.5.9",
@@ -38,7 +39,7 @@
         "@types/node": "^22.10.1",
         "@types/react": "^18",
         "@types/react-dom": "^18",
-        "@types/three": "^0.170.0",
+        "@types/three": "0.170.0",
         "eslint": "8.57.1",
         "eslint-config-next": "14.2.16",
         "eslint-config-prettier": "^9.1.0",

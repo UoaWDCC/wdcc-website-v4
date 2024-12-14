@@ -1,9 +1,9 @@
 "use client";
 
-import { ReactNode, Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
+import { ReactNode } from "react";
 
-import { Common } from "./View";
+import { CommonLight } from "./CommonLight";
+import { Three } from "./scene/Three";
 
 type SimpleProps = {
     children: ReactNode;
@@ -12,12 +12,10 @@ type SimpleProps = {
 /* simple 3d scene setup */
 const Simple = ({ children }: SimpleProps) => {
     return (
-        <Suspense fallback={null}>
-            <Canvas className="-z-10">
-                <Common />
-                {children}
-            </Canvas>
-        </Suspense>
+        <Three>
+            <CommonLight />
+            {children}
+        </Three>
     );
 };
 
