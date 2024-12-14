@@ -2,7 +2,7 @@ import React from "react";
 
 import { type FooterLink } from "@/types/footerLink";
 
-import footerLinks from "@/data/links/footerLinks.json";
+import footerLinks from "@/data/links/footerLinks.data";
 import { cn } from "@/libs/utils";
 
 import FooterBlock from "../navigation/FooterBlock";

@@ -2,7 +2,7 @@ import React from "react";
 
 import type { ClassName } from "@/types/utils";
 
-import links from "@/data/links/navigationLinks.json";
+import links from "@/data/links/navigationLinks.data";
 import { cn } from "@/libs/utils";
 
 import WDCCLogo from "../logo/WDCCLogo";

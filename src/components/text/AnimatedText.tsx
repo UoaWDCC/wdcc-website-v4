@@ -5,7 +5,7 @@ import { motion, Variants } from "framer-motion";
 
 import { HTMLAtrributeNoMotion } from "@/types/motion";
 
-import { textVariantDefault } from "@/data/variants/text";
+import { textVariantDefault } from "@/components/text/animatedTextVariants";
 import { cn } from "@/libs/utils";
 
 interface TextProps extends HTMLAtrributeNoMotion<"p"> {
