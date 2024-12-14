@@ -5,6 +5,7 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
+        "build:analyze": "ANALYZE=true next build",
         "start": "next start",
         "deploy:staging": "fly deploy --config fly.staging.toml",
         "lint": "next lint",
@@ -17,6 +18,7 @@
         "nuke": "pnpm dlx rimraf .next && pnpm dlx rimraf node_modules"
     },
     "dependencies": {
+        "@next/bundle-analyzer": "^15.1.0",
         "@react-three/drei": "^9.119.0",
         "@react-three/fiber": "^8.17.10",
         "clsx": "^2.1.1",

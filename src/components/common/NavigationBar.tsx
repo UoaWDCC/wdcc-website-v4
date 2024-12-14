@@ -17,7 +17,7 @@ const NavigationBar = ({ className }: ClassName) => {
         >
             <WDCCLogo className="*:fill-black lg:block" />
             <div className="flex items-center gap-8 font-semibold">
-                <div className="hidden h-full items-center gap-8 md:flex">
+                <div className="hidden h-full items-center gap-16 md:flex">
                     <GenerateNavigationBarLinks links={links} />
                     <div className="h-5 w-0.5 rounded bg-black" />
                 </div>
