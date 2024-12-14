@@ -1,8 +1,6 @@
-import React from "react";
-
 import type { ClassName } from "@/types/utils";
 
-import links from "@/data/links/navigationLinks.data";
+import { navigationLinkData } from "@/data/links/navigationLinks.data";
 import { cn } from "@/libs/utils";
 
 import WDCCLogo from "../logo/WDCCLogo";
@@ -18,7 +16,7 @@ const NavigationBar = ({ className }: ClassName) => {
             <WDCCLogo className="*:fill-black lg:block" />
             <div className="flex items-center gap-8 font-semibold">
                 <div className="hidden h-full items-center gap-16 md:flex">
-                    <GenerateNavigationBarLinks links={links} />
+                    <GenerateNavigationBarLinks links={navigationLinkData} />
                     <div className="h-5 w-0.5 rounded bg-black" />
                 </div>
                 <div className="flex gap-3">
@@ -28,7 +26,7 @@ const NavigationBar = ({ className }: ClassName) => {
                     <Anchor set={{ type: "primary", rounded: true }} href="/socials  ">
                         Join WDCC
                     </Anchor>
-                    <NavigationMenu className="md:hidden" links={links} />
+                    <NavigationMenu className="md:hidden" links={navigationLinkData} />
                 </div>
             </div>
         </div>
