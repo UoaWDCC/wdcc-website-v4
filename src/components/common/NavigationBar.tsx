@@ -12,10 +12,12 @@ import { Anchor } from "../primitives/Anchor";
 
 const NavigationBar = ({ className }: ClassName) => {
     return (
-        <div className={cn("flex select-none flex-col items-center justify-between gap-4 sm:flex-row", className)}>
+        <div
+            className={cn("flex select-none flex-col items-center justify-between gap-4 px-12 sm:flex-row", className)}
+        >
             <WDCCLogo className="*:fill-black lg:block" />
             <div className="flex items-center gap-8 font-semibold">
-                <div className="hidden h-full items-center gap-8 md:flex">
+                <div className="hidden h-full items-center gap-16 md:flex">
                     <GenerateNavigationBarLinks links={links} />
                     <div className="h-5 w-0.5 rounded bg-black" />
                 </div>

@@ -1,22 +1,34 @@
 import StandardPageLayout from "@/components/common/StandardPageLayout";
-import execsJson from "@/data/execs.json";
-import { Exec } from "@/types/models";
+
+import aboutJson from "./about.json";
+import Duo from "./Duo";
+import ExecList from "./ExecList";
+import execsJson from "./execs.json";
+import PageHeading from "./PageHeading";
 
 export default function AboutPage() {
-    const execs = execsJson as Exec[];
+    const clubAbout = aboutJson.clubAbout;
+    const whyJoin = aboutJson.whyJoin;
 
-    // feel free to completely delete
     return (
         <StandardPageLayout>
-            <span className="text-4xl font-semibold dark:text-white">About Us</span>
-            <div className="m-2">
-                {execs.map((exec) => (
-                    <div key={exec.name} className="bg-wdcc-blue-600 dark:bg-wdcc-navy mb-4 rounded-sm p-4 shadow-md">
-                        <h2 className="text-xl font-semibold dark:text-white">{exec.name}</h2>
-                        <p className="dark:text-white">{exec.description}</p>
-                    </div>
-                ))}
-                <div className="h-[50rem] w-96 bg-purple-500">Big div to test footer no collapse.</div>
+            <div className="flex flex-col gap-10 p-10 sm:px-12">
+                <PageHeading title="About Us" />
+                <Duo
+                    title={clubAbout.title}
+                    content={clubAbout.content}
+                    imgSrcPath={clubAbout.image}
+                    imgAlt={clubAbout.imageAlt}
+                />
+                <Duo
+                    title={whyJoin.title}
+                    content={whyJoin.content}
+                    imgSrcPath={whyJoin.image}
+                    imgAlt={whyJoin.imageAlt}
+                    imgFirst
+                />
+                <h2 className="text-2xl font-semibold">Meet the Execs</h2>
+                <ExecList execs={execsJson} />
             </div>
         </StandardPageLayout>
     );

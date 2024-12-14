@@ -66,10 +66,10 @@ const DropDown = ({ link, ...props }: DropdownProps) => {
 
 const LetterVariant: Variants = {
     hide: {
-        x: "100%",
+        y: "-100%",
     },
     show: {
-        x: 0,
+        y: 0,
         transition: {
             duration: 0.2,
         },
