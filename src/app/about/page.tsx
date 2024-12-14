@@ -5,12 +5,13 @@ import StandardPageLayout from "@/components/common/StandardPageLayout";
 import AboutPageHeading from "./_components/AboutPageHeading";
 import Duo from "./_components/Duo";
 import ExecList from "./_components/ExecList";
-import aboutJson from "./about.json";
-import execsJson from "./execs.json";
+import { aboutData } from "./_data/about.data";
+import { execsData } from "./_data/execs.data";
+
 
 export default function AboutPage() {
-    const clubAbout = aboutJson.clubAbout;
-    const whyJoin = aboutJson.whyJoin;
+    const clubAbout = aboutData.clubAbout;
+    const whyJoin = aboutData.whyJoin;
 
     return (
         <StandardPageLayout>
@@ -30,7 +31,7 @@ export default function AboutPage() {
                     imgFirst
                 />
                 <h2 className="text-2xl font-semibold">Meet the Execs</h2>
-                <ExecList execs={execsJson} />
+                <ExecList execs={execsData} />
             </div>
         </StandardPageLayout>
     );
