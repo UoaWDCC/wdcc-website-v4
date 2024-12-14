@@ -7,6 +7,9 @@
             "config": "tailwind.config.js"
         }
     },
+    "rules": {
+        "@typescript-eslint/ban-ts-ignore": "off"
+    },
     "overrides": [
         {
             "files": ["*.ts", "*.tsx"],
@@ -15,7 +18,10 @@
                 "project": "./tsconfig.json" // make eslint use our typescript settings
             },
             "plugins": ["@typescript-eslint"],
-            "extends": ["plugin:@typescript-eslint/recommended"]
+            "extends": ["plugin:@typescript-eslint/recommended"],
+            "rules": {
+                "@typescript-eslint/no-explicit-any": "off"
+            }
         }
     ]
 }

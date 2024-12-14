@@ -1,19 +1,17 @@
 "use client";
 
-import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
+import React from "react";
 
-import { Common } from "./View";
+import { CommonLight } from "./CommonLight";
+import { Three } from "./scene/Three";
 
 /* simple 3d scene setup */
 const Simple = ({ children }: { children: React.ReactNode }) => {
     return (
-        <Suspense fallback={null}>
-            <Canvas className="-z-10">
-                <Common />
-                {children}
-            </Canvas>
-        </Suspense>
+        <Three>
+            <CommonLight />
+            {children}
+        </Three>
     );
 };
 
