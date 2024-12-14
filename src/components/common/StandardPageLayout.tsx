@@ -1,13 +1,13 @@
-import React, { HtmlHTMLAttributes } from "react";
+import { HtmlHTMLAttributes, ReactNode } from "react";
 
 import { cn } from "@/libs/utils";
 
 import FooterLinks from "./FooterLinks";
 import NavigationBar from "./NavigationBar";
 
-type StandardPageLayoutProps = {
-    children: React.ReactNode;
-} & HtmlHTMLAttributes<HTMLElement>;
+interface StandardPageLayoutProps extends HtmlHTMLAttributes<HTMLElement> {
+    children: ReactNode;
+}
 
 export default function StandardPageLayout({ children, ...props }: StandardPageLayoutProps) {
     return (

@@ -2,9 +2,9 @@ import { HtmlHTMLAttributes } from "react";
 
 import { cn } from "@/libs/utils";
 
-type HeaderProps = {
+interface HeaderProps extends HtmlHTMLAttributes<HTMLSpanElement> {
     children: string;
-} & HtmlHTMLAttributes<HTMLSpanElement>;
+}
 
 /* Header component for consistancy and easy changing - bold 36px h1 text */
 export default function Header({ children, ...props }: HeaderProps) {

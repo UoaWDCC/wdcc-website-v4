@@ -1,11 +1,15 @@
 "use client";
 
-import React from "react";
+import { ReactNode } from "react";
 import { motion, Variants } from "framer-motion";
 
 import { easeOutQuad } from "@/libs/ease";
 
-const Intro = ({ children }: { children: React.ReactNode }) => {
+interface IntroProps {
+    children: ReactNode;
+}
+
+const Intro = ({ children }: IntroProps) => {
     return (
         <>
             <div className="fixed flex h-dvh w-dvw flex-col justify-between">

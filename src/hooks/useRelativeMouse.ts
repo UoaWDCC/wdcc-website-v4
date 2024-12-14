@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { RefObject, useCallback, useEffect, useRef, useState } from "react";
 
 type Position = {
     position: { x: number; y: number };
@@ -14,7 +14,7 @@ type Settings = {
     position top, left position of the element
     normal is the mouse position in the range of -1 to 1 in x and y axis
 */
-function useRelativeMouse(ref: React.RefObject<HTMLElement>, settings = { persist: false } as Settings) {
+function useRelativeMouse(ref: RefObject<HTMLElement>, settings = { persist: false } as Settings) {
     const initial = useRef<Position>({ position: { x: 0, y: 0 }, normal: { rx: 0, ry: 0 } });
     const [mouse, setMouse] = useState(initial.current);
 
@@ -46,9 +46,9 @@ function useRelativeMouse(ref: React.RefObject<HTMLElement>, settings = { persis
     });
 
     useEffect(() => {
-        /* 
+        /*
         function to do mouse tracking when on move over the element
-        this would be the ref of the container 
+        this would be the ref of the container
 
         setting persist will not reset the mouse position when the mouse leaves the container
         */
@@ -66,7 +66,7 @@ function useRelativeMouse(ref: React.RefObject<HTMLElement>, settings = { persis
 
         const element = ref.current;
 
-        /* 
+        /*
         this will enable mouse tracking if the mouse is hover over the element and disable when mouse leaves
         */
 

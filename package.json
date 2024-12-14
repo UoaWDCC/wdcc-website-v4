@@ -45,6 +45,7 @@
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.2.1",
         "eslint-plugin-tailwindcss": "^3.17.5",
+        "nanoid": ">=3.3.8",
         "postcss": "^8.4.49",
         "prettier": "^3.4.1",
         "prettier-plugin-tailwindcss": "^0.6.9",

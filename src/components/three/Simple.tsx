@@ -1,12 +1,16 @@
 "use client";
 
-import React from "react";
+import { ReactNode } from "react";
 
 import { CommonLight } from "./CommonLight";
 import { Three } from "./scene/Three";
 
+type SimpleProps = {
+    children: ReactNode;
+};
+
 /* simple 3d scene setup */
-const Simple = ({ children }: { children: React.ReactNode }) => {
+const Simple = ({ children }: SimpleProps) => {
     return (
         <Three>
             <CommonLight />
