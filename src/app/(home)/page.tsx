@@ -1,6 +1,7 @@
-import NavigationBar from "@/components/common/NavigationBar";
-import ThreeLayout from "@/components/common/ThreePageLayout";
-import WDCCHero from "@/components/layout/app/WDCCHero";
+import NavigationBar from "@/components/NavigationBar";
+import ThreeLayout from "@/components/ThreePageLayout";
+
+import WDCCHero from "./_components/WDCCHero";
 
 export default function Home() {
     return (

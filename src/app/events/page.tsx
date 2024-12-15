@@ -1,4 +1,4 @@
-import StandardPageLayout from "@/components/common/StandardPageLayout";
+import StandardPageLayout from "@/components/StandardPageLayout";
 
 import EventsPageHeader from "./_components/EventsPageHeader";
 import EventsRoadmap from "./_components/EventsRoadmap";
