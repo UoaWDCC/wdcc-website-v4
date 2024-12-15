@@ -1,12 +1,12 @@
 import type { ClassName } from "@/types/utils";
 
+import WDCCLogo from "@/assets/svg/WDCCLogo";
 import { navigationLinkData } from "@/data/links/navigationLinks.data";
 import { cn } from "@/libs/utils";
 
-import WDCCLogo from "../logo/WDCCLogo";
-import { GenerateNavigationBarLinks } from "../navigation/generate/GenerateNavigationLinks";
-import NavigationMenu from "../navigation/NavigationMenu";
-import { Anchor } from "../primitives/Anchor";
+import { GenerateNavigationBarLinks } from "./navigation/generate/GenerateNavigationLinks";
+import NavigationMenu from "./navigation/NavigationMenu";
+import { Anchor } from "./primitives/Anchor";
 
 const NavigationBar = ({ className }: ClassName) => {
     return (
