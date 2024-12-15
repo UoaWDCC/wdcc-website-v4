@@ -1,4 +1,6 @@
-export const execsData = [
+import type { Exec } from "@/types/models";
+
+export const execsData: Exec[] = [
     {
         name: "Kevin Cheung",
         image: "imageUrl/location to image file",

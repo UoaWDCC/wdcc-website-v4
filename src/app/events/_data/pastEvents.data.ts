@@ -1,4 +1,6 @@
-export const pastEventsData = [
+import type { PastEventType } from "@/types/models";
+
+export const pastEventsData: PastEventType[] = [
     "Event 1",
     "Event 2",
     "Event 3",

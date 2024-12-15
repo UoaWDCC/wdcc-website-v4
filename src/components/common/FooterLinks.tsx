@@ -1,4 +1,4 @@
-import { type FooterLink } from "@/types/footerLink";
+import type { FooterLink } from "@/types/navigation";
 
 import { footerLinkData } from "@/data/links/footerLinks.data";
 import { cn } from "@/libs/utils";

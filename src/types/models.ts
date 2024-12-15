@@ -10,3 +10,12 @@ export type Project = {
     description: string;
     logo: string;
 };
+
+export type AboutCardType = {
+    title: string;
+    content: string;
+    image: string;
+    imageAlt: string;
+};
+
+export type PastEventType = string;

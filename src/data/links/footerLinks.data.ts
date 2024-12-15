@@ -1,4 +1,6 @@
-export const footerLinkData = [
+import type { FooterLink } from "@/types/navigation";
+
+export const footerLinkData: FooterLink[] = [
     {
         title: "Explore",
         links: [

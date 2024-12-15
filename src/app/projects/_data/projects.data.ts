@@ -1,4 +1,6 @@
-export const projectsData = [
+import type { Project } from "@/types/models";
+
+export const projectsData: Project[] = [
     {
         name: "ASPA registration website",
         description: "A whole paragraph describing what kind of project it is, including tech stack??\n\nYup.",

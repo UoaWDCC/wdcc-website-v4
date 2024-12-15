@@ -1,15 +1,15 @@
 "use client";
 
-import React, { HTMLAttributes, useState } from "react";
+import React, { useState, type HTMLAttributes } from "react";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-import { FullLink } from "@/types/links";
+import type { NavigationLinkType } from "@/types/navigation";
 
 import { cn } from "@/libs/utils";
 
 interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
-    link: FullLink;
+    link: NavigationLinkType;
 }
 
 const DropDown = ({ link, ...props }: DropdownProps) => {
@@ -66,10 +66,10 @@ const DropDown = ({ link, ...props }: DropdownProps) => {
 
 const LetterVariant: Variants = {
     hide: {
-        y: "-100%",
+        x: "-100%",
     },
     show: {
-        y: 0,
+        x: 0,
         transition: {
             duration: 0.2,
         },

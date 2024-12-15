@@ -1,6 +1,6 @@
 import React from "react";
 
-import { type FooterLink } from "@/types/footerLink";
+import type { FooterLink } from "@/types/navigation";
 
 import { cn } from "@/libs/utils";
 
