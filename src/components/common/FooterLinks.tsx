@@ -1,8 +1,6 @@
-import React from "react";
+import type { FooterLink } from "@/types/navigation";
 
-import { type FooterLink } from "@/types/footerLink";
-
-import footerLinks from "@/data/links/footerLinks.json";
+import { footerLinkData } from "@/data/links/footerLinks.data";
 import { cn } from "@/libs/utils";
 
 import FooterBlock from "../navigation/FooterBlock";
@@ -18,7 +16,7 @@ const FooterLinks = () => {
             >
                 {/* grid block of 1-3-1 with center being the contents */}
                 <div className="hidden lg:block"></div>
-                {(footerLinks as FooterLink[]).map((data, i) => (
+                {(footerLinkData as FooterLink[]).map((data, i) => (
                     <FooterBlock key={data.title} {...data} last={i === 2} />
                 ))}
                 <div className="hidden lg:block"></div>
