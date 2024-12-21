@@ -3,8 +3,8 @@ import type { FooterLink } from "@/types/navigation";
 import { footerLinkData } from "@/data/links/footerLinks.data";
 import { cn } from "@/libs/utils";
 
-import FooterBlock from "../navigation/FooterBlock";
-import FooterSocials from "../navigation/FooterSocials";
+import FooterBlock from "./navigation/FooterBlock";
+import FooterSocials from "./navigation/FooterSocials";
 
 const FooterLinks = () => {
     return (

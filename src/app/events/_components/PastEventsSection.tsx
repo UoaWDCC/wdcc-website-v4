@@ -1,4 +1,4 @@
-import SectionWithHeader from "@/components/common/SectionWithHeader";
+import SectionWithHeader from "@/components/SectionWithHeader";
 
 import EventCard from "./EventCard";
 

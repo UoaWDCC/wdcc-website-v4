@@ -1,4 +1,4 @@
-import StandardPageLayout from "@/components/common/StandardPageLayout";
+import StandardPageLayout from "@/components/StandardPageLayout";
 
 import AboutPageHeading from "./_components/AboutPageHeading";
 import Duo from "./_components/Duo";
