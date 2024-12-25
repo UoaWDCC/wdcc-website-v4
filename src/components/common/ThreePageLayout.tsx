@@ -2,6 +2,7 @@
 
 import { MutableRefObject, useRef } from "react";
 import dynamic from "next/dynamic";
+import { motion } from "framer-motion";
 
 const Scene = dynamic(() => import("@/components/three/scene/Scene"), { ssr: false });
 
@@ -9,7 +10,9 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
     const ref = useRef<HTMLDivElement>(null);
 
     return (
-        <div
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             ref={ref}
             style={{
                 position: "relative",
@@ -20,9 +23,11 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
             }}
         >
             <div className="relative flex h-dvh min-h-dvh flex-col overflow-x-hidden">{children}</div>
+            {/* background scene by default */}
             {/* @ts-expect-error - no children */}
             <Scene
                 style={{
+                    zIndex: -1,
                     position: "fixed",
                     top: 0,
                     left: 0,
@@ -33,7 +38,7 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
                 eventSource={ref as MutableRefObject<HTMLDivElement>}
                 eventPrefix="client"
             />
-        </div>
+        </motion.div>
     );
 };
 
