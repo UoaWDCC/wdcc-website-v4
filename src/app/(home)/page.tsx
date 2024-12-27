@@ -1,4 +1,4 @@
-import NavigationBar from "@/components/NavigationBar";
+import NavigationBar from "@/components/navigation/navbar/NavigationBar";
 import ThreeLayout from "@/components/ThreePageLayout";
 
 import WDCCHero from "./_components/WDCCHero";

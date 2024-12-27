@@ -7,8 +7,8 @@ import type { NavigationLinkType } from "@/types/navigation";
 
 import { cn } from "@/libs/utils";
 
-import { Button } from "../primitives/Button";
-import { GenerateNavigationMenuLinks } from "./generate/GenerateNavigationLinks";
+import { Button } from "@/components/primitives/Button";
+import { GenerateNavigationMenuLinks } from "./GenerateNavigationLinks";
 
 // ONLY USE CLASSNAME TO CHANGE MEDIA QUERY
 const NavigationMenu = ({ links, className }: { links: NavigationLinkType[]; className?: string }) => {

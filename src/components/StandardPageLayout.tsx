@@ -1,9 +1,12 @@
 import { HtmlHTMLAttributes, ReactNode } from "react";
 
+
+
 import { cn } from "@/libs/utils";
 
-import FooterLinks from "./FooterLinks";
-import NavigationBar from "./NavigationBar";
+import FooterLinks from "./navigation/footer/FooterLinks";
+import NavigationBar from "./navigation/navbar/NavigationBar";
+
 
 interface StandardPageLayoutProps extends HtmlHTMLAttributes<HTMLElement> {
     children: ReactNode;

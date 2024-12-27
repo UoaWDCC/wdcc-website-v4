@@ -4,7 +4,7 @@ import type { FooterLink } from "@/types/navigation";
 
 import { cn } from "@/libs/utils";
 
-import { PageLink } from "../primitives/Anchor";
+import { PageLink } from "@/components/primitives/Anchor";
 
 const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
     return (
