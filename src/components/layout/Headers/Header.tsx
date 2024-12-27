@@ -73,21 +73,18 @@ interface HeaderProps extends VariantProps<typeof header>{
         href: string;
     };
     graphic?: string;
-    children?: ReactNode;
 }
 
 
-
-export default function Header({ variant, color, title, description, primaryButton, secondaryButton, backlink, graphic, children }: HeaderProps) {
+export default function Header({ variant, color, title, description, primaryButton, secondaryButton, backlink, graphic}: HeaderProps) {
     return (
         <header className={header({variant, color})}>
             {variant === "primary"
                 ? <div className="flex flex-col w-[80%] max-w-[1100px] gap-8">
                     <div className="flex flex-col gap-4 max-w-[700px]">
-                        <h1 className="text-4xl font-bold leading-none">{title}</h1>
+                        <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
                         {description && <p className="text-gray-600 text-md leading-tight">{description}</p>}
                     </div>
-                    {children}
                     <div className="flex gap-3">
                         {primaryButton && <Button variant="primary" color="yellow" href={primaryButton.href}>{primaryButton.label}</Button>}
                         {secondaryButton && <Button variant="secondary" color="dark" href={secondaryButton.href}>{secondaryButton.label}</Button>}
@@ -99,7 +96,7 @@ export default function Header({ variant, color, title, description, primaryButt
                     </div>
                     <div className="flex flex-col gap-3 py-3">
                         {backlink && <Link href={backlink.href} className={backlinkvar({color})}>← {backlink.label}</Link>}
-                        <h1 className="text-4xl font-bold leading-none">{title}</h1>
+                        <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
                     </div>
                 </div>
             }
