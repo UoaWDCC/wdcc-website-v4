@@ -23,7 +23,7 @@ export default function EventCard({ event }: EventCardProps) {
     }
 
     return (
-        <div className="h-[520px] bg-slate-200 rounded-2xl flex-col justify-between items-end gap-9 inline-flex overflow-hidden">
+        <div className="h-[36rem] bg-slate-200 rounded-2xl flex-col justify-start items-end gap-9 inline-flex overflow-hidden">
             <div className="">
                 <Image src={placeholder} alt={event.imageAlt} width={600} height={400} className="rounded-2xl" />
             </div>
@@ -33,7 +33,7 @@ export default function EventCard({ event }: EventCardProps) {
                         <p className="text-black text-sm font-bold">{event.category}</p>
                     </div>
                 </div>
-                <div className="self-stretch h-[163px] flex-col justify-start items-start gap-3 flex">
+                <div className="self-stretch flex-col justify-start items-start gap-3 flex">
                     <p className="self-stretch text-center text-black text-xl font-bold leading-[25.20px]">{event.title}</p>
                     <div className="self-stretch h-[38px] flex-col justify-start items-start flex">
                         <p className="self-stretch text-center text-[#1453b7] font-bold leading-tight">{event.time}</p>
