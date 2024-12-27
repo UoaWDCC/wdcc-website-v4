@@ -38,7 +38,7 @@ export const eventsData: EventCardType[] = [
         imageAlt: "Image 1",
     },
     {
-        title: "Rizz 201: Advanceed Rizz Concepts and Practice",
+        title: "Rizz 201: Advanced Rizz Concepts and Practice",
         time: "11:30 AM, 32nd February 2025",
         location: "201-265",
         description: "Delve into the full theory and practical applications behind Advanced Rizz in this higher level rizz workshop.",
