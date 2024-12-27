@@ -1,107 +1,171 @@
 "use client";
 
-import React, { HTMLAttributes } from "react";
+import React, { ButtonHTMLAttributes, ReactNode } from "react";
 import { HTMLMotionProps, motion, MotionProps } from "framer-motion";
 import { tv, type VariantProps } from "tailwind-variants";
+import Link from "next/link";
 
-import { cn } from "@/libs/utils";
-
-const button = tv(
-    {
-        base: "w-full rounded-full p-2 px-6",
+const button = tv({
+        base: "rounded-full py-2 px-5 font-bold flex justify-center items-center transition duration-200 w-fit",
         variants: {
-            type: {
+            variant: {
                 primary: "border-2",
                 secondary: "",
-                ghost: "border-2",
-                icon: "bg-blue-900 text-white",
+                tertiary: "border-2",
+                text: "",
             },
             color: {
-                blue: "bg-blue-brand",
-                yellow: "bg-yellow-brand",
-                purple: "bg-purple-brand",
-                gray: "bg-gray-800",
-                none: "",
+                blue: "",
+                yellow: "",
+                purple: "",
+                dark: "",
+                light: "",
             },
+            isJustified:{
+                true: "w-full"
+            }
         },
-        compoundVariants: [
-            // primary
-            {
-                type: ["primary"],
-                color: ["blue"],
-                className: "border-blue-500 text-white",
-            },
-            {
-                type: ["primary"],
-                color: ["yellow"],
-                className: "border-yellow-500 text-gray-900",
-            },
-            {
-                type: ["primary"],
-                color: ["purple"],
-                className: "border-purple-400 text-white",
-            },
-            {
-                type: ["primary"],
-                color: ["gray"],
-                className: "border-gray-500 text-white",
-            },
-            // secondary, ghost
-            {
-                type: ["secondary", "ghost"],
-                color: ["blue"],
-                className: "border-blue-200 bg-blue-100 text-blue-750",
-            },
-            {
-                type: ["secondary", "ghost"],
-                color: ["yellow"],
-                className: "border-yellow-200 bg-yellow-100 text-blue-750",
-            },
-            {
-                type: ["secondary", "ghost"],
-                color: ["purple"],
-                className: "border-purple-200 bg-purple-100 text-blue-750",
-            },
-            {
-                type: ["secondary", "ghost"],
-                color: ["gray"],
-                className: "border-gray-200 bg-gray-100 text-blue-800",
-            },
-            {
-                type: ["ghost"],
-                className: "bg-transparent",
-            },
-        ],
         defaultVariants: {
-            type: "primary",
+            variant: "primary",
             color: "blue",
         },
-    },
-    { twMerge: true }
+        compoundVariants: [
+            {
+                variant: "primary",
+                color: "blue",
+                class: "bg-blue-500 text-white border-blue-600 hover:bg-blue-400"
+            },
+            {
+                variant: "primary",
+                color: "yellow",
+                class: "bg-yellow-brand text-gray-800 border-yellow-400 hover:bg-yellow-200",
+            },
+            {
+                variant: 'primary',
+                color: 'purple',
+                class: 'bg-purple-500 border-purple-600 text-white hover:bg-purple-400',
+            },
+            {
+                variant: 'primary',
+                color: 'dark',
+                class: 'bg-gray-800 border-gray-600 hover:bg-gray-700 text-white',
+            },
+            {
+                variant: 'primary',
+                color: 'light',
+                class: 'bg-gray-10 border-gray-200 text-gray-800 hover:bg-gray-20',
+            },
+            {
+                variant: 'secondary',
+                color: 'blue',
+                class: 'bg-blue-100 text-blue-750 hover:bg-blue-150',
+            },
+            {
+                variant: 'secondary',
+                color: 'yellow',
+                class: 'bg-yellow-100 text-yellow-750 hover:bg-yellow-150',
+            },
+            {
+                variant: 'secondary',
+                color: 'purple',
+                class: 'bg-purple-100 text-purple-750 hover:bg-purple-150',
+            },
+            {
+                variant: 'secondary',
+                color: 'dark',
+                class: 'bg-[#2E2B3B33] text-gray-800 hover:bg-[#2E2B3B26]',
+            },
+            {
+                variant: 'secondary',
+                color: 'light',
+                class: 'bg-[#C8C6D24D] text-white hover:[#C8C6D240]',
+            },
+            {
+                variant: 'tertiary',
+                color: 'blue',
+                class: 'border-blue-200 text-blue-750 hover:bg-blue-50',
+            },
+            {
+                variant: 'tertiary',
+                color: 'yellow',
+                class: 'border-yellow-200 text-yellow-750 hover:bg-yellow-50',
+            },
+            {
+                variant: 'tertiary',
+                color: 'purple',
+                class: 'border-purple-200 text-purple-750 hover:bg-purple-50',
+            },
+            {
+                variant: 'tertiary',
+                color: 'dark',
+                class: 'text-gray-800 border-gray-800 border-opacity-20 hover:bg-[#2E2B3B0D]',
+            },
+            {
+                variant: 'tertiary',
+                color: 'light',
+                class: 'text-white border-gray-600 border-opacity-30 hover:bg-[#C8C6D20D]',
+            },
+            {
+                variant: 'text-only',
+                color: 'blue',
+                class: 'text-blue-750 hover:underline',
+            },
+            {
+                variant: 'text-only',
+                color: 'yellow',
+                class: 'text-yellow-750  hover:underline',
+            },
+            {
+                variant: 'text-only',
+                color: 'purple',
+                class: 'text-purple-750 hover:underline',
+            },
+            {
+                variant: 'text-only',
+                color: 'dark',
+                class: 'text-gray-800 hover:underline',
+            },
+            {
+                variant: 'text-only',
+                color: 'light',
+                class: 'text-white hover:underline',
+            }
+        ]
+    }
 );
 
-interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-    set?: VariantProps<typeof button>;
+interface ButtonProps extends VariantProps<typeof button>, ButtonHTMLAttributes<HTMLButtonElement> {
+    children: ReactNode;
+    href?: string;
 }
 
-const Button = ({ set, ...props }: ButtonProps) => {
-    return (
-        <button {...props} className={cn(button(set), props.className)}>
+function Button(props: ButtonProps){
+    if (props.href) {
+        return (
+            <Link href={props.href} className={button(props)}>
+                {props.children}
+            </Link>
+        );
+    } else {
+        return <button {...props} className={button(props)}>
             {props.children}
-        </button>
-    );
+        </button>;
+    }
 };
 
-interface MotionButtonProps extends MotionProps, HTMLMotionProps<"button"> {
-    set?: VariantProps<typeof button>;
-}
 
-const MotionButton = ({ set, ...props }: MotionButtonProps) => {
-    return (
-        <motion.button {...props} className={cn(button(set), props.className)}>
-            {props.children}
-        </motion.button>
-    );
-};
+// TODO revisit this
 
-export { Button, MotionButton };
+// interface MotionButtonProps extends MotionProps, HTMLMotionProps<"button"> {
+//     set?: VariantProps<typeof button>;
+// }
+//
+// const MotionButton = ({ set, ...props }: MotionButtonProps) => {
+//     return (
+//         <motion.button {...props} className={cn(button(set), props.className)}>
+//             {props.children}
+//         </motion.button>
+//     );
+// };
+
+export { Button };
