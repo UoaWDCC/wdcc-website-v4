@@ -23,7 +23,7 @@ export default function EventCard({ event }: EventCardProps) {
     }
 
     return (
-        <div className="h-[520px] bg-slate-300 rounded-2xl flex-col justify-between items-end gap-9 inline-flex overflow-hidden">
+        <div className="h-[520px] bg-slate-200 rounded-2xl flex-col justify-between items-end gap-9 inline-flex overflow-hidden">
             <div className="">
                 <Image src={placeholder} alt={event.imageAlt} width={600} height={400} className="rounded-2xl" />
             </div>
