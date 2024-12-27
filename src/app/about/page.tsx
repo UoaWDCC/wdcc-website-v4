@@ -1,29 +1,39 @@
-import StandardPageLayout from "@/components/StandardPageLayout";
+import NavigationBar from "@/components/NavigationBar";
 
-import AboutPageHeading from "./_components/AboutPageHeading";
+// import StandardPageLayout from "@/components/StandardPageLayout";
+
+import AboutPageBody from "./_components/AboutPageBody";
+import AboutPageHeader from "./_components/AboutPageHeader";
+import ButtonRow from "./_components/ButtonRow";
 import Duo from "./_components/Duo";
 import ExecList from "./_components/ExecList";
-import { aboutData } from "./_data/about.data";
+import { cardData } from "./_data/cards.data";
 import { execsData } from "./_data/execs.data";
 
 export default function AboutPage() {
-    return (
-        <StandardPageLayout>
-            <div className="flex flex-col gap-10 p-10 sm:px-12">
-                <AboutPageHeading title="About Us" />
-                {aboutData.map((data) => (
-                    <Duo
-                        key={data.title}
-                        title={data.title}
-                        content={data.content}
-                        imgSrcPath={data.image}
-                        imgAlt={data.imageAlt}
-                    />
-                ))}
+    const headerContent = `The Web Development and Consulting Club is Aotearoa New Zealand’s largest student technology club. Read more about our history, goals, and achievements - as well as the people that help make it all happen.`;
 
+    return (
+        // <StandardPageLayout></StandarPageLayout>
+        <>
+            <NavigationBar className="py-4" />
+            <AboutPageHeader
+                className="flex flex-col gap-4 bg-blue-400 px-56 py-20"
+                title="About Us"
+                content={headerContent}
+            >
+                <ButtonRow className="pt-8" />
+            </AboutPageHeader>
+            <AboutPageBody className="flex flex-col gap-16 px-56 py-10 sm:px-12">
+                {cardData.map((data, index) => (
+                    <Duo key={data.title} imgSrcPath={data.image} imgAlt={data.imageAlt} imgFirst={index % 2 === 1}>
+                        <h3 className="font-semibold">{data.title}</h3>
+                        <p className="font-medium whitespace-pre-line">{data.content}</p>
+                    </Duo>
+                ))}
                 <h2 className="text-2xl font-semibold">Meet the Execs</h2>
                 <ExecList execs={execsData} />
-            </div>
-        </StandardPageLayout>
+            </AboutPageBody>
+        </>
     );
 }

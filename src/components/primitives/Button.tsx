@@ -21,6 +21,7 @@ const button = tv(
                 yellow: "bg-yellow-brand",
                 purple: "bg-purple-brand",
                 gray: "bg-gray-800",
+                white: "bg-white",
                 none: "",
             },
         },
