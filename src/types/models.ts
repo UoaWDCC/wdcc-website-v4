@@ -18,4 +18,14 @@ export type AboutCardType = {
     imageAlt: string;
 };
 
+export type EventCardType = {
+    title: string;
+    time: string; // should this be a Date object?
+    location: string;
+    description: string;
+    category: string;
+    image: string;
+    imageAlt: string;
+}
+
 export type PastEventType = string;
