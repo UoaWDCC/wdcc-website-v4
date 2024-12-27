@@ -2,7 +2,7 @@ import StandardPageLayout from "@/components/StandardPageLayout";
 
 import EventsPageHeader from "./_components/EventsPageHeader";
 import EventsRoadmap from "./_components/EventsRoadmap";
-import PastEventsSection from "./_components/PastEventsSection";
+import UpcomingEventsSection from "./_components/UpcomingEventsSection";
 import { eventsData } from "./_data/events.data";
 
 export default function EventsPage() {
@@ -10,7 +10,7 @@ export default function EventsPage() {
         <StandardPageLayout>
             <EventsPageHeader />
             <EventsRoadmap />
-            <PastEventsSection pastEvents={eventsData} />
+            <UpcomingEventsSection upcomingEvents={eventsData} />
         </StandardPageLayout>
     );
 }
