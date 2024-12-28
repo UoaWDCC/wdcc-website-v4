@@ -11,7 +11,7 @@ import { cn } from "@/libs/utils";
 import { Anchor } from "../../primitives/Anchor";
 import NavigationMenu from "./NavigationMobileMenu";
 
-const NavigationBar = ({ className }: ClassName) => {
+export default function NavigationBar({ className }: ClassName) {
     return (
         <div
             className={cn(
@@ -31,7 +31,7 @@ const NavigationBar = ({ className }: ClassName) => {
                 <div className="flex gap-3">
                     <NavigationMenu className="md:hidden" links={navigationLinkData} />
                     <Anchor href="https://go.wdcc.co.nz" newTab>
-                        <Button set={{ type: "primary", color: "blue" }} className="whitespace-pre">
+                        <Button variant="primary" color="blue" className="whitespace-pre">
                             Join WDCC ➔
                         </Button>
                     </Anchor>
@@ -40,8 +40,6 @@ const NavigationBar = ({ className }: ClassName) => {
         </div>
     );
 };
-
-export default NavigationBar;
 
 const NavigationBarLinks = ({ links }: { links: NavigationLinkType[] }) =>
     links.map((link) =>

@@ -16,7 +16,7 @@ const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
                     <PageLink
                         key={link.label}
                         href={link.href}
-                        target={link.external ? "_blank" : "_self"}
+                        newTab={link.external}
                         mode="light"
                         shift
                     >
