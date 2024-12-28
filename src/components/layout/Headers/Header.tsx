@@ -34,7 +34,7 @@ const header = tv({
             blue: "bg-blue-20",
             green: "bg-green-20",
             purple: "bg-purple-20",
-            brand: "bg-blue-brand"
+            brand: "bg-blue-brand text-white"
         }
     }
 });
@@ -91,11 +91,23 @@ export default function Header({ variant, color, title, description, primaryButt
                 ? <div className="flex flex-col w-[80%] max-w-[1100px] gap-8">
                     <div className="flex flex-col gap-4 max-w-[700px]">
                         <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
-                        {description && <p className="text-gray-600 text-md leading-tight">{description}</p>}
+                        {color !== "brand"
+                            ? <>{description && <p className="text-gray-600 text-md leading-tight">{description}</p>}</>
+                            : <>{description && <p className="text-white text-md leading-tight">{description}</p>}</>
+                        }
+
                     </div>
                     <div className="flex gap-3">
-                        {primaryButton && <Button variant="primary" color="yellow" href={primaryButton.href}>{primaryButton.label}</Button>}
-                        {secondaryButton && <Button variant="secondary" color="dark" href={secondaryButton.href}>{secondaryButton.label}</Button>}
+                        {color !== "brand"
+                            ?  <>
+                                {primaryButton && <Button variant="primary" color="yellow" href={primaryButton.href}>{primaryButton.label}</Button>}
+                                {secondaryButton && <Button variant="secondary" color="dark" href={secondaryButton.href}>{secondaryButton.label}</Button>}
+                            </>
+                            :  <>
+                                {primaryButton && <Button variant="primary" color="light" href={primaryButton.href}>{primaryButton.label}</Button>}
+                                {secondaryButton && <Button variant="secondary" color="light" href={secondaryButton.href}>{secondaryButton.label}</Button>}
+                            </>
+                        }
                     </div>
                 </div>
                 : <div className="flex w-[80%] max-w-[1100px] gap-8">
