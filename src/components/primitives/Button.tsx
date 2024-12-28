@@ -1,24 +1,9 @@
-/*
-General button component for navigation and click actions.
-
-Takes the following variants as props:
-Variant [primary, secondary, tertiary, text] - the general style and importance of the button, see Figma.
-Color [blue, yellow, purple, dark, light] - the color of the button.
-
-Takes the following additional props:
-isJustified [false, true] - whether the element scales to the full width of the parent.
-and any other button props.
-
-Labels are provided as children of this element.
-This Button dynamically determines its element type as either <button/> or <Link/> depending on the optional href attribute.
- */
-
 "use client";
 
-import React, { ButtonHTMLAttributes, ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 // import { HTMLMotionProps, motion, MotionProps } from "framer-motion";
-import { tv, type VariantProps } from "tailwind-variants";
 import Link from "next/link";
+import { tv, type VariantProps } from "tailwind-variants";
 
 const button = tv({
         base: "rounded-full py-2 px-6 font-bold flex justify-center items-center transition duration-200 w-fit hover:cursor-pointer",
@@ -154,6 +139,20 @@ interface ButtonProps extends VariantProps<typeof button>, Omit<ButtonHTMLAttrib
     href?: string;
 }
 
+/**
+ * General button component for navigation and click actions.
+ *
+ * Takes the following variants as props:
+ * @variation Variant [primary, secondary, tertiary, text] - the general style and importance of the button, see Figma.
+ * @variation Color [blue, yellow, purple, dark, light] - the color of the button.
+ *
+ * Takes the following additional props:
+ * @param isJustified [false, true] - whether the element scales to the full width of the parent.
+ * and any other button props.
+ *
+ * Labels are provided as children of this element.
+ * This Button dynamically determines its element type as either <button/> or <Link/> depending on the optional href attribute.
+ */
 function Button(props: ButtonProps){
 
     // Conditionally render as Link or button depending on whether a local link (href attribute) is provided.
@@ -170,20 +169,5 @@ function Button(props: ButtonProps){
         </button>;
     }
 };
-
-
-// TODO revisit this
-
-// interface MotionButtonProps extends MotionProps, HTMLMotionProps<"button"> {
-//     set?: VariantProps<typeof button>;
-// }
-//
-// const MotionButton = ({ set, ...props }: MotionButtonProps) => {
-//     return (
-//         <motion.button {...props} className={cn(button(set), props.className)}>
-//             {props.children}
-//         </motion.button>
-//     );
-// };
 
 export { Button };
