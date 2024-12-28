@@ -13,9 +13,9 @@ import NavigationMenu from "./NavigationMobileMenu";
 
 export default function NavigationBar({ className }: ClassName) {
     return (
-        <div
+        <nav
             className={cn(
-                "flex select-none flex-col items-center justify-between gap-4 px-16 py-4 sm:flex-row lg:py-6",
+                "flex select-none flex-col items-center justify-between gap-4 px-16 py-4 sm:flex-row lg:py-6 backdrop-blur-sm",
                 className
             )}
         >
@@ -37,7 +37,7 @@ export default function NavigationBar({ className }: ClassName) {
                     </Anchor>
                 </div>
             </div>
-        </div>
+        </nav>
     );
 };
 
