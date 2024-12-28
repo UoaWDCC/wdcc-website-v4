@@ -9,6 +9,8 @@ export type Project = {
     name: string;
     description: string;
     logo: string;
+    year: string;
+    technologies: string[];
 };
 
 export type AboutCardType = {

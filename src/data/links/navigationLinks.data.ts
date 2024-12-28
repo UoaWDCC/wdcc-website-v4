@@ -14,7 +14,7 @@ export const navigationLinkData: NavigationLinkType[] = [
                 label: "Project roles",
             },
             {
-                href: "/past-events",
+                href: "/projects",
                 label: "All Projects",
             },
         ],
