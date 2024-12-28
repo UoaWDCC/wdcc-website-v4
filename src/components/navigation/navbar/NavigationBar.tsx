@@ -12,7 +12,7 @@ import NavigationMenu from "./NavigationMenu";
 const NavigationBar = ({ className }: ClassName) => {
     return (
         <div
-            className={cn("flex select-none flex-col items-center justify-between gap-4 px-12 sm:flex-row", className)}
+            className={cn("flex select-none flex-col items-center justify-between gap-4 px-16 py-6 sm:flex-row", className)}
         >
             <WDCCLogo className="fill-black lg:block" />
             <div className="flex items-center gap-12 font-semibold">
@@ -23,7 +23,7 @@ const NavigationBar = ({ className }: ClassName) => {
                 {/* Vertical line */}
                 <div className="h-5 w-0.5 rounded bg-black" />
                 {/* Buttons */}
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                     <Anchor set={{ type: "muted", rounded: true }} href="/socials  ">
                         <Button set={{ type: "secondary", color: "blue" }}>Our socials</Button>
                     </Anchor>

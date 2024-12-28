@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <ThreeLayout>
             <nav className="background sticky top-4 z-10 rounded-full backdrop-blur-sm">
-                <NavigationBar className="py-4" />
+                <NavigationBar />
             </nav>
             <main className="mt-8 flex w-full flex-col justify-center">
                 <WDCCHero />
