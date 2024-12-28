@@ -4,6 +4,7 @@ import React, { Suspense, useRef } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion-3d";
 
+import Draw from "@/app/_component/Draw";
 import useRelativeMouse from "@/hooks/useRelativeMouse";
 
 const WDCCThreeLogo = dynamic(() => import("@/components/three/primitives/index").then((mod) => mod.WDCCThreeLogo), {
@@ -26,10 +27,15 @@ const WDCCHero = () => {
                 </h1>
                 <p className="mt-8 text-xl text-blue-700">
                     We connect tomorrow’s developers, designers, and tech project leaders with the real-world experience
-                    and opportunities that help them shine.
+                    and opportunities that{" "}
+                    <span className="relative italic underline">
+                        <Draw />
+                        help them shine
+                    </span>
+                    .
                 </p>
             </div>
-            <View className="flex h-1/2 w-full flex-col items-center justify-center">
+            <View className="flex h-[500px] w-[500px] flex-col items-center justify-center">
                 <Suspense fallback={null}>
                     {/* rotate the logo relative to the mouse, range from -60deg to 60deg on x and y axis*/}
                     <motion.group

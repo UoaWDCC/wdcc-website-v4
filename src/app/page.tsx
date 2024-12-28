@@ -15,6 +15,22 @@ export default function Home() {
             </nav>
             <main className="mt-8 flex w-full flex-col justify-center">
                 <WDCCHero />
+                <div className="mt-8 flex items-center justify-center text-xl text-blue-700">
+                    <p className="w-[clamp(300px,100%,800px)] text-center">
+                        We promote the learning and practice of software development through workshops and real-world
+                        projects, to equip and inspire tomorrow&apos;s talent
+                    </p>
+                </div>
+                <div className="mt-8 flex flex-col items-center justify-center text-xl text-blue-700">
+                    <h2 className="text-center text-5xl font-semibold">What do we do?</h2>
+                    <p className="w-[clamp(300px,100%,800px)] text-center">
+                        WDCC aims to bridge the gap between university knowledge and real-world industry practices. We
+                        run projects with real-world clients that solve real-world problems.
+                    </p>
+                </div>
+                <div>
+                    <div className="h-[2000px]"></div>
+                </div>
             </main>
         </ThreeLayout>
     );

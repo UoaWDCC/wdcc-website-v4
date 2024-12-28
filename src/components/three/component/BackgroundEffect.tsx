@@ -15,7 +15,7 @@ const RAD_INCREMENT = (Math.PI * 2) / COUNT;
 // movement settings
 const SPEED = Math.PI / 16; // ref: pi*2 is one full rotation per second
 const ROTCHAOS = 2;
-const POSCHAOS = 12;
+const POSCHAOS = 6;
 
 const TRIANGLEOBJ = ({ position, faceRotation }: { position: Vector3; faceRotation: number }) => {
     const meshRef = useRef<Mesh>(null!);

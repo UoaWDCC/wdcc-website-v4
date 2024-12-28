@@ -12,17 +12,17 @@ export default function Scene({ ...props }: CanvasProps) {
 
     return (
         <>
-            <Canvas {...props} onCreated={(state) => (state.gl.toneMapping = THREE.AgXToneMapping)}>
-                <t.Out />
-                <Preload all />
-            </Canvas>
             {/* background 3d */}
             <Canvas
                 {...props}
-                className="-z-10 blur-sm"
+                className="-z-10 blur-[6px]"
                 onCreated={(state) => (state.gl.toneMapping = THREE.AgXToneMapping)}
             >
                 <bg.Out />
+                <Preload all />
+            </Canvas>
+            <Canvas className="z-10" {...props} onCreated={(state) => (state.gl.toneMapping = THREE.AgXToneMapping)}>
+                <t.Out />
                 <Preload all />
             </Canvas>
         </>
