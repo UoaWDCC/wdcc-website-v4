@@ -35,7 +35,7 @@ export default function NavigationBar({ className }: ClassName) {
                     <NavigationMenu className="md:hidden" links={navigationLinkData} />
                     <Anchor href="https://go.wdcc.co.nz" newTab>
                         <Button variant="primary" color="blue" className="whitespace-pre">
-                            Join WDCC  ⮕
+                            Join WDCC  <Arrow/>
                         </Button>
                     </Anchor>
                 </div>
