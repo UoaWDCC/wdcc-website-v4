@@ -14,7 +14,7 @@ backlink - the backlink label and text (secondary variant only, optional)
 graphic - an accompanying graphic TBA.
  */
 
-// TODO showcase header and graphic
+// TODO showcase version of header and graphic
 
 // import { ReactNode } from "react";
 import { tv, VariantProps } from 'tailwind-variants';

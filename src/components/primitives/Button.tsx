@@ -68,7 +68,7 @@ const button = tv({
             {
                 variant: 'primary',
                 color: 'light',
-                class: 'bg-gray-10 border-gray-200 text-gray-800 hover:bg-gray-20',
+                class: 'bg-gray-10 border-gray-200 text-gray-800 hover:bg-gray-100',
             },
             {
                 variant: 'secondary',
@@ -93,7 +93,7 @@ const button = tv({
             {
                 variant: 'secondary',
                 color: 'light',
-                class: 'bg-[#C8C6D24D] text-white hover:[#C8C6D240]',
+                class: 'bg-[#C8C6D24D] text-white hover:bg-[#C8C6D233]',
             },
             {
                 variant: 'tertiary',
@@ -155,6 +155,9 @@ interface ButtonProps extends VariantProps<typeof button>, Omit<ButtonHTMLAttrib
 }
 
 function Button(props: ButtonProps){
+
+    // Conditionally render as Link or button depending on whether a local link (href attribute) is provided.
+
     if (props.href) {
         return (
             <Link href={props.href} className={button(props)}>
