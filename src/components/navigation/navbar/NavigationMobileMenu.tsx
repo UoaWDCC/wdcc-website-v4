@@ -82,7 +82,7 @@ const containerVariant = (toggle: boolean) => {
 
 const NavigationMenuLinks = ({ links }: { links: NavigationLinkType[] }) =>
     links.map((link) => (
-        <Anchor key={link.label} href={link.href} className="w-full text-center text-[15vw]">
+        <Anchor key={link.label} href={link.href} className="w-full text-center text-[14vw]">
             {link.label}
         </Anchor>
     ));
