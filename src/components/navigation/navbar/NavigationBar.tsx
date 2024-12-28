@@ -19,7 +19,9 @@ export default function NavigationBar({ className }: ClassName) {
                 className
             )}
         >
-            <WDCCLogo className="fill-black lg:block" />
+            <Anchor href="/">
+                <WDCCLogo className="fill-black lg:block" />
+            </Anchor>
             <div className="flex items-center gap-8 font-semibold lg:gap-12">
                 {/* Links */}
                 <div className="hidden h-full items-center gap-8 md:flex lg:gap-12">
