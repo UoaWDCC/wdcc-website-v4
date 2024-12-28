@@ -8,10 +8,10 @@ interface ButtonRowProps {
 export default function ButtonRow({ className }: ButtonRowProps) {
     return (
         <div className={cn("flex items-start gap-3", className)}>
-            <Button set={{ type: "primary", color: "white" }} className="font-semibold">
+            <Button set={{ type: "primary", color: "white" }} className="w-auto font-semibold">
                 Meet the team
             </Button>
-            <Button set={{ type: "icon", color: "blue" }} className="font-semibold">
+            <Button set={{ type: "icon", color: "blue" }} className="w-auto font-semibold">
                 Frequently asked questions
             </Button>
         </div>

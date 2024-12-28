@@ -18,13 +18,13 @@ export default function AboutPage() {
         <>
             <NavigationBar className="py-4" />
             <AboutPageHeader
-                className="flex flex-col gap-4 bg-blue-400 px-56 py-20"
+                className="flex flex-col gap-8 bg-blue-400 px-48 py-20"
                 title="About Us"
                 content={headerContent}
             >
-                <ButtonRow className="pt-8" />
+                <ButtonRow className="" />
             </AboutPageHeader>
-            <AboutPageBody className="flex flex-col gap-16 px-56 py-10 sm:px-12">
+            <AboutPageBody className="flex flex-col gap-24 px-48 py-20">
                 {cardData.map((data, index) => (
                     <Duo key={data.title} imgSrcPath={data.image} imgAlt={data.imageAlt} imgFirst={index % 2 === 1}>
                         <h3 className="font-semibold">{data.title}</h3>

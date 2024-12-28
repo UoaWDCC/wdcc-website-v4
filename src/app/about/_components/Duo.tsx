@@ -25,6 +25,7 @@ export default function Duo({
             <div
                 className={`order-1 flex flex-1 items-center justify-center ${imgFirst ? "lg:order-1" : "lg:order-2"}`}
             >
+                {/* TODO: I have no idea how next images works */}
                 <Image src={imgSrc} alt={imgAlt} width={600} height={400} className="h-auto w-auto rounded-[16px]" />
             </div>
         </div>
