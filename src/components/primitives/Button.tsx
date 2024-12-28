@@ -8,12 +8,12 @@ import { cn } from "@/libs/utils";
 
 const button = tv(
     {
-        base: "w-full rounded-full p-2 px-6",
+        base: "w-full rounded-full py-2 px-6",
         variants: {
             type: {
-                primary: "border-2",
+                primary: "border-2 py-[calc(0.5rem-2px)]",
                 secondary: "",
-                ghost: "border-2",
+                ghost: "border-2 py-[calc(0.5rem-2px)]",
                 icon: "bg-blue-900 text-white",
             },
             color: {

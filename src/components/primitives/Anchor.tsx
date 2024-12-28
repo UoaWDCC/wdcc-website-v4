@@ -5,7 +5,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 import { cn } from "@/libs/utils";
 
 const anchor = tv({
-    base: "flex items-center justify-center whitespace-nowrap px-3 py-2",
+    base: "flex items-center justify-center whitespace-nowrap",
     variants: {
         type: {
             primary: "bg-blue-500 text-white",

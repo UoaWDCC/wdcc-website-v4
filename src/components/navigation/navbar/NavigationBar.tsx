@@ -1,6 +1,7 @@
 import type { ClassName } from "@/types/utils";
 
 import WDCCLogo from "@/assets/svg/WDCCLogo";
+import { Button } from "@/components/primitives/Button";
 import { navigationLinkData } from "@/data/links/navigationLinks.data";
 import { cn } from "@/libs/utils";
 
@@ -13,18 +14,23 @@ const NavigationBar = ({ className }: ClassName) => {
         <div
             className={cn("flex select-none flex-col items-center justify-between gap-4 px-12 sm:flex-row", className)}
         >
-            <WDCCLogo className="*:fill-black lg:block" />
-            <div className="flex items-center gap-8 font-semibold">
-                <div className="hidden h-full items-center gap-16 md:flex">
+            <WDCCLogo className="fill-black lg:block" />
+            <div className="flex items-center gap-12 font-semibold">
+                {/* Links */}
+                <div className="hidden h-full items-center gap-12 md:flex">
                     <GenerateNavigationBarLinks links={navigationLinkData} />
-                    <div className="h-5 w-0.5 rounded bg-black" />
                 </div>
-                <div className="flex gap-3">
+                {/* Vertical line */}
+                <div className="h-5 w-0.5 rounded bg-black" />
+                {/* Buttons */}
+                <div className="flex gap-4">
                     <Anchor set={{ type: "muted", rounded: true }} href="/socials  ">
-                        Our socials
+                        <Button set={{ type: "secondary", color: "blue" }}>Our socials</Button>
                     </Anchor>
-                    <Anchor set={{ type: "primary", rounded: true }} href="/socials  ">
-                        Join WDCC
+                    <Anchor href="/socials">
+                        <Button set={{ type: "primary", color: "blue" }} className="whitespace-pre">
+                            Join WDCC ➔
+                        </Button>
                     </Anchor>
                     <NavigationMenu className="md:hidden" links={navigationLinkData} />
                 </div>
