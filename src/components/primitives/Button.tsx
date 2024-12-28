@@ -1,3 +1,18 @@
+/*
+General button component for navigation and click actions.
+
+Takes the following variants as props:
+Variant [primary, secondary, tertiary, text] - the general style and importance of the button, see Figma.
+Color [blue, yellow, purple, dark, light] - the color of the button.
+
+Takes the following additional props:
+isJustified [false, true] - whether the element scales to the full width of the parent.
+and any other button props.
+
+Labels are provided as children of this element.
+This Button dynamically determines its element type as either <button/> or <Link/> depending on the optional href attribute.
+ */
+
 "use client";
 
 import React, { ButtonHTMLAttributes, ReactNode } from "react";
@@ -106,27 +121,27 @@ const button = tv({
                 class: 'text-white border-gray-600 border-opacity-30 hover:bg-[#C8C6D20D]',
             },
             {
-                variant: 'text-only',
+                variant: 'text',
                 color: 'blue',
                 class: 'text-blue-750 hover:underline',
             },
             {
-                variant: 'text-only',
+                variant: 'text',
                 color: 'yellow',
                 class: 'text-yellow-750  hover:underline',
             },
             {
-                variant: 'text-only',
+                variant: 'text',
                 color: 'purple',
                 class: 'text-purple-750 hover:underline',
             },
             {
-                variant: 'text-only',
+                variant: 'text',
                 color: 'dark',
                 class: 'text-gray-800 hover:underline',
             },
             {
-                variant: 'text-only',
+                variant: 'text',
                 color: 'light',
                 class: 'text-white hover:underline',
             }
