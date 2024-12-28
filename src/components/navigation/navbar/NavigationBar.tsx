@@ -1,16 +1,14 @@
+import { NavigationLinkType } from "@/types/navigation";
 import type { ClassName } from "@/types/utils";
 
-
-
 import WDCCLogo from "@/assets/svg/WDCCLogo";
+import DropDown from "@/components/navigation/navbar/DropDownLink";
+import { PageLink } from "@/components/navigation/PageLink";
 import { Button } from "@/components/primitives/Button";
 import { navigationLinkData } from "@/data/links/navigationLinks.data";
 import { cn } from "@/libs/utils";
 
-
-
 import { Anchor } from "../../primitives/Anchor";
-import { NavigationBarLinks } from "./NavigationLinks";
 import NavigationMenu from "./NavigationMobileMenu";
 
 const NavigationBar = ({ className }: ClassName) => {
@@ -28,7 +26,7 @@ const NavigationBar = ({ className }: ClassName) => {
                     <NavigationBarLinks links={navigationLinkData} />
                 </div>
                 {/* Vertical line */}
-                <div className="h-5 w-0.5 rounded bg-black hidden md:block" />
+                <div className="hidden h-5 w-0.5 rounded bg-black md:block" />
                 {/* Buttons */}
                 <div className="flex gap-3">
                     <NavigationMenu className="md:hidden" links={navigationLinkData} />
@@ -44,3 +42,14 @@ const NavigationBar = ({ className }: ClassName) => {
 };
 
 export default NavigationBar;
+
+const NavigationBarLinks = ({ links }: { links: NavigationLinkType[] }) =>
+    links.map((link) =>
+        link.drop ? (
+            <DropDown key={link.label} link={link} />
+        ) : (
+            <PageLink key={link.label} href={link.href}>
+                {link.label}
+            </PageLink>
+        )
+    );

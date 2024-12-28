@@ -5,10 +5,9 @@ import { motion } from "framer-motion";
 
 import type { NavigationLinkType } from "@/types/navigation";
 
+import { Anchor } from "@/components/primitives/Anchor";
 import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";
-
-import { NavigationMenuLinks } from "./NavigationLinks";
 
 // ONLY USE CLASSNAME TO CHANGE MEDIA QUERY
 const NavigationMenu = ({ links, className }: { links: NavigationLinkType[]; className?: string }) => {
@@ -80,3 +79,10 @@ const containerVariant = (toggle: boolean) => {
         },
     };
 };
+
+const NavigationMenuLinks = ({ links }: { links: NavigationLinkType[] }) =>
+    links.map((link) => (
+        <Anchor key={link.label} href={link.href} className="w-full text-center text-[15vw]">
+            {link.label}
+        </Anchor>
+    ));
