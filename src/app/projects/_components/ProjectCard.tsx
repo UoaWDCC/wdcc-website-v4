@@ -17,9 +17,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 <h1 className="mb-1 text-2xl font-bold">{project.name}</h1>
                 <p className="mb-6 w-[448px] font-normal">{project.description}</p>
                 <div className="flex gap-2">
-                    <ProjectTag color={"blue-150"} tagText={`${project.year} project`} />
+                    <ProjectTag color={"blue-100"} tagText={`${project.year} project`} />
                     {project.technologies.map((technology, index) => (
-                        <ProjectTag color={"gray-100"} tagText={technology} />
+                        <ProjectTag color={"gray-100"} tagText={technology} key={index} />
                     ))}
                 </div>
             </div>
