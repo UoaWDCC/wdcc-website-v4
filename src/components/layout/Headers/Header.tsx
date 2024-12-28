@@ -8,10 +8,19 @@ Color [yellow, blue, green, purple, brand] - the color scheme and visual style o
 Takes the following additional props:
 Title - the title.
 Description - the description (primary variant only, optional)
+graphic - an accompanying graphic TBA.
+
+And the following link props:
 primaryButton - the main action button (primary variant only, optional)
 secondaryButton - the secondary action button (primary variant only, optional)
 backlink - the backlink label and text (secondary variant only, optional)
-graphic - an accompanying graphic TBA.
+
+Link props (as above) are objects of format:
+{
+    label: "xyz"
+    href: "xyz"
+}
+
  */
 
 // TODO showcase version of header and graphic
@@ -97,7 +106,7 @@ export default function Header({ variant, color, title, description, primaryButt
                         }
 
                     </div>
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 flex-wrap">
                         {color !== "brand"
                             ?  <>
                                 {primaryButton && <Button variant="primary" color="yellow" href={primaryButton.href}>{primaryButton.label}</Button>}
