@@ -5,7 +5,7 @@ import { Anchor } from "@/components/primitives/Anchor";
 
 import { PageLink } from "../PageLink";
 
-export const GenerateNavigationBarLinks = ({ links }: { links: NavigationLinkType[] }) =>
+export const NavigationBarLinks = ({ links }: { links: NavigationLinkType[] }) =>
     links.map((link) =>
         link.drop ? (
             <DropDown key={link.label} link={link} />
@@ -16,7 +16,7 @@ export const GenerateNavigationBarLinks = ({ links }: { links: NavigationLinkTyp
         )
     );
 
-export const GenerateNavigationMenuLinks = ({ links }: { links: NavigationLinkType[] }) =>
+export const NavigationMenuLinks = ({ links }: { links: NavigationLinkType[] }) =>
     links.map((link) => (
         <Anchor key={link.label} href={link.href} className="w-full text-center text-[15vw]">
             {link.label}

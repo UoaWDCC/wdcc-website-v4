@@ -8,8 +8,7 @@ import type { NavigationLinkType } from "@/types/navigation";
 import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";
 
-import { GenerateNavigationMenuLinks } from "./NavigationLinks";
-
+import { NavigationMenuLinks } from "./NavigationLinks";
 
 // ONLY USE CLASSNAME TO CHANGE MEDIA QUERY
 const NavigationMenu = ({ links, className }: { links: NavigationLinkType[]; className?: string }) => {
@@ -21,7 +20,7 @@ const NavigationMenu = ({ links, className }: { links: NavigationLinkType[]; cla
 
     return (
         <>
-            <Button set={{ type: "primary", color: "blue" }} className={cn("", className)} onClick={handleToggle}>
+            <Button set={{ type: "secondary", color: "blue" }} className={cn("", className)} onClick={handleToggle}>
                 Menu
             </Button>
             {/* todo: this should lock scrolling from happening */}
@@ -41,7 +40,7 @@ const NavigationMenu = ({ links, className }: { links: NavigationLinkType[]; cla
                     </div>
                     <hr className="w-1/2 bg-white" />
                     <div className="my-8 flex flex-col">
-                        <GenerateNavigationMenuLinks links={links} />
+                        <NavigationMenuLinks links={links} />
                     </div>
                     <Button
                         set={{ type: "icon", color: "none" }}
