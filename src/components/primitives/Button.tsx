@@ -5,7 +5,7 @@ import Link, { LinkProps } from "next/link";
 import { tv, type VariantProps } from "tailwind-variants";
 
 const button = tv({
-    base: "flex w-fit items-center justify-center rounded-full px-6 py-2 font-bold transition duration-200 hover:cursor-pointer",
+    base: "h-[41px] flex w-fit items-center justify-center rounded-full px-6 py-2 font-bold transition duration-200 hover:cursor-pointer",
     variants: {
         variant: {
             primary: "border-2",
