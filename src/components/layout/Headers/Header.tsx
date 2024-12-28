@@ -2,8 +2,16 @@
 General global header component - used to provide general headings for all (or most) content pages.
 
 Takes the following variants as props:
-Variant [Primary, Secondary, Showcase] - the hierarchical size and layout of the heading block.
-Style [Blue, Yellow, Green, Purple, Brand] - the color scheme and visual style of the heading block.
+Variant [primary, secondary] - the hierarchical size and layout of the heading block.
+Color [yellow, blue, green, purple, brand] - the color scheme and visual style of the heading block.
+
+Takes the following additional props:
+Title - the title.
+Description - the description (primary variant only, optional)
+primaryButton - the main action button (primary variant only, optional)
+secondaryButton - the secondary action button (primary variant only, optional)
+backlink - the backlink label and text (secondary variant only, optional)
+graphic - an accompanying graphic TBA.
  */
 
 // TODO showcase header and graphic

@@ -149,7 +149,7 @@ const button = tv({
     }
 );
 
-interface ButtonProps extends VariantProps<typeof button>, ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends VariantProps<typeof button>, Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {
     children: ReactNode;
     href?: string;
 }
