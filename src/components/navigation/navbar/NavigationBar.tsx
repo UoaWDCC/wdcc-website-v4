@@ -29,10 +29,7 @@ const NavigationBar = ({ className }: ClassName) => {
                 <div className="h-5 w-0.5 rounded bg-black" />
                 {/* Buttons */}
                 <div className="flex gap-2 lg:gap-3">
-                    <Anchor set={{ type: "muted", rounded: true }} href="/socials  ">
-                        <Button set={{ type: "secondary", color: "blue" }}>Our socials</Button>
-                    </Anchor>
-                    <Anchor href="/socials">
+                    <Anchor href="https://go.wdcc.co.nz" newTab>
                         <Button set={{ type: "primary", color: "blue" }} className="whitespace-pre">
                             Join WDCC ➔
                         </Button>

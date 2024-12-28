@@ -23,12 +23,13 @@ const anchor = tv({
 interface AnchorProps extends LinkProps<HTMLAnchorElement> {
     set?: VariantProps<typeof anchor>;
     className?: string;
+    newTab?: boolean;
     children?: ReactNode;
 }
 
-export const Anchor = ({ set, className, children, ...props }: AnchorProps) => {
+export const Anchor = ({ set, className, newTab = false, children, ...props }: AnchorProps) => {
     return (
-        <Link {...props}>
+        <Link {...props} target={newTab ? "_blank" : "_self"}>
             <p className={cn(anchor(set), className)}>{children}</p>
         </Link>
     );
