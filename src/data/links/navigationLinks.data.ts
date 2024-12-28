@@ -6,16 +6,16 @@ export const navigationLinkData: NavigationLinkType[] = [
         label: "Projects",
         drop: [
             {
-                href: "/learn-more",
+                href: "/projects",
                 label: "About Projects",
             },
             {
-                href: "/project-roles",
+                href: "/projects#roles",
                 label: "Project roles",
             },
             {
-                href: "/past-events",
-                label: "All Projects",
+                href: "/projects/all",
+                label: "All projects",
             },
         ],
     },
@@ -24,21 +24,27 @@ export const navigationLinkData: NavigationLinkType[] = [
         label: "Events",
         drop: [
             {
-                href: "/upcoming",
-                label: "Upcoming events",
+                href: "/events",
+                label: "Upcoming",
             },
             {
-                href: "/past-events",
-                label: "Past events",
+                href: "/events/all",
+                label: "All events",
             },
         ],
     },
     {
         href: "/about",
         label: "About",
-    },
-    {
-        href: "/faq",
-        label: "FAQs",
+        drop: [
+            {
+                href: "/team",
+                label: "Meet the team",
+            },
+            {
+                href: "/faq",
+                label: "FAQs",
+            },
+        ],
     },
 ];
