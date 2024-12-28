@@ -1,10 +1,8 @@
-import React from "react";
-
 import type { FooterLink } from "@/types/navigation";
 
 import { cn } from "@/libs/utils";
 
-import { PageLink } from "@/components/primitives/Anchor";
+import { PageLink } from "../PageLink";
 
 const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
     return (

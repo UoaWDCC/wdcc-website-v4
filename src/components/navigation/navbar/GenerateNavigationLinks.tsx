@@ -1,7 +1,9 @@
 import type { NavigationLinkType } from "@/types/navigation";
 
 import DropDown from "@/components/navigation/navbar/DropDownLink";
-import { Anchor, PageLink } from "@/components/primitives/Anchor";
+import { Anchor } from "@/components/primitives/Anchor";
+
+import { PageLink } from "../PageLink";
 
 export const GenerateNavigationBarLinks = ({ links }: { links: NavigationLinkType[] }) =>
     links.map((link) =>

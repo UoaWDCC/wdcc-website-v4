@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, type HTMLAttributes } from "react";
-import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
+import Link from "next/link";
+import { useState, type HTMLAttributes } from "react";
 
 import type { NavigationLinkType } from "@/types/navigation";
 
