@@ -1,107 +1,173 @@
 "use client";
 
-import React, { HTMLAttributes } from "react";
-import { HTMLMotionProps, motion, MotionProps } from "framer-motion";
+import { ButtonHTMLAttributes, ReactNode } from "react";
+// import { HTMLMotionProps, motion, MotionProps } from "framer-motion";
+import Link from "next/link";
 import { tv, type VariantProps } from "tailwind-variants";
 
-import { cn } from "@/libs/utils";
-
-const button = tv(
-    {
-        base: "w-full rounded-full py-2 px-6",
+const button = tv({
+        base: "rounded-full py-2 px-6 font-bold flex justify-center items-center transition duration-200 w-fit hover:cursor-pointer",
         variants: {
-            type: {
+            variant: {
                 primary: "border-2 py-[calc(0.5rem-2px)]",
                 secondary: "",
-                ghost: "border-2 py-[calc(0.5rem-2px)]",
-                icon: "bg-blue-900 text-white",
+                tertiary: "border-2 py-[calc(0.5rem-2px)]",
+                text: "",
             },
             color: {
-                blue: "bg-blue-brand",
-                yellow: "bg-yellow-brand",
-                purple: "bg-purple-brand",
-                gray: "bg-gray-800",
-                none: "",
+                blue: "",
+                yellow: "",
+                purple: "",
+                dark: "",
+                light: "",
             },
+            isJustified:{
+                true: "w-full"
+            }
         },
-        compoundVariants: [
-            // primary
-            {
-                type: ["primary"],
-                color: ["blue"],
-                className: "border-blue-500 text-white",
-            },
-            {
-                type: ["primary"],
-                color: ["yellow"],
-                className: "border-yellow-500 text-gray-900",
-            },
-            {
-                type: ["primary"],
-                color: ["purple"],
-                className: "border-purple-400 text-white",
-            },
-            {
-                type: ["primary"],
-                color: ["gray"],
-                className: "border-gray-500 text-white",
-            },
-            // secondary, ghost
-            {
-                type: ["secondary", "ghost"],
-                color: ["blue"],
-                className: "border-blue-200 bg-blue-100 text-blue-750",
-            },
-            {
-                type: ["secondary", "ghost"],
-                color: ["yellow"],
-                className: "border-yellow-200 bg-yellow-100 text-blue-750",
-            },
-            {
-                type: ["secondary", "ghost"],
-                color: ["purple"],
-                className: "border-purple-200 bg-purple-100 text-blue-750",
-            },
-            {
-                type: ["secondary", "ghost"],
-                color: ["gray"],
-                className: "border-gray-200 bg-gray-100 text-blue-800",
-            },
-            {
-                type: ["ghost"],
-                className: "bg-transparent",
-            },
-        ],
         defaultVariants: {
-            type: "primary",
+            variant: "primary",
             color: "blue",
         },
-    },
-    { twMerge: true }
+        compoundVariants: [
+            {
+                variant: "primary",
+                color: "blue",
+                class: "bg-blue-500 text-white border-blue-600 hover:bg-blue-400"
+            },
+            {
+                variant: "primary",
+                color: "yellow",
+                class: "bg-yellow-brand text-gray-800 border-yellow-400 hover:bg-yellow-200",
+            },
+            {
+                variant: 'primary',
+                color: 'purple',
+                class: 'bg-purple-500 border-purple-600 text-white hover:bg-purple-400',
+            },
+            {
+                variant: 'primary',
+                color: 'dark',
+                class: 'bg-gray-800 border-gray-600 hover:bg-gray-700 text-white',
+            },
+            {
+                variant: 'primary',
+                color: 'light',
+                class: 'bg-gray-10 border-gray-200 text-gray-800 hover:bg-gray-100',
+            },
+            {
+                variant: 'secondary',
+                color: 'blue',
+                class: 'bg-blue-100 text-blue-750 hover:bg-blue-150',
+            },
+            {
+                variant: 'secondary',
+                color: 'yellow',
+                class: 'bg-yellow-100 text-yellow-750 hover:bg-yellow-150',
+            },
+            {
+                variant: 'secondary',
+                color: 'purple',
+                class: 'bg-purple-100 text-purple-750 hover:bg-purple-150',
+            },
+            {
+                variant: 'secondary',
+                color: 'dark',
+                class: 'bg-[#2E2B3B33] text-gray-800 hover:bg-[#2E2B3B26]',
+            },
+            {
+                variant: 'secondary',
+                color: 'light',
+                class: 'bg-[#C8C6D24D] text-white hover:bg-[#C8C6D233]',
+            },
+            {
+                variant: 'tertiary',
+                color: 'blue',
+                class: 'border-blue-200 text-blue-750 hover:bg-blue-50',
+            },
+            {
+                variant: 'tertiary',
+                color: 'yellow',
+                class: 'border-yellow-200 text-yellow-750 hover:bg-yellow-50',
+            },
+            {
+                variant: 'tertiary',
+                color: 'purple',
+                class: 'border-purple-200 text-purple-750 hover:bg-purple-50',
+            },
+            {
+                variant: 'tertiary',
+                color: 'dark',
+                class: 'text-gray-800 border-gray-800 border-opacity-20 hover:bg-[#2E2B3B0D]',
+            },
+            {
+                variant: 'tertiary',
+                color: 'light',
+                class: 'text-white border-gray-600 border-opacity-30 hover:bg-[#C8C6D20D]',
+            },
+            {
+                variant: 'text',
+                color: 'blue',
+                class: 'text-blue-750 hover:underline',
+            },
+            {
+                variant: 'text',
+                color: 'yellow',
+                class: 'text-yellow-750  hover:underline',
+            },
+            {
+                variant: 'text',
+                color: 'purple',
+                class: 'text-purple-750 hover:underline',
+            },
+            {
+                variant: 'text',
+                color: 'dark',
+                class: 'text-gray-800 hover:underline',
+            },
+            {
+                variant: 'text',
+                color: 'light',
+                class: 'text-white hover:underline',
+            }
+        ]
+    }
 );
 
-interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-    set?: VariantProps<typeof button>;
+interface ButtonProps extends VariantProps<typeof button>, Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {
+    children: ReactNode;
+    href?: string;
 }
 
-const Button = ({ set, ...props }: ButtonProps) => {
-    return (
-        <button {...props} className={cn(button(set), props.className)}>
+/**
+ * General button component for navigation and click actions.
+ *
+ * Takes the following variants as props:
+ * @variation Variant [primary, secondary, tertiary, text] - the general style and importance of the button, see Figma.
+ * @variation Color [blue, yellow, purple, dark, light] - the color of the button.
+ *
+ * Takes the following additional props:
+ * @param isJustified [false, true] - whether the element scales to the full width of the parent.
+ * and any other button props.
+ *
+ * Labels are provided as children of this element.
+ * This Button dynamically determines its element type as either <button/> or <Link/> depending on the optional href attribute.
+ */
+function Button(props: ButtonProps){
+
+    // Conditionally render as Link or button depending on whether a local link (href attribute) is provided.
+
+    if (props.href) {
+        return (
+            <Link href={props.href} className={button(props)}>
+                {props.children}
+            </Link>
+        );
+    } else {
+        return <button {...props} className={button(props)}>
             {props.children}
-        </button>
-    );
+        </button>;
+    }
 };
 
-interface MotionButtonProps extends MotionProps, HTMLMotionProps<"button"> {
-    set?: VariantProps<typeof button>;
-}
-
-const MotionButton = ({ set, ...props }: MotionButtonProps) => {
-    return (
-        <motion.button {...props} className={cn(button(set), props.className)}>
-            {props.children}
-        </motion.button>
-    );
-};
-
-export { Button, MotionButton };
+export { Button };
