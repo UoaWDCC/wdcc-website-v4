@@ -1,7 +1,7 @@
 "use client";
 
-import { ButtonHTMLAttributes, LinkHTMLAttributes, ReactNode } from "react";
-import Link from "next/link";
+import { ButtonHTMLAttributes, ReactNode } from "react";
+import Link, { LinkProps } from "next/link";
 import { tv, type VariantProps } from "tailwind-variants";
 
 const button = tv({
@@ -136,13 +136,16 @@ type CommonProps = {
     children: ReactNode;
 };
 
-type ButtonProps = VariantProps<typeof button> &
+// Type if rendered as a button (no href provided)
+type ButtonVersionProps = VariantProps<typeof button> &
     ButtonHTMLAttributes<HTMLButtonElement> &
     CommonProps & { href?: never };
-type LinkProps = VariantProps<typeof button> & LinkHTMLAttributes<HTMLLinkElement> & CommonProps & { href: string };
 
-// Type guard to determine if the props are for a Link or Button.
-function isLinkProps(props: ButtonProps | LinkProps): props is LinkProps {
+// Type if rendered as a Link (href provided)
+type LinkVersionProps = VariantProps<typeof button> & LinkProps & CommonProps & { href: string; newTab?: boolean };
+
+// Type guard to determine if the props are for a Link or Button
+function isLinkProps(props: ButtonVersionProps | LinkVersionProps): props is LinkVersionProps {
     return props.href !== undefined;
 }
 
@@ -160,13 +163,14 @@ function isLinkProps(props: ButtonProps | LinkProps): props is LinkProps {
  * Labels are provided as children of this element.
  * This Button dynamically determines its element type as either <button/> or <Link/> depending on the optional href attribute.
  */
-function Button(props: ButtonProps | LinkProps) {
+function Button(props: ButtonVersionProps | LinkVersionProps) {
     // Conditionally render as Link or button depending on whether a local link (href attribute) is provided.
     if (isLinkProps(props)) {
         // Is Link
-        const { href, children } = props;
+        const { children, href, newTab = false } = props;
+        // TODO: use our anchor component for this
         return (
-            <Link href={href} className={button(props)}>
+            <Link {...props} href={href} className={button(props)} target={newTab ? "_blank" : "_self"}>
                 {children}
             </Link>
         );
@@ -179,6 +183,6 @@ function Button(props: ButtonProps | LinkProps) {
             </button>
         );
     }
-};
+}
 
 export { Button };
