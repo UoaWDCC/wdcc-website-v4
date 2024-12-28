@@ -2,6 +2,7 @@ import { NavigationLinkType } from "@/types/navigation";
 import type { ClassName } from "@/types/utils";
 
 import WDCCLogo from "@/assets/svg/WDCCLogo";
+import Arrow from "@/assets/svg/Arrow";
 import DropDown from "@/components/navigation/navbar/DropDownLink";
 import { PageLink } from "@/components/navigation/PageLink";
 import { Button } from "@/components/primitives/Button";
@@ -20,7 +21,7 @@ export default function NavigationBar({ className }: ClassName) {
             )}
         >
             <Anchor href="/">
-                <WDCCLogo className="fill-black lg:block" />
+                <WDCCLogo className="fill-black lg:block transition duration-150 hover:opacity-70"/>
             </Anchor>
             <div className="flex items-center gap-8 font-semibold lg:gap-12">
                 {/* Links */}
@@ -28,7 +29,7 @@ export default function NavigationBar({ className }: ClassName) {
                     <NavigationBarLinks links={navigationLinkData} />
                 </div>
                 {/* Vertical line */}
-                <div className="hidden h-5 w-0.5 rounded bg-black md:block" />
+                <div className="hidden h-5 w-0.5 rounded bg-gray-700 md:block" />
                 {/* Buttons */}
                 <div className="flex gap-3">
                     <NavigationMenu className="md:hidden" links={navigationLinkData} />

@@ -21,7 +21,7 @@ export const PageLink = ({ children, newTab = false, mode = "dark", shift, ...pr
                 <div
                     className={cn(
                         "pointer-events-none h-0.5 w-0 rounded transition-[width,padding] group-hover:w-1/2",
-                        mode === "light" ? "bg-blue-100" : "bg-blue-950"
+                        mode === "light" ? "bg-blue-100" : "bg-gray-700"
                     )}
                 />
             </div>

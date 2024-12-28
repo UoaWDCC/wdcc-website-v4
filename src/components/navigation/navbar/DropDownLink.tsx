@@ -64,7 +64,7 @@ function DropDownSublink({ link, open }: { link: NavigationLinkType; open: boole
                         <motion.span variants={LetterVariant}>{char}</motion.span>
                     </motion.span>
                 ))}
-                <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-black transition-[width] group-hover:w-1/2" />
+                <div className="absolute bottom-1 left-0 h-0.5 w-0 bg-gray-700 rounded transition-[width] group-hover:w-1/2" />
             </motion.div>
         </Link>
     );
