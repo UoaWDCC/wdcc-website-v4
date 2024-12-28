@@ -44,11 +44,12 @@ export default function NavigationBar({ className }: ClassName) {
 };
 
 const NavigationBarLinks = ({ links }: { links: NavigationLinkType[] }) =>
+    // z-10 is to ensure top-level nav links sit on top of sublinks
     links.map((link) =>
         link.drop ? (
-            <DropDown key={link.label} link={link} />
+            <DropDown key={link.label} link={link} className="z-10" />
         ) : (
-            <PageLink key={link.label} href={link.href}>
+            <PageLink key={link.label} href={link.href} className="z-10">
                 {link.label}
             </PageLink>
         )

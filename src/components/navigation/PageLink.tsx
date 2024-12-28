@@ -1,9 +1,10 @@
-import { ReactNode } from "react";
+import { AnchorHTMLAttributes, ReactNode } from "react";
 import Link, { LinkProps } from "next/link";
 
 import { cn } from "@/libs/utils";
 
-interface PageLinkProps extends LinkProps {
+// Need to omit href from AnchorHTMLAttributes because it conflicts with Next LinkProps
+interface PageLinkProps extends LinkProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
     // underline color
     mode?: "light" | "dark";
     // animate padding left on hover
