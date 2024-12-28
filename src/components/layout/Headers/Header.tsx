@@ -16,7 +16,7 @@ graphic - an accompanying graphic TBA.
 
 // TODO showcase header and graphic
 
-import { ReactNode } from "react";
+// import { ReactNode } from "react";
 import { tv, VariantProps } from 'tailwind-variants';
 import { Button } from "@/components/primitives/Button";
 
@@ -80,11 +80,11 @@ interface HeaderProps extends VariantProps<typeof header>{
         label: string;
         href: string;
     };
-    graphic?: string;
+    // graphic?: string; TODO
 }
 
 
-export default function Header({ variant, color, title, description, primaryButton, secondaryButton, backlink, graphic}: HeaderProps) {
+export default function Header({ variant, color, title, description, primaryButton, secondaryButton, backlink}: HeaderProps) {
     return (
         <header className={header({variant, color})}>
             {variant === "primary"

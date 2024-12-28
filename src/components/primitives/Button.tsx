@@ -16,12 +16,12 @@ This Button dynamically determines its element type as either <button/> or <Link
 "use client";
 
 import React, { ButtonHTMLAttributes, ReactNode } from "react";
-import { HTMLMotionProps, motion, MotionProps } from "framer-motion";
+// import { HTMLMotionProps, motion, MotionProps } from "framer-motion";
 import { tv, type VariantProps } from "tailwind-variants";
 import Link from "next/link";
 
 const button = tv({
-        base: "rounded-full py-2 px-6 font-bold flex justify-center items-center transition duration-200 w-fit",
+        base: "rounded-full py-2 px-6 font-bold flex justify-center items-center transition duration-200 w-fit hover:cursor-pointer",
         variants: {
             variant: {
                 primary: "border-2",
