@@ -153,20 +153,21 @@ interface ButtonProps extends VariantProps<typeof button>, Omit<ButtonHTMLAttrib
  * Labels are provided as children of this element.
  * This Button dynamically determines its element type as either <button/> or <Link/> depending on the optional href attribute.
  */
-function Button(props: ButtonProps){
-
+function Button({ children, href, ...props }: ButtonProps) {
     // Conditionally render as Link or button depending on whether a local link (href attribute) is provided.
 
-    if (props.href) {
+    if (href) {
         return (
-            <Link href={props.href} className={button(props)}>
-                {props.children}
+            <Link href={href} className={button(props)}>
+                {children}
             </Link>
         );
     } else {
-        return <button {...props} className={button(props)}>
-            {props.children}
-        </button>;
+        return (
+            <button {...props} className={button(props)}>
+                {children}
+            </button>
+        );
     }
 };
 
