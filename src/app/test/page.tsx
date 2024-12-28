@@ -16,7 +16,7 @@ export default function TestPage() {
                 color="blue"
                 title="projects"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                primaryButton={{label: "Apply for a project →", href: "https://google.com"}}
+                primaryButton={{label: "Apply for a project ⮕", href: "https://google.com"}}
                 secondaryButton={{label: "View past projects", href: "/"}}/>
 
         {/* Brand-color primary header without buttons */}

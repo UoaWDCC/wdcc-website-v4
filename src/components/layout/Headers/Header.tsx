@@ -147,7 +147,7 @@ export default function Header({
                     <div className="flex flex-col gap-3 py-3">
                         {backlink && (
                             <Link href={backlink.href} className={backlinkvar({ color })}>
-                                ← {backlink.label}
+                                ⬅ {backlink.label}
                             </Link>
                         )}
                         <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
