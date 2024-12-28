@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 import type { NavigationLinkType } from "@/types/navigation";
 
+import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";
 
-import { Button } from "@/components/primitives/Button";
-import { GenerateNavigationMenuLinks } from "./GenerateNavigationLinks";
+import { GenerateNavigationMenuLinks } from "./NavigationLinks";
+
 
 // ONLY USE CLASSNAME TO CHANGE MEDIA QUERY
 const NavigationMenu = ({ links, className }: { links: NavigationLinkType[]; className?: string }) => {
