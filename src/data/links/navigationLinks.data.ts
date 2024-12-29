@@ -38,11 +38,15 @@ export const navigationLinkData: NavigationLinkType[] = [
         label: "About",
         drop: [
             {
-                href: "/team",
+                href: "/about",
+                label: "About WDCC",
+            },
+            {
+                href: "/about/team",
                 label: "Meet the team",
             },
             {
-                href: "/faq",
+                href: "/about/faq",
                 label: "FAQs",
             },
         ],
