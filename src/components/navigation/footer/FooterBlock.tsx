@@ -1,8 +1,12 @@
 import type { FooterLink } from "@/types/navigation";
 
+
+
 import { cn } from "@/libs/utils";
 
-import { PageLink } from "../PageLink";
+import { UnderlineLink } from "../UnderlineLink";
+
+
 
 const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
     return (
@@ -13,15 +17,9 @@ const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
             </strong>
             <div className={cn("flex flex-col border-white/70 pb-4 sm:border-none sm:pb-0", last && "border-none")}>
                 {data.links.map((link) => (
-                    <PageLink
-                        key={link.label}
-                        href={link.href}
-                        newTab={link.external}
-                        mode="light"
-                        shift
-                    >
+                    <UnderlineLink key={link.label} href={link.href} newTab={link.external} mode="light" shift>
                         {link.label}
-                    </PageLink>
+                    </UnderlineLink>
                 ))}
             </div>
         </div>

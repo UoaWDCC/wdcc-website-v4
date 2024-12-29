@@ -4,16 +4,16 @@ import Link, { LinkProps } from "next/link";
 import { cn } from "@/libs/utils";
 
 // Need to omit href from AnchorHTMLAttributes because it conflicts with Next LinkProps
-interface PageLinkProps extends LinkProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
+interface UnderlineLinkProps extends LinkProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
     // underline color
     mode?: "light" | "dark";
     // animate padding left on hover
     shift?: boolean;
-    children?: ReactNode;
+    children: ReactNode;
     newTab?: boolean;
 }
 
-export const PageLink = ({ children, newTab = false, mode = "dark", shift, ...props }: PageLinkProps) => {
+export const UnderlineLink = ({ children, newTab, mode = "dark", shift, ...props }: UnderlineLinkProps) => {
     return (
         <Link {...props} target={newTab ? "_blank" : "_self"}>
             <div className="group z-10 w-min">

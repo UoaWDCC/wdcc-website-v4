@@ -1,10 +1,10 @@
 import { NavigationLinkType } from "@/types/navigation";
 import type { ClassName } from "@/types/utils";
 
-import WDCCLogo from "@/assets/svg/WDCCLogo";
 import Arrow from "@/assets/svg/Arrow";
+import WDCCLogo from "@/assets/svg/WDCCLogo";
 import DropDown from "@/components/navigation/navbar/DropDownLink";
-import { PageLink } from "@/components/navigation/PageLink";
+import { UnderlineLink } from "@/components/navigation/UnderlineLink";
 import { Button } from "@/components/primitives/Button";
 import { navigationLinkData } from "@/data/links/navigationLinks.data";
 import { cn } from "@/libs/utils";
@@ -16,12 +16,12 @@ export default function NavigationBar({ className }: ClassName) {
     return (
         <nav
             className={cn(
-                "flex select-none flex-col items-center justify-between gap-4 px-16 py-4 sm:flex-row lg:py-6 backdrop-blur-sm",
+                "flex select-none flex-col items-center justify-between gap-4 px-16 py-4 backdrop-blur-sm sm:flex-row lg:py-6",
                 className
             )}
         >
             <Anchor href="/">
-                <WDCCLogo className="fill-black lg:block transition duration-150 hover:opacity-70"/>
+                <WDCCLogo className="fill-black transition duration-150 hover:opacity-70 lg:block" />
             </Anchor>
             <div className="flex items-center gap-8 font-semibold lg:gap-12">
                 {/* Links */}
@@ -34,24 +34,24 @@ export default function NavigationBar({ className }: ClassName) {
                 <div className="flex gap-3">
                     <NavigationMenu className="md:hidden" links={navigationLinkData} />
                     <Anchor href="https://go.wdcc.co.nz" newTab>
-                        <Button variant="primary" color="blue" className="whitespace-pre">
-                            Join WDCC  <Arrow/>
+                        <Button variant="primary" color="blue">
+                            Join WDCC <Arrow />
                         </Button>
                     </Anchor>
                 </div>
             </div>
         </nav>
     );
-};
+}
 
 const NavigationBarLinks = ({ links }: { links: NavigationLinkType[] }) =>
     // z-10 is to ensure top-level nav links sit on top of sublinks
     links.map((link) =>
         link.drop ? (
-            <DropDown key={link.label} link={link} className="z-10" />
+            <DropDown key={link.label} link={link} className="z-10" href={link.href} />
         ) : (
-            <PageLink key={link.label} href={link.href} className="z-10">
+            <UnderlineLink key={link.label} href={link.href} className="z-10">
                 {link.label}
-            </PageLink>
+            </UnderlineLink>
         )
     );

@@ -1,19 +1,19 @@
 "use client";
 
-import { useState, type HTMLAttributes } from "react";
-import Link from "next/link";
+import { AnchorHTMLAttributes, ReactNode, useState } from "react";
+import Link, { LinkProps } from "next/link";
 import { motion, type Variants } from "framer-motion";
 
 import type { NavigationLinkType } from "@/types/navigation";
 
-import { PageLink } from "@/components/navigation/PageLink";
 import { cn } from "@/libs/utils";
 
-interface DropdownProps extends HTMLAttributes<HTMLAnchorElement> {
+// Need to omit href from AnchorHTMLAttributes because it conflicts with Next LinkProps
+interface DropdownProps extends LinkProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
     link: NavigationLinkType;
 }
 
-const DropDown = ({ link, ...props }: DropdownProps) => {
+export default function DropDown({ link, ...props }: DropdownProps) {
     const [open, setOpen] = useState(false);
 
     const HoverOn = () => {
@@ -23,14 +23,13 @@ const DropDown = ({ link, ...props }: DropdownProps) => {
     const HoverOff = () => {
         setOpen(false);
     };
+
     return (
-        // xd unreadable code sorry not sorry, can't fire me this way
-        // Jesus-
         <motion.div className="relative flex flex-col gap-4" onHoverStart={HoverOn} onHoverEnd={HoverOff}>
             {/* Main link in navbar */}
-            <PageLink key={link.label} href={link.href} className={cn("whitespace-nowrap", props.className)}>
+            <BracketLink {...props} className={cn("whitespace-nowrap", props.className)} open={open}>
                 {link.label}
-            </PageLink>
+            </BracketLink>
 
             {/* Dropdown links */}
             {link.drop && (
@@ -48,6 +47,31 @@ const DropDown = ({ link, ...props }: DropdownProps) => {
             )}
         </motion.div>
     );
+}
+
+// Need to omit href from AnchorHTMLAttributes because it conflicts with Next LinkProps
+interface BracketLinkProps extends LinkProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
+    children: ReactNode;
+    open?: boolean;
+    newTab?: boolean;
+}
+
+const BracketLink = ({ children, newTab, open, ...props }: BracketLinkProps) => {
+    return (
+        <Link {...props} target={newTab ? "_blank" : "_self"}>
+            <div className={cn("relative z-10 flex items-center", props.className)}>
+                <p className="cursor-pointer whitespace-nowrap">
+                    <span className={cn("inline-block -translate-x-1 transition-transform", open && "translate-x-0")}>
+                        (
+                    </span>
+                    {children}
+                    <span className={cn("inline-block translate-x-1 transition-transform", open && "translate-x-0")}>
+                        )
+                    </span>
+                </p>
+            </div>
+        </Link>
+    );
 };
 
 function DropDownSublink({ link, open }: { link: NavigationLinkType; open: boolean }) {
@@ -64,7 +88,7 @@ function DropDownSublink({ link, open }: { link: NavigationLinkType; open: boole
                         <motion.span variants={LetterVariant}>{char}</motion.span>
                     </motion.span>
                 ))}
-                <div className="absolute bottom-1 left-0 h-0.5 w-0 bg-gray-700 rounded transition-[width] group-hover:w-1/2" />
+                <div className="absolute bottom-1 left-0 h-0.5 w-0 rounded bg-gray-700 transition-[width] group-hover:w-1/2" />
             </motion.div>
         </Link>
     );
@@ -90,5 +114,3 @@ const containerVariant: Variants = {
         display: "flex",
     },
 };
-
-export default DropDown;
