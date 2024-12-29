@@ -1,8 +1,6 @@
-import React from "react";
-
 import DiscordLogo from "@/assets/svg/DiscordLogo";
 
-import { Button } from "../primitives/Button";
+import { Button } from "../../primitives/Button";
 
 const FooterSocials = () => {
     return (
