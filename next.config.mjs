@@ -10,18 +10,7 @@ const nextConfig = {
         removeConsole: process.env.NODE_ENV === "production",
     },
     images: {
-        remotePatterns: [
-            {
-                protocol: "https",
-                hostname: "placehold.co",
-                pathname: "/**",
-            },
-            {
-                protocol: "https",
-                hostname: "drive.google.com",
-                pathname: "/**",
-            },
-        ],
+        remotePatterns: [],
     },
 };
 
