@@ -8,7 +8,7 @@ import FooterSocials from "./FooterSocials";
 
 const FooterLinks = () => {
     return (
-        <footer className="mt-auto flex flex-col items-center bg-blue-900 pb-20">
+        <footer className="mt-24 flex flex-col items-center bg-blue-900 pb-20">
             <div
                 className={cn(
                     "grid w-[clamp(300px,100%,1600px)] grid-cols-1 whitespace-nowrap px-10 pt-4 text-white sm:grid-cols-4 lg:grid-cols-6"

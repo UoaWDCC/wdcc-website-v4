@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion-3d";
 
 import Draw from "@/app/_component/Draw";
+import { Button } from "@/components/primitives/Button";
 import useRelativeMouse from "@/hooks/useRelativeMouse";
 
 const WDCCThreeLogo = dynamic(() => import("@/components/three/primitives/index").then((mod) => mod.WDCCThreeLogo), {
@@ -27,7 +28,7 @@ const WDCCHero = () => {
 
     return (
         <div className="relative flex h-dvh w-full flex-col items-center justify-center" ref={container}>
-            <div className="w-[clamp(300px,100%,1100px)] self-center px-8 text-center text-md">
+            <div className="flex w-[clamp(300px,100%,1100px)] flex-col items-center self-center px-8 text-center text-md">
                 <h3 className="font-normal tracking-[25%] text-blue-800">WEB DEVELOPMENT AND CONSULTING CLUB</h3>
                 <h1 className="text-5xl font-bold italic text-blue-brand">
                     Aotearoa’s largest student technology society.
@@ -41,6 +42,9 @@ const WDCCHero = () => {
                     </span>
                     .
                 </p>
+                <div className="mt-8">
+                    <Button set={{ variant: "primary", color: "blue" }}>Become a member for 2025</Button>
+                </div>
             </div>
             <View className="flex h-[500px] w-[800px] flex-col items-center justify-center">
                 <Suspense fallback={null}>

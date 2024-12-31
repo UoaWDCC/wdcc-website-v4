@@ -5,7 +5,7 @@ import { View } from "@/components/three/scene/View";
 import ThreeLayout from "@/components/ThreePageLayout";
 
 import SponsorSection from "./_components/SponsorSection";
-import ThisIsWDCC from "./_components/ThisIsWdcc";
+import ThisIsWDCC from "./_components/ThisIsWDCC";
 import WDCCHero from "./_components/WDCCHero";
 
 export default function Home() {
@@ -21,9 +21,6 @@ export default function Home() {
                 <WDCCHero />
                 <ThisIsWDCC />
                 <SponsorSection />
-                <div>
-                    <div className="h-[1000px]"></div>
-                </div>
             </main>
             <FooterLinks />
         </ThreeLayout>
