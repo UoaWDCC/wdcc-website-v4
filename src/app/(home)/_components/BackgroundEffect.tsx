@@ -4,8 +4,8 @@ import React, { useRef } from "react";
 import { useFrame, Vector3 } from "@react-three/fiber";
 import { DoubleSide, Group, Mesh } from "three";
 
-import { CommonLight } from "../CommonLight";
-import { TrianglePlane } from "../primitives/TrianglePlane";
+import { CommonLight } from "../../../components/three/CommonLight";
+import { TrianglePlane } from "../../../components/three/primitives/TrianglePlane";
 
 // instance settings
 const RADIUS = 32;
@@ -15,7 +15,7 @@ const RAD_INCREMENT = (Math.PI * 2) / COUNT;
 // movement settings
 const SPEED = Math.PI / 16; // ref: pi*2 is one full rotation per second
 const ROTCHAOS = 2;
-const POSCHAOS = 6;
+const POSCHAOS = 8;
 
 const TRIANGLEOBJ = ({ position, faceRotation }: { position: Vector3; faceRotation: number }) => {
     const meshRef = useRef<Mesh>(null!);
