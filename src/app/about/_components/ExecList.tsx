@@ -1,7 +1,7 @@
 import Image from "next/image";
 import placeholder from "@public/200x200.png";
 
-import { Exec } from "@/types/models";
+import type { Exec } from "@/types/models";
 
 interface ExecListProps {
     execs: Exec[];

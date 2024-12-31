@@ -1,11 +1,11 @@
 import React from "react";
 
-import { FullLink } from "@/types/links";
+import type { NavigationLinkType } from "@/types/navigation";
 
 import { Anchor, PageLink } from "@/components/primitives/Anchor";
 import DropDown from "@/components/primitives/DropDown";
 
-export const GenerateNavigationBarLinks = ({ links }: { links: FullLink[] }) =>
+export const GenerateNavigationBarLinks = ({ links }: { links: NavigationLinkType[] }) =>
     links.map((link) =>
         link.drop ? (
             <DropDown key={link.label} link={link} />
@@ -16,7 +16,7 @@ export const GenerateNavigationBarLinks = ({ links }: { links: FullLink[] }) =>
         )
     );
 
-export const GenerateNavigationMenuLinks = ({ links }: { links: FullLink[] }) =>
+export const GenerateNavigationMenuLinks = ({ links }: { links: NavigationLinkType[] }) =>
     links.map((link) => (
         <Anchor key={link.label} href={link.href} className="w-full text-center text-[15vw]">
             {link.label}

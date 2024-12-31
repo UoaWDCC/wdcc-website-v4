@@ -1,15 +1,16 @@
-import StandardPageLayout from "@/components/common/StandardPageLayout";
+import StandardPageLayout from "@/components/StandardPageLayout";
 
-import EventsPageHeader from "./components/EventsPageHeader";
-import EventsRoadmap from "./components/EventsRoadmap";
-import PastEvents from "./components/PastEvents";
+import EventsPageHeader from "./_components/EventsPageHeader";
+import EventsRoadmap from "./_components/EventsRoadmap";
+import PastEventsSection from "./_components/PastEventsSection";
+import { pastEventsData } from "./_data/pastEvents.data";
 
 export default function EventsPage() {
     return (
         <StandardPageLayout>
             <EventsPageHeader />
             <EventsRoadmap />
-            <PastEvents />
+            <PastEventsSection pastEvents={pastEventsData} />
         </StandardPageLayout>
     );
 }

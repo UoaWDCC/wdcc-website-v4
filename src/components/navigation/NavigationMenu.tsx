@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-import type { FullLink } from "@/types/links";
+import type { NavigationLinkType } from "@/types/navigation";
 
 import { cn } from "@/libs/utils";
 
@@ -11,7 +11,7 @@ import { Button } from "../primitives/Button";
 import { GenerateNavigationMenuLinks } from "./generate/GenerateNavigationLinks";
 
 // ONLY USE CLASSNAME TO CHANGE MEDIA QUERY
-const NavigationMenu = ({ links, className }: { links: FullLink[]; className?: string }) => {
+const NavigationMenu = ({ links, className }: { links: NavigationLinkType[]; className?: string }) => {
     const [toggle, setToggle] = useState(false);
 
     const handleToggle = () => {

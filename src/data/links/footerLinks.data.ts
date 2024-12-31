@@ -1,0 +1,59 @@
+import type { FooterLink } from "@/types/navigation";
+
+export const footerLinkData: FooterLink[] = [
+    {
+        title: "Explore",
+        links: [
+            {
+                label: "Home",
+                href: "/",
+            },
+            {
+                label: "Projects",
+                href: "/",
+            },
+            {
+                label: "Events",
+                href: "/",
+            },
+            {
+                label: "Team",
+                href: "/",
+            },
+            {
+                label: "FAQs",
+                href: "/",
+            },
+        ],
+    },
+    {
+        title: "About Projects",
+        links: [
+            {
+                label: "Learn more",
+                href: "/",
+            },
+            {
+                label: "Joining our project",
+                href: "/",
+            },
+            {
+                label: "See our projects",
+                href: "/",
+            },
+        ],
+    },
+    {
+        title: "Sponsors",
+        links: [
+            {
+                label: "Our sponsors",
+                href: "/",
+            },
+            {
+                label: "Sponsor us",
+                href: "/",
+            },
+        ],
+    },
+];

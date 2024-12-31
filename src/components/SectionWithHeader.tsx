@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
 
-import Header from "../primitives/Header";
-
 interface SectionWithHeaderProps {
     children: ReactNode;
     headerText: string;
@@ -10,7 +8,7 @@ interface SectionWithHeaderProps {
 export default function SectionWithHeader({ children, headerText }: SectionWithHeaderProps) {
     return (
         <div className="px-36 py-20">
-            <Header className="mb-5">{headerText}</Header>
+            <h2 className="mb-5">{headerText}</h2>
             {children}
         </div>
     );
