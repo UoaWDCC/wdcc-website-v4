@@ -4,6 +4,7 @@ import NavigationBar from "@/components/navigation/navbar/NavigationBar";
 import { View } from "@/components/three/scene/View";
 import ThreeLayout from "@/components/ThreePageLayout";
 
+import SponsorSection from "./_components/SponsorSection";
 import ThisIsWDCC from "./_components/ThisIsWdcc";
 import WDCCHero from "./_components/WDCCHero";
 
@@ -16,15 +17,15 @@ export default function Home() {
             <nav className="background sticky top-0 z-10 rounded-full">
                 <NavigationBar className="py-4" />
             </nav>
-            <main className="mt-8 flex w-full flex-col justify-center">
+            <main className="mt-8 flex w-full flex-col items-center justify-center">
                 <WDCCHero />
-                {/* <Erm /> */}
                 <ThisIsWDCC />
+                <SponsorSection />
                 <div>
                     <div className="h-[1000px]"></div>
                 </div>
-                <FooterLinks />
             </main>
+            <FooterLinks />
         </ThreeLayout>
     );
 }
