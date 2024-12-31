@@ -172,10 +172,10 @@ function Button(props: ButtonVersionProps | LinkVersionProps) {
     // Conditionally render as Link or button depending on whether a local link (href attribute) is provided.
     if (isLinkProps(props)) {
         // Is Link
-        const { children, href, newTab = false } = props;
+        const { children, href, newTab = false, ...rest } = props;
         // TODO: use our anchor component for this
         return (
-            <Link {...props} href={href} className={button(props.set)} target={newTab ? "_blank" : "_self"}>
+            <Link {...rest} href={href} className={button(props.set)} target={newTab ? "_blank" : "_self"}>
                 {children}
             </Link>
         );
