@@ -18,6 +18,13 @@ const Common = dynamic(() => import("@/components/three/CommonLight").then((mod)
 const WDCCHero = () => {
     const container = useRef(null);
     const mouse = useRelativeMouse(container, { persist: true });
+
+    const [, setReady] = React.useState(false);
+
+    React.useEffect(() => {
+        setReady(true); // force trigger re-render for mouse hook to work
+    }, []);
+
     return (
         <div className="relative flex h-dvh w-full flex-col items-center justify-center" ref={container}>
             <div className="w-[clamp(300px,100%,1100px)] self-center px-8 text-center">
@@ -35,7 +42,7 @@ const WDCCHero = () => {
                     .
                 </p>
             </div>
-            <View className="flex h-[500px] w-[500px] flex-col items-center justify-center">
+            <View className="flex h-[500px] w-[800px] flex-col items-center justify-center">
                 <Suspense fallback={null}>
                     {/* rotate the logo relative to the mouse, range from -60deg to 60deg on x and y axis*/}
                     <motion.group
