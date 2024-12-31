@@ -1,8 +1,6 @@
-import React from "react";
-
 import DiscordLogo from "@/assets/svg/DiscordLogo";
 
-import { Button } from "../primitives/Button";
+import { Button } from "../../primitives/Button";
 
 const FooterSocials = () => {
     return (
@@ -11,7 +9,7 @@ const FooterSocials = () => {
             <div className="h-1 w-full rounded-full bg-gradient-to-br from-blue-brand to-blue-750" />
             <div className="mt-8 flex w-full items-center justify-between">
                 <DiscordLogo className="fill-white" />
-                <Button set={{ type: "primary" }} className="w-min">
+                <Button variant="primary" color="blue">
                     Back to Top
                 </Button>
             </div>
