@@ -19,7 +19,7 @@ const NavigationMenu = ({ links, className }: { links: NavigationLinkType[]; cla
 
     return (
         <>
-            <Button variant="secondary" color="blue" onClick={handleToggle} className={cn("", className)}>
+            <Button set={{ variant: "secondary", color: "blue" }} onClick={handleToggle} className={cn("", className)}>
                 Menu
             </Button>
             {/* todo: this should lock scrolling from happening */}
@@ -41,7 +41,7 @@ const NavigationMenu = ({ links, className }: { links: NavigationLinkType[]; cla
                     <div className="my-8 flex flex-col">
                         <NavigationMenuLinks links={links} />
                     </div>
-                    <Button variant="primary" color="blue" onClick={handleToggle}>
+                    <Button set={{ variant: "primary", color: "blue" }} onClick={handleToggle}>
                         {/* X icon */}
                         <svg
                             className="size-12"

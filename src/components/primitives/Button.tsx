@@ -5,7 +5,7 @@ import Link, { LinkProps } from "next/link";
 import { tv, type VariantProps } from "tailwind-variants";
 
 const button = tv({
-    base: "flex w-fit items-center justify-center rounded-full px-6 py-2 font-bold transition duration-200 hover:cursor-pointer gap-2",
+    base: "flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 py-2 text-md font-bold transition duration-200 hover:cursor-pointer",
     variants: {
         variant: {
             primary: "border-2 py-[calc(0.5rem-2px)]",
@@ -20,6 +20,10 @@ const button = tv({
             dark: "",
             light: "",
         },
+        width: {
+            full: "w-full",
+            fit: "w-fit",
+        },
         isJustified: {
             true: "w-full",
         },
@@ -27,6 +31,7 @@ const button = tv({
     defaultVariants: {
         variant: "primary",
         color: "blue",
+        width: "fit",
     },
     compoundVariants: [
         {
@@ -52,7 +57,7 @@ const button = tv({
         {
             variant: "primary",
             color: "light",
-            class: "border-gray-200 bg-gray-10 text-gray-800 hover:bg-gray-100",
+            class: "border-gray-200 bg-gray-100 text-gray-800 hover:bg-gray-100",
         },
         {
             variant: "secondary",
@@ -136,13 +141,13 @@ type CommonProps = {
     children: ReactNode;
 };
 
+type Variant = { set?: VariantProps<typeof button> };
+
 // Type if rendered as a button (no href provided)
-type ButtonVersionProps = VariantProps<typeof button> &
-    ButtonHTMLAttributes<HTMLButtonElement> &
-    CommonProps & { href?: never };
+type ButtonVersionProps = Variant & ButtonHTMLAttributes<HTMLButtonElement> & CommonProps & { href?: never };
 
 // Type if rendered as a Link (href provided)
-type LinkVersionProps = VariantProps<typeof button> & LinkProps & CommonProps & { href: string; newTab?: boolean };
+type LinkVersionProps = Variant & LinkProps & CommonProps & { href: string; newTab?: boolean };
 
 // Type guard to determine if the props are for a Link or Button
 function isLinkProps(props: ButtonVersionProps | LinkVersionProps): props is LinkVersionProps {
@@ -170,7 +175,7 @@ function Button(props: ButtonVersionProps | LinkVersionProps) {
         const { children, href, newTab = false } = props;
         // TODO: use our anchor component for this
         return (
-            <Link {...props} href={href} className={button(props)} target={newTab ? "_blank" : "_self"}>
+            <Link {...props} href={href} className={button(props.set)} target={newTab ? "_blank" : "_self"}>
                 {children}
             </Link>
         );
@@ -178,7 +183,7 @@ function Button(props: ButtonVersionProps | LinkVersionProps) {
         // Is button
         const { children } = props;
         return (
-            <button {...props} className={button(props)}>
+            <button {...props} className={button(props.set)}>
                 {children}
             </button>
         );
