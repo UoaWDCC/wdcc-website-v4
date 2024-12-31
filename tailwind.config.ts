@@ -22,15 +22,15 @@ export default {
         },
         fontSize: {
             /* Type scaling TBA, modify where needed */
-            xs: "0.8rem",
-            sm: "0.9rem",
-            md: "1.125rem",
-            lg: "1.25rem",
-            xl: "1.6rem",
-            "2xl": "2rem",
-            "3xl": "2.4rem",
-            "4xl": "3rem",
-            "5xl": "3.8rem",
+            xs: "0.750rem", //12px
+            sm: "0.875rem", //14px
+            md: "1.000rem", //16px
+            lg: "1.375rem", //22px
+            xl: "1.625rem", //26px
+            "2xl": "2rem", //32px
+            "3xl": "2.375rem", // 38px
+            "4xl": "3rem", // 48px
+            "5xl": "4rem", // 64px
         },
         extend: {
             colors: {
@@ -130,7 +130,7 @@ export default {
                     100: "hsl(var(--green-100))",
                     50: "hsl(var(--green-050))",
                     20: "hsl(var(--green-020))",
-                }
+                },
             },
         },
     },
