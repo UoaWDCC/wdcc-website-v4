@@ -27,7 +27,7 @@ export const footerLinkData: FooterLink[] = [
         ],
     },
     {
-        title: "About Projects",
+        title: "Projects",
         links: [
             {
                 label: "Learn more",
@@ -38,7 +38,28 @@ export const footerLinkData: FooterLink[] = [
                 href: "/",
             },
             {
-                label: "See our projects",
+                label: "Past projects",
+                href: "/",
+            },
+            {
+                label: "Project roles",
+                href: "/",
+            },
+        ],
+    },
+    {
+        title: "Events",
+        links: [
+            {
+                label: "About events",
+                href: "/",
+            },
+            {
+                label: "Workshops",
+                href: "/",
+            },
+            {
+                label: "Social",
                 href: "/",
             },
         ],
@@ -51,7 +72,7 @@ export const footerLinkData: FooterLink[] = [
                 href: "/",
             },
             {
-                label: "Sponsor us",
+                label: "Sponsor us!",
                 href: "/",
             },
         ],
