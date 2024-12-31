@@ -1,5 +1,6 @@
 import BackgroundEffect from "@/app/(home)/_components/BackgroundEffect";
-import NavigationBar from "@/components/NavigationBar";
+import FooterLinks from "@/components/navigation/footer/FooterLinks";
+import NavigationBar from "@/components/navigation/navbar/NavigationBar";
 import { View } from "@/components/three/scene/View";
 import ThreeLayout from "@/components/ThreePageLayout";
 
@@ -12,7 +13,7 @@ export default function Home() {
             <View className="fixed -z-10 size-full scale-150" background>
                 <BackgroundEffect />
             </View>
-            <nav className="background sticky top-4 z-10 rounded-full">
+            <nav className="background sticky top-0 z-10 rounded-full">
                 <NavigationBar className="py-4" />
             </nav>
             <main className="mt-8 flex w-full flex-col justify-center">
@@ -20,8 +21,9 @@ export default function Home() {
                 {/* <Erm /> */}
                 <ThisIsWDCC />
                 <div>
-                    <div className="h-[2000px]"></div>
+                    <div className="h-[1000px]"></div>
                 </div>
+                <FooterLinks />
             </main>
         </ThreeLayout>
     );

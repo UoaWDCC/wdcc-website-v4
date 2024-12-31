@@ -27,12 +27,12 @@ const WDCCHero = () => {
 
     return (
         <div className="relative flex h-dvh w-full flex-col items-center justify-center" ref={container}>
-            <div className="w-[clamp(300px,100%,1100px)] self-center px-8 text-center">
+            <div className="w-[clamp(300px,100%,1100px)] self-center px-8 text-center text-md">
                 <h3 className="font-normal tracking-[25%] text-blue-800">WEB DEVELOPMENT AND CONSULTING CLUB</h3>
                 <h1 className="text-5xl font-bold italic text-blue-brand">
                     Aotearoa’s largest student technology society.
                 </h1>
-                <p className="mt-8 text-xl text-blue-700">
+                <p className="mt-8 text-lg text-blue-700">
                     We connect tomorrow’s developers, designers, and tech project leaders with the real-world experience
                     and opportunities that{" "}
                     <span className="relative italic underline">

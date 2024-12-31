@@ -32,8 +32,8 @@ const info: CardProps[] = [
 const ThisIsWDCC = () => {
     return (
         <div className="mt-8 flex flex-col items-center justify-center text-xl text-blue-700">
-            <h2 className="text-center text-5xl font-semibold">What do we do?</h2>
-            <p className="w-[clamp(300px,100%,800px)] text-center">
+            <h2 className="text-center text-3xl font-semibold">What do we do?</h2>
+            <p className="w-[clamp(300px,100%,800px)] text-center text-lg">
                 WDCC aims to bridge the gap between university knowledge and real-world industry practices. We run
                 projects with real-world clients that solve real-world problems.
             </p>
