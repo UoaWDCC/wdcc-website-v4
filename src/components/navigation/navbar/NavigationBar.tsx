@@ -16,10 +16,18 @@ export default function NavigationBar({ className }: ClassName) {
     return (
         <nav
             className={cn(
-                "flex select-none flex-col items-center justify-between gap-4 px-16 py-4 backdrop-blur-sm sm:flex-row lg:py-6",
+                "relative flex select-none flex-col items-center justify-between gap-4 px-16 py-4 sm:flex-row lg:py-6",
                 className
             )}
         >
+            {/* progressive blur */}
+            <div className="absolute inset-0 isolate -z-10 size-full">
+                <div className="absolute h-1/5 w-full backdrop-blur-[2px]" />
+                <div className="absolute h-2/5 w-full backdrop-blur-[2px]" />
+                <div className="absolute h-3/5 w-full backdrop-blur-[1px]" />
+                <div className="absolute h-4/5 w-full backdrop-blur-[0.5px]" />
+                <div className="absolute h-full w-full backdrop-blur-[0.5px]" />
+            </div>
             <Anchor href="/">
                 <WDCCLogo className="fill-black transition duration-150 hover:opacity-70 lg:block" />
             </Anchor>
