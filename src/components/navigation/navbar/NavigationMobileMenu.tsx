@@ -1,14 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 import type { NavigationLinkType } from "@/types/navigation";
 
+import { Anchor } from "@/components/primitives/Anchor";
+import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";
-
-import { Button } from "../primitives/Button";
-import { GenerateNavigationMenuLinks } from "./generate/GenerateNavigationLinks";
 
 // ONLY USE CLASSNAME TO CHANGE MEDIA QUERY
 const NavigationMenu = ({ links, className }: { links: NavigationLinkType[]; className?: string }) => {
@@ -20,7 +19,7 @@ const NavigationMenu = ({ links, className }: { links: NavigationLinkType[]; cla
 
     return (
         <>
-            <Button set={{ type: "primary", color: "blue" }} className={cn("", className)} onClick={handleToggle}>
+            <Button variant="secondary" color="blue" onClick={handleToggle} className={cn("", className)}>
                 Menu
             </Button>
             {/* todo: this should lock scrolling from happening */}
@@ -40,13 +39,9 @@ const NavigationMenu = ({ links, className }: { links: NavigationLinkType[]; cla
                     </div>
                     <hr className="w-1/2 bg-white" />
                     <div className="my-8 flex flex-col">
-                        <GenerateNavigationMenuLinks links={links} />
+                        <NavigationMenuLinks links={links} />
                     </div>
-                    <Button
-                        set={{ type: "icon", color: "none" }}
-                        className="flex w-1/2 justify-center border border-white/20"
-                        onClick={handleToggle}
-                    >
+                    <Button variant="primary" color="blue" onClick={handleToggle}>
                         {/* X icon */}
                         <svg
                             className="size-12"
@@ -80,3 +75,10 @@ const containerVariant = (toggle: boolean) => {
         },
     };
 };
+
+const NavigationMenuLinks = ({ links }: { links: NavigationLinkType[] }) =>
+    links.map((link) => (
+        <Anchor key={link.label} href={link.href} className="w-full text-center text-[14vw]">
+            {link.label}
+        </Anchor>
+    ));

@@ -1,11 +1,11 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import Link, { LinkProps } from "next/link";
 import { tv, type VariantProps } from "tailwind-variants";
 
 import { cn } from "@/libs/utils";
 
 const anchor = tv({
-    base: "flex items-center justify-center whitespace-nowrap px-3 py-2",
+    base: "flex items-center justify-center whitespace-nowrap",
     variants: {
         type: {
             primary: "bg-blue-500 text-white",
@@ -23,40 +23,14 @@ const anchor = tv({
 interface AnchorProps extends LinkProps<HTMLAnchorElement> {
     set?: VariantProps<typeof anchor>;
     className?: string;
+    newTab?: boolean;
     children?: ReactNode;
 }
 
-const Anchor = ({ set, className, children, ...props }: AnchorProps) => {
+export const Anchor = ({ set, className, newTab = false, children, ...props }: AnchorProps) => {
     return (
-        <Link {...props}>
+        <Link {...props} target={newTab ? "_blank" : "_self"}>
             <p className={cn(anchor(set), className)}>{children}</p>
         </Link>
     );
 };
-
-interface PageLinkProps extends LinkProps {
-    // underline color
-    mode?: "light" | "dark";
-    // animate padding left on hover
-    shift?: boolean;
-    children?: ReactNode;
-    target?: string;
-}
-
-const PageLink = ({ children, target = "_self", mode = "dark", shift, ...props }: PageLinkProps) => {
-    return (
-        <Link {...props} target={target}>
-            <div className="group z-10 w-min">
-                <p className={cn(shift && "transition-[padding-left] group-hover:pl-1")}>{children}</p>
-                <div
-                    className={cn(
-                        "pointer-events-none h-0.5 w-0 rounded transition-[width,padding] group-hover:w-1/2",
-                        mode === "light" ? "bg-blue-100" : "bg-blue-950"
-                    )}
-                />
-            </div>
-        </Link>
-    );
-};
-
-export { Anchor, PageLink };
