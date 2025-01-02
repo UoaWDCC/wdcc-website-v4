@@ -1,4 +1,4 @@
-import { footerLinkData } from "@/data/links/footerLinks.data";
+import { footerData } from "@/components/navigation/footer/_data/footer.data";
 import { cn } from "@/libs/utils";
 
 import FooterColumn from "./FooterColumn";
@@ -14,7 +14,7 @@ export default function Footer() {
             >
                 {/* grid block of 1-3-1 with center being the contents */}
                 <div className="hidden lg:block"></div>
-                {footerLinkData.map((data, i) => (
+                {footerData.columns.map((data, i) => (
                     <FooterColumn key={data.title} {...data} last={i === 2} />
                 ))}
                 <div className="hidden lg:block"></div>

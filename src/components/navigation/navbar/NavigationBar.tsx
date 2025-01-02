@@ -1,5 +1,7 @@
-import { NavigationLinkType } from "@/types/navigation";
+import { NavigationLink } from "@/types/navigation";
 import type { ClassName } from "@/types/utils";
+
+
 
 import Arrow from "@/assets/svg/Arrow";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
@@ -9,8 +11,11 @@ import { Button } from "@/components/primitives/Button";
 import { navigationLinkData } from "@/data/links/navigationLinks.data";
 import { cn } from "@/libs/utils";
 
+
+
 import { Anchor } from "../../primitives/Anchor";
 import NavigationMenu from "./NavigationMobileMenu";
+
 
 export default function NavigationBar({ className }: ClassName) {
     return (
@@ -42,7 +47,7 @@ export default function NavigationBar({ className }: ClassName) {
     );
 }
 
-const NavigationBarLinks = ({ links }: { links: NavigationLinkType[] }) =>
+const NavigationBarLinks = ({ links }: { links: NavigationLink[] }) =>
     // z-10 is to ensure top-level nav links sit on top of sublinks
     links.map((link) =>
         link.drop ? (

@@ -1,10 +1,10 @@
-import type { FooterLink } from "@/types/navigation";
+import type { FooterColumn } from "./_data/footerTypes";
 
 import { cn } from "@/libs/utils";
 
 import { UnderlineLink } from "../UnderlineLink";
 
-interface FooterColumnProps extends FooterLink {
+interface FooterColumnProps extends FooterColumn {
     last?: boolean;
 }
 
@@ -24,4 +24,4 @@ export default function FooterColumn({ last, ...data }: FooterColumnProps) {
             </div>
         </div>
     );
-};
+}

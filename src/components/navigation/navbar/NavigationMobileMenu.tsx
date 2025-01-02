@@ -3,14 +3,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import type { NavigationLinkType } from "@/types/navigation";
+import type { NavigationLink } from "@/types/navigation";
 
 import { Anchor } from "@/components/primitives/Anchor";
 import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";
 
 // ONLY USE CLASSNAME TO CHANGE MEDIA QUERY
-const NavigationMenu = ({ links, className }: { links: NavigationLinkType[]; className?: string }) => {
+const NavigationMenu = ({ links, className }: { links: NavigationLink[]; className?: string }) => {
     const [toggle, setToggle] = useState(false);
 
     const handleToggle = () => {
@@ -76,7 +76,7 @@ const containerVariant = (toggle: boolean) => {
     };
 };
 
-const NavigationMenuLinks = ({ links }: { links: NavigationLinkType[] }) =>
+const NavigationMenuLinks = ({ links }: { links: NavigationLink[] }) =>
     links.map((link) => (
         <Anchor key={link.label} href={link.href} className="w-full text-center text-[14vw]">
             {link.label}

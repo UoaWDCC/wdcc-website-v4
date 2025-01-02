@@ -1,6 +1,6 @@
-import type { NavigationLinkType } from "@/types/navigation";
+import type { NavigationLink } from "@/types/navigation";
 
-export const navigationLinkData: NavigationLinkType[] = [
+export const navigationLinkData: NavigationLink[] = [
     {
         href: "/projects",
         label: "Projects",

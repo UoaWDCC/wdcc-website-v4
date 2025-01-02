@@ -1,22 +1,12 @@
-/* type for footer navigation links
- src/data/links/navigationLinks.data.ts
-*/
-
-export type NavigationLinkType = {
+export type Link = {
     href: string;
     label: string;
-    drop?: { href: string; label: string }[];
+    external?: boolean;
 };
 
-/* type for footer navigation links
-related to: src/data/links/footerLinks.json
-*/
-
-export type FooterLink = {
-    title: string;
-    links: {
-        label: string;
-        href: string;
-        external?: boolean;
-    }[];
+/** type for footer navigation links
+ * related to: src/data/links/navigationLinks.data.ts
+ */
+export type NavigationLink = Link & {
+    drop?: { href: string; label: string }[];
 };
