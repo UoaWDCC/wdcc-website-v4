@@ -4,8 +4,7 @@ import { AnchorHTMLAttributes, ReactNode, useState } from "react";
 import Link, { LinkProps } from "next/link";
 import { motion, type Variants } from "framer-motion";
 
-import type { NavigationLink } from "@/types/navigation";
-
+import type { NavigationLink } from "@/components/navigation/navbar/_data/navbarTypes";
 import { cn } from "@/libs/utils";
 
 // Need to omit href from AnchorHTMLAttributes because it conflicts with Next LinkProps

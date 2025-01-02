@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import type { NavigationLink } from "@/types/navigation";
-
+import type { NavigationLink } from "@/components/navigation/navbar/_data/navbarTypes";
 import { Anchor } from "@/components/primitives/Anchor";
 import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";

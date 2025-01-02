@@ -1,21 +1,16 @@
-import { NavigationLink } from "@/types/navigation";
 import type { ClassName } from "@/types/utils";
-
-
 
 import Arrow from "@/assets/svg/Arrow";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
+import { NavigationLink } from "@/components/navigation/navbar/_data/navbarTypes";
+import { navbarData } from "@/components/navigation/navbar/_data/navbar.data";
 import DropDown from "@/components/navigation/navbar/DropDownLink";
 import { UnderlineLink } from "@/components/navigation/UnderlineLink";
 import { Button } from "@/components/primitives/Button";
-import { navigationLinkData } from "@/data/links/navigationLinks.data";
 import { cn } from "@/libs/utils";
-
-
 
 import { Anchor } from "../../primitives/Anchor";
 import NavigationMenu from "./NavigationMobileMenu";
-
 
 export default function NavigationBar({ className }: ClassName) {
     return (
@@ -31,13 +26,13 @@ export default function NavigationBar({ className }: ClassName) {
             <div className="flex items-center gap-8 font-semibold lg:gap-12">
                 {/* Links */}
                 <div className="hidden h-full items-center gap-8 md:flex lg:gap-12">
-                    <NavigationBarLinks links={navigationLinkData} />
+                    <NavigationBarLinks links={navbarData.links} />
                 </div>
                 {/* Vertical line */}
                 <div className="hidden h-5 w-0.5 rounded bg-gray-700 md:block" />
                 {/* Buttons */}
                 <div className="flex gap-3">
-                    <NavigationMenu className="md:hidden" links={navigationLinkData} />
+                    <NavigationMenu className="md:hidden" links={navbarData.links} />
                     <Button variant="primary" color="blue" href="https://go.wdcc.co.nz" newTab>
                         Join WDCC <Arrow />
                     </Button>

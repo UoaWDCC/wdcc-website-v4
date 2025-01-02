@@ -1,7 +1,6 @@
-;
 // I know having types and data files within components is a bit unconventional, but I want to trial this and see how it works out
 
-import { Link } from "@/types/navigation";
+import { Link } from "@/types/link";
 
 export type FooterData = {
     columns: FooterColumn[];
