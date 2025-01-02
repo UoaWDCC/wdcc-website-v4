@@ -1,14 +1,14 @@
 import type { FooterLink } from "@/types/navigation";
 
-
-
 import { cn } from "@/libs/utils";
 
 import { UnderlineLink } from "../UnderlineLink";
 
+interface FooterColumnProps extends FooterLink {
+    last?: boolean;
+}
 
-
-const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
+export default function FooterColumn({ last, ...data }: FooterColumnProps) {
     return (
         <div className="flex select-none flex-col">
             {/* todo: replace font with real foreground value */}
@@ -25,5 +25,3 @@ const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
         </div>
     );
 };
-
-export default FooterBlock;
