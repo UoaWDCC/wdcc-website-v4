@@ -1,6 +1,7 @@
 // I know having types and data files within components is a bit unconventional, but I want to trial this and see how it works out
 
 import { Link } from "@/types/link";
+import { ReactNode } from "react";
 
 export type FooterData = {
     columns: FooterColumn[] & { length: 3 }; // Styles currently depend on 3 columns
@@ -15,5 +16,5 @@ export type FooterColumn = {
 export type FooterSocial = {
     name: string;
     href: string;
-    icon: string;
+    icon: ReactNode;
 };

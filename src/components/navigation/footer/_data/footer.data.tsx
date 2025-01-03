@@ -1,4 +1,5 @@
 import { FooterData } from "./footerTypes";
+import DiscordLogo from '@/assets/svg/DiscordLogo';
 
 export const footerData: FooterData = {
     columns: [
@@ -61,8 +62,8 @@ export const footerData: FooterData = {
     socials: [
         {
             name: "Discord",
-            href: "https://www.linkedin.com",
-            icon: "linkedin",
+            href: "https://discord.gg/CZX8aSSrGj",
+            icon: <DiscordLogo />,
         },
     ],
 };
