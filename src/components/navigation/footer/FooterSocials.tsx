@@ -9,8 +9,8 @@ export default function FooterSocials() {
             <div className="h-1 w-full rounded-full bg-gradient-to-br from-blue-brand to-blue-750" />
             <div className="mt-8 flex w-full items-center justify-between">
                 <DiscordLogo className="fill-white" />
-                <Button set={{ color: "blue" }}>Back to Top</Button>
+                <Button variant={{ color: "blue" }}>Back to Top</Button>
             </div>
         </div>
     );
-};
+}

@@ -7,7 +7,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 const button = tv({
     base: "flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 py-2 text-md font-bold transition duration-200 hover:cursor-pointer",
     variants: {
-        variant: {
+        style: {
             primary: "border-2 py-[calc(0.5rem-2px)]",
             secondary: "",
             tertiary: "border-2 py-[calc(0.5rem-2px)]",
@@ -29,108 +29,108 @@ const button = tv({
         },
     },
     defaultVariants: {
-        variant: "primary",
+        style: "primary",
         color: "blue",
         width: "fit",
     },
     compoundVariants: [
         {
-            variant: "primary",
+            style: "primary",
             color: "blue",
             class: "border-blue-600 bg-blue-500 text-white hover:bg-blue-400",
         },
         {
-            variant: "primary",
+            style: "primary",
             color: "yellow",
             class: "border-yellow-400 bg-yellow-brand text-gray-800 hover:bg-yellow-200",
         },
         {
-            variant: "primary",
+            style: "primary",
             color: "purple",
             class: "border-purple-600 bg-purple-500 text-white hover:bg-purple-400",
         },
         {
-            variant: "primary",
+            style: "primary",
             color: "dark",
             class: "border-gray-600 bg-gray-800 text-white hover:bg-gray-700",
         },
         {
-            variant: "primary",
+            style: "primary",
             color: "light",
             class: "border-gray-200 bg-gray-100 text-gray-800 hover:bg-gray-100",
         },
         {
-            variant: "secondary",
+            style: "secondary",
             color: "blue",
             class: "bg-blue-100 text-blue-750 hover:bg-blue-150",
         },
         {
-            variant: "secondary",
+            style: "secondary",
             color: "yellow",
             class: "bg-yellow-100 text-yellow-750 hover:bg-yellow-150",
         },
         {
-            variant: "secondary",
+            style: "secondary",
             color: "purple",
             class: "bg-purple-100 text-purple-750 hover:bg-purple-150",
         },
         {
-            variant: "secondary",
+            style: "secondary",
             color: "dark",
             class: "bg-[#2E2B3B33] text-gray-800 hover:bg-[#2E2B3B26]",
         },
         {
-            variant: "secondary",
+            style: "secondary",
             color: "light",
             class: "bg-[#C8C6D24D] text-white hover:bg-[#C8C6D233]",
         },
         {
-            variant: "tertiary",
+            style: "tertiary",
             color: "blue",
             class: "border-blue-200 text-blue-750 hover:bg-blue-50",
         },
         {
-            variant: "tertiary",
+            style: "tertiary",
             color: "yellow",
             class: "border-yellow-200 text-yellow-750 hover:bg-yellow-50",
         },
         {
-            variant: "tertiary",
+            style: "tertiary",
             color: "purple",
             class: "border-purple-200 text-purple-750 hover:bg-purple-50",
         },
         {
-            variant: "tertiary",
+            style: "tertiary",
             color: "dark",
             class: "border-gray-800 border-opacity-20 text-gray-800 hover:bg-[#2E2B3B0D]",
         },
         {
-            variant: "tertiary",
+            style: "tertiary",
             color: "light",
             class: "border-gray-600 border-opacity-30 text-white hover:bg-[#C8C6D20D]",
         },
         {
-            variant: "text",
+            style: "text",
             color: "blue",
             class: "text-blue-750 hover:underline",
         },
         {
-            variant: "text",
+            style: "text",
             color: "yellow",
             class: "text-yellow-750 hover:underline",
         },
         {
-            variant: "text",
+            style: "text",
             color: "purple",
             class: "text-purple-750 hover:underline",
         },
         {
-            variant: "text",
+            style: "text",
             color: "dark",
             class: "text-gray-800 hover:underline",
         },
         {
-            variant: "text",
+            style: "text",
             color: "light",
             class: "text-white hover:underline",
         },
@@ -141,7 +141,7 @@ type CommonProps = {
     children: ReactNode;
 };
 
-type Variant = { set?: VariantProps<typeof button> };
+type Variant = { variant?: VariantProps<typeof button> };
 
 // Type if rendered as a button (no href provided)
 type ButtonVersionProps = Variant & ButtonHTMLAttributes<HTMLButtonElement> & CommonProps & { href?: never };
@@ -175,7 +175,7 @@ function Button(props: ButtonVersionProps | LinkVersionProps) {
         const { children, href, newTab = false, ...rest } = props;
         // TODO: use our anchor component for this
         return (
-            <Link {...rest} href={href} className={button(props.set)} target={newTab ? "_blank" : "_self"}>
+            <Link {...rest} href={href} className={button(props.variant)} target={newTab ? "_blank" : "_self"}>
                 {children}
             </Link>
         );
@@ -183,7 +183,7 @@ function Button(props: ButtonVersionProps | LinkVersionProps) {
         // Is button
         const { children } = props;
         return (
-            <button {...props} className={button(props.set)}>
+            <button {...props} className={button(props.variant)}>
                 {children}
             </button>
         );

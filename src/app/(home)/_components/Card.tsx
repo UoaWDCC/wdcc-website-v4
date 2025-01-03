@@ -28,7 +28,7 @@ const Card = ({ set, index, title, description, slug }: CardProps) => {
             <h2 className="absolute left-0 top-0 -translate-x-4 text-[80px] font-bold opacity-10">{index}</h2>
             <h3 className="text-3xl font-bold text-gray-800">{title}</h3>
             <p className="text-md font-normal text-foreground">{description}</p>
-            <Button set={{ variant: "tertiary", color: "dark", width: "full" }}>Discover {slug} →</Button>
+            <Button variant={{ style: "tertiary", color: "dark", width: "full" }}>Discover {slug} →</Button>
         </div>
     );
 };

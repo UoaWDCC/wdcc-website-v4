@@ -35,13 +35,13 @@ const TRIANGLEOBJ = ({
         setReady(true); // Trigger re-render
     }, []);
 
-    const roty = SPEED + Math.random() * ROTCHAOS;
-    const rotz = SPEED + Math.random() * ROTCHAOS;
+    const rotationDY = SPEED + Math.random() * ROTCHAOS;
+    const rotationDX = SPEED + Math.random() * ROTCHAOS;
 
     useFrame((_, delta) => {
         if (meshRef.current) {
-            meshRef!.current!.rotateY(roty * delta);
-            meshRef!.current!.rotateZ(rotz * delta);
+            meshRef!.current!.rotateY(rotationDY * delta);
+            meshRef!.current!.rotateZ(rotationDX * delta);
         }
     });
 
@@ -61,11 +61,11 @@ const TRIANGLES = [...Array(COUNT)].map((_, i) => {
     const z = Math.sin(RAD_INCREMENT * i) * RADIUS;
     const y = (Math.random() - 0.5) * POSCHAOS;
 
-    const initrotx = 2 * Math.PI * Math.random();
-    const initroty = 2 * Math.PI * Math.random();
+    const initRotationX = 2 * Math.PI * Math.random();
+    const initRotionY = 2 * Math.PI * Math.random();
 
     const position = [x, y, z] as Vector3;
-    const rotation = new Euler(initrotx, initroty, 0, "XYZ");
+    const rotation = new Euler(initRotationX, initRotionY, 0, "XYZ");
     const faceRotation = -i * RAD_INCREMENT - Math.PI / 2;
 
     return <TRIANGLEOBJ key={i} position={position} rotation={rotation} faceRotation={faceRotation} />;

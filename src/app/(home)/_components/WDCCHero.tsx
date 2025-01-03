@@ -43,7 +43,7 @@ const WDCCHero = () => {
                     .
                 </p>
                 <div className="mt-8">
-                    <Button set={{ variant: "primary", color: "blue" }}>Become a member for 2025</Button>
+                    <Button variant={{ style: "primary", color: "blue" }}>Become a member for 2025</Button>
                 </div>
             </div>
             <View className="flex h-[500px] w-[800px] flex-col items-center justify-center">

@@ -41,7 +41,7 @@ export default function NavigationBar({ className }: ClassName) {
                 {/* Buttons */}
                 <div className="flex gap-3">
                     <NavigationMenu className="md:hidden" links={navbarData.links} />
-                    <Button variant="primary" color="blue" href="https://go.wdcc.co.nz" newTab>
+                    <Button variant={{ style: "primary", color: "blue" }} href="https://go.wdcc.co.nz" newTab>
                         Join WDCC <Arrow />
                     </Button>
                 </div>
