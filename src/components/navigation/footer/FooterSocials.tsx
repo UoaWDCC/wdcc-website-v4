@@ -15,7 +15,7 @@ export default function FooterSocials({ socials, className, ...props }: FooterSo
     return (
         <div
             {...props}
-            className={cn("hidden-scrollbar flex w-full items-center gap-6 overflow-x-auto px-2", className)}
+            className={cn("hidden-scrollbar flex w-full items-center gap-6 overflow-x-auto", className)}
         >
             {socials.map((social) => (
                 <Anchor key={social.name} href={social.href} className="[&>svg]:fill-white">

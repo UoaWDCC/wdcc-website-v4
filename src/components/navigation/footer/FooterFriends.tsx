@@ -5,7 +5,7 @@ import { Button } from "@/components/primitives/Button";
 
 export default function FooterFriends({ friends }: { friends: LinkType[] }) {
     return (
-        <div className="flex justify-end items-center gap-2 mt-4">
+        <div className="flex justify-end items-center gap-2">
             <p className="text-xs font-semibold">Check out our friends</p>
             {friends.map((friend) => (
                 <FriendLink key={friend.href} friend={friend} />

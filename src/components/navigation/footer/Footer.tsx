@@ -1,11 +1,10 @@
 import { HTMLAttributes } from "react";
 
 import { footerData } from "@/components/navigation/footer/_data/footer.data";
+import FooterFooter from "@/components/navigation/footer/FooterFooter";
 import { cn } from "@/libs/utils";
 
 import FooterColumn from "./FooterColumn";
-import FooterSocials from "./FooterSocials";
-import FooterFriends from "./FooterFriends";
 
 interface FooterProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
@@ -21,8 +20,7 @@ export default function Footer({ className, ...props }: FooterProps) {
                     ))}
                 </div>
                 <FooterBar />
-                <FooterSocials socials={footerData.socials} />
-                <FooterFriends friends={footerData.friends} />
+                <FooterFooter socials={footerData.socials} friends={footerData.friends} />
             </div>
         </footer>
     );
