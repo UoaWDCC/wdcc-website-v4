@@ -15,14 +15,14 @@ export default function FooterSocials({ socials, className, ...props }: FooterSo
     return (
         <div
             {...props}
-            className={cn("hidden-scrollbar flex w-full items-center gap-6 overflow-x-auto", className)}
+            className={cn("flex justify-center w-full items-center gap-6", className)}
         >
             {socials.map((social) => (
                 <Anchor key={social.name} href={social.href} className="[&>svg]:fill-white">
                     {social.icon}
                 </Anchor>
             ))}
-            <Button variant="primary" color="blue" className="ml-auto">
+            <Button variant="primary" color="blue" className="ml-auto hidden sm:block">
                 Back to Top
             </Button>
         </div>
