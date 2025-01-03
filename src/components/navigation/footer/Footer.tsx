@@ -20,7 +20,7 @@ export default function Footer() {
                     <FooterColumn key={data.title} title={data.title} links={data.links} last={i === 2} />
                 ))}
                 {/* blue bar */}
-                <div className="h-1 w-full my-8 rounded-full bg-gradient-to-br from-blue-brand to-blue-750 sm:col-span-3" />
+                <div className="h-1 w-full my-8 rounded-full bg-gradient-to-br from-[#1F86E6] to-[#6B74A1] sm:col-span-3" />
                 <FooterSocials className="sm:col-span-3" />
             </div>
         </footer>
