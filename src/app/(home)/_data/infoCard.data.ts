@@ -1,11 +1,6 @@
-import React from "react";
+import { CardProps } from "../_components/InfoCard";
 
-import SectionDescription from "@/components/section/SectionDescription";
-import SectionHeader from "@/components/section/SectionHeader";
-
-import Card, { CardProps } from "./Card";
-
-const info: CardProps[] = [
+export const infoCardsData: CardProps[] = [
     {
         set: { color: "blue" },
         index: "01",
@@ -31,22 +26,3 @@ const info: CardProps[] = [
             "We host a range of workshops to teach members the things they’ll need to thrive in our projects, covering plenty of crucial development, tech, and people skills.",
     },
 ];
-
-const ThisIsWDCC = () => {
-    return (
-        <div className="mt-24 flex flex-col items-center justify-center">
-            <SectionHeader>What do we do?</SectionHeader>
-            <SectionDescription>
-                WDCC aims to bridge the gap between university knowledge and real-world industry practices. We run
-                projects with real-world clients that solve real-world problems.
-            </SectionDescription>
-            <div className="mt-16 flex flex-col gap-8 lg:flex-row">
-                <Card {...info[0]} />
-                <Card {...info[1]} />
-                <Card {...info[2]} />
-            </div>
-        </div>
-    );
-};
-
-export default ThisIsWDCC;

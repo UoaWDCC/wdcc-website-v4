@@ -22,7 +22,7 @@ export interface CardProps {
     slug: string;
 }
 
-const Card = ({ set, index, title, description, slug }: CardProps) => {
+const InfoCard = ({ set, index, title, description, slug }: CardProps) => {
     return (
         <div className={card({ ...set })}>
             <h2 className="absolute left-0 top-0 -translate-x-4 text-[80px] font-bold opacity-10">{index}</h2>
@@ -33,4 +33,4 @@ const Card = ({ set, index, title, description, slug }: CardProps) => {
     );
 };
 
-export default Card;
+export default InfoCard;

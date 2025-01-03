@@ -5,7 +5,7 @@ import { View } from "@/components/three/scene/View";
 import ThreeLayout from "@/components/ThreePageLayout";
 
 import SponsorSection from "./_components/SponsorSection";
-import ThisIsWDCC from "./_components/ThisIsWDCC";
+import ThisIsWDCC from "./_components/ThisIsWDCCSection";
 import WDCCHero from "./_components/WDCCHero";
 
 export default function Home() {
