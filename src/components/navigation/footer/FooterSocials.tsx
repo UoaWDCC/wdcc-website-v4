@@ -13,9 +13,12 @@ interface FooterSocialsProps extends HTMLAttributes<HTMLDivElement> {
 
 export default function FooterSocials({ socials, className, ...props }: FooterSocialsProps) {
     return (
-        <div {...props} className={cn("flex w-full items-center gap-6 px-2 overflow-x-auto hidden-scrollbar", className)}>
+        <div
+            {...props}
+            className={cn("hidden-scrollbar flex w-full items-center gap-6 overflow-x-auto px-2", className)}
+        >
             {socials.map((social) => (
-                <Anchor key={social.name} href={social.href} newTab className="[&>svg]:fill-white">
+                <Anchor key={social.name} href={social.href} className="[&>svg]:fill-white">
                     {social.icon}
                 </Anchor>
             ))}

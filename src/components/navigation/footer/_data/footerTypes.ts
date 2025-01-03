@@ -4,7 +4,7 @@ import { Link } from "@/types/link";
 import { ReactNode } from "react";
 
 export type FooterData = {
-    columns: FooterColumn[] & { length: 3 }; // Styles currently depend on 3 columns
+    columns: FooterColumn[];
     socials: FooterSocial[];
 };
 
