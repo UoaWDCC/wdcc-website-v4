@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Headers/Header";
+import { Button } from "@/components/primitives/Button";
 import StandardPageLayout from "@/components/StandardPageLayout";
 
 import AboutPageBody from "./_components/AboutPageBody";
@@ -41,6 +42,11 @@ export default function AboutPage() {
                 <Duo imgSrc={ourPeople.image} imgAlt={ourPeople.imageAlt}>
                     <h3 className="font-semibold">{ourPeople.title}</h3>
                     <p className="font-medium whitespace-pre-line">{ourPeople.content}</p>
+                    <div className="w-auto">
+                        <Button variant="secondary" color="yellow" href="/about/team">
+                            Meet the team ⮕
+                        </Button>
+                    </div>
                 </Duo>
             </AboutPageBody>
         </StandardPageLayout>
