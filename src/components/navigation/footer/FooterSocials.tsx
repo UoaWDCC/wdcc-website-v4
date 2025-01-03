@@ -1,11 +1,17 @@
+import { HTMLAttributes } from "react";
+
 import DiscordLogo from "@/assets/svg/DiscordLogo";
+import { cn } from "@/libs/utils";
 
 import { Button } from "../../primitives/Button";
 
-export default function FooterSocials() {
+interface FooterSocialsProps extends HTMLAttributes<HTMLDivElement> {
+    className?: string;
+}
+
+export default function FooterSocials({ className, ...props }: FooterSocialsProps) {
     return (
-        // if bigger than sm, span 3 column and start at 2nd column else act like a normal div
-        <div className="mt-8 flex flex-col sm:col-span-3 lg:col-start-2">
+        <div {...props} className={cn("flex w-full flex-col", className)}>
             <div className="h-1 w-full rounded-full bg-gradient-to-br from-blue-brand to-blue-750" />
             <div className="mt-8 flex w-full items-center justify-between">
                 <DiscordLogo className="fill-white" />
@@ -15,4 +21,4 @@ export default function FooterSocials() {
             </div>
         </div>
     );
-};
+}

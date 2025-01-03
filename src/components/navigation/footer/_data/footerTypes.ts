@@ -3,7 +3,7 @@
 import { Link } from "@/types/link";
 
 export type FooterData = {
-    columns: FooterColumn[];
+    columns: FooterColumn[] & { length: 3 }; // Styles currently depend on 3 columns
     socials: FooterSocial[];
 };
 
