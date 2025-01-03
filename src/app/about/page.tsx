@@ -1,10 +1,7 @@
-import NavigationBar from "@/components/NavigationBar";
-
-// import StandardPageLayout from "@/components/StandardPageLayout";
+import Header from "@/components/layout/Headers/Header";
+import StandardPageLayout from "@/components/StandardPageLayout";
 
 import AboutPageBody from "./_components/AboutPageBody";
-import AboutPageHeader from "./_components/AboutPageHeader";
-import ButtonRow from "./_components/ButtonRow";
 import Duo from "./_components/Duo";
 import ExecList from "./_components/ExecList";
 import { aboutData } from "./_data/about.data";
@@ -18,36 +15,38 @@ export default function AboutPage() {
     const ourPeople = aboutData.ourPeople;
 
     return (
-        // <StandardPageLayout></StandarPageLayout>
-        <>
-            <NavigationBar className="py-4" />
-            <AboutPageHeader
-                className="flex flex-col gap-8 bg-blue-400 px-48 py-20"
+        <StandardPageLayout>
+            <Header
+                variant="primary"
+                color="brand"
                 title={header.title}
-                content={header.content}
+                description={header.content}
+                primaryButton={{ label: "Meet the team ⮕", href: "/about/team" }}
+                secondaryButton={{ label: "Frequently asked questions", href: "/faq" }}
+            />
+            <AboutPageBody
+                outer="flex w-full items-center justify-center py-20"
+                inner="flex w-[80%] max-w-[1100px] flex-col gap-24"
             >
-                <ButtonRow className="" />
-            </AboutPageHeader>
-            <AboutPageBody className="flex flex-col gap-24 px-48 py-20">
                 <Duo imgSrc={genInfo.image} imgAlt={genInfo.imageAlt}>
                     <p className="font-medium whitespace-pre-line">{genInfo.firstPart}</p>
                     <p className="font-medium whitespace-pre-line">{genInfo.secondPart}</p>
                 </Duo>
-                <Duo imgSrc={whyJoin.image} imgAlt={whyJoin.imageAlt} imgFirst>
+                <Duo imgSrc={whyJoin.image} imgAlt={whyJoin.imageAlt}>
                     <h3 className="font-semibold">{whyJoin.title}</h3>
                     <p className="font-medium whitespace-pre-line">{whyJoin.content}</p>
                 </Duo>
-                <Duo imgSrc={clubStory.image} imgAlt={clubStory.imageAlt}>
+                <Duo imgSrc={clubStory.image} imgAlt={clubStory.imageAlt} imgFirst>
                     <h3 className="font-semibold">{clubStory.title}</h3>
                     <p className="font-medium whitespace-pre-line">{clubStory.content}</p>
                 </Duo>
-                <Duo imgSrc={ourPeople.image} imgAlt={ourPeople.imageAlt} imgFirst>
+                <Duo imgSrc={ourPeople.image} imgAlt={ourPeople.imageAlt}>
                     <h3 className="font-semibold">{ourPeople.title}</h3>
                     <p className="font-medium whitespace-pre-line">{ourPeople.content}</p>
                 </Duo>
                 <h2 className="text-2xl font-semibold">Meet the Execs</h2>
                 <ExecList execs={execsData} />
             </AboutPageBody>
-        </>
+        </StandardPageLayout>
     );
 }

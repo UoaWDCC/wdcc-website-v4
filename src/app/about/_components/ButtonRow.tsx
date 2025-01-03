@@ -5,6 +5,7 @@ interface ButtonRowProps {
     className?: string;
 }
 
+// Deprecated for now...
 export default function ButtonRow({ className }: ButtonRowProps) {
     return (
         <div className={cn("flex items-start gap-3", className)}>

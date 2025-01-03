@@ -7,6 +7,7 @@ interface AboutPageHeaderProps {
     className?: string;
 }
 
+// Deprecated
 export default function AboutPageHeader({ title, content, children, className }: AboutPageHeaderProps) {
     return (
         <div className={className}>

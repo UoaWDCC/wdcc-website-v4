@@ -1,12 +1,10 @@
-import type { FooterLink } from "@/types/navigation";
-
-import { footerLinkData } from "@/data/links/footerLinks.data";
+import { footerData } from "@/components/navigation/footer/_data/footer.data";
 import { cn } from "@/libs/utils";
 
-import FooterBlock from "./navigation/FooterBlock";
-import FooterSocials from "./navigation/FooterSocials";
+import FooterColumn from "./FooterColumn";
+import FooterSocials from "./FooterSocials";
 
-const FooterLinks = () => {
+export default function Footer() {
     return (
         <footer className="mt-auto flex flex-col items-center bg-blue-900 pb-20">
             <div
@@ -16,8 +14,8 @@ const FooterLinks = () => {
             >
                 {/* grid block of 1-3-1 with center being the contents */}
                 <div className="hidden lg:block"></div>
-                {(footerLinkData as FooterLink[]).map((data, i) => (
-                    <FooterBlock key={data.title} {...data} last={i === 2} />
+                {footerData.columns.map((data, i) => (
+                    <FooterColumn key={data.title} {...data} last={i === 2} />
                 ))}
                 <div className="hidden lg:block"></div>
                 {/* second row */}
@@ -25,6 +23,4 @@ const FooterLinks = () => {
             </div>
         </footer>
     );
-};
-
-export default FooterLinks;
+}
