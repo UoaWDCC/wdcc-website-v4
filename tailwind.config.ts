@@ -130,8 +130,16 @@ export default {
                     100: "hsl(var(--green-100))",
                     50: "hsl(var(--green-050))",
                     20: "hsl(var(--green-020))",
-                }
+                },
             },
+        },
+        screens: {
+            xs: "375px",
+            sm: "640px",
+            md: "768px",
+            lg: "1024px",
+            xl: "1280px",
+            "2xl": "1536px",
         },
     },
     plugins: [],
