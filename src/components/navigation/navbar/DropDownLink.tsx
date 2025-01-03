@@ -4,13 +4,12 @@ import { AnchorHTMLAttributes, ReactNode, useState } from "react";
 import Link, { LinkProps } from "next/link";
 import { motion, type Variants } from "framer-motion";
 
-import type { NavigationLinkType } from "@/types/navigation";
-
+import type { NavigationLink } from "@/components/navigation/navbar/_data/navbarTypes";
 import { cn } from "@/libs/utils";
 
 // Need to omit href from AnchorHTMLAttributes because it conflicts with Next LinkProps
 interface DropdownProps extends LinkProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
-    link: NavigationLinkType;
+    link: NavigationLink;
 }
 
 export default function DropDown({ link, ...props }: DropdownProps) {
@@ -74,7 +73,7 @@ const BracketLink = ({ children, newTab, open, ...props }: BracketLinkProps) => 
     );
 };
 
-function DropDownSublink({ link, open }: { link: NavigationLinkType; open: boolean }) {
+function DropDownSublink({ link, open }: { link: NavigationLink; open: boolean }) {
     return (
         <Link key={link.label} href={link.href}>
             <motion.div
