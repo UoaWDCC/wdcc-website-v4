@@ -19,8 +19,9 @@ export default function Footer() {
                 {footerData.columns.map((data, i) => (
                     <FooterColumn key={data.title} title={data.title} links={data.links} last={i === 2} />
                 ))}
-                {/* second row */}
-                <FooterSocials className="mt-8 sm:col-span-3" />
+                {/* blue bar */}
+                <div className="h-1 w-full my-8 rounded-full bg-gradient-to-br from-blue-brand to-blue-750 sm:col-span-3" />
+                <FooterSocials className="sm:col-span-3" />
             </div>
         </footer>
     );
