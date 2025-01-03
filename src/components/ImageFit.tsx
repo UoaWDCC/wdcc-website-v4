@@ -15,6 +15,7 @@ const ImageFit = ({
     return (
         <div style={{ position: "relative", width: width, height: height }}>
             <Image
+                priority
                 fill
                 sizes="100%"
                 alt={alt}
