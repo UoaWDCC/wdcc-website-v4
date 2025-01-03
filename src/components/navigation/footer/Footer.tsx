@@ -5,6 +5,7 @@ import { cn } from "@/libs/utils";
 
 import FooterColumn from "./FooterColumn";
 import FooterSocials from "./FooterSocials";
+import FooterFriends from "./FooterFriends";
 
 interface FooterProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
@@ -15,12 +16,13 @@ export default function Footer({ className, ...props }: FooterProps) {
         <footer {...props} className={cn("flex justify-center bg-blue-900 px-10 pb-20 pt-4 text-white", className)}>
             <div className="w-full whitespace-nowrap lg:max-w-screen-md">
                 <div className="hidden-scrollbar flex flex-col justify-between gap-4 overflow-x-auto px-4 sm:flex-row">
-                    {footerData.columns.map((data, i) => (
+                    {footerData.columns.map((data) => (
                         <FooterColumn key={data.title} title={data.title} links={data.links} />
                     ))}
                 </div>
                 <FooterBar />
                 <FooterSocials socials={footerData.socials} />
+                <FooterFriends friends={footerData.friends} />
             </div>
         </footer>
     );
