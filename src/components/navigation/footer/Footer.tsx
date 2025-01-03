@@ -3,10 +3,15 @@ import { cn } from "@/libs/utils";
 
 import FooterColumn from "./FooterColumn";
 import FooterSocials from "./FooterSocials";
+import { HTMLAttributes } from "react";
 
-export default function Footer() {
+interface FooterProps extends HTMLAttributes<HTMLDivElement> {
+    className?: string;
+}
+
+export default function Footer({ className, ...props }: FooterProps) {
     return (
-        <footer className="mt-auto flex flex-col items-center bg-blue-900 px-10 pt-4 pb-20">
+        <footer {...props} className={cn("flex flex-col items-center bg-blue-900 px-10 pt-4 pb-20", className)}>
             {/* Mobile: 1 column
                 Tablet: 3 columns
                 Desktop: 3 col, snap to max 768px
