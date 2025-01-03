@@ -6,6 +6,7 @@ import { ReactNode } from "react";
 export type FooterData = {
     columns: FooterColumn[];
     socials: FooterSocial[];
+    friends: Link[];
 };
 
 export type FooterColumn = {

@@ -104,4 +104,21 @@ export const footerData: FooterData = {
             icon: <DiscordLogo />,
         },
     ],
+    friends: [
+        {
+            label: "UOACS",
+            href: "https://uoacs.org",
+            external: true,
+        },
+        {
+            label: "SESA",
+            href: "https://sesa.org.nz",
+            external: true,
+        },
+        {
+            label: "DEVS",
+            href: "https://dscuoa.nz",
+            external: true,
+        },
+    ],
 };
