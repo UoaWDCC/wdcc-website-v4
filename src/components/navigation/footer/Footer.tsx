@@ -17,7 +17,7 @@ export default function Footer() {
                 )}
             >
                 {footerData.columns.map((data, i) => (
-                    <FooterColumn key={data.title} {...data} last={i === 2} />
+                    <FooterColumn key={data.title} title={data.title} links={data.links} last={i === 2} />
                 ))}
                 {/* second row */}
                 <FooterSocials className="mt-8 sm:col-span-3" />
