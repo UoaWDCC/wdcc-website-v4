@@ -23,7 +23,7 @@ export default function NavigationBar({ className }: ClassName) {
             <Anchor href="/">
                 <WDCCLogo className="fill-black transition duration-150 hover:opacity-70 lg:block" />
             </Anchor>
-            <div className="hidden-scrollbar flex w-full items-center justify-center gap-8 overflow-x-auto whitespace-nowrap font-semibold sm:justify-end lg:gap-12">
+            <div className=" flex w-full items-center justify-center gap-8 whitespace-nowrap font-semibold sm:justify-end lg:gap-12">
                 {/* Links */}
                 <div className="hidden h-full items-center gap-8 md:flex lg:gap-12">
                     <NavigationBarLinks links={navbarData.links} />
@@ -31,7 +31,7 @@ export default function NavigationBar({ className }: ClassName) {
                 {/* Vertical line */}
                 <div className="hidden h-5 w-0.5 rounded bg-gray-700 md:block" />
                 {/* Buttons */}
-                <div className="flex gap-3 max-w-[100vw]">
+                <div className="flex gap-3 max-w-[100vw] overflow-auto hidden-scrollbar">
                     <NavigationMenu className="md:hidden" links={navbarData.links} />
                     <Button variant="primary" color="blue" href="https://go.wdcc.co.nz" newTab>
                         Join WDCC <Arrow />
