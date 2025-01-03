@@ -24,9 +24,9 @@ export default function Duo({
                 {children}
             </div>
             <div
-                className={`order-1 flex flex-1 items-center justify-center ${imgFirst ? "lg:order-1" : "lg:order-2"}`}
+                className={`order-1 flex w-full flex-1 items-center justify-center ${imgFirst ? "lg:order-1" : "lg:order-2"}`}
             >
-                <Image src={img} alt={imgAlt} className="h-auto w-auto rounded-[16px]" />
+                <Image src={img} alt={imgAlt} className="h-auto w-full rounded-[16px]" />
             </div>
         </div>
     );

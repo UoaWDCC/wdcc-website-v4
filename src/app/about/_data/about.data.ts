@@ -1,4 +1,5 @@
 import placeholder from "@/assets/image/600x400.png";
+import endImage from "@/assets/image/industry-night-1.png";
 
 export const aboutData = {
     header: {
@@ -13,7 +14,7 @@ export const aboutData = {
                 text: `Frequently asked questions`,
                 link: `/faq`,
             },
-        ]
+        ],
     },
     genInfo: {
         firstPart: `Founded in 2019, WDCC - the Web Development and Consulting Club - helps promote the learning and practice of software development and its related skills and activities.`,
@@ -38,5 +39,14 @@ export const aboutData = {
         content: `WDCC’s 973 executives and 12,329,900 members help make our events and goals happen, and help shape the character and personality of our club.`,
         image: placeholder,
         imageAlt: `placeholder image...for now`,
+    },
+    quoteSection: {
+        quote: `You should totally join WDCC because we have two co-presidents Chris and Kimberley and they're really hot but also we have a shit ton of projects which are really cool and means that you can learn stuff like React :)))))))), Next XDDDDDDDDDD, Express :PPPPPPPPPPPPP, and all the other web technologies that may be relevant to web development and stuff.`,
+        author: `A member of the tech team`,
+        subscript: `(identity withheld)`,
+    },
+    endImage: {
+        image: endImage,
+        imageAlt: `Industry Night 2021 or something idk`,
     },
 };
