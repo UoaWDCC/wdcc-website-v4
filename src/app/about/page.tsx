@@ -3,9 +3,7 @@ import StandardPageLayout from "@/components/StandardPageLayout";
 
 import AboutPageBody from "./_components/AboutPageBody";
 import Duo from "./_components/Duo";
-import ExecList from "./_components/ExecList";
 import { aboutData } from "./_data/about.data";
-import { execsData } from "./_data/execs.data";
 
 export default function AboutPage() {
     const header = aboutData.header;
@@ -44,8 +42,6 @@ export default function AboutPage() {
                     <h3 className="font-semibold">{ourPeople.title}</h3>
                     <p className="font-medium whitespace-pre-line">{ourPeople.content}</p>
                 </Duo>
-                <h2 className="text-2xl font-semibold">Meet the Execs</h2>
-                <ExecList execs={execsData} />
             </AboutPageBody>
         </StandardPageLayout>
     );
