@@ -1,5 +1,5 @@
 import BackgroundEffect from "@/app/(home)/_components/BackgroundEffect";
-import FooterLinks from "@/components/navigation/footer/FooterLinks";
+import Footer from "@/components/navigation/footer/Footer";
 import NavigationBar from "@/components/navigation/navbar/NavigationBar";
 import { View } from "@/components/three/scene/View";
 import ThreeLayout from "@/components/ThreePageLayout";
@@ -22,7 +22,7 @@ export default function Home() {
                 <ThisIsWDCC />
                 <SponsorSection />
             </main>
-            <FooterLinks />
+            <Footer />
         </ThreeLayout>
     );
 }

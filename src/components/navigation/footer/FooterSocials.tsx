@@ -2,7 +2,7 @@ import DiscordLogo from "@/assets/svg/DiscordLogo";
 
 import { Button } from "../../primitives/Button";
 
-const FooterSocials = () => {
+export default function FooterSocials() {
     return (
         // if bigger than sm, span 3 column and start at 2nd column else act like a normal div
         <div className="mt-8 flex flex-col sm:col-span-4 lg:col-start-2">
@@ -14,5 +14,3 @@ const FooterSocials = () => {
         </div>
     );
 };
-
-export default FooterSocials;

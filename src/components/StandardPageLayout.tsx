@@ -4,7 +4,9 @@ import { HtmlHTMLAttributes, ReactNode } from "react";
 
 import { cn } from "@/libs/utils";
 
-import FooterLinks from "./navigation/footer/FooterLinks";
+
+
+import Footer from "./navigation/footer/Footer";
 import NavigationBar from "./navigation/navbar/NavigationBar";
 
 
@@ -21,7 +23,7 @@ export default function StandardPageLayout({ children, ...props }: StandardPageL
                 </div>
                 <main className="relative flex flex-col justify-between">{children}</main>
                 {/* Combination of min-h-full and mt-auto ensures footer doesn't collapse above screen bottom on small pages. */}
-                <FooterLinks />
+                <Footer />
             </div>
         </div>
     );
