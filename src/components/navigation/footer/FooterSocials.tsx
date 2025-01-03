@@ -1,19 +1,25 @@
 import { HTMLAttributes } from "react";
 
-import DiscordLogo from "@/assets/svg/DiscordLogo";
+import { Anchor } from "@/components/primitives/Anchor";
 import { cn } from "@/libs/utils";
 
 import { Button } from "../../primitives/Button";
+import { FooterSocial } from "./_data/footerTypes";
 
 interface FooterSocialsProps extends HTMLAttributes<HTMLDivElement> {
+    socials: FooterSocial[];
     className?: string;
 }
 
-export default function FooterSocials({ className, ...props }: FooterSocialsProps) {
+export default function FooterSocials({ socials, className, ...props }: FooterSocialsProps) {
     return (
-        <div {...props} className={cn("flex w-full items-center justify-between", className)}>
-            <DiscordLogo className="fill-white" />
-            <Button variant="primary" color="blue">
+        <div {...props} className={cn("flex w-full items-center gap-6 px-2", className)}>
+            {socials.map((social) => (
+                <Anchor key={social.name} href={social.href} newTab className="[&>svg]:fill-white">
+                    {social.icon}
+                </Anchor>
+            ))}
+            <Button variant="primary" color="blue" className="ml-auto">
                 Back to Top
             </Button>
         </div>

@@ -21,7 +21,7 @@ export default function Footer() {
                 ))}
                 {/* blue bar */}
                 <div className="h-1 w-full my-8 rounded-full bg-gradient-to-br from-[#1F86E6] to-[#6B74A1] sm:col-span-3" />
-                <FooterSocials className="sm:col-span-3" />
+                <FooterSocials socials={footerData.socials} className="sm:col-span-3" />
             </div>
         </footer>
     );
