@@ -157,12 +157,14 @@ function isLinkProps(props: ButtonVersionProps | LinkVersionProps): props is Lin
 /**
  * General button component for navigation and click actions.
  *
- * Takes the following variants as props:
- * @variation Variant [primary, secondary, tertiary, text] - the general style and importance of the button, see Figma.
- * @variation Color [blue, yellow, purple, dark, light] - the color of the button.
+ * Takes the following parameters as props of variants:
+ * @variation style [primary, secondary, tertiary, text] - the general style and importance of the button, see Figma.
+ * @variation color [blue, yellow, purple, dark, light] - the color of the button.
+ * @variation isJustified [false, true] - whether the element scales to the full width of the parent.
  *
- * Takes the following additional props:
- * @param isJustified [false, true] - whether the element scales to the full width of the parent.
+ * example usage:
+ * <Button variant={{ style: "primary", color: "blue", isJustified={true} }}>primary blue</Button>
+ *
  * and any other button props.
  *
  * Labels are provided as children of this element.

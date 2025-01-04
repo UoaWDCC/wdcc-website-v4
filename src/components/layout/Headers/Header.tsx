@@ -72,9 +72,9 @@ interface HeaderProps {
 /**
  * General global header component - used to provide general headings for all (or most) content pages.
  *
- * Takes the following variants as props:
- * @param Variant [primary, secondary] - the hierarchical size and layout of the heading block.
- * @param Color [yellow, blue, green, purple, brand] - the color scheme and visual style of the heading block.
+ * Takes the following parameters as props of variants:
+ * @variation style [primary, secondary] - the hierarchical size and layout of the heading block.
+ * @variation color [yellow, blue, green, purple, brand] - the color scheme and visual style of the heading block.
  *
  * Takes the following additional props:
  * @param Title - the title.
@@ -85,6 +85,15 @@ interface HeaderProps {
  * @param primaryButton - the main action button (primary variant only, optional)
  * @param secondaryButton - the secondary action button (primary variant only, optional)
  * @param backlink - the backlink label and text (secondary variant only, optional)
+ *
+ * example usage:
+ * <Header
+ *     variant={{ style: "primary", color: "blue" }}
+ *     title="projects"
+ *     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+ *     primaryButton={{ label: "Lorem ipsum dolor ⮕", href: "https://google.com" }}
+ *     secondaryButton={{ label: "Lorem ipsum dolor", href: "/" }}
+ * />
  *
  * Link props (as above) are objects of format:
  * {
