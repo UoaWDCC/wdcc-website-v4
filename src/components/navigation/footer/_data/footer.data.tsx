@@ -1,5 +1,6 @@
+import { social } from "@/assets/svg/socials";
+
 import { FooterData } from "./footerTypes";
-import DiscordLogo from '@/assets/svg/DiscordLogo';
 
 export const footerData: FooterData = {
     columns: [
@@ -76,32 +77,32 @@ export const footerData: FooterData = {
         {
             name: "Linktree",
             href: "https://go.wdcc.co.nz",
-            icon: <DiscordLogo />,
+            icon: <social.discord />,
         },
         {
             name: "GitHub",
             href: "https://github.com/uoaWDCC",
-            icon: <DiscordLogo />,
+            icon: <social.facebook />,
         },
         {
             name: "Discord",
             href: "https://discord.gg/CZX8aSSrGj",
-            icon: <DiscordLogo />,
+            icon: <social.instagram />,
         },
         {
             name: "Facebook",
             href: "https://www.facebook.com/wdccuoa",
-            icon: <DiscordLogo />,
+            icon: <social.youtube />,
         },
         {
             name: "Instagram",
             href: "https://www.instagram.com/wdccuoa",
-            icon: <DiscordLogo />,
+            icon: <social.mail />,
         },
         {
             name: "LinkedIn",
             href: "https://www.linkedin.com/company/wdccuoa",
-            icon: <DiscordLogo />,
+            icon: <social.github />,
         },
     ],
     friends: [

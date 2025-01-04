@@ -27,5 +27,5 @@ export default function Footer({ className, ...props }: FooterProps) {
 }
 
 function FooterBar() {
-    return <div className="my-8 h-1 w-full rounded-full bg-gradient-to-br from-[#1F86E6] to-[#6B74A1]" />;
+    return <div className="my-8 h-[3px] w-full rounded-full bg-gradient-to-tr from-blue-300 to-blue-500" />;
 }
