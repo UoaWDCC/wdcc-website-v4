@@ -11,9 +11,9 @@ export default function EventsPage() {
             <Header variant="primary"
                 color="blue"
                 title="events"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                primaryButton={{ label: "Upcoming events ⮕", href: "" }}
-                secondaryButton={{ label: "View past events", href: "/events/all" }} />
+                description="From educational workshops to social mixers, hackathons to code competitions, WDCC's regular events help students develop all kinds of valuable skills - and make friends along the way!"
+                primaryButton={{ label: "Current events ↓", href: "/events" }}
+                secondaryButton={{ label: "Past events", href: "/events/all" }} />
             <EventsRoadmap />
             <UpcomingEventsSection upcomingEvents={eventsData} />
         </StandardPageLayout>
