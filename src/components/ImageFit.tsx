@@ -1,19 +1,16 @@
 import React from "react";
 import Image from "next/image";
 
-const ImageFit = ({
-    src,
-    alt,
-    width = "150px",
-    height = "80px",
-}: {
+export interface ImageFitProps {
     src: string;
     alt: string;
     width?: string;
     height?: string;
-}) => {
+}
+
+const ImageFit = ({ src, alt, width = "150px", height = "80px" }: ImageFitProps) => {
     return (
-        <div style={{ position: "relative", width: width, height: height }}>
+        <div style={{ position: "relative", minWidth: width, minHeight: height }}>
             <Image
                 priority
                 fill

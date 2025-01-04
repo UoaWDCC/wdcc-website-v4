@@ -1,15 +1,21 @@
 "use client";
 
-import SponsorSection from "@/app/(home)/_components/SponsorSection";
+import BackgroundEffect from "@/app/(home)/_components/BackgroundEffect";
+import { sponsorRegister } from "@/app/(home)/_components/SponsorSection";
+import { View } from "@/components/three/scene/View";
+import ThreeLayout from "@/components/ThreePageLayout";
 
-// import { Button } from "@/components/primitives/Button";
-
-export default function TestPage() {
-    /* Demo of standard component implementation */
-
+export default function TestSponsorPage() {
     return (
-        <div className="flex h-dvh w-dvw items-center justify-center">
-            <SponsorSection />
-        </div>
+        <ThreeLayout>
+            <View className="fixed -z-10 size-full scale-150" background>
+                <BackgroundEffect />
+            </View>
+            <div className="flex w-dvw flex-col items-center justify-center gap-16">
+                {sponsorRegister.map((SponsorSection, i) => (
+                    <SponsorSection key={i} />
+                ))}
+            </div>
+        </ThreeLayout>
     );
 }

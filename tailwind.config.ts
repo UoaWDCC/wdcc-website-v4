@@ -36,6 +36,12 @@ export default {
             colors: {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
+                sponsor: {
+                    gold: "hsl(var(--sponsor-gold))",
+                    tech: "hsl(var(--sponsor-tech))",
+                    silver: "hsl(var(--sponsor-silver))",
+                    community: "hsl(var(--sponsor-community))",
+                },
                 gray: {
                     900: "hsl(var(--gray-900))",
                     800: "hsl(var(--gray-800))",

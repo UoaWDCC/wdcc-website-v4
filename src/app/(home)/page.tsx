@@ -4,7 +4,7 @@ import NavigationBar from "@/components/navigation/navbar/NavigationBar";
 import { View } from "@/components/three/scene/View";
 import ThreeLayout from "@/components/ThreePageLayout";
 
-import SponsorSection from "./_components/SponsorSection";
+import { SponsorSection } from "./_components/SponsorSection";
 import ThisIsWDCC from "./_components/ThisIsWDCCSection";
 import WDCCHero from "./_components/WDCCHero";
 
