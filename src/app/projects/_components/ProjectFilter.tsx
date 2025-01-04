@@ -7,14 +7,14 @@ import { FilterTag } from "./FilterTag";
 interface ProjectFilterProps {
     projects: Project[];
     setSelectedYear: (year: string) => () => void;
-    selectedYear: string; // Add this prop
+    selectedYear: string;
 }
 
 export function ProjectFilter({ projects, setSelectedYear, selectedYear }: ProjectFilterProps) {
     const availableYears = Array.from(new Set(projects.map((project) => project.year)));
     return (
-        <div className="mb-9 flex items-center gap-[18px]">
-            <p className="text-[16px] font-semibold">Filter By year</p>
+        <div className="mb-9 flex items-center justify-center gap-4 xl:justify-start">
+            <p className="text-md font-semibold">Filter By year</p>
             <div className="flex gap-4">
                 {availableYears.map((year, index) => (
                     <FilterTag
