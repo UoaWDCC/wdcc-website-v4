@@ -4,7 +4,7 @@ import { sponsorsCommunity, sponsorsGold, sponsorsSilver, sponsorsTech } from "@
 import SectionHeader from "@/components/section/SectionHeader";
 import { cn } from "@/libs/utils";
 
-import { SponsorCardTest, SponsorCardTest2 } from "./sponsor/SponsorCardTest";
+import { SponsorCardTest, SponsorCardTest2, SponsorCardTest3 } from "./sponsor/SponsorCardTest";
 
 export const SponsorSection = () => {
     return (
@@ -156,8 +156,42 @@ export const SponsorSection5 = () => {
         </div>
     );
 };
+export const SponsorSection6 = () => {
+    return (
+        <div className="mt-24 flex w-[clamp(300px,100%,800px)] flex-col items-center gap-4 px-4">
+            <SectionHeader>WDCC Sponsors for 2025</SectionHeader>
+            <div className="flex items-center gap-4">
+                {sponsorsGold.map((logo, i) => (
+                    <SponsorCardTest3 color="bg-sponsor-gold/40" src={logo} alt={logo} width="250px" key={i} />
+                ))}
+            </div>
+            <div className="flex items-center gap-4">
+                {sponsorsTech.map((logo, i) => (
+                    <SponsorCardTest3 color="bg-sponsor-tech/40" src={logo} alt={logo} width="150px" key={i} />
+                ))}
+            </div>
+            <div className="flex w-min items-center gap-4">
+                {sponsorsSilver.map((logo, i) => (
+                    <SponsorCardTest3 color="bg-sponsor-silver/40" width="125px" src={logo} alt={logo} key={i} />
+                ))}
+            </div>
+            <div className="flex w-min items-center gap-4">
+                {sponsorsCommunity.map((logo, i) => (
+                    <SponsorCardTest3 color="bg-sponsor-community/40" src={logo} alt={logo} key={i} />
+                ))}
+            </div>
+        </div>
+    );
+};
 
-export const sponsorRegister = [SponsorSection, SponsorSection2, SponsorSection3, SponsorSection4, SponsorSection5];
+export const sponsorRegister = [
+    SponsorSection,
+    SponsorSection2,
+    // SponsorSection3,
+    SponsorSection4,
+    // SponsorSection5,
+    SponsorSection6,
+];
 
 const SponsorLabel = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
     return (

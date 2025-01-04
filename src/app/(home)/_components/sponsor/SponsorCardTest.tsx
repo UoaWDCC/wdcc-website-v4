@@ -1,3 +1,7 @@
+"use client";
+
+import { motion, Variants } from "framer-motion";
+
 import ImageFit, { ImageFitProps } from "@/components/ImageFit";
 import { cn } from "@/libs/utils";
 
@@ -15,4 +19,34 @@ export const SponsorCardTest2 = ({ color, ...image }: SponsorCardTest2Props) => 
             <ImageFit {...image} />
         </div>
     );
+};
+
+export const SponsorCardTest3 = ({ color, ...image }: SponsorCardTest2Props) => {
+    return (
+        <motion.div
+            initial="hide"
+            whileHover="show"
+            className={cn("relative cursor-pointer rounded-xl bg-gray-20 p-4 px-8 shadow-lg backdrop-blur-md", color)}
+        >
+            <motion.p
+                variants={textvariants}
+                className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-center font-bold drop-shadow-[0px_0px_4px_white]"
+            >
+                Sponsor
+            </motion.p>
+            <motion.div variants={imagevariants}>
+                <ImageFit {...image} />
+            </motion.div>
+        </motion.div>
+    );
+};
+
+const textvariants: Variants = {
+    hide: { opacity: 0 },
+    show: { opacity: 1, transition: { duration: 0.2, ease: "easeInOut" } },
+};
+
+const imagevariants: Variants = {
+    hide: { scale: 1, filter: "blur(0px)" },
+    show: { scale: 0.8, filter: "blur(4px)", transition: { duration: 0.2, ease: "easeInOut" } },
 };
