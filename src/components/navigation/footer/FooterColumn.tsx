@@ -1,12 +1,14 @@
-import React from "react";
-
-import type { FooterLink } from "@/types/navigation";
+import type { FooterColumn } from "./_data/footerTypes";
 
 import { cn } from "@/libs/utils";
 
-import { PageLink } from "../primitives/Anchor";
+import { UnderlineLink } from "../UnderlineLink";
 
-const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
+interface FooterColumnProps extends FooterColumn {
+    last?: boolean;
+}
+
+export default function FooterColumn({ last, ...data }: FooterColumnProps) {
     return (
         <div className="flex select-none flex-col">
             {/* todo: replace font with real foreground value */}
@@ -15,19 +17,11 @@ const FooterBlock = ({ last, ...data }: FooterLink & { last?: boolean }) => {
             </strong>
             <div className={cn("flex flex-col border-white/70 pb-4 sm:border-none sm:pb-0", last && "border-none")}>
                 {data.links.map((link) => (
-                    <PageLink
-                        key={link.label}
-                        href={link.href}
-                        target={link.external ? "_blank" : "_self"}
-                        mode="light"
-                        shift
-                    >
+                    <UnderlineLink key={link.label} href={link.href} newTab={link.external} mode="light" shift>
                         {link.label}
-                    </PageLink>
+                    </UnderlineLink>
                 ))}
             </div>
         </div>
     );
-};
-
-export default FooterBlock;
+}
