@@ -9,23 +9,25 @@ import { ProjectFilter } from "./_components/ProjectFilter";
 import { projectsData } from "./_data/projects.data";
 
 export default function ProjectsPage() {
-    const [SelectedYear, SetYear] = useState<string>("");
+    const [selectedYear, setYear] = useState<string | null>(null);
 
     const filterByYear = (category: string) => () => {
-        SetYear((prevYear) => (prevYear === category ? "" : category));
+        setYear((prevYear) => (prevYear === category ? null : category));
     };
 
-    const filteredProjects = SelectedYear
-        ? projectsData.filter((project) => project.year === SelectedYear)
+    const filteredProjects = selectedYear
+        ? projectsData.filter((project) => project.year === selectedYear)
         : projectsData;
+
+    const sortedProjects = [...filteredProjects].sort((a, b) => Number(b.year) - Number(a.year));
 
     return (
         <StandardPageLayout>
             <div className="flex w-full justify-center">
                 <div className="mb-10 mt-10 flex w-[1100px] flex-col">
-                    <ProjectFilter projects={projectsData} setSelectedYear={filterByYear} selectedYear={SelectedYear} />
+                    <ProjectFilter projects={projectsData} setSelectedYear={filterByYear} selectedYear={selectedYear} />
                     <div className="flex flex-wrap justify-center gap-8">
-                        {filteredProjects.map((project, index) => (
+                        {sortedProjects.map((project, index) => (
                             <ProjectCard project={project} key={index} />
                         ))}
                     </div>
