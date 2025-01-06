@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import placeholder from '@public/600x400.png';
 import { EventCardType } from '../_data/eventTypes';
 
 interface EventCardProps {
@@ -16,7 +15,7 @@ export default function EventCard({ event }: EventCardProps) {
     return (
         <div className="h-[36rem] bg-slate-200 rounded-2xl flex-col justify-start items-end gap-9 inline-flex overflow-hidden">
             <div className="">
-                <Image src={placeholder} alt={event.imageAlt} width={600} height={400} className="rounded-2xl" />
+                <Image src={event.image} alt={event.imageAlt} width={600} height={400} className="rounded-2xl" />
             </div>
             <div className="self-stretch px-8 pb-8 flex-col justify-start items-center gap-6 flex">
                 <div className="justify-start items-start gap-2 inline-flex">

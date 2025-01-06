@@ -1,4 +1,5 @@
 import type { EventCardType } from "./eventTypes";
+import placeholder from "@/assets/image/600x400.png";
 
 export const eventsData: EventCardType[] = [
     {
@@ -7,7 +8,7 @@ export const eventsData: EventCardType[] = [
         location: "201-265",
         description: "Join the WDCC Rizz Executives as we explore the intricacies of socialising, dating, and networking as a tech student in 2025.",
         category: "Workshop",
-        image: "https://placehold.co/200x200.png",
+        image: placeholder,
         imageAlt: "Image 1",
     },
     {
@@ -16,7 +17,7 @@ export const eventsData: EventCardType[] = [
         location: "201-265",
         description: "Compete with your friends and peers in our annual Rizz Contest. Prizes will be provided.",
         category: "Competition",
-        image: "https://placehold.co/200x200.png",
+        image: placeholder,
         imageAlt: "Image 1",
     },
     {
@@ -25,7 +26,7 @@ export const eventsData: EventCardType[] = [
         location: "201-265",
         description: "Join WDCC members, executives, and industry leaders in our speed networking event. Food is provided but grad role offers may not be.",
         category: "Social",
-        image: "https://placehold.co/200x200.png",
+        image: placeholder,
         imageAlt: "Image 1",
     },
     {
@@ -34,7 +35,7 @@ export const eventsData: EventCardType[] = [
         location: "201-265",
         description: "Does Speed Networking feel too fast-paced for you? No worries - pop in to Slow Networking, the slower alternative that's just as fun.",
         category: "Social",
-        image: "https://placehold.co/200x200.png",
+        image: placeholder,
         imageAlt: "Image 1",
     },
     {
@@ -43,7 +44,7 @@ export const eventsData: EventCardType[] = [
         location: "201-265",
         description: "Delve into the full theory and practical applications behind Advanced Rizz in this higher level rizz workshop.",
         category: "Workshop",
-        image: "https://placehold.co/200x200.png",
+        image: placeholder,
         imageAlt: "Image 1",
     },
 ]
