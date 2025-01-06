@@ -31,7 +31,7 @@ export default function NavigationBar({ className }: ClassName) {
                 {/* Vertical line */}
                 <div className="hidden h-5 w-0.5 rounded bg-gray-700 md:block" />
                 {/* Buttons */}
-                <div className="flex gap-3 max-w-[100vw] overflow-auto hidden-scrollbar">
+                <div className="flex gap-3 overflow-auto hidden-scrollbar">
                     <NavigationMenu className="md:hidden" links={navbarData.links} />
                     <Button variant="primary" color="blue" href="https://go.wdcc.co.nz" newTab>
                         Join WDCC <Arrow />

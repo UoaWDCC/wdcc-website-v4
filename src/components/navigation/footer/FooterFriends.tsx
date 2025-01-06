@@ -28,7 +28,7 @@ export function FriendLink({ friend }: FriendLinkProps) {
             variant="secondary"
             href={href}
             newTab={external}
-            className="px-4 py-[2px] text-xs font-normal text-white bg-[rgba(200,198,210,0.30)] hover:bg-[rgba(200,198,210,0.40)]"
+            className="bg-gray-200/30 px-4 py-0.5 text-xs font-normal text-white hover:bg-gray-200/40"
         >
             {label} <Arrow />
         </Button>
