@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import EventCard from "./EventCard";
-import { EventCardType } from "@/types/models";
+import { EventCardType } from "../_data/eventTypes";
 import EventCategoryFilter from "./EventCategoryFilter";
 
 interface UpcomingEventsProps {
