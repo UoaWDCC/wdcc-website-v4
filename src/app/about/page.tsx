@@ -2,10 +2,10 @@ import Image from "next/image";
 
 import Arrow from "@/assets/svg/Arrow";
 import Header from "@/components/layout/Headers/Header";
+import PageBody from "@/components/PageBody";
 import { Button } from "@/components/primitives/Button";
 import StandardPageLayout from "@/components/StandardPageLayout";
 
-import AboutPageBody from "./_components/AboutPageBody";
 import Duo from "./_components/Duo";
 import Quote from "./_components/Quote";
 import { aboutData } from "./_data/about.data";
@@ -37,7 +37,7 @@ export default function AboutPage() {
                 secondaryButton={{ label: "Frequently asked questions", href: "/faq" }}
             />
 
-            <AboutPageBody
+            <PageBody
                 outer="flex w-full items-center justify-center py-20"
                 inner="flex w-[80%] max-w-[1100px] flex-col gap-24"
             >
@@ -65,7 +65,7 @@ export default function AboutPage() {
                         </Button>
                     </div>
                 </Duo>
-            </AboutPageBody>
+            </PageBody>
 
             <Quote quote={quoteSection.quote} author={quoteSection.author} subscript={quoteSection.subscript} />
 
