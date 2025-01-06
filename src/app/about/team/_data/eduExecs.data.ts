@@ -1,15 +1,15 @@
-import type { Exec } from "@/types/models";
+import { Exec } from "@/types/models";
 
 import placeholder from "@/assets/image/200x200.png";
 
-export const execsData: Exec[] = [
+export const eduExecs: Exec[] = [
     {
-        name: "Kevin Cheung",
+        name: "Andrew Qiu",
         image: placeholder,
         description: "I don't know if this needs a description",
     },
     {
-        name: "Nate Williamson",
+        name: "Koutarou Yumiba",
         image: placeholder,
         description: "ditto",
     },
