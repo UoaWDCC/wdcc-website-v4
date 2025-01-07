@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import Arrow from "@/assets/svg/Arrow";
 import Header from "@/components/layout/Headers/Header";
-import PageBody from "@/components/PageBody";
+import NestedDiv from "@/components/NestedDiv";
 import { Button } from "@/components/primitives/Button";
 import StandardPageLayout from "@/components/StandardPageLayout";
 
@@ -37,7 +37,7 @@ export default function AboutPage() {
                 secondaryButton={{ label: "Frequently asked questions", href: "/faq" }}
             />
 
-            <PageBody
+            <NestedDiv
                 outer="flex w-full items-center justify-center py-20"
                 inner="flex w-[80%] max-w-[1100px] flex-col gap-24"
             >
@@ -65,7 +65,7 @@ export default function AboutPage() {
                         </Button>
                     </div>
                 </Duo>
-            </PageBody>
+            </NestedDiv>
 
             <Quote quote={quoteSection.quote} author={quoteSection.author} subscript={quoteSection.subscript} />
 

@@ -1,5 +1,5 @@
 import Header from "@/components/layout/Headers/Header";
-import PageBody from "@/components/PageBody";
+import NestedDiv from "@/components/NestedDiv";
 import StandardPageLayout from "@/components/StandardPageLayout";
 
 import ExecList from "./_components/ExecList";
@@ -18,13 +18,13 @@ export default function TeamPage() {
                 title="meet the team"
                 backlink={{ label: "About WDCC", href: "/about" }}
             />
-            <PageBody
+            <NestedDiv
                 outer="flex w-full items-center justify-center py-20"
                 inner="flex w-[80%] max-w-[1100px] flex-col gap-24"
             >
                 <InfoPill text={teamData.info} />
                 <ExecList execs={techExecs} />
-            </PageBody>
+            </NestedDiv>
         </StandardPageLayout>
     );
 }
