@@ -1,33 +1,20 @@
 "use client";
 
-import React, { Suspense, useRef } from "react";
+import React, { useRef } from "react";
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion-3d";
 
 import Draw from "@/app/_component/Draw";
 import { Button } from "@/components/primitives/Button";
-import useRelativeMouse from "@/hooks/useRelativeMouse";
+import { View } from "@/components/three/scene/View";
 
-const WDCCThreeLogo = dynamic(() => import("@/components/three/primitives/index").then((mod) => mod.WDCCThreeLogo), {
+const WDCCThreeHero = dynamic(() => import("@/components/three/layout/home/WDCCThreeLogo").then((mod) => mod.default), {
     ssr: false,
 });
-const View = dynamic(() => import("@/components/three/scene/View").then((mod) => mod.View), {
-    ssr: false,
-});
-const Common = dynamic(() => import("@/components/three/CommonLight").then((mod) => mod.CommonLight), { ssr: false });
 
 const WDCCHero = () => {
-    const container = useRef(null);
-    const mouse = useRelativeMouse(container, { persist: true });
-
-    const [, setReady] = React.useState(false);
-
-    React.useEffect(() => {
-        setReady(true); // force trigger re-render for mouse hook to work
-    }, []);
-
+    const ref = useRef<HTMLDivElement>(null);
     return (
-        <div className="relative flex h-dvh w-full flex-col items-center justify-center" ref={container}>
+        <div ref={ref} className="relative flex h-dvh w-full flex-col items-center justify-center">
             <div className="flex w-[clamp(300px,100%,1100px)] flex-col items-center self-center px-8 text-center text-md">
                 <h3 className="font-normal tracking-[25%] text-blue-800">WEB DEVELOPMENT AND CONSULTING CLUB</h3>
                 <h1 className="text-5xl font-bold italic text-blue-brand">
@@ -42,19 +29,7 @@ const WDCCHero = () => {
                 </div>
             </div>
             <View className="flex h-[500px] w-[800px] flex-col items-center justify-center">
-                <Suspense fallback={null}>
-                    {/* rotate the logo relative to the mouse, range from -60deg to 60deg on x and y axis*/}
-                    <motion.group
-                        animate={{
-                            rotateX: (Math.PI / 6) * mouse.normal.ry - 0.15,
-                            rotateY: (Math.PI / 6) * mouse.normal.rx - 0.15,
-                        }}
-                        transition={{ type: "smooth", duration: 0.2 }}
-                    >
-                        <WDCCThreeLogo />
-                    </motion.group>
-                    <Common />
-                </Suspense>
+                <WDCCThreeHero parentRef={ref} />
             </View>
         </div>
     );
