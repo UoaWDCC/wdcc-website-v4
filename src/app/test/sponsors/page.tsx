@@ -1,7 +1,7 @@
 "use client";
 
-import BackgroundEffect from "@/app/(home)/_components/BackgroundEffect";
-import { sponsorRegister } from "@/app/(home)/_components/SponsorSection";
+import { sponsorRegister } from "@/app/(home)/_components/sponsor/demo/DemoSponsorSection";
+import BackgroundEffect from "@/components/three/BackgroundEffect";
 import { View } from "@/components/three/scene/View";
 import ThreeLayout from "@/components/ThreePageLayout";
 

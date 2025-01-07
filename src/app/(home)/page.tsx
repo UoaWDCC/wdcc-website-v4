@@ -1,6 +1,6 @@
-import BackgroundEffect from "@/app/(home)/_components/BackgroundEffect";
 import Footer from "@/components/navigation/footer/Footer";
 import NavigationBar from "@/components/navigation/navbar/NavigationBar";
+import BackgroundEffect from "@/components/three/BackgroundEffect";
 import { View } from "@/components/three/scene/View";
 import ThreeLayout from "@/components/ThreePageLayout";
 

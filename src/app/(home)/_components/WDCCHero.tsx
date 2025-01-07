@@ -35,12 +35,7 @@ const WDCCHero = () => {
                 </h1>
                 <p className="mt-8 text-lg text-blue-700">
                     We connect tomorrow’s developers, designers, and tech project leaders with the real-world experience
-                    and opportunities that{" "}
-                    <span className="relative italic underline">
-                        <Draw />
-                        help them shine
-                    </span>
-                    .
+                    and opportunities that <Draw className="italic underline">help them shine</Draw>.
                 </p>
                 <div className="mt-8">
                     <Button variant={{ style: "primary", color: "blue" }}>Become a member for 2025</Button>

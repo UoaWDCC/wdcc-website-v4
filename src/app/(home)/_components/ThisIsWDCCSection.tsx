@@ -3,8 +3,8 @@ import React from "react";
 import SectionDescription from "@/components/section/SectionDescription";
 import SectionHeader from "@/components/section/SectionHeader";
 
-import { infoCardsData } from "../_data/infoCard.data";
-import InfoCard from "./InfoCard";
+import { whatWeDoData } from "../_data/infoCard.data";
+import InfoCard from "./WhatWeDoCard";
 
 const ThisIsWDCC = () => {
     return (
@@ -15,9 +15,9 @@ const ThisIsWDCC = () => {
                 projects with real-world clients that solve real-world problems.
             </SectionDescription>
             <div className="mt-16 flex flex-col gap-8 lg:flex-row">
-                <InfoCard {...infoCardsData[0]} />
-                <InfoCard {...infoCardsData[1]} />
-                <InfoCard {...infoCardsData[2]} />
+                {whatWeDoData.columns.map((column) => (
+                    <InfoCard {...column} key={column.slug} />
+                ))}
             </div>
         </div>
     );

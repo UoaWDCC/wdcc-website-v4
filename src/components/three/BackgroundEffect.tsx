@@ -4,8 +4,8 @@ import React, { useRef } from "react";
 import { useFrame, Vector3 } from "@react-three/fiber";
 import { DoubleSide, Euler, Group, Mesh } from "three";
 
-import { CommonLight } from "../../../components/three/CommonLight";
-import { TrianglePlane } from "../../../components/three/primitives/TrianglePlane";
+import { CommonLight } from "./CommonLight";
+import { TrianglePlane } from "./primitives/TrianglePlane";
 
 // instance settings
 const RADIUS = 32;

@@ -14,17 +14,17 @@ const card = tv({
     },
 });
 
-export interface CardProps {
-    set?: VariantProps<typeof card>;
+export interface WhatWeDoCardProps {
+    variant?: VariantProps<typeof card>;
     index: string;
     title: string;
     description: string;
     slug: string;
 }
 
-const InfoCard = ({ set, index, title, description, slug }: CardProps) => {
+const InfoCard = ({ variant, index, title, description, slug }: WhatWeDoCardProps) => {
     return (
-        <div className={card({ ...set })}>
+        <div className={card({ ...variant })}>
             <h2 className="absolute left-0 top-0 -translate-x-4 text-[80px] font-bold opacity-10">{index}</h2>
             <h3 className="text-3xl font-bold text-gray-800">{title}</h3>
             <p className="text-md font-normal text-foreground">{description}</p>
