@@ -1,18 +1,30 @@
-import DiscordLogo from "@/assets/svg/DiscordLogo";
+import { HTMLAttributes } from "react";
+
+import { Anchor } from "@/components/primitives/Anchor";
+import { cn } from "@/libs/utils";
 
 import { Button } from "../../primitives/Button";
+import { FooterSocial } from "./_data/footerTypes";
 
-export default function FooterSocials() {
+interface FooterSocialsProps extends HTMLAttributes<HTMLDivElement> {
+    socials: FooterSocial[];
+    className?: string;
+}
+
+export default function FooterSocials({ socials, className, ...props }: FooterSocialsProps) {
     return (
-        // if bigger than sm, span 3 column and start at 2nd column else act like a normal div
-        <div className="mt-8 flex flex-col sm:col-span-3 lg:col-start-2">
-            <div className="h-1 w-full rounded-full bg-gradient-to-br from-blue-brand to-blue-750" />
-            <div className="mt-8 flex w-full items-center justify-between">
-                <DiscordLogo className="fill-white" />
-                <Button variant="primary" color="blue">
-                    Back to Top
-                </Button>
-            </div>
+        <div
+            {...props}
+            className={cn("flex justify-center w-full items-center gap-6", className)}
+        >
+            {socials.map((social) => (
+                <Anchor key={social.name} href={social.href} className="[&>svg]:fill-white">
+                    {social.icon}
+                </Anchor>
+            ))}
+            <Button variant="primary" color="blue" className="ml-auto hidden sm:block">
+                Back to Top
+            </Button>
         </div>
     );
-};
+}

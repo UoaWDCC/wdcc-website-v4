@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import type { NavigationLink } from "@/components/navigation/navbar/_data/navbarTypes";
+import type { NavigationLink } from "./_data/navbarTypes";
+
 import { Anchor } from "@/components/primitives/Anchor";
 import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";
@@ -18,13 +19,13 @@ const NavigationMenu = ({ links, className }: { links: NavigationLink[]; classNa
 
     return (
         <>
-            <Button variant="secondary" color="blue" onClick={handleToggle} className={cn("", className)}>
+            <Button variant="secondary" color="blue" onClick={handleToggle}>
                 Menu
             </Button>
             {/* todo: this should lock scrolling from happening */}
             <motion.div
                 className={cn(
-                    "fixed left-0 top-0 z-[999] h-full w-full bg-blue-900/80 px-10 pt-8 text-white backdrop-blur-lg",
+                    "fixed left-0 top-0 h-screen w-full bg-blue-900/80 px-10 pt-8 text-white backdrop-blur-lg",
                     className
                 )}
                 // animation to make it look like it's opening/closing

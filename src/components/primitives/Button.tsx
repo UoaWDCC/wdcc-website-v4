@@ -1,11 +1,11 @@
 "use client";
 
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import Link, { LinkProps } from "next/link";
 import { tv, type VariantProps } from "tailwind-variants";
 
 const button = tv({
-    base: "flex w-fit items-center justify-center rounded-full px-6 py-2 font-bold transition duration-200 hover:cursor-pointer gap-2",
+    base: "flex w-fit items-center justify-center gap-2 rounded-full px-6 py-2 font-bold transition duration-200 hover:cursor-pointer",
     variants: {
         variant: {
             primary: "border-2 py-[calc(0.5rem-2px)]",
@@ -142,7 +142,10 @@ type ButtonVersionProps = VariantProps<typeof button> &
     CommonProps & { href?: never };
 
 // Type if rendered as a Link (href provided)
-type LinkVersionProps = VariantProps<typeof button> & LinkProps & CommonProps & { href: string; newTab?: boolean };
+type LinkVersionProps = VariantProps<typeof button> &
+    LinkProps &
+    AnchorHTMLAttributes<HTMLAnchorElement> &
+    CommonProps & { href: string; newTab?: boolean };
 
 // Type guard to determine if the props are for a Link or Button
 function isLinkProps(props: ButtonVersionProps | LinkVersionProps): props is LinkVersionProps {
