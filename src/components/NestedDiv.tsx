@@ -9,7 +9,7 @@ interface NestedDivProps {
 export default function NestedDiv({ children, outer, inner }: NestedDivProps) {
     return (
         <div className={outer}>
-            <div className={inner}>{children}</div>;
+            <div className={inner}>{children}</div>
         </div>
     );
 }

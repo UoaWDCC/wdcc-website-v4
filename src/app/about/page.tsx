@@ -67,7 +67,12 @@ export default function AboutPage() {
                 </Duo>
             </NestedDiv>
 
-            <Quote quote={quoteSection.quote} author={quoteSection.author} subscript={quoteSection.subscript} />
+            <NestedDiv
+                outer="flex w-full items-center justify-center py-20"
+                inner="flex w-[80%] max-w-[1100px] flex-col gap-4"
+            >
+                <Quote quote={quoteSection.quote} author={quoteSection.author} subscript={quoteSection.subscript} />
+            </NestedDiv>
 
             {/* TODO: Image quality? */}
             <Image src={endImage.image} alt={endImage.imageAlt} />
