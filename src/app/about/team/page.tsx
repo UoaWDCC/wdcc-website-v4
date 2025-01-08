@@ -2,13 +2,13 @@ import Header from "@/components/layout/Headers/Header";
 import NestedDiv from "@/components/NestedDiv";
 import StandardPageLayout from "@/components/StandardPageLayout";
 
-import ExecList from "./_components/ExecList";
+import ExecTeam from "./_components/ExecTeam";
 import InfoPill from "./_components/InfoPill";
 import { teamData } from "./_data/team.data";
-import { techExecs } from "./_data/techExecs.data";
 
 export default function TeamPage() {
-    // const tech = teamData.techTeam;
+    const tech = teamData.techTeam;
+    const edu = teamData.eduTeam;
 
     return (
         <StandardPageLayout>
@@ -20,10 +20,13 @@ export default function TeamPage() {
             />
             <NestedDiv
                 outer="flex w-full items-center justify-center py-20"
-                inner="flex w-[80%] max-w-[1100px] flex-col gap-24"
+                inner="flex w-[80%] max-w-[1100px] flex-col gap-12"
             >
                 <InfoPill text={teamData.info} />
-                <ExecList execs={techExecs} />
+
+                {/* TODO: fix responsiveness on mobile */}
+                <ExecTeam title={tech.title} description={tech.description} execs={tech.execs} />
+                <ExecTeam title={edu.title} description={edu.description} execs={edu.execs} />
             </NestedDiv>
         </StandardPageLayout>
     );

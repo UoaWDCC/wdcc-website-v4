@@ -71,6 +71,7 @@ export default function AboutPage() {
                 outer="flex w-full items-center justify-center py-20"
                 inner="flex w-[80%] max-w-[1100px] flex-col gap-4"
             >
+                {/* TODO: Make quote mark more responsive? */}
                 <Quote quote={quoteSection.quote} author={quoteSection.author} subscript={quoteSection.subscript} />
             </NestedDiv>
 
