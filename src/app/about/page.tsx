@@ -68,7 +68,7 @@ export default function AboutPage() {
             </NestedDiv>
 
             <NestedDiv
-                outer="flex w-full items-center justify-center py-20"
+                outer="flex w-full items-center justify-center py-20 bg-blue-20"
                 inner="flex w-[80%] max-w-[1100px] flex-col gap-4"
             >
                 {/* TODO: Make quote mark more responsive? */}
