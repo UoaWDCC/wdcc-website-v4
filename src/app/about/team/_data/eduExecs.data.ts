@@ -5,12 +5,16 @@ import placeholder from "@/assets/image/200x200.png";
 export const eduExecs: Exec[] = [
     {
         name: "Andrew Qiu",
+        role: "Education Exec",
         image: placeholder,
-        description: "I don't know if this needs a description",
+        description: "BSc - Computer Science\nThe University of Auckland",
+        joined: "Joined Mar 2024",
     },
     {
         name: "Koutarou Yumiba",
+        role: "Education Exec",
         image: placeholder,
-        description: "ditto",
+        description: "BSc - Computer Science\nThe University of Auckland",
+        joined: "Joined Mar 2024",
     },
 ];

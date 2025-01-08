@@ -4,7 +4,9 @@ import { StaticImageData } from "next/image";
 export type Exec = {
     name: string;
     image: StaticImageData;
+    role: string;
     description: string;
+    joined: string;
 };
 
 export type Project = {

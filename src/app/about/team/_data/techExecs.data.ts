@@ -4,13 +4,17 @@ import placeholder from "@/assets/image/200x200.png";
 
 export const techExecs: Exec[] = [
     {
-        name: "Kevin Cheung",
-        image: placeholder,
-        description: "I don't know if this needs a description",
-    },
-    {
         name: "Nate Williamson",
         image: placeholder,
-        description: "ditto",
+        role: "Tech Director",
+        description: "BE(Hons) - Software Engineering\nThe University of Auckland",
+        joined: "Joined Jan 2023",
+    },
+    {
+        name: "Kevin Cheung",
+        image: placeholder,
+        role: "Tech Exec",
+        description: "BE(Hons) - Software Engineering\nThe University of Auckland",
+        joined: "Joined Mar 2023",
     },
 ];
