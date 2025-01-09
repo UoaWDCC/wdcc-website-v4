@@ -135,4 +135,9 @@ body {
     .mono {
         font-family: var(--font-geist-mono);
     }
+
+    .responsive-fullwidth {
+        /* Escape hatch to allow full-width 'breaking out' of the responsive-body grid layout */
+        @apply col-start-1 col-end-4;
+    }
 }
