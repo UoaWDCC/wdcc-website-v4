@@ -107,6 +107,18 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+@layer components {
+    .responsive-body {
+        /* 3 cols: empty_content_empty */
+        @apply grid grid-cols-[auto_clamp(300px,100%,1200px)_auto];
+    }
+
+    .responsive-body > * {
+        /* Constrain children of main to middle column */
+        @apply col-start-2 col-end-3;
+    }
+}
+
 @layer utilities {
     .text-balance {
         text-wrap: balance;
