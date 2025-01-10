@@ -1,11 +1,12 @@
 // TODO showcase version of header and graphic
 
 // import { ReactNode } from "react";
+import { ReactNode } from "react";
 import Link from "next/link";
 import { tv, VariantProps } from "tailwind-variants";
 
-import { Button } from "@/components/primitives/Button";
 import Arrow from "@/assets/svg/Arrow";
+import { Button } from "@/components/primitives/Button";
 
 const header = tv({
     base: "flex w-full items-center justify-center",
@@ -54,7 +55,7 @@ interface HeaderProps extends VariantProps<typeof header> {
     title: string;
     description?: string;
     primaryButton?: {
-        label: string;
+        label: string | ReactNode;
         href: string;
     };
     secondaryButton?: {
@@ -148,7 +149,7 @@ export default function Header({
                     <div className="flex flex-col gap-3 py-3">
                         {backlink && (
                             <Link href={backlink.href} className={backlinkvar({ color })}>
-                                <Arrow className="rotate-180"/> {backlink.label}
+                                <Arrow className="rotate-180" /> {backlink.label}
                             </Link>
                         )}
                         <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
