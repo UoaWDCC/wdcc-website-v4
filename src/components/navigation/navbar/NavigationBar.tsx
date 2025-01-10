@@ -16,7 +16,7 @@ export default function NavigationBar({ className }: ClassName) {
     return (
         <nav
             className={cn(
-                "flex w-full select-none flex-col items-center justify-between gap-4 py-4 backdrop-blur-sm sm:flex-row sm:px-16 lg:py-6",
+                "flex w-full select-none flex-col items-center justify-between gap-4 py-4 backdrop-blur-sm sm:flex-row sm:px-16 lg:py-4",
                 className
             )}
         >
