@@ -1,16 +1,21 @@
 import StandardPageLayout from "@/components/StandardPageLayout";
 
-import EventsPageHeader from "./_components/EventsPageHeader";
 import EventsRoadmap from "./_components/EventsRoadmap";
-import PastEventsSection from "./_components/PastEventsSection";
-import { pastEventsData } from "./_data/pastEvents.data";
+import UpcomingEventsSection from "./_components/UpcomingEventsSection";
+import { eventsData } from "./_data/events.data";
+import Header from "@/components/layout/Headers/Header";
 
 export default function EventsPage() {
     return (
         <StandardPageLayout>
-            <EventsPageHeader />
+            <Header variant="primary"
+                color="blue"
+                title="events"
+                description="From educational workshops to social mixers, hackathons to code competitions, WDCC's regular events help students develop all kinds of valuable skills - and make friends along the way!"
+                primaryButton={{ label: "Current events ↓", href: "#upcomingEvents" }}
+                secondaryButton={{ label: "Past events", href: "/events/all" }} />
             <EventsRoadmap />
-            <PastEventsSection pastEvents={pastEventsData} />
+            <UpcomingEventsSection upcomingEvents={eventsData} />
         </StandardPageLayout>
     );
 }
