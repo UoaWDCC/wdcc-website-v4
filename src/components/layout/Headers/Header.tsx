@@ -11,8 +11,8 @@ const header = tv({
     base: "flex w-full items-center justify-center",
     variants: {
         variant: {
-            primary: "pb-20 pt-36",
-            secondary: "pb-16 pt-32",
+            primary: "pb-20 pt-48 md:pt-36",
+            secondary: "pb-16 pt-44 md:pt-32",
         },
         color: {
             yellow: "bg-orange-20",
