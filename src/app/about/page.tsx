@@ -41,22 +41,22 @@ export default function AboutPage() {
                 outer="flex w-full items-center justify-center py-20"
                 inner="flex w-[80%] max-w-[1100px] flex-col gap-24"
             >
-                <Duo imgSrc={genInfo.image} imgAlt={genInfo.imageAlt}>
+                <Duo image={{ src: genInfo.image, alt: genInfo.imageAlt }}>
                     <p className="whitespace-pre-line text-lg font-semibold">{genInfo.firstPart}</p>
                     <p className="whitespace-pre-line text-lg font-semibold text-blue-brand">{genInfo.secondPart}</p>
                 </Duo>
 
-                <Duo imgSrc={whyJoin.image} imgAlt={whyJoin.imageAlt}>
+                <Duo image={{ src: whyJoin.image, alt: whyJoin.imageAlt }}>
                     <h3 className="font-semibold">{whyJoin.title}</h3>
                     <p className="whitespace-pre-line">{whyJoin.content}</p>
                 </Duo>
 
-                <Duo imgSrc={clubStory.image} imgAlt={clubStory.imageAlt} imgFirst>
+                <Duo image={{ src: clubStory.image, alt: clubStory.imageAlt }} imgFirst>
                     <h3 className="font-semibold">{clubStory.title}</h3>
                     <p className="whitespace-pre-line">{clubStory.content}</p>
                 </Duo>
 
-                <Duo imgSrc={ourPeople.image} imgAlt={ourPeople.imageAlt}>
+                <Duo image={{ src: ourPeople.image, alt: ourPeople.imageAlt }}>
                     <h3 className="font-semibold">{ourPeople.title}</h3>
                     <p className="whitespace-pre-line">{ourPeople.content}</p>
                     <div className="w-auto">
