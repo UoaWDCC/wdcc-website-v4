@@ -1,6 +1,7 @@
 // TODO showcase version of header and graphic
 
 // import { ReactNode } from "react";
+import { ReactNode } from "react";
 import Link from "next/link";
 import { tv, VariantProps } from "tailwind-variants";
 
@@ -55,7 +56,7 @@ interface HeaderProps {
     title: string;
     description?: string;
     primaryButton?: {
-        label: string;
+        label: string | ReactNode;
         href: string;
     };
     secondaryButton?: {

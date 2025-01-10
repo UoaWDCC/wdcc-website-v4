@@ -73,6 +73,7 @@ const BracketLink = ({ children, newTab, open, ...props }: BracketLinkProps) => 
     );
 };
 
+// Adapted from src/components/navigation/UnderlineLink.tsx
 function DropDownSublink({ link, open }: { link: NavigationLink; open: boolean }) {
     return (
         <Link key={link.label} href={link.href}>
@@ -87,7 +88,7 @@ function DropDownSublink({ link, open }: { link: NavigationLink; open: boolean }
                         <motion.span variants={LetterVariant}>{char}</motion.span>
                     </motion.span>
                 ))}
-                <div className="absolute bottom-1 left-0 h-0.5 w-0 rounded bg-gray-700 transition-[width] group-hover:w-1/2" />
+                <div className="absolute bottom-1 left-0 h-0.5 w-0 rounded bg-gray-700 transition-[left,width] group-hover:left-1 group-hover:w-1/2" />
             </motion.div>
         </Link>
     );

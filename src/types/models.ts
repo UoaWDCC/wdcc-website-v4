@@ -1,20 +1,26 @@
+import { StaticImageData } from "next/image";
+
 // TODO: all of these definitely subject to change
 export type Exec = {
     name: string;
-    image: string;
+    image: StaticImageData;
+    role: string;
     description: string;
+    joined: string;
 };
 
 export type Project = {
     name: string;
     description: string;
     logo: string;
+    year: string;
+    technologies: string[];
 };
 
 export type AboutCardType = {
     title: string;
     content: string;
-    image: string;
+    image: StaticImageData;
     imageAlt: string;
 };
 

@@ -1,8 +1,10 @@
 "use client";
 
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 import Link, { LinkProps } from "next/link";
 import { tv, type VariantProps } from "tailwind-variants";
+
+import { cn } from "@/libs/utils";
 
 const button = tv({
     base: "flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 py-2 text-md font-bold transition duration-200 hover:cursor-pointer",
@@ -144,10 +146,10 @@ type CommonProps = {
 type Variant = { variant?: VariantProps<typeof button> };
 
 // Type if rendered as a button (no href provided)
-type ButtonVersionProps = Variant & ButtonHTMLAttributes<HTMLButtonElement> & CommonProps & { href?: never };
+type ButtonVersionProps = Variant & HTMLAttributes<HTMLButtonElement> & CommonProps & { href?: never };
 
 // Type if rendered as a Link (href provided)
-type LinkVersionProps = Variant & LinkProps & CommonProps & { href: string; newTab?: boolean };
+type LinkVersionProps = Variant & LinkProps & CommonProps & { href: string; newTab?: boolean; className?: string };
 
 // Type guard to determine if the props are for a Link or Button
 function isLinkProps(props: ButtonVersionProps | LinkVersionProps): props is LinkVersionProps {
@@ -175,18 +177,23 @@ function Button(props: ButtonVersionProps | LinkVersionProps) {
     // Conditionally render as Link or button depending on whether a local link (href attribute) is provided.
     if (isLinkProps(props)) {
         // Is Link
-        const { children, href, newTab = false, ...rest } = props;
+        const { children, href, className, newTab = false, ...rest } = props;
         // TODO: use our anchor component for this
         return (
-            <Link {...rest} href={href} className={button(props.variant)} target={newTab ? "_blank" : "_self"}>
+            <Link
+                {...rest}
+                href={href}
+                className={cn(button(props.variant), className)}
+                target={newTab ? "_blank" : "_self"}
+            >
                 {children}
             </Link>
         );
     } else {
         // Is button
-        const { children } = props;
+        const { children, className } = props;
         return (
-            <button {...props} className={button(props.variant)}>
+            <button {...props} className={cn(button(props.variant), className)}>
                 {children}
             </button>
         );

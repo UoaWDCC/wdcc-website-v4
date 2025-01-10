@@ -16,22 +16,22 @@ export default function NavigationBar({ className }: ClassName) {
     return (
         <nav
             className={cn(
-                "relative flex select-none flex-col items-center justify-between gap-4 px-16 py-4 sm:flex-row lg:py-6",
+                "fixed top-0 flex w-full select-none flex-col items-center justify-between gap-4 py-4 sm:flex-row sm:px-16 lg:py-6",
                 className
             )}
         >
             {/* progressive blur */}
             <div className="absolute inset-0 isolate -z-10 size-full">
-                <div className="absolute h-1/5 w-full backdrop-blur-[2px]" />
-                <div className="absolute h-2/5 w-full backdrop-blur-[2px]" />
+                <div className="absolute h-1/5 w-full backdrop-blur-[1px]" />
+                <div className="absolute h-2/5 w-full backdrop-blur-[1px]" />
                 <div className="absolute h-3/5 w-full backdrop-blur-[1px]" />
-                <div className="absolute h-4/5 w-full backdrop-blur-[0.5px]" />
-                <div className="absolute h-full w-full backdrop-blur-[0.5px]" />
+                <div className="absolute h-4/5 w-full backdrop-blur-[1px]" />
+                <div className="absolute h-full w-full backdrop-blur-[1px]" />
             </div>
             <Anchor href="/">
                 <WDCCLogo className="fill-black transition duration-150 hover:opacity-70 lg:block" />
             </Anchor>
-            <div className="flex items-center gap-8 font-semibold lg:gap-12">
+            <div className="flex w-full items-center justify-center gap-8 whitespace-nowrap font-semibold sm:justify-end lg:gap-12">
                 {/* Links */}
                 <div className="hidden h-full items-center gap-8 md:flex lg:gap-12">
                     <NavigationBarLinks links={navbarData.links} />
@@ -39,7 +39,7 @@ export default function NavigationBar({ className }: ClassName) {
                 {/* Vertical line */}
                 <div className="hidden h-5 w-0.5 rounded bg-gray-700 md:block" />
                 {/* Buttons */}
-                <div className="flex gap-3">
+                <div className="hidden-scrollbar flex gap-3 overflow-auto">
                     <NavigationMenu className="md:hidden" links={navbarData.links} />
                     <Button variant={{ style: "primary", color: "blue" }} href="https://go.wdcc.co.nz" newTab>
                         Join WDCC <Arrow />

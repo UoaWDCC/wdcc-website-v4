@@ -121,8 +121,12 @@ body {
     .center-content {
         @apply flex items-center justify-center;
     }
-}
 
-.mono {
-    font-family: var(--font-geist-mono);
+    .hidden-scrollbar {
+        scrollbar-width: none;
+    }
+
+    .mono {
+        font-family: var(--font-geist-mono);
+    }
 }

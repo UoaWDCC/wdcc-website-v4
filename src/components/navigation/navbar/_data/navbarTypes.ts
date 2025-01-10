@@ -1,9 +1,9 @@
-import { Link } from "../../../../types/link";
+import { LinkType } from "../../../../types/link";
 
 export type NavbarData = {
     links: NavigationLink[];
 };
 
-export type NavigationLink = Link & {
+export type NavigationLink = LinkType & {
     drop?: { href: string; label: string }[];
 };

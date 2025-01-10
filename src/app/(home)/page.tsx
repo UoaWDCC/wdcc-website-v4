@@ -22,7 +22,7 @@ export default function Home() {
                 <ThisIsWDCC />
                 <SponsorSection />
             </main>
-            <Footer />
+            <Footer className="mt-16" />
         </ThreeLayout>
     );
 }
