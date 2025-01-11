@@ -16,12 +16,12 @@ export default function NavigationBar({ className }: ClassName) {
     return (
         <nav
             className={cn(
-                "fixed top-0 flex w-full select-none flex-col items-center justify-between gap-4 py-4 sm:flex-row sm:px-16 lg:py-4",
+                "group fixed top-0 z-50 flex w-full select-none flex-col items-center justify-between gap-4 py-4 sm:flex-row sm:px-16 lg:py-4",
                 className
             )}
         >
             {/* progressive blur */}
-            <div className="absolute inset-0 isolate -z-10 size-full">
+            <div className="absolute inset-0 isolate -z-20 size-full">
                 <div className="absolute h-1/5 w-full backdrop-blur-[1px]" />
                 <div className="absolute h-2/5 w-full backdrop-blur-[1px]" />
                 <div className="absolute h-3/5 w-full backdrop-blur-[1px]" />

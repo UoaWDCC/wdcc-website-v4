@@ -80,7 +80,7 @@ function DropDownSublink({ link, open }: { link: NavigationLink; open: boolean }
             <motion.div
                 initial="hide"
                 animate={open ? "show" : "hide"}
-                className="group relative cursor-pointer transition-[padding-left] *:*:inline-block *:inline-block hover:pl-1"
+                className="group/link relative cursor-pointer transition-[padding-left] *:*:inline-block *:inline-block hover:pl-1"
             >
                 {/* Per-letter animation */}
                 {link.label.split("").map((char, i) => (
@@ -88,7 +88,7 @@ function DropDownSublink({ link, open }: { link: NavigationLink; open: boolean }
                         <motion.span variants={LetterVariant}>{char}</motion.span>
                     </motion.span>
                 ))}
-                <div className="absolute bottom-1 left-0 h-0.5 w-0 rounded bg-gray-700 transition-[left,width] group-hover:left-1 group-hover:w-1/2" />
+                <div className="absolute bottom-1 left-0 h-0.5 w-0 rounded bg-gray-700 transition-[left,width] group-hover/link:left-1 group-hover/link:w-1/2" />
             </motion.div>
         </Link>
     );
