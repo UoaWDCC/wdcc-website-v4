@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import dynamic from "next/dynamic";
 
-import Draw from "@/app/_component/Draw";
+import Draw from "@/components/Draw";
 import { Button } from "@/components/primitives/Button";
 import { View } from "@/components/three/scene/View";
 
