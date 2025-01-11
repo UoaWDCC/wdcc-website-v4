@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 import Arrow from "@/assets/svg/Arrow";
-import Header from "@/components/layout/Headers/Header";
+import Header from "@/components/layout/pageheaders/Header";
+import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import NestedDiv from "@/components/NestedDiv";
 import { Button } from "@/components/primitives/Button";
-import StandardPageLayout from "@/components/StandardPageLayout";
 
 import Duo from "./_components/Duo";
 import Quote from "./_components/Quote";

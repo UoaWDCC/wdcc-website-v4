@@ -2,8 +2,8 @@ import { HtmlHTMLAttributes, ReactNode } from "react";
 
 import { cn } from "@/libs/utils";
 
-import Footer from "./navigation/footer/Footer";
-import NavigationBar from "./navigation/navbar/NavigationBar";
+import Footer from "../navigation/footer/Footer";
+import NavigationBar from "../navigation/navbar/NavigationBar";
 
 interface StandardPageLayoutProps extends HtmlHTMLAttributes<HTMLElement> {
     children: ReactNode;
@@ -14,7 +14,7 @@ export default function StandardPageLayout({ children, ...props }: StandardPageL
     return (
         <div {...props} className={cn("flex min-h-dvh flex-col", props.className)}>
             <div className="relative flex h-dvh min-h-dvh flex-col overflow-x-hidden">
-                <div className="fixed w-full top-0 z-10">
+                <div className="fixed top-0 z-10 w-full">
                     <NavigationBar />
                 </div>
                 <main className="responsive-body">{children}</main>

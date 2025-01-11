@@ -1,6 +1,6 @@
-import Header from "@/components/layout/Headers/Header";
+import Header from "@/components/layout/pageheaders/Header";
 import NestedDiv from "@/components/NestedDiv";
-import StandardPageLayout from "@/components/StandardPageLayout";
+import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import ExecTeam from "./_components/ExecTeam";
 import InfoPill from "./_components/InfoPill";

@@ -1,5 +1,5 @@
-import Header from "@/components/layout/Headers/Header";
-import StandardPageLayout from "@/components/StandardPageLayout";
+import StandardPageLayout from "@/components/layout/StandardPageLayout";
+import Header from "@/components/layout/pageheaders/Header";
 
 import EventsRoadmap from "./_components/EventsRoadmap";
 import UpcomingEventsSection from "./_components/UpcomingEventsSection";

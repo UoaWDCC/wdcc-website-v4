@@ -3,7 +3,7 @@
 import { sponsorRegister } from "@/app/(home)/_components/sponsor/demo/DemoSponsorSection";
 import BackgroundEffect from "@/components/three/BackgroundEffect";
 import { View } from "@/components/three/scene/View";
-import ThreeLayout from "@/components/ThreePageLayout";
+import ThreeLayout from "@/components/layout/ThreePageLayout";
 
 export default function TestSponsorPage() {
     return (

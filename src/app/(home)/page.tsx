@@ -2,7 +2,7 @@ import Footer from "@/components/navigation/footer/Footer";
 import NavigationBar from "@/components/navigation/navbar/NavigationBar";
 import BackgroundEffect from "@/components/three/BackgroundEffect";
 import { View } from "@/components/three/scene/View";
-import ThreeLayout from "@/components/ThreePageLayout";
+import ThreeLayout from "@/components/layout/ThreePageLayout";
 
 import { SponsorSection } from "./_components/SponsorSection";
 import ThisIsWDCC from "./_components/ThisIsWDCCSection";

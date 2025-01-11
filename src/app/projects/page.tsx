@@ -2,11 +2,14 @@
 
 import { useState } from "react";
 
-import StandardPageLayout from "@/components/StandardPageLayout";
+
+
+import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import { ProjectCard } from "./_components/ProjectCard";
 import { ProjectFilter } from "./_components/ProjectFilter";
 import { projectsData } from "./_data/projects.data";
+
 
 export default function ProjectsPage() {
     const [selectedYear, setYear] = useState<string | null>(null);
