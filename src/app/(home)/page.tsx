@@ -14,9 +14,7 @@ export default function Home() {
             <View className="fixed -z-10 size-full scale-150" background>
                 <BackgroundEffect />
             </View>
-            <nav className="background sticky top-0 z-10 rounded-full">
-                <NavigationBar className="py-4" />
-            </nav>
+            <NavigationBar />
             <main className="mt-8 flex w-full flex-col items-center justify-center">
                 <WDCCHero />
                 <ThisIsWDCC />
