@@ -22,8 +22,7 @@ export default function AboutPage() {
     return (
         <StandardPageLayout>
             <Header
-                variant="primary"
-                color="brand"
+                variant={{ style: "primary", color: "brand" }}
                 title={header.title}
                 description={header.content}
                 primaryButton={{
@@ -60,7 +59,7 @@ export default function AboutPage() {
                     <h3 className="font-semibold">{ourPeople.title}</h3>
                     <p className="whitespace-pre-line">{ourPeople.content}</p>
                     <div className="w-auto">
-                        <Button variant="secondary" color="yellow" href="/about/team">
+                        <Button variant={{ style: "secondary", color: "yellow" }} href="/about/team">
                             Meet the team <Arrow />
                         </Button>
                     </div>

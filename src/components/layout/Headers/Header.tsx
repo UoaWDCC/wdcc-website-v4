@@ -11,7 +11,7 @@ import { Button } from "@/components/primitives/Button";
 const header = tv({
     base: "flex w-full items-center justify-center",
     variants: {
-        variant: {
+        style: {
             primary: "pb-20 pt-48 md:pt-36",
             secondary: "pb-16 pt-44 md:pt-32",
         },
@@ -51,7 +51,8 @@ const backlinkvar = tv({
     },
 });
 
-interface HeaderProps extends VariantProps<typeof header> {
+interface HeaderProps {
+    variant?: VariantProps<typeof header>;
     title: string;
     description?: string;
     primaryButton?: {
@@ -72,9 +73,9 @@ interface HeaderProps extends VariantProps<typeof header> {
 /**
  * General global header component - used to provide general headings for all (or most) content pages.
  *
- * Takes the following variants as props:
- * @param Variant [primary, secondary] - the hierarchical size and layout of the heading block.
- * @param Color [yellow, blue, green, purple, brand] - the color scheme and visual style of the heading block.
+ * Takes the following parameters as props of variants:
+ * @variation style [primary, secondary] - the hierarchical size and layout of the heading block.
+ * @variation color [yellow, blue, green, purple, brand] - the color scheme and visual style of the heading block.
  *
  * Takes the following additional props:
  * @param Title - the title.
@@ -86,6 +87,15 @@ interface HeaderProps extends VariantProps<typeof header> {
  * @param secondaryButton - the secondary action button (primary variant only, optional)
  * @param backlink - the backlink label and text (secondary variant only, optional)
  *
+ * example usage:
+ * <Header
+ *     variant={{ style: "primary", color: "blue" }}
+ *     title="projects"
+ *     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+ *     primaryButton={{ label: "Lorem ipsum dolor ⮕", href: "https://google.com" }}
+ *     secondaryButton={{ label: "Lorem ipsum dolor", href: "/" }}
+ * />
+ *
  * Link props (as above) are objects of format:
  * {
  *   label: "xyz"
@@ -93,8 +103,7 @@ interface HeaderProps extends VariantProps<typeof header> {
  * }
  */
 export default function Header({
-    variant,
-    color,
+    variant = { style: "primary", color: "yellow" },
     title,
     description,
     primaryButton,
@@ -102,27 +111,27 @@ export default function Header({
     backlink,
 }: HeaderProps) {
     return (
-        <header className={header({ variant, color })}>
-            {variant === "primary" ? (
+        <header className={header({ ...variant })}>
+            {variant.style === "primary" ? (
                 <div className="flex w-[80%] max-w-[1100px] flex-col gap-8">
                     <div className="flex max-w-[700px] flex-col gap-4">
                         <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
-                        {color !== "brand" ? (
+                        {variant.color !== "brand" ? (
                             <>{description && <p className="text-md leading-tight text-gray-600">{description}</p>}</>
                         ) : (
                             <>{description && <p className="text-md leading-tight text-white">{description}</p>}</>
                         )}
                     </div>
                     <div className="flex flex-wrap gap-3">
-                        {color !== "brand" ? (
+                        {variant.color !== "brand" ? (
                             <>
                                 {primaryButton && (
-                                    <Button variant="primary" color="yellow" href={primaryButton.href}>
+                                    <Button variant={{ style: "primary", color: "yellow" }} href={primaryButton.href}>
                                         {primaryButton.label}
                                     </Button>
                                 )}
                                 {secondaryButton && (
-                                    <Button variant="secondary" color="dark" href={secondaryButton.href}>
+                                    <Button variant={{ style: "secondary", color: "dark" }} href={secondaryButton.href}>
                                         {secondaryButton.label}
                                     </Button>
                                 )}
@@ -130,12 +139,15 @@ export default function Header({
                         ) : (
                             <>
                                 {primaryButton && (
-                                    <Button variant="primary" color="light" href={primaryButton.href}>
+                                    <Button variant={{ style: "primary", color: "light" }} href={primaryButton.href}>
                                         {primaryButton.label}
                                     </Button>
                                 )}
                                 {secondaryButton && (
-                                    <Button variant="secondary" color="light" href={secondaryButton.href}>
+                                    <Button
+                                        variant={{ style: "secondary", color: "light" }}
+                                        href={secondaryButton.href}
+                                    >
                                         {secondaryButton.label}
                                     </Button>
                                 )}
@@ -145,10 +157,10 @@ export default function Header({
                 </div>
             ) : (
                 <div className="flex w-[80%] max-w-[1100px] gap-8">
-                    <div className={bar({ color })}></div>
+                    <div className={bar({ color: variant.color })}></div>
                     <div className="flex flex-col gap-3 py-3">
                         {backlink && (
-                            <Link href={backlink.href} className={backlinkvar({ color })}>
+                            <Link href={backlink.href} className={backlinkvar({ color: variant.color })}>
                                 <Arrow className="rotate-180" /> {backlink.label}
                             </Link>
                         )}

@@ -13,8 +13,7 @@ export default function TeamPage() {
     return (
         <StandardPageLayout>
             <Header
-                variant="secondary"
-                color="blue"
+                variant={{ style: "secondary", color: "blue" }}
                 title="meet the team"
                 backlink={{ label: "About WDCC", href: "/about" }}
             />

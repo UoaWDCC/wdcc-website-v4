@@ -13,16 +13,13 @@ interface FooterSocialsProps extends HTMLAttributes<HTMLDivElement> {
 
 export default function FooterSocials({ socials, className, ...props }: FooterSocialsProps) {
     return (
-        <div
-            {...props}
-            className={cn("flex justify-center w-full items-center gap-6", className)}
-        >
+        <div {...props} className={cn("flex w-full items-center justify-center gap-6", className)}>
             {socials.map((social) => (
                 <Anchor key={social.name} href={social.href} className="[&>svg]:fill-white">
                     {social.icon}
                 </Anchor>
             ))}
-            <Button variant="primary" color="blue" className="ml-auto hidden sm:block">
+            <Button variant={{ color: "blue" }} className="ml-auto hidden sm:block">
                 Back to Top
             </Button>
         </div>

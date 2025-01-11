@@ -17,7 +17,7 @@ export default function StandardPageLayout({ children, ...props }: StandardPageL
                 <div className="fixed w-full top-0 z-10">
                     <NavigationBar />
                 </div>
-                <main className="relative flex flex-col justify-between">{children}</main>
+                <main className="relative mb-16 flex flex-col justify-between">{children}</main>
                 {/* Combination of min-h-full and mt-auto ensures footer doesn't collapse above screen bottom on small pages. */}
                 <Footer className="mt-auto" />
             </div>

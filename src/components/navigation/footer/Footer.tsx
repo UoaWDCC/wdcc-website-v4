@@ -12,7 +12,7 @@ interface FooterProps extends HTMLAttributes<HTMLDivElement> {
 
 export default function Footer({ className, ...props }: FooterProps) {
     return (
-        <footer {...props} className={cn("flex justify-center pb-20 pt-4 bg-blue-900 text-white xs:px-10", className)}>
+        <footer {...props} className={cn("flex justify-center bg-blue-900 pb-20 pt-4 text-white xs:px-10", className)}>
             <div className="w-full whitespace-nowrap lg:max-w-screen-md">
                 <div className="hidden-scrollbar flex flex-col justify-between gap-4 overflow-x-auto px-4 sm:flex-row">
                     {footerData.columns.map((data) => (
