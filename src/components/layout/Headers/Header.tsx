@@ -9,7 +9,7 @@ import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
 
 const header = tv({
-    base: "flex w-full items-center justify-center",
+    base: "responsive-fullwidth flex w-full items-center justify-center",
     variants: {
         style: {
             primary: "pb-20 pt-48 md:pt-36",
@@ -56,7 +56,7 @@ interface HeaderProps {
     title: string;
     description?: string;
     primaryButton?: {
-        label: string | ReactNode;
+        label: ReactNode;
         href: string;
     };
     secondaryButton?: {
