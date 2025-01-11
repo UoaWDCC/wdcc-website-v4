@@ -8,7 +8,7 @@ import { CommonLight } from "../../CommonLight";
 import { WDCCThreeLogo } from "../../primitives";
 
 const CONSTAINT = 0.5; // 90deg * CONSTRIANT
-const smoothing = 0.02; // the lower the slower
+const smoothing = 0.03; // the lower the slower
 
 const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) => {
     const group = useRef<THREE.Group>(null!);
@@ -18,7 +18,8 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
         if (!parentRef?.current) return;
 
         const handlePointerMove = (event: MouseEvent) => {
-            const rect = parentRef!.current!.getBoundingClientRect();
+            if (!parentRef?.current) return;
+            const rect = parentRef.current.getBoundingClientRect();
 
             pointer.current.x = -((event.pageY - rect.top) / window.innerHeight) * (2 * CONSTAINT) + 1 * CONSTAINT; // Target rotation on X
             pointer.current.y = (event.pageX / window.innerWidth) * (2 * CONSTAINT) - 1 * CONSTAINT; // Target rotation on Y
