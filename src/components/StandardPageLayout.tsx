@@ -14,7 +14,7 @@ export default function StandardPageLayout({ children, ...props }: StandardPageL
     return (
         <div {...props} className={cn("flex min-h-dvh flex-col", props.className)}>
             <div className="relative flex h-dvh min-h-dvh flex-col overflow-x-hidden">
-                <div className="sticky top-0 z-10">
+                <div className="fixed w-full top-0 z-10">
                     <NavigationBar />
                 </div>
                 <main className="responsive-body">{children}</main>
