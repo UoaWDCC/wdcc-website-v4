@@ -116,7 +116,7 @@ body {
 @layer components {
     .responsive-body {
         /* 3 cols: empty_content_empty */
-        @apply grid grid-cols-[auto_clamp(300px,100%,1200px)_auto];
+        @apply grid grid-cols-[auto_clamp(375px,80%,1100px)_auto];
     }
 
     .responsive-body > * {
