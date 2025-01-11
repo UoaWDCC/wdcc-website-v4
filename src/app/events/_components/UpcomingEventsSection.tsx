@@ -20,7 +20,7 @@ export default function UpcomingEventsSection({ upcomingEvents }: UpcomingEvents
     const filteredEvents = selectedCategory ? upcomingEvents.filter(event => event.category === selectedCategory) : upcomingEvents;
 
     return (
-        <div className="px-36 py-20" id="upcomingEvents">
+        <div className="py-20" id="upcomingEvents">
             <div className="h-10 flex justify-between items-end">
                 <h2 className="text-[38px] font-bold leading-10">Upcoming Events</h2>
                 <EventCategoryFilter filterByCategory={filterByCategory} />
