@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 import Arrow from "@/assets/svg/Arrow";
-import Header from "@/components/layout/Headers/Header";
+import Header from "@/components/layout/pageheaders/Header";
+import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import NestedDiv from "@/components/NestedDiv";
 import { Button } from "@/components/primitives/Button";
-import StandardPageLayout from "@/components/StandardPageLayout";
 
 import Duo from "./_components/Duo";
 import Quote from "./_components/Quote";
@@ -36,10 +36,7 @@ export default function AboutPage() {
                 secondaryButton={{ label: "Frequently asked questions", href: "/faq" }}
             />
 
-            <NestedDiv
-                outer="flex w-full items-center justify-center py-20"
-                inner="flex w-[80%] max-w-[1100px] flex-col gap-24"
-            >
+            <div className="flex w-full max-w-[1100px] flex-col gap-24 py-20">
                 <Duo image={{ src: genInfo.image, alt: genInfo.imageAlt }}>
                     <p className="whitespace-pre-line text-lg font-semibold">{genInfo.firstPart}</p>
                     <p className="whitespace-pre-line text-lg font-semibold text-blue-brand">{genInfo.secondPart}</p>
@@ -64,18 +61,18 @@ export default function AboutPage() {
                         </Button>
                     </div>
                 </Duo>
-            </NestedDiv>
+            </div>
 
             <NestedDiv
-                outer="flex w-full items-center justify-center py-20 bg-blue-20"
+                outer="flex w-full items-center justify-center py-20 bg-blue-20 responsive-fullwidth"
                 inner="flex w-[80%] max-w-[1100px] flex-col gap-4"
             >
                 {/* TODO: Make quote mark more responsive? */}
                 <Quote quote={quoteSection.quote} author={quoteSection.author} subscript={quoteSection.subscript} />
+                {/* TODO: Image quality? */}
+                <Image src={endImage.image} alt={endImage.imageAlt} />
             </NestedDiv>
 
-            {/* TODO: Image quality? */}
-            <Image src={endImage.image} alt={endImage.imageAlt} />
         </StandardPageLayout>
     );
 }

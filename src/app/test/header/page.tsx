@@ -1,7 +1,7 @@
 "use client";
 
-import Header from "@/components/layout/Headers/Header";
-import StandardPageLayout from "@/components/StandardPageLayout";
+import Header from "@/components/layout/pageheaders/Header";
+import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 // import { Button } from "@/components/primitives/Button";
 
