@@ -6,6 +6,7 @@ const IndividualEvent = () => {
     return (
         <div className="flex flex-col py-16">
             <div className="grid grid-cols-2 gap-16">
+                {/* todo: replace with real data soon. payload? */}
                 <p className="text-md">
                     Are you ready to dive into the world of AI and get ahead in your career?
                     <br />
@@ -29,10 +30,11 @@ const IndividualEvent = () => {
                 <ImageFit src="/eventmock/2024_wdcc_x_chisma.png" alt="" height="500px" width="500px" />
             </div>
             <div className="mt-8">
+                {/* todo: add an 's' to the end if multiple */}
                 <h3 className="text-3xl font-semibold">Collab Partners</h3>
                 <div className="flex gap-4">
-                    <ImageFit src="/eventmock/collab_partner_placeholder_a.png" alt="" height="101px" width="300px" />
-                    <ImageFit src="/eventmock/collab_partner_placeholder_a.png" alt="" height="101px" width="300px" />
+                    <ImageFit src="/eventmock/collab_partner_placeholder_a.png" alt="" height="100px" width="300px" />
+                    <ImageFit src="/eventmock/collab_partner_placeholder_a.png" alt="" height="100px" width="300px" />
                 </div>
             </div>
         </div>
