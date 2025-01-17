@@ -10,7 +10,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     return (
         <StandardPageLayout>
             <RouteDisplay slug={slug} />
-            <Header variant={{ style: "tetriary", color: "green" }} title={slug} />
+            <Header
+                variant={{ style: "tetriary", color: "green" }}
+                backlink={{ label: "events", href: "/events" }}
+                title={slug}
+            />
             <IndividualEvent />
         </StandardPageLayout>
     );

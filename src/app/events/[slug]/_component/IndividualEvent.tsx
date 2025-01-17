@@ -28,6 +28,13 @@ const IndividualEvent = () => {
                 </p>
                 <ImageFit src="/eventmock/2024_wdcc_x_chisma.png" alt="" height="500px" width="500px" />
             </div>
+            <div className="mt-8">
+                <h3 className="text-3xl font-semibold">Collab Partners</h3>
+                <div className="flex gap-4">
+                    <ImageFit src="/eventmock/collab_partner_placeholder_a.png" alt="" height="101px" width="300px" />
+                    <ImageFit src="/eventmock/collab_partner_placeholder_a.png" alt="" height="101px" width="300px" />
+                </div>
+            </div>
         </div>
     );
 };
