@@ -11,7 +11,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <RouteDisplay slug={slug} />
             <Header
                 variant={{ style: "tetriary", color: "blue" }}
-                backlink={{ label: "events", href: "/events" }}
+                backlink={{ label: "projects", href: "/projects" }}
                 title={slug}
             />
             <IndividualProject />
