@@ -9,7 +9,7 @@ export const teamData = {
         execs: techExecs,
     },
     eduTeam: {
-        title: "E̶d̶u̶c̶a̶t̶i̶o̶n̶ Also Tech",
+        title: "Education",
         description: `The Education team helps craft workshops and training events to upskill all of WDCC’s members (and non-members too!)`,
         execs: eduExecs,
     },
