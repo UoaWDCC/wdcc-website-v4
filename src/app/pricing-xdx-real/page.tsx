@@ -2,8 +2,8 @@
 
 import { motion, Variants } from "framer-motion";
 
+import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import { Button } from "@/components/primitives/Button";
-import StandardPageLayout from "@/components/StandardPageLayout";
 import { easeOutQuad } from "@/libs/ease";
 
 import AddonCards from "./_components/AddonCards";
@@ -74,18 +74,12 @@ export default function PricingPage() {
                         </div>
                     </motion.div>
                     <motion.div variants={fadeup} className="flex w-full gap-6 whitespace-nowrap">
-                        <Button variant="tertiary" color="blue">
-                            Frequently Asked Questions
-                        </Button>
-                        <Button variant="secondary" color="dark">
-                            Why can’t I cancel?
-                        </Button>
-                        <Button variant="secondary" color="dark">
+                        <Button variant={{ style: "tertiary", color: "blue" }}>Frequently Asked Questions</Button>
+                        <Button variant={{ style: "secondary", color: "dark" }}>Why can’t I cancel?</Button>
+                        <Button variant={{ style: "secondary", color: "dark" }}>
                             Why can’t I date Chris and Kimberley?
                         </Button>
-                        <Button variant="secondary" color="dark">
-                            How can I get an internship?
-                        </Button>
+                        <Button variant={{ style: "secondary", color: "dark" }}>How can I get an internship?</Button>
                     </motion.div>
                     <motion.div variants={fadeup} className="flex flex-col gap-6 text-center">
                         {/*🔥*/}
