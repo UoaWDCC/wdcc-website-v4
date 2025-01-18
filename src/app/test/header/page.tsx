@@ -1,6 +1,8 @@
 "use client";
 
 import Header from "@/components/layout/pageheaders/Header";
+import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
+import EventHeader from "@/components/layout/pageheaders/EventHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 // import { Button } from "@/components/primitives/Button";
@@ -45,6 +47,33 @@ export default function TestPage() {
                 secondaryButton={{ label: "hello", href: "/" }}
                 backlink={{ label: "hello", href: "/" }}
             />
+
+                {/* Project and event headers are seperate files - everything erxcept for title is optional.*/}
+                <ProjectHeader
+                    title="i'm a project header"
+                    primaryButton={{ label: "hello", href: "/" }}
+                    secondaryButton={{ label: "hello", href: "/" }}
+                    backlink={{ label: "hello", href: "/" }}
+                />
+
+            <ProjectHeader
+                title="i'm a project header"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+                primaryButton={{ label: "hello", href: "/" }}
+                secondaryButton={{ label: "hello", href: "/" }}
+                backlink={{ label: "hello", href: "/" }}
+            />
+
+            <EventHeader
+                title="i'm a event header"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+                primaryButton={{ label: "hello", href: "/" }}
+                secondaryButton={{ label: "hello", href: "/" }}
+                backlink={{ label: "hello", href: "/" }}
+                when="11:30am, February 31 2025"
+                where="north face of mars"
+            />
+
         </StandardPageLayout>
     );
 }
