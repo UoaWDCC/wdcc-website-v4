@@ -45,20 +45,19 @@ export default function DropDown({ link, ...props }: DropdownProps) {
 // Need to omit href from AnchorHTMLAttributes because it conflicts with Next LinkProps
 interface BracketLinkProps extends LinkProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
     children: ReactNode;
-    open?: boolean;
     newTab?: boolean;
 }
 
-const BracketLink = ({ children, newTab, open, ...props }: BracketLinkProps) => {
+const BracketLink = ({ children, newTab, ...props }: BracketLinkProps) => {
     return (
-        <Link {...props} target={newTab ? "_blank" : "_self"}>
+        <Link {...props} className="group/link" target={newTab ? "_blank" : "_self"}>
             <div className={cn("relative z-10 flex items-center", props.className)}>
                 <p className="cursor-pointer whitespace-nowrap">
-                    <span className={cn("inline-block -translate-x-1 transition-transform", open && "translate-x-0")}>
+                    <span className="inline-block -translate-x-1 transition-transform group-hover/link:!translate-x-0">
                         (
                     </span>
                     {children}
-                    <span className={cn("inline-block translate-x-1 transition-transform", open && "translate-x-0")}>
+                    <span className="inline-block translate-x-1 transition-transform group-hover/link:!translate-x-0">
                         )
                     </span>
                 </p>
