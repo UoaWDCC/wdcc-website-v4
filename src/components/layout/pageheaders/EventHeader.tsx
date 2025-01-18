@@ -38,8 +38,8 @@ export default function EventHeader({
     backlink,
 }: HeaderProps) {
     return (
-        <header className="py-20 mx-[-14%] bg-green-50 flex items-center justify-center rounded-3xl">
-            <div className="flex w-[80%] max-w-[1100px] gap-8">
+        <header className="py-20 my-24 mx-[-14%] bg-green-50 flex items-center justify-center rounded-3xl">
+            <div className="flex w-[80%] max-w-[1100px] gap-10">
                 <div className="w-[8px] bg-green-400 rounded-full"></div>
                 <div className="flex flex-col gap-8">
                     <div className="flex max-w-[700px] flex-col gap-4">
