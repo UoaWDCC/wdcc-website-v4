@@ -7,11 +7,13 @@ interface QuoteProps {
 export default function Quote({ quote, author, subscript }: QuoteProps) {
     return (
         <>
-            <blockquote className="relative whitespace-pre-line text-center text-xl font-semibold italic text-blue-brand">
-                <span className="absolute -left-0 -top-10 text-5xl text-gray-200">“</span>
+            <blockquote className="relative whitespace-pre-line text-center text-md font-semibold italic text-blue-brand sm:text-xl">
+                <span className="absolute -left-3 -top-5 text-2xl text-gray-200 sm:-left-6 sm:-top-10 sm:text-5xl">
+                    “
+                </span>
                 {quote}
             </blockquote>
-            <cite className="text-center text-lg font-bold not-italic">
+            <cite className="text-center text-md font-bold not-italic sm:text-lg">
                 <span className="uppercase">{author}</span>
                 <span className="text-gray-250"> {subscript}</span>
             </cite>

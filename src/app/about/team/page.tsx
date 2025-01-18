@@ -16,10 +16,8 @@ export default function TeamPage() {
                 title="meet the team"
                 backlink={{ label: "About WDCC", href: "/about" }}
             />
-            <div className="flex w-full max-w-[1100px] flex-col gap-12 py-20">
+            <div className="flex w-full max-w-[1100px] flex-col gap-24 py-20">
                 <InfoPill text={teamData.info} />
-
-                {/* TODO: fix responsiveness on mobile */}
                 <ExecTeam title={tech.title} description={tech.description} execs={tech.execs} />
                 <ExecTeam title={edu.title} description={edu.description} execs={edu.execs} />
             </div>

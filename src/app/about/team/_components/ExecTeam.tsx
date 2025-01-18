@@ -11,9 +11,9 @@ interface ExecTeamProps {
 export default function ExecTeam({ title, description, execs }: ExecTeamProps) {
     return (
         <div className="flex flex-col gap-8">
-            <div className="flex flex-row items-center">
-                <h2 className="text-3xl font-bold">{title}</h2>
-                <p className="ml-auto w-[50%] text-right text-sm">{description}</p>
+            <div className="flex flex-col sm:flex-row sm:items-center">
+                <h2 className="text-center text-3xl font-bold sm:text-left">{title}</h2>
+                <p className="text-center text-sm sm:ml-auto sm:w-[50%] sm:text-right">{description}</p>
             </div>
             <div className="flex flex-wrap justify-center gap-8">
                 {execs.map((exec) => (
