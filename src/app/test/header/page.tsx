@@ -48,9 +48,16 @@ export default function TestPage() {
                 backlink={{ label: "hello", href: "/" }}
             />
 
+                {/* Project and event headers are seperate files - everything erxcept for title is optional.*/}
+                <ProjectHeader
+                    title="i'm a project header"
+                    primaryButton={{ label: "hello", href: "/" }}
+                    secondaryButton={{ label: "hello", href: "/" }}
+                    backlink={{ label: "hello", href: "/" }}
+                />
 
             <ProjectHeader
-                title="i'm also a header!"
+                title="i'm a project header"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
                 primaryButton={{ label: "hello", href: "/" }}
                 secondaryButton={{ label: "hello", href: "/" }}
@@ -58,7 +65,7 @@ export default function TestPage() {
             />
 
             <EventHeader
-                title="i'm also a header!"
+                title="i'm a event header"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
                 primaryButton={{ label: "hello", href: "/" }}
                 secondaryButton={{ label: "hello", href: "/" }}
@@ -66,6 +73,7 @@ export default function TestPage() {
                 when="11:30am, February 31 2025"
                 where="north face of mars"
             />
+
         </StandardPageLayout>
     );
 }
