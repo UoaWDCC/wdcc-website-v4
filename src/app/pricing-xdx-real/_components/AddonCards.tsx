@@ -20,9 +20,7 @@ const AddonCards = ({ ...data }: AddonCardType) => {
             <h3 className={cn("mt-auto text-xl font-semibold", data.urgent && "text-orange-500")}>
                 {data.urgent && <span className="text-lg">NOW</span>} ${data.price}
             </h3>
-            <Button variant="secondary" color="yellow">
-                Add this
-            </Button>
+            <Button variant={{ style: "secondary", color: "yellow" }}>Add this</Button>
         </div>
     );
 };

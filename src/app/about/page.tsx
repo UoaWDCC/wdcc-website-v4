@@ -36,10 +36,15 @@ export default function AboutPage() {
                 secondaryButton={{ label: "Frequently asked questions", href: "/faq" }}
             />
 
-            <div className="flex w-full max-w-[1100px] flex-col gap-24 py-20">
+            <NestedDiv
+                outer="flex w-full items-center justify-center py-20 responsive-fullwidth"
+                inner="flex w-[80%] max-w-[1100px] flex-col gap-16 sm:gap-24"
+            >
                 <Duo image={{ src: genInfo.image, alt: genInfo.imageAlt }}>
-                    <p className="whitespace-pre-line text-lg font-semibold">{genInfo.firstPart}</p>
-                    <p className="whitespace-pre-line text-lg font-semibold text-blue-brand">{genInfo.secondPart}</p>
+                    <p className="whitespace-pre-line text-md font-semibold sm:text-lg">{genInfo.firstPart}</p>
+                    <p className="whitespace-pre-line text-md font-semibold text-blue-brand sm:text-lg">
+                        {genInfo.secondPart}
+                    </p>
                 </Duo>
 
                 <Duo image={{ src: whyJoin.image, alt: whyJoin.imageAlt }}>
@@ -61,18 +66,15 @@ export default function AboutPage() {
                         </Button>
                     </div>
                 </Duo>
-            </div>
+            </NestedDiv>
 
             <NestedDiv
                 outer="flex w-full items-center justify-center py-20 bg-blue-20 responsive-fullwidth"
                 inner="flex w-[80%] max-w-[1100px] flex-col gap-4"
             >
-                {/* TODO: Make quote mark more responsive? */}
                 <Quote quote={quoteSection.quote} author={quoteSection.author} subscript={quoteSection.subscript} />
-                {/* TODO: Image quality? */}
-                <Image src={endImage.image} alt={endImage.imageAlt} />
             </NestedDiv>
-
+            <Image src={endImage.image} alt={endImage.imageAlt} className="responsive-fullwidth" />
         </StandardPageLayout>
     );
 }
