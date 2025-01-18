@@ -3,7 +3,7 @@
 import { motion, Variants } from "framer-motion";
 
 import { Button } from "@/components/primitives/Button";
-import StandardPageLayout from "@/components/StandardPageLayout";
+import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import { easeOutQuad } from "@/libs/ease";
 
 import AddonCards from "./_components/AddonCards";
