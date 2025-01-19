@@ -1,6 +1,5 @@
 import RouteDisplay from "@/components/debug/RouteDisplay";
 import EventHeader from "@/components/layout/pageheaders/EventHeader";
-import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import IndividualEvent from "./_component/IndividualEvent";

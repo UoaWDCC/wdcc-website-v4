@@ -1,5 +1,4 @@
 import RouteDisplay from "@/components/debug/RouteDisplay";
-import Header from "@/components/layout/pageheaders/Header";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
