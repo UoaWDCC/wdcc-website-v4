@@ -1,4 +1,5 @@
 import RouteDisplay from "@/components/debug/RouteDisplay";
+import EventHeader from "@/components/layout/pageheaders/EventHeader";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
@@ -10,11 +11,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     return (
         <StandardPageLayout>
             <RouteDisplay slug={slug} />
-            <Header
-                variant={{ style: "tetriary", color: "green" }}
-                backlink={{ label: "events", href: "/events" }}
-                title={slug}
-            />
+            <EventHeader title={slug} backlink={{ label: "events", href: "/events" }} />
             <IndividualEvent />
         </StandardPageLayout>
     );
