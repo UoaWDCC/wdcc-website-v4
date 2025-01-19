@@ -12,9 +12,13 @@ interface ExecCardProps {
 
 export default function ExecCard({ exec }: ExecCardProps) {
     return (
-        <div className="flex w-[432px] items-center justify-start overflow-hidden rounded-2xl bg-gray-50">
-            <Image src={exec.image ? exec.image : placeholder} alt={exec.name} className="h-auto max-w-[165px]" />
-            <div className="flex max-w-[267px] flex-col gap-1 px-4 py-2">
+        <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-gray-50 sm:w-[432px] sm:flex-row">
+            <Image
+                src={exec.image ? exec.image : placeholder}
+                alt={exec.name}
+                className="h-auto max-w-[200px] sm:max-w-[165px]"
+            />
+            <div className="flex max-w-[267px] flex-col items-center gap-1 px-2 py-4 text-center sm:items-start sm:px-4 sm:py-2 sm:text-left">
                 <ExecCardText name={exec.name} role={exec.role} description={exec.description} joined={exec.joined} />
             </div>
         </div>
