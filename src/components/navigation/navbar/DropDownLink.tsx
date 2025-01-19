@@ -95,6 +95,7 @@ const LetterVariant: Variants = {
         x: 0,
         transition: {
             duration: 0.2,
+            delay: 0.1,
         },
     },
 };

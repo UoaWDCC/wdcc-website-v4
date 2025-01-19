@@ -53,6 +53,11 @@ export default function NavigationBar({ className }: ClassName) {
                 } as hoverContextProps
             }
         >
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: isHovering ? 1 : 0 }}
+                className="pointer-events-none fixed inset-0 z-40 h-dvh w-dvw bg-black/40 backdrop-blur-sm"
+            />
             <nav
                 className={cn(
                     "group fixed top-0 z-50 flex w-full select-none flex-col items-center justify-between gap-4 py-4 sm:flex-row sm:px-16 lg:py-4",
@@ -60,17 +65,11 @@ export default function NavigationBar({ className }: ClassName) {
                 )}
             >
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: isHovering ? 1 : 0 }}
-                    className="pointer-events-none absolute inset-0 -z-10 h-dvh w-dvw bg-black/40 backdrop-blur-sm"
-                />
-                <motion.div
+                    className="absolute left-0 top-0 -z-10 size-full w-dvw bg-background"
                     initial={{ height: 0 }}
-                    animate={{ height: isHovering ? 180 : 0 }}
-                    className="absolute left-0 top-0 -z-10 w-dvw bg-background"
+                    animate={{ height: isHovering ? 180 : 0 }} // hardcoded xdx,
                     onMouseLeave={handleDropExit}
                 />
-
                 <Anchor href="/">
                     <WDCCLogo className="fill-black transition duration-150 hover:opacity-70 lg:block" />
                 </Anchor>
