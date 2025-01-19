@@ -14,7 +14,6 @@ const header = tv({
         style: {
             primary: "pb-20 pt-48 md:pt-36",
             secondary: "pb-16 pt-44 md:pt-32",
-            tetriary: "mt-20 px-16",
         },
         color: {
             yellow: "bg-orange-20",
@@ -24,19 +23,6 @@ const header = tv({
             brand: "bg-blue-brand text-white",
         },
     },
-
-    compoundVariants: [
-        {
-            style: "tetriary",
-            color: "blue",
-            class: "bg-transparent *:rounded-2xl *:bg-blue-100",
-        },
-        {
-            style: "tetriary",
-            color: "green",
-            class: "bg-transparent *:rounded-2xl *:bg-green-100",
-        },
-    ],
 });
 
 const bar = tv({
@@ -199,25 +185,6 @@ export default function Header({
                                 </Link>
                             )}
                             <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
-                        </div>
-                    </div>
-                </header>
-            );
-        }
-        case "tetriary": {
-            return (
-                <header className={header({ ...variant })}>
-                    <div className="flex w-full justify-center p-16">
-                        <div className="responsive-width flex h-full gap-8">
-                            <div className={bar({ color: variant.color })} />
-                            <div className="flex flex-col gap-3 py-3">
-                                {backlink && (
-                                    <Link href={backlink.href} className={backlinkvar({ color: variant.color })}>
-                                        <Arrow className="rotate-180" /> {backlink.label}
-                                    </Link>
-                                )}
-                                <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
-                            </div>
                         </div>
                     </div>
                 </header>
