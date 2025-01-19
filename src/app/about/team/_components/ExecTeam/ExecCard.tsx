@@ -18,7 +18,7 @@ export default function ExecCard({ exec }: ExecCardProps) {
                 alt={exec.name}
                 className="h-auto max-w-[200px] sm:max-w-[165px]"
             />
-            <div className="flex max-w-[267px] flex-col items-center gap-1 px-2 py-4 text-center sm:items-start sm:px-4 sm:py-2 sm:text-left">
+            <div className="flex max-w-[200px] flex-col items-center gap-1 px-2 py-4 text-center sm:max-w-[267px] sm:items-start sm:px-4 sm:py-2 sm:text-left">
                 <ExecCardText name={exec.name} role={exec.role} description={exec.description} joined={exec.joined} />
             </div>
         </div>
