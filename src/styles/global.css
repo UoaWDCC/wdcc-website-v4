@@ -123,10 +123,6 @@ body {
         /* Constrain children of main to middle column */
         @apply col-start-2 col-end-3;
     }
-
-    .responsive-width {
-        @apply w-[clamp(375px,80%,1100px)];
-    }
 }
 
 @layer utilities {

@@ -1,6 +1,6 @@
 // import { ReactNode } from "react";
-import { ReactNode } from "react";
 import Link from "next/link";
+import { ReactNode } from "react";
 
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
@@ -23,9 +23,8 @@ interface HeaderProps {
 }
 
 /**
- Project header description tba
+ * Project header description tba
  */
-
 export default function ProjectHeader({ title, description, primaryButton, secondaryButton, backlink }: HeaderProps) {
     return (
         <header className="mx-[-14%] mt-24 flex items-center justify-center rounded-3xl bg-blue-50 py-20">

@@ -37,11 +37,11 @@ const IndividualProject = () => {
             </div>
             <div className="mt-8 flex flex-col items-center gap-8">
                 <h3 className="text-3xl font-semibold">Meet the project team</h3>
-                <div className="responsive-width flex justify-center gap-4">
+                <div className="flex justify-center gap-4">
                     <TeamMemberCard variant={{ role: "manager" }} name="Daniel Yang" role="project manager" />
                     <TeamMemberCard variant={{ role: "techlead" }} name="David Zhu" role="techlead" />
                 </div>
-                <div className="responsive-width flex flex-wrap justify-center gap-4">
+                <div className="flex flex-wrap justify-center gap-4">
                     <TeamMemberCard variant={{ role: "designer" }} name="Chanasit Jitsawatpaiboon" role="designer" />
                     <TeamMemberCard
                         variant={{ role: "engineer" }}
