@@ -21,11 +21,11 @@ export function FaqSelector({ sections }: FaqSelectorProps) {
     };
 
     const handleItemSelect = (faq: Faq) => () => {
-        setSelectedFaq(faq);
+        setSelectedFaq(faq === selectedFaq ? {} : faq);
     };
 
     return (
-        <div className="flex w-full items-start justify-between gap-4 self-stretch">
+        <div className="flex w-full flex-col items-start justify-between gap-4 self-stretch md:flex-row">
             <div className="flex flex-col items-start justify-center gap-2">
                 {sections.map((section) => (
                     <FaqTab
@@ -38,7 +38,7 @@ export function FaqSelector({ sections }: FaqSelectorProps) {
                 ))}
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex w-[656px] flex-col gap-2">
                 {selectedTab.faqs.map((faq) => (
                     <FaqItem
                         key={faq.question}

@@ -32,7 +32,7 @@ export const faqData = {
             faqs: projectsFaqData,
             colors: {
                 tabBg: "bg-yellow-200",
-                tabCircle: "bg-yellow-600",
+                tabCircle: "bg-orange-400",
             },
         },
         {
