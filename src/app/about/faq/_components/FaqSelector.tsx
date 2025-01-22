@@ -38,7 +38,7 @@ export function FaqSelector({ sections }: FaqSelectorProps) {
                 ))}
             </div>
 
-            <div className="flex w-[656px] flex-col gap-2">
+            <div className="flex w-full flex-col gap-2">
                 {selectedTab.faqs.map((faq) => (
                     <FaqItem
                         key={faq.question}

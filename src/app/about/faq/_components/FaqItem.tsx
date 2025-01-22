@@ -1,6 +1,12 @@
+"use client";
+
+import { useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
 import { Faq } from "@/types/models";
 
 import FaqButton from "@/assets/svg/FaqButton";
+import { easeOutExpo, easeOutQuad } from "@/libs/ease";
 
 interface FaqItemProps {
     faq: Faq;
@@ -9,13 +15,28 @@ interface FaqItemProps {
 }
 
 export function FaqItem({ faq, selected, handleClick }: FaqItemProps) {
+    useEffect(() => {}, [selected]);
+
     return (
-        <button onClick={handleClick} className="flex flex-col rounded-3xl border border-gray-150 bg-gray-20 p-2 pl-8">
-            <div className="flex items-center justify-between">
-                <p className="font-semibold">{faq.question}</p>
+        <div className="flex flex-col rounded-3xl border border-gray-150 bg-gray-20 p-2 pl-8">
+            <button onClick={handleClick} className="group flex items-center justify-between">
+                <p className="font-semibold group-hover:underline">{faq.question}</p>
                 <FaqButton rotate={selected} className="h-6 w-6" />
-            </div>
-            {selected && <p className="mr-6 mt-2 text-left">{faq.answer}</p>}
-        </button>
+            </button>
+            <AnimatePresence mode="wait">
+                {selected && (
+                    <motion.p
+                        initial={{ height: 0, marginTop: 0 }}
+                        animate={{ height: "auto", marginTop: "auto" }}
+                        exit={{ height: 0, marginTop: 0 }}
+                        key="faq-content"
+                        transition={{ duration: 0.5, ease: easeOutExpo }}
+                        className="mr-6 mt-2 overflow-hidden text-left"
+                    >
+                        {faq.answer}
+                    </motion.p>
+                )}
+            </AnimatePresence>
+        </div>
     );
 }
