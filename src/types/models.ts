@@ -1,6 +1,5 @@
 import { StaticImageData } from "next/image";
 
-// TODO: all of these definitely subject to change
 export type Exec = {
     name: string;
     image: StaticImageData;
@@ -9,19 +8,17 @@ export type Exec = {
     joined: string;
 };
 
+export type Faq = {
+    question: string;
+    answer: string;
+};
+
 export type Project = {
     name: string;
     description: string;
     logo: string;
     year: string;
     technologies: string[];
-};
-
-export type AboutCardType = {
-    title: string;
-    content: string;
-    image: StaticImageData;
-    imageAlt: string;
 };
 
 export type PastEventType = string;
