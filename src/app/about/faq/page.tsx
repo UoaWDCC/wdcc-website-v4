@@ -2,24 +2,20 @@ import InfoPill from "@/components/InfoPill";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
-import ExecTeam from "./_components/ExecTeam";
-import { teamData } from "./_data/team.data";
+import { FaqSelector } from "./_components/FaqSelector";
+import { faqData } from "./_data/faq.data";
 
-export default function TeamPage() {
-    const tech = teamData.techTeam;
-    const edu = teamData.eduTeam;
-
+export default function FaqPage() {
     return (
         <StandardPageLayout>
             <Header
                 variant={{ style: "secondary", color: "blue" }}
-                title="meet the team"
+                title="frequently asked questions"
                 backlink={{ label: "About WDCC", href: "/about" }}
             />
             <div className="flex w-full max-w-[1100px] flex-col items-center gap-24 py-20">
-                <InfoPill text={teamData.info} />
-                <ExecTeam title={tech.title} description={tech.description} execs={tech.execs} />
-                <ExecTeam title={edu.title} description={edu.description} execs={edu.execs} />
+                <InfoPill text={faqData.info} />
+                <FaqSelector sections={faqData.sections} />
             </div>
         </StandardPageLayout>
     );

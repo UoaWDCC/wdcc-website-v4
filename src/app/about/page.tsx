@@ -33,7 +33,7 @@ export default function AboutPage() {
                     ),
                     href: "/about/team",
                 }}
-                secondaryButton={{ label: "Frequently asked questions", href: "/faq" }}
+                secondaryButton={{ label: "Frequently asked questions", href: "/about/faq" }}
             />
 
             <NestedDiv
