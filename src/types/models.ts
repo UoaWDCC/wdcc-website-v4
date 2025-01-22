@@ -15,6 +15,7 @@ export type Project = {
     logo: string;
     year: string;
     technologies: string[];
+    slug?: string;
 };
 
 export type AboutCardType = {

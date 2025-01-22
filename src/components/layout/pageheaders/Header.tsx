@@ -102,6 +102,7 @@ interface HeaderProps {
  *   href: "xyz"
  * }
  */
+
 export default function Header({
     variant = { style: "primary", color: "yellow" },
     title,
@@ -110,64 +111,84 @@ export default function Header({
     secondaryButton,
     backlink,
 }: HeaderProps) {
-    return (
-        <header className={header({ ...variant })}>
-            {variant.style === "primary" ? (
-                <div className="flex w-[80%] max-w-[1100px] flex-col gap-8">
-                    <div className="flex max-w-[700px] flex-col gap-4">
-                        <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
-                        {variant.color !== "brand" ? (
-                            <>{description && <p className="text-md leading-tight text-gray-600">{description}</p>}</>
-                        ) : (
-                            <>{description && <p className="text-md leading-tight text-white">{description}</p>}</>
-                        )}
+    switch (variant.style) {
+        case "primary": {
+            return (
+                <header className={header({ ...variant })}>
+                    <div className="flex w-[80%] max-w-[1100px] flex-col gap-8">
+                        <div className="flex max-w-[700px] flex-col gap-4">
+                            <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
+                            {variant.color !== "brand" ? (
+                                <>
+                                    {description && (
+                                        <p className="text-md leading-tight text-gray-600">{description}</p>
+                                    )}
+                                </>
+                            ) : (
+                                <>{description && <p className="text-md leading-tight text-white">{description}</p>}</>
+                            )}
+                        </div>
+                        <div className="flex flex-wrap gap-3">
+                            {variant.color !== "brand" ? (
+                                <>
+                                    {primaryButton && (
+                                        <Button
+                                            variant={{ style: "primary", color: "yellow" }}
+                                            href={primaryButton.href}
+                                        >
+                                            {primaryButton.label}
+                                        </Button>
+                                    )}
+                                    {secondaryButton && (
+                                        <Button
+                                            variant={{ style: "secondary", color: "dark" }}
+                                            href={secondaryButton.href}
+                                        >
+                                            {secondaryButton.label}
+                                        </Button>
+                                    )}
+                                </>
+                            ) : (
+                                <>
+                                    {primaryButton && (
+                                        <Button
+                                            variant={{ style: "primary", color: "light" }}
+                                            href={primaryButton.href}
+                                        >
+                                            {primaryButton.label}
+                                        </Button>
+                                    )}
+                                    {secondaryButton && (
+                                        <Button
+                                            variant={{ style: "secondary", color: "light" }}
+                                            href={secondaryButton.href}
+                                        >
+                                            {secondaryButton.label}
+                                        </Button>
+                                    )}
+                                </>
+                            )}
+                        </div>
                     </div>
-                    <div className="flex flex-wrap gap-3">
-                        {variant.color !== "brand" ? (
-                            <>
-                                {primaryButton && (
-                                    <Button variant={{ style: "primary", color: "yellow" }} href={primaryButton.href}>
-                                        {primaryButton.label}
-                                    </Button>
-                                )}
-                                {secondaryButton && (
-                                    <Button variant={{ style: "secondary", color: "dark" }} href={secondaryButton.href}>
-                                        {secondaryButton.label}
-                                    </Button>
-                                )}
-                            </>
-                        ) : (
-                            <>
-                                {primaryButton && (
-                                    <Button variant={{ style: "primary", color: "light" }} href={primaryButton.href}>
-                                        {primaryButton.label}
-                                    </Button>
-                                )}
-                                {secondaryButton && (
-                                    <Button
-                                        variant={{ style: "secondary", color: "light" }}
-                                        href={secondaryButton.href}
-                                    >
-                                        {secondaryButton.label}
-                                    </Button>
-                                )}
-                            </>
-                        )}
+                </header>
+            );
+        }
+        case "secondary": {
+            return (
+                <header className={header({ ...variant })}>
+                    <div className="flex w-[80%] max-w-[1100px] gap-8">
+                        <div className={bar({ color: variant.color })}></div>
+                        <div className="flex flex-col gap-3 py-3">
+                            {backlink && (
+                                <Link href={backlink.href} className={backlinkvar({ color: variant.color })}>
+                                    <Arrow className="rotate-180" /> {backlink.label}
+                                </Link>
+                            )}
+                            <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
+                        </div>
                     </div>
-                </div>
-            ) : (
-                <div className="flex w-[80%] max-w-[1100px] gap-8">
-                    <div className={bar({ color: variant.color })}></div>
-                    <div className="flex flex-col gap-3 py-3">
-                        {backlink && (
-                            <Link href={backlink.href} className={backlinkvar({ color: variant.color })}>
-                                <Arrow className="rotate-180" /> {backlink.label}
-                            </Link>
-                        )}
-                        <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
-                    </div>
-                </div>
-            )}
-        </header>
-    );
+                </header>
+            );
+        }
+    }
 }

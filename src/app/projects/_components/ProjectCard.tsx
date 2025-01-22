@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import { Project } from "@/types/models";
 
@@ -9,8 +10,9 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+    const slug = project.slug || "not-found";
     return (
-        <div className="flex w-min flex-col overflow-hidden rounded-2xl bg-gray-50">
+        <Link className="flex w-min flex-col overflow-hidden rounded-2xl bg-gray-50" href={`/projects/${slug}`}>
             <div className="center-content h-60 w-[520px] bg-[linear-gradient(106.75deg,#8FA7FF,#4525A7)] text-white">
                 Image Here
             </div>
@@ -24,6 +26,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
                     ))}
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
