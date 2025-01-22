@@ -1,0 +1,23 @@
+import Plus from "@/assets/svg/Plus";
+import { cn } from "@/libs/utils";
+
+interface FaqButtonProps {
+    rotate?: boolean;
+    className?: string;
+}
+
+const FaqButton = ({ rotate, className }: FaqButtonProps) => {
+    return (
+        <div
+            className={cn(
+                "group grid place-items-center rounded-full bg-gradient-to-bl from-blue-400 to-blue-700",
+                className
+            )}
+            data-rotate={rotate}
+        >
+            <Plus className="size-5 stroke-white transition-transform group-data-[rotate=true]:rotate-45" />
+        </div>
+    );
+};
+
+export default FaqButton;

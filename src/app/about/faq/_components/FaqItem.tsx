@@ -5,8 +5,9 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { Faq } from "@/types/models";
 
-import FaqButton from "@/assets/svg/FaqButton";
-import { easeOutExpo, easeOutQuad } from "@/libs/ease";
+import { easeOutExpo } from "@/libs/ease";
+
+import FaqButton from "./FaqButton";
 
 interface FaqItemProps {
     faq: Faq;
@@ -21,7 +22,7 @@ export function FaqItem({ faq, selected, handleClick }: FaqItemProps) {
         <div className="flex flex-col rounded-3xl border border-gray-150 bg-gray-20 p-2 pl-8">
             <button onClick={handleClick} className="group flex items-center justify-between">
                 <p className="font-semibold group-hover:underline">{faq.question}</p>
-                <FaqButton rotate={selected} className="h-6 w-6" />
+                <FaqButton rotate={selected} className="size-6" />
             </button>
             <AnimatePresence mode="wait">
                 {selected && (
