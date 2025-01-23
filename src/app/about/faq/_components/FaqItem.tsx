@@ -27,12 +27,12 @@ export function FaqItem({ faq, selected, handleClick }: FaqItemProps) {
             <AnimatePresence mode="wait">
                 {selected && (
                     <motion.p
-                        initial={{ height: 0, marginTop: 0 }}
-                        animate={{ height: "auto", marginTop: "auto" }}
-                        exit={{ height: 0, marginTop: 0 }}
+                        initial={{ height: 0 }}
+                        animate={{ height: "auto" }}
+                        exit={{ height: 0 }}
                         key="faq-content"
                         transition={{ duration: 0.5, ease: easeOutExpo }}
-                        className="mr-6 mt-2 overflow-hidden text-left"
+                        className="mr-6 mt-auto overflow-hidden text-left"
                     >
                         {faq.answer}
                     </motion.p>
