@@ -1,6 +1,6 @@
 // import { ReactNode } from "react";
-import { ReactNode } from "react";
 import Link from "next/link";
+import { ReactNode } from "react";
 
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
@@ -23,25 +23,20 @@ interface HeaderProps {
 }
 
 /**
- Project header description tba
+ * Project header description tba
  */
-
-export default function ProjectHeader({
-    title,
-    description,
-    primaryButton,
-    secondaryButton,
-    backlink,
-}: HeaderProps) {
+export default function ProjectHeader({ title, description, primaryButton, secondaryButton, backlink }: HeaderProps) {
     return (
-        <header className="py-20 mx-[-14%] bg-blue-50 flex items-center justify-center rounded-3xl">
-            <div className="flex w-[80%] max-w-[1100px] gap-8">
-                <div className="w-[8px] bg-blue-400 rounded-full"></div>
-                <div className="flex flex-col gap-8">
+        <header className="mx-[-14%] mt-24 flex items-center justify-center rounded-3xl bg-blue-50 py-20">
+            <div className="flex w-[80%] max-w-[1100px] gap-10">
+                <div className="w-[8px] rounded-full bg-blue-400"></div>
+                <div className="flex flex-col gap-4">
                     <div className="flex max-w-[700px] flex-col gap-4">
                         {backlink && (
-                            <Link href={backlink.href}
-                                  className="text-blue-600 font-semibold transition duration-300 will-change-auto hover:translate-x-2 hover:opacity-[0.8] hover:duration-150 motion-reduce:transition-none motion-reduce:hover:transform-none">
+                            <Link
+                                href={backlink.href}
+                                className="font-semibold text-blue-600 transition duration-300 will-change-auto hover:translate-x-2 hover:opacity-[0.8] hover:duration-150 motion-reduce:transition-none motion-reduce:hover:transform-none"
+                            >
                                 <Arrow className="rotate-180" /> {backlink.label}
                             </Link>
                         )}
@@ -50,16 +45,12 @@ export default function ProjectHeader({
                     </div>
                     <div className="flex flex-wrap gap-3">
                         {primaryButton && (
-                            <Button variant={{ style: "primary", color: "yellow" }}
-                                    href={primaryButton.href}>
+                            <Button variant={{ style: "primary", color: "yellow" }} href={primaryButton.href}>
                                 {primaryButton.label}
                             </Button>
                         )}
                         {secondaryButton && (
-                            <Button
-                                variant={{ style: "secondary", color: "dark" }}
-                                href={secondaryButton.href}
-                            >
+                            <Button variant={{ style: "secondary", color: "dark" }} href={secondaryButton.href}>
                                 {secondaryButton.label}
                             </Button>
                         )}

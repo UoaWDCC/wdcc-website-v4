@@ -7,7 +7,7 @@ export const eduExecs: Exec[] = [
         name: "Andrew Qiu",
         role: "TECHducation Exec",
         image: placeholder,
-        description: "BSc - Computer Science\nThe University of Auckland",
+        description: "BSc/BC - Computer Science and Communications\nThe University of Auckland",
         joined: "Joined Mar 2024",
     },
     {

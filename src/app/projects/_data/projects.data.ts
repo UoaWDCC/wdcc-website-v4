@@ -7,6 +7,7 @@ export const projectsData: Project[] = [
         logo: "I don't know the layout so I don't know if this needs a logo",
         year: "2024",
         technologies: ["Astro", "TypeScript"],
+        slug: "/2024-ASPA",
     },
     {
         name: "NZPMC exam portal",
@@ -14,6 +15,7 @@ export const projectsData: Project[] = [
         logo: "I don't know the layout so I don't know if this needs a logo",
         year: "2024",
         technologies: ["Astro", "TypeScript"],
+        slug: "/2024-NZPMC",
     },
     {
         name: "Youth of Ōrākei",
@@ -21,6 +23,7 @@ export const projectsData: Project[] = [
         logo: "I don't know the layout so I don't know if this needs a logo",
         year: "2024",
         technologies: ["TypeScript", "Prisma", "Thanos"],
+        slug: "/2024-youth-of-orakei",
     },
     {
         name: "NZPMC exam portal",

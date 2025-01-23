@@ -48,30 +48,33 @@ export default function TestPage() {
                 backlink={{ label: "hello", href: "/" }}
             />
 
-                {/* Project and event headers are seperate files - everything erxcept for title is optional.*/}
-                <ProjectHeader
-                    title="i'm a project header"
-                    primaryButton={{ label: "hello", href: "/" }}
-                    secondaryButton={{ label: "hello", href: "/" }}
-                    backlink={{ label: "hello", href: "/" }}
-                />
-
+            {/* Project and event headers are seperate files - everything erxcept for title is optional.*/}
+            {/* This project header has buttons, but no description*/}
             <ProjectHeader
                 title="i'm a project header"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                primaryButton={{ label: "hello", href: "/" }}
-                secondaryButton={{ label: "hello", href: "/" }}
-                backlink={{ label: "hello", href: "/" }}
+                primaryButton={{ label: "View the live demo", href: "/" }}
+                secondaryButton={{ label: "GitHub", href: "/" }}
+                backlink={{ label: "2024 Projects", href: "/" }}
             />
 
+            {/* Project header with description */}
+            <ProjectHeader
+                title="Merged"
+                description="The University of Auckland came to WDCC with a proposal: what if there was a specific dating app designed for tech students? Merged is a first-in-class dating platform built on cutting edge technologies that lets UoA CS, SE, and other majors' students find their own partners - so they can commit, merge, and deploy together."
+                primaryButton={{ label: "View a live demo", href: "/" }}
+                secondaryButton={{ label: "GitHub", href: "/" }}
+                backlink={{ label: "2025 Projects", href: "/" }}
+            />
+
+            {/* Event headers are similar, but also include a where and when field. */}
             <EventHeader
-                title="i'm a event header"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                primaryButton={{ label: "hello", href: "/" }}
-                secondaryButton={{ label: "hello", href: "/" }}
-                backlink={{ label: "hello", href: "/" }}
+                title="Gambling Workshop"
+                description="Making $$$ from your new big tech internship? Well, don't just let those numbers sit there in your account. Join WDCC's Education Executives as we teach you the principles of gambling, casino tips, and card counting."
+                primaryButton={{ label: "Sign up", href: "/" }}
+                secondaryButton={{ label: "Learn more", href: "/" }}
+                backlink={{ label: "2025 Events", href: "/" }}
                 when="11:30am, February 31 2025"
-                where="north face of mars"
+                where="SkyCity Auckland (meet by the Sky Tower)"
             />
 
         </StandardPageLayout>
