@@ -1,3 +1,8 @@
+"use client";
+
+import { createContext, useContext, useState } from "react";
+import { motion } from "framer-motion";
+
 import type { ClassName } from "@/types/utils";
 
 import Arrow from "@/assets/svg/Arrow";
@@ -12,41 +17,79 @@ import { cn } from "@/libs/utils";
 import { Anchor } from "../../primitives/Anchor";
 import NavigationMenu from "./NavigationMobileMenu";
 
+const hoverContext = createContext({} as hoverContextProps);
+
+type hoverContextProps = {
+    handleDropEnter: () => void;
+    handleDropExit: () => void;
+    isHovering: boolean;
+};
+
+export const useNavHover = () => {
+    const context = useContext(hoverContext);
+    if (!context) {
+        throw new Error("useNavHover must be used within a NavHoverProvider");
+    }
+    return context;
+};
+
 export default function NavigationBar({ className }: ClassName) {
+    const [isHovering, sethover] = useState(false);
+
+    const handleDropEnter = () => {
+        sethover(true);
+    };
+    const handleDropExit = () => {
+        sethover(false);
+    };
+
     return (
-        <nav
-            className={cn(
-                "group fixed top-0 z-50 flex w-full select-none flex-col items-center justify-between gap-4 py-4 sm:flex-row sm:px-16 lg:py-4",
-                className
-            )}
+        <hoverContext.Provider
+            value={
+                {
+                    isHovering,
+                    handleDropEnter,
+                    handleDropExit,
+                } as hoverContextProps
+            }
         >
-            {/* progressive blur */}
-            <div className="absolute inset-0 isolate -z-20 size-full">
-                <div className="absolute h-1/5 w-full backdrop-blur-[1px]" />
-                <div className="absolute h-2/5 w-full backdrop-blur-[1px]" />
-                <div className="absolute h-3/5 w-full backdrop-blur-[1px]" />
-                <div className="absolute h-4/5 w-full backdrop-blur-[1px]" />
-                <div className="absolute h-full w-full backdrop-blur-[1px]" />
-            </div>
-            <Anchor href="/">
-                <WDCCLogo className="fill-black transition duration-150 hover:opacity-70 lg:block" />
-            </Anchor>
-            <div className="flex w-full items-center justify-center gap-8 whitespace-nowrap font-semibold sm:justify-end lg:gap-12">
-                {/* Links */}
-                <div className="hidden h-full items-center gap-8 md:flex lg:gap-12">
-                    <NavigationBarLinks links={navbarData.links} />
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: isHovering ? 1 : 0 }}
+                className="pointer-events-none fixed inset-0 z-40 h-dvh w-dvw bg-black/40 backdrop-blur-sm"
+            />
+            <nav
+                className={cn(
+                    "group fixed top-0 z-50 flex w-full select-none flex-col items-center justify-between gap-4 py-4 sm:flex-row sm:px-16 lg:py-4",
+                    className
+                )}
+            >
+                <motion.div
+                    className="absolute left-0 top-0 -z-10 size-full w-dvw bg-background"
+                    initial={{ height: 0 }}
+                    animate={{ height: isHovering ? 180 : 0 }} // hardcoded xdx,
+                    onMouseLeave={handleDropExit}
+                />
+                <Anchor href="/">
+                    <WDCCLogo className="fill-black transition duration-150 hover:opacity-70 lg:block" />
+                </Anchor>
+                <div className="flex w-full items-center justify-center gap-8 whitespace-nowrap font-semibold sm:justify-end lg:gap-12">
+                    {/* Links */}
+                    <div className="hidden h-full items-center gap-16 md:flex lg:gap-16">
+                        <NavigationBarLinks links={navbarData.links} />
+                    </div>
+                    {/* Vertical line */}
+                    <div className="hidden h-5 w-0.5 rounded bg-gray-700 md:block" />
+                    {/* Buttons */}
+                    <div className="hidden-scrollbar flex gap-3 overflow-auto">
+                        <NavigationMenu className="md:hidden" links={navbarData.links} />
+                        <Button variant={{ style: "primary", color: "blue" }} href="https://go.wdcc.co.nz" newTab>
+                            Join WDCC <Arrow />
+                        </Button>
+                    </div>
                 </div>
-                {/* Vertical line */}
-                <div className="hidden h-5 w-0.5 rounded bg-gray-700 md:block" />
-                {/* Buttons */}
-                <div className="hidden-scrollbar flex gap-3 overflow-auto">
-                    <NavigationMenu className="md:hidden" links={navbarData.links} />
-                    <Button variant={{ style: "primary", color: "blue" }} href="https://go.wdcc.co.nz" newTab>
-                        Join WDCC <Arrow />
-                    </Button>
-                </div>
-            </div>
-        </nav>
+            </nav>
+        </hoverContext.Provider>
     );
 }
 
