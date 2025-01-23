@@ -41,25 +41,25 @@ export default function AboutPage() {
                 inner="flex w-[80%] max-w-[1100px] flex-col gap-16 sm:gap-24"
             >
                 <Duo image={{ src: genInfo.image, alt: genInfo.imageAlt }}>
-                    <p className="whitespace-pre-line text-md font-semibold sm:text-lg">{genInfo.firstPart}</p>
-                    <p className="whitespace-pre-line text-md font-semibold text-blue-brand sm:text-lg">
+                    <p className="leading-tight whitespace-pre-line text-md font-semibold sm:text-lg">{genInfo.firstPart}</p>
+                    <p className="leading-tight whitespace-pre-line text-md font-semibold text-blue-brand sm:text-lg">
                         {genInfo.secondPart}
                     </p>
                 </Duo>
 
                 <Duo image={{ src: whyJoin.image, alt: whyJoin.imageAlt }}>
-                    <h3 className="font-semibold">{whyJoin.title}</h3>
-                    <p className="whitespace-pre-line">{whyJoin.content}</p>
+                    <h3 className="font-bold text-md">{whyJoin.title}</h3>
+                    <p className="leading-[1.3] whitespace-pre-line">{whyJoin.content}</p>
                 </Duo>
 
                 <Duo image={{ src: clubStory.image, alt: clubStory.imageAlt }} imgFirst>
-                    <h3 className="font-semibold">{clubStory.title}</h3>
-                    <p className="whitespace-pre-line">{clubStory.content}</p>
+                    <h3 className="font-bold text-md">{clubStory.title}</h3>
+                    <p className="leading-[1.3] whitespace-pre-line">{clubStory.content}</p>
                 </Duo>
 
                 <Duo image={{ src: ourPeople.image, alt: ourPeople.imageAlt }}>
-                    <h3 className="font-semibold">{ourPeople.title}</h3>
-                    <p className="whitespace-pre-line">{ourPeople.content}</p>
+                    <h3 className="font-bold text-md">{ourPeople.title}</h3>
+                    <p className="leading-[1.3] whitespace-pre-line">{ourPeople.content}</p>
                     <div className="w-auto">
                         <Button variant={{ style: "secondary", color: "yellow" }} href="/about/team">
                             Meet the team <Arrow />
@@ -69,8 +69,8 @@ export default function AboutPage() {
             </NestedDiv>
 
             <NestedDiv
-                outer="flex w-full items-center justify-center py-20 bg-blue-20 responsive-fullwidth"
-                inner="flex w-[80%] max-w-[1100px] flex-col gap-4"
+                outer="flex w-full items-center justify-center py-28 bg-blue-20 responsive-fullwidth"
+                inner="flex w-[80%] xl:w-[50%] max-w-[1100px] flex-col gap-4"
             >
                 <Quote quote={quoteSection.quote} author={quoteSection.author} subscript={quoteSection.subscript} />
             </NestedDiv>
