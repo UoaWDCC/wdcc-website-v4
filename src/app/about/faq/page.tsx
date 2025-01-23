@@ -15,7 +15,7 @@ export default function FaqPage() {
                 title="frequently asked questions"
                 backlink={{ label: "About WDCC", href: "/about" }}
             />
-            <div style={{ minHeight: `${minHeight}px` }} className={`flex w-full flex-col items-center gap-24 py-20`}>
+            <div style={{ minHeight: `${minHeight}px` }} className="flex w-full flex-col items-center gap-24 py-20">
                 <InfoPill text={faqData.info} />
                 <FaqSelector sections={faqData.sections} />
             </div>
