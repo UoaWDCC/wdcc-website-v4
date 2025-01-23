@@ -24,7 +24,8 @@ export default {
             /* Type scaling TBA, modify where needed */
             xs: "0.750rem", //12px
             sm: "0.875rem", //14px
-            md: "1.000rem", //16px
+            base: "1.000rem", //16px
+            md: "1.125rem", //18px
             lg: "1.375rem", //22px
             xl: "1.625rem", //26px
             "2xl": "2rem", //32px

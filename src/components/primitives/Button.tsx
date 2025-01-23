@@ -7,7 +7,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 import { cn } from "@/libs/utils";
 
 const button = tv({
-    base: "flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 py-2 text-md font-bold transition duration-200 hover:cursor-pointer",
+    base: "flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 py-2 font-bold transition duration-200 hover:cursor-pointer",
     variants: {
         style: {
             primary: "border-2 py-[calc(0.5rem-2px)]",
