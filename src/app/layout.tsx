@@ -4,6 +4,7 @@ import "@/styles/global.css";
 
 import { ReactNode } from "react";
 
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import { figtree } from "@/fonts";
 
 export const metadata: Metadata = {
@@ -19,7 +20,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${figtree.className} antialiased`}>{children}</body>
+            <ThemeProvider>
+                <body className={`${figtree.className} antialiased`}>{children}</body>
+            </ThemeProvider>
         </html>
     );
 }
