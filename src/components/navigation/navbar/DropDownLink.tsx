@@ -1,11 +1,13 @@
 "use client";
 
-import { AnchorHTMLAttributes, ReactNode, useState } from "react";
+import { AnchorHTMLAttributes, ReactNode } from "react";
 import Link, { LinkProps } from "next/link";
 import { motion, type Variants } from "framer-motion";
 
 import type { NavigationLink } from "@/components/navigation/navbar/_data/navbarTypes";
 import { cn } from "@/libs/utils";
+
+import { useNavHover } from "./NavigationBar";
 
 // Need to omit href from AnchorHTMLAttributes because it conflicts with Next LinkProps
 interface DropdownProps extends LinkProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
@@ -13,20 +15,12 @@ interface DropdownProps extends LinkProps, Omit<AnchorHTMLAttributes<HTMLAnchorE
 }
 
 export default function DropDown({ link, ...props }: DropdownProps) {
-    const [open, setOpen] = useState(false);
-
-    const HoverOn = () => {
-        setOpen(true);
-    };
-
-    const HoverOff = () => {
-        setOpen(false);
-    };
+    const { isHovering, handleDropEnter } = useNavHover();
 
     return (
-        <motion.div className="relative flex flex-col gap-4" onHoverStart={HoverOn} onHoverEnd={HoverOff}>
+        <motion.div className="relative flex flex-col gap-4" onHoverStart={handleDropEnter}>
             {/* Main link in navbar */}
-            <BracketLink {...props} className={cn("whitespace-nowrap", props.className)} open={open}>
+            <BracketLink {...props} className={cn("whitespace-nowrap", props.className)}>
                 {link.label}
             </BracketLink>
 
@@ -34,13 +28,13 @@ export default function DropDown({ link, ...props }: DropdownProps) {
             {link.drop && (
                 <motion.div
                     initial="hide"
-                    animate={open ? "show" : "hide"}
+                    animate={isHovering ? "show" : "hide"}
                     className="absolute flex flex-col whitespace-pre pt-8"
                     transition={{ staggerChildren: 1 }}
                     variants={containerVariant}
                 >
                     {link.drop.map((link) => (
-                        <DropDownSublink key={link.label} link={link} open={open} />
+                        <DropDownSublink key={link.label} link={link} open={isHovering} />
                     ))}
                 </motion.div>
             )}
@@ -51,20 +45,19 @@ export default function DropDown({ link, ...props }: DropdownProps) {
 // Need to omit href from AnchorHTMLAttributes because it conflicts with Next LinkProps
 interface BracketLinkProps extends LinkProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
     children: ReactNode;
-    open?: boolean;
     newTab?: boolean;
 }
 
-const BracketLink = ({ children, newTab, open, ...props }: BracketLinkProps) => {
+const BracketLink = ({ children, newTab, ...props }: BracketLinkProps) => {
     return (
-        <Link {...props} target={newTab ? "_blank" : "_self"}>
+        <Link {...props} className="group/link" target={newTab ? "_blank" : "_self"}>
             <div className={cn("relative z-10 flex items-center", props.className)}>
                 <p className="cursor-pointer whitespace-nowrap">
-                    <span className={cn("inline-block -translate-x-1 transition-transform", open && "translate-x-0")}>
+                    <span className="inline-block -translate-x-1 transition-transform group-hover/link:!translate-x-0">
                         (
                     </span>
                     {children}
-                    <span className={cn("inline-block translate-x-1 transition-transform", open && "translate-x-0")}>
+                    <span className="inline-block translate-x-1 transition-transform group-hover/link:!translate-x-0">
                         )
                     </span>
                 </p>
@@ -102,6 +95,7 @@ const LetterVariant: Variants = {
         x: 0,
         transition: {
             duration: 0.2,
+            delay: 0.1,
         },
     },
 };
