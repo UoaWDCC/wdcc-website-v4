@@ -16,6 +16,7 @@ import { cn } from "@/libs/utils";
 
 import { Anchor } from "../../primitives/Anchor";
 import NavigationMenu from "./NavigationMobileMenu";
+import { tv, VariantProps } from "tailwind-variants";
 
 const hoverContext = createContext({} as hoverContextProps);
 
@@ -33,7 +34,22 @@ export const useNavHover = () => {
     return context;
 };
 
-export default function NavigationBar({ className }: ClassName) {
+const navbar = tv({
+    base: "group fixed top-0 z-50 flex w-full select-none flex-col items-center justify-between gap-4 py-4 sm:flex-row sm:px-16 lg:py-4",
+    variants: {
+        color: {
+            light: "text-white",
+            dark: "text-gray-800",
+        },
+    },
+});
+
+export interface NavbarProps {
+    variant?: VariantProps<typeof navbar>;
+    className?: ClassName
+}
+
+export default function NavigationBar({ variant, className }: NavbarProps) {
     const [isHovering, sethover] = useState(false);
 
     const handleDropEnter = () => {
@@ -59,10 +75,7 @@ export default function NavigationBar({ className }: ClassName) {
                 className="pointer-events-none fixed inset-0 z-40 h-dvh w-dvw bg-black/40 backdrop-blur-sm"
             />
             <nav
-                className={cn(
-                    "group fixed top-0 z-50 flex w-full select-none flex-col items-center justify-between gap-4 py-4 sm:flex-row sm:px-16 lg:py-4",
-                    className
-                )}
+                className={navbar({ ...variant })}
             >
                 <motion.div
                     className="absolute left-0 top-0 -z-10 size-full w-dvw bg-background"
@@ -71,7 +84,7 @@ export default function NavigationBar({ className }: ClassName) {
                     onMouseLeave={handleDropExit}
                 />
                 <Anchor href="/">
-                    <WDCCLogo className="fill-black transition duration-150 hover:opacity-70 lg:block" />
+                    <WDCCLogo className="fill-current transition duration-150 hover:opacity-70 lg:block" />
                 </Anchor>
                 <div className="flex w-full items-center justify-center gap-8 whitespace-nowrap font-semibold sm:justify-end lg:gap-12">
                     {/* Links */}

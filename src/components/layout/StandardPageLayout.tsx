@@ -7,15 +7,16 @@ import NavigationBar from "../navigation/navbar/NavigationBar";
 
 interface StandardPageLayoutProps extends HtmlHTMLAttributes<HTMLElement> {
     children: ReactNode;
+    navColor?: "light" | "dark";
 }
 
 /** This component replaces a typical layout.tsx - allowing us to benefit from a consistent layout, but also optionally disable it. */
-export default function StandardPageLayout({ children, ...props }: StandardPageLayoutProps) {
+export default function StandardPageLayout({ children, navColor, ...props }: StandardPageLayoutProps) {
     return (
         <div {...props} className={cn("flex min-h-dvh flex-col", props.className)}>
             <div className="relative flex h-dvh min-h-dvh flex-col overflow-x-hidden">
                 <div className="fixed top-0 z-10 w-full">
-                    <NavigationBar />
+                    <NavigationBar variant={{color: navColor}}/>
                 </div>
                 <main className="responsive-body">{children}</main>
                 {/* Combination of min-h-dvh and mt-auto ensures footer doesn't collapse above screen bottom on small pages. */}
