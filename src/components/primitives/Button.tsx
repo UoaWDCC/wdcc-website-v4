@@ -59,7 +59,7 @@ const button = tv({
         {
             style: "primary",
             color: "light",
-            class: "border-gray-200 bg-gray-100 text-gray-800 hover:bg-gray-100",
+            class: "border-gray-200 bg-gray-100 text-gray-800 hover:bg-gray-50",
         },
         {
             style: "secondary",
