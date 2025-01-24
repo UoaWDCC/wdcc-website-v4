@@ -15,7 +15,7 @@ const FaqButton = ({ rotate, className }: FaqButtonProps) => {
             )}
             data-rotate={rotate}
         >
-            <Plus className="size-5 stroke-white transition-transform group-data-[rotate=true]:rotate-45" />
+            <Plus className="size-5 stroke-white transition-transform group-data-[rotate=true]:rotate-[135deg]" />
         </div>
     );
 };

@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { Faq } from "@/types/models";
@@ -16,8 +15,6 @@ interface FaqItemProps {
 }
 
 export function FaqItem({ faq, selected, handleClick }: FaqItemProps) {
-    useEffect(() => {}, [selected]);
-
     return (
         <div className="flex flex-col rounded-3xl border border-gray-150 bg-gray-20 p-2 pl-8">
             <button onClick={handleClick} className="group flex items-center justify-between">
