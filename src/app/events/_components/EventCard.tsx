@@ -14,7 +14,8 @@ const categoryColors = {
 export default function EventCard({ event }: EventCardProps) {
     return (
         <div className="bg-gray-50 rounded-2xl flex-col justify-start items-end gap-9 inline-flex overflow-hidden
-        transition will-change-auto duration-500 hover:duration-200 hover:bg-gray-100 hover:-translate-x-1 hover:-translate-y-1 cursor-pointer hover:drop-shadow-2xl">
+        transition will-change-auto duration-500 hover:duration-200 hover:-translate-x-1 hover:-translate-y-1 cursor-pointer hover:drop-shadow-cardLift
+        ">
             <div className="">
                 <Image src={event.image} alt={event.imageAlt} width={600} height={400} className="rounded-2xl" />
             </div>

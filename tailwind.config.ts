@@ -34,6 +34,14 @@ export default {
             "5xl": "4rem", // 64px
         },
         extend: {
+            dropShadow: {
+                'cardLift': [
+                    '1px 1px 1px rgba(156,164,186,0.12)',
+                    '2px 2px 3px rgba(156,164,186,0.12)',
+                    '4px 4px 6px rgba(156,164,186,0.14)',
+                    '9px 9px 14px rgba(156,164,186,0.17)'
+                ]
+            },
             colors: {
                 background: "var(--background)",
                 foreground: "var(--foreground)",

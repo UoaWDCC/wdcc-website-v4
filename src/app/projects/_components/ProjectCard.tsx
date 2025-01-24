@@ -12,7 +12,9 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
     const slug = project.slug || "not-found";
     return (
-        <Link className="flex w-full flex-col overflow-hidden rounded-2xl bg-gray-50" href={`/projects/${slug}`}>
+        <Link className="flex w-full flex-col overflow-hidden rounded-2xl bg-gray-50
+        transition will-change-auto duration-500 hover:duration-200 hover:-translate-x-1 hover:-translate-y-1 cursor-pointer hover:drop-shadow-cardLift
+        " href={`/projects/${slug}`}>
             <div className="center-content h-60 w-full bg-[linear-gradient(106.75deg,#8FA7FF,#4525A7)] text-white">
                 Image Here
             </div>
