@@ -2,7 +2,7 @@
 
 import { MutableRefObject, useRef } from "react";
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const Scene = dynamic(() => import("@/components/three/scene/Scene"), { ssr: false });
 
