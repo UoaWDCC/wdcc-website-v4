@@ -33,7 +33,7 @@ export const SponsorSection = () => {
                     ))}
                 </div>
             </div>
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-4 items-center flex-col justify-center md:flex-row">
                 <p>Interested in sponsoring us?</p>
                 <Button variant={{style: "tertiary", color: "dark" }}>Learn more about sponsoring WDCC</Button>
             </div>
