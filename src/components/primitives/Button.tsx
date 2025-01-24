@@ -104,12 +104,12 @@ const button = tv({
         {
             style: "tertiary",
             color: "dark",
-            class: "border-gray-800 border-opacity-20 text-gray-800 hover:bg-[#2E2B3B0D]",
+            class: "border-[#2E2B3B] border-opacity-20 text-gray-800 hover:bg-[#2E2B3B0D]",
         },
         {
             style: "tertiary",
             color: "light",
-            class: "border-gray-600 border-opacity-30 text-white hover:bg-[#C8C6D20D]",
+            class: "border-[#5F5C70] border-opacity-30 text-white hover:bg-[#C8C6D20D]",
         },
         {
             style: "text",
