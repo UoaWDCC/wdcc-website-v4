@@ -1,10 +1,15 @@
 import React from "react";
 
+import { Project } from "@/types/models";
+
 import ImageFit from "@/components/ImageFit";
 
 import TeamMemberCard from "./TeamMemberCard";
 
-const IndividualProject = () => {
+interface IndividualProjectProps {
+    project: Project;
+}
+function IndividualProject({ project }: IndividualProjectProps) {
     return (
         <div className="flex flex-col py-16">
             <div className="grid grid-cols-2 gap-16">
@@ -82,6 +87,6 @@ const IndividualProject = () => {
             </div>
         </div>
     );
-};
+}
 
 export default IndividualProject;
