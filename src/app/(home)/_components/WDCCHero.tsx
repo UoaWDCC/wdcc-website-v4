@@ -16,7 +16,7 @@ const WDCCThreeHero = dynamic(() => import("@/components/three/layout/home/WDCCT
 const WDCCHero = () => {
     const ref = useRef<HTMLDivElement>(null);
     return (
-        <div ref={ref} className="relative flex w-full flex-col gap-20 items-center justify-center py-44">
+        <div ref={ref} className="relative flex w-full flex-col gap-20 items-center justify-center">
             <div className="flex w-[clamp(300px,100%,1000px)] flex-col gap-10 items-center self-center px-8 text-center">
                 <div className="flex flex-col gap-2">
                     <h3 className="font-normal tracking-[0.25em] text-blue-800 leading-none">WEB DEVELOPMENT AND

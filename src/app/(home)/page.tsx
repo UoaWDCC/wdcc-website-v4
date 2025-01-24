@@ -6,7 +6,9 @@ import ThreeLayout from "@/components/layout/ThreePageLayout";
 
 import { SponsorSection } from "./_components/SponsorSection";
 import ThisIsWDCC from "./_components/ThisIsWDCCSection";
+import ComingUp from "@/app/(home)/_components/ComingUpSection";
 import WDCCHero from "./_components/WDCCHero";
+import SignupCard from "@/app/(home)/_components/SignupCard";
 
 export default function Home() {
     return (
@@ -18,10 +20,14 @@ export default function Home() {
                 <BackgroundEffect />
             </View>
             <NavigationBar />
-            <main className="mt-8 flex w-full flex-col items-center justify-center">
+            <main className="responsive-body flex-col gap-24 items-center justify-center py-44">
                 <WDCCHero />
-                <ThisIsWDCC />
-                <SponsorSection />
+                <div className="flex flex-col gap-36">
+                    <ThisIsWDCC />
+                    <ComingUp/>
+                    <SponsorSection />
+                    <SignupCard/>
+                </div>
             </main>
             <Footer className="mt-16" />
         </ThreeLayout>
