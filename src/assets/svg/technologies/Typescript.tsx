@@ -2,6 +2,7 @@ import { SVGAttributes } from "react";
 
 export const Typescript = ({ ...props }: SVGAttributes<SVGSVGElement>) => {
     <svg
+        {...props}
         viewBox="0 0 256 256"
         width="256"
         height="256"

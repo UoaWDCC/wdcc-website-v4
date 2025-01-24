@@ -2,6 +2,7 @@ import { SVGAttributes } from "react";
 
 export const Astro = ({ ...props }: SVGAttributes<SVGSVGElement>) => {
     <svg
+        {...props}
         viewBox="0 0 256 366"
         xmlns="http://www.w3.org/2000/svg"
         width="256"

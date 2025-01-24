@@ -2,6 +2,7 @@ import { SVGAttributes } from "react";
 
 export const Vitest = ({ ...props }: SVGAttributes<SVGSVGElement>) => {
     <svg
+        {...props}
         viewBox="0 0 256 234"
         width="256"
         height="234"

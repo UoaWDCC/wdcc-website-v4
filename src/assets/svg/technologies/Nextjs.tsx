@@ -1,7 +1,7 @@
 import { SVGAttributes } from "react";
 
 export const Nextjs = ({ ...props }: SVGAttributes<SVGSVGElement>) => {
-    <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg {...props} width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
         <mask
             id="mask0_408_139"
             style={{ maskType: "alpha" }}

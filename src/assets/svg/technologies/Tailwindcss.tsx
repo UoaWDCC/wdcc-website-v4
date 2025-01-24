@@ -2,6 +2,7 @@ import { SVGAttributes } from "react";
 
 export const Tailwindcss = ({ ...props }: SVGAttributes<SVGSVGElement>) => {
     <svg
+        {...props}
         viewBox="0 0 256 154"
         width="256"
         height="154"

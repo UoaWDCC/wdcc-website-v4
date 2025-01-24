@@ -2,6 +2,7 @@ import { SVGAttributes } from "react";
 
 export const Vite = ({ ...props }: SVGAttributes<SVGSVGElement>) => {
     <svg
+        {...props}
         viewBox="0 0 256 257"
         width="256"
         height="257"
