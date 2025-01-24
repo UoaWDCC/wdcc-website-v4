@@ -7,7 +7,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 import { cn } from "@/libs/utils";
 
 const button = tv({
-    base: "flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 py-2 text-md font-bold transition duration-200 hover:cursor-pointer",
+    base: "flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 py-2 font-bold transition duration-200 hover:cursor-pointer",
     variants: {
         style: {
             primary: "border-2 py-[calc(0.5rem-2px)]",
@@ -59,7 +59,7 @@ const button = tv({
         {
             style: "primary",
             color: "light",
-            class: "border-gray-200 bg-gray-100 text-gray-800 hover:bg-gray-100",
+            class: "border-gray-200 bg-gray-100 text-gray-800 hover:bg-gray-50",
         },
         {
             style: "secondary",
@@ -104,12 +104,12 @@ const button = tv({
         {
             style: "tertiary",
             color: "dark",
-            class: "border-gray-800 border-opacity-20 text-gray-800 hover:bg-[#2E2B3B0D]",
+            class: "border-[#2E2B3B] border-opacity-20 text-gray-800 hover:bg-[#2E2B3B0D]",
         },
         {
             style: "tertiary",
             color: "light",
-            class: "border-gray-600 border-opacity-30 text-white hover:bg-[#C8C6D20D]",
+            class: "border-[#5F5C70] border-opacity-30 text-white hover:bg-[#C8C6D20D]",
         },
         {
             style: "text",

@@ -17,4 +17,18 @@ export const techExecs: Exec[] = [
         description: "BE(Hons) - Software Engineering\nThe University of Auckland",
         joined: "Joined Mar 2023",
     },
+    {
+        name: "Kevin Cheung",
+        image: placeholder,
+        role: "Tech Exec",
+        description: "BE(Hons) - Software Engineering\nThe University of Auckland",
+        joined: "Joined Mar 2023",
+    },
+    {
+        name: "Kevin Cheung",
+        image: placeholder,
+        role: "Tech Exec",
+        description: "BE(Hons) - Software Engineering\nThe University of Auckland",
+        joined: "Joined Mar 2023",
+    },
 ];

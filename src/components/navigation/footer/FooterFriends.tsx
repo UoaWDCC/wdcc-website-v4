@@ -25,7 +25,7 @@ export function FriendLink({ friend }: FriendLinkProps) {
 
     return (
         <Button
-            className="bg-gray-200/30 px-4 py-0.5 text-xs font-normal text-white hover:bg-gray-200/40"
+            className="bg-gray-200/30 px-4 py-0.5 text-xs font-normal text-white hover:bg-gray-200/40 transition-all duration-500 hover:duration-200 hover:gap-4"
             variant={{ style: "secondary" }}
             href={href}
             newTab={external}
