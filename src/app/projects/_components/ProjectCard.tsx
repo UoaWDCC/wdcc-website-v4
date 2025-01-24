@@ -12,15 +12,17 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
     const slug = project.slug || "not-found";
     return (
-        <Link className="flex w-min flex-col overflow-hidden rounded-2xl bg-gray-50" href={`/projects/${slug}`}>
-            <div className="center-content h-60 w-[520px] bg-[linear-gradient(106.75deg,#8FA7FF,#4525A7)] text-white">
+        <Link className="flex w-full flex-col overflow-hidden rounded-2xl bg-gray-50" href={`/projects/${slug}`}>
+            <div className="center-content h-60 w-full bg-[linear-gradient(106.75deg,#8FA7FF,#4525A7)] text-white">
                 Image Here
             </div>
-            <div className="flex flex-col p-11">
-                <h1 className="mb-1 text-2xl font-bold">{project.name}</h1>
-                <p className="mb-6 font-normal">{project.description}</p>
+            <div className="flex flex-col px-12 py-10 gap-6">
+                <div className="flex flex-col gap-3">
+                    <h2 className="leading-none text-2xl font-bold">{project.name}</h2>
+                    <p className="leading-[1.25]">{project.description}</p>
+                </div>
                 <div className="mt-auto flex flex-wrap gap-2 whitespace-nowrap">
-                    <ProjectTag className="bg-blue-100" tagText={`${project.year} project`} />
+                    <ProjectTag className="bg-blue-100 text-blue-800" tagText={`${project.year} project`} />
                     {project.technologies.map((technology, index) => (
                         <ProjectTag className="bg-gray-100" tagText={technology} key={index} />
                     ))}

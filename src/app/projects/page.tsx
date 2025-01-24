@@ -9,6 +9,7 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import { ProjectCard } from "./_components/ProjectCard";
 import { ProjectFilter } from "./_components/ProjectFilter";
 import { projectsData } from "./_data/projects.data";
+import Header from "@/components/layout/pageheaders/Header";
 
 
 export default function ProjectsPage() {
@@ -26,9 +27,14 @@ export default function ProjectsPage() {
 
     return (
         <StandardPageLayout>
-            <div className="w-full my-10 flex flex-col">
+            <Header variant={{ style: "secondary", color: "blue" }}
+                    title="past projects"
+                    backlink={{ label: "projects", href: "/projects" }}
+            />
+
+            <div className="my-24 w-full flex flex-col">
                 <ProjectFilter projects={projectsData} setSelectedYear={filterByYear} selectedYear={selectedYear} />
-                <div className="flex flex-wrap justify-center gap-8">
+                <div className="grid lg:grid-cols-2 gap-6">
                     {sortedProjects.map((project, index) => (
                         <ProjectCard project={project} key={index} />
                     ))}
