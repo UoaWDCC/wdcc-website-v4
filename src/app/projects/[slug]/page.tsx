@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 import RouteDisplay from "@/components/debug/RouteDisplay";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
@@ -11,7 +13,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     const project = projectsData.find((p) => p.slug === `/${slug}`);
 
     if (!project) {
-        throw new Error(`Project with slug /${slug} not found`);
+        notFound();
     }
 
     return (

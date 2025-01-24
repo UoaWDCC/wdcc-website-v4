@@ -9,7 +9,8 @@ import TeamMemberCard from "./TeamMemberCard";
 interface IndividualProjectProps {
     project: Project;
 }
-function IndividualProject({ project }: IndividualProjectProps) {
+
+const IndividualProject = ({ project }: IndividualProjectProps) => {
     return (
         <div className="flex flex-col py-16">
             <div className="grid grid-cols-2 gap-16">
@@ -43,50 +44,26 @@ function IndividualProject({ project }: IndividualProjectProps) {
             <div className="mt-8 flex flex-col items-center gap-8">
                 <h3 className="text-3xl font-semibold">Meet the project team</h3>
                 <div className="flex justify-center gap-4">
-                    <TeamMemberCard variant={{ role: "manager" }} name="Daniel Yang" role="project manager" />
-                    <TeamMemberCard variant={{ role: "techlead" }} name="David Zhu" role="techlead" />
+                    <TeamMemberCard
+                        variant={{ role: "manager" }}
+                        name={project.team.manager.name}
+                        role="Project Manager"
+                    />
+                    <TeamMemberCard variant={{ role: "techlead" }} name={project.team.techlead.name} role="Tech Lead" />
                 </div>
                 <div className="flex flex-wrap justify-center gap-4">
-                    <TeamMemberCard variant={{ role: "designer" }} name="Chanasit Jitsawatpaiboon" role="designer" />
-                    <TeamMemberCard
-                        variant={{ role: "engineer" }}
-                        name="Chanasit Jitsawatpaiboon"
-                        role="software engineer"
-                    />
-                    <TeamMemberCard
-                        variant={{ role: "engineer" }}
-                        name="Chanasit Jitsawatpaiboon"
-                        role="software engineer"
-                    />
-                    <TeamMemberCard
-                        variant={{ role: "engineer" }}
-                        name="Chanasit Jitsawatpaiboon"
-                        role="software engineer"
-                    />
-                    <TeamMemberCard
-                        variant={{ role: "engineer" }}
-                        name="Chanasit Jitsawatpaiboon"
-                        role="software engineer"
-                    />
-                    <TeamMemberCard
-                        variant={{ role: "engineer" }}
-                        name="Chanasit Jitsawatpaiboon"
-                        role="software engineer"
-                    />
-                    <TeamMemberCard
-                        variant={{ role: "engineer" }}
-                        name="Chanasit Jitsawatpaiboon"
-                        role="software engineer"
-                    />
-                    <TeamMemberCard
-                        variant={{ role: "engineer" }}
-                        name="Chanasit Jitsawatpaiboon"
-                        role="software engineer"
-                    />
+                    {project.team.members.map((member, index) => (
+                        <TeamMemberCard
+                            key={index}
+                            variant={{ role: member.role as "engineer" | "techlead" | "designer" | "manager" }}
+                            name={member.name}
+                            role={member.role as "engineer" | "techlead" | "designer" | "manager"}
+                        />
+                    ))}
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default IndividualProject;
