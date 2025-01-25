@@ -21,7 +21,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
             <div className="flex flex-col gap-6 px-12 py-10">
                 <div className="flex flex-col gap-3">
-                    <h2 className="text-2xl font-bold leading-none">{project.name}</h2>
+                    <h2 className="text-2xl font-bold leading-none">{project.projectName}</h2>
                     <p className="leading-[1.25]">{project.description}</p>
                 </div>
                 <div className="mt-auto flex flex-wrap gap-2 whitespace-nowrap">

@@ -2,13 +2,11 @@
 
 import { useState } from "react";
 
+import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import { ProjectCard } from "./_components/ProjectCard";
 import { ProjectFilter } from "./_components/ProjectFilter";
-import { projectsData } from "./_data/projects.data";
-import Header from "@/components/layout/pageheaders/Header";
-
 import { projectsData } from "./_data/projects_data/index";
 
 export default function ProjectsPage() {
@@ -26,14 +24,15 @@ export default function ProjectsPage() {
 
     return (
         <StandardPageLayout>
-            <Header variant={{ style: "secondary", color: "blue" }}
-                    title="past projects"
-                    backlink={{ label: "projects", href: "/projects" }}
+            <Header
+                variant={{ style: "secondary", color: "blue" }}
+                title="past projects"
+                backlink={{ label: "projects", href: "/projects" }}
             />
 
-            <div className="my-24 w-full flex flex-col">
+            <div className="my-24 flex w-full flex-col">
                 <ProjectFilter projects={projectsData} setSelectedYear={filterByYear} selectedYear={selectedYear} />
-                <div className="grid lg:grid-cols-2 gap-6">
+                <div className="grid gap-6 lg:grid-cols-2">
                     {sortedProjects.map((project, index) => (
                         <ProjectCard project={project} key={index} />
                     ))}
