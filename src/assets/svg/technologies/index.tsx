@@ -6,6 +6,7 @@ import { Figma } from "./Figma";
 import { Fly } from "./Fly";
 import { Html } from "./Html";
 import { Javascript } from "./Javascript";
+import { Missing } from "./Missing";
 import { Mongodb } from "./Mongodb";
 import { Motion } from "./Motion";
 import { Nextjs } from "./Nextjs";
@@ -42,4 +43,5 @@ export const TechnologiesSvgs = {
     Vite,
     Vitest,
     Fly,
+    Missing,
 };

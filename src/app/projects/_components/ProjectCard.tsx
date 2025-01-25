@@ -17,7 +17,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 Image Here
             </div>
             <div className="flex flex-col p-11">
-                <h1 className="mb-1 text-2xl font-bold">{project.name}</h1>
+                <h1 className="mb-1 text-2xl font-bold">{project.projectName}</h1>
                 <p className="mb-6 font-normal">{project.description}</p>
                 <div className="mt-auto flex flex-wrap gap-2 whitespace-nowrap">
                     <ProjectTag className="bg-blue-100" tagText={`${project.year} project`} />

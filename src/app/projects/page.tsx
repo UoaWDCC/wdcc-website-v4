@@ -2,14 +2,11 @@
 
 import { useState } from "react";
 
-
-
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import { ProjectCard } from "./_components/ProjectCard";
 import { ProjectFilter } from "./_components/ProjectFilter";
-import { projectsData } from "./_data/projects.data";
-
+import { projectsData } from "./_data/projects_data/index";
 
 export default function ProjectsPage() {
     const [selectedYear, setYear] = useState<string | null>(null);
@@ -26,7 +23,7 @@ export default function ProjectsPage() {
 
     return (
         <StandardPageLayout>
-            <div className="w-full my-10 flex flex-col">
+            <div className="my-10 flex w-full flex-col">
                 <ProjectFilter projects={projectsData} setSelectedYear={filterByYear} selectedYear={selectedYear} />
                 <div className="flex flex-wrap justify-center gap-8">
                     {sortedProjects.map((project, index) => (

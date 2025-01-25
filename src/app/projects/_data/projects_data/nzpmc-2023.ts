@@ -1,12 +1,14 @@
 import type { Project } from "@/types/models";
 
 export const nzpmc2023: Project = {
-    name: "NZPMC exam portal",
+    projectName: "NZPMC exam portal",
+    projectNameExtended: "NZPMC exam portal etc",
     description: "A whole paragraph describing what kind of project it is, including tech stack??\n\nYup.",
+    descriptionExtended: "A whole paragraph describing what kind of project it is, including tech stack??\n\nYup.",
     logo: "I don't know the layout so I don't know if this needs a logo",
     year: "2023",
     client: "",
-    technologies: ["Astro", "TypeScript"],
+    technologies: ["Astro", "Typescript"],
     slug: "/2024-NZPMC",
     team: {
         techlead: { name: "Youxiang Lei" },

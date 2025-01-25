@@ -2,6 +2,7 @@ import React from "react";
 
 import { Project } from "@/types/models";
 
+import { TechnologiesSvgs } from "@/assets/svg/technologies";
 import ImageFit from "@/components/ImageFit";
 
 import TeamMemberCard from "./TeamMemberCard";
@@ -11,33 +12,40 @@ interface IndividualProjectProps {
 }
 
 const IndividualProject = ({ project }: IndividualProjectProps) => {
+    const technologies = project.technologies.map((tech) => {
+        const isValidTech = (key: string): key is keyof typeof TechnologiesSvgs => key in TechnologiesSvgs;
+        const TechIcon = isValidTech(tech) ? TechnologiesSvgs[tech] : TechnologiesSvgs["Missing"];
+
+        return { name: tech, Icon: TechIcon };
+    });
+
     return (
         <div className="flex flex-col py-16">
             <div className="grid grid-cols-2 gap-16">
                 {/* todo: replace with real data soon. payload? */}
                 <p className="text-md">
                     <strong className="text-md">
-                        Event Registration and Payment Portal for UABC (University of Auckland Badminton Club)
+                        {project.projectNameExtended}
                         <br />
                         <br />
-                        Client: University of Auckland Badminton Club
+                        {project.client}
                     </strong>
                     <br />
                     <br />
-                    The University of Auckland Badminton Club (UABC) is a club dedicated to bringing people interested
-                    in badminton together. Their mission is to maintain and provide a diverse and engaging badminton
-                    experience to all. With their main target market being students, they value affordability critically
-                    and are devoted to creating an affordable and sustainable platform for students interested in
-                    badminton.
+                    {project.descriptionExtended}
                 </p>
                 <ImageFit src="/projectmock/uabc.png" alt="" height="300px" width="500px" />
             </div>
             <div className="mt-8 flex flex-col gap-4">
-                {/* todo: add an 's' to the end if multiple */}
                 <h3 className="text-3xl font-semibold">Technologies</h3>
                 <hr />
-                <div className="flex gap-4">
-                    <p>awawawa</p>
+                <div className="flex flex-wrap gap-12">
+                    {technologies.map((tech) => (
+                        <div key={tech.name} className="flex flex-col items-center justify-center gap-2 p-2">
+                            {tech.Icon && <tech.Icon className="h-12 w-12" />}
+                            <span>{tech.name}</span>
+                        </div>
+                    ))}
                 </div>
                 <hr />
             </div>

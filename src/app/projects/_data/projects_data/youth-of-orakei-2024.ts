@@ -1,12 +1,15 @@
 import type { Project } from "@/types/models";
 
 export const youthOfOrakei2024: Project = {
-    name: "Youth of Ōrākei",
+    projectName: "Youth of Ōrākei",
+    projectNameExtended: "",
     client: "Youth of Orakei",
     description: "I really wish we used a different cms I'm working overtime 😂",
+    descriptionExtended:
+        'The Youth of Ōrākei Website is an informational and promotional for the titular youth council, showcasing their projects, people, and goals. It allows the Youth of Ōrākei to solidify their online brand, while having an easy way to notify their audience of upcoming events and opportunities. The team behind is nicknamed "Team Houston," after the JavaScript framework Astro, which is used for its front-end oriented design. The tech stack includes Astro, React, Typescript, and Notion API.',
     logo: "I don't know the layout so I don't know if this needs a logo",
     year: "2024",
-    technologies: ["TypeScript", "Prisma"],
+    technologies: ["Typescript", "Prisma", "Fly"],
     slug: "/2024-youth-of-orakei",
     team: {
         techlead: { name: "Chris Valenzuela" },

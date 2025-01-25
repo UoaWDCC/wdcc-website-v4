@@ -4,7 +4,7 @@ import RouteDisplay from "@/components/debug/RouteDisplay";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
-import { projectsData } from "../_data/projects.data";
+import { projectsData } from "../_data/projects_data/index";
 import IndividualProject from "./_component/IndividualProject";
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
@@ -19,7 +19,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     return (
         <StandardPageLayout>
             <RouteDisplay slug={slug} />
-            <ProjectHeader backlink={{ label: "projects", href: "/projects" }} title={project.name} />
+            <ProjectHeader backlink={{ label: "projects", href: "/projects" }} title={project.projectName} />
             <IndividualProject project={project} />
         </StandardPageLayout>
     );
