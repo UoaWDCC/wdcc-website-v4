@@ -12,29 +12,8 @@ export const footerData: FooterData = {
                     href: "/",
                 },
                 {
-                    label: "Projects",
-                    href: "/projects",
-                },
-                {
-                    label: "Events",
-                    href: "/events",
-                },
-                {
-                    label: "About us",
+                    label: "About",
                     href: "/about",
-                },
-            ],
-        },
-        {
-            title: "Info",
-            links: [
-                {
-                    label: "???",
-                    href: "/",
-                },
-                {
-                    label: "???",
-                    href: "/",
                 },
                 {
                     label: "Team",
@@ -47,20 +26,45 @@ export const footerData: FooterData = {
             ],
         },
         {
-            title: "???",
+            title: "Projects",
             links: [
                 {
-                    label: "???",
+                    label: "About projects",
+                    href: "/projects",
+                },
+                {
+                    label: "Past projects",
+                    href: "/projects/past",
+                },
+                {
+                    label: "Join a project",
                     href: "/",
                 },
                 {
-                    label: "???",
+                    label: "Placeholder",
                     href: "/",
                 },
             ],
         },
         {
-            title: "Contact Us",
+            title: "Events",
+            links: [
+                {
+                    label: "About events",
+                    href: "/events",
+                },
+                {
+                    label: "Upcoming events",
+                    href: "/events",
+                },
+                {
+                    label: "Past events",
+                    href: "/events/all",
+                },
+            ],
+        },
+        {
+            title: "Contact us",
             links: [
                 {
                     label: "I'm a student",

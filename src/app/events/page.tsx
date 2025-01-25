@@ -9,7 +9,7 @@ export default function EventsPage() {
     return (
         <StandardPageLayout>
             <Header
-                variant={{ style: "primary", color: "blue" }}
+                variant={{ style: "primary", color: "green" }}
                 title="events"
                 description="From educational workshops to social mixers, hackathons to code competitions, WDCC's regular events help students develop all kinds of valuable skills - and make friends along the way!"
                 primaryButton={{ label: "Current events ↓", href: "#upcomingEvents" }}

@@ -24,7 +24,8 @@ export default {
             /* Type scaling TBA, modify where needed */
             xs: "0.750rem", //12px
             sm: "0.875rem", //14px
-            md: "1.000rem", //16px
+            base: "1.000rem", //16px
+            md: "1.125rem", //18px
             lg: "1.375rem", //22px
             xl: "1.625rem", //26px
             "2xl": "2rem", //32px
@@ -33,6 +34,14 @@ export default {
             "5xl": "4rem", // 64px
         },
         extend: {
+            dropShadow: {
+                'cardLift': [
+                    '1px 1px 1px rgba(156,164,186,0.12)',
+                    '2px 2px 3px rgba(156,164,186,0.12)',
+                    '4px 4px 6px rgba(156,164,186,0.14)',
+                    '9px 9px 14px rgba(156,164,186,0.17)'
+                ]
+            },
             colors: {
                 background: "var(--background)",
                 foreground: "var(--foreground)",

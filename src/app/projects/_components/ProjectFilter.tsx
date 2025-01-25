@@ -14,9 +14,9 @@ export function ProjectFilter({ projects, setSelectedYear, selectedYear }: Proje
     const availableYears = Array.from(new Set(projects.map((project) => project.year)));
 
     return (
-        <div className="mb-9 flex items-center justify-center gap-4 xl:justify-start">
+        <div className="mb-9 flex items-center justify-center gap-4 lg:justify-start">
             <p className="text-md font-semibold">Filter By year</p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
                 {availableYears.map((year, index) => (
                     <FilterTag
                         year={year}

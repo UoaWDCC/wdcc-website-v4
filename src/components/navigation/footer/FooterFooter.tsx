@@ -11,7 +11,7 @@ interface FooterFooterProps {
 
 export default function FooterFooter({ socials, friends }: FooterFooterProps) {
     return (
-        <div className="flex flex-col gap-4 px-2 overflow-x-auto hidden-scrollbar">
+        <div className="flex flex-col gap-8 px-2 overflow-x-auto hidden-scrollbar">
             <FooterSocials socials={socials} />
             <FooterFriends friends={friends} />
         </div>

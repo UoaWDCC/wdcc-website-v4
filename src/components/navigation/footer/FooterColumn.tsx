@@ -5,11 +5,11 @@ import type { FooterColumn } from "./_data/footerTypes";
 
 export default function FooterColumn({ title, links }: FooterColumn) {
     return (
-        <div className="flex select-none flex-col">
-            <h3 className="mb-4 border-b border-white/70 py-4 text-lg font-bold text-blue-150 sm:mb-1 sm:border-none sm:pb-0">
+        <div className="flex select-none flex-col gap-2">
+            <h3 className="border-b border-white/70 text-md font-bold text-blue-150 sm:border-none">
                 {title}
             </h3>
-            <div className={cn("flex flex-col")}>
+            <div className={cn("flex flex-col font-base")}>
                 {links.map((link) => (
                     <UnderlineLink key={link.label} href={link.href} newTab={link.external} mode="light" shift>
                         {link.label}
