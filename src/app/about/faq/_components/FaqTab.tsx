@@ -14,12 +14,18 @@ export function FaqTab({ colors, text, selected, handleClick }: FaqTabProps) {
         <button
             onClick={handleClick}
             className={cn(
-                "flex w-[258px] items-center gap-4 rounded-full px-6 py-1",
+                "group flex w-4/5 items-center gap-4 rounded-full px-6 py-1 transition-[width]",
                 colors.tabBg,
-                selected && "w-[309px]"
+                selected && "w-full"
             )}
+            data-selected={selected}
         >
-            {selected && <div className={cn("h-2 w-2 rounded-full bg-blue-500", colors.tabCircle)} />}
+            <div
+                className={cn(
+                    "size-0 rounded-full bg-blue-500 transition-[width,height] group-data-[selected=true]:size-2",
+                    colors.tabCircle
+                )}
+            />
             <p className="text-left text-xl font-semibold text-gray-800">{text}</p>
         </button>
     );

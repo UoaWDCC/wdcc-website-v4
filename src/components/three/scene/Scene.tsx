@@ -6,7 +6,7 @@ import * as THREE from "three";
 
 import { bg, t } from "../globals/tunnel";
 
-export default function Scene({ ...props }: CanvasProps) {
+export default function Scene({ ...props }: Omit<CanvasProps, "children">) {
     // stolen from https://github.com/pmndrs/react-three-next
     // Everything defined in here will persist between route changes, only children are swapped
 
