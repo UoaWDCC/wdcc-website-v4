@@ -14,7 +14,7 @@ const categoryColors = {
 
 export default function EventCard({ event }: EventCardProps) {
     return (
-        <div className="bg-gray-50 rounded-2xl flex-col justify-start items-end gap-9 inline-flex overflow-hidden
+        <Link href={`/events/${event.title}`} className="bg-gray-50 rounded-2xl flex-col justify-start items-end gap-9 inline-flex overflow-hidden
         transition will-change-auto duration-500 hover:duration-200 hover:-translate-x-1 hover:-translate-y-1 cursor-pointer hover:drop-shadow-cardLift
         ">
             <div className="">
@@ -27,9 +27,7 @@ export default function EventCard({ event }: EventCardProps) {
                     </div>
                 </div>
                 <div className="self-stretch flex-col justify-start items-start gap-3 flex">
-                    <Link href={`/events/${event.title}`}>
-                        <p className="self-stretch text-center text-black text-xl font-bold leading-[25.20px]">{event.title}</p>
-                    </Link>
+                    <p className="self-stretch text-center text-black text-xl font-bold leading-[25.20px]">{event.title}</p>
                     <div className="self-stretch h-[38px] flex-col justify-start items-start flex">
                         <p className="self-stretch text-center text-[#1453b7] font-bold leading-tight" suppressHydrationWarning>{event.time.toLocaleString()}</p>
                         <p className="self-stretch text-center text-[#1453b7] font-medium italic leading-tight">{event.location}</p>
@@ -37,6 +35,6 @@ export default function EventCard({ event }: EventCardProps) {
                     <p className="self-stretch text-center font-medium leading-tight">{event.description}</p>
                 </div>
             </div>
-        </div >
+        </Link >
     );
 }
