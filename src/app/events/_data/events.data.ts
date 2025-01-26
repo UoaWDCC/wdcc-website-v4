@@ -3,16 +3,16 @@ import placeholder from "@/assets/image/600x400.png";
 
 export const eventsData: EventCardType[] = [
     {
-        title: "Rizz 101: How to Rizz",
-        time: new Date("2025-02-28T11:30:00"),
-        location: "201-265",
+        title: "WDCC AGM 2024",
+        time: new Date("2024-09-11T18:30:00"),
+        location: "201-440",
         description: "Join the WDCC Rizz Executives as we explore the intricacies of socialising, dating, and networking as a tech student in 2025.",
-        category: "Workshop",
+        category: "Social",
         image: placeholder,
         imageAlt: "Image 1",
     },
     {
-        title: "Rizz Contest",
+        title: "WDCC Chiasma",
         time: new Date("2025-02-28T11:30:00"),
         location: "201-265",
         description: "Compete with your friends and peers in our annual Rizz Contest. Prizes will be provided.",

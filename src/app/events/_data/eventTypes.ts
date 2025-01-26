@@ -9,3 +9,9 @@ export type EventCardType = {
     image: StaticImageData;
     imageAlt: string;
 }
+
+export type IndividualEventType = {
+    description: string;
+    image: string;
+    collabPartners: string[];
+}
