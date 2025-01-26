@@ -6,12 +6,18 @@ import { ReactNode } from "react";
 
 import { figtree } from "@/fonts";
 
+// SEO
 export const metadata: Metadata = {
     title: "Web Development & Consulting Club",
+    icons: {
+        icon: "./favicon.ico",
+    },
     description:
         "WDCC (Web Development & Consulting Club Incorporated) is a not-for-profit organisation, that aims to bridge the gap between university knowledge and real-world industry practices.",
 
     keywords: ["Web Development & Consulting Club", "WDCC", "WDCC website", "WDCC UOA", "WDCCUoa", "UOA", "UoA WDCC"],
+
+    // description display for when you post the link on social media
     openGraph: {
         title: "Web Development & Consulting Club",
         description:

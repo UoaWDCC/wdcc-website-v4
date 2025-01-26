@@ -12,11 +12,13 @@ type Props = {
     params: Promise<{ slug: string }>;
 };
 
+// auto generated seo metadata for each project
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
     const slug = (await params).slug;
 
     const project = projectsData.find((p) => p.slug === `/${slug}`);
 
+    // get og-image of previous page
     const previousImages = (await parent).openGraph?.images || [];
 
     if (!project) {
