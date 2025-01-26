@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useFrame, Vector3 } from "@react-three/fiber";
 import { DoubleSide, Euler, Group, Mesh } from "three";
 import * as THREE from "three";
 
+import { useGUI } from "@/hooks/useGUI";
+
 import { CommonLight } from "./CommonLight";
-import { gui } from "./globals/gui";
 import { TrianglePlane } from "./primitives/TrianglePlane";
 
 // instance settings
@@ -14,7 +15,7 @@ const RADIUS = 32;
 const COUNT = 64;
 const RAD_INCREMENT = (Math.PI * 2) / COUNT; // to space triangles evenly
 
-// movement settings
+// individual movement settings
 const SPEED = Math.PI / 16; // ref: pi*2 is one full rotation per second
 const ROTCHAOS = 2;
 const POSCHAOS = 8;
@@ -82,27 +83,32 @@ const TRIANGLES = ({ color }: { color: THREE.Color }) => {
 
 const BackgroundEffect = () => {
     const [color, setColor] = useState(new THREE.Color("hsl(217, 100%, 61%)"));
-
-    useEffect(() => {
+    const backgroundSpeed = useRef(0.02);
+    useGUI((gui) => {
         const folder = gui.addFolder("Background");
         const params = {
             color: `#${color.getHexString()}`,
+            backgroundSpeed: backgroundSpeed.current,
         };
 
         folder.addColor(params, "color").onChange((c) => {
             setColor(new THREE.Color(c));
         });
 
+        folder.add(params, "backgroundSpeed", -10, 10).onChange((c) => {
+            backgroundSpeed.current = c;
+        });
+
         return () => {
             folder.reset();
         };
-    }, []);
+    });
 
     const ref = useRef<Group>(null);
 
     useFrame((_, delta) => {
         if (ref.current) {
-            ref.current.rotation.y += delta * 0.02;
+            ref.current.rotation.y += delta * backgroundSpeed.current;
         }
     });
 
