@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { EventCardType } from '../_data/eventTypes';
+import Link from 'next/link';
 
 interface EventCardProps {
     event: EventCardType;
@@ -24,7 +25,9 @@ export default function EventCard({ event }: EventCardProps) {
                     </div>
                 </div>
                 <div className="self-stretch flex-col justify-start items-start gap-3 flex">
-                    <p className="self-stretch text-center text-black text-xl font-bold leading-[25.20px]">{event.title}</p>
+                    <Link href={`/events/${event.title}`}>
+                        <p className="self-stretch text-center text-black text-xl font-bold leading-[25.20px]">{event.title}</p>
+                    </Link>
                     <div className="self-stretch h-[38px] flex-col justify-start items-start flex">
                         <p className="self-stretch text-center text-[#1453b7] font-bold leading-tight" suppressHydrationWarning>{event.time.toLocaleString()}</p>
                         <p className="self-stretch text-center text-[#1453b7] font-medium italic leading-tight">{event.location}</p>
