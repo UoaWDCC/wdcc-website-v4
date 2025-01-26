@@ -17,6 +17,9 @@ importers:
       '@react-three/fiber':
         specifier: ^8.17.12
         version: 8.17.12(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.171.0)
+      '@rive-app/react-canvas':
+        specifier: ^4.17.8
+        version: 4.17.8(react@18.3.1)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -495,6 +498,14 @@ packages:
         optional: true
       react-native:
         optional: true
+
+  '@rive-app/canvas@2.25.6':
+    resolution: {integrity: sha512-luSm/1ucMSKksCu90a0YZiLhBqNY+u3UclHebeGkkCxUZAbwZsJFiTOJvzlnC/3H1tW+uors4zBHVcu/JI5bWw==}
+
+  '@rive-app/react-canvas@4.17.8':
+    resolution: {integrity: sha512-FtYupHiWQUCYi1BCaileg1hklZ91f4NVVD4T6NRh8HmkessBaLkafBefCvnnS7YzVERX0vIMHo6KcB/MbZLDfg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -2782,6 +2793,13 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
+
+  '@rive-app/canvas@2.25.6': {}
+
+  '@rive-app/react-canvas@4.17.8(react@18.3.1)':
+    dependencies:
+      '@rive-app/canvas': 2.25.6
+      react: 18.3.1
 
   '@rtsao/scc@1.1.0': {}
 

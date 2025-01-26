@@ -29,7 +29,7 @@ export default function Home() {
                             <h1 className="font-semibold text-white text-lg leading-none">WDCC [Dating & Compatibility
                                 Club] Landing Concept v1.0</h1>
                             <p className="text-white text-md leading-[1.15]">this completely legitimate, non-troll page
-                                will automatically play audio. please accept to view.</p>
+                                will automatically play audio. sound on is recommended. please accept to view.</p>
                             <Button onClick={() => setShowPage(true)} className="bg-black bg-opacity-25 font-semibold"
                                     variant={{ color: "light", style: "secondary" }}>i understand</Button>
                         </div>
