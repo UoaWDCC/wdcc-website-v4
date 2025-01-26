@@ -12,15 +12,16 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
     const slug = project.slug || "not-found";
     return (
-        <Link className="flex w-full flex-col overflow-hidden rounded-2xl bg-gray-50
-        transition will-change-auto duration-500 hover:duration-200 hover:-translate-x-1 hover:-translate-y-1 cursor-pointer hover:drop-shadow-cardLift
-        " href={`/projects/${slug}`}>
+        <Link
+            className="hover:drop-shadow-cardLift flex w-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-gray-50 transition duration-500 will-change-auto hover:-translate-x-1 hover:-translate-y-1 hover:duration-200"
+            href={`/projects/${slug}`}
+        >
             <div className="center-content h-60 w-full bg-[linear-gradient(106.75deg,#8FA7FF,#4525A7)] text-white">
                 Image Here
             </div>
-            <div className="flex flex-col px-12 py-10 gap-6">
+            <div className="flex flex-col gap-6 px-12 py-10">
                 <div className="flex flex-col gap-3">
-                    <h2 className="leading-none text-2xl font-bold">{project.name}</h2>
+                    <h2 className="text-2xl font-bold leading-none">{project.projectName}</h2>
                     <p className="leading-[1.25]">{project.description}</p>
                 </div>
                 <div className="mt-auto flex flex-wrap gap-2 whitespace-nowrap">
