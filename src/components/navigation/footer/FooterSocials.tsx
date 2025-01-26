@@ -15,7 +15,7 @@ export default function FooterSocials({ socials, className, ...props }: FooterSo
     return (
         <div {...props} className={cn("flex w-full items-center justify-center gap-6", className)}>
             {socials.map((social) => (
-                <Anchor key={social.name} href={social.href} className="[&>svg]:fill-white">
+                <Anchor key={social.name} href={social.href} className="[&>svg]:fill-white [&>svg]:transition [&>svg]:duration-200 hover:[&>svg]:fill-blue-200">
                     {social.icon}
                 </Anchor>
             ))}

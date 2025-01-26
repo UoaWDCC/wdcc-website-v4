@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "motion/react";
 
 import { Faq } from "@/types/models";
 
@@ -26,7 +27,7 @@ export function FaqSelector({ sections }: FaqSelectorProps) {
 
     return (
         <div className="flex w-full flex-col items-start justify-between gap-4 self-stretch md:flex-row">
-            <div className="flex flex-col items-start justify-center gap-2">
+            <div className="flex w-[400px] flex-col items-start justify-center gap-2">
                 {sections.map((section) => (
                     <FaqTab
                         key={section.name}
@@ -38,7 +39,14 @@ export function FaqSelector({ sections }: FaqSelectorProps) {
                 ))}
             </div>
 
-            <div className="flex w-[656px] flex-col gap-2">
+            <motion.div
+                key={selectedTab.name}
+                variants={itemContainerVariants}
+                initial="closed"
+                animate="open"
+                exit="exit"
+                className="flex w-full flex-col gap-2"
+            >
                 {selectedTab.faqs.map((faq) => (
                     <FaqItem
                         key={faq.question}
@@ -47,7 +55,19 @@ export function FaqSelector({ sections }: FaqSelectorProps) {
                         handleClick={handleItemSelect(faq)}
                     />
                 ))}
-            </div>
+            </motion.div>
         </div>
     );
 }
+
+const itemContainerVariants = {
+    open: {
+        opacity: 1,
+    },
+    closed: {
+        opacity: 0,
+    },
+    exit: {
+        opacity: 0,
+    },
+};

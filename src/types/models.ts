@@ -14,12 +14,28 @@ export type Faq = {
 };
 
 export type Project = {
-    name: string;
+    projectName: string;
+    projectNameExtended: string;
+    client: string;
     description: string;
+    descriptionExtended: string;
     logo: string;
     year: string;
     technologies: string[];
     slug?: string;
+    team: Team;
+};
+
+export type Team = {
+    techlead: { name: string; image?: string };
+    manager: { name: string; image?: string };
+    members: ProjectMember[];
+};
+
+export type ProjectMember = {
+    name: string;
+    role: "engineer" | "techlead" | "designer" | "manager";
+    image?: string;
 };
 
 export type PastEventType = string;
