@@ -15,7 +15,7 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
         <motion.div
             // active == loading
             initial="initial"
-            animate={progress.progress === 100 ? "animate" : "initial"}
+            animate={progress.total === progress.loaded ? "animate" : "initial"}
             variants={fadeopacity}
             style={{
                 position: "relative",
