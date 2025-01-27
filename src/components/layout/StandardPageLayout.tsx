@@ -17,7 +17,7 @@ export default function StandardPageLayout({ children, ...props }: StandardPageL
                 <div className="fixed top-0 z-10 w-full">
                     <NavigationBar />
                 </div>
-                <main className="responsive-body">{children}</main>
+                <main className="responsive-body grow">{children}</main>
                 {/* Combination of min-h-dvh and mt-auto ensures footer doesn't collapse above screen bottom on small pages. */}
                 <Footer className="mt-auto" />
             </div>
