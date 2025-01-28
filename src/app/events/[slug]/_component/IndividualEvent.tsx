@@ -3,11 +3,11 @@ import { notFound } from "next/navigation";
 
 import ImageFit from "@/components/ImageFit";
 
-import { eventsData } from "../_data/individualEvent.data";
-import { IndividualEventType } from "../../_data/eventTypes";
+import { eventsData } from "../../_data/events_data";
+import { Event } from "@/types/models";
 
 const IndividualEvent = ({ title }: { title: string }) => {
-    const event: IndividualEventType = eventsData[title];
+    const event: Event | undefined = eventsData.find((event) => event.title === title);
 
     if (!event) {
         return notFound();
@@ -17,7 +17,7 @@ const IndividualEvent = ({ title }: { title: string }) => {
         <div className="flex flex-col py-16">
             <div className="grid grid-cols-2 gap-16">
                 {/* todo: replace with real data soon. payload? */}
-                <p className="whitespace-pre-line text-md">{event.description}</p>
+                <p className="whitespace-pre-line text-md">{event.descriptionExtended}</p>
                 <ImageFit src={event.image} alt="" height="500px" width="500px" />
             </div>
             {event.collabPartners.length > 0 && (
