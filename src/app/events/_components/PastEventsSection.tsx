@@ -1,10 +1,10 @@
 import SectionWithHeader from "@/components/section/SectionWithHeader";
 
 import EventCard from "./EventCard";
-import { EventCardType } from "../_data/eventTypes";
+import { Event } from "@/types/models";
 
 interface PastEventsProps {
-    pastEvents: EventCardType[];
+    pastEvents: Event[];
 }
 
 export default function PastEventsSection({ pastEvents }: PastEventsProps) {
