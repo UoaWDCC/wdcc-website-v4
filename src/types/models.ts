@@ -26,6 +26,19 @@ export type Project = {
     team: Team;
 };
 
+export type Event = {
+    title: string;
+    time: Date;
+    location: string;
+    description: string;
+    descriptionExtended: string;
+    category: "Workshop" | "Competition" | "Social";
+    thumbnail: StaticImageData;
+    image: string;
+    imageAlt: string;
+    collabPartners: string[];
+}
+
 export type Team = {
     techlead: { name: string; image?: string };
     manager: { name: string; image?: string };

@@ -6,12 +6,13 @@ import IndividualEvent from "./_component/IndividualEvent";
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug;
+    const slugStr = decodeURIComponent(slug);
 
     return (
         <StandardPageLayout>
             <RouteDisplay slug={slug} />
-            <EventHeader title={slug} backlink={{ label: "events", href: "/events" }} />
-            <IndividualEvent />
+            <EventHeader title={slugStr} backlink={{ label: "events", href: "/events" }} />
+            <IndividualEvent title={slugStr} />
         </StandardPageLayout>
     );
 }

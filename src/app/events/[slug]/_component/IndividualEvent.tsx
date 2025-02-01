@@ -1,42 +1,36 @@
 import React from "react";
+import { notFound } from "next/navigation";
 
 import ImageFit from "@/components/ImageFit";
 
-const IndividualEvent = () => {
+import { eventsData } from "../../_data/events_data";
+import { Event } from "@/types/models";
+
+const IndividualEvent = ({ title }: { title: string }) => {
+    const event: Event | undefined = eventsData.find((event) => event.title === title);
+
+    if (!event) {
+        return notFound();
+    }
+
     return (
         <div className="flex flex-col py-16">
             <div className="grid grid-cols-2 gap-16">
                 {/* todo: replace with real data soon. payload? */}
-                <p className="text-md">
-                    Are you ready to dive into the world of AI and get ahead in your career?
-                    <br />
-                    <br />
-                    The AI revolution is already transforming industries and NOW is your chance to be part of it! 🤖✨
-                    With 97 million new AI-driven jobs expected by 2025, students with AI expertise are in higher demand
-                    than ever! 🔥
-                    <br />
-                    <br />
-                    Join us on Thursday 3rd October for AI Unplugged, a WDCC x Chiasma workshop that will break down
-                    everything you need to know about AI and its impact on your future endeavours 💡.
-                    <br />
-                    <br />
-                    Whether you’re looking to leverage AI in your own projects or gain insight into how AI can boost
-                    your employability, this event has something for everyone. 🌟
-                    <br />
-                    <br />
-                    As always, free dinner is on us! 😋🥟 Make sure to sign up with the link in our bio 🔗, see you
-                    there!
-                </p>
-                <ImageFit src="/eventmock/2024_wdcc_x_chisma.png" alt="" height="500px" width="500px" />
+                <p className="whitespace-pre-line text-md">{event.descriptionExtended}</p>
+                <ImageFit src={event.image} alt="" height="500px" width="500px" />
             </div>
-            <div className="mt-8">
-                {/* todo: add an 's' to the end if multiple */}
-                <h3 className="text-3xl font-semibold">Collab Partners</h3>
-                <div className="flex gap-4">
-                    <ImageFit src="/eventmock/collab_partner_placeholder_a.png" alt="" height="100px" width="300px" />
-                    <ImageFit src="/eventmock/collab_partner_placeholder_a.png" alt="" height="100px" width="300px" />
+            {event.collabPartners.length > 0 && (
+                <div className="mt-8">
+                    {/* todo: add an 's' to the end if multiple */}
+                    <h3 className="text-3xl font-semibold">Collab Partners</h3>
+                    <div className="flex gap-4">
+                        {event.collabPartners.map((partner) => (
+                            <ImageFit key={partner} src={partner} alt="" height="100px" width="300px" />
+                        ))}
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };
