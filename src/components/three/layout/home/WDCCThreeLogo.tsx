@@ -1,13 +1,14 @@
 "use client";
 
 import React, { RefObject, useEffect, useRef } from "react";
+import { Float } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 import { useGUI } from "@/hooks/useGUI";
 
-import { CommonLight } from "../../CommonLight";
 import { WDCCThreeLogo } from "../../primitives";
+import HeroImages from "./HeroImages";
 
 let CONSTAINT = 0.5; // 90deg * CONSTRIANT
 let smoothing = 0.03; // the lower the slower
@@ -15,6 +16,7 @@ let smoothing = 0.03; // the lower the slower
 const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) => {
     const group = useRef<THREE.Group>(null!);
     const pointer = useRef(new THREE.Vector2());
+    const axesHelper = useRef<THREE.AxesHelper>(null!);
 
     useGUI((gui) => {
         const folder = gui.addFolder("WDCCThreeHero");
@@ -24,6 +26,7 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
             x: group.current.position.x,
             y: group.current.position.y,
             z: group.current.position.z,
+            axisHerlper: axesHelper.current.visible,
         };
 
         folder.add(params, "rotationContraint", 0, 1).onChange((c) => {
@@ -40,6 +43,9 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
         });
         folder.add(params, "z", -3, 3).onChange((c) => {
             group.current.position.z = c;
+        });
+        folder.add(params, "axisHerlper").onChange((c) => {
+            axesHelper.current.visible = c;
         });
         return () => {
             folder.reset();
@@ -86,10 +92,13 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
 
     return (
         <>
-            <group ref={group}>
-                <WDCCThreeLogo />
-            </group>
-            <CommonLight />
+            <Float rotationIntensity={1} floatIntensity={0.25} speed={2}>
+                <group ref={group} position={[0, 0.5, 0]}>
+                    <WDCCThreeLogo />
+                </group>
+                <HeroImages />
+            </Float>
+            <axesHelper visible={false} />
         </>
     );
 };
