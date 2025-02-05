@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useRef, useState } from "react";
+import { PerspectiveCamera } from "@react-three/drei";
 import { useFrame, Vector3 } from "@react-three/fiber";
 import { DoubleSide, Euler, Group, Mesh } from "three";
 import * as THREE from "three";
 
 import { useGUI } from "@/hooks/useGUI";
 
-import { CommonLight } from "./CommonLight";
 import { TrianglePlane } from "./primitives/TrianglePlane";
 
 // instance settings
@@ -117,7 +117,7 @@ const BackgroundEffect = () => {
             <group ref={ref}>
                 <TRIANGLES color={color} />
             </group>
-            <CommonLight />
+            <PerspectiveCamera makeDefault fov={20} position={[0, 0, 8]} />
         </>
     );
 };
