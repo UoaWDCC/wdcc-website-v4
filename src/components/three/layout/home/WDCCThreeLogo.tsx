@@ -35,18 +35,22 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
         folder.add(params, "smoothing", 0, 1).onChange((c) => {
             smoothing = c;
         });
-        folder.add(params, "x", -3, 3).onChange((c) => {
-            group.current.position.x = c;
-        });
-        folder.add(params, "y", -3, 3).onChange((c) => {
-            group.current.position.y = c;
-        });
-        folder.add(params, "z", -3, 3).onChange((c) => {
-            group.current.position.z = c;
-        });
-        folder.add(params, "axisHerlper").onChange((c) => {
-            axesHelper.current.visible = c;
-        });
+        if (group?.current) {
+            folder.add(params, "x", -3, 3).onChange((c) => {
+                group.current.position.x = c;
+            });
+            folder.add(params, "y", -3, 3).onChange((c) => {
+                group.current.position.y = c;
+            });
+            folder.add(params, "z", -3, 3).onChange((c) => {
+                group.current.position.z = c;
+            });
+        }
+        if (axesHelper?.current) {
+            folder.add(params, "axisHerlper").onChange((c) => {
+                axesHelper.current.visible = c;
+            });
+        }
         return () => {
             folder.reset();
         };
@@ -98,7 +102,7 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
                 </group>
                 <HeroImages />
             </Float>
-            <axesHelper visible={false} />
+            <axesHelper ref={axesHelper} visible={false} />
         </>
     );
 };

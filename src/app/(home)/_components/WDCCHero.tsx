@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import dynamic from "next/dynamic";
 import { PerspectiveCamera } from "@react-three/drei";
+import * as THREE from "three";
 
 import { social } from "@/assets/svg/socials";
 import Draw from "@/components/Draw";
@@ -16,6 +17,8 @@ const WDCCThreeHero = dynamic(() => import("@/components/three/layout/home/WDCCT
 
 const WDCCHero = () => {
     const ref = useRef<HTMLDivElement>(null);
+    const camera = useRef<THREE.PerspectiveCamera>(null!);
+
     return (
         <div ref={ref} className="relative flex w-full flex-col items-center justify-center gap-20">
             <div className="flex w-[clamp(300px,100%,1000px)] flex-col items-center gap-10 self-center px-8 text-center">
@@ -71,7 +74,7 @@ const WDCCHero = () => {
             <View className="flex h-[600px] w-dvw flex-col items-center justify-center">
                 <WDCCThreeHero parentRef={ref} />
                 <CommonLight />
-                <PerspectiveCamera makeDefault position={[0, 0, 2.5]} />
+                <PerspectiveCamera ref={camera} makeDefault position={[0, 0, 2.5]} />
             </View>
         </div>
     );
