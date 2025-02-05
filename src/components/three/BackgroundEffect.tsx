@@ -11,7 +11,7 @@ import { useGUI } from "@/hooks/useGUI";
 import { TrianglePlane } from "./primitives/TrianglePlane";
 
 // instance settings
-let RADIUS = 64;
+let RADIUS = 32;
 let COUNT = 64;
 let RAD_INCREMENT = (Math.PI * 2) / COUNT; // to space triangles evenly
 
