@@ -37,6 +37,7 @@ export type Event = {
     image: string;
     imageAlt: string;
     collabPartners: string[];
+    slug?: string;
 }
 
 export type Team = {

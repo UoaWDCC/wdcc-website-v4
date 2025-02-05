@@ -12,4 +12,5 @@ export const wdccChiasma2024: Event = {
     image: "/eventmock/2024_wdcc_x_chisma.png",
     imageAlt: "Image 1",
     collabPartners: ["/eventmock/collab_partner_placeholder_a.png"],
+    slug: "2024-wdcc-chiasma",
 }

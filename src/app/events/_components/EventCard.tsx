@@ -13,8 +13,10 @@ const categoryColors = {
 }
 
 export default function EventCard({ event }: EventCardProps) {
+    const slug = event.slug || "not-found";
+
     return (
-        <Link href={`/events/${event.title}`} className="bg-gray-50 rounded-2xl flex-col justify-start items-end gap-9 inline-flex overflow-hidden
+        <Link href={`/events/${slug}`} className="bg-gray-50 rounded-2xl flex-col justify-start items-end gap-9 inline-flex overflow-hidden
         transition will-change-auto duration-500 hover:duration-200 hover:-translate-x-1 hover:-translate-y-1 cursor-pointer hover:drop-shadow-cardLift
         ">
             <div className="">
