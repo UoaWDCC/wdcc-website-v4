@@ -12,4 +12,5 @@ export const wdccAGM2024: Event = {
     image: "/eventmock/2024_wdcc_x_chisma.png",
     imageAlt: "Image 1",
     collabPartners: [],
+    slug: "2024-wdcc-agm",
 }
