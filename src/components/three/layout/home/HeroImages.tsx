@@ -6,17 +6,7 @@ import * as THREE from "three";
 
 import { useGUI } from "@/hooks/useGUI";
 
-// should probably only have 4 images max
-const images = [
-    "/images/heroImage_1.png",
-    "/images/heroImage_2.png",
-    "/images/heroImage_3.png",
-    "/images/heroImage_4.png",
-] as const;
-const offsets = images.map((_, i) => ((Math.PI * 2) / images.length) * i); // offsets to space images evenly
-const phaseRotation = (Math.PI * 2) / images.length; // amount image should be rotated by phase amount
-const phaseOffset = Math.PI / images.length; // fixed phase offset to put images on the side of the logo instead of center
-
+// todo: refactor this so that it supports multiple animations
 const HeroImages = () => {
     const [speed, setSpeed] = useState(0.5);
 
@@ -38,19 +28,31 @@ const HeroImages = () => {
     return (
         <group>
             {images.map((image, index) => {
-                return <FloatImage key={image} offset={offsets[index]} speed={speed} src={images[index]} />;
+                return <FloatImage key={image} offset={offsets[index]} rps={speed} src={images[index]} />;
             })}
         </group>
     );
 };
 
+// todo: move to another file when there are more stuff
+// should probably only have 4 images max
+const images = [
+    "/images/heroImage_1.png",
+    "/images/heroImage_2.png",
+    "/images/heroImage_3.png",
+    "/images/heroImage_4.png",
+] as const;
+const offsets = images.map((_, i) => ((Math.PI * 2) / images.length) * i); // offsets to space images evenly
+const phaseRotation = (Math.PI * 2) / images.length; // amount image should be rotated by phase amount
+const phaseOffset = Math.PI / images.length; // fixed phase offset to put images on the side of the logo instead of center
+
 interface FloatImageProps {
     offset: number;
     src: string;
-    speed?: number;
+    rps?: number;
 }
 
-const FloatImage = ({ offset, src, speed = 0.5 }: FloatImageProps) => {
+const FloatImage = ({ offset, src, rps = 0.5 }: FloatImageProps) => {
     const meshRef = React.useRef<THREE.Mesh>(null!);
     const textureLoader = new THREE.TextureLoader();
     const image = textureLoader.load(src);
@@ -60,10 +62,9 @@ const FloatImage = ({ offset, src, speed = 0.5 }: FloatImageProps) => {
     let phase = 0;
     useFrame((state) => {
         // incremental variant
-        // this get the time as whole number
-
         if (meshRef.current) {
-            const mod = Math.ceil(state.clock.elapsedTime * speed);
+            // this get the time as whole number
+            const mod = Math.ceil(state.clock.elapsedTime * rps);
             phase = THREE.MathUtils.lerp(phase, mod, 0.01);
 
             if (mod - phase > 2) {

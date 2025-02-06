@@ -26,7 +26,7 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
             x: group.current.position.x,
             y: group.current.position.y,
             z: group.current.position.z,
-            axisHerlper: axesHelper.current.visible,
+            axesHerlper: axesHelper.current.visible,
         };
 
         folder.add(params, "rotationContraint", 0, 1).onChange((c) => {
@@ -47,7 +47,7 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
             });
         }
         if (axesHelper?.current) {
-            folder.add(params, "axisHerlper").onChange((c) => {
+            folder.add(params, "axesHerlper").onChange((c) => {
                 axesHelper.current.visible = c;
             });
         }

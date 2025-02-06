@@ -17,7 +17,7 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
     useEffect(() => {
         setWasActive(progress.active);
         setLoaded(progress.total === progress.loaded && wasActive);
-    }, [progress]);
+    }, [progress, wasActive]);
 
     return (
         <motion.div
