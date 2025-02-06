@@ -1,6 +1,6 @@
 import type { Event } from "@/types/models";
 
-import { wdccAGM2024 } from "./events2024/wdcc-agm-2024";
-import { wdccChiasma2024 } from "./events2024/wdcc-chiasma-2024";
+import { events2024Data } from "./events2024/events2024.data";
+import { events2025Data } from "./events2025/events2025.data";
 
-export const eventsData: Event[] = [wdccChiasma2024, wdccAGM2024];
+export const eventsData: Event[] = [...events2024Data, ...events2025Data];
