@@ -6,6 +6,17 @@ import * as THREE from "three";
 
 import { useGUI } from "@/hooks/useGUI";
 
+// should probably only have 4 images max
+const images = [
+    "/images/heroImage_1.png",
+    "/images/heroImage_2.png",
+    "/images/heroImage_3.png",
+    "/images/heroImage_4.png",
+] as const;
+const offsets = images.map((_, i) => ((Math.PI * 2) / images.length) * i); // offsets to space images evenly
+const phaseRotation = (Math.PI * 2) / images.length; // amount image should be rotated by phase amount
+const phaseOffset = Math.PI / images.length; // fixed phase offset to put images on the side of the logo instead of center
+
 const HeroImages = () => {
     const [speed, setSpeed] = useState(0.5);
 
@@ -26,10 +37,9 @@ const HeroImages = () => {
 
     return (
         <group>
-            <FloatImage offset={((Math.PI * 2) / 4) * 0} speed={speed} src="/images/heroImage_1.png" />
-            <FloatImage offset={((Math.PI * 2) / 4) * 1} speed={speed} src="/images/heroImage_2.png" />
-            <FloatImage offset={((Math.PI * 2) / 4) * 2} speed={speed} src="/images/heroImage_3.png" />
-            <FloatImage offset={((Math.PI * 2) / 4) * 3} speed={speed} src="/images/heroImage_4.png" />
+            {images.map((image, index) => {
+                return <FloatImage key={image} offset={offsets[index]} speed={speed} src={images[index]} />;
+            })}
         </group>
     );
 };
@@ -47,20 +57,32 @@ const FloatImage = ({ offset, src, speed = 0.5 }: FloatImageProps) => {
     const alpha = textureLoader.load("/images/alphamask.png");
     image.colorSpace = THREE.SRGBColorSpace;
 
+    let phase = 0;
     useFrame((state) => {
-        // const mod = Math.ceil(state.clock.elapsedTime * 0.5);
+        // incremental variant
+        // this get the time as whole number
 
         if (meshRef.current) {
-            const x = Math.cos(state.clock.elapsedTime * speed + offset) * 1.6;
-            const z = Math.sin(state.clock.elapsedTime * speed + offset) * 1;
-            // const x = Math.cos(mod * ((Math.PI * 2) / 2) * 0.5 + offset) * 1.6;
-            // const z = Math.sin(mod * ((Math.PI * 2) / 2) * 0.5 + offset) * 1;
-            // console.log(x);
-            // meshRef.current.lookAt(state.camera.position);
-            // meshRef.current.position.x = THREE.MathUtils.lerp(meshRef.current.position.x, x, 0.01);
-            // meshRef.current.position.z = THREE.MathUtils.lerp(meshRef.current.position.z, z, 0.01);
+            const mod = Math.ceil(state.clock.elapsedTime * speed);
+            phase = THREE.MathUtils.lerp(phase, mod, 0.01);
+
+            if (mod - phase > 2) {
+                phase = mod; // this is to prevent rapid rotation when user tab in and out of the page
+            }
+
+            const radiants = phase * phaseRotation + offset + phaseOffset;
+            const x = Math.cos(radiants) * 1.6;
+            const z = Math.sin(radiants) * 1;
             meshRef.current.position.set(x, -0, z);
         }
+
+        // linear variant
+        // if (meshRef.current) {
+        // const x = Math.cos(state.clock.elapsedTime * speed + offset) * 1.6;
+        // const z = Math.sin(state.clock.elapsedTime * speed + offset) * 1;
+        // meshRef.current.position.x = THREE.MathUtils.lerp(meshRef.current.position.x, x, 0.01);
+        // meshRef.current.position.z = THREE.MathUtils.lerp(meshRef.current.position.z, z, 0.01);
+        // }
     });
     return (
         <mesh ref={meshRef}>

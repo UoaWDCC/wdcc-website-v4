@@ -71,7 +71,7 @@ const WDCCHero = () => {
                     </div>
                 </div>
             </div>
-            <View className="flex h-[600px] w-dvw flex-col items-center justify-center">
+            <View className="flex h-[250px] w-dvw flex-col items-center justify-center md:h-[400px] lg:h-[600px]">
                 <WDCCThreeHero parentRef={ref} />
                 <CommonLight />
                 <PerspectiveCamera ref={camera} makeDefault position={[0, 0, 2.5]} />
