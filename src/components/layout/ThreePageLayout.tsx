@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { useProgress } from "@react-three/drei";
 import { motion } from "motion/react";
@@ -9,13 +10,20 @@ import { fadeopacity } from "@/libs/animations";
 const Scene = dynamic(() => import("@/components/three/scene/Scene"), { ssr: false });
 
 const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
+    const [isLoaded, setLoaded] = useState(false);
+    const [wasActive, setWasActive] = useState(false);
     const progress = useProgress();
+
+    useEffect(() => {
+        setWasActive(progress.active);
+        setLoaded(progress.total === progress.loaded && wasActive);
+    }, [progress, wasActive]);
 
     return (
         <motion.div
             // active == loading
             initial="initial"
-            animate={progress.total === progress.loaded ? "animate" : "initial"}
+            animate={isLoaded ? "animate" : "initial"}
             variants={fadeopacity}
             style={{
                 position: "relative",
