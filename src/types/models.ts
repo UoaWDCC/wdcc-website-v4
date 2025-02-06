@@ -38,7 +38,7 @@ export type Event = {
     imageAlt: string;
     collabPartners: string[];
     slug?: string;
-}
+};
 
 export type Team = {
     techlead: { name: string; image?: string };
@@ -51,5 +51,3 @@ export type ProjectMember = {
     role: "engineer" | "techlead" | "designer" | "manager";
     image?: string;
 };
-
-export type PastEventType = string;
