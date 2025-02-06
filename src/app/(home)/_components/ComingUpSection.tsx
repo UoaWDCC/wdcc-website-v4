@@ -13,7 +13,7 @@ const ComingUp = () => {
                 There’s always plenty of events scheduled at WDCC - here’s the next few!
             </p>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {eventsData.slice(0, 3).map((event, i) => (
+                {eventsData.eventsGrid.events.slice(0, 3).map((event, i) => (
                     <EventCard key={i} event={event} />
                 ))}
             </div>
