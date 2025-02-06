@@ -1,3 +1,4 @@
+import Arrow from "@/assets/svg/Arrow";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
@@ -6,17 +7,28 @@ import UpcomingEventsSection from "./_components/UpcomingEventsSection";
 import { eventsData } from "./_data/events.data";
 
 export default function EventsPage() {
+    const headerData = eventsData.header;
+    const roadmapData = eventsData.roadmap;
+    // const eventsGridData = eventsData.eventsGrid;
+
     return (
         <StandardPageLayout>
             <Header
                 variant={{ style: "primary", color: "green" }}
-                title="events"
-                description="From educational workshops to social mixers, hackathons to code competitions, WDCC's regular events help students develop all kinds of valuable skills - and make friends along the way!"
-                primaryButton={{ label: "Recent events ↓", href: "#upcomingEvents" }}
+                title={headerData.title}
+                description={headerData.description}
+                primaryButton={{
+                    label: (
+                        <>
+                            Recent events <Arrow className="rotate-90" />
+                        </>
+                    ),
+                    href: "#upcomingEvents",
+                }}
                 secondaryButton={{ label: "All events", href: "/events/all" }}
             />
-            <EventsRoadmap />
-            <UpcomingEventsSection upcomingEvents={eventsData} />
+            <EventsRoadmap title={roadmapData.title} image={roadmapData.image} />
+            <UpcomingEventsSection upcomingEvents={eventsData.eventsGrid.events} />
         </StandardPageLayout>
     );
 }
