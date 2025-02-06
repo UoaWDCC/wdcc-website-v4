@@ -4,8 +4,8 @@ import RouteDisplay from "@/components/debug/RouteDisplay";
 import EventHeader from "@/components/layout/pageheaders/EventHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
+import { eventsData } from "../_data/events.data";
 import IndividualEvent from "./_component/IndividualEvent";
-import { eventsData } from "../_data/events_data";
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug;
