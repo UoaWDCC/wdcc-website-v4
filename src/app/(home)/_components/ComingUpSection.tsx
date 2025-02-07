@@ -1,9 +1,10 @@
 import React from "react";
 
-import EventCard from "@/app/events/_components/EventCard";
-import { eventsData } from "@/app/events/_data/events_data";
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
+
+import EventCard from "../events/_components/EventCard";
+import { eventsData } from "../events/_data/events_data";
 
 const ComingUp = () => {
     return (
