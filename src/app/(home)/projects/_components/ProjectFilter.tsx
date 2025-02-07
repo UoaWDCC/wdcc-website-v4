@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Project } from "@/types/models";
+import { Project } from "@/payload-types";
 
 import { FilterTag } from "./FilterTag";
 

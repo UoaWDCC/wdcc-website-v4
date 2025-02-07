@@ -1,26 +1,14 @@
-"use client";
-
-import { useState } from "react";
-
+import { getAllProjects } from "@/actions/getAllProjects";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
+import { Project } from "@/payload-types";
 
-import { ProjectCard } from "./_components/ProjectCard";
-import { ProjectFilter } from "./_components/ProjectFilter";
+import ProjectsSection from "./_components/ProjectsSection";
 import { projectsData } from "./_data/projects_data/index";
 
-export default function ProjectsPage() {
-    const [selectedYear, setYear] = useState<string | null>(null);
-
-    const filterByYear = (category: string) => () => {
-        setYear((prevYear) => (prevYear === category ? null : category));
-    };
-
-    const filteredProjects = selectedYear
-        ? projectsData.filter((project) => project.year === selectedYear)
-        : projectsData;
-
-    const sortedProjects = [...filteredProjects].sort((a, b) => Number(b.year) - Number(a.year));
+export default async function ProjectsPage() {
+    const projects = (await getAllProjects()) as Project[];
+    const combined = [...projects, ...projectsData] as Project[];
 
     return (
         <StandardPageLayout>
@@ -30,14 +18,7 @@ export default function ProjectsPage() {
                 backlink={{ label: "projects", href: "/projects" }}
             />
 
-            <div className="my-24 flex w-full flex-col">
-                <ProjectFilter projects={projectsData} setSelectedYear={filterByYear} selectedYear={selectedYear} />
-                <div className="grid gap-6 lg:grid-cols-2">
-                    {sortedProjects.map((project, index) => (
-                        <ProjectCard project={project} key={index} />
-                    ))}
-                </div>
-            </div>
+            <ProjectsSection projects={combined} />
         </StandardPageLayout>
     );
 }

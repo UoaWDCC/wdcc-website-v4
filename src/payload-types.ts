@@ -14,6 +14,7 @@ export interface Config {
     users: User;
     media: Media;
     Events: Event;
+    Projects: Project;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -23,6 +24,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     Events: EventsSelect<false> | EventsSelect<true>;
+    Projects: ProjectsSelect<false> | ProjectsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -116,6 +118,56 @@ export interface Event {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Projects".
+ */
+export interface Project {
+  id: number;
+  projectName: string;
+  projectNameExtended: string;
+  client: string;
+  description: string;
+  descriptionExtended: string;
+  logo: number | Media;
+  year: string;
+  technologies?:
+    | {
+        technology?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  slug?: string | null;
+  team: {
+    techlead: {
+      name: string;
+      image?: (number | null) | Media;
+    };
+    manager: {
+      name: string;
+      image?: (number | null) | Media;
+    };
+    members?:
+      | {
+          name: string;
+          role: 'engineer' | 'techlead' | 'designer' | 'manager';
+          image?: (number | null) | Media;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -132,6 +184,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'Events';
         value: number | Event;
+      } | null)
+    | ({
+        relationTo: 'Projects';
+        value: number | Project;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -214,6 +270,61 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface EventsSelect<T extends boolean = true> {
   alt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Projects_select".
+ */
+export interface ProjectsSelect<T extends boolean = true> {
+  projectName?: T;
+  projectNameExtended?: T;
+  client?: T;
+  description?: T;
+  descriptionExtended?: T;
+  logo?: T;
+  year?: T;
+  technologies?:
+    | T
+    | {
+        technology?: T;
+        id?: T;
+      };
+  slug?: T;
+  team?:
+    | T
+    | {
+        techlead?:
+          | T
+          | {
+              name?: T;
+              image?: T;
+            };
+        manager?:
+          | T
+          | {
+              name?: T;
+              image?: T;
+            };
+        members?:
+          | T
+          | {
+              name?: T;
+              role?: T;
+              image?: T;
+              id?: T;
+            };
+      };
   updatedAt?: T;
   createdAt?: T;
   url?: T;

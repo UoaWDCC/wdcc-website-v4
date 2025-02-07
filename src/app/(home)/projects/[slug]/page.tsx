@@ -1,9 +1,11 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 
+import { getProject } from "@/actions/getProject";
 import RouteDisplay from "@/components/debug/RouteDisplay";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
+import { Project } from "@/payload-types";
 
 import { projectsData } from "../_data/projects_data/index";
 import IndividualProject from "./_component/IndividualProject";
@@ -37,7 +39,8 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug;
 
-    const project = projectsData.find((p) => p.slug === `/${slug}`);
+    let project = projectsData.find((p) => p.slug === `/${slug}`) as Project | undefined;
+    if (!project) project = (await getProject(slug)) as Project;
 
     if (!project) {
         notFound();

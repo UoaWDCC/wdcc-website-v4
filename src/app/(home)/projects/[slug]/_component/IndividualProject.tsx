@@ -1,9 +1,8 @@
 import React from "react";
 
-import { Project } from "@/types/models";
-
 import { getTechnologySvg } from "@/assets/svg/technologies";
 import ImageFit from "@/components/ImageFit";
+import { Project } from "@/payload-types";
 
 import TeamMemberCard from "./TeamMemberCard";
 
@@ -12,8 +11,8 @@ interface IndividualProjectProps {
 }
 
 const IndividualProject = ({ project }: IndividualProjectProps) => {
-    const technologies = project.technologies.map((tech) => {
-        const TechIcon = getTechnologySvg(tech);
+    const technologies = project?.technologies?.map((tech) => {
+        const TechIcon = getTechnologySvg(tech.technology as string);
         return { name: tech, Icon: TechIcon };
     });
 
@@ -39,12 +38,16 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
                 <h3 className="text-3xl font-semibold">Technologies</h3>
                 <hr />
                 <div className="flex flex-wrap gap-12">
-                    {technologies.map((tech) => (
-                        <div key={tech.name} className="relative flex flex-col items-center justify-center gap-2 p-2">
-                            {tech.Icon && <tech.Icon className="mb-4 h-12 w-12" />}
-                            <p className="absolute bottom-0">{tech.name}</p>
-                        </div>
-                    ))}
+                    {technologies &&
+                        technologies.map((tech) => (
+                            <div
+                                key={tech.name.id}
+                                className="relative flex flex-col items-center justify-center gap-2 p-2"
+                            >
+                                {tech.Icon && <tech.Icon className="mb-4 h-12 w-12" />}
+                                <p className="absolute bottom-0">{tech.name.technology}</p>
+                            </div>
+                        ))}
                 </div>
                 <hr />
             </div>
@@ -59,7 +62,7 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
                     <TeamMemberCard variant={{ role: "techlead" }} name={project.team.techlead.name} role="Tech Lead" />
                 </div>
                 <div className="flex flex-wrap justify-center gap-4">
-                    {project.team.members.map((member, index) => (
+                    {project?.team?.members?.map((member, index) => (
                         <TeamMemberCard
                             key={index}
                             variant={{ role: member.role }}
