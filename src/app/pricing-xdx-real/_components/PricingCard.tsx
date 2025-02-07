@@ -4,7 +4,7 @@ import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";
 
 import { pricingType } from "../_data/pricing.data";
-import Checklist from "./Checklist";
+import Checklist from "../../../components/primitives/Checklist";
 
 const PricingCard = ({ ...data }: pricingType) => {
     return (

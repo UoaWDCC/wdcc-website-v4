@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";
 
-import Checklist, { ChecklistType } from "./Checklist";
+import Checklist, { ChecklistType } from "../../../components/primitives/Checklist";
 
 export type AddonCardType = {
     title: string;
