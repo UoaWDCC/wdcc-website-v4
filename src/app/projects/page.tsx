@@ -62,16 +62,16 @@ export default function ProjectsPage() {
                     <h2 className="text-3xl font-bold py-10">Project Roles</h2>
                     <div className="grid grid-cols-2 gap-8 px-8">
                         <ProjectRoleCard variant={{ color: "blue" }} title={"Developer"}
-                                         description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. "}
+                                         description={"WDCC Developers are the heart of every project team. You could work on anything - from adding a brand-new CMS through to keyframing in CSS."}
                                          slug={"developer"} />
                         <ProjectRoleCard variant={{ color: "purple" }} title={"Designer"}
-                                         description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. "}
+                                         description={"WDCC Designers are a step beyond theory. You'll navigate genuine design problems with a real-world project backed by a large technical team."}
                                          slug={"designer"} />
                         <ProjectRoleCard variant={{ color: "yellow" }} title={"Tech Lead"}
-                                         description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. "}
+                                         description={"WDCC Tech Leads get the senior dev experience (without the clout). Direct a large student team, and make your CV shine along the way."}
                                          slug={"techlead"} />
                         <ProjectRoleCard variant={{ color: "green" }} title={"Project Manager"}
-                                         description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. "}
+                                         description={"WDCC PMs get to handle communication and Agile workflows in industry-like ways, but helped by friends instead of managers."}
                                          slug={"projectmanager"} />
 
                     </div>

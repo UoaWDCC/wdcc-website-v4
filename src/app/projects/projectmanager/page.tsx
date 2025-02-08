@@ -9,7 +9,7 @@ export default function PMPage() {
         <StandardPageLayout>
             <Header
                 variant={{ style: "secondary", color: "green" }}
-                title="design, align, and build as a WDCC PM"
+                title="make agile great again as a WDCC Project Manager"
                 backlink={{ label: "projects", href: "/projects" }}
             />
 

@@ -9,7 +9,7 @@ export default function DeveloperPage() {
         <StandardPageLayout>
             <Header
                 variant={{ style: "secondary", color: "blue" }}
-                title="become a project developer and "
+                title="code something real as a WDCC Developer"
                 backlink={{ label: "projects", href: "/projects" }}
             />
 

@@ -8,7 +8,7 @@ export default function TLPage() {
         <StandardPageLayout>
             <Header
                 variant={{ style: "secondary", color: "yellow" }}
-                title="design, align, and build as a WDCC TL"
+                title="fulfil your senior dev dreams as a WDCC Tech Lead"
                 backlink={{ label: "projects", href: "/projects" }}
             />
 
