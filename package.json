@@ -66,5 +66,11 @@
     },
     "volta": {
         "node": "20.18.1"
+    },
+    "dockerfile": {
+        "secrets": [
+            "DATABASE_URI",
+            "PAYLOAD_SECRET"
+        ]
     }
 }
