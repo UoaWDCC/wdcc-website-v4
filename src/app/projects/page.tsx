@@ -60,7 +60,7 @@ export default function ProjectsPage() {
 
                 <div>
                     <h2 className="text-3xl font-bold py-10">Project Roles</h2>
-                    <div className="grid grid-cols-2 gap-8 px-8">
+                    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 sm:px-8">
                         <ProjectRoleCard variant={{ color: "blue" }} title={"Developer"}
                                          description={"WDCC Developers are the heart of every project team. You could work on anything - from adding a brand-new CMS through to keyframing in CSS."}
                                          slug={"developer"} />
