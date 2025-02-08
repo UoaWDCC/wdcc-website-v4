@@ -40,6 +40,7 @@ const ProjectRoleCard = ({ variant, title, description, slug, graphic }: Project
             {/*TODO graphic here*/}
             <div className="h-[180px] w-full rounded-xl bg-gradient-to-r from-[#C9A9FF] to-[#FFA4A5] flex items-center justify-center">
                 <p className="text-white">Image or relevant graphic here</p>
+                {graphic}
             </div>
         </Link>
     );
