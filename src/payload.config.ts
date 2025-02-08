@@ -3,6 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { s3Storage } from "@payloadcms/storage-s3";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 
@@ -33,5 +34,25 @@ export default buildConfig({
         },
         migrationDir: "./src/migrations",
     }),
+    plugins: [
+        s3Storage({
+            collections: {
+                media: {
+                    generateFileURL: ({ filename }) => {
+                        return `https://${process.env.S3_BUCKET}.s3.${process.env.S3_REGION}.amazonaws.com/${filename}`;
+                    },
+                },
+            },
+            bucket: process.env.S3_BUCKET || "",
+            config: {
+                credentials: {
+                    accessKeyId: process.env.S3_ACCESS_KEY_ID || "",
+                    secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || "",
+                },
+                region: process.env.S3_REGION,
+            },
+        }),
+    ],
+
     sharp,
 });

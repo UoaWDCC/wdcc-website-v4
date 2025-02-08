@@ -24,6 +24,7 @@
         "@payloadcms/db-postgres": "^3.21.0",
         "@payloadcms/next": "^3.21.0",
         "@payloadcms/richtext-lexical": "^3.21.0",
+        "@payloadcms/storage-s3": "^3.22.0",
         "@react-three/drei": "^9.119.0",
         "@react-three/fiber": "9.0.0-rc.6",
         "clsx": "^2.1.1",
