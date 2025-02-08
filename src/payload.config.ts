@@ -38,9 +38,13 @@ export default buildConfig({
         s3Storage({
             collections: {
                 media: {
-                    generateFileURL: ({ filename }) => {
-                        return `https://${process.env.S3_BUCKET}.s3.${process.env.S3_REGION}.amazonaws.com/${filename}`;
-                    },
+                    prefix: "media ",
+                },
+                Projects: {
+                    prefix: "Projects",
+                },
+                Events: {
+                    prefix: "Events",
                 },
             },
             bucket: process.env.S3_BUCKET || "",

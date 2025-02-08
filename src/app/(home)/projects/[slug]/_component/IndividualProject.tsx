@@ -2,7 +2,7 @@ import React from "react";
 
 import { getTechnologySvg } from "@/assets/svg/technologies";
 import ImageFit from "@/components/ImageFit";
-import { Project } from "@/payload-types";
+import { Media, Project } from "@/payload-types";
 
 import TeamMemberCard from "./TeamMemberCard";
 
@@ -32,7 +32,7 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
                     <br />
                     {project.descriptionExtended}
                 </p>
-                <ImageFit src="/projectmock/uabc.png" alt="" height="300px" width="500px" />
+                <ImageFit src={(project.logo as Media).url as string} alt="" height="300px" width="500px" />
             </div>
             <div className="mt-8 flex flex-col gap-4">
                 <h3 className="text-3xl font-semibold">Technologies</h3>
