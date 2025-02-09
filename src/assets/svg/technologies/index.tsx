@@ -1,5 +1,3 @@
-import { SVGAttributes } from "react";
-
 import { Astro } from "./Astro";
 import { AWS } from "./AWS";
 import { Css } from "./Css";

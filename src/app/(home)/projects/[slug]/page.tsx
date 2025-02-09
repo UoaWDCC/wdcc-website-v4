@@ -7,8 +7,6 @@ import { Project } from "@/types/models";
 import { getProject } from "@/actions/getProject";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import { ProjectsSelect } from "@/payload-types";
-import type { Project as CMSProject } from "@/payload-types";
 
 import { projectsData } from "../_data/projects_data/index";
 import IndividualProject from "./_component/IndividualProject";

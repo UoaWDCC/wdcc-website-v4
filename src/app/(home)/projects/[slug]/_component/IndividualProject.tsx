@@ -2,6 +2,7 @@ import React from "react";
 
 import { Project } from "@/types/models";
 
+import placeholder600_400 from "@/assets/image/600x400.png";
 import { getTechnologySvgWithName } from "@/assets/svg/technologies";
 import ImageFit from "@/components/ImageFit";
 
@@ -32,7 +33,7 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
                     <br />
                     {project.descriptionExtended}
                 </p>
-                <ImageFit src={project.logo || "/"} alt="" height="300px" width="500px" />
+                <ImageFit src={project.logo || placeholder600_400} alt="" height="300px" width="500px" />
             </div>
             <div className="mt-8 flex flex-col gap-4">
                 <h3 className="text-3xl font-semibold">Technologies</h3>
