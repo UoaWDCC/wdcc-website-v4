@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-import { Project } from "@/payload-types";
+import { Project } from "@/types/models";
 
 import { ProjectCard } from "./ProjectCard";
 import { ProjectFilter } from "./ProjectFilter";

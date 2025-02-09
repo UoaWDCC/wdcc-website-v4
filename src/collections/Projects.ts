@@ -87,7 +87,7 @@ export const Projects: CollectionConfig = {
                         {
                             name: "role",
                             type: "select",
-                            options: ["engineer", "techlead", "designer", "manager"],
+                            options: ["engineer", "designer"],
                             required: true,
                         },
                         { name: "image", type: "upload", relationTo: "media" },

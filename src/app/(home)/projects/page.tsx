@@ -1,13 +1,15 @@
+import { mapCMSToProject } from "@/types/mapper/mapCMSToProject";
+import { Project } from "@/types/models";
+
 import { getAllProjects } from "@/actions/getAllProjects";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import { Project } from "@/payload-types";
 
 import ProjectsSection from "./_components/ProjectsSection";
 import { projectsData } from "./_data/projects_data/index";
 
 export default async function ProjectsPage() {
-    const projects = (await getAllProjects()) as Project[];
+    const projects = (await getAllProjects()).map(mapCMSToProject);
     const combined = [...projects, ...projectsData] as Project[];
 
     return (

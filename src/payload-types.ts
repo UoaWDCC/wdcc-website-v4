@@ -85,6 +85,7 @@ export interface User {
 export interface Media {
   id: number;
   alt: string;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -104,6 +105,7 @@ export interface Media {
 export interface Event {
   id: number;
   alt: string;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -148,12 +150,13 @@ export interface Project {
     members?:
       | {
           name: string;
-          role: 'engineer' | 'techlead' | 'designer' | 'manager';
+          role: 'engineer' | 'designer';
           image?: (number | null) | Media;
           id?: string | null;
         }[]
       | null;
   };
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -252,6 +255,7 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -270,6 +274,7 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface EventsSelect<T extends boolean = true> {
   alt?: T;
+  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -325,6 +330,7 @@ export interface ProjectsSelect<T extends boolean = true> {
               id?: T;
             };
       };
+  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;

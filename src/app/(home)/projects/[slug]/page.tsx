@@ -1,11 +1,14 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 
+import { mapCMSToProject } from "@/types/mapper/mapCMSToProject";
+import { Project } from "@/types/models";
+
 import { getProject } from "@/actions/getProject";
-import RouteDisplay from "@/components/debug/RouteDisplay";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import { Project } from "@/payload-types";
+import { ProjectsSelect } from "@/payload-types";
+import type { Project as CMSProject } from "@/payload-types";
 
 import { projectsData } from "../_data/projects_data/index";
 import IndividualProject from "./_component/IndividualProject";
@@ -18,7 +21,7 @@ type Props = {
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
     const slug = (await params).slug;
 
-    const project = projectsData.find((p) => p.slug === `/${slug}`);
+    const project = projectsData.find((project) => project.slug === slug);
 
     // get og-image of previous page
     const previousImages = (await parent).openGraph?.images || [];
@@ -38,17 +41,17 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug;
+    console.log(slug);
+    let project = projectsData.find((project) => project.slug === slug) as Project | undefined;
 
-    let project = projectsData.find((p) => p.slug === `/${slug}`) as Project | undefined;
-    if (!project) project = (await getProject(slug)) as Project;
-
+    // if no hard coded project search payload CMS
+    if (!project) project = mapCMSToProject(await getProject(slug));
     if (!project) {
         notFound();
     }
 
     return (
         <StandardPageLayout>
-            <RouteDisplay slug={slug} />
             <ProjectHeader backlink={{ label: "projects", href: "/projects" }} title={project.projectName} />
             <IndividualProject project={project} />
         </StandardPageLayout>

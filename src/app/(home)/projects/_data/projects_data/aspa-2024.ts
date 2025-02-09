@@ -5,11 +5,11 @@ export const aspa2024: Project = {
     projectNameExtended: "ASPA registration website ext",
     description: "A whole paragraph describing what kind of project it is, including tech stack??\n\nYup.",
     descriptionExtended: "A whole paragraph describing what kind of project it is, including tech stack??\n\nYup.",
-    logo: "I don't know the layout so I don't know if this needs a logo",
+    logo: undefined,
     client: "",
     year: "2024",
     technologies: ["Astro", "Typescript"],
-    slug: "/2024-ASPA",
+    slug: "2024-ASPA",
     team: {
         techlead: { name: "Youxiang Lei" },
         manager: { name: "Gurjot Bhullar" },

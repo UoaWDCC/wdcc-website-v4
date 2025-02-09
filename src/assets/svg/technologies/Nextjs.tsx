@@ -31,8 +31,8 @@ export const Nextjs = ({ ...props }: SVGAttributes<SVGSVGElement>) => {
                     y2="160.5"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stop-opacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint1_linear_408_139"
@@ -42,8 +42,8 @@ export const Nextjs = ({ ...props }: SVGAttributes<SVGSVGElement>) => {
                     y2="106.875"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stop-opacity="0" />
                 </linearGradient>
             </defs>
         </svg>

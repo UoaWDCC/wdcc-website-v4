@@ -19,7 +19,7 @@ export type Project = {
     client: string;
     description: string;
     descriptionExtended: string;
-    logo: string;
+    logo?: string;
     year: string;
     technologies: string[];
     slug?: string;
@@ -38,7 +38,7 @@ export type Event = {
     imageAlt: string;
     collabPartners: string[];
     slug?: string;
-}
+};
 
 export type Team = {
     techlead: { name: string; image?: string };

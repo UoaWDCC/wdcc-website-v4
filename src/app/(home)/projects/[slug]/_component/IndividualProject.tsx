@@ -1,8 +1,9 @@
 import React from "react";
 
-import { getTechnologySvg } from "@/assets/svg/technologies";
+import { Project } from "@/types/models";
+
+import { getTechnologySvgWithName } from "@/assets/svg/technologies";
 import ImageFit from "@/components/ImageFit";
-import { Media, Project } from "@/payload-types";
 
 import TeamMemberCard from "./TeamMemberCard";
 
@@ -12,15 +13,14 @@ interface IndividualProjectProps {
 
 const IndividualProject = ({ project }: IndividualProjectProps) => {
     const technologies = project?.technologies?.map((tech) => {
-        const TechIcon = getTechnologySvg(tech.technology as string);
-        return { name: tech, Icon: TechIcon };
+        return getTechnologySvgWithName(tech);
     });
 
     return (
         <div className="flex flex-col py-16">
             <div className="grid grid-cols-2 gap-16">
                 {/* todo: replace with real data soon. payload? */}
-                {/* I agree */}
+                {/* I agree */} {/* done 🔥😎 */}
                 <p className="text-md">
                     <strong className="text-md">
                         {project.projectNameExtended}
@@ -32,22 +32,25 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
                     <br />
                     {project.descriptionExtended}
                 </p>
-                <ImageFit src={(project.logo as Media).url as string} alt="" height="300px" width="500px" />
+                <ImageFit src={project.logo || "/"} alt="" height="300px" width="500px" />
             </div>
             <div className="mt-8 flex flex-col gap-4">
                 <h3 className="text-3xl font-semibold">Technologies</h3>
                 <hr />
                 <div className="flex flex-wrap gap-12">
                     {technologies &&
-                        technologies.map((tech) => (
-                            <div
-                                key={tech.name.id}
-                                className="relative flex flex-col items-center justify-center gap-2 p-2"
-                            >
-                                {tech.Icon && <tech.Icon className="mb-4 h-12 w-12" />}
-                                <p className="absolute bottom-0">{tech.name.technology}</p>
-                            </div>
-                        ))}
+                        technologies.map((tech) => {
+                            if (!tech) return;
+                            return (
+                                <div
+                                    key={tech.name}
+                                    className="relative flex flex-col items-center justify-center gap-2 p-2"
+                                >
+                                    {<tech.component className="mb-4 h-12 w-12" />}
+                                    <p className="absolute bottom-0">{tech.name}</p>
+                                </div>
+                            );
+                        })}
                 </div>
                 <hr />
             </div>

@@ -4,6 +4,7 @@ import { CollectionSlug } from "payload";
 
 import { SLUG } from "@/libs/enums/slug";
 import { getPayload } from "@/libs/payload";
+import { Project } from "@/payload-types";
 
 // return all projects
 export const getAllProjects = async () => {
@@ -12,5 +13,5 @@ export const getAllProjects = async () => {
         collection: SLUG.PROJECTS as CollectionSlug,
     });
 
-    return projects.docs;
+    return projects.docs as Project[];
 };

@@ -5,11 +5,11 @@ export const nzpmc2024: Project = {
     projectNameExtended: "NZPMC exam portal",
     description: "A whole paragraph describing what kind of project it is, including tech stack??\n\nYup.",
     descriptionExtended: "pog",
-    logo: "I don't know the layout so I don't know if this needs a logo",
+    logo: undefined,
     year: "2024",
     client: "",
     technologies: ["Astro", "Typescript"],
-    slug: "/2024-NZPMC",
+    slug: "2024-NZPMC",
     team: {
         techlead: { name: "Youxiang Lei" },
         manager: { name: "Gurjot Bhullar" },
