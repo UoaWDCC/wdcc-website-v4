@@ -1,43 +1,89 @@
-"use client";
-
-import { useState } from "react";
-
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
+import ProjectRoleCard from "@/app/projects/_components/ProjectRoleCard";
+import Checklist from "@/components/primitives/Checklist";
 import { ProjectCard } from "./_components/ProjectCard";
-import { ProjectFilter } from "./_components/ProjectFilter";
 import { projectsData } from "./_data/projects_data/index";
+import { Button } from "@/components/primitives/Button";
+
+import { projectsCopy } from "./_data/projects.data";
+
 
 export default function ProjectsPage() {
-    const [selectedYear, setYear] = useState<string | null>(null);
-
-    const filterByYear = (category: string) => () => {
-        setYear((prevYear) => (prevYear === category ? null : category));
-    };
-
-    const filteredProjects = selectedYear
-        ? projectsData.filter((project) => project.year === selectedYear)
-        : projectsData;
-
-    const sortedProjects = [...filteredProjects].sort((a, b) => Number(b.year) - Number(a.year));
-
     return (
         <StandardPageLayout>
             <Header
-                variant={{ style: "secondary", color: "blue" }}
-                title="past projects"
-                backlink={{ label: "projects", href: "/projects" }}
+                variant={{ style: "primary", color: "blue" }}
+                title="projects"
+                description="Projects are your chance to build amazing, real world projects for genuine community clients. Develop your skills, work in an industry-like team environment, and gain practical work experience - all alongside motivated peers! "
+                primaryButton={{
+                    label: "Apply for a project",
+                    href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                }} // TODO remove, but lol
+                secondaryButton={{ label: "Past WDCC Projects", href: "/projects/all" }}
             />
 
-            <div className="my-24 flex w-full flex-col">
-                <ProjectFilter projects={projectsData} setSelectedYear={filterByYear} selectedYear={selectedYear} />
-                <div className="grid gap-6 lg:grid-cols-2">
-                    {sortedProjects.map((project, index) => (
-                        <ProjectCard project={project} key={index} />
-                    ))}
+            <div className="flex flex-col gap-24 py-24">
+
+                <div className="flex gap-8">
+                    <div className="flex flex-col gap-8 sm:w-[60%]">
+                        <p className="leading-tight whitespace-pre-line text-md font-semibold">
+                            {projectsCopy.infoSection.main}
+                        </p>
+
+                        <div className="flex flex-col gap-4">
+                            <p className="font-semibold text-md">
+                                {projectsCopy.infoSection.checkboxes.title}
+                            </p>
+                            <div className="flex flex-col gap-4 pl-4">
+                                {projectsCopy.infoSection.checkboxes.checks.map((content, i) => (
+                                    <Checklist label={content} key={i} checked={true} />
+                                ))}
+                            </div>
+
+                        </div>
+                    </div>
+
+
                 </div>
+
+                <div className="flex flex-col gap-8">
+                    <h2 className="text-3xl font-bold">{projectsCopy.operationSection.title}</h2>
+                    <p>{projectsCopy.operationSection.content}</p>
+                </div>
+
+                <div>
+                    <h2 className="text-3xl font-bold py-10">{projectsCopy.rolesSection.title}</h2>
+                    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 sm:px-8">
+                        {projectsCopy.rolesSection.roles.map((role, i) => (
+                            <ProjectRoleCard variant={{color: role.color}} title={role.title}
+                                             description={role.description}
+                                             slug={role.slug}
+                                             key={i}/>
+                        ))}
+
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-8">
+                    <h2 className="text-3xl font-bold">{projectsCopy.featuredSection.title}</h2>
+                    <div className="grid gap-6 lg:grid-cols-2">
+
+                        {
+                            //TODO logic to make this work
+                        }
+
+                        <ProjectCard project={projectsData[0]}/>
+                        <ProjectCard project={projectsData[1]}/>
+                    </div>
+                    <Button variant={{style: "secondary", color:"yellow"}} href="/projects/all" className="mx-auto">
+                        {projectsCopy.featuredSection.cta}
+                    </Button>
+                </div>
+
             </div>
+
         </StandardPageLayout>
     );
 }
