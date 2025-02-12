@@ -18,9 +18,10 @@
             }
         ],
         "paths": {
-            "@/*": ["./src/*"],
+            "@app/*": ["./src/app/(home)/*"],
             "@public/*": ["./public/*"],
-            "@payload-config": ["./src/payload.config.ts"]
+            "@payload-config": ["./src/payload.config.ts"],
+            "@/*": ["./src/*"]
         },
         "target": "ES2017"
     },
