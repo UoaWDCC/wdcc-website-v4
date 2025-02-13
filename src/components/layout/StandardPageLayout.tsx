@@ -11,7 +11,7 @@ interface StandardPageLayoutProps extends HtmlHTMLAttributes<HTMLElement> {
 }
 
 /** This component replaces a typical layout.tsx - allowing us to benefit from a consistent layout, but also optionally disable it. */
-export default function StandardPageLayout({ children, navColor, ...props }: StandardPageLayoutProps) {
+export default function StandardPageLayout({ children, navColor = "dark", ...props }: StandardPageLayoutProps) {
     return (
         <div {...props} className={cn("flex min-h-dvh flex-col", props.className)}>
             <div className="relative flex h-dvh min-h-dvh flex-col overflow-x-hidden">

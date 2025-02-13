@@ -44,12 +44,22 @@ const navbar = tv({
     },
 });
 
+const navbarBg = tv({
+    base: "absolute left-0 top-0 -z-10 size-full w-dvw",
+    variants: {
+        color: {
+            light: "bg-foreground",
+            dark: "bg-background",
+        },
+    },
+})
+
 export interface NavbarProps {
     variant?: VariantProps<typeof navbar>;
     className?: ClassName
 }
 
-export default function NavigationBar({ variant, className }: NavbarProps) {
+export default function NavigationBar({variant = {color: "dark"}}: NavbarProps) {
     const [isHovering, sethover] = useState(false);
 
     const handleDropEnter = () => {
@@ -78,7 +88,7 @@ export default function NavigationBar({ variant, className }: NavbarProps) {
                 className={navbar({ ...variant })}
             >
                 <motion.div
-                    className="absolute left-0 top-0 -z-10 size-full w-dvw bg-background"
+                    className={navbarBg({...variant})}
                     initial={{ height: 0 }}
                     animate={{ height: isHovering ? 180 : 0 }} // hardcoded xdx,
                     onMouseLeave={handleDropExit}
