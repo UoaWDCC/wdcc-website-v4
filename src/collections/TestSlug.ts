@@ -88,6 +88,7 @@ export const TestSlug: CollectionConfig = {
                     type: "upload",
                     relationTo: "media",
                     required: true,
+                    displayPreview: true,
                 },
             ],
         },
@@ -123,7 +124,7 @@ export const TestSlug: CollectionConfig = {
                     type: "group",
                     fields: [
                         { name: "name", type: "text", required: true },
-                        { name: "image", type: "upload", relationTo: "media" },
+                        { name: "image", type: "upload", relationTo: "media", displayPreview: true },
                     ],
                 },
                 {
@@ -131,7 +132,7 @@ export const TestSlug: CollectionConfig = {
                     type: "group",
                     fields: [
                         { name: "name", type: "text", required: true },
-                        { name: "image", type: "upload", relationTo: "media" },
+                        { name: "image", type: "upload", relationTo: "media", displayPreview: true },
                     ],
                 },
             ],
@@ -151,7 +152,7 @@ export const TestSlug: CollectionConfig = {
                     options: ["engineer", "designer"],
                     required: true,
                 },
-                { name: "image", type: "upload", relationTo: "media" },
+                { name: "image", type: "upload", relationTo: "media", displayPreview: true },
             ],
         },
     ],
