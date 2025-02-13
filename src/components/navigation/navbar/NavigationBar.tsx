@@ -48,8 +48,18 @@ const navbarBg = tv({
     base: "absolute left-0 top-0 -z-10 size-full w-dvw",
     variants: {
         color: {
-            dark: "bg-foreground",
+            dark: "bg-blue-900",
             light: "bg-background",
+        },
+    },
+})
+
+const navbarLine = tv({
+    base: "hidden h-5 w-0.5 rounded md:block",
+    variants: {
+        color: {
+            dark: "bg-gray-200",
+            light: "bg-gray-700",
         },
     },
 })
@@ -58,6 +68,19 @@ export interface NavbarProps {
     variant?: VariantProps<typeof navbar>;
     className?: ClassName
 }
+
+/**
+ * General navbar component - the navigation bar (top) for all pages.
+ * For the mobile-specific navigation that appears on small screens, see the subcomponent NavigationMobileMenu.
+ *
+ * Takes the following parameters as props of variants:
+ * @variation color [dark, light] - the theme of the navbar.
+ * 
+ * This theme references the background of the top of the page on which the navbar is placed.
+ * On light backgrounds, use light navbar. On dark backgrounds, use dark navbar.
+ *
+ * Don't confuse the name of the color mode with the actual text color - the "dark" navbar has white text (as is standard for a dark mode).
+ */
 
 export default function NavigationBar({variant = {color: "light"}}: NavbarProps) {
     const [isHovering, sethover] = useState(false);
@@ -102,7 +125,7 @@ export default function NavigationBar({variant = {color: "light"}}: NavbarProps)
                         <NavigationBarLinks links={navbarData.links} />
                     </div>
                     {/* Vertical line */}
-                    <div className="hidden h-5 w-0.5 rounded bg-gray-700 md:block" />
+                    <div className={navbarLine({...variant})} />
                     {/* Buttons */}
                     <div className="hidden-scrollbar flex gap-3 overflow-auto">
                         <NavigationMobileMenu variant={{color: variant.color}} className="md:hidden" links={navbarData.links} />
