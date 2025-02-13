@@ -12,10 +12,10 @@ import { NavigationLink } from "@/components/navigation/navbar/_data/navbarTypes
 import DropDown from "@/components/navigation/navbar/DropDownLink";
 import { UnderlineLink } from "@/components/navigation/UnderlineLink";
 import { Button } from "@/components/primitives/Button";
-import { cn } from "@/libs/utils";
 
 import { Anchor } from "../../primitives/Anchor";
-import NavigationMenu from "./NavigationMobileMenu";
+import NavigationMobileMenu from "./NavigationMobileMenu";
+import { tv, VariantProps } from "tailwind-variants";
 
 const hoverContext = createContext({} as hoverContextProps);
 
@@ -33,7 +33,55 @@ export const useNavHover = () => {
     return context;
 };
 
-export default function NavigationBar({ className }: ClassName) {
+const navbar = tv({
+    base: "absolute top-0 group z-50 flex w-full select-none items-center justify-between gap-4 py-4 px-8 lg:px-16",
+    variants: {
+        color: {
+            dark: "text-white",
+            light: "text-gray-800",
+        },
+    },
+});
+
+const navbarBg = tv({
+    base: "absolute left-0 top-0 -z-10 size-full w-dvw",
+    variants: {
+        color: {
+            dark: "bg-blue-900",
+            light: "bg-background",
+        },
+    },
+})
+
+const navbarLine = tv({
+    base: "hidden h-5 w-0.5 rounded md:block",
+    variants: {
+        color: {
+            dark: "bg-gray-200",
+            light: "bg-gray-700",
+        },
+    },
+})
+
+export interface NavbarProps {
+    variant?: VariantProps<typeof navbar>;
+    className?: ClassName
+}
+
+/**
+ * General navbar component - the navigation bar (top) for all pages.
+ * For the mobile-specific navigation that appears on small screens, see the subcomponent NavigationMobileMenu.
+ *
+ * Takes the following parameters as props of variants:
+ * @variation color [dark, light] - the theme of the navbar.
+ *
+ * This theme references the background of the top of the page on which the navbar is placed.
+ * On light backgrounds, use light navbar. On dark backgrounds, use dark navbar.
+ *
+ * Don't confuse the name of the color mode with the actual text color - the "dark" navbar has white text (as is standard for a dark mode).
+ */
+
+export default function NavigationBar({variant = {color: "light"}}: NavbarProps) {
     const [isHovering, sethover] = useState(false);
 
     const handleDropEnter = () => {
@@ -59,31 +107,28 @@ export default function NavigationBar({ className }: ClassName) {
                 className="pointer-events-none fixed inset-0 z-40 h-dvh w-dvw bg-black/40 backdrop-blur-sm"
             />
             <nav
-                className={cn(
-                    "group fixed top-0 z-50 flex w-full select-none flex-col items-center justify-between gap-4 py-4 sm:flex-row sm:px-16 lg:py-4",
-                    className
-                )}
+                className={navbar({ ...variant })}
             >
                 <motion.div
-                    className="absolute left-0 top-0 -z-10 size-full w-dvw bg-background"
+                    className={navbarBg({...variant})}
                     initial={{ height: 0 }}
                     animate={{ height: isHovering ? 180 : 0 }} // hardcoded xdx,
                     onMouseLeave={handleDropExit}
                 />
                 <Anchor href="/">
-                    <WDCCLogo className="fill-black transition duration-150 hover:opacity-70 lg:block" />
+                    <WDCCLogo className="fill-current transition duration-150 hover:opacity-70 lg:block" />
                 </Anchor>
-                <div className="flex w-full items-center justify-center gap-8 whitespace-nowrap font-semibold sm:justify-end lg:gap-12">
+                <div className="flex w-full items-center  gap-8 whitespace-nowrap font-semibold justify-end lg:gap-12">
                     {/* Links */}
-                    <div className="hidden h-full items-center gap-16 md:flex lg:gap-16">
+                    <div className="hidden h-full items-center gap-12 md:flex lg:gap-16">
                         <NavigationBarLinks links={navbarData.links} />
                     </div>
                     {/* Vertical line */}
-                    <div className="hidden h-5 w-0.5 rounded bg-gray-700 md:block" />
+                    <div className={navbarLine({...variant})} />
                     {/* Buttons */}
                     <div className="hidden-scrollbar flex gap-3 overflow-auto">
-                        <NavigationMenu className="md:hidden" links={navbarData.links} />
-                        <Button variant={{ style: "primary", color: "blue" }} href="https://go.wdcc.co.nz" newTab>
+                        <NavigationMobileMenu variant={{color: variant.color}} className="md:hidden" links={navbarData.links} />
+                        <Button variant={{ style: "primary", color: "blue" }} href="https://go.wdcc.co.nz" className="hidden md:block" newTab>
                             Join WDCC <Arrow />
                         </Button>
                     </div>
