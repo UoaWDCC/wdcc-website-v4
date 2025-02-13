@@ -13,7 +13,7 @@ export type Faq = {
     answer: string;
 };
 
-export type Project = {
+export type oldProject = {
     projectName: string;
     projectNameExtended?: string;
     client: string;
@@ -26,12 +26,12 @@ export type Project = {
     team: Team;
 };
 
-export type project = {
+export type Project = {
     // card stuff
     slug: string;
     year: string;
     client: string;
-    icon: {
+    icon?: {
         src: string;
         alt: string;
     };
@@ -42,12 +42,12 @@ export type project = {
     };
     description: {
         short: string;
-        extended: string;
+        extended?: string;
     };
     // for page
     brief: {
         description: string;
-        image: {
+        image?: {
             src: string;
             alt: string;
         };
@@ -58,6 +58,7 @@ export type project = {
         // button variant?
     }[];
     technologies: string[];
+    team: Team;
 };
 
 export type Event = {
@@ -75,15 +76,18 @@ export type Event = {
 };
 
 export type Team = {
-    techlead: { name: string; image?: string };
-    manager: { name: string; image?: string };
+    techlead: { name: string; image?: { src: string; alt: string } };
+    manager: { name: string; image?: { src: string; alt: string } };
     members: ProjectMember[];
 };
 
 export type ProjectMember = {
     name: string;
     role: "engineer" | "techlead" | "designer" | "manager";
-    image?: string;
+    image?: {
+        src: string;
+        alt: string;
+    };
 };
 
 export type PastEventType = string;

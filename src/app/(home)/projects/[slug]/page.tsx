@@ -1,8 +1,8 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 
-import { ParsePayloadProject } from "@/types/mapper/mapCMSToProject";
 import { Project } from "@/types/models";
+import { ParsePayloadProject } from "@/types/parser/ParsePayloadProject";
 
 import { getProject } from "@/actions/getProject";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
@@ -29,8 +29,8 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     }
 
     return {
-        title: project.projectName,
-        description: project.description,
+        title: project.name.title,
+        description: project.description.extended || project.description.short,
         openGraph: {
             images: [...previousImages],
         },
@@ -50,7 +50,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
     return (
         <StandardPageLayout>
-            <ProjectHeader backlink={{ label: "projects", href: "/projects" }} title={project.projectName} />
+            <ProjectHeader backlink={{ label: "projects", href: "/projects" }} title={project.name.title} />
             <IndividualProject project={project} />
         </StandardPageLayout>
     );

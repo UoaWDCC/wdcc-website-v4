@@ -24,16 +24,21 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
                 {/* I agree */} {/* done 🔥😎 */}
                 <p className="text-md">
                     <strong className="text-md">
-                        {project.projectNameExtended}
+                        {project.name.extended}
                         <br />
                         <br />
                         {project.client}
                     </strong>
                     <br />
                     <br />
-                    {project.descriptionExtended}
+                    {project.description.extended}
                 </p>
-                <ImageFit src={project.logo || placeholder600_400} alt="" height="300px" width="500px" />
+                <ImageFit
+                    src={project.icon?.src || placeholder600_400}
+                    alt={project.icon?.alt || "placeholder"}
+                    height="300px"
+                    width="500px"
+                />
             </div>
             <div className="mt-8 flex flex-col gap-4">
                 <h3 className="text-3xl font-semibold">Technologies</h3>

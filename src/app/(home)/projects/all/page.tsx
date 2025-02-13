@@ -1,5 +1,5 @@
-import { ParsePayloadProject } from "@/types/mapper/mapCMSToProject";
 import { Project } from "@/types/models";
+import { ParsePayloadProject } from "@/types/parser/ParsePayloadProject";
 
 import { getAllProjects } from "@/actions/getAllProjects";
 import Header from "@/components/layout/pageheaders/Header";
