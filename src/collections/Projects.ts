@@ -17,6 +17,7 @@ export const Project: CollectionConfig = {
             type: "upload",
             relationTo: "media",
             required: true,
+            displayPreview: true,
         },
         {
             label: "general",
@@ -80,6 +81,7 @@ export const Project: CollectionConfig = {
                     type: "upload",
                     relationTo: "media",
                     required: true,
+                    displayPreview: true,
                 },
             ],
         },
@@ -120,7 +122,7 @@ export const Project: CollectionConfig = {
                             type: "group",
                             fields: [
                                 { name: "name", type: "text", required: true },
-                                { name: "image", type: "upload", relationTo: "media" },
+                                { name: "image", type: "upload", relationTo: "media", displayPreview: true },
                             ],
                         },
                         {
@@ -129,7 +131,7 @@ export const Project: CollectionConfig = {
                             type: "group",
                             fields: [
                                 { name: "name", type: "text", required: true },
-                                { name: "image", type: "upload", relationTo: "media" },
+                                { name: "image", type: "upload", relationTo: "media", displayPreview: true },
                             ],
                         },
                     ],
@@ -150,7 +152,7 @@ export const Project: CollectionConfig = {
                             options: ["engineer", "designer"],
                             required: true,
                         },
-                        { name: "image", type: "upload", relationTo: "media" },
+                        { name: "image", type: "upload", relationTo: "media", displayPreview: true },
                     ],
                 },
             ],
