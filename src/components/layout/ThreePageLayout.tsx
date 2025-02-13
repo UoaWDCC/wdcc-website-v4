@@ -1,19 +1,30 @@
 "use client";
 
-import { MutableRefObject, useRef } from "react";
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
+import { useProgress } from "@react-three/drei";
+import { motion } from "motion/react";
+
+import { fadeopacity } from "@/libs/animations";
 
 const Scene = dynamic(() => import("@/components/three/scene/Scene"), { ssr: false });
 
 const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
-    const ref = useRef<HTMLDivElement>(null);
+    const [isLoaded, setLoaded] = useState(false);
+    const [wasActive, setWasActive] = useState(false);
+    const progress = useProgress();
+
+    useEffect(() => {
+        setWasActive(progress.active);
+        setLoaded(progress.total === progress.loaded && wasActive);
+    }, [progress]);
 
     return (
         <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            ref={ref}
+            // active == loading
+            initial="initial"
+            animate={isLoaded ? "animate" : "initial"}
+            variants={fadeopacity}
             style={{
                 position: "relative",
                 width: " 100%",
@@ -24,7 +35,6 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
         >
             <div className="relative flex h-dvh min-h-dvh flex-col overflow-x-hidden">{children}</div>
             {/* background scene by default */}
-            {/* @ts-expect-error - no children */}
             <Scene
                 style={{
                     zIndex: -1,
@@ -35,8 +45,6 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
                     height: "100vh",
                     pointerEvents: "none",
                 }}
-                eventSource={ref as MutableRefObject<HTMLDivElement>}
-                eventPrefix="client"
             />
         </motion.div>
     );

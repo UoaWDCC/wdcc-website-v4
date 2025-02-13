@@ -1,8 +1,9 @@
 import Image from 'next/image';
-import { EventCardType } from '../_data/eventTypes';
+import { Event } from '@/types/models';
+import Link from 'next/link';
 
 interface EventCardProps {
-    event: EventCardType;
+    event: Event;
 }
 
 const categoryColors = {
@@ -12,12 +13,14 @@ const categoryColors = {
 }
 
 export default function EventCard({ event }: EventCardProps) {
+    const slug = event.slug || "not-found";
+
     return (
-        <div className="bg-gray-50 rounded-2xl flex-col justify-start items-end gap-9 inline-flex overflow-hidden
+        <Link href={`/events/${slug}`} className="bg-gray-50 rounded-2xl flex-col justify-start items-end gap-9 inline-flex overflow-hidden
         transition will-change-auto duration-500 hover:duration-200 hover:-translate-x-1 hover:-translate-y-1 cursor-pointer hover:drop-shadow-cardLift
         ">
             <div className="">
-                <Image src={event.image} alt={event.imageAlt} width={600} height={400} className="rounded-2xl" />
+                <Image src={event.thumbnail} alt={event.imageAlt} width={600} height={400} className="rounded-2xl" />
             </div>
             <div className="self-stretch px-8 pb-8 flex-col justify-start items-center gap-6 flex">
                 <div className="justify-start items-start gap-2 inline-flex">
@@ -26,7 +29,7 @@ export default function EventCard({ event }: EventCardProps) {
                     </div>
                 </div>
                 <div className="self-stretch flex-col justify-start items-start gap-3 flex">
-                    <p className="self-stretch text-center text-gray-800 text-xl font-bold leading-none">{event.title}</p>
+                    <p className="self-stretch text-center text-black text-xl font-bold leading-[25.20px]">{event.title}</p>
                     <div className="self-stretch h-[38px] flex-col justify-start items-start flex">
                         <p className="self-stretch text-center text-[#1453b7] font-bold leading-tight" suppressHydrationWarning>{event.time.toLocaleString()}</p>
                         <p className="self-stretch text-center text-[#1453b7] font-medium italic leading-tight">{event.location}</p>
@@ -34,6 +37,6 @@ export default function EventCard({ event }: EventCardProps) {
                     <p className="self-stretch text-center font-medium leading-tight">{event.description}</p>
                 </div>
             </div>
-        </div >
+        </Link >
     );
 }

@@ -3,11 +3,11 @@
 import { useState } from "react";
 
 import EventCard from "./EventCard";
-import { EventCardType } from "../_data/eventTypes";
+import { Event } from "@/types/models";
 import EventCategoryFilter from "./EventCategoryFilter";
 
 interface UpcomingEventsProps {
-    upcomingEvents: EventCardType[];
+    upcomingEvents: Event[];
 }
 
 export default function UpcomingEventsSection({ upcomingEvents }: UpcomingEventsProps) {

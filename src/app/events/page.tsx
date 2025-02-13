@@ -3,7 +3,7 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import EventsRoadmap from "./_components/EventsRoadmap";
 import UpcomingEventsSection from "./_components/UpcomingEventsSection";
-import { eventsData } from "./_data/events.data";
+import { eventsData } from "./_data/events_data";
 
 export default function EventsPage() {
     return (
