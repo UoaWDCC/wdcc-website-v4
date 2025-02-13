@@ -15,7 +15,7 @@ import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";
 
 import { Anchor } from "../../primitives/Anchor";
-import NavigationMenu from "./NavigationMobileMenu";
+import NavigationMobileMenu from "./NavigationMobileMenu";
 import { tv, VariantProps } from "tailwind-variants";
 
 const hoverContext = createContext({} as hoverContextProps);
@@ -35,11 +35,11 @@ export const useNavHover = () => {
 };
 
 const navbar = tv({
-    base: "absolute top-0 group z-50 flex w-full select-none flex-col items-center justify-between gap-4 py-4 sm:flex-row sm:px-16 lg:py-4",
+    base: "absolute top-0 group z-50 flex w-full select-none items-center justify-between gap-4 py-4 px-8 lg:px-16",
     variants: {
         color: {
-            light: "text-white",
-            dark: "text-gray-800",
+            dark: "text-white",
+            light: "text-gray-800",
         },
     },
 });
@@ -48,8 +48,8 @@ const navbarBg = tv({
     base: "absolute left-0 top-0 -z-10 size-full w-dvw",
     variants: {
         color: {
-            light: "bg-foreground",
-            dark: "bg-background",
+            dark: "bg-foreground",
+            light: "bg-background",
         },
     },
 })
@@ -59,7 +59,7 @@ export interface NavbarProps {
     className?: ClassName
 }
 
-export default function NavigationBar({variant = {color: "dark"}}: NavbarProps) {
+export default function NavigationBar({variant = {color: "light"}}: NavbarProps) {
     const [isHovering, sethover] = useState(false);
 
     const handleDropEnter = () => {
@@ -96,17 +96,17 @@ export default function NavigationBar({variant = {color: "dark"}}: NavbarProps) 
                 <Anchor href="/">
                     <WDCCLogo className="fill-current transition duration-150 hover:opacity-70 lg:block" />
                 </Anchor>
-                <div className="flex w-full items-center justify-center gap-8 whitespace-nowrap font-semibold sm:justify-end lg:gap-12">
+                <div className="flex w-full items-center  gap-8 whitespace-nowrap font-semibold justify-end lg:gap-12">
                     {/* Links */}
-                    <div className="hidden h-full items-center gap-16 md:flex lg:gap-16">
+                    <div className="hidden h-full items-center gap-12 md:flex lg:gap-16">
                         <NavigationBarLinks links={navbarData.links} />
                     </div>
                     {/* Vertical line */}
                     <div className="hidden h-5 w-0.5 rounded bg-gray-700 md:block" />
                     {/* Buttons */}
                     <div className="hidden-scrollbar flex gap-3 overflow-auto">
-                        <NavigationMenu className="md:hidden" links={navbarData.links} />
-                        <Button variant={{ style: "primary", color: "blue" }} href="https://go.wdcc.co.nz" newTab>
+                        <NavigationMobileMenu variant={{color: variant.color}} className="md:hidden" links={navbarData.links} />
+                        <Button variant={{ style: "primary", color: "blue" }} href="https://go.wdcc.co.nz" className="hidden md:block" newTab>
                             Join WDCC <Arrow />
                         </Button>
                     </div>

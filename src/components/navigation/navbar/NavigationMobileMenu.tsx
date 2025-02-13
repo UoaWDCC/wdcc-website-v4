@@ -8,9 +8,27 @@ import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";
 
 import type { NavigationLink } from "./_data/navbarTypes";
+import MenuIcon from "@/assets/svg/MenuIcon";
+import { tv, VariantProps } from "tailwind-variants";
+
+const mobileNav = tv({
+    base: "",
+    variants: {
+        color: {
+            dark: "stroke-background",
+            light: "stroke-foreground",
+        },
+    },
+})
+
+export interface NavbarProps {
+    variant?: VariantProps<typeof mobileNav>;
+    className?: string;
+    links: NavigationLink[];
+}
 
 // ONLY USE CLASSNAME TO CHANGE MEDIA QUERY
-const NavigationMenu = ({ links, className }: { links: NavigationLink[]; className?: string }) => {
+const NavigationMobileMenu = ({ links, className, variant }: NavbarProps) => {
     const [toggle, setToggle] = useState(false);
 
     const handleToggle = () => {
@@ -19,14 +37,12 @@ const NavigationMenu = ({ links, className }: { links: NavigationLink[]; classNa
 
     return (
         <>
-            <Button
-                variant={{ style: "secondary", color: "blue" }}
-                onClick={handleToggle}
-                className={cn("", className)}
-            >
-                Menu
-            </Button>
+            <button className={cn("", className, mobileNav({...variant}))} onClick={handleToggle}>
+                <MenuIcon/>
+            </button>
+
             {/* todo: this should lock scrolling from happening */}
+
             <motion.div
                 className={cn(
                     "fixed left-0 top-0 h-screen w-full bg-blue-900/80 px-10 pt-8 text-white backdrop-blur-lg",
@@ -67,7 +83,7 @@ const NavigationMenu = ({ links, className }: { links: NavigationLink[]; classNa
     );
 };
 
-export default NavigationMenu;
+export default NavigationMobileMenu;
 
 const containerVariant = (toggle: boolean) => {
     return {

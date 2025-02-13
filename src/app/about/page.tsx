@@ -20,7 +20,7 @@ export default function AboutPage() {
     const endImage = aboutData.endImage;
 
     return (
-        <StandardPageLayout navColor="light">
+        <StandardPageLayout navColor="dark">
             <Header
                 variant={{ style: "primary", color: "brand" }}
                 title={header.title}
