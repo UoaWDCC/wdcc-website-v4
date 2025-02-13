@@ -12,7 +12,6 @@ import { NavigationLink } from "@/components/navigation/navbar/_data/navbarTypes
 import DropDown from "@/components/navigation/navbar/DropDownLink";
 import { UnderlineLink } from "@/components/navigation/UnderlineLink";
 import { Button } from "@/components/primitives/Button";
-import { cn } from "@/libs/utils";
 
 import { Anchor } from "../../primitives/Anchor";
 import NavigationMobileMenu from "./NavigationMobileMenu";
