@@ -15,7 +15,7 @@ export default function StandardPageLayout({ children, navColor, ...props }: Sta
     return (
         <div {...props} className={cn("flex min-h-dvh flex-col", props.className)}>
             <div className="relative flex h-dvh min-h-dvh flex-col overflow-x-hidden">
-                <div className="fixed top-0 z-10 w-full">
+                <div className="z-10 w-full">
                     <NavigationBar variant={{color: navColor}}/>
                 </div>
                 <main className="responsive-body grow">{children}</main>
