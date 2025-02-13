@@ -3,8 +3,10 @@ import type { CollectionConfig } from "payload";
 import { technologiesList } from "@/assets/svg/technologies";
 import { SLUG } from "@/libs/enums/slug";
 
-export const Project: CollectionConfig = {
-    slug: SLUG.PROJECTS,
+const currentYear = new Date().getFullYear();
+
+export const TestSlug: CollectionConfig = {
+    slug: SLUG.TEST,
     access: {
         read: () => true,
     },
@@ -25,14 +27,20 @@ export const Project: CollectionConfig = {
                 {
                     name: "slug",
                     type: "text",
-                    defaultValue: `2025-slug`,
+                    defaultValue: `${currentYear}-slug`,
                     required: true,
                     unique: true,
                 },
                 {
                     name: "year",
-                    type: "text",
-                    defaultValue: `2025`,
+                    type: "date",
+                    defaultValue: () => new Date().toISOString(),
+                    admin: {
+                        date: {
+                            pickerAppearance: "monthOnly",
+                            displayFormat: "yyyy",
+                        },
+                    },
                     required: true,
                 },
                 {
@@ -108,51 +116,42 @@ export const Project: CollectionConfig = {
             ],
         },
         {
-            name: "team",
-            type: "group",
+            type: "row",
             fields: [
                 {
-                    type: "row",
-                    fields: [
-                        {
-                            name: "manager",
-                            label: "project manager",
-                            type: "group",
-                            fields: [
-                                { name: "name", type: "text", required: true },
-                                { name: "image", type: "upload", relationTo: "media" },
-                            ],
-                        },
-                        {
-                            name: "techlead",
-                            label: "tech lead",
-                            type: "group",
-                            fields: [
-                                { name: "name", type: "text", required: true },
-                                { name: "image", type: "upload", relationTo: "media" },
-                            ],
-                        },
-                    ],
-                },
-                {
-                    name: "members",
-                    label: "project members",
-                    type: "array",
-                    admin: {
-                        className: "horizontal-array",
-                    },
-                    defaultValue: [{}, {}],
+                    name: "project manager",
+                    type: "group",
                     fields: [
                         { name: "name", type: "text", required: true },
-                        {
-                            name: "role",
-                            type: "select",
-                            options: ["engineer", "designer"],
-                            required: true,
-                        },
                         { name: "image", type: "upload", relationTo: "media" },
                     ],
                 },
+                {
+                    name: "technical lead",
+                    type: "group",
+                    fields: [
+                        { name: "name", type: "text", required: true },
+                        { name: "image", type: "upload", relationTo: "media" },
+                    ],
+                },
+            ],
+        },
+        {
+            name: "project members",
+            type: "array",
+            admin: {
+                className: "horizontal-array",
+            },
+            defaultValue: [{}, {}],
+            fields: [
+                { name: "name", type: "text", required: true },
+                {
+                    name: "role",
+                    type: "select",
+                    options: ["engineer", "designer"],
+                    required: true,
+                },
+                { name: "image", type: "upload", relationTo: "media" },
             ],
         },
     ],

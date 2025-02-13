@@ -1,4 +1,5 @@
 export const SLUG = {
-    EVENTS: "Events" as string,
-    PROJECTS: "Projects" as string,
+    EVENTS: "event" as const,
+    PROJECTS: "project" as const,
+    TEST: "test" as const,
 };

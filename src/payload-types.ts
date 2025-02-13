@@ -13,8 +13,9 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
-    Events: Event;
-    Projects: Project;
+    event: Event;
+    project: Project;
+    test: Test;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -23,8 +24,9 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    Events: EventsSelect<false> | EventsSelect<true>;
-    Projects: ProjectsSelect<false> | ProjectsSelect<true>;
+    event: EventSelect<false> | EventSelect<true>;
+    project: ProjectSelect<false> | ProjectSelect<true>;
+    test: TestSelect<false> | TestSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -100,7 +102,7 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "Events".
+ * via the `definition` "event".
  */
 export interface Event {
   id: number;
@@ -120,30 +122,60 @@ export interface Event {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "Projects".
+ * via the `definition` "project".
  */
 export interface Project {
   id: number;
-  projectName: string;
-  projectNameExtended: string;
-  client: string;
-  description: string;
-  descriptionExtended: string;
-  logo: number | Media;
+  cardImage: number | Media;
+  slug: string;
   year: string;
-  technologies?:
+  client: string;
+  name: {
+    default: string;
+    extended?: string | null;
+  };
+  description: string;
+  brief: {
+    description: string;
+    image: number | Media;
+  };
+  technologies: (
+    | 'astro'
+    | 'aws'
+    | 'css'
+    | 'drizzleorm'
+    | 'figma'
+    | 'fly'
+    | 'html'
+    | 'javascript'
+    | 'missing'
+    | 'mongodb'
+    | 'motion'
+    | 'nextjs'
+    | 'postgresql'
+    | 'python'
+    | 'react'
+    | 'redis'
+    | 'supabase'
+    | 'tailwindcss'
+    | 'twitch'
+    | 'typescript'
+    | 'vite'
+    | 'vitest'
+  )[];
+  links?:
     | {
-        technology?: string | null;
+        label: string;
+        url: string;
         id?: string | null;
       }[]
     | null;
-  slug?: string | null;
   team: {
-    techlead: {
+    manager: {
       name: string;
       image?: (number | null) | Media;
     };
-    manager: {
+    techlead: {
       name: string;
       image?: (number | null) | Media;
     };
@@ -171,6 +203,75 @@ export interface Project {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "test".
+ */
+export interface Test {
+  id: number;
+  cardImage: number | Media;
+  slug: string;
+  year: string;
+  client: string;
+  name: {
+    default: string;
+    extended?: string | null;
+  };
+  description: string;
+  brief: {
+    description: string;
+    image: number | Media;
+  };
+  technologies: (
+    | 'astro'
+    | 'aws'
+    | 'css'
+    | 'drizzleorm'
+    | 'figma'
+    | 'fly'
+    | 'html'
+    | 'javascript'
+    | 'missing'
+    | 'mongodb'
+    | 'motion'
+    | 'nextjs'
+    | 'postgresql'
+    | 'python'
+    | 'react'
+    | 'redis'
+    | 'supabase'
+    | 'tailwindcss'
+    | 'twitch'
+    | 'typescript'
+    | 'vite'
+    | 'vitest'
+  )[];
+  links?:
+    | {
+        label: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  'project manager': {
+    name: string;
+    image?: (number | null) | Media;
+  };
+  'technical lead': {
+    name: string;
+    image?: (number | null) | Media;
+  };
+  'project members'?:
+    | {
+        name: string;
+        role: 'engineer' | 'designer';
+        image?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -185,12 +286,16 @@ export interface PayloadLockedDocument {
         value: number | Media;
       } | null)
     | ({
-        relationTo: 'Events';
+        relationTo: 'event';
         value: number | Event;
       } | null)
     | ({
-        relationTo: 'Projects';
+        relationTo: 'project';
         value: number | Project;
+      } | null)
+    | ({
+        relationTo: 'test';
+        value: number | Test;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -270,9 +375,9 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "Events_select".
+ * via the `definition` "event_select".
  */
-export interface EventsSelect<T extends boolean = true> {
+export interface EventSelect<T extends boolean = true> {
   alt?: T;
   prefix?: T;
   updatedAt?: T;
@@ -289,33 +394,44 @@ export interface EventsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "Projects_select".
+ * via the `definition` "project_select".
  */
-export interface ProjectsSelect<T extends boolean = true> {
-  projectName?: T;
-  projectNameExtended?: T;
-  client?: T;
-  description?: T;
-  descriptionExtended?: T;
-  logo?: T;
+export interface ProjectSelect<T extends boolean = true> {
+  cardImage?: T;
+  slug?: T;
   year?: T;
-  technologies?:
+  client?: T;
+  name?:
     | T
     | {
-        technology?: T;
+        default?: T;
+        extended?: T;
+      };
+  description?: T;
+  brief?:
+    | T
+    | {
+        description?: T;
+        image?: T;
+      };
+  technologies?: T;
+  links?:
+    | T
+    | {
+        label?: T;
+        url?: T;
         id?: T;
       };
-  slug?: T;
   team?:
     | T
     | {
-        techlead?:
+        manager?:
           | T
           | {
               name?: T;
               image?: T;
             };
-        manager?:
+        techlead?:
           | T
           | {
               name?: T;
@@ -342,6 +458,59 @@ export interface ProjectsSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "test_select".
+ */
+export interface TestSelect<T extends boolean = true> {
+  cardImage?: T;
+  slug?: T;
+  year?: T;
+  client?: T;
+  name?:
+    | T
+    | {
+        default?: T;
+        extended?: T;
+      };
+  description?: T;
+  brief?:
+    | T
+    | {
+        description?: T;
+        image?: T;
+      };
+  technologies?: T;
+  links?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        id?: T;
+      };
+  'project manager'?:
+    | T
+    | {
+        name?: T;
+        image?: T;
+      };
+  'technical lead'?:
+    | T
+    | {
+        name?: T;
+        image?: T;
+      };
+  'project members'?:
+    | T
+    | {
+        name?: T;
+        role?: T;
+        image?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

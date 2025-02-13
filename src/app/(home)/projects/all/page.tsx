@@ -1,4 +1,4 @@
-import { mapCMSToProject } from "@/types/mapper/mapCMSToProject";
+import { ParsePayloadProject } from "@/types/mapper/mapCMSToProject";
 import { Project } from "@/types/models";
 
 import { getAllProjects } from "@/actions/getAllProjects";
@@ -11,7 +11,7 @@ import { projectsData } from "../_data/projects_data";
 export const revalidate = 60;
 
 export default async function ProjectsPage() {
-    const projects = (await getAllProjects()).map(mapCMSToProject);
+    const projects = (await getAllProjects()).map(ParsePayloadProject);
     const combined = [...projects, ...projectsData] as Project[];
 
     return (

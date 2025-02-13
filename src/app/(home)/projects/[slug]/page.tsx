@@ -1,7 +1,7 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 
-import { mapCMSToProject } from "@/types/mapper/mapCMSToProject";
+import { ParsePayloadProject } from "@/types/mapper/mapCMSToProject";
 import { Project } from "@/types/models";
 
 import { getProject } from "@/actions/getProject";
@@ -43,7 +43,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     let project = projectsData.find((project) => project.slug === slug) as Project | undefined;
 
     // if no hard coded project search payload CMS
-    if (!project) project = mapCMSToProject(await getProject(slug));
+    if (!project) project = ParsePayloadProject(await getProject(slug));
     if (!project) {
         notFound();
     }

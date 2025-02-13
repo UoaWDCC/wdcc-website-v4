@@ -15,7 +15,7 @@ export type Faq = {
 
 export type Project = {
     projectName: string;
-    projectNameExtended: string;
+    projectNameExtended?: string;
     client: string;
     description: string;
     descriptionExtended: string;
@@ -24,6 +24,40 @@ export type Project = {
     technologies: string[];
     slug?: string;
     team: Team;
+};
+
+export type project = {
+    // card stuff
+    slug: string;
+    year: string;
+    client: string;
+    icon: {
+        src: string;
+        alt: string;
+    };
+    // shared
+    name: {
+        title: string;
+        extended?: string;
+    };
+    description: {
+        short: string;
+        extended: string;
+    };
+    // for page
+    brief: {
+        description: string;
+        image: {
+            src: string;
+            alt: string;
+        };
+    };
+    links?: {
+        label: string;
+        url: string;
+        // button variant?
+    }[];
+    technologies: string[];
 };
 
 export type Event = {

@@ -26,6 +26,31 @@ interface TechnologySVGProps<T = any> {
     component: (props: T) => JSX.Element;
 }
 
+export const technologiesList = new Set([
+    "astro",
+    "aws",
+    "css",
+    "drizzleorm",
+    "figma",
+    "fly",
+    "html",
+    "javascript",
+    "missing",
+    "mongodb",
+    "motion",
+    "nextjs",
+    "postgresql",
+    "python",
+    "react",
+    "redis",
+    "supabase",
+    "tailwindcss",
+    "twitch",
+    "typescript",
+    "vite",
+    "vitest",
+] as const);
+
 export function getTechnologySvgWithName(name: string): TechnologySVGProps {
     switch (String(name).toLowerCase()) {
         case "astro":

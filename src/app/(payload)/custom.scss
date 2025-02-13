@@ -1,0 +1,17 @@
+.horizontal-array .array-field__row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.horizontal-array > .array-field__draggable-rows {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+@media only screen and (max-width: 600px) {
+    .horizontal-array > .array-field__draggable-rows {
+        display: grid;
+        grid-template-columns: auto;
+    }
+}

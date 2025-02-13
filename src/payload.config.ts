@@ -2,14 +2,15 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import { postgresAdapter } from "@payloadcms/db-postgres";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { HTMLConverterFeature, lexicalEditor, LinkFeature } from "@payloadcms/richtext-lexical";
 import { s3Storage } from "@payloadcms/storage-s3";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 
 import { Events } from "./collections/Events";
 import { Media } from "./collections/Media";
-import { Projects } from "./collections/Projects";
+import { Project } from "./collections/Projects";
+import { TestSlug } from "./collections/TestSlug";
 import { Users } from "./collections/Users";
 
 const filename = fileURLToPath(import.meta.url);
@@ -22,8 +23,10 @@ export default buildConfig({
             baseDir: path.resolve(dirname),
         },
     },
-    collections: [Users, Media, Events, Projects],
-    editor: lexicalEditor(),
+    collections: [Users, Media, Events, Project, TestSlug],
+    editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [...defaultFeatures, LinkFeature({}), HTMLConverterFeature({})],
+    }),
     secret: process.env.PAYLOAD_SECRET || "",
     typescript: {
         outputFile: path.resolve(dirname, "payload-types.ts"),
@@ -34,16 +37,21 @@ export default buildConfig({
         },
         migrationDir: "./src/migrations",
     }),
+    upload: {
+        limits: {
+            fileSize: 5000000,
+        },
+    },
     plugins: [
         s3Storage({
             collections: {
                 media: {
                     prefix: "media ",
                 },
-                Projects: {
+                project: {
                     prefix: "Projects",
                 },
-                Events: {
+                event: {
                     prefix: "Events",
                 },
             },
@@ -57,6 +65,5 @@ export default buildConfig({
             },
         }),
     ],
-
     sharp,
 });
