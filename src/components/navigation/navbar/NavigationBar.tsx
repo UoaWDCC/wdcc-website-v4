@@ -75,7 +75,7 @@ export interface NavbarProps {
  *
  * Takes the following parameters as props of variants:
  * @variation color [dark, light] - the theme of the navbar.
- * 
+ *
  * This theme references the background of the top of the page on which the navbar is placed.
  * On light backgrounds, use light navbar. On dark backgrounds, use dark navbar.
  *
