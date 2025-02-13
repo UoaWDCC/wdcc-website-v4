@@ -73,7 +73,7 @@ function DropDownSublink({ link, open }: { link: NavigationLink; open: boolean }
             <motion.div
                 initial="hide"
                 animate={open ? "show" : "hide"}
-                className="group/link relative cursor-pointer transition-[padding-left] *:*:inline-block *:inline-block hover:pl-1"
+                className="group/link relative cursor-pointer transition-[padding-left] *:*:inline-block *:inline-block hover:pl-1 opacity-70 hover:opacity-100"
             >
                 {/* Per-letter animation */}
                 {link.label.split("").map((char, i) => (
