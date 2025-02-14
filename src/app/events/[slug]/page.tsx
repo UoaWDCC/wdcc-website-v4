@@ -4,12 +4,14 @@ import RouteDisplay from "@/components/debug/RouteDisplay";
 import EventHeader from "@/components/layout/pageheaders/EventHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
+import { eventsData } from "../_data/events.data";
 import IndividualEvent from "./_component/IndividualEvent";
-import { eventsData } from "../_data/events_data";
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+    const events = eventsData.eventsGrid.events;
+
     const slug = (await params).slug;
-    const event = eventsData.find((e) => e.slug === slug);
+    const event = events.find((e) => e.slug === slug);
 
     if (!event) {
         notFound();
