@@ -8,10 +8,10 @@ import { teamFaqData } from "./teamFaq.data";
 export interface FaqSection {
     name: string;
     faqs: Faq[];
-    colors: faqColors;
+    colors: FaqColors;
 }
 
-export interface faqColors {
+export interface FaqColors {
     tabBg: string;
     tabCircle: string;
 }
