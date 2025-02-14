@@ -40,10 +40,7 @@ export type Project = {
         title: string;
         extended?: string;
     };
-    description: {
-        short: string;
-        extended?: string;
-    };
+    description: string;
     // for page
     brief: {
         description: string;
@@ -52,11 +49,14 @@ export type Project = {
             alt: string;
         };
     };
-    links?: {
+    primaryLink?: {
         label: string;
-        url: string;
-        // button variant?
-    }[];
+        href: string;
+    };
+    secondaryLink?: {
+        label: string;
+        href: string;
+    };
     technologies: string[];
     team: Team;
 };

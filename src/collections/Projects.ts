@@ -8,17 +8,7 @@ export const Project: CollectionConfig = {
     access: {
         read: () => true,
     },
-    admin: {
-        useAsTitle: "slug", // first column in edit view
-    },
     fields: [
-        {
-            name: "cardImage",
-            type: "upload",
-            relationTo: "media",
-            required: true,
-            displayPreview: true,
-        },
         {
             label: "general",
             type: "collapsible",
@@ -94,8 +84,8 @@ export const Project: CollectionConfig = {
             required: true,
         },
         {
-            name: "links",
-            type: "array",
+            name: "primaryLink",
+            type: "group",
             fields: [
                 {
                     name: "label",
@@ -103,7 +93,23 @@ export const Project: CollectionConfig = {
                     required: true,
                 },
                 {
-                    name: "url",
+                    name: "href",
+                    type: "text",
+                    required: true,
+                },
+            ],
+        },
+        {
+            name: "secondaryLink",
+            type: "group",
+            fields: [
+                {
+                    name: "label",
+                    type: "text",
+                    required: true,
+                },
+                {
+                    name: "href",
                     type: "text",
                     required: true,
                 },

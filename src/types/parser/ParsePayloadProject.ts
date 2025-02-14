@@ -10,16 +10,14 @@ export const ParsePayloadProject = (cms: CMSProject): Project | undefined => {
         year: cms.year,
         client: cms.client,
         icon: {
-            src: cms.thumbnailURL || "",
+            src: cms.url || "",
             alt: cms.slug || "",
         },
         name: {
             title: cms.name.default,
             extended: cms.name.extended || undefined,
         },
-        description: {
-            short: cms.description,
-        },
+        description: cms.description,
         brief: {
             description: cms.brief.description,
             image: (!!cms.brief.image || undefined) && {
@@ -27,10 +25,14 @@ export const ParsePayloadProject = (cms: CMSProject): Project | undefined => {
                 alt: (cms.brief.image as Media).alt as string,
             },
         },
-        links: cms.links?.map((link) => ({
-            label: link.label,
-            url: link.url,
-        })),
+        primaryLink: cms.primaryLink && {
+            label: cms.primaryLink.label,
+            href: cms.primaryLink.href,
+        },
+        secondaryLink: cms.secondaryLink && {
+            label: cms.secondaryLink.label,
+            href: cms.secondaryLink.href,
+        },
         technologies: cms.technologies?.flatMap((tech) => tech ?? []) || [],
         team: {
             techlead: {

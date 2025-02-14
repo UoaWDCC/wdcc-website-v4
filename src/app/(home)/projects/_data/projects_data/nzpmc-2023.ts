@@ -2,10 +2,7 @@ import type { Project } from "@/types/models";
 
 export const nzpmc2023: Project = {
     name: { title: "NZPMC exam portal", extended: "NZPMC exam portal etc" },
-    description: {
-        short: "A whole paragraph describing what kind of project it is, including tech stack??\n\nYup.",
-        extended: "A whole paragraph describing what kind of project it is, including tech stack??\n\nYup.",
-    },
+    description: "A whole paragraph describing what kind of project it is, including tech stack??\n\nYup.",
     icon: undefined,
     year: "2023",
     client: "NZPMC",

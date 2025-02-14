@@ -126,7 +126,6 @@ export interface Event {
  */
 export interface Project {
   id: number;
-  cardImage: number | Media;
   slug: string;
   year: string;
   client: string;
@@ -163,13 +162,14 @@ export interface Project {
     | 'vite'
     | 'vitest'
   )[];
-  links?:
-    | {
-        label: string;
-        url: string;
-        id?: string | null;
-      }[]
-    | null;
+  primaryLink: {
+    label: string;
+    href: string;
+  };
+  secondaryLink: {
+    label: string;
+    href: string;
+  };
   team: {
     manager: {
       name: string;
@@ -397,7 +397,6 @@ export interface EventSelect<T extends boolean = true> {
  * via the `definition` "project_select".
  */
 export interface ProjectSelect<T extends boolean = true> {
-  cardImage?: T;
   slug?: T;
   year?: T;
   client?: T;
@@ -415,12 +414,17 @@ export interface ProjectSelect<T extends boolean = true> {
         image?: T;
       };
   technologies?: T;
-  links?:
+  primaryLink?:
     | T
     | {
         label?: T;
-        url?: T;
-        id?: T;
+        href?: T;
+      };
+  secondaryLink?:
+    | T
+    | {
+        label?: T;
+        href?: T;
       };
   team?:
     | T

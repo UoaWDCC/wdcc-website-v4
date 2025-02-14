@@ -31,11 +31,11 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
                     </strong>
                     <br />
                     <br />
-                    {project.description.extended}
+                    {project.brief.description}
                 </p>
                 <ImageFit
-                    src={project.icon?.src || placeholder600_400}
-                    alt={project.icon?.alt || "placeholder"}
+                    src={project.brief.image?.src || placeholder600_400}
+                    alt={project.brief.image?.alt || "placeholder"}
                     height="300px"
                     width="500px"
                 />

@@ -1,7 +1,10 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { Project } from "@/types/models";
+
+import WDCCLogo from "@/assets/svg/WDCCLogo";
 
 import { ProjectTag } from "./ProjectTag";
 
@@ -16,13 +19,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
             className="flex w-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-gray-50 transition duration-500 will-change-auto hover:-translate-x-1 hover:-translate-y-1 hover:drop-shadow-cardLift hover:duration-200"
             href={`/projects/${slug}`}
         >
-            <div className="center-content h-60 w-full bg-[linear-gradient(106.75deg,#8FA7FF,#4525A7)] text-white">
-                Image Here
+            <div className="center-content relative h-60 w-full bg-[linear-gradient(106.75deg,#8FA7FF,#4525A7)]">
+                {project.icon ? (
+                    <Image fill className="object-cover" src={project.icon.src} alt={project.icon.alt} />
+                ) : (
+                    <WDCCLogo className="w-40 fill-white" />
+                )}
             </div>
             <div className="flex flex-col gap-6 px-12 py-10">
                 <div className="flex flex-col gap-3">
                     <h2 className="text-2xl font-bold leading-none">{project.name.title}</h2>
-                    <p className="leading-[1.25]">{project.description.short}</p>
+                    <p className="leading-[1.25]">{project.description}</p>
                 </div>
                 <div className="mt-auto flex flex-wrap gap-2 whitespace-nowrap">
                     <ProjectTag className="bg-blue-100 text-blue-800" tagText={`${project.year} project`} />

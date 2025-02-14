@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 
     return {
         title: project.name.title,
-        description: project.description.extended || project.description.short,
+        description: project.description,
         openGraph: {
             images: [...previousImages],
         },
@@ -50,7 +50,16 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
     return (
         <StandardPageLayout>
-            <ProjectHeader backlink={{ label: "projects", href: "/projects" }} title={project.name.title} />
+            <ProjectHeader
+                backlink={{ label: "projects", href: "/projects" }}
+                title={project.name.title}
+                primaryButton={
+                    project.primaryLink && { label: project.primaryLink.label, href: project.primaryLink.href }
+                }
+                secondaryButton={
+                    project.secondaryLink && { label: project.secondaryLink.label, href: project.secondaryLink.href }
+                }
+            />
             <IndividualProject project={project} />
         </StandardPageLayout>
     );
