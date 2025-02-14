@@ -115,6 +115,7 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
                 >
                     <motion.div
                         className={navbarBg({ ...variant })}
+                        initial="initial"
                         animate="animate"
                         variants={containerVariant(isHovering)}
                     />
