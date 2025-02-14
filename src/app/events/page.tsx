@@ -3,13 +3,13 @@ import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import EventsRoadmap from "./_components/EventsRoadmap";
-import UpcomingEventsSection from "./_components/UpcomingEventsSection";
+import RecentEventsSection from "./_components/RecentEventsSection";
 import { eventsData } from "./_data/events.data";
 
 export default function EventsPage() {
     const headerData = eventsData.header;
     const roadmapData = eventsData.roadmap;
-    // const eventsGridData = eventsData.eventsGrid;
+    const eventsGridData = eventsData.eventsGrid;
 
     return (
         <StandardPageLayout>
@@ -28,7 +28,11 @@ export default function EventsPage() {
                 secondaryButton={{ label: "All events", href: "/events/all" }}
             />
             <EventsRoadmap title={roadmapData.title} image={roadmapData.image} />
-            <UpcomingEventsSection upcomingEvents={eventsData.eventsGrid.events} />
+            <RecentEventsSection
+                title={eventsGridData.title}
+                categories={eventsGridData.categories}
+                events={eventsGridData.events}
+            />
         </StandardPageLayout>
     );
 }
