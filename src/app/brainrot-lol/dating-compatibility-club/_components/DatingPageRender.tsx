@@ -52,7 +52,7 @@ export default function DatingPage() {
                     </ThreeLayout>
                     :
                     <>
-                        <StandardPageLayout navColor="light">
+                        <StandardPageLayout navColor="dark">
                             <div
                                 className="absolute top-0 -z-20 w-full h-[100vh] bg-gradient-to-b from-[#DD3173] to-[#DF99B9]">
                             </div>

@@ -20,7 +20,7 @@ export default function Home() {
             <>
                 <div className="absolute -z-20 w-full h-[100vh] bg-gradient-to-b from-[#DD3173] to-[#DF99B9]">
                 </div>
-                <StandardPageLayout navColor="light">
+                <StandardPageLayout navColor="dark">
                     <div className="flex flex-col gap-10 h-[100vh] justify-center max-w-[600px]">
                         <p className="w-fit tracking-[0.15em] text-xs font-normal text-white bg-red-500 opacity-80">WDCC-TECH
                             CONFIDENTIAL /
