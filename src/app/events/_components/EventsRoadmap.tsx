@@ -1,8 +1,18 @@
-export default function EventsRoadmap() {
+import Image, { StaticImageData } from "next/image";
+
+interface EventsRoadmapProps {
+    title: string;
+    image: {
+        src: StaticImageData;
+        alt: string;
+    };
+}
+
+export default function EventsRoadmap({ title, image }: EventsRoadmapProps) {
     return (
         <div className="py-20">
-            <h2 className="text-3xl font-bold py-10">Events Roadmap 2025</h2>
-            <div className="center-content h-[40em] bg-slate-300 rounded-2xl">EventsRoadmap</div>
+            <h2 className="py-10 text-3xl font-bold">{title}</h2>
+            <Image className="w-full rounded-2xl" src={image.src} alt={image.alt} />
         </div>
     );
 }

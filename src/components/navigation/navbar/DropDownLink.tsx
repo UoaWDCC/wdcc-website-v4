@@ -18,9 +18,13 @@ export default function DropDown({ link, ...props }: DropdownProps) {
     const { isHovering, handleDropEnter } = useNavHover();
 
     return (
-        <motion.div className="relative flex flex-col gap-4" onHoverStart={handleDropEnter}>
+        <motion.div className="relative flex flex-col gap-4">
             {/* Main link in navbar */}
-            <BracketLink {...props} className={cn("whitespace-nowrap", props.className)}>
+            <BracketLink
+                {...props}
+                onPointerEnter={handleDropEnter}
+                className={cn("whitespace-nowrap", props.className)}
+            >
                 {link.label}
             </BracketLink>
 
@@ -73,7 +77,7 @@ function DropDownSublink({ link, open }: { link: NavigationLink; open: boolean }
             <motion.div
                 initial="hide"
                 animate={open ? "show" : "hide"}
-                className="group/link relative cursor-pointer transition-[padding-left] *:*:inline-block *:inline-block hover:pl-1"
+                className="group/link relative cursor-pointer opacity-70 transition-[padding-left] *:*:inline-block *:inline-block hover:pl-1 hover:opacity-100"
             >
                 {/* Per-letter animation */}
                 {link.label.split("").map((char, i) => (

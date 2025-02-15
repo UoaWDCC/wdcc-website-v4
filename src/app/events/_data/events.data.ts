@@ -1,50 +1,51 @@
-import type { EventCardType } from "./eventTypes";
+import type { Event } from "@/types/models";
+
 import placeholder from "@/assets/image/600x400.png";
 
-export const eventsData: EventCardType[] = [
-    {
-        title: "Rizz 101: How to Rizz",
-        time: new Date("2025-02-28T11:30:00"),
-        location: "201-265",
-        description: "Join the WDCC Rizz Executives as we explore the intricacies of socialising, dating, and networking as a tech student in 2025.",
-        category: "Workshop",
-        image: placeholder,
-        imageAlt: "Image 1",
+import { events2024Data } from "./events2024/events2024.data";
+import { events2025Data } from "./events2025/events2025.data";
+
+export interface Category {
+    name: string;
+    colors: string;
+}
+
+export const eventsData = {
+    header: {
+        title: "events",
+        description:
+            "From educational workshops to social mixers, hackathons to code competitions, WDCC's regular events help students develop all kinds of valuable skills - and make friends along the way!",
+        // button labels/links are currently hardcoded into the page header
     },
-    {
-        title: "Rizz Contest",
-        time: new Date("2025-02-28T11:30:00"),
-        location: "201-265",
-        description: "Compete with your friends and peers in our annual Rizz Contest. Prizes will be provided.",
-        category: "Competition",
-        image: placeholder,
-        imageAlt: "Image 1",
+    roadmap: {
+        title: "Events Roadmap",
+        description:
+            "Our events are planned well in advance, so you can always know what's coming up. Check out our roadmap below to see what's in store for the next few semesters.",
+        image: {
+            src: placeholder,
+            alt: "Events Roadmap",
+        },
     },
-    {
-        title: "Speed Networking",
-        time: new Date("2025-02-28T11:30:00"),
-        location: "201-265",
-        description: "Join WDCC members, executives, and industry leaders in our speed networking event. Food is provided but grad role offers may not be.",
-        category: "Social",
-        image: placeholder,
-        imageAlt: "Image 1",
+    eventsGrid: {
+        title: "Recent Events",
+        categories: [
+            {
+                name: "All",
+                colors: "border-gray-250 bg-gray-100 text-gray-900 hover:bg-gray-200",
+            },
+            {
+                name: "Workshop",
+                colors: "border-blue-400 bg-blue-100 text-blue-800 hover:bg-blue-150",
+            },
+            {
+                name: "Competition",
+                colors: "border-yellow-400 bg-yellow-100 text-yellow-800 hover:bg-yellow-150",
+            },
+            {
+                name: "Social",
+                colors: "border-purple-400 bg-purple-100 text-purple-800 hover:bg-purple-150",
+            },
+        ],
+        events: [...events2024Data, ...events2025Data] as Event[],
     },
-    {
-        title: "Slow Networking",
-        time: new Date("2025-02-28T11:30:00"),
-        location: "201-265",
-        description: "Does Speed Networking feel too fast-paced for you? No worries - pop in to Slow Networking, the slower alternative that's just as fun.",
-        category: "Social",
-        image: placeholder,
-        imageAlt: "Image 1",
-    },
-    {
-        title: "Rizz 201: Advanced Rizz Concepts and Practice",
-        time: new Date("2025-02-28T11:30:00"),
-        location: "201-265",
-        description: "Delve into the full theory and practical applications behind Advanced Rizz in this higher level rizz workshop.",
-        category: "Workshop",
-        image: placeholder,
-        imageAlt: "Image 1",
-    },
-]
+};

@@ -1,19 +1,19 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useReducer, useRef, useState } from "react";
+import { PerspectiveCamera } from "@react-three/drei";
 import { useFrame, Vector3 } from "@react-three/fiber";
 import { DoubleSide, Euler, Group, Mesh } from "three";
 import * as THREE from "three";
 
 import { useGUI } from "@/hooks/useGUI";
 
-import { CommonLight } from "./CommonLight";
 import { TrianglePlane } from "./primitives/TrianglePlane";
 
 // instance settings
-const RADIUS = 32;
-const COUNT = 64;
-const RAD_INCREMENT = (Math.PI * 2) / COUNT; // to space triangles evenly
+let RADIUS = 32;
+let COUNT = 64;
+let RAD_INCREMENT = (Math.PI * 2) / COUNT; // to space triangles evenly
 
 // individual movement settings
 const SPEED = Math.PI / 16; // ref: pi*2 is one full rotation per second
@@ -84,10 +84,14 @@ const TRIANGLES = ({ color }: { color: THREE.Color }) => {
 const BackgroundEffect = () => {
     const [color, setColor] = useState(new THREE.Color("hsl(217, 100%, 61%)"));
     const backgroundSpeed = useRef(0.02);
+    const [, forceUpdate] = useReducer((x) => x + 1, 0);
+
     useGUI((gui) => {
         const folder = gui.addFolder("Background");
         const params = {
             color: `#${color.getHexString()}`,
+            count: COUNT,
+            radius: RADIUS,
             backgroundSpeed: backgroundSpeed.current,
         };
 
@@ -97,6 +101,18 @@ const BackgroundEffect = () => {
 
         folder.add(params, "backgroundSpeed", -10, 10).onChange((c) => {
             backgroundSpeed.current = c;
+        });
+        folder
+            .add(params, "count", 0, 5090)
+            .step(1)
+            .onChange((c) => {
+                COUNT = c;
+                RAD_INCREMENT = (Math.PI * 2) / COUNT;
+                forceUpdate();
+            });
+        folder.add(params, "radius", 0, 256).onChange((c) => {
+            RADIUS = c;
+            forceUpdate();
         });
 
         return () => {
@@ -117,7 +133,7 @@ const BackgroundEffect = () => {
             <group ref={ref}>
                 <TRIANGLES color={color} />
             </group>
-            <CommonLight />
+            <PerspectiveCamera makeDefault fov={20} position={[0, 0, 8]} />
         </>
     );
 };

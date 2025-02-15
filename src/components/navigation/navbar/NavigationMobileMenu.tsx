@@ -4,13 +4,35 @@ import { useState } from "react";
 import { motion } from "motion/react";
 
 import { Anchor } from "@/components/primitives/Anchor";
-import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";
 
 import type { NavigationLink } from "./_data/navbarTypes";
+import { Button } from "@/components/primitives/Button";
+import MenuIcon from "@/assets/svg/MenuIcon";
+import ExitIcon from "@/assets/svg/ExitIcon";
+import Arrow from "@/assets/svg/Arrow";
+import { tv, VariantProps } from "tailwind-variants";
+import WDCCLogo from "@/assets/svg/WDCCLogo";
+import Link from "next/link";
+
+const mobileNav = tv({
+    base: "transition duration-300",
+    variants: {
+        color: {
+            dark: "stroke-background hover:stroke-blue-200",
+            light: "stroke-foreground hover:stroke-blue-600",
+        },
+    },
+})
+
+export interface NavbarProps {
+    variant?: VariantProps<typeof mobileNav>;
+    className?: string;
+    links: NavigationLink[];
+}
 
 // ONLY USE CLASSNAME TO CHANGE MEDIA QUERY
-const NavigationMenu = ({ links, className }: { links: NavigationLink[]; className?: string }) => {
+const NavigationMobileMenu = ({ links, className, variant }: NavbarProps) => {
     const [toggle, setToggle] = useState(false);
 
     const handleToggle = () => {
@@ -19,17 +41,15 @@ const NavigationMenu = ({ links, className }: { links: NavigationLink[]; classNa
 
     return (
         <>
-            <Button
-                variant={{ style: "secondary", color: "blue" }}
-                onClick={handleToggle}
-                className={cn("", className)}
-            >
-                Menu
-            </Button>
+            <button className={cn("", className, mobileNav({...variant}))} onClick={handleToggle}>
+                <MenuIcon/>
+            </button>
+
             {/* todo: this should lock scrolling from happening */}
+
             <motion.div
                 className={cn(
-                    "fixed left-0 top-0 h-screen w-full bg-blue-900/80 px-10 pt-8 text-white backdrop-blur-lg",
+                    "fixed left-0 top-0 h-screen w-full bg-blue-500/90 px-8 py-4 backdrop-blur-lg",
                     className
                 )}
                 // animation to make it look like it's opening/closing
@@ -37,37 +57,34 @@ const NavigationMenu = ({ links, className }: { links: NavigationLink[]; classNa
                 animate="animate"
                 variants={containerVariant(toggle)}
             >
-                <div className="flex flex-col items-center justify-center gap-4">
-                    <div className="flex w-full justify-center">
-                        <strong className="text-xl font-semibold">Explore</strong>
+                <div className="flex flex-col items-start gap-4">
+                    <div className="flex w-full justify-between items-center">
+                        <Anchor href="/">
+                            <WDCCLogo className="fill-white transition duration-150 hover:opacity-70 lg:block" />
+                        </Anchor>
+                        <button onClick={handleToggle}>
+                            <ExitIcon className="stroke-white transition duration-300 hover:stroke-blue-200" />
+                        </button>
                     </div>
-                    <hr className="w-1/2 bg-white" />
-                    <div className="my-8 flex flex-col">
+
+                    <div className="w-full rounded-full h-[2px] bg-gray-100/25" />
+
+                    <div className="w-full flex flex-col my-2 text-white divide-y-2 divide-dashed divide-gray-100/25">
                         <NavigationMenuLinks links={links} />
                     </div>
-                    <Button variant={{ style: "primary", color: "blue" }} onClick={handleToggle}>
-                        {/* X icon */}
-                        <svg
-                            className="size-12"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                        >
-                            <path d="M18 6 6 18" />
-                            <path d="m6 6 12 12" />
-                        </svg>
-                    </Button>
+
+                    <Button variant={{style: "secondary", color: "light", isJustified: true}}>Join WDCC <Arrow/></Button>
+
+
+                    <p className="w-full text-white/50 text-xs font-light text-center">miku oo ee oo</p>
+
                 </div>
             </motion.div>
         </>
     );
 };
 
-export default NavigationMenu;
+export default NavigationMobileMenu;
 
 const containerVariant = (toggle: boolean) => {
     return {
@@ -82,7 +99,7 @@ const containerVariant = (toggle: boolean) => {
 
 const NavigationMenuLinks = ({ links }: { links: NavigationLink[] }) =>
     links.map((link) => (
-        <Anchor key={link.label} href={link.href} className="w-full text-center text-[14vw]">
-            {link.label}
-        </Anchor>
+        <Link key={link.label} href={link.href} className="w-full text-2xl font-semibold leading-none py-4 hover:duration-200 group/item">
+            <p className="transition duration-500 group-hover/item:duration-200 group-hover/item:text-blue-100 group-hover/item:translate-x-3">{link.label}</p>
+        </Link>
     ));
