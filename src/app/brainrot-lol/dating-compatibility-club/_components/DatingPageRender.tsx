@@ -39,7 +39,7 @@ export default function DatingPage() {
                         <View className="fixed -z-10 size-full scale-150" color="pink" background>
                             <BackgroundEffect />
                         </View>
-                        <NavigationBar variant={{ color: "light" }} />
+                        <NavigationBar variant={{ color: "dark" }} />
                         <main className="responsive-body flex-col gap-24 items-center justify-center py-44">
                             <WDCCHero />
                             <div className="flex flex-col gap-36">
