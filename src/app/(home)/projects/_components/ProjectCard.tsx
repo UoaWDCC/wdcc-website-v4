@@ -1,10 +1,10 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { Project } from "@/types/models";
 
 import WDCCLogo from "@/assets/svg/WDCCLogo";
+import SuspenseImage from "@/components/SuspenseImage";
 
 import { ProjectTag } from "./ProjectTag";
 
@@ -14,14 +14,15 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
     const slug = project.slug || "not-found";
+
     return (
         <Link
             className="flex w-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-gray-50 transition duration-500 will-change-auto hover:-translate-x-1 hover:-translate-y-1 hover:drop-shadow-cardLift hover:duration-200"
             href={`/projects/${slug}`}
         >
-            <div className="center-content relative h-60 w-full bg-[linear-gradient(106.75deg,#8FA7FF,#4525A7)]">
+            <div className="center-content relative h-60 w-full bg-blue-brand">
                 {project.icon ? (
-                    <Image fill className="object-cover" src={project.icon.src} alt={project.icon.alt} />
+                    <SuspenseImage fill className="object-cover" src={project.icon.src} alt={project.icon.alt} />
                 ) : (
                     <WDCCLogo className="w-40 fill-white" />
                 )}
