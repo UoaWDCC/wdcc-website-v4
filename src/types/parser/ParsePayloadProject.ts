@@ -10,7 +10,7 @@ export const ParsePayloadProject = (cms: CMSProject): Project | undefined => {
         year: cms.year,
         client: cms.client,
         icon: {
-            src: cms.url || "",
+            src: (cms.thumbnail as Media)?.url || "",
             alt: cms.slug || "",
         },
         name: {

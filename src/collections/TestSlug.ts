@@ -3,23 +3,12 @@ import type { CollectionConfig } from "payload";
 import { technologiesList } from "@/assets/svg/technologies";
 import { SLUG } from "@/libs/enums/slug";
 
-const currentYear = new Date().getFullYear();
-
 export const TestSlug: CollectionConfig = {
     slug: SLUG.TEST,
     access: {
         read: () => true,
     },
-    admin: {
-        useAsTitle: "slug", // first column in edit view
-    },
     fields: [
-        {
-            name: "cardImage",
-            type: "upload",
-            relationTo: "media",
-            required: true,
-        },
         {
             label: "general",
             type: "collapsible",
@@ -27,20 +16,14 @@ export const TestSlug: CollectionConfig = {
                 {
                     name: "slug",
                     type: "text",
-                    defaultValue: `${currentYear}-slug`,
+                    defaultValue: `2025-slug`,
                     required: true,
                     unique: true,
                 },
                 {
                     name: "year",
-                    type: "date",
-                    defaultValue: () => new Date().toISOString(),
-                    admin: {
-                        date: {
-                            pickerAppearance: "monthOnly",
-                            displayFormat: "yyyy",
-                        },
-                    },
+                    type: "text",
+                    defaultValue: `2025`,
                     required: true,
                 },
                 {
@@ -101,8 +84,8 @@ export const TestSlug: CollectionConfig = {
             required: true,
         },
         {
-            name: "links",
-            type: "array",
+            name: "primaryLink",
+            type: "group",
             fields: [
                 {
                     name: "label",
@@ -110,49 +93,74 @@ export const TestSlug: CollectionConfig = {
                     required: true,
                 },
                 {
-                    name: "url",
+                    name: "href",
                     type: "text",
                     required: true,
                 },
             ],
         },
         {
-            type: "row",
+            name: "secondaryLink",
+            type: "group",
             fields: [
                 {
-                    name: "project manager",
-                    type: "group",
-                    fields: [
-                        { name: "name", type: "text", required: true },
-                        { name: "image", type: "upload", relationTo: "media", displayPreview: true },
-                    ],
+                    name: "label",
+                    type: "text",
+                    required: true,
                 },
                 {
-                    name: "technical lead",
-                    type: "group",
-                    fields: [
-                        { name: "name", type: "text", required: true },
-                        { name: "image", type: "upload", relationTo: "media", displayPreview: true },
-                    ],
+                    name: "href",
+                    type: "text",
+                    required: true,
                 },
             ],
         },
         {
-            name: "project members",
-            type: "array",
-            admin: {
-                className: "horizontal-array",
-            },
-            defaultValue: [{}, {}],
+            name: "team",
+            type: "group",
             fields: [
-                { name: "name", type: "text", required: true },
                 {
-                    name: "role",
-                    type: "select",
-                    options: ["engineer", "designer"],
-                    required: true,
+                    type: "row",
+                    fields: [
+                        {
+                            name: "manager",
+                            label: "project manager",
+                            type: "group",
+                            fields: [
+                                { name: "name", type: "text", required: true },
+                                { name: "image", type: "upload", relationTo: "media", displayPreview: true },
+                            ],
+                        },
+                        {
+                            name: "techlead",
+                            label: "tech lead",
+                            type: "group",
+                            fields: [
+                                { name: "name", type: "text", required: true },
+                                { name: "image", type: "upload", relationTo: "media", displayPreview: true },
+                            ],
+                        },
+                    ],
                 },
-                { name: "image", type: "upload", relationTo: "media", displayPreview: true },
+                {
+                    name: "members",
+                    label: "project members",
+                    type: "array",
+                    admin: {
+                        className: "horizontal-array",
+                    },
+                    defaultValue: [{}, {}],
+                    fields: [
+                        { name: "name", type: "text", required: true },
+                        {
+                            name: "role",
+                            type: "select",
+                            options: ["engineer", "designer"],
+                            required: true,
+                        },
+                        { name: "image", type: "upload", relationTo: "media", displayPreview: true },
+                    ],
+                },
             ],
         },
     ],

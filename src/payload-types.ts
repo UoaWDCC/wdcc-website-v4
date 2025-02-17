@@ -107,24 +107,86 @@ export interface Media {
 export interface Event {
   id: number;
   alt: string;
-  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "project".
  */
 export interface Project {
+  id: number;
+  thumbnail: number | Media;
+  slug: string;
+  year: string;
+  client: string;
+  name: {
+    default: string;
+    extended?: string | null;
+  };
+  description: string;
+  brief: {
+    description: string;
+    image: number | Media;
+  };
+  technologies: (
+    | 'astro'
+    | 'aws'
+    | 'css'
+    | 'drizzleorm'
+    | 'figma'
+    | 'fly'
+    | 'html'
+    | 'javascript'
+    | 'missing'
+    | 'mongodb'
+    | 'motion'
+    | 'nextjs'
+    | 'postgresql'
+    | 'python'
+    | 'react'
+    | 'redis'
+    | 'supabase'
+    | 'tailwindcss'
+    | 'twitch'
+    | 'typescript'
+    | 'vite'
+    | 'vitest'
+  )[];
+  primaryLink: {
+    label: string;
+    href: string;
+  };
+  secondaryLink: {
+    label: string;
+    href: string;
+  };
+  team: {
+    manager: {
+      name: string;
+      image?: (number | null) | Media;
+    };
+    techlead: {
+      name: string;
+      image?: (number | null) | Media;
+    };
+    members?:
+      | {
+          name: string;
+          role: 'engineer' | 'designer';
+          image?: (number | null) | Media;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "test".
+ */
+export interface Test {
   id: number;
   slug: string;
   year: string;
@@ -188,85 +250,6 @@ export interface Project {
         }[]
       | null;
   };
-  prefix?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "test".
- */
-export interface Test {
-  id: number;
-  cardImage: number | Media;
-  slug: string;
-  year: string;
-  client: string;
-  name: {
-    default: string;
-    extended?: string | null;
-  };
-  description: string;
-  brief: {
-    description: string;
-    image: number | Media;
-  };
-  technologies: (
-    | 'astro'
-    | 'aws'
-    | 'css'
-    | 'drizzleorm'
-    | 'figma'
-    | 'fly'
-    | 'html'
-    | 'javascript'
-    | 'missing'
-    | 'mongodb'
-    | 'motion'
-    | 'nextjs'
-    | 'postgresql'
-    | 'python'
-    | 'react'
-    | 'redis'
-    | 'supabase'
-    | 'tailwindcss'
-    | 'twitch'
-    | 'typescript'
-    | 'vite'
-    | 'vitest'
-  )[];
-  links?:
-    | {
-        label: string;
-        url: string;
-        id?: string | null;
-      }[]
-    | null;
-  'project manager': {
-    name: string;
-    image?: (number | null) | Media;
-  };
-  'technical lead': {
-    name: string;
-    image?: (number | null) | Media;
-  };
-  'project members'?:
-    | {
-        name: string;
-        role: 'engineer' | 'designer';
-        image?: (number | null) | Media;
-        id?: string | null;
-      }[]
-    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -379,24 +362,15 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface EventSelect<T extends boolean = true> {
   alt?: T;
-  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "project_select".
  */
 export interface ProjectSelect<T extends boolean = true> {
+  thumbnail?: T;
   slug?: T;
   year?: T;
   client?: T;
@@ -450,25 +424,14 @@ export interface ProjectSelect<T extends boolean = true> {
               id?: T;
             };
       };
-  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "test_select".
  */
 export interface TestSelect<T extends boolean = true> {
-  cardImage?: T;
   slug?: T;
   year?: T;
   client?: T;
@@ -486,32 +449,41 @@ export interface TestSelect<T extends boolean = true> {
         image?: T;
       };
   technologies?: T;
-  links?:
+  primaryLink?:
     | T
     | {
         label?: T;
-        url?: T;
-        id?: T;
+        href?: T;
       };
-  'project manager'?:
+  secondaryLink?:
     | T
     | {
-        name?: T;
-        image?: T;
+        label?: T;
+        href?: T;
       };
-  'technical lead'?:
+  team?:
     | T
     | {
-        name?: T;
-        image?: T;
-      };
-  'project members'?:
-    | T
-    | {
-        name?: T;
-        role?: T;
-        image?: T;
-        id?: T;
+        manager?:
+          | T
+          | {
+              name?: T;
+              image?: T;
+            };
+        techlead?:
+          | T
+          | {
+              name?: T;
+              image?: T;
+            };
+        members?:
+          | T
+          | {
+              name?: T;
+              role?: T;
+              image?: T;
+              id?: T;
+            };
       };
   updatedAt?: T;
   createdAt?: T;

@@ -8,7 +8,17 @@ export const Project: CollectionConfig = {
     access: {
         read: () => true,
     },
+    admin: {
+        useAsTitle: "thumbnail",
+    },
     fields: [
+        {
+            name: "thumbnail",
+            type: "upload",
+            relationTo: "media",
+            required: true,
+            displayPreview: true,
+        },
         {
             label: "general",
             type: "collapsible",
