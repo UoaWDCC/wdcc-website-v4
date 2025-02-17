@@ -21,7 +21,6 @@ export default async function ProjectsPage() {
                 title="past projects"
                 backlink={{ label: "projects", href: "/projects" }}
             />
-
             <ProjectsSection projects={combined} />
         </StandardPageLayout>
     );
