@@ -15,7 +15,7 @@ export const Nextjs = ({ ...props }: SVGAttributes<SVGSVGElement>) => {
                 <circle cx="90" cy="90" r="90" fill="black" />
             </mask>
             <g mask="url(#mask0_408_139)">
-                <circle cx="90" cy="90" r="87" fill="black" stroke="white" stroke-width="6" />
+                <circle cx="90" cy="90" r="87" fill="black" stroke="white" strokeWidth="6" />
                 <path
                     d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z"
                     fill="url(#paint0_linear_408_139)"
@@ -31,8 +31,8 @@ export const Nextjs = ({ ...props }: SVGAttributes<SVGSVGElement>) => {
                     y2="160.5"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stop-opacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint1_linear_408_139"
@@ -42,8 +42,8 @@ export const Nextjs = ({ ...props }: SVGAttributes<SVGSVGElement>) => {
                     y2="106.875"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stop-opacity="0" />
                 </linearGradient>
             </defs>
         </svg>

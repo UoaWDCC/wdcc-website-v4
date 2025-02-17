@@ -21,51 +21,81 @@ import { Typescript } from "./Typescript";
 import { Vite } from "./ViteJs";
 import { Vitest } from "./Vitest";
 
-export function getTechnologySvg(tech: string) {
-    switch (tech) {
-        case "Astro":
-            return Astro;
-        case "AWS":
-            return AWS;
-        case "Css":
-            return Css;
-        case "Drizzleorm":
-            return Drizzleorm;
-        case "Figma":
-            return Figma;
-        case "Fly":
-            return Fly;
-        case "Html":
-            return Html;
-        case "Javascript":
-            return Javascript;
-        case "Mongodb":
-            return Mongodb;
-        case "Motion":
-            return Motion;
-        case "Nextjs":
-            return Nextjs;
-        case "Postgresql":
-            return Postgresql;
-        case "Python":
-            return Python;
-        case "Redis":
-            return Redis;
-        case "Supabase":
-            return Supabase;
-        case "Tailwindcss":
-            return Tailwindcss;
-        case "Twitch":
-            return Twitch;
-        case "Typescript":
-            return Typescript;
-        case "Vite":
-            return Vite;
-        case "Vitest":
-            return Vitest;
-        case "React":
-            return React;
+interface TechnologySVGProps<T = any> {
+    name: string;
+    component: (props: T) => JSX.Element;
+}
+
+export const technologiesList = new Set([
+    "astro",
+    "aws",
+    "css",
+    "drizzleorm",
+    "figma",
+    "fly",
+    "html",
+    "javascript",
+    "missing",
+    "mongodb",
+    "motion",
+    "nextjs",
+    "postgresql",
+    "python",
+    "react",
+    "redis",
+    "supabase",
+    "tailwindcss",
+    "twitch",
+    "typescript",
+    "vite",
+    "vitest",
+] as const);
+
+export function getTechnologySvgWithName(name: string): TechnologySVGProps {
+    switch (String(name).toLowerCase()) {
+        case "astro":
+            return { name: "Astro", component: Astro };
+        case "aws":
+            return { name: "AWS", component: AWS };
+        case "css":
+            return { name: "Css", component: Css };
+        case "drizzleorm":
+            return { name: "Drizzleorm", component: Drizzleorm };
+        case "figma":
+            return { name: "Figma", component: Figma };
+        case "fly":
+            return { name: "Fly", component: Fly };
+        case "html":
+            return { name: "Html", component: Html };
+        case "javascript":
+            return { name: "Javascript", component: Javascript };
+        case "mongodb":
+            return { name: "Mongodb", component: Mongodb };
+        case "motion":
+            return { name: "Motion", component: Motion };
+        case "nextjs":
+            return { name: "Nextjs", component: Nextjs };
+        case "postgresql":
+            return { name: "Postgresql", component: Postgresql };
+        case "python":
+            return { name: "Python", component: Python };
+        case "redis":
+            return { name: "Redis", component: Redis };
+        case "supabase":
+            return { name: "Supabase", component: Supabase };
+        case "tailwindcss":
+            return { name: "Tailwindcss", component: Tailwindcss };
+        case "twitch":
+            return { name: "Twitch", component: Twitch };
+        case "typescript":
+            return { name: "Typescript", component: Typescript };
+        case "vite":
+            return { name: "Vite", component: Vite };
+        case "vitest":
+            return { name: "Vitest", component: Vitest };
+        case "react":
+            return { name: "React", component: React };
         default:
-            return Missing;
+            return { name: name, component: Missing };
     }
 }

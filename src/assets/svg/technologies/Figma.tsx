@@ -3,7 +3,7 @@ import { SVGAttributes } from "react";
 export const Figma = ({ ...props }: SVGAttributes<SVGSVGElement>) => {
     return (
         <svg {...props} width="54" height="80" viewBox="0 0 54 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_912_3)">
+            <g clipPath="url(#clip0_912_3)">
                 <path
                     d="M13.3333 80.0002C20.6933 80.0002 26.6667 74.0268 26.6667 66.6668V53.3335H13.3333C5.97333 53.3335 0 59.3068 0 66.6668C0 74.0268 5.97333 80.0002 13.3333 80.0002Z"
                     fill="#0ACF83"

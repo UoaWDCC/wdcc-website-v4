@@ -1,7 +1,7 @@
 import React from "react";
+import EventCard from "@app/events/_components/EventCard";
+import { eventsData } from "@app/events/_data/events.data";
 
-import EventCard from "@/app/events/_components/EventCard";
-import { eventsData } from "@/app/events/_data/events.data";
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
 

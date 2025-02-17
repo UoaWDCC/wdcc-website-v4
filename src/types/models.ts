@@ -13,16 +13,51 @@ export type Faq = {
     answer: string;
 };
 
-export type Project = {
+export type oldProject = {
     projectName: string;
-    projectNameExtended: string;
+    projectNameExtended?: string;
     client: string;
     description: string;
     descriptionExtended: string;
-    logo: string;
+    logo?: string;
     year: string;
     technologies: string[];
     slug?: string;
+    team: Team;
+};
+
+export type Project = {
+    // card stuff
+    slug: string;
+    year: string;
+    client: string;
+    icon?: {
+        src: string;
+        alt: string;
+    };
+    // shared
+    name: {
+        title: string;
+        extended?: string;
+    };
+    description: string;
+    // for page
+    brief: {
+        description: string;
+        image?: {
+            src: string;
+            alt: string;
+        };
+    };
+    primaryLink?: {
+        label: string;
+        href: string;
+    };
+    secondaryLink?: {
+        label: string;
+        href: string;
+    };
+    technologies: string[];
     team: Team;
 };
 
@@ -41,13 +76,16 @@ export type Event = {
 };
 
 export type Team = {
-    techlead: { name: string; image?: string };
-    manager: { name: string; image?: string };
+    techlead: { name: string; image?: { src: string; alt: string } };
+    manager: { name: string; image?: { src: string; alt: string } };
     members: ProjectMember[];
 };
 
 export type ProjectMember = {
     name: string;
     role: "engineer" | "techlead" | "designer" | "manager";
-    image?: string;
+    image?: {
+        src: string;
+        alt: string;
+    };
 };

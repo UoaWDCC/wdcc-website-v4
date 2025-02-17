@@ -1,7 +1,7 @@
 # syntax = docker/dockerfile:1
 
 # Adjust NODE_VERSION as desired
-ARG NODE_VERSION=22.11.0
+ARG NODE_VERSION=20.18.1
 FROM node:${NODE_VERSION}-slim as base
 
 LABEL fly_launch_runtime="Next.js"
@@ -13,7 +13,7 @@ WORKDIR /app
 ENV NODE_ENV="production"
 
 # Install pnpm
-ARG PNPM_VERSION=9.14.2
+ARG PNPM_VERSION=10.2.1
 RUN npm install -g pnpm@$PNPM_VERSION
 
 
@@ -32,7 +32,11 @@ RUN pnpm install --frozen-lockfile --prod=false
 COPY . .
 
 # Build application
-RUN pnpm run build
+RUN --mount=type=secret,id=DATABASE_URI \
+    --mount=type=secret,id=PAYLOAD_SECRET \
+    DATABASE_URI="$(cat /run/secrets/DATABASE_URI)" \
+    PAYLOAD_SECRET="$(cat /run/secrets/PAYLOAD_SECRET)" \
+    pnpm run build
 
 # Remove development dependencies
 RUN pnpm prune --prod
