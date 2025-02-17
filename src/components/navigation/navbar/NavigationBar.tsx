@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState } from "react";
 import { motion } from "motion/react";
+import { tv, VariantProps } from "tailwind-variants";
 
 import type { ClassName } from "@/types/utils";
 
@@ -15,7 +16,6 @@ import { Button } from "@/components/primitives/Button";
 
 import { Anchor } from "../../primitives/Anchor";
 import NavigationMobileMenu from "./NavigationMobileMenu";
-import { tv, VariantProps } from "tailwind-variants";
 
 const hoverContext = createContext({} as hoverContextProps);
 
@@ -34,7 +34,7 @@ export const useNavHover = () => {
 };
 
 const navbar = tv({
-    base: "absolute top-0 group z-50 flex w-full select-none items-center justify-between gap-4 py-4 px-8 lg:px-16",
+    base: "group absolute top-0 z-50 flex w-full select-none items-center justify-between gap-4 px-8 py-4 lg:px-16",
     variants: {
         color: {
             dark: "text-white",
@@ -44,14 +44,14 @@ const navbar = tv({
 });
 
 const navbarBg = tv({
-    base: "absolute left-0 top-0 -z-10 size-full w-dvw",
+    base: "size-full",
     variants: {
         color: {
             dark: "bg-blue-900",
             light: "bg-background",
         },
     },
-})
+});
 
 const navbarLine = tv({
     base: "hidden h-5 w-0.5 rounded md:block",
@@ -61,11 +61,11 @@ const navbarLine = tv({
             light: "bg-gray-700",
         },
     },
-})
+});
 
 export interface NavbarProps {
     variant?: VariantProps<typeof navbar>;
-    className?: ClassName
+    className?: ClassName;
 }
 
 /**
@@ -81,13 +81,14 @@ export interface NavbarProps {
  * Don't confuse the name of the color mode with the actual text color - the "dark" navbar has white text (as is standard for a dark mode).
  */
 
-export default function NavigationBar({variant = {color: "light"}}: NavbarProps) {
+export default function NavigationBar({ variant = { color: "light" } }: NavbarProps) {
     const [isHovering, sethover] = useState(false);
 
     const handleDropEnter = () => {
         sethover(true);
     };
     const handleDropExit = () => {
+        console.log("exit");
         sethover(false);
     };
 
@@ -106,29 +107,42 @@ export default function NavigationBar({variant = {color: "light"}}: NavbarProps)
                 animate={{ opacity: isHovering ? 1 : 0 }}
                 className="pointer-events-none fixed inset-0 z-40 h-dvh w-dvw bg-black/40 backdrop-blur-sm"
             />
-            <nav
-                className={navbar({ ...variant })}
-            >
-                <motion.div
-                    className={navbarBg({...variant})}
-                    initial={{ height: 0 }}
-                    animate={{ height: isHovering ? 180 : 0 }} // hardcoded xdx,
-                    onMouseLeave={handleDropExit}
-                />
+            <nav className={navbar({ ...variant })}>
+                <div
+                    onPointerLeave={handleDropExit}
+                    className="pointer-events-none absolute left-0 top-0 -z-10 h-[180px] w-full data-[hover=true]:pointer-events-auto"
+                    data-hover={isHovering}
+                >
+                    <motion.div
+                        className={navbarBg({ ...variant })}
+                        initial="initial"
+                        animate="animate"
+                        variants={containerVariant(isHovering)}
+                    />
+                </div>
                 <Anchor href="/">
                     <WDCCLogo className="fill-current transition duration-150 hover:opacity-70 lg:block" />
                 </Anchor>
-                <div className="flex w-full items-center  gap-8 whitespace-nowrap font-semibold justify-end lg:gap-12">
+                <div className="flex w-full items-center justify-end gap-8 whitespace-nowrap font-semibold lg:gap-12">
                     {/* Links */}
                     <div className="hidden h-full items-center gap-12 md:flex lg:gap-16">
                         <NavigationBarLinks links={navbarData.links} />
                     </div>
                     {/* Vertical line */}
-                    <div className={navbarLine({...variant})} />
+                    <div className={navbarLine({ ...variant })} />
                     {/* Buttons */}
                     <div className="hidden-scrollbar flex gap-3 overflow-auto">
-                        <NavigationMobileMenu variant={{color: variant.color}} className="md:hidden" links={navbarData.links} />
-                        <Button variant={{ style: "primary", color: "blue" }} href="https://go.wdcc.co.nz" className="hidden md:block" newTab>
+                        <NavigationMobileMenu
+                            variant={{ color: variant.color }}
+                            className="md:hidden"
+                            links={navbarData.links}
+                        />
+                        <Button
+                            variant={{ style: "primary", color: "blue" }}
+                            href="https://go.wdcc.co.nz"
+                            className="hidden md:block"
+                            newTab
+                        >
                             Join WDCC <Arrow />
                         </Button>
                     </div>
@@ -149,3 +163,14 @@ const NavigationBarLinks = ({ links }: { links: NavigationLink[] }) =>
             </UnderlineLink>
         )
     );
+
+const containerVariant = (toggle: boolean) => {
+    return {
+        initial: { clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" },
+        animate: {
+            clipPath: toggle
+                ? "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
+                : "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        },
+    };
+};

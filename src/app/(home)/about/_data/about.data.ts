@@ -5,16 +5,7 @@ export const aboutData = {
     header: {
         title: `About Us`,
         content: `The Web Development and Consulting Club is Aotearoa New Zealand’s largest student technology club. Read more about our history, goals, and achievements - as well as the people that help make it all happen.`,
-        buttons: [
-            {
-                text: `Meet the team`,
-                link: `/about/team`,
-            },
-            {
-                text: `Frequently asked questions`,
-                link: `/faq`,
-            },
-        ],
+        // buttons labels/links are currently hardcoded into the page header
     },
     genInfo: {
         firstPart: `Founded in 2019, WDCC - the Web Development and Consulting Club - helps promote the learning and practice of software development and its related skills and activities.`,

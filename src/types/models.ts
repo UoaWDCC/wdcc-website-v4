@@ -89,5 +89,3 @@ export type ProjectMember = {
         alt: string;
     };
 };
-
-export type PastEventType = string;

@@ -26,7 +26,7 @@ export const navbarData: NavbarData = {
             drop: [
                 {
                     href: "/events",
-                    label: "Upcoming",
+                    label: "Recent events",
                 },
                 {
                     href: "/events/all",

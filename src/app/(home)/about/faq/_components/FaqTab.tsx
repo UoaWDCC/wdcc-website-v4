@@ -1,9 +1,9 @@
 import { cn } from "@/libs/utils";
 
-import { faqColors } from "../_data/faq.data";
+import { FaqColors } from "../_data/faq.data";
 
 interface FaqTabProps {
-    colors: faqColors;
+    colors: FaqColors;
     text: string;
     selected?: boolean;
     handleClick?: () => void;

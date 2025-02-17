@@ -1,10 +1,9 @@
 import React from "react";
+import EventCard from "@app/events/_components/EventCard";
+import { eventsData } from "@app/events/_data/events.data";
 
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
-
-import EventCard from "../events/_components/EventCard";
-import { eventsData } from "../events/_data/events_data";
 
 const ComingUp = () => {
     return (
@@ -14,7 +13,7 @@ const ComingUp = () => {
                 There’s always plenty of events scheduled at WDCC - here’s the next few!
             </p>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {eventsData.slice(0, 3).map((event, i) => (
+                {eventsData.eventsGrid.events.slice(0, 3).map((event, i) => (
                     <EventCard key={i} event={event} />
                 ))}
             </div>
