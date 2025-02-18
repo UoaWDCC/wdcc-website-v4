@@ -48,11 +48,7 @@ const tableOfContent = tv({
     },
 });
 
-const config = {
-    rootMargin: "-20% 0% -75% 0%",
-};
-
-interface TableOfContentsProps {
+export interface TableOfContentsProps {
     variant?: VariantProps<typeof tableOfContent>;
 }
 
@@ -64,7 +60,7 @@ export const TableOfContents = ({ variant }: TableOfContentsProps) => {
         const headers = document.getElementById("blog")?.querySelectorAll(tags.join(","));
         if (!headers) return;
 
-        let contents: ContentlistType = [];
+        const contents: ContentlistType = [];
         for (const header of headers) {
             contents.push({ level: tags.indexOf(header.localName), label: header.textContent || "", id: header.id });
         }
