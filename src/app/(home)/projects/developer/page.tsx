@@ -60,7 +60,7 @@ export const BlogContent = ({ children }: { children: React.ReactNode }) => {
     return (
         <div id="blog" className="grid grid-cols-5 gap-4">
             <>{children}</>
-            <TableOfContents />
+            <TableOfContents variant={{ color: "blue" }} />
         </div>
     );
 };

@@ -1,14 +1,62 @@
 "use client";
 
 import { useLayoutEffect, useState } from "react";
+import { tv, VariantProps } from "tailwind-variants";
 
-import MenuIcon from "@/assets/svg/MenuIcon";
 import SimpleLoading from "@/components/loading/SimpleLoading";
 import { cn } from "@/libs/utils";
 
 type ContentlistType = { level: number; label: string; id: string }[];
 
-export const TableOfContents = () => {
+const tableOfContent = tv({
+    base: "cursor-pointer select-none rounded p-0.5 px-2 font-normal transition-colors hover:bg-blue-100",
+    variants: {
+        active: {
+            true: "",
+        },
+        color: {
+            yellow: "hover:bg-orange-100",
+            blue: "hover:bg-blue-100",
+            green: "hover:bg-green-100",
+            purple: "hover:bg-purple-100",
+        },
+    },
+    compoundVariants: [
+        {
+            active: true,
+            color: "yellow",
+            class: "bg-orange-200",
+        },
+        {
+            active: true,
+            color: "blue",
+            class: "bg-blue-200",
+        },
+        {
+            active: true,
+            color: "green",
+            class: "bg-green-200",
+        },
+        {
+            active: true,
+            color: "purple",
+            class: "bg-purple-200",
+        },
+    ],
+    defaultVariants: {
+        color: "blue",
+    },
+});
+
+const config = {
+    rootMargin: "-20% 0% -75% 0%",
+};
+
+interface TableOfContentsProps {
+    variant?: VariantProps<typeof tableOfContent>;
+}
+
+export const TableOfContents = ({ variant }: TableOfContentsProps) => {
     const [contents, setContents] = useState<ContentlistType>([]);
     const [currentId, setCurrentId] = useState("");
     const tags = ["h1", "h2", "h3"];
@@ -62,27 +110,17 @@ export const TableOfContents = () => {
         <div
             data-current={currentId}
             className={cn(
-                "right-0 top-1/3 hidden h-min flex-col gap-2 rounded-bl-xl bg-gray-50 p-2 text-sm transition-transform xl:sticky xl:top-24 xl:flex xl:rounded"
+                "hidden h-min flex-col gap-2 rounded-bl-xl bg-gray-50 p-2 text-sm transition-transform xl:sticky xl:top-24 xl:flex xl:rounded"
             )}
         >
-            {/* mobile menu abs*/}
-            {/* <div
-                className="absolute left-0 top-0 grid size-12 -translate-x-[99%] cursor-pointer place-items-center rounded-l-xl bg-inherit xl:hidden"
-                onClick={handleToggleMenu}
-            >
-                <MenuIcon className="stroke-foreground" />
-            </div> */}
             {/* main */}
-            {contents.length === 0 && <SimpleLoading className="mx-auto p-4 *:bg-blue-brand" />}
+            {contents.length === 0 && <SimpleLoading className="mx-auto p-4" variant={{ color: variant?.color }} />}
             {contents.map((content) => (
                 <a
                     key={content.id}
                     style={{ marginLeft: content.level * 16 }}
                     onClick={() => handleScrollTo(content.id)}
-                    className={cn(
-                        "cursor-pointer select-none rounded p-0.5 px-2 font-normal transition-colors hover:bg-blue-100",
-                        content.id === currentId && "bg-blue-200"
-                    )}
+                    className={tableOfContent({ ...variant, active: content.id === currentId })}
                 >
                     {content.label}
                 </a>

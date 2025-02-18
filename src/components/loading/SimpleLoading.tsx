@@ -1,14 +1,35 @@
 import React, { HTMLAttributes } from "react";
+import { tv, VariantProps } from "tailwind-variants";
 
 import { cn } from "@/libs/utils";
 
-const SimpleLoading = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
+const loading = tv({
+    base: "h-3 w-3 animate-bounce rounded-full bg-white",
+    variants: {
+        color: {
+            default: "bg-white",
+            yellow: "bg-orange-brand",
+            blue: "bg-blue-brand",
+            green: "bg-green-brand",
+            purple: "bg-purple-brand",
+        },
+    },
+    defaultVariants: {
+        color: "default",
+    },
+});
+
+interface SimpleLoadingProps extends HTMLAttributes<HTMLDivElement> {
+    variant?: VariantProps<typeof loading>;
+}
+
+const SimpleLoading = ({ variant, ...props }: SimpleLoadingProps) => {
     return (
         <div {...props} className={cn("flex space-x-2", props.className)}>
             {[0, 1, 2].map((i) => (
                 <div
                     key={i}
-                    className="h-3 w-3 animate-bounce rounded-full bg-white"
+                    className={loading({ color: variant?.color })}
                     style={{
                         animationDelay: `${i * 0.15}s`,
                     }}
