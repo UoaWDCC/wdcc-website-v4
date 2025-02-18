@@ -16,7 +16,7 @@ export default function DeveloperPage() {
 
             <div className="flex flex-col gap-24 py-24">
                 <BlogContent>
-                    <div className="col-span-4 flex flex-col gap-5 lg:col-span-3">
+                    <div className="col-span-4 flex flex-col gap-5 xl:col-span-3">
                         {/* replace with mdx or cms?too */}
                         <h1 className="text-3xl font-bold" id="intro">
                             How does project works?
