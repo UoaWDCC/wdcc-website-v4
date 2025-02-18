@@ -14,9 +14,9 @@ interface StandardPageLayoutProps extends HtmlHTMLAttributes<HTMLElement> {
 export default function StandardPageLayout({ children, navColor = "light", ...props }: StandardPageLayoutProps) {
     return (
         <div {...props} className={cn("flex min-h-dvh flex-col", props.className)}>
-            <div className="relative flex h-dvh min-h-dvh flex-col overflow-x-hidden">
+            <div className="relative flex h-dvh min-h-dvh flex-col">
                 <div className="z-10 w-full">
-                    <NavigationBar variant={{color: navColor}}/>
+                    <NavigationBar variant={{ color: navColor }} />
                 </div>
                 <main className="responsive-body grow">{children}</main>
                 {/* Combination of min-h-dvh and mt-auto ensures footer doesn't collapse above screen bottom on small pages. */}

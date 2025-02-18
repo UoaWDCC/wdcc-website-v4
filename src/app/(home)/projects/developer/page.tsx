@@ -10,7 +10,7 @@ export default function DeveloperPage() {
         <StandardPageLayout>
             <Header
                 variant={{ style: "secondary", color: "blue" }}
-                title="code something real as a WDCC Developer"
+                title="role of a project developer"
                 backlink={{ label: "projects", href: "/projects" }}
             />
 
@@ -18,7 +18,10 @@ export default function DeveloperPage() {
                 <BlogContent>
                     <div className="col-span-4 flex flex-col gap-5 lg:col-span-3">
                         {/* replace with mdx or cms?too */}
-                        <h2 className="text-3xl font-bold" id="whos-involved">
+                        <h1 className="text-3xl font-bold" id="intro">
+                            How does project works?
+                        </h1>
+                        <h2 className="text-xl font-bold" id="whos-involved">
                             Who’s involved
                         </h2>
                         <p>
@@ -42,6 +45,69 @@ export default function DeveloperPage() {
                             WDCC's Project have a set list of technologies that we use across all our projects such as
                             fly.io, github, github projects, github actions, figma, and google drive.
                         </p>
+                        <p>
+                            Core techonologies for building the application such as databases, frontend frameworks, and
+                            backend frameworks are decided by project leads.
+                        </p>
+                        <h1 className="text-3xl font-bold" id="intro1">
+                            How does project works?
+                        </h1>
+                        <p>
+                            Core techonologies for building the application such as databases, frontend frameworks, and
+                            backend frameworks are decided by project leads.
+                        </p>
+                        <h2 className="text-3xl font-bold" id="intro2">
+                            How does project works?
+                        </h2>
+                        <p>
+                            Core techonologies for building the application such as databases, frontend frameworks, and
+                            backend frameworks are decided by project leads.
+                        </p>
+                        <h2 className="text-3xl font-bold" id="intro3">
+                            How does project works?
+                        </h2>
+                        <p>
+                            Core techonologies for building the application such as databases, frontend frameworks, and
+                            backend frameworks are decided by project leads.
+                        </p>
+                        <h2 className="text-3xl font-bold" id="intro4">
+                            How does project works?
+                        </h2>
+                        <p>
+                            Core techonologies for building the application such as databases, frontend frameworks, and
+                            backend frameworks are decided by project leads.
+                        </p>
+                        <h3 className="text-3xl font-bold" id="intro5">
+                            How does project works?
+                        </h3>
+                        <p>
+                            Core techonologies for building the application such as databases, frontend frameworks, and
+                            backend frameworks are decided by project leads.
+                        </p>
+                        <h3 className="text-3xl font-bold" id="intro6">
+                            How does project works?
+                        </h3>
+                        <p>
+                            Core techonologies for building the application such as databases, frontend frameworks, and
+                            backend frameworks are decided by project leads.
+                        </p>
+                        <h3 className="text-3xl font-bold" id="intro7">
+                            How does project works?
+                        </h3>
+                        <p>
+                            Core techonologies for building the application such as databases, frontend frameworks, and
+                            backend frameworks are decided by project leads.
+                        </p>
+                        <h3 className="text-3xl font-bold" id="intro8">
+                            How does project works?
+                        </h3>
+                        <p>
+                            Core techonologies for building the application such as databases, frontend frameworks, and
+                            backend frameworks are decided by project leads.
+                        </p>
+                        <h3 className="text-3xl font-bold" id="intro9">
+                            How does project works?
+                        </h3>
                         <p>
                             Core techonologies for building the application such as databases, frontend frameworks, and
                             backend frameworks are decided by project leads.
