@@ -107,6 +107,11 @@ export default function PricingPage() {
                             </small>
                         </motion.div>
 
+                        {/* Disclaimer to avoid awkward situations if someone accidentally finds this page. */}
+                        <div className="flex gap-6 my-16">
+                            <p className="leading-tight text-center mx-auto font-normal text-md text-red-600 bg-red-50 px-6 py-5 rounded-2xl">As with all pages under /brainrot-lol, the Pricing Page is an internal joke used by WDCC's Tech Team. WDCC membership is not actually tiered, and does not involve a charge.</p>
+                        </div>
+
                     </motion.div>
                 </div>
             </div>
