@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 export interface ImageFitProps {
-    src: string;
+    src: string | StaticImageData;
     alt: string;
     width?: string;
     height?: string;

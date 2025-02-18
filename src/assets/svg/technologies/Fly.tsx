@@ -20,9 +20,9 @@ export const Fly = ({ ...props }: SVGAttributes<SVGSVGElement>) => {
                     gradientTransform="matrix(.77604 0 0 1 .119 0)"
                     id="a"
                 >
-                    <stop stop-color="#BA7BF0" offset="0%" />
-                    <stop stop-color="#996BEC" offset="45%" />
-                    <stop stop-color="#5046E4" offset="100%" />
+                    <stop stopColor="#BA7BF0" offset="0%" />
+                    <stop stopColor="#996BEC" offset="45%" />
+                    <stop stopColor="#5046E4" offset="100%" />
                 </radialGradient>
             </defs>
             <path
