@@ -30,6 +30,7 @@
         "@payloadcms/storage-s3": "^3.22.0",
         "@react-three/drei": "^9.119.0",
         "@react-three/fiber": "9.0.0-rc.6",
+        "@rive-app/react-canvas": "^4.17.8",
         "clsx": "^2.1.1",
         "cross-env": "^7.0.3",
         "cross-spawn": ">=7.0.5",

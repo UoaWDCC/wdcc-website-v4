@@ -1,22 +1,11 @@
-import { ChecklistType } from "../_components/Checklist";
 
-export type pricingType = {
-    header: string;
-    plan: {
-        title: string;
-        description?: string;
-    };
-    checklists: ChecklistType[];
-    pricing: number;
-    mostPopular?: boolean;
-};
-
-export const pricingData: { cards: pricingType[] } = {
+export const pricingData = {
     cards: [
         {
             header: "try before you buy",
             plan: {
                 title: "WDCC Free",
+                desc: "For new students or visitors looking to try out the WDCC experience.",
             },
             checklists: [
                 { label: "Free events", checked: true },
@@ -27,12 +16,14 @@ export const pricingData: { cards: pricingType[] } = {
                 { label: "Date Chris and Kimberley", checked: false },
             ],
             pricing: 0,
+            variant: { style: "free" as const}
         },
         {
             header: "best value",
             plan: {
                 title: "WDCC Standard",
-                description: "Everything in Free, plus...",
+                desc: "For the smart student looking to level up their CS/SE skills in a quality environment.",
+                note: "Everything in Free, plus...",
             },
             checklists: [
                 { label: "Premium events", checked: true },
@@ -44,17 +35,18 @@ export const pricingData: { cards: pricingType[] } = {
                 { label: "Date Chris and Kimberley", checked: false },
             ],
             pricing: 15.99,
+            variant: { style: "standard" as const}
         },
         {
             header: "most popular!",
             plan: {
                 title: "WDCC Pro",
-                description: "Everything in Standard, plus...",
+                desc: "For discerning, talented students who expect the best of themselves and others.",
+                note: "Everything in Standard, plus...",
             },
             checklists: [
                 { label: "Luxury food", checked: true },
-                { label: "Super priority exec", checked: true },
-                { label: "application (nepotism included)", checked: true },
+                { label: "Super priority exec application (nepotism included)", checked: true },
                 { label: "2-chair tall chair at an event", checked: true },
                 { label: "Monthly armed strikes", checked: true },
                 { label: "Unlimited Discord messages", checked: true },
@@ -67,6 +59,7 @@ export const pricingData: { cards: pricingType[] } = {
             ],
             pricing: 49.99,
             mostPopular: true,
+            variant: { style: "pro" as const}
         },
     ],
 };

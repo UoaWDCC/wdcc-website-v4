@@ -4,7 +4,7 @@ import { tv, VariantProps } from "tailwind-variants";
 import { cn } from "@/libs/utils";
 
 const highlightblock = tv({
-    base: "flex justify-center rounded-2xl px-9 py-3 text-gray-800",
+    base: "flex justify-center leading-tight rounded-2xl px-9 py-3 text-gray-800",
     variants: {
         color: {
             yellow: "bg-yellow-100",
