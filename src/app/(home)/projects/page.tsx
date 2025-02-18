@@ -13,7 +13,7 @@ export default function ProjectsPage() {
         <StandardPageLayout>
             <Header
                 variant={{ style: "primary", color: "blue" }}
-                title="projects"
+                title="Projects"
                 description="Projects are your chance to build amazing, real world projects for genuine community clients. Develop your skills, work in an industry-like team environment, and gain practical work experience - all alongside motivated peers! "
                 primaryButton={{
                     label: "Apply for a project",
