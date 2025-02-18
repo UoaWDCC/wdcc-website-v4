@@ -16,10 +16,10 @@ export default function DeveloperPage() {
 
             <div className="flex flex-col gap-24 py-24">
                 <BlogContent>
-                    <div className="col-span-4 flex flex-col gap-5 xl:col-span-3">
+                    <div className="col-span-5 flex flex-col gap-5 xl:col-span-4">
                         {/* replace with mdx or cms?too */}
                         <h1 className="text-3xl font-bold" id="intro">
-                            How does project works?
+                            How do project work?
                         </h1>
                         <h2 className="text-xl font-bold" id="whos-involved">
                             Who’s involved
@@ -49,13 +49,6 @@ export default function DeveloperPage() {
                             Core techonologies for building the application such as databases, frontend frameworks, and
                             backend frameworks are decided by project leads.
                         </p>
-                        <h1 className="text-3xl font-bold" id="intro1">
-                            How does project works?
-                        </h1>
-                        <p>
-                            Core techonologies for building the application such as databases, frontend frameworks, and
-                            backend frameworks are decided by project leads.
-                        </p>
                     </div>
                 </BlogContent>
             </div>
@@ -65,7 +58,7 @@ export default function DeveloperPage() {
 
 export const BlogContent = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div id="blog" className="grid grid-cols-4 gap-4">
+        <div id="blog" className="grid grid-cols-5 gap-4">
             <>{children}</>
             <TableOfContents />
         </div>
