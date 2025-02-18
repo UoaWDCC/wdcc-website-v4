@@ -56,62 +56,6 @@ export default function DeveloperPage() {
                             Core techonologies for building the application such as databases, frontend frameworks, and
                             backend frameworks are decided by project leads.
                         </p>
-                        <h2 className="text-3xl font-bold" id="intro2">
-                            How does project works?
-                        </h2>
-                        <p>
-                            Core techonologies for building the application such as databases, frontend frameworks, and
-                            backend frameworks are decided by project leads.
-                        </p>
-                        <h2 className="text-3xl font-bold" id="intro3">
-                            How does project works?
-                        </h2>
-                        <p>
-                            Core techonologies for building the application such as databases, frontend frameworks, and
-                            backend frameworks are decided by project leads.
-                        </p>
-                        <h2 className="text-3xl font-bold" id="intro4">
-                            How does project works?
-                        </h2>
-                        <p>
-                            Core techonologies for building the application such as databases, frontend frameworks, and
-                            backend frameworks are decided by project leads.
-                        </p>
-                        <h3 className="text-3xl font-bold" id="intro5">
-                            How does project works?
-                        </h3>
-                        <p>
-                            Core techonologies for building the application such as databases, frontend frameworks, and
-                            backend frameworks are decided by project leads.
-                        </p>
-                        <h3 className="text-3xl font-bold" id="intro6">
-                            How does project works?
-                        </h3>
-                        <p>
-                            Core techonologies for building the application such as databases, frontend frameworks, and
-                            backend frameworks are decided by project leads.
-                        </p>
-                        <h3 className="text-3xl font-bold" id="intro7">
-                            How does project works?
-                        </h3>
-                        <p>
-                            Core techonologies for building the application such as databases, frontend frameworks, and
-                            backend frameworks are decided by project leads.
-                        </p>
-                        <h3 className="text-3xl font-bold" id="intro8">
-                            How does project works?
-                        </h3>
-                        <p>
-                            Core techonologies for building the application such as databases, frontend frameworks, and
-                            backend frameworks are decided by project leads.
-                        </p>
-                        <h3 className="text-3xl font-bold" id="intro9">
-                            How does project works?
-                        </h3>
-                        <p>
-                            Core techonologies for building the application such as databases, frontend frameworks, and
-                            backend frameworks are decided by project leads.
-                        </p>
                     </div>
                 </BlogContent>
             </div>

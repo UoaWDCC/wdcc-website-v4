@@ -2,6 +2,7 @@
 
 import { useLayoutEffect, useState } from "react";
 
+import SimpleLoading from "@/components/loading/SimpleLoading";
 import { cn } from "@/libs/utils";
 
 type ContentlistType = { level: number; label: string; id: string }[];
@@ -60,8 +61,9 @@ export const TableOfContents = () => {
             data-current={currentId}
             className="fixed right-0 top-1/3 flex h-min flex-col gap-2 rounded-xl bg-gray-50 p-4 lg:sticky lg:top-24"
         >
-            <strong className="whitespace-nowrap text-center text-lg font-bold">table of contents</strong>
+            <strong className="whitespace-nowrap px-8 text-center text-lg font-bold">table of contents</strong>
             <hr />
+            {contents.length === 0 && <SimpleLoading className="mx-auto p-4 *:bg-blue-brand" />}
             {contents.map((content) => (
                 <a
                     key={content.id}

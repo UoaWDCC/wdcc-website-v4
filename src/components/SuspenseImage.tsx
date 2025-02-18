@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import NextImage, { type ImageProps } from "next/image";
 
+import SimpleLoading from "./loading/SimpleLoading";
+
 const SuspenseImage = ({ ...props }: ImageProps) => {
     const [isLoaded, setLoaded] = useState(false);
 
@@ -15,19 +17,7 @@ const SuspenseImage = ({ ...props }: ImageProps) => {
     }, [props.src]);
 
     if (!isLoaded) {
-        return (
-            <div className="flex space-x-2">
-                {[0, 1, 2].map((i) => (
-                    <div
-                        key={i}
-                        className="h-3 w-3 animate-bounce rounded-full bg-white"
-                        style={{
-                            animationDelay: `${i * 0.15}s`,
-                        }}
-                    />
-                ))}
-            </div>
-        );
+        return <SimpleLoading />;
     }
 
     return <NextImage {...props} />;
