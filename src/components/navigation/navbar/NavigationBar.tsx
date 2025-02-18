@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { tv, VariantProps } from "tailwind-variants";
 
@@ -88,9 +88,15 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
         sethover(true);
     };
     const handleDropExit = () => {
-        console.log("exit");
         sethover(false);
     };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleDropExit);
+        return () => {
+            window.removeEventListener("scroll", handleDropExit);
+        };
+    });
 
     return (
         <hoverContext.Provider
