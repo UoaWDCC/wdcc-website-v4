@@ -38,7 +38,7 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
                 touchAction: "auto",
             }}
         >
-            <div className="relative flex h-dvh min-h-dvh flex-col overflow-x-hidden">{children}</div>
+            <div className="relative flex h-dvh min-h-dvh w-dvw flex-col overflow-x-hidden">{children}</div>
             {/* background scene by default */}
             <Scene
                 style={{
