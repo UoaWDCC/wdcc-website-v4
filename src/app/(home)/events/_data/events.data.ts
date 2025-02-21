@@ -12,7 +12,7 @@ export interface Category {
 
 export const eventsData = {
     header: {
-        title: "events",
+        title: "Events",
         description:
             "From educational workshops to social mixers, hackathons to code competitions, WDCC's regular events help students develop all kinds of valuable skills - and make friends along the way!",
         // button labels/links are currently hardcoded into the page header

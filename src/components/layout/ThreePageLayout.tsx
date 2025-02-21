@@ -9,21 +9,26 @@ import { fadeopacity } from "@/libs/animations";
 
 const Scene = dynamic(() => import("@/components/three/scene/Scene"), { ssr: false });
 
+const DebounceTimer = 50;
+
 const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
-    const [isLoaded, setLoaded] = useState(false);
-    const [wasActive, setWasActive] = useState(false);
     const progress = useProgress();
+    const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        setWasActive(progress.active);
-        setLoaded(progress.total === progress.loaded && wasActive);
+        const loadId = setTimeout(() => {
+            if (progress.total === progress.loaded && progress.item !== "") {
+                setLoaded(true);
+            }
+        }, DebounceTimer);
+        return () => clearTimeout(loadId);
     }, [progress]);
 
     return (
         <motion.div
             // active == loading
             initial="initial"
-            animate={isLoaded ? "animate" : "initial"}
+            animate={loaded ? "animate" : "initial"}
             variants={fadeopacity}
             style={{
                 position: "relative",
