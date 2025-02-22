@@ -52,7 +52,7 @@ export const Events: CollectionConfig = {
                 {
                     name: "category",
                     type: "select",
-                    options: EventCategories,
+                    options: [...EventCategories],
                     required: true,
                 },
             ],

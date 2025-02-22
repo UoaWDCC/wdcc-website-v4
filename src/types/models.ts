@@ -61,7 +61,7 @@ export type Project = {
     team: Team;
 };
 
-export type Event = {
+export type OldEvent = {
     title: string;
     time: Date;
     location: string;
@@ -75,10 +75,11 @@ export type Event = {
     slug?: string;
 };
 
-export const EventCategories = ["Workshop", "Competition", "Social"];
+export const EventCategories = ["Workshop", "Competition", "Social"] as const;
+
 export type EventCategory = (typeof EventCategories)[number];
 
-export type NEvent = {
+export type Event = {
     title: string;
     slug?: string;
     time: Date;
@@ -86,7 +87,7 @@ export type NEvent = {
     description: string;
     category: EventCategory;
     thumbnail: {
-        src: string;
+        src: string | StaticImageData;
         alt: string;
     };
     page: {
