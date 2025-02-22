@@ -1,8 +1,5 @@
 import React from "react";
 
-import { Button } from "@/components/primitives/Button";
-import { cn } from "@/libs/utils";
-
 export type FeatureCardType = {
     number: string;
     title: string;
