@@ -1,4 +1,4 @@
-import { Event as CMSEVENT, Media } from "@/payload-types";
+import { Event as CMSEVENT, Media, Partner } from "@/payload-types";
 
 import { Event } from "../models";
 
@@ -25,20 +25,12 @@ export const ParsePayloadEvent = (CmsEvent: CMSEVENT): Event | undefined => {
                 alt: (CmsEvent.page.image as Media)?.alt || "",
             },
         },
-        collabPartners: CmsEvent.collabPartners
-            ? CmsEvent.collabPartners.filter((partner) =>
-                  [
-                      "Atlassian",
-                      "AWS",
-                      "EY",
-                      "PARTLY",
-                      "RuffByte",
-                      "Madrat Interactive",
-                      "Google",
-                      "Janestreet",
-                      "Sandfield",
-                  ].includes(partner)
-              )
-            : undefined,
+        partners: Array.isArray(CmsEvent.Partners)
+            ? CmsEvent.Partners.map((partner) => ({
+                  href: (partner as Partner)?.href || "",
+                  src: (partner as Partner)?.url || "",
+                  alt: (partner as Partner)?.alt || "",
+              }))
+            : [],
     };
 };

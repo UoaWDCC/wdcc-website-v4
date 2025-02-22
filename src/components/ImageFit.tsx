@@ -1,16 +1,19 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 
+import { cn } from "@/libs/utils";
+
 export interface ImageFitProps {
     src: string | StaticImageData;
     alt: string;
     width?: string;
     height?: string;
+    className?: string;
 }
 
-const ImageFit = ({ src, alt, width = "150px", height = "80px" }: ImageFitProps) => {
+const ImageFit = ({ src, alt, width = "150px", height = "80px", className }: ImageFitProps) => {
     return (
-        <div style={{ position: "relative", minWidth: width, minHeight: height }}>
+        <div className={cn("", className)} style={{ position: "relative", minWidth: width, minHeight: height }}>
             <Image
                 priority
                 fill

@@ -9,16 +9,12 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import EventCard from "../_components/EventCard";
 import { eventsData } from "../_data/events.data";
 
-export const revalidate = 60;
-
-const projects = (await getAllEvents()).map(ParsePayloadEvent);
-const combinedEvents = [...projects, ...eventsData.eventsGrid.events] as Event[];
 const page = () => {
     return (
         <StandardPageLayout>
             <div className="my-24 flex w-full flex-col">
                 <div className="grid gap-6 lg:grid-cols-2">
-                    {combinedEvents.map((event, index) => (
+                    {eventsData.eventsGrid.events.map((event, index) => (
                         <EventCard event={event} key={index} />
                     ))}
                 </div>

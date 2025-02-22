@@ -76,20 +76,9 @@ export type OldEvent = {
 };
 
 export const EventCategories = ["Workshop", "Competition", "Social"] as const;
-export const collabPartners = [
-    "Atlassian",
-    "AWS",
-    "EY",
-    "PARTLY",
-    "RuffByte",
-    "Madrat Interactive",
-    "Google",
-    "Janestreet",
-    "Sandfield",
-] as const;
 
 export type EventCategory = (typeof EventCategories)[number];
-export type collabPartners = (typeof collabPartners)[number];
+
 export type Event = {
     title: string;
     slug?: string;
@@ -108,7 +97,11 @@ export type Event = {
             alt: string;
         };
     };
-    collabPartners?: collabPartners[];
+    partners: {
+        href: string;
+        src: string;
+        alt: string;
+    }[];
 };
 
 export type Team = {

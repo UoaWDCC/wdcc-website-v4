@@ -21,5 +21,5 @@ export const wdccAGM2025: Event = {
             alt: "Image 1",
         },
     },
-    collabPartners: [],
+    partners: [],
 };

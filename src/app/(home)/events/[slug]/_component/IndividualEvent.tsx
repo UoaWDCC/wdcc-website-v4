@@ -12,18 +12,18 @@ const IndividualEvent = ({ event }: { event: Event }) => {
                 {/* done 🤝*/}
                 <p className="whitespace-pre-line text-md">{event.page.description}</p>
                 <ImageFit src={event.page.image.src} alt="" height="500px" width="500px" />
-            </div>
-            {event.collabPartners && event.collabPartners.length > 0 && (
-                <div className="mt-8">
-                    {/* todo: add an 's' to the end if multiple */}
-                    <h3 className="text-3xl font-semibold">Collab Partners</h3>
-                    <div className="flex gap-4">
-                        {event.collabPartners.map((partner) => (
-                            <ImageFit key={partner} src={partner} alt="" height="100px" width="300px" />
-                        ))}
+                {event.partners && event.partners.length > 0 && (
+                    <div className="mt-8">
+                        {/* todo: add an 's' to the end if multiple */}
+                        <h3 className="text-3xl font-semibold">Collab Partners</h3>
+                        <div className="flex gap-4">
+                            {event.partners.map((partner) => (
+                                <ImageFit key={partner.alt} src={partner.src} alt="" height="100px" width="300px" />
+                            ))}
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
+            </div>
         </div>
     );
 };

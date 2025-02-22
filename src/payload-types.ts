@@ -16,6 +16,7 @@ export interface Config {
     event: Event;
     project: Project;
     test: Test;
+    partners: Partner;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -27,6 +28,7 @@ export interface Config {
     event: EventSelect<false> | EventSelect<true>;
     project: ProjectSelect<false> | ProjectSelect<true>;
     test: TestSelect<false> | TestSelect<true>;
+    partners: PartnersSelect<false> | PartnersSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -117,21 +119,29 @@ export interface Event {
     Description: string;
     image: number | Media;
   };
-  collabPartners?:
-    | (
-        | 'Atlassian'
-        | 'AWS'
-        | 'EY'
-        | 'PARTLY'
-        | 'RuffByte'
-        | 'Madrat Interactive'
-        | 'Google'
-        | 'Janestreet'
-        | 'Sandfield'
-      )[]
-    | null;
+  Partners?: (number | Partner)[] | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "partners".
+ */
+export interface Partner {
+  id: number;
+  href: string;
+  alt: string;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -302,6 +312,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'test';
         value: number | Test;
+      } | null)
+    | ({
+        relationTo: 'partners';
+        value: number | Partner;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -397,7 +411,7 @@ export interface EventSelect<T extends boolean = true> {
         Description?: T;
         image?: T;
       };
-  collabPartners?: T;
+  Partners?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -523,6 +537,25 @@ export interface TestSelect<T extends boolean = true> {
       };
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "partners_select".
+ */
+export interface PartnersSelect<T extends boolean = true> {
+  href?: T;
+  alt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

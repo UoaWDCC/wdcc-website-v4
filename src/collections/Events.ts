@@ -1,6 +1,6 @@
 import type { CollectionConfig } from "payload";
 
-import { collabPartners, EventCategories } from "@/types/models";
+import { EventCategories } from "@/types/models";
 
 import { SLUG } from "@/libs/enums/slug";
 
@@ -42,6 +42,11 @@ export const Events: CollectionConfig = {
                 {
                     name: "time",
                     type: "date",
+                    admin: {
+                        date: {
+                            pickerAppearance: "dayAndTime",
+                        },
+                    },
                     required: true,
                 },
                 {
@@ -57,6 +62,7 @@ export const Events: CollectionConfig = {
                 },
             ],
         },
+
         {
             name: "page",
             type: "group",
@@ -76,10 +82,10 @@ export const Events: CollectionConfig = {
             ],
         },
         {
-            name: "collabPartners",
-            type: "select",
+            name: "Partners",
+            type: "upload",
+            relationTo: "partners",
             hasMany: true,
-            options: [...collabPartners],
         },
     ],
 };
