@@ -75,6 +75,30 @@ export type Event = {
     slug?: string;
 };
 
+export const EventCategories = ["Workshop", "Competition", "Social"];
+export type EventCategory = (typeof EventCategories)[number];
+
+export type NEvent = {
+    title: string;
+    slug?: string;
+    time: Date;
+    location: string;
+    description: string;
+    category: EventCategory;
+    thumbnail: {
+        src: string;
+        alt: string;
+    };
+    page: {
+        description: string;
+        image: {
+            src: string;
+            alt: string;
+        };
+    };
+    collabPartners: string[];
+};
+
 export type Team = {
     techlead: { name: string; image?: { src: string; alt: string } };
     manager: { name: string; image?: { src: string; alt: string } };

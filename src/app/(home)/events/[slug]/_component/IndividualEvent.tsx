@@ -1,14 +1,15 @@
 import React from "react";
 
-import ImageFit from "@/components/ImageFit";
-
 import { Event } from "@/types/models";
+
+import ImageFit from "@/components/ImageFit";
 
 const IndividualEvent = ({ event }: { event: Event }) => {
     return (
         <div className="flex flex-col py-16">
             <div className="grid grid-cols-2 gap-16">
                 {/* todo: replace with real data soon. payload? */}
+                {/* done 🤝*/}
                 <p className="whitespace-pre-line text-md">{event.descriptionExtended}</p>
                 <ImageFit src={event.image} alt="" height="500px" width="500px" />
             </div>
