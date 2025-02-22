@@ -24,7 +24,7 @@ export default function EventCard({ event }: EventCardProps) {
             className="inline-flex cursor-pointer flex-col items-end justify-start gap-9 overflow-hidden rounded-2xl bg-gray-50 transition duration-500 will-change-auto hover:-translate-x-1 hover:-translate-y-1 hover:drop-shadow-cardLift hover:duration-200"
         >
             <div className="">
-                <SuspenseImage
+                <Image
                     src={event.thumbnail.src}
                     alt={event.thumbnail.alt}
                     width={600}
