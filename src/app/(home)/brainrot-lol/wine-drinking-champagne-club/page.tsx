@@ -1,16 +1,11 @@
 "use client";
-
-import { motion, Variants } from "motion/react";
-
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import { easeOutQuad } from "@/libs/ease";
 
 import FeatureCard from "./_components/FeatureCard";
 
 {/* Font and other import logic held locally so the troll pages don't have external impact. */ }
 import { Cardo } from "next/font/google";
 const cardo = Cardo({ weight: ['400', '700'], style: ["italic", "normal"], subsets: ["latin"] });
-
 
 
 import React from "react";
@@ -181,8 +176,8 @@ export default function PricingPage() {
                             </p>
                             <div className="flex flex-col gap-2 my-10 max-w-[350px]">
                                 <p className="text-white text-lg leading-tight">
-                                    “One does not join WDCC for the wine. The wise join because they feel it is friends.
-                                    It is family. ”
+                                    &quot;One does not join WDCC for the wine. The wise join because they feel it is friends.
+                                    It is family. &quot;
                                 </p>
                                 <div className="flex gap-3 text-white italic opacity-75">
                                     <span className="tracking-[2.88px]">SUN TZU</span>
@@ -234,11 +229,11 @@ export default function PricingPage() {
                                 <div className="flex flex-col gap-2 max-w-[700px]">
                                     <p className="text-md text-white opacity-75">[IX]</p>
                                     <p className="text-white text-md leading-tight">
-                                        "A role model for inclusivity. Boutique wine tasting is such a student-friendly
+                                        &quot;A role model for inclusivity. Boutique wine tasting is such a student-friendly
                                         hobby, and I am so glad that there are still groups focusing on the more
                                         affordable activities out there. I cannot believe nobody thought of this sooner.
                                         It is fair to say WDCC may be one of the <em>least privileged</em> clubs in the
-                                        entire University. ”
+                                        entire University. &quot;
                                     </p>
                                     <div className="flex gap-3 text-white italic opacity-75">
                                         <span className="tracking-[2.88px]">DAWN FRESHWATER</span>
@@ -280,12 +275,3 @@ export default function PricingPage() {
         </StandardPageLayout>
     );
 }
-
-const fadeup: Variants = {
-    initial: { y: 32, opacity: 0 },
-    animate: {
-        y: 0,
-        opacity: 1,
-        transition: { ease: easeOutQuad, duration: 1 },
-    },
-};
