@@ -3,8 +3,6 @@ import Link from "next/link";
 
 import { Event } from "@/types/models";
 
-import SuspenseImage from "@/components/SuspenseImage";
-
 interface EventCardProps {
     event: Event;
 }
