@@ -9,6 +9,8 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import EventCard from "../_components/EventCard";
 import { eventsData } from "../_data/events.data";
 
+export const revalidate = 60;
+
 const projects = (await getAllEvents()).map(ParsePayloadEvent);
 const combinedEvents = [...projects, ...eventsData.eventsGrid.events] as Event[];
 const page = () => {
