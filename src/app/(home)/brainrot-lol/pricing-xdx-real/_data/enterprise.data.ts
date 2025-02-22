@@ -1,4 +1,4 @@
-import { ChecklistType } from "../_components/Checklist";
+import { ChecklistType } from "@/components/primitives/Checklist";
 
 export const enterpriseData: { checklist: ChecklistType[] } = {
     checklist: [
