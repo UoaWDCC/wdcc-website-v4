@@ -1,11 +1,14 @@
 import { StaticImageData } from "next/image";
 
+import { Media } from "@/payload-types";
+
 export type Exec = {
     name: string;
-    image: StaticImageData;
     role: string;
+    image?: (number | null) | Media;
     description: string;
     joined: string;
+    id?: string | null;
 };
 
 export type Faq = {

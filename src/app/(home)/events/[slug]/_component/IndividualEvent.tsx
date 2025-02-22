@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import { Event } from "@/types/models";
 
@@ -18,7 +19,9 @@ const IndividualEvent = ({ event }: { event: Event }) => {
                         <h3 className="text-3xl font-semibold">Collab Partners</h3>
                         <div className="flex gap-4">
                             {event.partners.map((partner) => (
-                                <ImageFit key={partner.alt} src={partner.src} alt="" height="100px" width="300px" />
+                                <Link href={partner.href} target="_">
+                                    <ImageFit key={partner.alt} src={partner.src} alt="" height="100px" width="300px" />
+                                </Link>
                             ))}
                         </div>
                     </div>

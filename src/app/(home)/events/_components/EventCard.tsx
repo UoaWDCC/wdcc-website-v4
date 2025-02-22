@@ -1,9 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { Event } from "@/types/models";
 
-import ImageFit from "@/components/ImageFit";
+import ImageCover from "@/components/ImageCover";
 
 interface EventCardProps {
     event: Event;
@@ -23,7 +22,7 @@ export default function EventCard({ event }: EventCardProps) {
             href={`/events/${slug}`}
             className="inline-flex cursor-pointer flex-col items-end justify-start gap-9 overflow-hidden rounded-2xl bg-gray-50 transition duration-500 will-change-auto hover:-translate-x-1 hover:-translate-y-1 hover:drop-shadow-cardLift hover:duration-200"
         >
-            <ImageFit
+            <ImageCover
                 src={event.thumbnail.src}
                 width="600px"
                 height="400px"

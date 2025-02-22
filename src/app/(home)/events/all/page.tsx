@@ -1,9 +1,7 @@
 import React from "react";
 
 import { Event } from "@/types/models";
-import { ParsePayloadEvent } from "@/types/parser/ParsePayloadEvent";
 
-import { getAllEvents } from "@/actions/getAllEvents";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import EventCard from "../_components/EventCard";

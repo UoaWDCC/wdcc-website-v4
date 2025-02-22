@@ -8,6 +8,7 @@ import { buildConfig } from "payload";
 import sharp from "sharp";
 
 import { Events } from "./collections/Events";
+import { ExecsPage } from "./collections/ExecsPage";
 import { Media } from "./collections/Media";
 import { Partners } from "./collections/Partners";
 import { Project } from "./collections/Projects";
@@ -25,6 +26,7 @@ export default buildConfig({
         },
     },
     collections: [Users, Media, Events, Project, TestSlug, Partners],
+    globals: [ExecsPage],
     editor: lexicalEditor({
         features: ({ defaultFeatures }) => [...defaultFeatures, LinkFeature({}), HTMLConverterFeature({})],
     }),

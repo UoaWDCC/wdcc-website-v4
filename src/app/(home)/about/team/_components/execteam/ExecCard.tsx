@@ -12,7 +12,7 @@ interface ExecCardProps {
 
 export default function ExecCard({ exec }: ExecCardProps) {
     return (
-        <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-gray-50 lg:w-[432px] sm:flex-row gap-2 w-full">
+        <div className="flex w-full flex-col items-center gap-2 overflow-hidden rounded-2xl bg-gray-50 sm:flex-row lg:w-[432px]">
             <Image
                 src={exec.image ? exec.image : placeholder}
                 alt={exec.name}

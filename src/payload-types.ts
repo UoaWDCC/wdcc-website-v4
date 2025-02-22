@@ -36,8 +36,12 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    'execs-page': ExecsPage;
+  };
+  globalsSelect: {
+    'execs-page': ExecsPageSelect<false> | ExecsPageSelect<true>;
+  };
   locale: null;
   user: User & {
     collection: 'users';
@@ -131,6 +135,7 @@ export interface Partner {
   id: number;
   href: string;
   alt: string;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -545,6 +550,7 @@ export interface TestSelect<T extends boolean = true> {
 export interface PartnersSelect<T extends boolean = true> {
   href?: T;
   alt?: T;
+  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -588,6 +594,60 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "execs-page".
+ */
+export interface ExecsPage {
+  id: number;
+  title: string;
+  description: string;
+  teams: {
+    teamName: string;
+    teamDescription: string;
+    execs?:
+      | {
+          name: string;
+          role: string;
+          image?: (number | null) | Media;
+          description: string;
+          joined: string;
+          id?: string | null;
+        }[]
+      | null;
+    id?: string | null;
+  }[];
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "execs-page_select".
+ */
+export interface ExecsPageSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  teams?:
+    | T
+    | {
+        teamName?: T;
+        teamDescription?: T;
+        execs?:
+          | T
+          | {
+              name?: T;
+              role?: T;
+              image?: T;
+              description?: T;
+              joined?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
