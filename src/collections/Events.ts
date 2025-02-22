@@ -45,7 +45,7 @@ export const Events: CollectionConfig = {
                     required: true,
                 },
                 {
-                    name: "locatin",
+                    name: "location",
                     type: "text",
                     required: true,
                 },
@@ -79,7 +79,7 @@ export const Events: CollectionConfig = {
             name: "collabPartners",
             type: "select",
             hasMany: true,
-            options: ["temp", "temp2"],
+            options: [],
         },
     ],
 };

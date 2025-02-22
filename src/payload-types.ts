@@ -106,7 +106,18 @@ export interface Media {
  */
 export interface Event {
   id: number;
-  alt: string;
+  thumbnail: number | Media;
+  slug: string;
+  title: string;
+  Description: string;
+  time: string;
+  location: string;
+  category: 'Workshop' | 'Competition' | 'Social';
+  page: {
+    Description: string;
+    image: number | Media;
+  };
+  collabPartners?: string[] | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -361,7 +372,20 @@ export interface MediaSelect<T extends boolean = true> {
  * via the `definition` "event_select".
  */
 export interface EventSelect<T extends boolean = true> {
-  alt?: T;
+  thumbnail?: T;
+  slug?: T;
+  title?: T;
+  Description?: T;
+  time?: T;
+  location?: T;
+  category?: T;
+  page?:
+    | T
+    | {
+        Description?: T;
+        image?: T;
+      };
+  collabPartners?: T;
   updatedAt?: T;
   createdAt?: T;
 }

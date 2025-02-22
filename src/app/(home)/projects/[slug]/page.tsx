@@ -51,7 +51,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     return (
         <StandardPageLayout>
             <ProjectHeader
-                backlink={{ label: "projects", href: "/projects" }}
+                backlink={{ label: "projects", href: "/projects/all" }}
                 title={project.name.title}
                 primaryButton={
                     project.primaryLink && { label: project.primaryLink.label, href: project.primaryLink.href }

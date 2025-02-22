@@ -97,7 +97,7 @@ export type Event = {
             alt: string;
         };
     };
-    collabPartners: string[];
+    collabPartners?: string[];
 };
 
 export type Team = {
