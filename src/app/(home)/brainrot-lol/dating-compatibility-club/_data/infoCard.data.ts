@@ -6,25 +6,25 @@ export const whatWeDoData: WhatWeDoData = {
             variant: { color: "blue" },
             index: "01",
             title: "Projects",
-            slug: "projects",
+            slug: "",
             description:
-                "We provide opportunities for students to work in teams to deliver projects for real-world clients - gaining real industry expertise alongside motivated peers.",
+                "We provide opportunities for students to work in teams to deliver software projects that make relationships just a little easier - from ethical dating apps through to Agile workflows for date tracking.",
         },
         {
             variant: { color: "green" },
             index: "02",
-            title: "Events",
-            slug: "events",
+            title: "Dating",
+            slug: "",
             description:
-                "We hold various social events, competitions, and mixers to bring Auckland’s tech students together - to yap, make friends, and develop their best network.",
+                "We support members in all their dating endeavours with a range of services, including our 24/7 date support hotline, an educational program tailored for CS students, and practical lessons in handholding.",
         },
         {
             variant: { color: "yellow" },
             index: "03",
-            title: "Workshops",
-            slug: "workshops",
+            title: "Matchmaking",
+            slug: "",
             description:
-                "We host a range of workshops to teach members the things they’ll need to thrive in our projects, covering plenty of crucial development, tech, and people skills.",
+                "Our acclaimed matchmaking service helps members find the best partner for them in a friendly and supportive environment. Powered by experimental AI, we thrive by our motto: 'Love sharpens iron'. ",
         },
     ],
 };

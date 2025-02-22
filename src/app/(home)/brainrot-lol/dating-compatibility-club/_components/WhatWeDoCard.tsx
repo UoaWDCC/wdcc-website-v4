@@ -3,16 +3,17 @@ import { tv, VariantProps } from "tailwind-variants";
 
 import { Button } from "@/components/primitives/Button";
 
-// Yes, I know it says "yellow" and the color is bg-orange (not bg-yellow). The yellow is just a bit too bright for this page lol.
+// This is the "what we do" card for the DATING BRAINROT page - not the actual production landing!
 
 const card = tv({
-    base: "relative flex w-[330px] flex-col items-end gap-8 overflow-hidden rounded-2xl rounded-tl-[48px] p-8 " +
+    base: "relative flex w-[330px] flex-col items-end gap-8 overflow-hidden rounded-2xl rounded-tl-[48px] rounded-br-[48px] p-8 " +
         "transition will-change-auto duration-500 hover:duration-200 hover:-translate-x-1 hover:-translate-y-1 cursor-pointer hover:drop-shadow-cardLift",
     variants: {
         color: {
-            blue: "bg-blue-100",
-            green: "bg-green-100",
-            yellow: "bg-orange-100",
+            // Yes these colors are wrong - I couldn't be bothered to change all the names for what is only a troll page lol.
+            blue: "border-[3px] border-pink-700",
+            green: "bg-pink-200",
+            yellow: "border-[3px] border-pink-700",
         },
     },
 });

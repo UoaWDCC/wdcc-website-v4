@@ -5,16 +5,15 @@ import { View } from "@/components/three/scene/View";
 import ThreeLayout from "@/components/layout/ThreePageLayout";
 
 import ThisIsWDCC from "./ThisIsWDCCSection";
-import ComingUp from "@/app/(home)/_components/ComingUpSection";
 import WDCCHero from "./WDCCHero";
-import SignupCard from "@/app/(home)/_components/SignupCard";
+import SignupCard from "./SignupCard";
 
 import { useRive  } from '@rive-app/react-canvas';
 import React from "react";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 export default function DatingPage() {
-    const [heroAnimEnded, setHeroAnimEnded] = React.useState(false);
+    const [heroAnimEnded, setHeroAnimEnded] = React.useState(true);
 
     const { RiveComponent } = useRive({
         src: "/rive/wdcc_dating_lander.riv",
@@ -44,7 +43,6 @@ export default function DatingPage() {
                             <WDCCHero />
                             <div className="flex flex-col gap-36">
                                 <ThisIsWDCC />
-                                <ComingUp />
                                 <SignupCard />
                             </div>
                         </main>
