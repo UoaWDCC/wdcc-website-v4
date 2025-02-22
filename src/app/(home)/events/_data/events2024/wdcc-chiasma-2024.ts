@@ -22,5 +22,5 @@ export const wdccChiasma2024: Event = {
             alt: "Image 1",
         },
     },
-    collabPartners: ["/eventmock/collab_partner_placeholder_a.png"],
+    collabPartners: undefined,
 };

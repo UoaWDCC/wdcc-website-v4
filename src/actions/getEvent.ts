@@ -6,7 +6,7 @@ import { SLUG } from "@/libs/enums/slug";
 import { getPayload } from "@/libs/payload";
 import { Event } from "@/payload-types";
 
-// return Even
+// return Event
 export const getEvent = async (slug: string) => {
     const payload = await getPayload();
     const events = await payload.find({

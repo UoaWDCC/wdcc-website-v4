@@ -1,6 +1,6 @@
 import type { CollectionConfig } from "payload";
 
-import { EventCategories } from "@/types/models";
+import { collabPartners, EventCategories } from "@/types/models";
 
 import { SLUG } from "@/libs/enums/slug";
 
@@ -79,7 +79,7 @@ export const Events: CollectionConfig = {
             name: "collabPartners",
             type: "select",
             hasMany: true,
-            options: [],
+            options: [...collabPartners],
         },
     ],
 };

@@ -25,6 +25,20 @@ export const ParsePayloadEvent = (CmsEvent: CMSEVENT): Event | undefined => {
                 alt: (CmsEvent.page.image as Media)?.alt || "",
             },
         },
-        collabPartners: CmsEvent.collabPartners || undefined,
+        collabPartners: CmsEvent.collabPartners
+            ? CmsEvent.collabPartners.filter((partner) =>
+                  [
+                      "Atlassian",
+                      "AWS",
+                      "EY",
+                      "PARTLY",
+                      "RuffByte",
+                      "Madrat Interactive",
+                      "Google",
+                      "Janestreet",
+                      "Sandfield",
+                  ].includes(partner)
+              )
+            : undefined,
     };
 };

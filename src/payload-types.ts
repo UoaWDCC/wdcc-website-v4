@@ -117,7 +117,19 @@ export interface Event {
     Description: string;
     image: number | Media;
   };
-  collabPartners?: string[] | null;
+  collabPartners?:
+    | (
+        | 'Atlassian'
+        | 'AWS'
+        | 'EY'
+        | 'PARTLY'
+        | 'RuffByte'
+        | 'Madrat Interactive'
+        | 'Google'
+        | 'Janestreet'
+        | 'Sandfield'
+      )[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
