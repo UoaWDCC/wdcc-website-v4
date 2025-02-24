@@ -163,7 +163,7 @@ export interface Project {
     extended?: string | null;
   };
   description: string;
-  brief: {
+  'Project Page': {
     description: string;
     image: number | Media;
   };
@@ -436,7 +436,7 @@ export interface ProjectSelect<T extends boolean = true> {
         extended?: T;
       };
   description?: T;
-  brief?:
+  'Project Page'?:
     | T
     | {
         description?: T;

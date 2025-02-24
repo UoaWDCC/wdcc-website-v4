@@ -1,7 +1,5 @@
 import { Exec } from "@/types/models";
 
-import type { Media } from "@/payload-types";
-
 import ExecCard from "./execteam/ExecCard";
 
 interface ExecTeamProps {

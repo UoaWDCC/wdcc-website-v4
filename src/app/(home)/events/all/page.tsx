@@ -1,7 +1,5 @@
 import React from "react";
 
-import { Event } from "@/types/models";
-
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import EventCard from "../_components/EventCard";

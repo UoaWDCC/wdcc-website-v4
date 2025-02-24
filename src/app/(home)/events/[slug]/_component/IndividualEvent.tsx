@@ -18,8 +18,8 @@ const IndividualEvent = ({ event }: { event: Event }) => {
                         {/* todo: add an 's' to the end if multiple */}
                         <h3 className="text-3xl font-semibold">Collab Partners</h3>
                         <div className="flex gap-4">
-                            {event.partners.map((partner) => (
-                                <Link href={partner.href} target="_">
+                            {event.partners.map((partner, index) => (
+                                <Link href={partner.href} target="_" key={index}>
                                     <ImageFit key={partner.alt} src={partner.src} alt="" height="100px" width="300px" />
                                 </Link>
                             ))}

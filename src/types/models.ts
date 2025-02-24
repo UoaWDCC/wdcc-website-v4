@@ -1,8 +1,6 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { StaticImageData } from "next/image";
 
-import { Media } from "@/payload-types";
-
 export type Exec = {
     name: string;
     role: string;
