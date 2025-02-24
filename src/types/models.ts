@@ -5,7 +5,7 @@ import { Media } from "@/payload-types";
 export type Exec = {
     name: string;
     role: string;
-    image?: (number | null) | Media;
+    image?: (number | null) | Media | StaticImageData;
     description: string;
     joined: string;
     id?: string | null;
