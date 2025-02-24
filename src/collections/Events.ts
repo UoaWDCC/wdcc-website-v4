@@ -24,20 +24,27 @@ export const Events: CollectionConfig = {
                 {
                     name: "slug",
                     type: "text",
-                    defaultValue: `2025-slug`,
                     required: true,
                     unique: true,
+                    admin: {
+                        placeholder: "Please type a slug  here.",
+                    },
                 },
                 {
                     name: "title",
                     type: "text",
-                    defaultValue: `eventTitle`,
                     required: true,
+                    admin: {
+                        placeholder: "Please type the event title here.",
+                    },
                 },
                 {
                     name: "Description",
                     type: "text",
                     required: true,
+                    admin: {
+                        placeholder: "Please type the event description here.",
+                    },
                 },
                 {
                     name: "time",
@@ -53,6 +60,9 @@ export const Events: CollectionConfig = {
                     name: "location",
                     type: "text",
                     required: true,
+                    admin: {
+                        placeholder: "Please type the event location here.",
+                    },
                 },
                 {
                     name: "category",
@@ -71,6 +81,9 @@ export const Events: CollectionConfig = {
                     name: "Description",
                     type: "text",
                     required: true,
+                    admin: {
+                        placeholder: "Please type the page description here.",
+                    },
                 },
                 {
                     name: "image",

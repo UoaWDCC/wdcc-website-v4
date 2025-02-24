@@ -1,3 +1,5 @@
+import { Exec } from "@/types/models";
+
 import type { Media } from "@/payload-types";
 
 import ExecCard from "./execteam/ExecCard";
@@ -5,16 +7,7 @@ import ExecCard from "./execteam/ExecCard";
 interface ExecTeamProps {
     title: string;
     description: string;
-    execs?:
-        | {
-              name: string;
-              role: string;
-              image?: (number | null) | Media;
-              description: string;
-              joined: string;
-              id?: string | null;
-          }[]
-        | null;
+    execs: Exec[];
 }
 
 export default function ExecTeam({ title, description, execs }: ExecTeamProps) {

@@ -1,5 +1,8 @@
 import { GlobalConfig } from "payload";
 
+// guess we doing globals now
+//global's are different from collections as collections can have multiples records (or rows i guess) but globals only
+//corrosponds to one record
 export const ExecsPage: GlobalConfig = {
     slug: "execs-page",
     label: "Execs Page",
@@ -20,6 +23,7 @@ export const ExecsPage: GlobalConfig = {
             defaultValue: "Learn more about our executive team and their roles.",
         },
         {
+            //maybe execs could be a collection and this could reference that collection instead.
             name: "teams",
             type: "array",
             required: true,
