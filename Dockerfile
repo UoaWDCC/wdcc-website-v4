@@ -34,8 +34,16 @@ COPY . .
 # Build application
 RUN --mount=type=secret,id=DATABASE_URI \
     --mount=type=secret,id=PAYLOAD_SECRET \
+    --mount=type=secret,id=S3_BUCKET \
+    --mount=type=secret,id=S3_ACCESS_KEY_ID \
+    --mount=type=secret,id=S3_SECRET_ACCESS_KEY \
+    --mount=type=secret,id=S3_REGION \
     DATABASE_URI="$(cat /run/secrets/DATABASE_URI)" \
     PAYLOAD_SECRET="$(cat /run/secrets/PAYLOAD_SECRET)" \
+    S3_BUCKET="$(cat /run/secrets/S3_BUCKET)" \
+    S3_ACCESS_KEY_ID="$(cat /run/secrets/S3_ACCESS_KEY_ID)" \
+    S3_SECRET_ACCESS_KEY="$(cat /run/secrets/S3_SECRET_ACCESS_KEY)" \
+    S3_REGION="$(cat /run/secrets/S3_REGION)" \
     pnpm run build
 
 # Remove development dependencies
