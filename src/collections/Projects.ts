@@ -26,20 +26,26 @@ export const Project: CollectionConfig = {
                 {
                     name: "slug",
                     type: "text",
-                    defaultValue: `2025-slug`,
+                    admin: {
+                        placeholder: "Please type the project slug here.",
+                    },
                     required: true,
                     unique: true,
                 },
                 {
                     name: "year",
                     type: "text",
-                    defaultValue: `2025`,
+                    admin: {
+                        placeholder: "Please type the project year here. e.g (2025)",
+                    },
                     required: true,
                 },
                 {
                     name: "client",
                     type: "text",
-                    defaultValue: "client name",
+                    admin: {
+                        placeholder: "Please type the project client name here. e.g (Youth Of Orakei)",
+                    },
                     required: true,
                 },
                 {
@@ -49,31 +55,43 @@ export const Project: CollectionConfig = {
                         {
                             name: "default",
                             type: "text",
-                            defaultValue: "project name",
+                            admin: {
+                                placeholder: "Please type the project name here. e.g (ASPA registration website)",
+                            },
                             required: true,
                         },
                         {
                             name: "extended",
                             type: "text",
+                            admin: {
+                                placeholder: "Please type the extended project name here (will show inside the page)",
+                            },
                         },
                     ],
                 },
                 {
                     name: "description",
                     type: "text",
-                    defaultValue: "project description",
+
+                    admin: {
+                        placeholder:
+                            "Please type a short project description here, this will be shown on the project card.",
+                    },
                     required: true,
                 },
             ],
         },
         {
-            name: "brief",
+            name: "Project Page",
             type: "group",
             fields: [
                 {
                     name: "description",
                     type: "textarea",
-                    defaultValue: "brief description of the project's functionality and stuff",
+                    admin: {
+                        placeholder:
+                            "Please type the project description here, this will be shown inside the project's page.",
+                    },
                     required: true,
                 },
                 {
@@ -101,11 +119,17 @@ export const Project: CollectionConfig = {
                     name: "label",
                     type: "text",
                     required: true,
+                    admin: {
+                        placeholder: "Please type the first link's label here.",
+                    },
                 },
                 {
                     name: "href",
                     type: "text",
                     required: true,
+                    admin: {
+                        placeholder: "Please type where the the first link should redirect to here.",
+                    },
                 },
             ],
         },
@@ -117,11 +141,17 @@ export const Project: CollectionConfig = {
                     name: "label",
                     type: "text",
                     required: true,
+                    admin: {
+                        placeholder: "Please type the second link's label here.",
+                    },
                 },
                 {
                     name: "href",
                     type: "text",
                     required: true,
+                    admin: {
+                        placeholder: "Please type where the the second link should redirect to here.",
+                    },
                 },
             ],
         },
@@ -137,7 +167,14 @@ export const Project: CollectionConfig = {
                             label: "project manager",
                             type: "group",
                             fields: [
-                                { name: "name", type: "text", required: true },
+                                {
+                                    name: "name",
+                                    type: "text",
+                                    required: true,
+                                    admin: {
+                                        placeholder: "Please type the project manager's name here.",
+                                    },
+                                },
                                 { name: "image", type: "upload", relationTo: "media", displayPreview: true },
                             ],
                         },
@@ -146,7 +183,14 @@ export const Project: CollectionConfig = {
                             label: "tech lead",
                             type: "group",
                             fields: [
-                                { name: "name", type: "text", required: true },
+                                {
+                                    name: "name",
+                                    type: "text",
+                                    required: true,
+                                    admin: {
+                                        placeholder: "Please type the tech lead's name here.",
+                                    },
+                                },
                                 { name: "image", type: "upload", relationTo: "media", displayPreview: true },
                             ],
                         },
@@ -161,7 +205,14 @@ export const Project: CollectionConfig = {
                     },
                     defaultValue: [{}, {}],
                     fields: [
-                        { name: "name", type: "text", required: true },
+                        {
+                            name: "name",
+                            type: "text",
+                            required: true,
+                            admin: {
+                                placeholder: "Please type the project member's name here.",
+                            },
+                        },
                         {
                             name: "role",
                             type: "select",
