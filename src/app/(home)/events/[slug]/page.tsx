@@ -1,5 +1,8 @@
 import { notFound } from "next/navigation";
 
+import { ParsePayloadEvent } from "@/types/parser/ParsePayloadEvent";
+
+import { getEvent } from "@/actions/getEvent";
 import RouteDisplay from "@/components/debug/RouteDisplay";
 import EventHeader from "@/components/layout/pageheaders/EventHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
@@ -11,8 +14,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     const events = eventsData.eventsGrid.events;
 
     const slug = (await params).slug;
-    const event = events.find((e) => e.slug === slug);
+    let event = events.find((e) => e.slug === slug);
 
+    if (!event) {
+        event = ParsePayloadEvent(await getEvent(slug));
+    }
     if (!event) {
         notFound();
     }

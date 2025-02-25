@@ -1,5 +1,7 @@
 import type { Event } from "@/types/models";
+import { ParsePayloadEvent } from "@/types/parser/ParsePayloadEvent";
 
+import { getAllEvents } from "@/actions/getAllEvents";
 import placeholder from "@/assets/image/600x400.png";
 
 import { events2024Data } from "./events2024/events2024.data";
@@ -9,6 +11,10 @@ export interface Category {
     name: string;
     colors: string;
 }
+
+export const revalidate = 60;
+
+const projects = (await getAllEvents()).map(ParsePayloadEvent);
 
 export const eventsData = {
     header: {
@@ -46,6 +52,9 @@ export const eventsData = {
                 colors: "border-purple-400 bg-purple-100 text-purple-800 hover:bg-purple-150",
             },
         ],
-        events: [...events2024Data, ...events2025Data] as Event[],
+        //merge payload and hardcoded events, sort them by date
+        events: [...events2024Data, ...events2025Data, ...projects]
+            .filter((event): event is Event => event !== undefined)
+            .sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime()) as Event[],
     },
 };
