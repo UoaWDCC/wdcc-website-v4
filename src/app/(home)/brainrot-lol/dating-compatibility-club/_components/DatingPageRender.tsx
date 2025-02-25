@@ -2,9 +2,6 @@
 
 import Footer from "@/components/navigation/footer/Footer";
 import NavigationBar from "@/components/navigation/navbar/NavigationBar";
-import BackgroundEffect from "@/components/three/BackgroundEffect";
-import { View } from "@/components/three/scene/View";
-import ThreeLayout from "@/components/layout/ThreePageLayout";
 
 import ThisIsWDCC from "./ThisIsWDCCSection";
 import WDCCHero from "./WDCCHero";
@@ -30,16 +27,16 @@ export default function DatingPage() {
             </audio>
             {
                 heroAnimEnded ?
-                    <ThreeLayout>
+                    <StandardPageLayout>
                         <div
                             className="absolute top-0 -z-20 w-full h-[100vh] bg-gradient-to-b from-[#DD3173] to-[#DF99B9]">
                         </div>
                         <div
                             className="absolute top-[100vh] -z-20 w-full h-[150vh] bg-gradient-to-b from-[#FFDAE7] to-[#FFF]">
                         </div>
-                        <View className="fixed -z-10 size-full scale-150" color="pink" background>
-                            <BackgroundEffect />
-                        </View>
+                        {/*<View className="fixed -z-10 size-full scale-150" color="pink" background>*/}
+                        {/*    <BackgroundEffect />*/}
+                        {/*</View>*/}
                         <NavigationBar variant={{ color: "dark" }} />
                         <main className="responsive-body flex-col gap-24 items-center justify-center py-44">
                             <WDCCHero />
@@ -49,7 +46,7 @@ export default function DatingPage() {
                             </div>
                         </main>
                         <Footer className="mt-16" />
-                    </ThreeLayout>
+                    </StandardPageLayout>
                     :
                     <>
                         <StandardPageLayout navColor="dark">
