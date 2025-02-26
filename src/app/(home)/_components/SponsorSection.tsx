@@ -34,7 +34,7 @@ export const SponsorSection = () => {
             <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
                 <p>Interested in sponsoring us?</p>
                 <Button href="mailto:outreach@wdcc.co.nz" variant={{ style: "tertiary", color: "dark" }}>
-                    send us an email!
+                    Send us an email!
                 </Button>
             </div>
         </div>
