@@ -31,7 +31,8 @@ export type oldProject = {
 export type Project = {
     // card stuff
     slug: string;
-    year: string;
+    startYear: string;
+    endYear: string;
     client: string;
     icon?: {
         src: string;

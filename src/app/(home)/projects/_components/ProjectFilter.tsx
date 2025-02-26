@@ -11,7 +11,9 @@ interface ProjectFilterProps {
 }
 
 export function ProjectFilter({ projects, setSelectedYear, selectedYear }: ProjectFilterProps) {
-    const availableYears = Array.from(new Set(projects.map((project) => project.year)));
+    const availableStartYears = Array.from(new Set(projects.map((project) => project.startYear)));
+    const availableEndYears = Array.from(new Set(projects.map((project) => project.startYear)));
+    const availableYears = Array.from(new Set([...availableStartYears, ...availableEndYears]));
 
     return (
         <div className="mb-9 flex items-center justify-center gap-4 lg:justify-start">

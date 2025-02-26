@@ -33,10 +33,18 @@ export const Project: CollectionConfig = {
                     unique: true,
                 },
                 {
-                    name: "year",
+                    name: "startYear",
                     type: "text",
                     admin: {
-                        placeholder: "Please type the project year here. e.g (2025)",
+                        placeholder: "Please type the project start year here. e.g (2025)",
+                    },
+                    required: true,
+                },
+                {
+                    name: "endYear",
+                    type: "text",
+                    admin: {
+                        placeholder: "Please type the project end year here. e.g (2025)",
                     },
                     required: true,
                 },

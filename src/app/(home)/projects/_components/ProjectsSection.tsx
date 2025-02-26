@@ -14,9 +14,9 @@ const ProjectsSection = ({ projects }: { projects: Project[] }) => {
         setYear((prevYear) => (prevYear === category ? null : category));
     };
 
-    const filteredProjects = selectedYear ? projects.filter((project) => project.year === selectedYear) : projects;
+    const filteredProjects = selectedYear ? projects.filter((project) => project.startYear <= selectedYear && project.endYear >= selectedYear) : projects;
 
-    const sortedProjects = [...filteredProjects].sort((a, b) => Number(b.year) - Number(a.year));
+    const sortedProjects = [...filteredProjects].sort((a, b) => Number(b.endYear) - Number(a.endYear));
 
     return (
         <div className="my-24 flex w-full flex-col">

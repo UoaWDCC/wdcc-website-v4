@@ -156,7 +156,8 @@ export interface Project {
   id: number;
   thumbnail: number | Media;
   slug: string;
-  year: string;
+  startYear: string;
+  endYear: string;
   client: string;
   name: {
     default: string;
@@ -427,7 +428,8 @@ export interface EventSelect<T extends boolean = true> {
 export interface ProjectSelect<T extends boolean = true> {
   thumbnail?: T;
   slug?: T;
-  year?: T;
+  startYear?: T;
+  endYear?: T;
   client?: T;
   name?:
     | T

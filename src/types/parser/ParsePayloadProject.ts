@@ -7,7 +7,8 @@ export const ParsePayloadProject = (cms: CMSProject): Project | undefined => {
 
     return {
         slug: cms.slug,
-        year: cms.year,
+        startYear: cms.startYear,
+        endYear: cms.endYear,
         client: cms.client,
         icon: {
             src: (cms.thumbnail as Media)?.url || "",
