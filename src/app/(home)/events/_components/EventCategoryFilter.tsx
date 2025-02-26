@@ -16,7 +16,7 @@ export default function EventCategoryFilter({
     return (
         <div className="flex items-center justify-start gap-[18px]">
             <p className="font-semibold leading-none">Filter by category</p>
-            <div className="flex items-center justify-start gap-3">
+            <div className="items-center justify-start gap-3 hidden md:flex">
                 {categories.map((category) => (
                     <button
                         key={category.name}
@@ -31,6 +31,16 @@ export default function EventCategoryFilter({
                     </button>
                 ))}
             </div>
+            <select
+                className="flex md:hidden"
+                onChange={(e) => filterByCategory(e.target.value)()}
+            >
+                {categories.map((category) => (
+                    <option key={category.name} value={category.name}>
+                        {category.name}
+                    </option>
+                ))}
+            </select>
         </div>
     );
 }
