@@ -7,13 +7,15 @@ import { motion } from "motion/react";
 
 import { fadeopacity } from "@/libs/animations";
 
+import NavigationBar from "../navigation/navbar/NavigationBar";
+
 const Scene = dynamic(() => import("@/components/three/scene/Scene"), { ssr: false });
 
 const DebounceTimer = 50;
 
 const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
     const progress = useProgress();
-    const [loaded, setLoaded] = useState(false);
+    const [isLoaded, setLoaded] = useState(false);
 
     useEffect(() => {
         const loadId = setTimeout(() => {
@@ -25,33 +27,35 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
     }, [progress]);
 
     return (
-        <motion.div
-            // active == loading
-            initial="initial"
-            animate={loaded ? "animate" : "initial"}
-            variants={fadeopacity}
-            style={{
-                position: "relative",
-                width: " 100%",
-                height: "100%",
-                overflow: "auto",
-                touchAction: "auto",
-            }}
-        >
-            <div className="relative flex h-dvh min-h-dvh w-dvw flex-col overflow-x-hidden">{children}</div>
-            {/* background scene by default */}
-            <Scene
+        <>
+            <NavigationBar />
+            <motion.div
+                initial="initial"
+                animate={isLoaded ? "animate" : "initial"}
+                variants={fadeopacity}
                 style={{
-                    zIndex: -1,
-                    position: "fixed",
-                    top: 0,
-                    left: 0,
-                    width: "100vw",
-                    height: "100vh",
-                    pointerEvents: "none",
+                    position: "relative",
+                    width: " 100%",
+                    height: "100%",
+                    overflowX: "hidden",
+                    touchAction: "auto",
                 }}
-            />
-        </motion.div>
+            >
+                <div className="relative flex h-dvh min-h-dvh flex-col">{children}</div>
+                {/* background scene by default */}
+                <Scene
+                    style={{
+                        zIndex: -1,
+                        position: "fixed",
+                        top: 0,
+                        left: 0,
+                        width: "100vw",
+                        height: "100vh",
+                        pointerEvents: "none",
+                    }}
+                />
+            </motion.div>
+        </>
     );
 };
 

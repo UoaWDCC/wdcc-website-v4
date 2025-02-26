@@ -19,10 +19,10 @@ export const ParsePayloadProject = (cms: CMSProject): Project | undefined => {
         },
         description: cms.description,
         brief: {
-            description: cms.brief.description,
-            image: (!!cms.brief.image || undefined) && {
-                src: (cms.brief.image as Media).url as string,
-                alt: (cms.brief.image as Media).alt as string,
+            description: cms["Project Page"].description,
+            image: (!!cms["Project Page"].image || undefined) && {
+                src: (cms["Project Page"].image as Media).url as string,
+                alt: (cms["Project Page"].image as Media).alt as string,
             },
         },
         primaryLink: cms.primaryLink && {

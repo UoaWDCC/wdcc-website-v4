@@ -37,7 +37,7 @@ export const Supabase = ({ ...props }: SVGAttributes<SVGSVGElement>) => {
                     gradientUnits="userSpaceOnUse"
                 >
                     <stop />
-                    <stop offset="1" stop-opacity="0" />
+                    <stop offset="1" />
                 </linearGradient>
             </defs>
         </svg>

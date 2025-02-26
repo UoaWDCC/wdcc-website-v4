@@ -2,7 +2,6 @@ import ComingUp from "@/app/(home)/_components/ComingUpSection";
 import SignupCard from "@/app/(home)/_components/SignupCard";
 import ThreeLayout from "@/components/layout/ThreePageLayout";
 import Footer from "@/components/navigation/footer/Footer";
-import NavigationBar from "@/components/navigation/navbar/NavigationBar";
 import BackgroundEffect from "@/components/three/BackgroundEffect";
 import { View } from "@/components/three/scene/View";
 
@@ -17,7 +16,6 @@ export default function Home() {
             <View className="fixed -z-10 size-full scale-150" background>
                 <BackgroundEffect />
             </View>
-            <NavigationBar />
             <main className="responsive-body flex-col items-center justify-center gap-24 py-44">
                 <WDCCHero />
                 <div className="flex flex-col gap-36">
