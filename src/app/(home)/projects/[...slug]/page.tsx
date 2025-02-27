@@ -12,12 +12,12 @@ import { projectsData } from "../_data/projects_data/index";
 import IndividualProject from "./_component/IndividualProject";
 
 type Props = {
-    params: Promise<{ slug: string }>;
+    params: Promise<{ slug: string[] }>;
 };
 
 // auto generated seo metadata for each project
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-    const slug = (await params).slug;
+    const slug = (await params).slug[0];
 
     const project = projectsData.find((project) => project.slug === slug);
 
@@ -37,8 +37,8 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     };
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
-    const slug = (await params).slug;
+export default async function Page({ params }: Props) {
+    const slug = (await params).slug[0];
     console.log(slug);
     let project = projectsData.find((project) => project.slug === slug) as Project | undefined;
 
