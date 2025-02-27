@@ -1,8 +1,7 @@
 "use client";
 
-import Footer from "@/components/navigation/footer/Footer";
-import NavigationBar from "@/components/navigation/navbar/NavigationBar";
-
+import DatingQuoteSection from "@app/brainrot-lol/dating-compatibility-club/_components/QuoteSection";
+import DatingTextSection from "@app/brainrot-lol/dating-compatibility-club/_components/DatingTextSection";
 import ThisIsWDCC from "./ThisIsWDCCSection";
 import WDCCHero from "./WDCCHero";
 import SignupCard from "./SignupCard";
@@ -27,25 +26,20 @@ export default function DatingPage() {
             </audio>
             {
                 heroAnimEnded ?
-                    <StandardPageLayout>
-                        <div
-                            className="absolute top-0 -z-20 w-full h-[100vh] bg-gradient-to-b from-[#DD3173] to-[#DF99B9]">
-                        </div>
-                        <div
-                            className="absolute top-[100vh] -z-20 w-full h-[150vh] bg-gradient-to-b from-[#FFDAE7] to-[#FFF]">
-                        </div>
+                    <StandardPageLayout navColor="light" className="bg-gradient-to-b from-[#FFDAE7] to-[#FFF]">
                         {/*<View className="fixed -z-10 size-full scale-150" color="pink" background>*/}
                         {/*    <BackgroundEffect />*/}
                         {/*</View>*/}
-                        <NavigationBar variant={{ color: "dark" }} />
-                        <main className="responsive-body flex-col gap-24 items-center justify-center py-44">
+                        <main className="flex-col gap-2 items-center justify-center pb-44">
                             <WDCCHero />
-                            <div className="flex flex-col gap-36">
+                            <div className="flex flex-col gap-64">
                                 <ThisIsWDCC />
+                                <DatingTextSection />
+                                <DatingQuoteSection/>
+                                <div className="h-[2px] bg-pink-900 opacity-25 rounded-2xl w-[50%] mx-auto"></div>
                                 <SignupCard />
                             </div>
                         </main>
-                        <Footer className="mt-16" />
                     </StandardPageLayout>
                     :
                     <>

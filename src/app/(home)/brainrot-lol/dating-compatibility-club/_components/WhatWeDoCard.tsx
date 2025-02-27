@@ -3,7 +3,7 @@ import { tv, VariantProps } from "tailwind-variants";
 
 import { Button } from "@/components/primitives/Button";
 
-// This is the "what we do" card for the DATING BRAINROT page - not the actual production landing!
+// IMPORTANT This is for the DATING BRAINROT page - not the actual production landing!
 
 const card = tv({
     base: "relative flex w-[330px] flex-col items-end gap-8 overflow-hidden rounded-2xl rounded-tl-[48px] rounded-br-[48px] p-8 " +

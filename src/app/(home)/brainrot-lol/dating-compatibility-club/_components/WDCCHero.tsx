@@ -1,69 +1,83 @@
 "use client";
 
 import React, { useRef } from "react";
-import dynamic from "next/dynamic";
 import { motion } from "motion/react";
-
-import Draw from "@/components/Draw";
 import { Button } from "@/components/primitives/Button";
-import { View } from "@/components/three/scene/View";
 
-import { social } from "@/assets/svg/socials";
-
-const WDCCThreeHero = dynamic(() => import("@/components/three/layout/home/WDCCThreeLogo").then((mod) => mod.default), {
-    ssr: false,
-})
+import Arrow from "@/assets/svg/Arrow";
 
 const transition = {
     duration: 2,
     ease: [.13,.71,.35,1],
 };
 
+
+// IMPORTANT This is for the DATING BRAINROT page - not the actual production landing!
+
+
 const WDCCHero = () => {
     const ref = useRef<HTMLDivElement>(null);
+
+    const [downTextVisible, setDownTextVisible] = React.useState(true);
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setDownTextVisible(false);
+            }
+            else {
+                setDownTextVisible(true);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll',
+            handleScroll);
+    }, []);
+
+    function scrollDown() {
+        window.scrollTo({ top: 800, behavior: 'smooth' });
+    }
+
+
+
     return (
-        <div ref={ref} className="relative flex w-full flex-col gap-20 items-center justify-center">
-            <div className="flex w-[clamp(300px,100%,1000px)] flex-col gap-10 items-center self-center px-8 text-center">
-                <div className="flex flex-col gap-6 sm:gap-2">
-                    <motion.h3 animate={{y: [32, 0], transition: transition}} className="text-sm sm:text-base font-normal tracking-[0.25em] text-white leading-none">WEB-BASED DATING AND COMPATIBILITY CLUB</motion.h3>
-                    <motion.h1 animate={{y: [64, 0], transition: transition}} className="text-4xl sm:text-5xl font-bold tracking-[-2px] text-white leading-[0.95]">
+        <div ref={ref} className="relative h-screen flex w-full flex-col items-start justify-center responsive-fullwidth">
+            <div className="flex flex-col gap-8 items-start text-[#E70068]">
+                <div className="flex flex-col gap-4">
+                    <motion.h3 animate={{ y: [32, 0], transition: transition }}
+                               className="text-sm font-normal tracking-[0.25em] leading-none">WEB-BASED DATING AND
+                        COMPATIBILITY CLUB
+                    </motion.h3>
+                    <motion.h1 animate={{ y: [64, 0], transition: transition }}
+                               className="text-[60px] font-bold tracking-[-2px] leading-[0.95]">
                         From
-                        <em> campus crushes </em>
-                        to those midnight coding rushes.
+                        <em className="text-[#8F0070]"> campus crushes</em><br />
+                        to those <em className="text-[#8F0070]">midnight coding rushes</em>.
                     </motion.h1>
                 </div>
-                <div className="flex flex-col gap-6 items-center self-center">
-                    <motion.p animate={{y: [48, 0], transition: transition}} className="text-md sm:text-lg text-white leading-tight">
-                        We help connect UoA’s coolest Computer Science, Software Engineering, and other degrees’ students with the partners that <Draw className="italic underline">
-                        <span className="italic underline font-normal">help them shine</span>
-                    </Draw> in life, love, and LeetCode.
-                    </motion.p>
-                    <motion.div animate={{y: [32, 0], transition: transition}} className="flex gap-4 flex-col sm:flex-row items-center justify-center">
-                        <Button variant={{ style: "primary", color: "blue" }}>Become a member for 2025</Button>
-                        <div className="flex gap-4">
-                            <Button variant={{ style: "secondary", color: "blue" }}
-                                    className="px-2 [&>svg]:fill-blue-700 [&>svg]:scale-[90%]"
-                                    href="https://discord.gg/CZX8aSSrGj">
-                                <social.discord />
-                            </Button>
-                            <Button variant={{ style: "secondary", color: "blue" }}
-                                    className="px-2 [&>svg]:fill-blue-700 [&>svg]:scale-[90%]"
-                                    href="https://www.instagram.com/wdccuoa">
-                                <social.instagram />
-                            </Button>
-                            <Button variant={{ style: "secondary", color: "blue" }}
-                                    className="px-2 [&>svg]:fill-blue-700 [&>svg]:scale-[90%]"
-                                    href="https://www.facebook.com/wdccuoa">
-                                <social.facebook />
-                            </Button>
-                        </div>
-                    </motion.div>
+                <motion.p animate={{ y: [48, 0], transition: transition }}
+                          className="text-md sm:text-lg max-w-[80%] leading-tight">
+                    We help connect UoA’s coolest Computer Science, Software Engineering, and other degrees’
+                    students with the partners that <em>help them shine</em> in life, love, and LeetCode.
+                </motion.p>
+                <motion.div animate={{ y: [32, 0], transition: transition }}
+                            className="">
+                    <Button className="bg-transparent border-2 border-[#8F0070] text-[#8F0070] hover:bg-pink-200" href="http://tinder.com/">Become a member for 2025</Button>
+                </motion.div>
+
+                <div className="pt-12">
+                    <div className={`font-semibold opacity-50 hover:opacity-75 hover:cursor-pointer transition duration-200 ${downTextVisible === false && 'opacity-0 transition duration-300'}`}
+                         onClick={scrollDown}>
+                        <span className='text-red'>
+                            Explore WDCC
+                        </span>
+                        <Arrow className="rotate-90 ml-2"></Arrow>
+                    </div>
                 </div>
 
             </div>
-            <View className="flex h-[500px] w-[800px] flex-col items-center justify-center">
-                <WDCCThreeHero parentRef={ref} />
-            </View>
         </div>
     );
 };

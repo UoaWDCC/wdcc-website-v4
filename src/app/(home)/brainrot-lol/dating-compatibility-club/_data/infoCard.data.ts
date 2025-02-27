@@ -24,7 +24,7 @@ export const whatWeDoData: WhatWeDoData = {
             title: "Matchmaking",
             slug: "",
             description:
-                "Our acclaimed matchmaking service helps members find the best partner for them in a friendly and supportive environment. Powered by experimental AI, we thrive by our motto: 'Love sharpens iron'. ",
+                "Our acclaimed matchmaking service helps members find the best partner for them in a friendly and supportive environment. Powered by experimental AI, we'll make dating as easy as COMPSCI373. ",
         },
     ],
 };
