@@ -18,19 +18,10 @@ export const sponsorsCommunity = [
 ];
 
 export const sponsors = {
-    gold: ["/sponsors/partly_logo_black.svg"],
-    tech: ["/sponsors/amazon_web_services_logo.webp"],
-    silver: [
-        "/sponsors/sandfield_wordmark_black.webp",
-        "/sponsors/datacom_primary_logo_datacom_blue.webp",
-        "/sponsors/ey_horizontal_black.webp",
-        "/sponsors/serato_black.webp",
-        "/sponsors/kpmg_blue_logo_logo_no_background.webp",
-        "/sponsors/janestreet_black.webp",
-    ],
-    community: [
-        "/sponsors/tidy_charcoal_logo.svg",
-        "/sponsors/grant_thornton_logo.webp",
-        "/sponsors/beyond_essential_systems.webp",
-    ],
+    gold: sponsorsGold,
+    tech: sponsorsTech,
+    silver: sponsorsSilver,
+    community: sponsorsCommunity,
 };
+
+export type SponsorTierKeys = keyof typeof sponsors;
