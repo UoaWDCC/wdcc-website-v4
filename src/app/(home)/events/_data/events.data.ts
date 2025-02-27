@@ -26,7 +26,7 @@ export const eventsData = {
         description:
             "Our events are planned well in advance, so you can always know what's coming up. Check out our roadmap below to see what's in store for the next few semesters.",
         image: {
-            src: placeholder,
+            src: "/event-roadmap-s1-pixel-abbey.svg",
             alt: "Events Roadmap",
         },
     },
