@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import { Event } from "@/types/models";
 
+import { EmptyListPlaceholder } from "@/components/EmptyListPlaceholder";
+
 import { Category } from "../_data/events.data";
 import EventCard from "./EventCard";
 import EventCategoryFilter from "./EventCategoryFilter";
@@ -34,11 +36,15 @@ export default function RecentEventsSection({ title, categories, events }: Recen
                     filterByCategory={filterByCategory}
                 />
             </div>
-            <div className="mt-5 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-                {filteredEvents.map((event, i) => (
-                    <EventCard key={i} event={event} />
-                ))}
-            </div>
+            {filteredEvents.length ? (
+                <div className="mt-5 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+                    {filteredEvents.map((event, i) => (
+                        <EventCard key={i} event={event} />
+                    ))}
+                </div>
+            ) : (
+                <EmptyListPlaceholder>No events found</EmptyListPlaceholder>
+            )}
         </div>
     );
 }
