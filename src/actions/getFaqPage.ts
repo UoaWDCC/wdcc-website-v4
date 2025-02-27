@@ -2,10 +2,10 @@
 
 import { getPayload } from "@/libs/payload";
 
-export const getExecPage = async () => {
+export const getFaqPage = async () => {
     const payload = await getPayload();
     const getExecPage = await payload.findGlobal({
-        slug: "execs-page",
+        slug: "faq-page",
     });
 
     return getExecPage;

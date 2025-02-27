@@ -1,4 +1,6 @@
-import { Exec } from "./models";
+import { Exec, Faq } from "./models";
+
+//exec page
 
 export type ExecPage = {
     info: string;
@@ -8,3 +10,20 @@ export type ExecPage = {
         execs: Exec[];
     }[];
 };
+
+//faq page
+export interface FaqSection {
+    name: string;
+    faqs: Faq[];
+    colors: FaqColors;
+}
+
+export interface FaqColors {
+    tabBg: string;
+    tabCircle: string;
+}
+
+export interface FaqPage {
+    info: string;
+    sections: FaqSection[];
+}

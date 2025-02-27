@@ -38,9 +38,11 @@ export interface Config {
   };
   globals: {
     'execs-page': ExecsPage;
+    'faq-page': FaqPage;
   };
   globalsSelect: {
     'execs-page': ExecsPageSelect<false> | ExecsPageSelect<true>;
+    'faq-page': FaqPageSelect<false> | FaqPageSelect<true>;
   };
   locale: null;
   user: User & {
@@ -623,6 +625,29 @@ export interface ExecsPage {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faq-page".
+ */
+export interface FaqPage {
+  id: number;
+  info: string;
+  sections: {
+    name: string;
+    faqs: {
+      question: string;
+      answer: string;
+      id?: string | null;
+    }[];
+    colors: {
+      tabBg: string;
+      tabCircle: string;
+    };
+    id?: string | null;
+  }[];
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "execs-page_select".
  */
 export interface ExecsPageSelect<T extends boolean = true> {
@@ -642,6 +667,35 @@ export interface ExecsPageSelect<T extends boolean = true> {
               description?: T;
               joined?: T;
               id?: T;
+            };
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faq-page_select".
+ */
+export interface FaqPageSelect<T extends boolean = true> {
+  info?: T;
+  sections?:
+    | T
+    | {
+        name?: T;
+        faqs?:
+          | T
+          | {
+              question?: T;
+              answer?: T;
+              id?: T;
+            };
+        colors?:
+          | T
+          | {
+              tabBg?: T;
+              tabCircle?: T;
             };
         id?: T;
       };
