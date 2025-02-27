@@ -1,7 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 
-import { Project } from "@/types/models";
 import { ParsePayloadProject } from "@/types/parser/ParsePayloadProject";
 
 import { getProject } from "@/actions/getProject";
@@ -18,7 +17,7 @@ type Props = {
 
 // auto generated seo metadata for each project
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-    const [_, slug] = (await params).fullSlug;
+    const [, slug] = (await params).fullSlug;
 
     const project = projectsData.find((project) => project.slug === slug);
 
