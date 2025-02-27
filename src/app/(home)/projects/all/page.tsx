@@ -8,8 +8,6 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import ProjectsSection from "../_components/ProjectsSection";
 import { projectsData } from "../_data/projects_data";
 
-export const revalidate = 60;
-
 export default async function ProjectsPage() {
     const projects = (await getAllProjects()).map(ParsePayloadProject);
     const combined = [...projects, ...projectsData] as Project[];
