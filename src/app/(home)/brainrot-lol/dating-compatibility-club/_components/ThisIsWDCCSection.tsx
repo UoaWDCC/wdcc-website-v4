@@ -23,8 +23,8 @@ const ThisIsWDCC = () => {
                 </p>
             </div>
             <div className="w-full flex flex-col gap-8 justify-between lg:flex-row">
-                {whatWeDoData.columns.map((column) => (
-                    <InfoCard {...column} key={column.slug} />
+                {whatWeDoData.columns.map((column, i) => (
+                    <InfoCard {...column} key={i} />
                 ))}
             </div>
         </div>

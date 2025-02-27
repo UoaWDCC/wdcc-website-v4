@@ -68,7 +68,7 @@ const WDCCHero = () => {
                 </motion.div>
 
                 <div className="pt-12">
-                    <div className={`font-semibold opacity-50 hover:opacity-75 hover:cursor-pointer transition duration-200 ${downTextVisible === false && 'opacity-0 transition duration-300'}`}
+                    <div className={`font-semibold opacity-50 hover:opacity-75 hover:cursor-pointer transition duration-200 ${!downTextVisible && 'opacity-0 transition duration-300'}`}
                          onClick={scrollDown}>
                         <span className='text-red'>
                             Explore WDCC

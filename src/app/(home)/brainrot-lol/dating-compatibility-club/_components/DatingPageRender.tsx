@@ -11,7 +11,7 @@ import React from "react";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 export default function DatingPage() {
-    const [heroAnimEnded, setHeroAnimEnded] = React.useState(true);
+    const [heroAnimEnded, setHeroAnimEnded] = React.useState(false);
 
     const { RiveComponent } = useRive({
         src: "/rive/wdcc_dating_lander.riv",
@@ -26,7 +26,10 @@ export default function DatingPage() {
             </audio>
             {
                 heroAnimEnded ?
-                    <StandardPageLayout navColor="light" className="bg-gradient-to-b from-[#FFDAE7] to-[#FFF]">
+                    <StandardPageLayout navColor="light">
+                        <div
+                            className="fixed top-0 -z-20 w-full h-[100vh] bg-gradient-to-b from-[#ffbad3] to-[#FFF6F9]">
+                        </div>
                         {/*<View className="fixed -z-10 size-full scale-150" color="pink" background>*/}
                         {/*    <BackgroundEffect />*/}
                         {/*</View>*/}
@@ -35,7 +38,7 @@ export default function DatingPage() {
                             <div className="flex flex-col gap-64">
                                 <ThisIsWDCC />
                                 <DatingTextSection />
-                                <DatingQuoteSection/>
+                                <DatingQuoteSection />
                                 <div className="h-[2px] bg-pink-900 opacity-25 rounded-2xl w-[50%] mx-auto"></div>
                                 <SignupCard />
                             </div>
