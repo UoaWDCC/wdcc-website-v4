@@ -27,7 +27,8 @@ export default function RecentEventsSection({ title, categories, events }: Recen
     return (
         <div className="flex flex-col gap-4 py-20" id="upcomingEvents">
             <div className="flex h-10 items-end justify-between">
-                <h2 className="text-[38px] font-bold leading-10">{title}</h2>
+                {/* id for navbar link */}
+                <h2 id="recent" className="text-[38px] font-bold leading-10">{title}</h2>
                 <EventCategoryFilter
                     categories={categories}
                     selectedCategory={selectedCategory}

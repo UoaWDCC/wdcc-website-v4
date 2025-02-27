@@ -46,7 +46,8 @@ export default function ProjectsPage() {
                 </div>
 
                 <div>
-                    <h2 className="py-10 text-3xl font-bold">{projectsCopy.rolesSection.title}</h2>
+                    {/* id for navbar link */}
+                    <h2 id="roles" className="py-10 text-3xl font-bold">{projectsCopy.rolesSection.title}</h2>
                     <div className="grid grid-cols-1 gap-8 sm:px-8 lg:grid-cols-2">
                         {projectsCopy.rolesSection.roles.map((role, i) => (
                             <ProjectRoleCard

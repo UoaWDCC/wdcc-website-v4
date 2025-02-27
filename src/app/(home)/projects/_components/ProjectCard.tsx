@@ -13,12 +13,12 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
-    const slug = project.slug || "not-found";
+    const { year, slug } = project;
 
     return (
         <Link
             className="flex w-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-gray-50 transition duration-500 will-change-auto hover:-translate-x-1 hover:-translate-y-1 hover:drop-shadow-cardLift hover:duration-200"
-            href={`/projects/${slug}`}
+            href={`/projects/${year}/${slug}`}
         >
             <div className="center-content relative h-60 w-full bg-blue-brand">
                 {project.icon ? (

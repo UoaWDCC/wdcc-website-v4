@@ -9,7 +9,7 @@
         "build:analyze": "ANALYZE=true next build",
         "start": "next start",
         "deploy:staging": "fly deploy --config fly.staging.toml",
-        "lint": "next lint",
+        "lint": "eslint ./src --fix",
         "lint:no-cache": "next lint --no-cache",
         "format": "pnpm dlx prettier . --write",
         "i:ci": "pnpm install --frozen-lockfile",
