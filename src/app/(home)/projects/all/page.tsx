@@ -16,7 +16,7 @@ export default async function ProjectsPage() {
         <StandardPageLayout>
             <Header
                 variant={{ style: "secondary", color: "blue" }}
-                title="past projects"
+                title="Past projects"
                 backlink={{ label: "projects", href: "/projects" }}
             />
             <ProjectsSection projects={combined} />
