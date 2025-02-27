@@ -8,7 +8,9 @@ import { buildConfig } from "payload";
 import sharp from "sharp";
 
 import { Events } from "./collections/Events";
+import { ExecsPage } from "./collections/ExecsPage";
 import { Media } from "./collections/Media";
+import { Partners } from "./collections/Partners";
 import { Project } from "./collections/Projects";
 import { TestSlug } from "./collections/TestSlug";
 import { Users } from "./collections/Users";
@@ -23,7 +25,8 @@ export default buildConfig({
             baseDir: path.resolve(dirname),
         },
     },
-    collections: [Users, Media, Events, Project, TestSlug],
+    collections: [Users, Media, Events, Project, TestSlug, Partners],
+    globals: [ExecsPage],
     editor: lexicalEditor({
         features: ({ defaultFeatures }) => [...defaultFeatures, LinkFeature({}), HTMLConverterFeature({})],
     }),
@@ -47,6 +50,9 @@ export default buildConfig({
             collections: {
                 media: {
                     prefix: "media",
+                },
+                partners: {
+                    prefix: "partners",
                 },
             },
             bucket: process.env.S3_BUCKET || "",

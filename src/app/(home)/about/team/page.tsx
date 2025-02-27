@@ -1,3 +1,6 @@
+import { ParsePayloadExecTeam } from "@/types/parser/ParsePayloadExecTeam";
+
+import { getExecPage } from "@/actions/getExecPage";
 import InfoPill from "@/components/InfoPill";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
@@ -5,10 +8,12 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import ExecTeam from "./_components/ExecTeam";
 import { teamData } from "./_data/team.data";
 
-export default function TeamPage() {
-    const tech = teamData.techTeam;
-    const edu = teamData.eduTeam;
-
+export default async function TeamPage() {
+    let ExecPage = ParsePayloadExecTeam(await getExecPage());
+    //if can't find CMS page use hardcoded data
+    if (!ExecPage) {
+        ExecPage = teamData;
+    }
     return (
         <StandardPageLayout>
             <Header
@@ -18,8 +23,9 @@ export default function TeamPage() {
             />
             <div className="flex w-full max-w-[1100px] flex-col items-center gap-24 py-20">
                 <InfoPill text={teamData.info} />
-                <ExecTeam title={tech.title} description={tech.description} execs={tech.execs} />
-                <ExecTeam title={edu.title} description={edu.description} execs={edu.execs} />
+                {ExecPage.teams.map((team, index) => (
+                    <ExecTeam title={team.title} key={index} description={team.description} execs={team.execs ?? []} />
+                ))}
             </div>
         </StandardPageLayout>
     );

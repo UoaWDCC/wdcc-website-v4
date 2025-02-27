@@ -17,7 +17,7 @@ const ComingUp = () => {
                     <EventCard key={i} event={event} />
                 ))}
             </div>
-            <Button variant={{ style: "tertiary", color: "dark" }}>
+            <Button variant={{ style: "tertiary", color: "dark" }} href="events/all">
                 See all events <Arrow />{" "}
             </Button>
         </div>

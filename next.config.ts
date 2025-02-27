@@ -16,6 +16,13 @@ const nextConfig: NextConfig = {
     images: {
         remotePatterns: [],
     },
+    webpack: (config) => {
+        config.module.rules.push({
+            test: /\.(glsl|vs|fs|vert|frag)$/,
+            use: ['raw-loader', 'glslify-loader'],
+        });
+        return config
+      }
 };
 
 export default withPayload(bundleAnalyzer(nextConfig));

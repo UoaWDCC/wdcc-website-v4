@@ -1,11 +1,13 @@
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { StaticImageData } from "next/image";
 
 export type Exec = {
     name: string;
-    image: StaticImageData;
     role: string;
+    image?: string | StaticImport;
     description: string;
     joined: string;
+    id?: string | null;
 };
 
 export type Faq = {
@@ -61,7 +63,7 @@ export type Project = {
     team: Team;
 };
 
-export type Event = {
+export type OldEvent = {
     title: string;
     time: Date;
     location: string;
@@ -73,6 +75,35 @@ export type Event = {
     imageAlt: string;
     collabPartners: string[];
     slug?: string;
+};
+
+export const EventCategories = ["Workshop", "Competition", "Social"] as const;
+
+export type EventCategory = (typeof EventCategories)[number];
+
+export type Event = {
+    title: string;
+    slug?: string;
+    time: Date;
+    location: string;
+    description: string;
+    category: EventCategory;
+    thumbnail: {
+        src: string | StaticImageData;
+        alt: string;
+    };
+    page: {
+        description: string;
+        image: {
+            src: string;
+            alt: string;
+        };
+    };
+    partners: {
+        href: string;
+        src: string;
+        alt: string;
+    }[];
 };
 
 export type Team = {
