@@ -40,6 +40,9 @@ export default {
                     '2px 2px 3px rgba(156,164,186,0.12)',
                     '4px 4px 6px rgba(156,164,186,0.14)',
                     '9px 9px 14px rgba(156,164,186,0.17)'
+                ],
+                'downShadow': [
+                    '0px 4px 4px rgba(59, 62, 103, 0.25)',
                 ]
             },
             colors: {

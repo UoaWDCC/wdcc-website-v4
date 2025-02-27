@@ -2,6 +2,7 @@ import React, { HTMLAttributes } from "react";
 import { tv } from "tailwind-variants";
 
 import { sponsors, SponsorTierKeys } from "@/assets/image/sponsors";
+import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";
 
 import SponsorCard from "./sponsor/SponsorCard";
@@ -25,6 +26,12 @@ export const SponsorSection = () => {
                         </div>
                     </>
                 ))}
+                <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
+                    <p>Interested in sponsoring us?</p>
+                    <Button href="mailto:outreach@wdcc.co.nz" variant={{ style: "tertiary", color: "dark" }}>
+                        Send us an email!
+                    </Button>
+                </div>
             </div>
         </div>
     );

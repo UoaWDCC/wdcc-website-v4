@@ -11,9 +11,9 @@ interface DrawProps extends React.HTMLAttributes<HTMLSpanElement> {
 
 const Draw = ({ children, ...props }: DrawProps) => {
     return (
-        <span {...props} className={cn("relative")}>
+        <span {...props} className={cn("relative whitespace-nowrap", props.className)}>
             <svg
-                className="absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 scale-110"
+                className="absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2"
                 width="199"
                 height="44"
                 viewBox="0 0 199 44"
