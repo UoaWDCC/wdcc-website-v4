@@ -1,7 +1,9 @@
+import { AboutPage } from "@/types/pages";
+
 import placeholder from "@/assets/image/600x400.png";
 import endImage from "@/assets/image/industry-night-1.png";
 
-export const aboutData = {
+export const aboutData: AboutPage = {
     header: {
         title: `About Us`,
         content: `The Web Development and Consulting Club is Aotearoa New Zealand’s largest student technology club. Read more about our history, goals, and achievements - as well as the people that help make it all happen.`,

@@ -1,6 +1,6 @@
 import { ParsePayloadFaqPage } from "@/types/parser/ParsePayloadFaqPage";
 
-import { getFaqPage } from "@/actions/getFaqPage";
+import { getFaqPage } from "@/actions/Pages/getFaqPage";
 import InfoPill from "@/components/InfoPill";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
@@ -8,8 +8,10 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import { FaqSelector } from "./_components/FaqSelector";
 import { faqData as hardCodedFaq } from "./_data/faq.data";
 
+export const revalidate = 60;
+
 export default async function FaqPage() {
-    //try get cms, if no cms then get hardCoded
+    //try get cms, if no cms then get hardCoded Faq
     let faqData = ParsePayloadFaqPage(await getFaqPage());
     if (!faqData) {
         faqData = hardCodedFaq;

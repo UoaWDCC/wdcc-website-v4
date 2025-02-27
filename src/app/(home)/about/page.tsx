@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+import { ParsePayloadAboutPage } from "@/types/parser/ParsePayloadAboutPage";
+
+import { getAboutPage } from "@/actions/Pages/getAboutUsPage";
 import Arrow from "@/assets/svg/Arrow";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
@@ -8,9 +11,14 @@ import { Button } from "@/components/primitives/Button";
 
 import Duo from "./_components/Duo";
 import Quote from "./_components/Quote";
-import { aboutData } from "./_data/about.data";
+import { aboutData as hardCodedAboutPage } from "./_data/about.data";
 
-export default function AboutPage() {
+export default async function AboutPage() {
+    let aboutData = ParsePayloadAboutPage(await getAboutPage());
+
+    if (!aboutData) {
+        aboutData = hardCodedAboutPage;
+    }
     const header = aboutData.header;
     const genInfo = aboutData.genInfo;
     const whyJoin = aboutData.whyJoin;
@@ -41,25 +49,27 @@ export default function AboutPage() {
                 inner="flex w-[80%] max-w-[1100px] flex-col gap-16 sm:gap-24"
             >
                 <Duo image={{ src: genInfo.image, alt: genInfo.imageAlt }}>
-                    <p className="leading-tight whitespace-pre-line text-md font-semibold sm:text-lg">{genInfo.firstPart}</p>
-                    <p className="leading-tight whitespace-pre-line text-md font-semibold text-blue-brand sm:text-lg">
+                    <p className="whitespace-pre-line text-md font-semibold leading-tight sm:text-lg">
+                        {genInfo.firstPart}
+                    </p>
+                    <p className="whitespace-pre-line text-md font-semibold leading-tight text-blue-brand sm:text-lg">
                         {genInfo.secondPart}
                     </p>
                 </Duo>
 
                 <Duo image={{ src: whyJoin.image, alt: whyJoin.imageAlt }}>
-                    <h3 className="font-bold text-md">{whyJoin.title}</h3>
-                    <p className="leading-[1.3] whitespace-pre-line">{whyJoin.content}</p>
+                    <h3 className="text-md font-bold">{whyJoin.title}</h3>
+                    <p className="whitespace-pre-line leading-[1.3]">{whyJoin.content}</p>
                 </Duo>
 
                 <Duo image={{ src: clubStory.image, alt: clubStory.imageAlt }} imgFirst>
-                    <h3 className="font-bold text-md">{clubStory.title}</h3>
-                    <p className="leading-[1.3] whitespace-pre-line">{clubStory.content}</p>
+                    <h3 className="text-md font-bold">{clubStory.title}</h3>
+                    <p className="whitespace-pre-line leading-[1.3]">{clubStory.content}</p>
                 </Duo>
 
                 <Duo image={{ src: ourPeople.image, alt: ourPeople.imageAlt }}>
-                    <h3 className="font-bold text-md">{ourPeople.title}</h3>
-                    <p className="leading-[1.3] whitespace-pre-line">{ourPeople.content}</p>
+                    <h3 className="text-md font-bold">{ourPeople.title}</h3>
+                    <p className="whitespace-pre-line leading-[1.3]">{ourPeople.content}</p>
                     <div className="w-auto">
                         <Button variant={{ style: "secondary", color: "yellow" }} href="/about/team">
                             Meet the team <Arrow />

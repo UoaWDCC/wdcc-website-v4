@@ -2,14 +2,14 @@ import { FaqPage as CmsFaqPage } from "@/payload-types";
 
 import { FaqPage } from "../pages";
 
-export const ParsePayloadFaqPage = (CmsEventPage: CmsFaqPage): FaqPage | undefined => {
-    if (!CmsEventPage) {
+export const ParsePayloadFaqPage = (CmsFaqPage: CmsFaqPage): FaqPage | undefined => {
+    if (!CmsFaqPage) {
         return undefined;
     }
 
     return {
-        info: CmsEventPage.info,
-        sections: CmsEventPage.sections.map((section) => ({
+        info: CmsFaqPage.info,
+        sections: CmsFaqPage.sections.map((section) => ({
             name: section.name,
             faqs: section.faqs.map((faq) => ({
                 question: faq.question,

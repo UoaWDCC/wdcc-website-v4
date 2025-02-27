@@ -39,10 +39,12 @@ export interface Config {
   globals: {
     'execs-page': ExecsPage;
     'faq-page': FaqPage;
+    'about-page': AboutPage;
   };
   globalsSelect: {
     'execs-page': ExecsPageSelect<false> | ExecsPageSelect<true>;
     'faq-page': FaqPageSelect<false> | FaqPageSelect<true>;
+    'about-page': AboutPageSelect<false> | AboutPageSelect<true>;
   };
   locale: null;
   user: User & {
@@ -648,6 +650,52 @@ export interface FaqPage {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about-page".
+ */
+export interface AboutPage {
+  id: number;
+  header: {
+    title: string;
+    content: string;
+  };
+  genInfo: {
+    firstPart: string;
+    secondPart: string;
+    image: number | Media;
+    imageAlt: string;
+  };
+  whyJoin: {
+    title: string;
+    content: string;
+    image: number | Media;
+    imageAlt: string;
+  };
+  clubStory: {
+    title: string;
+    content: string;
+    image: number | Media;
+    imageAlt: string;
+  };
+  ourPeople: {
+    title: string;
+    content: string;
+    image: number | Media;
+    imageAlt: string;
+  };
+  quoteSection: {
+    quote: string;
+    author: string;
+    subscript: string;
+  };
+  endImage: {
+    image: number | Media;
+    imageAlt: string;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "execs-page_select".
  */
 export interface ExecsPageSelect<T extends boolean = true> {
@@ -698,6 +746,66 @@ export interface FaqPageSelect<T extends boolean = true> {
               tabCircle?: T;
             };
         id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about-page_select".
+ */
+export interface AboutPageSelect<T extends boolean = true> {
+  header?:
+    | T
+    | {
+        title?: T;
+        content?: T;
+      };
+  genInfo?:
+    | T
+    | {
+        firstPart?: T;
+        secondPart?: T;
+        image?: T;
+        imageAlt?: T;
+      };
+  whyJoin?:
+    | T
+    | {
+        title?: T;
+        content?: T;
+        image?: T;
+        imageAlt?: T;
+      };
+  clubStory?:
+    | T
+    | {
+        title?: T;
+        content?: T;
+        image?: T;
+        imageAlt?: T;
+      };
+  ourPeople?:
+    | T
+    | {
+        title?: T;
+        content?: T;
+        image?: T;
+        imageAlt?: T;
+      };
+  quoteSection?:
+    | T
+    | {
+        quote?: T;
+        author?: T;
+        subscript?: T;
+      };
+  endImage?:
+    | T
+    | {
+        image?: T;
+        imageAlt?: T;
       };
   updatedAt?: T;
   createdAt?: T;

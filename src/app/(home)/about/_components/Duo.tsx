@@ -7,7 +7,7 @@ import { cn } from "@/libs/utils";
 interface DuoProps {
     children: ReactNode;
     image?: {
-        src: StaticImageData;
+        src: StaticImageData | string;
         alt: string;
     };
     imgFirst?: boolean;
