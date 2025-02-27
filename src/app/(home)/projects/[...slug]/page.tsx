@@ -12,6 +12,7 @@ import { projectsData } from "../_data/projects_data/index";
 import IndividualProject from "./_component/IndividualProject";
 
 type Props = {
+    // [year, slug]
     params: Promise<{ slug: string[] }>;
 };
 
@@ -38,15 +39,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 }
 
 export default async function Page({ params }: Props) {
-    const slug = (await params).slug[0];
-    console.log(slug);
-    let project = projectsData.find((project) => project.slug === slug) as Project | undefined;
-
-    // if no hard coded project search payload CMS
-    if (!project) project = ParsePayloadProject(await getProject(slug));
-    if (!project) {
-        notFound();
-    }
+    const project = await getProjectFromSlug((await params).slug);
 
     return (
         <StandardPageLayout>
@@ -63,4 +56,21 @@ export default async function Page({ params }: Props) {
             <IndividualProject project={project} />
         </StandardPageLayout>
     );
+}
+
+async function getProjectFromSlug(fullSlug: string[]) {
+    if (fullSlug.length != 2) {
+        notFound();
+    }
+    const [year, slug] = fullSlug;
+
+    let project = projectsData.find((project) => project.slug === slug && project.year === year);
+
+    // If no hard coded project search payload CMS
+    if (!project) project = ParsePayloadProject(await getProject(year, slug));
+    if (!project) {
+        notFound();
+    }
+
+    return project;
 }
