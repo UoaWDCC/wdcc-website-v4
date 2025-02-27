@@ -25,7 +25,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
     return (
         <StandardPageLayout>
-            <RouteDisplay slug={slug} />
             <EventHeader title={event.title} backlink={{ label: "events", href: "/events" }} />
             <IndividualEvent event={event} />
         </StandardPageLayout>
