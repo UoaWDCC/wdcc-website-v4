@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from "react";
 import { tv } from "tailwind-variants";
 
-import { sponsors } from "@/assets/image/sponsors";
+import { sponsors, SponsorTierKeys } from "@/assets/image/sponsors";
 import { cn } from "@/libs/utils";
 
 import SponsorCard from "./sponsor/SponsorCard";
@@ -12,7 +12,7 @@ export const SponsorSection = () => {
             <h2 className="text-balance text-3xl font-bold leading-none">Our sponsors for 2025</h2>
             <div className="flex w-full flex-col items-center justify-center">
                 {/* horror */}
-                {(Object.keys(sponsors) as Array<keyof typeof sponsors>).map((tier) => (
+                {(Object.keys(sponsors) as Array<SponsorTierKeys>).map((tier) => (
                     <>
                         <SponsorLabel tier={tier} className="mt-8" />
                         <div
