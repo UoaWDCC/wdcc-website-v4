@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { ParsePayloadEvent } from "@/types/parser/ParsePayloadEvent";
 
 import { getEvent } from "@/actions/getEvent";
-import RouteDisplay from "@/components/debug/RouteDisplay";
 import EventHeader from "@/components/layout/pageheaders/EventHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
