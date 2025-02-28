@@ -15,7 +15,7 @@ interface FooterSocialsProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export default function FooterSocials({ socials, className, ...props }: FooterSocialsProps) {
-    const { scrollToTop } = useScroll();
+    const { scrollTo } = useScroll();
 
     return (
         <div {...props} className={cn("flex w-full items-center justify-center gap-6", className)}>
@@ -28,7 +28,7 @@ export default function FooterSocials({ socials, className, ...props }: FooterSo
                     {social.icon}
                 </Anchor>
             ))}
-            <Button variant={{ color: "blue" }} onClick={scrollToTop} className="ml-auto hidden sm:block">
+            <Button variant={{ color: "blue" }} onClick={() => scrollTo(0)} className="ml-auto hidden sm:block">
                 Back to Top
             </Button>
         </div>

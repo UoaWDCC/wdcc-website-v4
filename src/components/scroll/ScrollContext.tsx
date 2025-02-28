@@ -7,7 +7,8 @@ type ScrollContextType = {
     scrollRef: RefObject<HTMLElement>;
     /** Get reference to scrollable container. Throws error if the page doesn't have one. */
     getScrollContainer: () => HTMLElement;
-    scrollToTop: () => void;
+    /** Scroll to a specific location on the page - either a scrollY value or a querySelection (e.g. #myid). */
+    scrollTo: (loc: number | string) => void;
 };
 
 const scrollContext = createContext<ScrollContextType | null>(null);
@@ -22,14 +23,23 @@ export const ScrollProvider = ({ children }: { children: ReactNode }) => {
         return scrollRef.current;
     }
 
-    function scrollToTop() {
-        getScrollContainer().scroll({ top: 0, behavior: "smooth" });
+    function scrollTo(loc: number | string) {
+        console.log(loc);
+        if (typeof loc === "number") {
+            getScrollContainer().scroll({ top: loc, behavior: "smooth" });
+        } else {
+            // Loc is a string
+            const element = document.querySelector(loc);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }
     }
 
     const contextValue = {
         scrollRef,
         getScrollContainer,
-        scrollToTop,
+        scrollTo,
     };
 
     return <scrollContext.Provider value={contextValue}>{children}</scrollContext.Provider>;
