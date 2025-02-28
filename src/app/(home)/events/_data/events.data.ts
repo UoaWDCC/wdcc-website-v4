@@ -2,7 +2,6 @@ import type { Event } from "@/types/models";
 import { ParsePayloadEvent } from "@/types/parser/ParsePayloadEvent";
 
 import { getAllEvents } from "@/actions/getAllEvents";
-import placeholder from "@/assets/image/600x400.png";
 
 import { events2024Data } from "./events2024/events2024.data";
 import { events2025Data } from "./events2025/events2025.data";
@@ -26,7 +25,7 @@ export const eventsData = {
         description:
             "Our events are planned well in advance, so you can always know what's coming up. Check out our roadmap below to see what's in store for the next few semesters.",
         image: {
-            src: placeholder,
+            src: "/event-roadmap-s1-pixel-abbey.svg",
             alt: "Events Roadmap",
         },
     },

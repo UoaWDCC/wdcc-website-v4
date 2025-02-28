@@ -18,7 +18,7 @@ export default async function TeamPage() {
         <StandardPageLayout>
             <Header
                 variant={{ style: "secondary", color: "blue" }}
-                title="meet the team"
+                title="Meet the team"
                 backlink={{ label: "About WDCC", href: "/about" }}
             />
             <div className="flex w-full max-w-[1100px] flex-col items-center gap-24 py-20">
