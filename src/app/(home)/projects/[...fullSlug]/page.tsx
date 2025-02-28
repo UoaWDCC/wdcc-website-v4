@@ -1,7 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 
-import { Project } from "@/types/models";
 import { ParsePayloadProject } from "@/types/parser/ParsePayloadProject";
 
 import { getProject } from "@/actions/getProject";
@@ -12,12 +11,13 @@ import { projectsData } from "../_data/projects_data/index";
 import IndividualProject from "./_component/IndividualProject";
 
 type Props = {
-    params: Promise<{ slug: string }>;
+    // fullSlug = [year, slug]
+    params: Promise<{ fullSlug: string[] }>;
 };
 
 // auto generated seo metadata for each project
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-    const slug = (await params).slug;
+    const [, slug] = (await params).fullSlug;
 
     const project = projectsData.find((project) => project.slug === slug);
 
@@ -37,16 +37,8 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     };
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
-    const slug = (await params).slug;
-    console.log(slug);
-    let project = projectsData.find((project) => project.slug === slug) as Project | undefined;
-
-    // if no hard coded project search payload CMS
-    if (!project) project = ParsePayloadProject(await getProject(slug));
-    if (!project) {
-        notFound();
-    }
+export default async function Page({ params }: Props) {
+    const project = await getProjectFromSlug((await params).fullSlug);
 
     return (
         <StandardPageLayout>
@@ -63,4 +55,21 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <IndividualProject project={project} />
         </StandardPageLayout>
     );
+}
+
+async function getProjectFromSlug(fullSlug: string[]) {
+    if (fullSlug.length != 2) {
+        notFound();
+    }
+    const [year, slug] = fullSlug;
+
+    let project = projectsData.find((project) => project.slug === slug && project.year === year);
+
+    // If no hard coded project search payload CMS
+    if (!project) project = ParsePayloadProject(await getProject(year, slug));
+    if (!project) {
+        notFound();
+    }
+
+    return project;
 }

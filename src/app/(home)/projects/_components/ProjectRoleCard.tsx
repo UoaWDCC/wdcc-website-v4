@@ -30,7 +30,7 @@ export interface ProjectRoleCardProps {
 
 const ProjectRoleCard = ({ variant, title, description, slug, graphic }: ProjectRoleCardProps) => {
     return (
-        <Link className={card({ ...variant })} href={"/projects/" + slug}>
+        <Link className={card({ ...variant })} href={"/projects/roles/" + slug}>
             <div className="flex justify-between items-center">
                 <h3 className="text-2xl font-bold text-gray-800 leading-none">{title}</h3>
                 <Button variant={{ style: "tertiary", color: "dark"}}>Learn →</Button>
