@@ -30,7 +30,6 @@ export const AboutPage: GlobalConfig = {
                     relationTo: "media",
                     required: true,
                 },
-                { name: "imageAlt", label: "Image Alt Text", type: "text", required: true },
             ],
         },
         {
@@ -47,7 +46,6 @@ export const AboutPage: GlobalConfig = {
                     relationTo: "media",
                     required: true,
                 },
-                { name: "imageAlt", label: "Image Alt Text", type: "text", required: true },
             ],
         },
         {
@@ -64,7 +62,6 @@ export const AboutPage: GlobalConfig = {
                     relationTo: "media",
                     required: true,
                 },
-                { name: "imageAlt", label: "Image Alt Text", type: "text", required: true },
             ],
         },
         {
@@ -81,7 +78,6 @@ export const AboutPage: GlobalConfig = {
                     relationTo: "media",
                     required: true,
                 },
-                { name: "imageAlt", label: "Image Alt Text", type: "text", required: true },
             ],
         },
         {
@@ -106,7 +102,6 @@ export const AboutPage: GlobalConfig = {
                     relationTo: "media",
                     required: true,
                 },
-                { name: "imageAlt", label: "Image Alt Text", type: "text", required: true },
             ],
         },
     ],

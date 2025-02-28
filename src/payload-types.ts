@@ -662,25 +662,21 @@ export interface AboutPage {
     firstPart: string;
     secondPart: string;
     image: number | Media;
-    imageAlt: string;
   };
   whyJoin: {
     title: string;
     content: string;
     image: number | Media;
-    imageAlt: string;
   };
   clubStory: {
     title: string;
     content: string;
     image: number | Media;
-    imageAlt: string;
   };
   ourPeople: {
     title: string;
     content: string;
     image: number | Media;
-    imageAlt: string;
   };
   quoteSection: {
     quote: string;
@@ -689,7 +685,6 @@ export interface AboutPage {
   };
   endImage: {
     image: number | Media;
-    imageAlt: string;
   };
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -768,7 +763,6 @@ export interface AboutPageSelect<T extends boolean = true> {
         firstPart?: T;
         secondPart?: T;
         image?: T;
-        imageAlt?: T;
       };
   whyJoin?:
     | T
@@ -776,7 +770,6 @@ export interface AboutPageSelect<T extends boolean = true> {
         title?: T;
         content?: T;
         image?: T;
-        imageAlt?: T;
       };
   clubStory?:
     | T
@@ -784,7 +777,6 @@ export interface AboutPageSelect<T extends boolean = true> {
         title?: T;
         content?: T;
         image?: T;
-        imageAlt?: T;
       };
   ourPeople?:
     | T
@@ -792,7 +784,6 @@ export interface AboutPageSelect<T extends boolean = true> {
         title?: T;
         content?: T;
         image?: T;
-        imageAlt?: T;
       };
   quoteSection?:
     | T
@@ -805,7 +796,6 @@ export interface AboutPageSelect<T extends boolean = true> {
     | T
     | {
         image?: T;
-        imageAlt?: T;
       };
   updatedAt?: T;
   createdAt?: T;

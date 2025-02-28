@@ -1,3 +1,4 @@
+import placeholder from "@/assets/image/600x400.png";
 import { AboutPage as CmsAboutPage, Media } from "@/payload-types";
 
 import { AboutPage } from "../pages";
@@ -7,6 +8,10 @@ export const ParsePayloadAboutPage = (CmsAboutPage: CmsAboutPage): AboutPage | u
         return undefined;
     }
 
+    //need to move this to all parsers
+    const getImageUrl = (image?: Media) => image?.url ?? placeholder;
+    const getImageAlt = (image?: Media) => image?.url ?? "placeholder";
+
     return {
         header: {
             title: CmsAboutPage.header.title,
@@ -15,26 +20,26 @@ export const ParsePayloadAboutPage = (CmsAboutPage: CmsAboutPage): AboutPage | u
         genInfo: {
             firstPart: CmsAboutPage.genInfo.firstPart,
             secondPart: CmsAboutPage.genInfo.secondPart,
-            image: (CmsAboutPage.genInfo.image as Media)?.url as string,
-            imageAlt: (CmsAboutPage.genInfo.image as Media)?.url as string,
+            image: getImageUrl(CmsAboutPage.genInfo.image as Media),
+            imageAlt: getImageAlt(CmsAboutPage.genInfo.image as Media),
         },
         whyJoin: {
             title: CmsAboutPage.whyJoin.title,
             content: CmsAboutPage.whyJoin.content,
-            image: (CmsAboutPage.whyJoin.image as Media)?.url as string,
-            imageAlt: (CmsAboutPage.whyJoin.image as Media)?.url as string,
+            image: getImageUrl(CmsAboutPage.whyJoin.image as Media),
+            imageAlt: getImageAlt(CmsAboutPage.whyJoin.image as Media),
         },
         clubStory: {
             title: CmsAboutPage.clubStory.title,
             content: CmsAboutPage.clubStory.content,
-            image: (CmsAboutPage.clubStory.image as Media)?.url as string,
-            imageAlt: (CmsAboutPage.clubStory.image as Media)?.url as string,
+            image: getImageUrl(CmsAboutPage.clubStory.image as Media),
+            imageAlt: getImageAlt(CmsAboutPage.clubStory.image as Media),
         },
         ourPeople: {
             title: CmsAboutPage.ourPeople.title,
             content: CmsAboutPage.ourPeople.content,
-            image: (CmsAboutPage.ourPeople.image as Media)?.url as string,
-            imageAlt: (CmsAboutPage.ourPeople.image as Media)?.url as string,
+            image: getImageUrl(CmsAboutPage.ourPeople.image as Media),
+            imageAlt: getImageAlt(CmsAboutPage.ourPeople.image as Media),
         },
         quoteSection: {
             quote: CmsAboutPage.quoteSection.quote,
@@ -42,8 +47,8 @@ export const ParsePayloadAboutPage = (CmsAboutPage: CmsAboutPage): AboutPage | u
             subscript: CmsAboutPage.quoteSection.subscript,
         },
         endImage: {
-            image: (CmsAboutPage.endImage.image as Media)?.url as string,
-            imageAlt: (CmsAboutPage.endImage.image as Media)?.url as string,
+            image: getImageUrl(CmsAboutPage.endImage.image as Media),
+            imageAlt: getImageAlt(CmsAboutPage.endImage.image as Media),
         },
     };
 };

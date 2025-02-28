@@ -4,6 +4,7 @@ import { ParsePayloadAboutPage } from "@/types/parser/ParsePayloadAboutPage";
 
 import { getAboutPage } from "@/actions/Pages/getAboutUsPage";
 import Arrow from "@/assets/svg/Arrow";
+import ImageFit from "@/components/ImageFit";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import NestedDiv from "@/components/NestedDiv";
@@ -84,7 +85,10 @@ export default async function AboutPage() {
             >
                 <Quote quote={quoteSection.quote} author={quoteSection.author} subscript={quoteSection.subscript} />
             </NestedDiv>
-            <Image src={endImage.image} alt={endImage.imageAlt} className="responsive-fullwidth" />
+
+            {/*someone make this full width plz */}
+            <div className="responsive-fullwidth"></div>
+            <Image width={600} height={400} src={endImage.image} alt={endImage.imageAlt} className="" />
         </StandardPageLayout>
     );
 }
