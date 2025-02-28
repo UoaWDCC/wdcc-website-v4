@@ -1,18 +1,16 @@
 "use server";
 
-import { CollectionSlug } from "payload";
-
 import { SLUG } from "@/libs/enums/slug";
 import { getPayload } from "@/libs/payload";
 import { Project } from "@/payload-types";
 
-// return all projects
-export const getProject = async (slug: string) => {
+// Return single project by year and slug
+export const getProject = async (year: string, slug: string) => {
     const payload = await getPayload();
     const projects = await payload.find({
-        collection: SLUG.PROJECTS as CollectionSlug,
+        collection: SLUG.PROJECTS,
         where: {
-            slug: { equals: slug },
+            and: [{ year: { equals: year } }, { slug: { equals: slug } }],
         },
         limit: 1,
     });

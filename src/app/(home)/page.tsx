@@ -1,4 +1,3 @@
-import ComingUp from "@/app/(home)/_components/ComingUpSection";
 import SignupCard from "@/app/(home)/_components/SignupCard";
 import ThreeLayout from "@/components/layout/ThreePageLayout";
 import Footer from "@/components/navigation/footer/Footer";
@@ -20,7 +19,6 @@ export default function Home() {
                 <WDCCHero />
                 <div className="flex flex-col gap-36">
                     <ThisIsWDCC />
-                    <ComingUp />
                     <SponsorSection />
                     <SignupCard />
                 </div>

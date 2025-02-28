@@ -8,8 +8,6 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import ExecTeam from "./_components/ExecTeam";
 import { teamData } from "./_data/team.data";
 
-export const revalidate = 60;
-
 export default async function TeamPage() {
     let ExecPage = ParsePayloadExecTeam(await getExecPage());
     //if can't find CMS page use hardcoded data
