@@ -9,7 +9,7 @@ const IndividualEvent = ({ event }: { event: Event }) => {
         <div className="flex flex-col py-16">
             <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
                 <p className="whitespace-pre-line text-md">{event.page.description}</p>
-                <ImageFit className="self-center" src={event.page.image.src} alt="" height="500px" width="300px" />
+                <ImageFit src={event.page.image.src} alt="" height="500px" width="500px" />
             </div>
             <EventPartners partners={event.partners} />
         </div>
