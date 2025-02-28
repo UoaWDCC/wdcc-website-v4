@@ -3,32 +3,32 @@
 import { createContext, ReactNode, RefObject, useContext, useRef } from "react";
 
 type ScrollContextType = {
-    /** The main scrollable component on the page */
-    scrollRef: RefObject<HTMLDivElement>;
+    /** The main scrollable component on the page. */
+    scrollRef: RefObject<HTMLElement>;
+    /** Get reference to scrollable container. Throws error if the page doesn't have one. */
+    getScrollContainer: () => HTMLElement;
     scrollToTop: () => void;
 };
 
 const scrollContext = createContext<ScrollContextType | null>(null);
 
 export const ScrollProvider = ({ children }: { children: ReactNode }) => {
-    const scrollRef = useRef<HTMLDivElement>(null);
+    const scrollRef = useRef<HTMLElement>(null);
 
-    const isBrowser = () => typeof window !== "undefined";
-    function scrollToTop() {
-        if (!isBrowser()) {
-            console.log("Attempted to scroll to top but not in browser");
-            return;
-        }
+    function getScrollContainer() {
         if (!scrollRef.current) {
-            console.log("Attempted to scroll to top but no scroll container");
-            return;
+            throw new Error("No scroll container found");
         }
-        console.log("Scrolling to top");
-        scrollRef.current.scroll({ top: 0, behavior: "smooth" });
+        return scrollRef.current;
+    }
+
+    function scrollToTop() {
+        getScrollContainer().scroll({ top: 0, behavior: "smooth" });
     }
 
     const contextValue = {
         scrollRef,
+        getScrollContainer,
         scrollToTop,
     };
 
@@ -41,4 +41,4 @@ export const useScroll = () => {
         throw new Error("useScroll must be used within a ScrollProvider");
     }
     return contextValue;
-}
+};
