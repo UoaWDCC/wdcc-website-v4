@@ -1,9 +1,9 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 interface EventsRoadmapProps {
     title: string;
     image: {
-        src: StaticImageData;
+        src: string;
         alt: string;
     };
 }
