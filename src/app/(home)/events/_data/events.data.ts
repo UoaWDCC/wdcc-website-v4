@@ -2,7 +2,6 @@ import type { Event } from "@/types/models";
 import { ParsePayloadEvent } from "@/types/parser/ParsePayloadEvent";
 
 import { getAllEvents } from "@/actions/getAllEvents";
-import placeholder from "@/assets/image/600x400.png";
 
 import { events2024Data } from "./events2024/events2024.data";
 import { events2025Data } from "./events2025/events2025.data";
