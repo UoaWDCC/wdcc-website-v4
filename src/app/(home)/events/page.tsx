@@ -23,7 +23,7 @@ export default function EventsPage() {
                             Recent events <Arrow className="rotate-90" />
                         </>
                     ),
-                    href: "#upcomingEvents",
+                    href: "/events#recent",
                 }}
                 secondaryButton={{ label: "All events", href: "/events/all" }}
             />

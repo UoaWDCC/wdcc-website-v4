@@ -1,7 +1,10 @@
-import type { Metadata } from "next";
-import "@/styles/global.css";
-import { ReactNode } from "react";
+import { ScrollProvider } from "@/components/scroll/ScrollContext";
 import { figtree } from "@/fonts";
+
+import "@/styles/global.css";
+
+import { ReactNode } from "react";
+import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
 
@@ -34,7 +37,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${figtree.className} antialiased`}>{children}</body>
+            <body className={`${figtree.className} antialiased`}>
+                <ScrollProvider>{children}</ScrollProvider>
+            </body>
         </html>
     );
 }
