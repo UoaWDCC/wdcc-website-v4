@@ -14,7 +14,7 @@ interface StandardPageLayoutProps extends HtmlHTMLAttributes<HTMLElement> {
 export default function StandardPageLayout({ children, navColor = "light", ...props }: StandardPageLayoutProps) {
     return (
         <div {...props} className={cn("flex min-h-dvh flex-col", props.className)}>
-            <div className="relative flex h-dvh min-h-dvh flex-col">
+            <div className="relative flex h-dvh min-h-dvh flex-col overflow-x-hidden">
                 <div className="z-10 w-full">
                     <NavigationBar variant={{ color: navColor }} />
                 </div>
