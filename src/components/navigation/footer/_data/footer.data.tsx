@@ -81,33 +81,33 @@ export const footerData: FooterData = {
         {
             name: "Linktree",
             href: "https://go.wdcc.co.nz",
-            icon: <social.discord />,
+            icon: <social.mail />,
         },
         {
             name: "GitHub",
             href: "https://github.com/uoaWDCC",
-            icon: <social.facebook />,
+            icon: <social.github />,
         },
         {
             name: "Discord",
             href: "https://discord.gg/CZX8aSSrGj",
-            icon: <social.instagram />,
+            icon: <social.discord />,
         },
         {
             name: "Facebook",
             href: "https://www.facebook.com/wdccuoa",
-            icon: <social.youtube />,
+            icon: <social.facebook />,
         },
         {
             name: "Instagram",
             href: "https://www.instagram.com/wdccuoa",
-            icon: <social.mail />,
+            icon: <social.instagram />,
         },
-        {
-            name: "LinkedIn",
-            href: "https://www.linkedin.com/company/wdccuoa",
-            icon: <social.github />,
-        },
+        // {
+        //     name: "LinkedIn",
+        //     href: "https://www.linkedin.com/company/wdccuoa",
+        //     icon: <social.linkedin />,
+        // },
     ],
     friends: [
         {
@@ -122,7 +122,12 @@ export const footerData: FooterData = {
         },
         {
             label: "DEVS",
-            href: "https://dscuoa.nz",
+            href: "https://www.instagram.com/devsuoa/",
+            external: true,
+        },
+        {
+            label: "GDGC",
+            href: "https://linktr.ee/gdscuoa",
             external: true,
         },
     ],

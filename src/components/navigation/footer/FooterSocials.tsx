@@ -1,3 +1,5 @@
+'use client'
+
 import { HTMLAttributes } from "react";
 
 import { Anchor } from "@/components/primitives/Anchor";
@@ -12,6 +14,15 @@ interface FooterSocialsProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export default function FooterSocials({ socials, className, ...props }: FooterSocialsProps) {
+
+    const isBrowser = () => typeof window !== 'undefined';
+
+    function scrollToTop() {
+        if (!isBrowser()) return;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+
     return (
         <div {...props} className={cn("flex w-full items-center justify-center gap-6", className)}>
             {socials.map((social) => (
@@ -19,7 +30,7 @@ export default function FooterSocials({ socials, className, ...props }: FooterSo
                     {social.icon}
                 </Anchor>
             ))}
-            <Button variant={{ color: "blue" }} className="ml-auto hidden sm:block">
+            <Button variant={{ color: "blue" }} onClick={scrollToTop} className="ml-auto hidden sm:block">
                 Back to Top
             </Button>
         </div>

@@ -25,7 +25,11 @@ export const navbarData: NavbarData = {
             label: "Events",
             drop: [
                 {
-                    href: "/events",
+                    href: "/events#roadmap",
+                    label: "Roadmap",
+                },
+                {
+                    href: "/events#recent",
                     label: "Recent events",
                 },
                 {

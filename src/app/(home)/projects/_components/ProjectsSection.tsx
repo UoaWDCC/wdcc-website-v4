@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { Project } from "@/types/models";
 
+import { EmptyListPlaceholder } from "../../../../components/EmptyListPlaceholder";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectFilter } from "./ProjectFilter";
 
@@ -21,11 +22,15 @@ const ProjectsSection = ({ projects }: { projects: Project[] }) => {
     return (
         <div className="my-24 flex w-full flex-col">
             <ProjectFilter projects={projects} setSelectedYear={filterByYear} selectedYear={selectedYear} />
-            <div className="grid gap-6 lg:grid-cols-2">
-                {sortedProjects.map((project, index) => (
-                    <ProjectCard project={project} key={index} />
-                ))}
-            </div>
+            {sortedProjects.length ? (
+                <div className="grid gap-6 lg:grid-cols-2">
+                    {sortedProjects.map((project, index) => (
+                        <ProjectCard project={project} key={index} />
+                    ))}
+                </div>
+            ) : (
+                <EmptyListPlaceholder>No projects found</EmptyListPlaceholder>
+            )}
         </div>
     );
 };

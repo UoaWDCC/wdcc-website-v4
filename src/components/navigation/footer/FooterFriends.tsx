@@ -7,7 +7,7 @@ export default function FooterFriends({ friends }: { friends: LinkType[] }) {
     return (
         <div className="flex flex-col items-center justify-end gap-2 sm:flex-row">
             <p className="text-xs font-semibold">Check out our friends</p>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap justify-center items-center">
                 {friends.map((friend) => (
                     <FriendLink key={friend.href} friend={friend} />
                 ))}
