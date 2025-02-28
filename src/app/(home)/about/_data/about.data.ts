@@ -1,4 +1,4 @@
-import { AboutPage } from "@/types/pages";
+import { AboutPage } from "@/types/pages/AboutPage";
 
 import placeholder from "@/assets/image/600x400.png";
 import endImage from "@/assets/image/industry-night-1.png";

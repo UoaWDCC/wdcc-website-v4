@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { ParsePayloadAboutPage } from "@/types/parser/ParsePayloadAboutPage";
 
-import { getAboutPage } from "@/actions/Pages/getAboutUsPage";
+import { getAboutPage } from "@/actions/Pages/getAbooutPage";
 import Arrow from "@/assets/svg/Arrow";
 import ImageFit from "@/components/ImageFit";
 import Header from "@/components/layout/pageheaders/Header";
@@ -13,6 +13,8 @@ import { Button } from "@/components/primitives/Button";
 import Duo from "./_components/Duo";
 import Quote from "./_components/Quote";
 import { aboutData as hardCodedAboutPage } from "./_data/about.data";
+
+export const revalidate = 60;
 
 export default async function AboutPage() {
     let aboutData = ParsePayloadAboutPage(await getAboutPage());
