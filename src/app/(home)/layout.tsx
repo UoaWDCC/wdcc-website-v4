@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-
 import "@/styles/global.css";
-
 import { ReactNode } from "react";
-
 import { figtree } from "@/fonts";
+
+export const dynamic = "force-dynamic";
 
 // SEO
 export const metadata: Metadata = {

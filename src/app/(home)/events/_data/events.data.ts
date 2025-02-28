@@ -12,8 +12,6 @@ export interface Category {
     colors: string;
 }
 
-export const revalidate = 60;
-
 const projects = (await getAllEvents()).map(ParsePayloadEvent);
 
 export const eventsData = {
