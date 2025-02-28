@@ -1,3 +1,5 @@
+import { Faq } from "../models";
+
 export interface FaqSection {
     name: string;
     faqs: Faq[];

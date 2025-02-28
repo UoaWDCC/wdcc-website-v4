@@ -11,6 +11,7 @@ import { Events } from "./collections/Events";
 import AboutPage from "./collections/globals/AboutPage";
 import { ExecsPage } from "./collections/globals/ExecsPage";
 import { FaqPage } from "./collections/globals/FaqPage";
+import ProjectsPage from "./collections/globals/ProjectsPage";
 import { Media } from "./collections/Media";
 import { Partners } from "./collections/Partners";
 import { Project } from "./collections/Projects";
@@ -28,7 +29,7 @@ export default buildConfig({
         },
     },
     collections: [Users, Media, Events, Project, TestSlug, Partners],
-    globals: [ExecsPage, FaqPage, AboutPage],
+    globals: [ExecsPage, FaqPage, AboutPage, ProjectsPage],
     editor: lexicalEditor({
         features: ({ defaultFeatures }) => [...defaultFeatures, LinkFeature({}), HTMLConverterFeature({})],
     }),

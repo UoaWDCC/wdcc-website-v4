@@ -10,7 +10,7 @@ export type Role = {
     description: string;
 };
 
-export type ProjectsCopy = {
+export type ProjectsPage = {
     header: {
         title: string;
         content: string;

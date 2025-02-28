@@ -40,11 +40,13 @@ export interface Config {
     'execs-page': ExecsPage;
     'faq-page': FaqPage;
     'about-page': AboutPage;
+    'projects-page': ProjectsPage;
   };
   globalsSelect: {
     'execs-page': ExecsPageSelect<false> | ExecsPageSelect<true>;
     'faq-page': FaqPageSelect<false> | FaqPageSelect<true>;
     'about-page': AboutPageSelect<false> | AboutPageSelect<true>;
+    'projects-page': ProjectsPageSelect<false> | ProjectsPageSelect<true>;
   };
   locale: null;
   user: User & {
@@ -691,6 +693,56 @@ export interface AboutPage {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects-page".
+ */
+export interface ProjectsPage {
+  id: number;
+  header: {
+    title: string;
+    content: string;
+    buttons: {
+      text: string;
+      link: string;
+      id?: string | null;
+    }[];
+  };
+  infoSection: {
+    main: string;
+    checkboxes: {
+      title: string;
+      checks?:
+        | {
+            text: string;
+            id?: string | null;
+          }[]
+        | null;
+    };
+  };
+  operationSection: {
+    title: string;
+    content: string;
+  };
+  rolesSection: {
+    title: string;
+    roles?:
+      | {
+          color: 'blue' | 'purple' | 'yellow' | 'green';
+          title: string;
+          slug: string;
+          description: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  featuredSection: {
+    title: string;
+    cta: string;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "execs-page_select".
  */
 export interface ExecsPageSelect<T extends boolean = true> {
@@ -796,6 +848,70 @@ export interface AboutPageSelect<T extends boolean = true> {
     | T
     | {
         image?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects-page_select".
+ */
+export interface ProjectsPageSelect<T extends boolean = true> {
+  header?:
+    | T
+    | {
+        title?: T;
+        content?: T;
+        buttons?:
+          | T
+          | {
+              text?: T;
+              link?: T;
+              id?: T;
+            };
+      };
+  infoSection?:
+    | T
+    | {
+        main?: T;
+        checkboxes?:
+          | T
+          | {
+              title?: T;
+              checks?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+            };
+      };
+  operationSection?:
+    | T
+    | {
+        title?: T;
+        content?: T;
+      };
+  rolesSection?:
+    | T
+    | {
+        title?: T;
+        roles?:
+          | T
+          | {
+              color?: T;
+              title?: T;
+              slug?: T;
+              description?: T;
+              id?: T;
+            };
+      };
+  featuredSection?:
+    | T
+    | {
+        title?: T;
+        cta?: T;
       };
   updatedAt?: T;
   createdAt?: T;

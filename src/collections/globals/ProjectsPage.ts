@@ -17,6 +17,7 @@ export const ProjectsPage: GlobalConfig = {
                         { name: "text", type: "text", required: true },
                         { name: "link", type: "text", required: true },
                     ],
+                    required: true,
                 },
             ],
         },
