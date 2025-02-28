@@ -3,6 +3,7 @@
 import { createContext, ReactNode, RefObject, useContext, useRef } from "react";
 
 type ScrollContextType = {
+    /** The main scrollable component on the page */
     scrollRef: RefObject<HTMLDivElement>;
     scrollToTop: () => void;
 };

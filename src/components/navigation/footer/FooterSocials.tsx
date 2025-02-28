@@ -1,8 +1,9 @@
-'use client'
+"use client";
 
 import { HTMLAttributes } from "react";
 
 import { Anchor } from "@/components/primitives/Anchor";
+import { useScroll } from "@/components/scroll/ScrollContext";
 import { cn } from "@/libs/utils";
 
 import { Button } from "../../primitives/Button";
@@ -14,19 +15,16 @@ interface FooterSocialsProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export default function FooterSocials({ socials, className, ...props }: FooterSocialsProps) {
-
-    const isBrowser = () => typeof window !== 'undefined';
-
-    function scrollToTop() {
-        if (!isBrowser()) return;
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
+    const { scrollToTop } = useScroll();
 
     return (
         <div {...props} className={cn("flex w-full items-center justify-center gap-6", className)}>
             {socials.map((social) => (
-                <Anchor key={social.name} href={social.href} className="[&>svg]:fill-white [&>svg]:transition [&>svg]:duration-200 hover:[&>svg]:fill-blue-200">
+                <Anchor
+                    key={social.name}
+                    href={social.href}
+                    className="[&>svg]:fill-white [&>svg]:transition [&>svg]:duration-200 hover:[&>svg]:fill-blue-200"
+                >
                     {social.icon}
                 </Anchor>
             ))}
