@@ -26,7 +26,7 @@ export default async function ProjectsPage() {
                 description="Projects are your chance to build amazing, real world projects for genuine community clients. Develop your skills, work in an industry-like team environment, and gain practical work experience - all alongside motivated peers! "
                 primaryButton={{
                     label: "Apply for a project",
-                    href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                    href: "https://go.wdcc.co.nz",
                 }} // TODO remove, but lol
                 secondaryButton={{ label: "Past WDCC Projects", href: "/projects/all" }}
             />

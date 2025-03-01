@@ -26,7 +26,7 @@ const SignupCard = ({ SignUpCard }: SignupCardProps) => {
                 </p>
             </div>
             <div className="flex w-full flex-col items-center justify-items-start gap-2 md:flex-row md:gap-4">
-                <Button variant={{ style: "secondary", color: "blue" }} className="px-16 py-3 text-md">
+                <Button variant={{ style: "secondary", color: "blue" }} className="px-16 py-3 text-md" href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform?usp=sharing">
                     Join WDCC <Arrow />
                 </Button>
                 <Button
