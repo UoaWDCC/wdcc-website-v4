@@ -22,7 +22,7 @@ export default async function FaqPage() {
         <StandardPageLayout>
             <Header
                 variant={{ style: "secondary", color: "blue" }}
-                title="frequently asked questions"
+                title="Frequently Asked Questions"
                 backlink={{ label: "About WDCC", href: "/about" }}
             />
             <div style={{ minHeight: `${minHeight}px` }} className="flex w-full flex-col items-center gap-24 py-24">

@@ -8,6 +8,7 @@ import { motion } from "motion/react";
 import { fadeopacity } from "@/libs/animations";
 
 import NavigationBar from "../navigation/navbar/NavigationBar";
+import { useScroll } from "../scroll/ScrollContext";
 
 const Scene = dynamic(() => import("@/components/three/scene/Scene"), { ssr: false });
 
@@ -16,6 +17,7 @@ const DebounceTimer = 50;
 const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
     const progress = useProgress();
     const [isLoaded, setLoaded] = useState(false);
+    const { scrollRef } = useScroll();
 
     useEffect(() => {
         const loadId = setTimeout(() => {
@@ -30,6 +32,7 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
         <>
             <NavigationBar />
             <motion.div
+                ref={scrollRef}
                 initial="initial"
                 animate={isLoaded ? "animate" : "initial"}
                 variants={fadeopacity}
@@ -37,7 +40,6 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
                     position: "relative",
                     width: " 100%",
                     height: "100%",
-                    overflowX: "hidden",
                     touchAction: "auto",
                 }}
             >

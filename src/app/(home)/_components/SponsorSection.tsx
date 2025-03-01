@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react";
+import { HTMLAttributes } from "react";
 import { tv } from "tailwind-variants";
 
 import { SponsorSectionType } from "@/types/pages/HeroPage";
@@ -20,14 +20,17 @@ export const SponsorSection = ({ SponsorSection }: SponsorSectionProps) => {
                 {/* horror*/}
                 {/* it's a nightmare */}
                 {(Object.keys(SponsorSection) as SponsorTierKeys[]).map((tier) => (
-                    <div key={tier} className="flex w-full flex-col items-center">
-                        <SponsorLabel tier={tier} className="mt-8" />
-                        <div className="responsive-grid mt-6 grid w-full flex-col place-content-center place-items-center gap-2 md:gap-4">
+                    <>
+                        <SponsorLabel key={`label-${tier}`} tier={tier} className="mt-8" />
+                        <div
+                            key={`cards-${tier}`}
+                            className="responsive-grid mt-6 grid w-full flex-col place-content-center place-items-center gap-2 md:gap-4"
+                        >
                             {SponsorSection[tier].sponsors.map(({ src, alt }, i) => (
                                 <SponsorCard tier={tier} src={src} alt={alt} width="150px" height="100px" key={i} />
                             ))}
                         </div>
-                    </div>
+                    </>
                 ))}
                 <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
                     <p>Interested in sponsoring us?</p>

@@ -22,7 +22,7 @@ export const whatWeDoData: WhatWeDoData = {
             variant: { color: "yellow" },
             index: "03",
             title: "Workshops",
-            slug: "workshops",
+            slug: "events#workshops",
             description:
                 "We host a range of workshops to teach members the things they’ll need to thrive in our projects, covering plenty of crucial development, tech, and people skills.",
         },

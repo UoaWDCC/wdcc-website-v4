@@ -49,7 +49,7 @@ const WDCCHero = ({ hero }: WDCCHeroProps) => {
                         .
                     </p>
                     <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-                        <Button variant={{ style: "primary", color: "blue" }}>Become a member for 2025</Button>
+                        <Button variant={{ style: "primary", color: "blue" }} href="https://go.wdcc.co.nz/">Become a member for 2025</Button>
                         <div className="flex gap-4">
                             <Button
                                 variant={{ style: "secondary", color: "blue" }}

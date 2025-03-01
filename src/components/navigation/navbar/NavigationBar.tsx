@@ -111,7 +111,7 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isHovering ? 1 : 0 }}
-                className="pointer-events-none fixed inset-0 z-40 h-dvh w-dvw bg-black/40 backdrop-blur-sm"
+                className="pointer-events-none absolute inset-0 left-0 top-0 z-40 h-dvh w-dvw bg-black/40 backdrop-blur-sm"
             />
             <nav className={navbar({ ...variant })}>
                 <div

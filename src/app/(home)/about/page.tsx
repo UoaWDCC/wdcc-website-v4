@@ -5,12 +5,12 @@ import { ParsePayloadAboutPage } from "@/types/parser/ParsePayloadAboutPage";
 import { getAboutPage } from "@/actions/Pages/getAbooutPage";
 import Arrow from "@/assets/svg/Arrow";
 import ImageFit from "@/components/ImageFit";
+import Duo from "@/components/Duo";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import NestedDiv from "@/components/NestedDiv";
 import { Button } from "@/components/primitives/Button";
 
-import Duo from "./_components/Duo";
 import Quote from "./_components/Quote";
 import { aboutData as hardCodedAboutPage } from "./_data/about.data";
 
@@ -52,6 +52,10 @@ export default async function AboutPage() {
                 inner="flex w-[80%] max-w-[1100px] flex-col gap-16 sm:gap-24"
             >
                 <Duo image={{ src: genInfo.image, alt: genInfo.imageAlt }}>
+                    <p className="whitespace-pre-line text-md font-semibold leading-tight sm:text-lg">
+                        {genInfo.firstPart}
+                    </p>
+                    <p className="whitespace-pre-line text-md font-semibold leading-tight text-blue-brand sm:text-lg">
                     <p className="whitespace-pre-line text-md font-semibold leading-tight sm:text-lg">
                         {genInfo.firstPart}
                     </p>

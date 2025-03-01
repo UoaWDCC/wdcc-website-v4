@@ -2,6 +2,7 @@ import React from "react";
 import { tv, VariantProps } from "tailwind-variants";
 
 import { Button } from "@/components/primitives/Button";
+import Link from "next/link";
 
 // Yes, I know it says "yellow" and the color is bg-orange (not bg-yellow). The yellow is just a bit too bright for this page lol.
 
@@ -28,12 +29,12 @@ export interface WhatWeDoCardProps {
 
 const InfoCard = ({ variant, index, title, description, slug }: WhatWeDoCardProps) => {
     return (
-        <div className={card({ ...variant })}>
+        <Link href={slug} className={card({ ...variant })}>
             <h2 className="absolute left-0 top-0 -translate-x-5 text-[80px] font-bold opacity-10">{index}</h2>
             <h3 className="text-2xl font-bold text-gray-800">{title}</h3>
             <p className="font-normal leading-tight">{description}</p>
             <Button variant={{ style: "tertiary", color: "dark", width: "full" }}>Discover {slug} →</Button>
-        </div>
+        </Link>
     );
 };
 
