@@ -4,7 +4,6 @@ import { ParsePayloadAboutPage } from "@/types/parser/ParsePayloadAboutPage";
 
 import { getAboutPage } from "@/actions/Pages/getAbooutPage";
 import Arrow from "@/assets/svg/Arrow";
-import ImageFit from "@/components/ImageFit";
 import Duo from "@/components/Duo";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
@@ -56,7 +55,6 @@ export default async function AboutPage() {
                         {genInfo.firstPart}
                     </p>
                     <p className="whitespace-pre-line text-md font-semibold leading-tight text-blue-brand sm:text-lg">
-                    <p className="whitespace-pre-line text-md font-semibold leading-tight sm:text-lg">
                         {genInfo.firstPart}
                     </p>
                     <p className="whitespace-pre-line text-md font-semibold leading-tight text-blue-brand sm:text-lg">

@@ -1,4 +1,4 @@
-import type { ProjectsPage as CmsProjectPage, Media } from "@/payload-types";
+import type { ProjectsPage as CmsProjectPage } from "@/payload-types";
 
 import { ProjectsPage } from "../pages/ProjectsPage";
 

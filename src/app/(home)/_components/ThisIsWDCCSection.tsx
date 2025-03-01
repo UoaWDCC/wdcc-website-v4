@@ -1,7 +1,5 @@
 import React from "react";
-import { Thasadith } from "next/font/google";
 
-import { whatWeDoData } from "../_data/infoCard.data";
 import InfoCard, { WhatWeDoCardProps } from "./WhatWeDoCard";
 
 interface ThisIsWDCCProps {
