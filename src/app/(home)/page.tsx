@@ -21,7 +21,7 @@ export default function Home() {
                 <div className="flex flex-col gap-36">
                     <ThisIsWDCC ThisIsWDCC={HeroData.ThisIsWDCC} />
                     <SponsorSection SponsorSection={HeroData.SponsorSection} />
-                    <SignupCard />
+                    <SignupCard SignUpCard={HeroData.SignUpCard} />
                 </div>
             </main>
             <Footer className="mt-16" />

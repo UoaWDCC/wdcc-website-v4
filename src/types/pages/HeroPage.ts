@@ -37,6 +37,11 @@ export type HeroPage = {
             }[];
         };
     };
+    SignUpCard: {
+        title: string;
+        descriptionLineOne: string;
+        descriptionLineTwo: string;
+    };
 };
 
 //too many same named things kill me

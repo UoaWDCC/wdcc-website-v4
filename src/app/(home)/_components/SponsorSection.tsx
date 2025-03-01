@@ -17,6 +17,8 @@ export const SponsorSection = ({ SponsorSection }: SponsorSectionProps) => {
         <div className="flex flex-col items-center justify-center gap-10">
             <h2 className="text-balance text-3xl font-bold leading-none">Our sponsors for 2025</h2>
             <div className="flex w-full flex-col items-center justify-center">
+                {/* horror*/}
+                {/* it's a nightmare */}
                 {(Object.keys(SponsorSection) as SponsorTierKeys[]).map((tier) => (
                     <div key={tier} className="flex w-full flex-col items-center">
                         <SponsorLabel tier={tier} className="mt-8" />

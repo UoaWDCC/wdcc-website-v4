@@ -37,6 +37,7 @@ export const HeroData: HeroPage = {
             ],
         },
     },
+    //could've and probably should've abstracted this and then imported it in here but oh well.
     SponsorSection: {
         gold: {
             sponsors: [
@@ -66,7 +67,11 @@ export const HeroData: HeroPage = {
                 },
                 {
                     src: "/sponsors/kpmg_blue_logo_logo_no_background.webp",
-                    alt: "/sponsors/janestreet_black.webp",
+                    alt: "kpmg",
+                },
+                {
+                    src: "/sponsors/janestreet_black.webp",
+                    alt: "janestreet",
                 },
             ],
         },
@@ -94,5 +99,11 @@ export const HeroData: HeroPage = {
                 },
             ],
         },
+    },
+    SignUpCard: {
+        title: "Your university tech club dreams start here.",
+        descriptionLineOne:
+            "WDCC membership is totally free, and lets you access all kinds of member-exclusive messages, events, workshops, and more",
+        descriptionLineTwo: "Plus, at the start of the year, you can apply to join a ",
     },
 };
