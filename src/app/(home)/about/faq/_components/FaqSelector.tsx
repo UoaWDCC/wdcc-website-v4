@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 
 import { Faq } from "@/types/models";
-import { FaqSection } from "@/types/pages";
+import { FaqSection } from "@/types/pages/FaqPage";
 
 import { FaqItem } from "./FaqItem";
 import { FaqTab } from "./FaqTab";

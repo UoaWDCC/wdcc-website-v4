@@ -1,4 +1,4 @@
-import { FaqPage } from "@/types/pages";
+import { FaqPage } from "@/types/pages/FaqPage";
 
 import { eventsFaqData } from "./eventsFaq.data";
 import { generalFaqData } from "./generalFaq.data";

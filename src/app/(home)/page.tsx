@@ -7,6 +7,7 @@ import { View } from "@/components/three/scene/View";
 import { SponsorSection } from "./_components/SponsorSection";
 import ThisIsWDCC from "./_components/ThisIsWDCCSection";
 import WDCCHero from "./_components/WDCCHero";
+import { HeroData } from "./_data/homeData";
 
 export default function Home() {
     return (
@@ -16,10 +17,10 @@ export default function Home() {
                 <BackgroundEffect />
             </View>
             <main className="responsive-body flex-col items-center justify-center gap-24 py-44">
-                <WDCCHero />
+                <WDCCHero hero={HeroData.Hero} />
                 <div className="flex flex-col gap-36">
-                    <ThisIsWDCC />
-                    <SponsorSection />
+                    <ThisIsWDCC ThisIsWDCC={HeroData.ThisIsWDCC} />
+                    <SponsorSection SponsorSection={HeroData.SponsorSection} />
                     <SignupCard />
                 </div>
             </main>
