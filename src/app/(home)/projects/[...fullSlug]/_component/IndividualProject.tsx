@@ -1,4 +1,5 @@
 import React from "react";
+import Duo from "@app/about/_components/Duo";
 
 import { Project } from "@/types/models";
 
@@ -19,29 +20,25 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
 
     return (
         <div className="flex flex-col py-16">
-            <div className="grid grid-cols-2 gap-16">
-                {/* todo: replace with real data soon. payload? */}
-                {/* I agree */} {/* done 🔥😎 */}
-                <p className="text-md">
-                    <strong className="text-md">
-                        {project.name.extended}
-                        <br />
-                        <br />
-                        {project.client}
-                    </strong>
-                    <br />
-                    <br />
-                    {project.brief.description}
-                </p>
+            {/* <div className="grid grid-cols-2 gap-16">
                 <ImageFit
                     src={project.brief.image?.src || placeholder600_400}
                     alt={project.brief.image?.alt || "placeholder"}
                     height="300px"
                     width="500px"
                 />
-            </div>
+            </div> */}
+            <Duo image={{ src: project.brief.image?.src, alt: project.brief.image?.alt }}>
+                <div className="text-center md:text-left">
+                    <h3 className="text-lg font-semibold">{project.name.extended}</h3>
+                    <br />
+                    <h4 className="text-md font-semibold">{project.client}</h4>
+                    <br />
+                    <p>{project.brief.description}</p>
+                </div>
+            </Duo>
             <div className="mt-8 flex flex-col gap-4">
-                <h3 className="text-3xl font-semibold">Technologies</h3>
+                <h2 className="text-center text-3xl font-semibold md:text-left">Technologies</h2>
                 <hr />
                 <div className="flex flex-wrap gap-12">
                     {technologies &&
@@ -61,8 +58,8 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
                 <hr />
             </div>
             <div className="mt-8 flex flex-col items-center gap-8">
-                <h3 className="text-3xl font-semibold">Meet the project team</h3>
-                <div className="flex justify-center gap-4">
+                <h2 className="text-center text-3xl font-semibold md:text-left">Meet the project team</h2>
+                <div className="flex flex-col justify-center gap-4 md:flex-row">
                     <TeamMemberCard
                         variant={{ role: "manager" }}
                         name={project.team.manager.name}

@@ -7,23 +7,16 @@ import { cn } from "@/libs/utils";
 interface DuoProps {
     children: ReactNode;
     image?: {
-        src: StaticImageData;
-        alt: string;
+        src: string | undefined | StaticImageData;
+        alt: string | undefined;
     };
     imgFirst?: boolean;
 }
 
-export default function Duo({
-    children,
-    image = {
-        src: placeholder,
-        alt: "Image missing alt :( - please email us about this issue",
-    },
-    imgFirst = false,
-}: DuoProps) {
+export default function Duo({ children, image, imgFirst = false }: DuoProps) {
     return (
         <div className="flex flex-col items-center justify-center gap-x-48 gap-y-8 lg:flex-row">
-            <div className={cn("order-2 flex flex-1 flex-col gap-y-6", imgFirst ? "lg:order-2" : "lg:order-1")}>
+            <div className={cn("order-2 flex w-full flex-1 flex-col gap-y-6", imgFirst ? "lg:order-2" : "lg:order-1")}>
                 {children}
             </div>
             <div
@@ -33,8 +26,8 @@ export default function Duo({
                 )}
             >
                 <Image
-                    src={image.src ? image.src : placeholder}
-                    alt={image.alt}
+                    src={image?.src ?? placeholder}
+                    alt={image?.alt ?? "Image missing alt :( - please email us about this issue"}
                     className="h-auto w-full rounded-[16px]"
                 />
             </div>
