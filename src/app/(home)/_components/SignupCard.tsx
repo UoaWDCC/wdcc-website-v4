@@ -29,13 +29,6 @@ const SignupCard = ({ SignUpCard }: SignupCardProps) => {
                 <Button variant={{ style: "secondary", color: "blue" }} className="px-16 py-3 text-md" href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform?usp=sharing">
                     Join WDCC <Arrow />
                 </Button>
-                <Button
-                    variant={{ style: "text", color: "light" }}
-                    className="text-sm font-normal"
-                    href="/pricing-xdx-real"
-                >
-                    or view pricing information
-                </Button>
             </div>
         </div>
     );
