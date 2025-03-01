@@ -26,7 +26,7 @@ export default async function ProjectsPage() {
                 description="Projects are your chance to build amazing, real world projects for genuine community clients. Develop your skills, work in an industry-like team environment, and gain practical work experience - all alongside motivated peers! "
                 primaryButton={{
                     label: "Apply for a project",
-                    href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                    href: "https://go.wdcc.co.nz",
                 }} // TODO remove, but lol
                 secondaryButton={{ label: "Past WDCC Projects", href: "/projects/all" }}
             />
@@ -40,7 +40,7 @@ export default async function ProjectsPage() {
 
                         <div className="flex flex-col gap-4">
                             <p className="text-md font-semibold">{projectsCopy.infoSection.checkboxes.title}</p>
-                            <div className="flex flex-col gap-4 pl-4">
+                            <div className="flex flex-col gap-4 sm:pl-4">
                                 {projectsCopy.infoSection.checkboxes.checks.map((content, i) => (
                                     <Checklist label={content} key={i} checked={true} />
                                 ))}

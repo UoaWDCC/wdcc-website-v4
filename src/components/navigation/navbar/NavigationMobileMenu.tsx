@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "motion/react";
 
 import { Anchor } from "@/components/primitives/Anchor";
@@ -14,6 +14,11 @@ import Arrow from "@/assets/svg/Arrow";
 import { tv, VariantProps } from "tailwind-variants";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
 import Link from "next/link";
+import { social } from "@/assets/svg/socials";
+
+//import websterBL from "@/assets/image/webster-blue.png"
+import websterCL from "@/assets/image/webster-color.png"
+import Image from "next/image";
 
 const mobileNav = tv({
     base: "transition duration-300",
@@ -38,6 +43,16 @@ const NavigationMobileMenu = ({ links, className, variant }: NavbarProps) => {
     const handleToggle = () => {
         setToggle(!toggle);
     };
+
+
+    // Blue Webster or Color Webster? Randomly assigns. Maybe?
+    /*
+    let webster;
+    const rand = Math.floor(Math.random() * 2);
+    if(rand > 0) webster = websterBL;
+    webster = websterCL;
+    */
+    const webster = websterCL;
 
     return (
         <>
@@ -72,11 +87,27 @@ const NavigationMobileMenu = ({ links, className, variant }: NavbarProps) => {
                     <div className="w-full flex flex-col my-2 text-white divide-y-2 divide-dashed divide-gray-100/25">
                         <NavigationMenuLinks links={links} />
                     </div>
+                    <Button variant={{style: "tertiary", color: "dark", isJustified: true}} className="" href="https://go.wdcc.co.nz">
 
+                        {/* I probably shouldnt use CSS transforms to scale this down but whatever lol */}
+                        <div className="fill-blue-100 scale-[80%]">
+                            <social.linktree />
+                        </div>
+
+                    </Button>
                     <Button variant={{style: "secondary", color: "light", isJustified: true}}>Join WDCC <Arrow/></Button>
 
 
+                    {/*
                     <p className="w-full text-white/50 text-xs font-light text-center">miku oo ee oo</p>
+                    */}
+
+                    <div className="w-full flex flex-col">
+                        <Image alt="webster, the WDCC mascot" className="w-[80%] my-8 mx-auto opacity-50" src={webster} width={1312}
+                               height={1171}></Image>
+                        <p className="w-full text-white/50 text-xs font-light text-center">Meet Webster, the WDCC mascot.</p>
+
+                    </div>
 
                 </div>
             </motion.div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { tv, VariantProps } from "tailwind-variants";
 
@@ -16,6 +16,7 @@ import { Button } from "@/components/primitives/Button";
 
 import { Anchor } from "../../primitives/Anchor";
 import NavigationMobileMenu from "./NavigationMobileMenu";
+import { social } from "@/assets/svg/socials";
 
 const hoverContext = createContext({} as hoverContextProps);
 
@@ -143,9 +144,17 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
                             className="md:hidden"
                             links={navbarData.links}
                         />
+                        <Button variant={{style: "secondary", color: "blue"}} className="py-0 px-3 hidden md:flex" href="https://go.wdcc.co.nz">
+
+                            {/* I probably shouldnt use CSS transforms to scale this down but whatever lol */}
+                            <div className="fill-blue-700 scale-[80%]">
+                                <social.linktree />
+                            </div>
+
+                        </Button>
                         <Button
                             variant={{ style: "primary", color: "blue" }}
-                            href="https://go.wdcc.co.nz"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform?usp=sharing"
                             className="hidden md:block"
                             newTab
                         >
