@@ -1,9 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 
 import { Faq } from "@/types/models";
+
+import Arrow from "@/assets/svg/Arrow";
+import ChevronDown from "@/assets/svg/ChevronDown";
+import { cn } from "@/libs/utils";
 
 import { FaqSection } from "../_data/faq.data";
 import { FaqItem } from "./FaqItem";
@@ -62,7 +66,8 @@ interface FaqCategorySelectorProps {
 const FaqCategorySelect = ({ sections, handleTabSelect, selectedTab }: FaqCategorySelectorProps) => {
     return (
         <>
-            <div className="flex w-full justify-end md:hidden">
+            <div className="flex w-full items-center justify-end gap-2 md:hidden">
+                <strong className="text-foreground">About</strong>
                 <FaqSelect sections={sections} handleTabSelect={handleTabSelect} />
             </div>
             <div className="hidden w-[400px] flex-col items-start justify-center gap-2 md:flex">
@@ -86,6 +91,7 @@ interface FaqSelectProps {
 }
 
 const FaqSelect = ({ sections, handleTabSelect }: FaqSelectProps) => {
+    const selectorRef = useRef<HTMLDivElement>(null);
     const [selected, setSelected] = useState(sections[0]);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -95,18 +101,43 @@ const FaqSelect = ({ sections, handleTabSelect }: FaqSelectProps) => {
         setIsOpen(false);
     };
 
+    const handleToggle = () => {
+        setIsOpen(!isOpen);
+        if (selectorRef.current) {
+            selectorRef.current.focus();
+        }
+    };
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (selectorRef.current && !selectorRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [selectorRef]);
+
     return (
-        <div className="relative">
-            <button onClick={() => setIsOpen(!isOpen)} className="rounded-full bg-gray-200 p-0.5 px-4 font-semibold">
-                {selected.name}
+        <div ref={selectorRef} className="relative">
+            <button
+                onClick={handleToggle}
+                className={cn(
+                    "flex items-center rounded-full bg-gray-20 p-0.5 px-4 font-semibold transition-colors",
+                    selected.colors.tabBg
+                )}
+            >
+                {selected.name} <ChevronDown className="size-6" />
             </button>
             {isOpen && (
-                <div className="absolute right-0 top-full translate-y-1 flex-col gap-1 rounded-xl bg-gray-200 p-1">
+                <div className="absolute right-0 top-full translate-y-1 flex-col gap-1 rounded-xl border border-gray-150 bg-gray-20 p-1">
                     {sections.map((section) => (
                         <button
                             key={section.name}
                             onClick={() => handleSelect(section)}
-                            className="w-full cursor-pointer rounded-lg px-4 text-right hover:bg-black"
+                            className="w-full cursor-pointer rounded-lg px-4 text-right hover:bg-gray-150"
                         >
                             {section.name}
                         </button>
