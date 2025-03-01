@@ -19,15 +19,22 @@ export const SponsorSection = ({ SponsorSection }: SponsorSectionProps) => {
             <div className="flex w-full flex-col items-center justify-center">
                 {/* horror*/}
                 {/* it's a nightmare */}
-                {(Object.keys(SponsorSection) as SponsorTierKeys[]).map((tier) => (
+                {(Object.keys(SponsorSection) as SponsorTierKeys[]).map((tier, i) => (
                     <>
-                        <SponsorLabel key={`label-${tier}`} tier={tier} className="mt-8" />
+                        <SponsorLabel key={`label-${tier}-${i}`} tier={tier} className="mt-8" />
                         <div
-                            key={`cards-${tier}`}
+                            key={`cards-${tier}-${i}`}
                             className="responsive-grid mt-6 grid w-full flex-col place-content-center place-items-center gap-2 md:gap-4"
                         >
                             {SponsorSection[tier].sponsors.map(({ src, alt }, i) => (
-                                <SponsorCard tier={tier} src={src} alt={alt} width="150px" height="100px" key={i} />
+                                <SponsorCard
+                                    key={`sponsor-${tier}-${i}`}
+                                    tier={tier}
+                                    src={src}
+                                    alt={alt}
+                                    width="150px"
+                                    height="100px"
+                                />
                             ))}
                         </div>
                     </>
