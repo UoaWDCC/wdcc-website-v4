@@ -1,4 +1,4 @@
-import { Exec } from "./models";
+import { Exec } from "../models";
 
 export type ExecPage = {
     info: string;

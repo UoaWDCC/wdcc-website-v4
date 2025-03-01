@@ -26,6 +26,8 @@ export default function Duo({ children, image, imgFirst = false }: DuoProps) {
                 )}
             >
                 <Image
+                    width={600}
+                    height={400}
                     src={image?.src ?? placeholder}
                     alt={image?.alt ?? "Image missing alt :( - please email us about this issue"}
                     className="h-auto w-full rounded-[16px]"

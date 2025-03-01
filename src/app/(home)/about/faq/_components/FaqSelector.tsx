@@ -4,8 +4,8 @@ import { useState } from "react";
 import { motion } from "motion/react";
 
 import { Faq } from "@/types/models";
+import { FaqSection } from "@/types/pages/FaqPage";
 
-import { FaqSection } from "../_data/faq.data";
 import { FaqItem } from "./FaqItem";
 import { FaqTab } from "./FaqTab";
 

@@ -15,7 +15,13 @@ const WDCCThreeHero = dynamic(() => import("@/components/three/layout/home/WDCCT
     ssr: false,
 });
 
-const WDCCHero = () => {
+interface WDCCHeroProps {
+    hero: {
+        title: string;
+        blurb: string;
+    };
+}
+const WDCCHero = ({ hero }: WDCCHeroProps) => {
     const ref = useRef<HTMLDivElement>(null);
     const camera = useRef<THREE.PerspectiveCamera>(null!);
 
@@ -24,7 +30,7 @@ const WDCCHero = () => {
             <div className="flex w-[clamp(300px,100%,1000px)] flex-col items-center gap-10 self-center px-8 text-center">
                 <div className="flex flex-col gap-6 sm:gap-2">
                     <h3 className="text-sm font-normal leading-none tracking-[0.25em] text-blue-800 sm:text-base">
-                        WEB DEVELOPMENT AND CONSULTING CLUB
+                        {hero.title}
                     </h3>
                     <h1 className="text-4xl font-bold leading-[0.95] tracking-[-2px] text-blue-700 sm:text-5xl">
                         Aotearoa’s
@@ -36,8 +42,7 @@ const WDCCHero = () => {
                 </div>
                 <div className="flex flex-col items-center gap-6 self-center">
                     <p className="text-md leading-tight text-blue-700 sm:text-lg">
-                        We connect tomorrow’s developers, designers, and tech project leaders with the real-world
-                        experience and opportunities that{" "}
+                        {hero.blurb}
                         <Draw className="italic underline">
                             <span className="font-normal italic underline">help them shine</span>
                         </Draw>

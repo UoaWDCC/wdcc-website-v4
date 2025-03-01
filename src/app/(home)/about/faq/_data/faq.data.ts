@@ -1,22 +1,11 @@
-import { Faq } from "@/types/models";
+import { FaqPage } from "@/types/pages/FaqPage";
 
 import { eventsFaqData } from "./eventsFaq.data";
 import { generalFaqData } from "./generalFaq.data";
 import { projectsFaqData } from "./projectsFaq.data";
 import { teamFaqData } from "./teamFaq.data";
 
-export interface FaqSection {
-    name: string;
-    faqs: Faq[];
-    colors: FaqColors;
-}
-
-export interface FaqColors {
-    tabBg: string;
-    tabCircle: string;
-}
-
-export const faqData = {
+export const faqData: FaqPage = {
     info: "Here are some of the most frequently asked questions about our club, answered!",
     sections: [
         {
@@ -51,5 +40,5 @@ export const faqData = {
                 tabCircle: "bg-purple-500",
             },
         },
-    ] as FaqSection[],
+    ],
 };
