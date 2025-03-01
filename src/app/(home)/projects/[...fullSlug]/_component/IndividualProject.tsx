@@ -1,10 +1,10 @@
 import React from "react";
-import Duo from "@app/about/_components/Duo";
 
 import { Project } from "@/types/models";
 
 import placeholder600_400 from "@/assets/image/600x400.png";
 import { getTechnologySvgWithName } from "@/assets/svg/technologies";
+import Duo from "@/components/Duo";
 import ImageFit from "@/components/ImageFit";
 
 import TeamMemberCard from "./TeamMemberCard";
@@ -20,14 +20,6 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
 
     return (
         <div className="flex flex-col py-16">
-            {/* <div className="grid grid-cols-2 gap-16">
-                <ImageFit
-                    src={project.brief.image?.src || placeholder600_400}
-                    alt={project.brief.image?.alt || "placeholder"}
-                    height="300px"
-                    width="500px"
-                />
-            </div> */}
             <Duo image={{ src: project.brief.image?.src, alt: project.brief.image?.alt }}>
                 <div className="text-center md:text-left">
                     <h3 className="text-lg font-semibold">{project.name.extended}</h3>
