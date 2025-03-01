@@ -1,3 +1,6 @@
+import { ParsePayloadHeroPage } from "@/types/parser/ParsePayloadHeroPage";
+
+import { getHeroPage } from "@/actions/Pages/getHeroPage";
 import SignupCard from "@/app/(home)/_components/SignupCard";
 import ThreeLayout from "@/components/layout/ThreePageLayout";
 import Footer from "@/components/navigation/footer/Footer";
@@ -7,9 +10,14 @@ import { View } from "@/components/three/scene/View";
 import { SponsorSection } from "./_components/SponsorSection";
 import ThisIsWDCC from "./_components/ThisIsWDCCSection";
 import WDCCHero from "./_components/WDCCHero";
-import { HeroData } from "./_data/homeData";
+import { HeroData as hardCodedHeroData } from "./_data/homeData";
 
-export default function Home() {
+export const revalidate = 60;
+export default async function Home() {
+    let HeroData = ParsePayloadHeroPage(await getHeroPage());
+    if (!HeroData) {
+        HeroData = hardCodedHeroData;
+    }
     return (
         <ThreeLayout>
             <div className="absolute -z-20 h-[60vh] w-full bg-gradient-to-b from-blue-50 to-white"></div>

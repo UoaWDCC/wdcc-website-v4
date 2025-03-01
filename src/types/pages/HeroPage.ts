@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { WhatWeDoCardProps } from "@app/_components/WhatWeDoCard";
 
 export type HeroPage = {
@@ -14,25 +15,25 @@ export type HeroPage = {
     SponsorSection: {
         gold: {
             sponsors: {
-                src: string;
+                src: string | StaticImageData;
                 alt: string;
             }[];
         };
         silver: {
             sponsors: {
-                src: string;
+                src: string | StaticImageData;
                 alt: string;
             }[];
         };
         tech: {
             sponsors: {
-                src: string;
+                src: string | StaticImageData;
                 alt: string;
             }[];
         };
         community: {
             sponsors: {
-                src: string;
+                src: string | StaticImageData;
                 alt: string;
             }[];
         };
@@ -48,25 +49,25 @@ export type HeroPage = {
 export type SponsorSectionType = {
     gold: {
         sponsors: {
-            src: string;
+            src: string | StaticImageData;
             alt: string;
         }[];
     };
     silver: {
         sponsors: {
-            src: string;
+            src: string | StaticImageData;
             alt: string;
         }[];
     };
     tech: {
         sponsors: {
-            src: string;
+            src: string | StaticImageData;
             alt: string;
         }[];
     };
     community: {
         sponsors: {
-            src: string;
+            src: string | StaticImageData;
             alt: string;
         }[];
     };

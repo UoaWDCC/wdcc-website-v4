@@ -41,12 +41,14 @@ export interface Config {
     'faq-page': FaqPage;
     'about-page': AboutPage;
     'projects-page': ProjectsPage;
+    'hero-page': HeroPage;
   };
   globalsSelect: {
     'execs-page': ExecsPageSelect<false> | ExecsPageSelect<true>;
     'faq-page': FaqPageSelect<false> | FaqPageSelect<true>;
     'about-page': AboutPageSelect<false> | AboutPageSelect<true>;
     'projects-page': ProjectsPageSelect<false> | ProjectsPageSelect<true>;
+    'hero-page': HeroPageSelect<false> | HeroPageSelect<true>;
   };
   locale: null;
   user: User & {
@@ -743,6 +745,43 @@ export interface ProjectsPage {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero-page".
+ */
+export interface HeroPage {
+  id: number;
+  hero: {
+    title: string;
+    blurb: string;
+  };
+  thisIsWDCC: {
+    description: string;
+    whatWeDo?:
+      | {
+          index: string;
+          title: string;
+          slug: string;
+          description: string;
+          variant: 'blue' | 'green' | 'yellow';
+          id?: string | null;
+        }[]
+      | null;
+  };
+  sponsorSection?: {
+    gold?: (number | Partner)[] | null;
+    silver?: (number | Partner)[] | null;
+    tech?: (number | Partner)[] | null;
+    community?: (number | Partner)[] | null;
+  };
+  signUpCard: {
+    title: string;
+    descriptionLineOne: string;
+    descriptionLineTwo: string;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "execs-page_select".
  */
 export interface ExecsPageSelect<T extends boolean = true> {
@@ -912,6 +951,51 @@ export interface ProjectsPageSelect<T extends boolean = true> {
     | {
         title?: T;
         cta?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero-page_select".
+ */
+export interface HeroPageSelect<T extends boolean = true> {
+  hero?:
+    | T
+    | {
+        title?: T;
+        blurb?: T;
+      };
+  thisIsWDCC?:
+    | T
+    | {
+        description?: T;
+        whatWeDo?:
+          | T
+          | {
+              index?: T;
+              title?: T;
+              slug?: T;
+              description?: T;
+              variant?: T;
+              id?: T;
+            };
+      };
+  sponsorSection?:
+    | T
+    | {
+        gold?: T;
+        silver?: T;
+        tech?: T;
+        community?: T;
+      };
+  signUpCard?:
+    | T
+    | {
+        title?: T;
+        descriptionLineOne?: T;
+        descriptionLineTwo?: T;
       };
   updatedAt?: T;
   createdAt?: T;
