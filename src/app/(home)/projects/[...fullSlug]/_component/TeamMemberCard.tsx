@@ -28,7 +28,7 @@ const TeamMemberCard = ({ name, role, variant }: teamCardProps) => {
         <div className={card(variant)}>
             <div className="h-[150px] w-[200px] rounded bg-gray-50"></div>
             <div className="space-2">
-                <p>{name}</p>
+                <p className="font-semibold">{name}</p>
                 <p>{role}</p>
             </div>
         </div>

@@ -1,6 +1,6 @@
 // import { ReactNode } from "react";
-import Link from "next/link";
 import { ReactNode } from "react";
+import Link from "next/link";
 
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
@@ -27,9 +27,9 @@ interface HeaderProps {
  */
 export default function ProjectHeader({ title, description, primaryButton, secondaryButton, backlink }: HeaderProps) {
     return (
-        <header className="mx-[-14%] mt-24 flex items-center justify-center rounded-3xl bg-blue-50 py-20">
+        <header className="mx-[-14%] mt-24 flex items-center justify-center bg-blue-50 py-12 md:rounded-3xl md:py-20">
             <div className="flex w-[80%] max-w-[1100px] gap-10">
-                <div className="w-[8px] rounded-full bg-blue-400"></div>
+                <div className="hidden w-2 rounded-full bg-blue-400 md:block"></div>
                 <div className="flex flex-col gap-4">
                     <div className="flex max-w-[700px] flex-col gap-4">
                         {backlink && (
@@ -40,7 +40,7 @@ export default function ProjectHeader({ title, description, primaryButton, secon
                                 <Arrow className="rotate-180" /> {backlink.label}
                             </Link>
                         )}
-                        <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
+                        <h1 className="text-3xl font-bold leading-none tracking-tight md:text-4xl">{title}</h1>
                         <p className="text-md leading-tight text-gray-600">{description}</p>
                     </div>
                     <div className="flex flex-wrap gap-3">
