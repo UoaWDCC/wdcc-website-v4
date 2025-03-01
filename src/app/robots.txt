@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /brainrot-lol/
+
+# Allows all pages except for the brainrot ones. Can be changed later if needed.
