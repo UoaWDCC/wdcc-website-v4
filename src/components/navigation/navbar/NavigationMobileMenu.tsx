@@ -1,24 +1,23 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
+import { tv, VariantProps } from "tailwind-variants";
 
+//import websterBL from "@/assets/image/webster-blue.png"
+import websterCL from "@/assets/image/webster-color.png";
+import Arrow from "@/assets/svg/Arrow";
+import ExitIcon from "@/assets/svg/ExitIcon";
+import MenuIcon from "@/assets/svg/MenuIcon";
+import { social } from "@/assets/svg/socials";
+import WDCCLogo from "@/assets/svg/WDCCLogo";
 import { Anchor } from "@/components/primitives/Anchor";
+import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";
 
 import type { NavigationLink } from "./_data/navbarTypes";
-import { Button } from "@/components/primitives/Button";
-import MenuIcon from "@/assets/svg/MenuIcon";
-import ExitIcon from "@/assets/svg/ExitIcon";
-import Arrow from "@/assets/svg/Arrow";
-import { tv, VariantProps } from "tailwind-variants";
-import WDCCLogo from "@/assets/svg/WDCCLogo";
-import Link from "next/link";
-import { social } from "@/assets/svg/socials";
-
-//import websterBL from "@/assets/image/webster-blue.png"
-import websterCL from "@/assets/image/webster-color.png"
-import Image from "next/image";
 
 const mobileNav = tv({
     base: "transition duration-300",
@@ -28,7 +27,7 @@ const mobileNav = tv({
             light: "stroke-foreground hover:stroke-blue-600",
         },
     },
-})
+});
 
 export interface NavbarProps {
     variant?: VariantProps<typeof mobileNav>;
@@ -44,7 +43,6 @@ const NavigationMobileMenu = ({ links, className, variant }: NavbarProps) => {
         setToggle(!toggle);
     };
 
-
     // Blue Webster or Color Webster? Randomly assigns. Maybe?
     /*
     let webster;
@@ -53,27 +51,26 @@ const NavigationMobileMenu = ({ links, className, variant }: NavbarProps) => {
     webster = websterCL;
     */
     const webster = websterCL;
-
+    //please remove ASAP
+    const hslaColor = "hsla(217, 80%, 50%, 0.9)";
     return (
         <>
-            <button className={cn("", className, mobileNav({...variant}))} onClick={handleToggle}>
-                <MenuIcon/>
+            <button className={cn("", className, mobileNav({ ...variant }))} onClick={handleToggle}>
+                <MenuIcon />
             </button>
-
             {/* todo: this should lock scrolling from happening */}
 
             <motion.div
-                className={cn(
-                    "fixed left-0 top-0 h-screen w-full bg-blue-500/90 px-8 py-4 backdrop-blur-lg",
-                    className
-                )}
+                className={cn("fixed left-0 top-0 h-screen w-full px-8 py-4 backdrop-blur-lg", className)}
+                //please remove ASAP
+                style={{ backgroundColor: hslaColor }}
                 // animation to make it look like it's opening/closing
                 initial="initial"
                 animate="animate"
                 variants={containerVariant(toggle)}
             >
                 <div className="flex flex-col items-start gap-4">
-                    <div className="flex w-full justify-between items-center">
+                    <div className="flex w-full items-center justify-between">
                         <Anchor href="/">
                             <WDCCLogo className="fill-white transition duration-150 hover:opacity-70 lg:block" />
                         </Anchor>
@@ -82,33 +79,41 @@ const NavigationMobileMenu = ({ links, className, variant }: NavbarProps) => {
                         </button>
                     </div>
 
-                    <div className="w-full rounded-full h-[2px] bg-gray-100/25" />
+                    <div className="h-[2px] w-full rounded-full bg-gray-100/25" />
 
-                    <div className="w-full flex flex-col my-2 text-white divide-y-2 divide-dashed divide-gray-100/25">
+                    <div className="my-2 flex w-full flex-col divide-y-2 divide-dashed divide-gray-100/25 text-white">
                         <NavigationMenuLinks links={links} />
                     </div>
-                    <Button variant={{style: "tertiary", color: "dark", isJustified: true}} className="" href="https://go.wdcc.co.nz">
-
+                    <Button
+                        variant={{ style: "tertiary", color: "dark", isJustified: true }}
+                        className=""
+                        href="https://go.wdcc.co.nz"
+                    >
                         {/* I probably shouldnt use CSS transforms to scale this down but whatever lol */}
-                        <div className="fill-blue-100 scale-[80%]">
+                        <div className="scale-[80%] fill-blue-100">
                             <social.linktree />
                         </div>
-
                     </Button>
-                    <Button variant={{style: "secondary", color: "light", isJustified: true}}>Join WDCC <Arrow/></Button>
-
+                    <Button variant={{ style: "secondary", color: "light", isJustified: true }}>
+                        Join WDCC <Arrow />
+                    </Button>
 
                     {/*
                     <p className="w-full text-white/50 text-xs font-light text-center">miku oo ee oo</p>
                     */}
 
-                    <div className="w-full flex flex-col">
-                        <Image alt="webster, the WDCC mascot" className="w-[80%] my-8 mx-auto opacity-50" src={webster} width={1312}
-                               height={1171}></Image>
-                        <p className="w-full text-white/50 text-xs font-light text-center">Meet Webster, the WDCC mascot.</p>
-
+                    <div className="flex w-full flex-col">
+                        <Image
+                            alt="webster, the WDCC mascot"
+                            className="mx-auto my-8 w-[80%] opacity-50"
+                            src={webster}
+                            width={1312}
+                            height={1171}
+                        ></Image>
+                        <p className="w-full text-center text-xs font-light text-white/50">
+                            Meet Webster, the WDCC mascot.
+                        </p>
                     </div>
-
                 </div>
             </motion.div>
         </>
@@ -130,7 +135,13 @@ const containerVariant = (toggle: boolean) => {
 
 const NavigationMenuLinks = ({ links }: { links: NavigationLink[] }) =>
     links.map((link) => (
-        <Link key={link.label} href={link.href} className="w-full text-2xl font-semibold leading-none py-4 hover:duration-200 group/item">
-            <p className="transition duration-500 group-hover/item:duration-200 group-hover/item:text-blue-100 group-hover/item:translate-x-3">{link.label}</p>
+        <Link
+            key={link.label}
+            href={link.href}
+            className="group/item w-full py-4 text-2xl font-semibold leading-none hover:duration-200"
+        >
+            <p className="transition duration-500 group-hover/item:translate-x-3 group-hover/item:text-blue-100 group-hover/item:duration-200">
+                {link.label}
+            </p>
         </Link>
     ));
