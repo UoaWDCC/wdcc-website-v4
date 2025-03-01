@@ -40,7 +40,6 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
                     position: "relative",
                     width: " 100%",
                     height: "100%",
-                    overflowX: "hidden",
                     touchAction: "auto",
                 }}
             >

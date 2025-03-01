@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+import { ParsePayloadAboutPage } from "@/types/parser/ParsePayloadAboutPage";
+
+import { getAboutPage } from "@/actions/Pages/getAbooutPage";
 import Arrow from "@/assets/svg/Arrow";
 import Duo from "@/components/Duo";
 import Header from "@/components/layout/pageheaders/Header";
@@ -8,9 +11,16 @@ import NestedDiv from "@/components/NestedDiv";
 import { Button } from "@/components/primitives/Button";
 
 import Quote from "./_components/Quote";
-import { aboutData } from "./_data/about.data";
+import { aboutData as hardCodedAboutPage } from "./_data/about.data";
 
-export default function AboutPage() {
+export const revalidate = 60;
+
+export default async function AboutPage() {
+    let aboutData = ParsePayloadAboutPage(await getAboutPage());
+
+    if (!aboutData) {
+        aboutData = hardCodedAboutPage;
+    }
     const header = aboutData.header;
     const genInfo = aboutData.genInfo;
     const whyJoin = aboutData.whyJoin;
@@ -45,6 +55,9 @@ export default function AboutPage() {
                         {genInfo.firstPart}
                     </p>
                     <p className="whitespace-pre-line text-md font-semibold leading-tight text-blue-brand sm:text-lg">
+                        {genInfo.firstPart}
+                    </p>
+                    <p className="whitespace-pre-line text-md font-semibold leading-tight text-blue-brand sm:text-lg">
                         {genInfo.secondPart}
                     </p>
                 </Duo>
@@ -76,7 +89,10 @@ export default function AboutPage() {
             >
                 <Quote quote={quoteSection.quote} author={quoteSection.author} subscript={quoteSection.subscript} />
             </NestedDiv>
-            <Image src={endImage.image} alt={endImage.imageAlt} className="responsive-fullwidth" />
+
+            {/*someone make this full width plz */}
+            <div className="responsive-fullwidth"></div>
+            <Image width={600} height={400} src={endImage.image} alt={endImage.imageAlt} className="" />
         </StandardPageLayout>
     );
 }

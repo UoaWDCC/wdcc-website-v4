@@ -4,12 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 
 import { Faq } from "@/types/models";
+import { FaqSection } from "@/types/pages/FaqPage";
 
-import Arrow from "@/assets/svg/Arrow";
 import ChevronDown from "@/assets/svg/ChevronDown";
 import { cn } from "@/libs/utils";
 
-import { FaqSection } from "../_data/faq.data";
 import { FaqItem } from "./FaqItem";
 import { FaqTab } from "./FaqTab";
 

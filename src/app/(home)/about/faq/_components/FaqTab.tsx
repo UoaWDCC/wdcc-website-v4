@@ -1,6 +1,6 @@
-import { cn } from "@/libs/utils";
+import { FaqColors } from "@/types/pages/FaqPage";
 
-import { FaqColors } from "../_data/faq.data";
+import { cn } from "@/libs/utils";
 
 interface FaqTabProps {
     colors: FaqColors;
