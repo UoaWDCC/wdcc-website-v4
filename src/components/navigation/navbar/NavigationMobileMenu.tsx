@@ -16,7 +16,7 @@ import WDCCLogo from "@/assets/svg/WDCCLogo";
 import Link from "next/link";
 import { social } from "@/assets/svg/socials";
 
-import websterBL from "@/assets/image/webster-blue.png"
+//import websterBL from "@/assets/image/webster-blue.png"
 import websterCL from "@/assets/image/webster-color.png"
 import Image from "next/image";
 

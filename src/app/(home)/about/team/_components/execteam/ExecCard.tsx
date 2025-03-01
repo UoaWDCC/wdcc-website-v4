@@ -1,7 +1,7 @@
 import type { Exec } from "@/types/models";
 
 import placeholder from "@/assets/image/200x200.png";
-import ImageFit from "@/components/ImageFit";
+//import ImageFit from "@/components/ImageFit";
 import ImageCover from "@/components/ImageCover";
 
 import ExecCardText from "./ExecCardText";

@@ -3,7 +3,7 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import EventCard from "../_components/EventCard";
 import { eventsData } from "../_data/events.data";
-import Arrow from "@/assets/svg/Arrow";
+//import Arrow from "@/assets/svg/Arrow";
 import Header from "@/components/layout/pageheaders/Header";
 
 const events = eventsData.eventsGrid.events;
