@@ -40,7 +40,7 @@ export default async function ProjectsPage() {
 
                         <div className="flex flex-col gap-4">
                             <p className="text-md font-semibold">{projectsCopy.infoSection.checkboxes.title}</p>
-                            <div className="flex flex-col gap-4 pl-4">
+                            <div className="flex flex-col gap-4 sm:pl-4">
                                 {projectsCopy.infoSection.checkboxes.checks.map((content, i) => (
                                     <Checklist label={content} key={i} checked={true} />
                                 ))}
