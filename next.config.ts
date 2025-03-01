@@ -22,7 +22,16 @@ const nextConfig: NextConfig = {
             use: ['raw-loader', 'glslify-loader'],
         });
         return config
-      }
+      },
+    async redirects() {
+        return [
+            {
+                source: '/workshops',
+                destination: '/events',
+                permanent: true,
+            },
+        ]
+    },
 };
 
 export default withPayload(bundleAnalyzer(nextConfig));
