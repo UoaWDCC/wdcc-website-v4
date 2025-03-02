@@ -49,10 +49,11 @@ export default async function ProjectsPage() {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-8">
+                {/* Commenting out as we need copy */}
+                {/* <div className="flex flex-col gap-8">
                     <h2 className="text-3xl font-bold">{projectsCopy.operationSection.title}</h2>
                     <p>{projectsCopy.operationSection.content}</p>
-                </div>
+                </div> */}
 
                 <div>
                     {/* id for navbar link */}
