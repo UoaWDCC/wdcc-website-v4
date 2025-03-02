@@ -3,12 +3,12 @@ import { ParsePayloadProjectPage } from "@/types/parser/ParsePayloadProjectPage"
 import { getProjectsPage } from "@/actions/Pages/getProjectsPage";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import { Button } from "@/components/primitives/Button";
+// import { Button } from "@/components/primitives/Button";
 import Checklist from "@/components/primitives/Checklist";
 
-import { ProjectCard } from "./_components/ProjectCard";
+// import { ProjectCard } from "./_components/ProjectCard";
 import ProjectRoleCard from "./_components/ProjectRoleCard";
-import { projectsData } from "./_data/projects_data";
+// import { projectsData } from "./_data/projects_data";
 import { projectsCopy as hardCodedProjectPage } from "./_data/projects.data";
 
 export const revalidate = 60;
