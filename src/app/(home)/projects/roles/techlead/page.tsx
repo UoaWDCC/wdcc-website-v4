@@ -9,7 +9,7 @@ export default function TLPage() {
             <Header
                 variant={{ style: "secondary", color: "yellow" }}
                 title="fulfil your senior dev dreams as a WDCC Tech Lead"
-                backlink={{ label: "projects", href: "/projects" }}
+                backlink={{ label: "projects", href: "/projects#roles" }}
             />
 
             <div className="flex flex-col gap-24 py-24">
@@ -18,7 +18,6 @@ export default function TLPage() {
                     <p>content tba</p>
                 </div>
             </div>
-
         </StandardPageLayout>
-);
+    );
 }
