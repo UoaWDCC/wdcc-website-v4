@@ -19,7 +19,7 @@ export const UnderlineLink = ({ children, newTab, mode = "dark", shift, ...props
                 <p className={cn(shift && "transition-transform group-hover:translate-x-1 group-hover:duration-150 duration-300")}>{children}</p>
                 <div
                     className={cn(
-                        "pointer-events-none h-0.5 w-0 rounded transition-[width,transform] group-hover:duration-150 duration-300 group-hover:w-1/2",
+                        "pointer-events-none h-0.5 w-0 rounded-sm transition-[width,transform] group-hover:duration-150 duration-300 group-hover:w-1/2",
                         shift && "group-hover:translate-x-1",
                         mode === "light" ? "bg-blue-100" : "bg-gray-700"
                     )}

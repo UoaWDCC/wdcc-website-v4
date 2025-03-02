@@ -1,8 +1,205 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
+@theme {
+  --font-*: initial;
+  --font-font1: sans-serif;
+  --font-sans: sans-serif;
+
+  --font-weight-*: initial;
+  --font-weight-thin: 300;
+  --font-weight-light: 400;
+  --font-weight-normal: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.375rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+
+  --breakpoint-*: initial;
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --drop-shadow-card-lift:
+    1px 1px 1px rgba(156, 164, 186, 0.12),
+    2px 2px 3px rgba(156, 164, 186, 0.12),
+    4px 4px 6px rgba(156, 164, 186, 0.14),
+    9px 9px 14px rgba(156, 164, 186, 0.17);
+  --drop-shadow-down-shadow: 0px 4px 4px rgba(59, 62, 103, 0.25);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-sponsor-gold: hsl(var(--sponsor-gold));
+  --color-sponsor-tech: hsl(var(--sponsor-tech));
+  --color-sponsor-silver: hsl(var(--sponsor-silver));
+  --color-sponsor-community: hsl(var(--sponsor-community));
+
+  --color-gray-10: hsl(var(--gray-010));
+  --color-gray-20: hsl(var(--gray-020));
+  --color-gray-50: hsl(var(--gray-050));
+  --color-gray-100: hsl(var(--gray-100));
+  --color-gray-150: hsl(var(--gray-150));
+  --color-gray-200: hsl(var(--gray-200));
+  --color-gray-250: hsl(var(--gray-250));
+  --color-gray-300: hsl(var(--gray-300));
+  --color-gray-400: hsl(var(--gray-400));
+  --color-gray-500: hsl(var(--gray-500));
+  --color-gray-600: hsl(var(--gray-600));
+  --color-gray-700: hsl(var(--gray-700));
+  --color-gray-800: hsl(var(--gray-800));
+  --color-gray-900: hsl(var(--gray-900));
+
+  --color-orange-20: hsl(var(--orange-020));
+  --color-orange-50: hsl(var(--orange-050));
+  --color-orange-100: hsl(var(--orange-100));
+  --color-orange-150: hsl(var(--orange-150));
+  --color-orange-200: hsl(var(--orange-200));
+  --color-orange-300: hsl(var(--orange-300));
+  --color-orange-400: hsl(var(--orange-400));
+  --color-orange-500: hsl(var(--orange-500));
+  --color-orange-600: hsl(var(--orange-600));
+  --color-orange-700: hsl(var(--orange-700));
+  --color-orange-750: hsl(var(--orange-750));
+  --color-orange-800: hsl(var(--orange-800));
+  --color-orange-900: hsl(var(--orange-900));
+  --color-orange-brand: hsl(var(--orange-brand));
+
+  --color-yellow-20: hsl(var(--yellow-020));
+  --color-yellow-50: hsl(var(--yellow-050));
+  --color-yellow-100: hsl(var(--yellow-100));
+  --color-yellow-150: hsl(var(--yellow-150));
+  --color-yellow-200: hsl(var(--yellow-200));
+  --color-yellow-300: hsl(var(--yellow-300));
+  --color-yellow-400: hsl(var(--yellow-400));
+  --color-yellow-500: hsl(var(--yellow-500));
+  --color-yellow-600: hsl(var(--yellow-600));
+  --color-yellow-700: hsl(var(--yellow-700));
+  --color-yellow-750: hsl(var(--yellow-750));
+  --color-yellow-800: hsl(var(--yellow-800));
+  --color-yellow-900: hsl(var(--yellow-900));
+  --color-yellow-brand: hsl(var(--yellow-brand));
+
+  --color-blue-20: hsl(var(--blue-020));
+  --color-blue-50: hsl(var(--blue-050));
+  --color-blue-100: hsl(var(--blue-100));
+  --color-blue-150: hsl(var(--blue-150));
+  --color-blue-200: hsl(var(--blue-200));
+  --color-blue-300: hsl(var(--blue-300));
+  --color-blue-400: hsl(var(--blue-400));
+  --color-blue-500: hsl(var(--blue-500));
+  --color-blue-600: hsl(var(--blue-600));
+  --color-blue-700: hsl(var(--blue-700));
+  --color-blue-750: hsl(var(--blue-750));
+  --color-blue-800: hsl(var(--blue-800));
+  --color-blue-900: hsl(var(--blue-900));
+  --color-blue-brand: hsl(var(--blue-brand));
+
+  --color-purple-20: hsl(var(--purple-020));
+  --color-purple-50: hsl(var(--purple-050));
+  --color-purple-100: hsl(var(--purple-100));
+  --color-purple-150: hsl(var(--purple-150));
+  --color-purple-200: hsl(var(--purple-200));
+  --color-purple-300: hsl(var(--purple-300));
+  --color-purple-400: hsl(var(--purple-400));
+  --color-purple-500: hsl(var(--purple-500));
+  --color-purple-600: hsl(var(--purple-600));
+  --color-purple-700: hsl(var(--purple-700));
+  --color-purple-750: hsl(var(--purple-750));
+  --color-purple-800: hsl(var(--purple-800));
+  --color-purple-900: hsl(var(--purple-900));
+  --color-purple-brand: hsl(var(--purple-brand));
+
+  --color-green-20: hsl(var(--green-020));
+  --color-green-50: hsl(var(--green-050));
+  --color-green-100: hsl(var(--green-100));
+  --color-green-150: hsl(var(--green-150));
+  --color-green-200: hsl(var(--green-200));
+  --color-green-300: hsl(var(--green-300));
+  --color-green-400: hsl(var(--green-400));
+  --color-green-500: hsl(var(--green-500));
+  --color-green-600: hsl(var(--green-600));
+  --color-green-700: hsl(var(--green-700));
+  --color-green-750: hsl(var(--green-750));
+  --color-green-800: hsl(var(--green-800));
+  --color-green-900: hsl(var(--green-900));
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility responsive-body {
+  /* 3 cols: empty_content_empty */
+  @apply grid grid-cols-[auto_clamp(300px,80%,1100px)_auto];
+
+  & > * {
+    /* Constrain children of main to middle column */
+    @apply col-start-2 col-end-3;
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility center-content {
+  @apply flex items-center justify-center;
+}
+
+@utility hidden-scrollbar {
+  scrollbar-width: none;
+}
+
+@utility mono {
+  font-family: var(--font-geist-mono);
+}
+
+@utility responsive-fullwidth {
+  /* Escape hatch to allow full-width 'breaking out' of the responsive-body grid layout */
+  @apply col-start-1 col-end-4;
+}
+
+@utility animate-bounce {
+  animation-name: bounce;
+  animation-duration: 0.6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@utility responsive-grid {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+}
+
+@layer utilities {
+  :root {
     --background: white;
     --foreground: #2e2b3b;
 
@@ -101,62 +298,17 @@
     --green-100: 165, 70%, 90%; /*hsla(165, 70%, 90%, 1)*/
     --green-050: 165, 80%, 95%; /*hsla(165, 80%, 95%, 1)*/
     --green-020: 165, 80%, 98%; /*hsla(165, 80%, 98%, 1)*/
-}
+  }
 
-html {
+  html {
     color: var(--foreground);
     background: var(--background);
     overflow-x: hidden;
-}
+  }
 
-body {
+  body {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer components {
-    .responsive-body {
-        /* 3 cols: empty_content_empty */
-        @apply grid grid-cols-[auto_clamp(300px,80%,1100px)_auto];
-    }
-
-    .responsive-body > * {
-        /* Constrain children of main to middle column */
-        @apply col-start-2 col-end-3;
-    }
-}
-
-@layer utilities {
-    .text-balance {
-        text-wrap: balance;
-    }
-
-    .center-content {
-        @apply flex items-center justify-center;
-    }
-
-    .hidden-scrollbar {
-        scrollbar-width: none;
-    }
-
-    .mono {
-        font-family: var(--font-geist-mono);
-    }
-
-    .responsive-fullwidth {
-        /* Escape hatch to allow full-width 'breaking out' of the responsive-body grid layout */
-        @apply col-start-1 col-end-4;
-    }
-
-    .animate-bounce {
-        animation-name: bounce;
-        animation-duration: 0.6s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
-    }
-
-    .responsive-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
-    }
+  }
 }
 
 @keyframes bounce {

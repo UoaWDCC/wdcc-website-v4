@@ -20,7 +20,7 @@ export default async function Home() {
     }
     return (
         <ThreeLayout>
-            <div className="absolute -z-20 h-[60vh] w-full bg-gradient-to-b from-blue-50 to-white"></div>
+            <div className="absolute -z-20 h-[60vh] w-full bg-linear-to-b from-blue-50 to-white"></div>
             <View className="fixed -z-10 size-full scale-150" background>
                 <BackgroundEffect />
             </View>

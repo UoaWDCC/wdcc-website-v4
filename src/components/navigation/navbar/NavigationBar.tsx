@@ -55,7 +55,7 @@ const navbarBg = tv({
 });
 
 const navbarLine = tv({
-    base: "hidden h-5 w-0.5 rounded md:block",
+    base: "hidden h-5 w-0.5 rounded-sm md:block",
     variants: {
         color: {
             dark: "bg-gray-200",
@@ -112,7 +112,7 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isHovering ? 1 : 0 }}
-                className="pointer-events-none fixed inset-0 z-40 h-dvh w-dvw bg-black/40 backdrop-blur-sm"
+                className="pointer-events-none fixed inset-0 z-40 h-dvh w-dvw bg-black/40 backdrop-blur-xs"
             />
             <nav className={navbar({ ...variant })}>
                 <div

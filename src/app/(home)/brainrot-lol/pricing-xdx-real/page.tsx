@@ -19,7 +19,7 @@ export default function PricingPage() {
     return (
         <StandardPageLayout>
             {/* Epic background hack: add StandardPageLayout, immediately escape it, and then add it back again. #ifitworksitworks */}
-            <div className="bg-gradient-to-b from-blue-50 via-blue-20 to-white responsive-fullwidth responsive-body">
+            <div className="bg-linear-to-b from-blue-50 via-blue-20 to-white responsive-fullwidth responsive-body">
                 <div className="flex w-full justify-center pt-24">
                     <motion.div
                         initial="initial"
