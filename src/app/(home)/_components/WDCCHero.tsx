@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import { useRef } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { PerspectiveCamera } from "@react-three/drei";
@@ -59,7 +59,7 @@ const WDCCHero = ({ hero }: WDCCHeroProps) => {
                         animate={{ y: [64, 0], transition: transition }}
                         className="text-md leading-tight text-blue-700 sm:text-lg"
                     >
-                        {hero.blurb}
+                        {hero.blurb}{" "}
                         <Draw className="italic underline">
                             <span className="font-normal italic underline">help them shine</span>
                         </Draw>

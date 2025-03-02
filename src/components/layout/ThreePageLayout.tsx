@@ -9,7 +9,6 @@ import { fadeopacity } from "@/libs/animations";
 import { useWebGL } from "@/providers/WebGLProvider";
 
 import NavigationBar from "../navigation/navbar/NavigationBar";
-import { useScroll } from "../scroll/ScrollContext";
 
 const Scene = dynamic(() => import("@/components/three/scene/Scene"), { ssr: false });
 
@@ -18,7 +17,7 @@ const DebounceTimer = 50;
 const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
     const progress = useProgress();
     const [isLoaded, setLoaded] = useState(false);
-    const { scrollRef } = useScroll();
+    // const { scrollRef } = useScroll();
 
     const { webglSupport } = useWebGL();
 
@@ -35,7 +34,7 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
         <>
             <NavigationBar />
             <motion.div
-                ref={scrollRef}
+                // ref={scrollRef} commenting out to bind scrollContainer to HTML for landing page
                 initial="initial"
                 animate={isLoaded || !webglSupport ? "animate" : "initial"}
                 variants={fadeopacity}

@@ -2,11 +2,15 @@
 
 import { createContext, ReactNode, RefObject, useContext, useRef } from "react";
 
+type ScrollContainerType = HTMLDivElement | (Window & typeof globalThis);
+
 type ScrollContextType = {
     /** The main scrollable component on the page. */
     scrollRef: RefObject<HTMLDivElement>;
     /** Get reference to scrollable container. Throws error if the page doesn't have one. */
-    getScrollContainer: () => HTMLDivElement;
+    getScrollContainer: () => ScrollContainerType;
+    /** Get the current scrollY value of the scrollable container. */
+    getScrollY: () => number;
     /** Scroll to a specific location on the page - either a scrollY value or a querySelection (e.g. #myid). */
     scrollTo: (loc: number | string) => void;
 };
@@ -18,13 +22,13 @@ export const ScrollProvider = ({ children }: { children: ReactNode }) => {
 
     function getScrollContainer() {
         if (!scrollRef.current) {
-            throw new Error("No scroll container found");
+            console.log("No scroll container found - defaulting to window");
+            return window;
         }
         return scrollRef.current;
     }
 
     function scrollTo(loc: number | string) {
-        console.log(loc);
         if (typeof loc === "number") {
             getScrollContainer().scroll({ top: loc, behavior: "smooth" });
         } else {
@@ -36,9 +40,19 @@ export const ScrollProvider = ({ children }: { children: ReactNode }) => {
         }
     }
 
+    // Purely because window and scrollRef.current have different APIs
+    function getScrollY() {
+        if (!scrollRef.current) {
+            return window.scrollY;
+        } else {
+            return scrollRef.current.scrollTop;
+        }
+    }
+
     const contextValue = {
         scrollRef,
         getScrollContainer,
+        getScrollY,
         scrollTo,
     };
 
