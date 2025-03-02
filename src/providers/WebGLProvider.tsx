@@ -19,7 +19,6 @@ const WebGLProvider = ({ children }: { children: React.ReactNode }) => {
         const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
         const supportWebGL = gl instanceof WebGLRenderingContext;
 
-        console.log(supportWebGL ? "webgl available" : "no webgl");
         return supportWebGL;
     }
 
