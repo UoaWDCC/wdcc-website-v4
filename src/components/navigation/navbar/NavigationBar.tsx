@@ -1,12 +1,13 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { tv, VariantProps } from "tailwind-variants";
 
 import type { ClassName } from "@/types/utils";
 
 import Arrow from "@/assets/svg/Arrow";
+import { social } from "@/assets/svg/socials";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
 import { navbarData } from "@/components/navigation/navbar/_data/navbar.data";
 import { NavigationLink } from "@/components/navigation/navbar/_data/navbarTypes";
@@ -16,7 +17,7 @@ import { Button } from "@/components/primitives/Button";
 
 import { Anchor } from "../../primitives/Anchor";
 import NavigationMobileMenu from "./NavigationMobileMenu";
-import { social } from "@/assets/svg/socials";
+import { useScroll } from "@/components/scroll/ScrollContext";
 
 const hoverContext = createContext({} as hoverContextProps);
 
@@ -35,7 +36,7 @@ export const useNavHover = () => {
 };
 
 const navbar = tv({
-    base: "group absolute top-0 z-50 flex w-full select-none items-center justify-between gap-4 px-8 py-4 lg:px-16",
+    base: "group absolute top-0 z-50 flex w-full items-center justify-between gap-4 px-8 py-4 select-none lg:px-16",
     variants: {
         color: {
             dark: "text-white",
@@ -84,18 +85,20 @@ export interface NavbarProps {
 
 export default function NavigationBar({ variant = { color: "light" } }: NavbarProps) {
     const [isHovering, sethover] = useState(false);
+    const { getScrollContainer } = useScroll();
 
     const handleDropEnter = () => {
         sethover(true);
     };
+
     const handleDropExit = () => {
         sethover(false);
     };
 
     useEffect(() => {
-        window.addEventListener("scroll", handleDropExit);
+        getScrollContainer().addEventListener("scroll", handleDropExit);
         return () => {
-            window.removeEventListener("scroll", handleDropExit);
+            getScrollContainer().removeEventListener("scroll", handleDropExit);
         };
     });
 
@@ -117,7 +120,7 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
             <nav className={navbar({ ...variant })}>
                 <div
                     onPointerLeave={handleDropExit}
-                    className="pointer-events-none absolute left-0 top-0 -z-10 h-[180px] w-full data-[hover=true]:pointer-events-auto"
+                    className="pointer-events-none absolute top-0 left-0 -z-10 h-[180px] w-full data-[hover=true]:pointer-events-auto"
                     data-hover={isHovering}
                 >
                     <motion.div
@@ -130,7 +133,7 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
                 <Anchor href="/">
                     <WDCCLogo className="fill-current transition duration-150 hover:opacity-70 lg:block" />
                 </Anchor>
-                <div className="flex w-full items-center justify-end gap-8 whitespace-nowrap font-semibold lg:gap-12">
+                <div className="flex w-full items-center justify-end gap-8 font-semibold whitespace-nowrap lg:gap-12">
                     {/* Links */}
                     <div className="hidden h-full items-center gap-12 md:flex lg:gap-16">
                         <NavigationBarLinks links={navbarData.links} />
@@ -144,13 +147,15 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
                             className="md:hidden"
                             links={navbarData.links}
                         />
-                        <Button variant={{style: "secondary", color: "blue"}} className="py-0 px-3 hidden md:flex" href="https://go.wdcc.co.nz">
-
+                        <Button
+                            variant={{ style: "secondary", color: "blue" }}
+                            className="hidden px-3 py-0 md:flex"
+                            href="https://go.wdcc.co.nz"
+                        >
                             {/* I probably shouldnt use CSS transforms to scale this down but whatever lol */}
-                            <div className="fill-blue-700 scale-[80%]">
+                            <div className="scale-[80%] fill-blue-700">
                                 <social.linktree />
                             </div>
-
                         </Button>
                         <Button
                             variant={{ style: "primary", color: "blue" }}

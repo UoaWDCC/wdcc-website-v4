@@ -34,7 +34,7 @@ const WDCCHero = () => {
     }, []);
 
     function scrollDown() {
-        window.scrollTo({ top: 800, behavior: "smooth" });
+        getScrollContainer().scrollTo({ top: 800, behavior: "smooth" });
     }
 
     return (
