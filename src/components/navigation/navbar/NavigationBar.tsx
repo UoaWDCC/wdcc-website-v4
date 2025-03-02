@@ -115,11 +115,13 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isHovering ? 1 : 0 }}
-                className="pointer-events-none fixed inset-0 z-40 h-dvh w-dvw bg-black/40 backdrop-blur-xs"
+                className="pointer-events-none fixed inset-0 z-40 h-dvh w-dvw bg-black/40 backdrop-blur-xs data-[hover=true]:pointer-events-auto"
+                onPointerEnter={() => {console.log("bg leave"); handleDropExit();}}
+                data-hover={isHovering}
             />
             <nav className={navbar({ ...variant })}>
                 <div
-                    onPointerLeave={handleDropExit}
+                    onPointerLeave={() => {console.log("nav leave"); handleDropExit();}}
                     className="pointer-events-none absolute top-0 left-0 -z-10 h-[180px] w-full data-[hover=true]:pointer-events-auto"
                     data-hover={isHovering}
                 >
