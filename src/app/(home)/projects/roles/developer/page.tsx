@@ -67,7 +67,7 @@ export default function DeveloperPage() {
                         Back-end developer
                     </h2>
                     <p>
-                        Backend developers are responsible for creating the "guts" of the application which live on the
+                        Backend developers are responsible for creating the &quot;guts&quot; of the application which live on the
                         server, with a focus on making sure all the right data gets sent out to the browser to be
                         displayed. As a backend dev, you will create and maintain the server-side components of the
                         website, including developing and maintaining databases and working with APIs. You will work
