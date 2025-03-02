@@ -6,6 +6,8 @@ import "@/styles/global.css";
 import { ReactNode } from "react";
 import type { Metadata } from "next";
 
+import WebGLProvider from "@/providers/WebGLProvider";
+
 export const dynamic = "force-dynamic";
 
 // SEO
@@ -38,7 +40,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${figtree.className} antialiased`}>
-                <ScrollProvider>{children}</ScrollProvider>
+                <WebGLProvider>
+                    <ScrollProvider>{children}</ScrollProvider>
+                </WebGLProvider>
             </body>
         </html>
     );

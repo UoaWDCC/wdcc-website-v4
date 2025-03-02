@@ -6,6 +6,7 @@ import { useProgress } from "@react-three/drei";
 import { motion } from "motion/react";
 
 import { fadeopacity } from "@/libs/animations";
+import { useWebGL } from "@/providers/WebGLProvider";
 
 import NavigationBar from "../navigation/navbar/NavigationBar";
 
@@ -17,6 +18,8 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
     const progress = useProgress();
     const [isLoaded, setLoaded] = useState(false);
     // const { scrollRef } = useScroll();
+
+    const { webglSupport } = useWebGL();
 
     useEffect(() => {
         const loadId = setTimeout(() => {
@@ -33,7 +36,7 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
             <motion.div
                 // ref={scrollRef} commenting out to bind scrollContainer to HTML for landing page
                 initial="initial"
-                animate={isLoaded ? "animate" : "initial"}
+                animate={isLoaded || !webglSupport ? "animate" : "initial"}
                 variants={fadeopacity}
                 style={{
                     position: "relative",
@@ -44,17 +47,19 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
             >
                 <div className="relative flex h-dvh min-h-dvh flex-col">{children}</div>
                 {/* background scene by default */}
-                <Scene
-                    style={{
-                        zIndex: -1,
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        width: "100vw",
-                        height: "100vh",
-                        pointerEvents: "none",
-                    }}
-                />
+                {webglSupport && (
+                    <Scene
+                        style={{
+                            zIndex: -1,
+                            position: "fixed",
+                            top: 0,
+                            left: 0,
+                            width: "100vw",
+                            height: "100vh",
+                            pointerEvents: "none",
+                        }}
+                    />
+                )}
             </motion.div>
         </>
     );

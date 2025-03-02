@@ -2,10 +2,12 @@
 
 import { useRef } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { PerspectiveCamera } from "@react-three/drei";
 import { motion } from "motion/react";
 import * as THREE from "three";
 
+import HeroFallback from "@/assets/image/hero/herofallback.png";
 import { social } from "@/assets/svg/socials";
 import Draw from "@/components/Draw";
 import { Button } from "@/components/primitives/Button";
@@ -99,7 +101,10 @@ const WDCCHero = ({ hero }: WDCCHeroProps) => {
                     </motion.div>
                 </motion.div>
             </div>
-            <View className="flex h-[250px] w-dvw flex-col items-center justify-center md:h-[400px] lg:h-[600px]">
+            <View
+                fallback={<Image src={HeroFallback} height={500} width={1000} alt="WDCC hero" />}
+                className="flex h-[250px] w-dvw flex-col items-center justify-center md:h-[400px] lg:h-[600px]"
+            >
                 <WDCCThreeHero parentRef={ref} />
                 <CommonLight />
                 <PerspectiveCamera ref={camera} makeDefault position={[0, 0, 2.5]} />
