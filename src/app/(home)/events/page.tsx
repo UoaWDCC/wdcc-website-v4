@@ -25,7 +25,7 @@ export default function EventsPage() {
                     ),
                     href: "/events#recent",
                 }}
-                secondaryButton={{ label: "All events", href: "/events/all" }}
+                secondaryButton={{ label: "All past events", href: "/events/all" }}
             />
             <EventsRoadmap title={roadmapData.title} image={roadmapData.image} />
             <RecentEventsSection

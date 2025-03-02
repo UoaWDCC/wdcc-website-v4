@@ -22,7 +22,7 @@ export default async function EventsPage() {
         <StandardPageLayout>
             <Header
                 variant={{ style: "secondary", color: "green" }}
-                title="All events"
+                title="All past events"
                 backlink={{ label: "events", href: "/events" }}
             />
             <div className="my-24 flex w-full flex-col">
