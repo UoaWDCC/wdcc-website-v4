@@ -51,30 +51,27 @@ export default async function AboutPage() {
                 inner="flex w-[80%] max-w-[1100px] flex-col gap-16 sm:gap-24"
             >
                 <Duo image={{ src: genInfo.image, alt: genInfo.imageAlt }}>
-                    <p className="whitespace-pre-line text-md font-semibold leading-tight sm:text-lg">
+                    <p className="text-md leading-tight font-semibold whitespace-pre-line sm:text-lg">
                         {genInfo.firstPart}
                     </p>
-                    {/*<p className="whitespace-pre-line text-md font-semibold leading-tight text-blue-brand sm:text-lg">*/}
-                    {/*    {genInfo.firstPart}*/}
-                    {/*</p>*/}
-                    <p className="whitespace-pre-line text-md font-semibold leading-tight text-blue-brand sm:text-lg">
+                    <p className="text-md text-blue-brand leading-tight font-semibold whitespace-pre-line sm:text-lg">
                         {genInfo.secondPart}
                     </p>
                 </Duo>
 
                 <Duo image={{ src: whyJoin.image, alt: whyJoin.imageAlt }}>
                     <h3 className="text-md font-bold">{whyJoin.title}</h3>
-                    <p className="whitespace-pre-line leading-[1.3]">{whyJoin.content}</p>
+                    <p className="leading-[1.3] whitespace-pre-line">{whyJoin.content}</p>
                 </Duo>
 
                 <Duo image={{ src: clubStory.image, alt: clubStory.imageAlt }} imgFirst>
                     <h3 className="text-md font-bold">{clubStory.title}</h3>
-                    <p className="whitespace-pre-line leading-[1.3]">{clubStory.content}</p>
+                    <p className="leading-[1.3] whitespace-pre-line">{clubStory.content}</p>
                 </Duo>
 
                 <Duo image={{ src: ourPeople.image, alt: ourPeople.imageAlt }}>
                     <h3 className="text-md font-bold">{ourPeople.title}</h3>
-                    <p className="whitespace-pre-line leading-[1.3]">{ourPeople.content}</p>
+                    <p className="leading-[1.3] whitespace-pre-line">{ourPeople.content}</p>
                     <div className="w-auto">
                         <Button variant={{ style: "secondary", color: "yellow" }} href="/about/team">
                             Meet the team <Arrow />
@@ -90,9 +87,13 @@ export default async function AboutPage() {
                 <Quote quote={quoteSection.quote} author={quoteSection.author} subscript={quoteSection.subscript} />
             </NestedDiv>
 
-            {/*someone make this full width plz */}
-            <div className="responsive-fullwidth"></div>
-            <Image width={600} height={400} src={endImage.image} alt={endImage.imageAlt} className="" />
+            <Image
+                width={600}
+                height={400}
+                src={endImage.image}
+                alt={endImage.imageAlt}
+                className="responsive-fullwidth w-full"
+            />
         </StandardPageLayout>
     );
 }
