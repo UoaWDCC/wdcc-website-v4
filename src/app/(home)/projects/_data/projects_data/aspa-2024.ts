@@ -2,7 +2,8 @@ import type { Project } from "@/types/models";
 
 export const aspa2024: Project = {
     name: { title: "ASPA registration website", extended: "ASPA registration website" },
-    description: "A whole paragraph describing what kind of project it is, including tech stack??\n\nYup.",
+    description:
+        "The ASPA registration website allows members to log in, sign up, view upcoming events, register, and pay for pool events throughout the year.",
     icon: undefined,
     client: "err",
     year: "2024",
