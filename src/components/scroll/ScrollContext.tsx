@@ -2,11 +2,13 @@
 
 import { createContext, ReactNode, RefObject, useContext, useRef } from "react";
 
+type ScrollContainerType = HTMLDivElement | (Window & typeof globalThis);
+
 type ScrollContextType = {
     /** The main scrollable component on the page. */
     scrollRef: RefObject<HTMLDivElement>;
     /** Get reference to scrollable container. Throws error if the page doesn't have one. */
-    getScrollContainer: () => HTMLDivElement;
+    getScrollContainer: () => ScrollContainerType;
     /** Scroll to a specific location on the page - either a scrollY value or a querySelection (e.g. #myid). */
     scrollTo: (loc: number | string) => void;
 };
