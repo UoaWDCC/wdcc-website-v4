@@ -45,6 +45,8 @@ const WebGLContextDetection = () => {
                 signal: abortController.signal,
             });
         }
+        // debugging code
+        // gl.getContext().getExtension("WEBGL_lose_context")?.loseContext();
         return () => {
             abortController.abort();
         };
