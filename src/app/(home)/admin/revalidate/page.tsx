@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/primitives/Button";
-
 import { revalidateAllRoutes } from "./revalidate-action";
 
 export default function RevalidatePage() {
