@@ -14,12 +14,12 @@ jobs:
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: |
           flyctl deploy --remote-only --config fly.staging.toml \
-            --build-secret DATABASE_URI=${{ secrets.DATABASE_URI }} \
+            --build-secret DATABASE_URI=${{ secrets.DATABASE_URI_STAGING }} \
             --build-secret PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }} \
             --build-secret S3_BUCKET=${{ secrets.S3_BUCKET }} \
             --build-secret S3_ACCESS_KEY_ID=${{ secrets.S3_ACCESS_KEY_ID }} \
             --build-secret S3_SECRET_ACCESS_KEY=${{ secrets.S3_SECRET_ACCESS_KEY }} \
             --build-secret S3_REGION=${{ secrets.S3_REGION }} \
-          
+
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
