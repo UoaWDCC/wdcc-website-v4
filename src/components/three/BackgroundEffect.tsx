@@ -8,6 +8,8 @@ import * as THREE from "three";
 
 import { useGUI } from "@/hooks/useGUI";
 
+import fragmentShader from "./glsl/colorShader.glsl";
+import vertexShader from "./glsl/rotationShader.glsl";
 import { TrianglePlane } from "./primitives/TrianglePlane";
 
 // instance settings
@@ -32,7 +34,7 @@ const TRIANGLEOBJ = ({
     color: THREE.Color;
 }) => {
     const meshRef = useRef<Mesh>(null!);
-
+    const materialRef = useRef<THREE.ShaderMaterial>(null!);
     const rotationDY = SPEED + Math.random() * ROTCHAOS;
     const rotationDX = SPEED + Math.random() * ROTCHAOS;
 
@@ -45,9 +47,8 @@ const TRIANGLEOBJ = ({
     }, []);
 
     useFrame((_, delta) => {
-        if (meshRef.current) {
-            meshRef.current.rotateY(rotationDY * delta);
-            meshRef.current.rotateZ(rotationDX * delta);
+        if (meshRef.current && materialRef.current) {
+            materialRef.current.uniforms.uTime.value += delta;
         }
     });
 
@@ -55,7 +56,20 @@ const TRIANGLEOBJ = ({
         <group position={position} rotation={[0, faceRotation, 0]}>
             <mesh ref={meshRef} rotation={rotation}>
                 <TrianglePlane />
-                <meshBasicMaterial color={color} side={DoubleSide} />
+                {/* <meshBasicMaterial color={color} side={DoubleSide} /> */}
+                <shaderMaterial
+                    transparent
+                    ref={materialRef}
+                    vertexShader={vertexShader}
+                    fragmentShader={fragmentShader}
+                    uniforms={{
+                        uColor: { value: color },
+                        uTime: { value: 0.0 },
+                        uRotationDY: { value: rotationDY },
+                        uRotationDX: { value: rotationDX },
+                    }}
+                    side={DoubleSide}
+                />
             </mesh>
         </group>
     );
