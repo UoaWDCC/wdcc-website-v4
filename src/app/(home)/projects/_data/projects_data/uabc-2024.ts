@@ -1,17 +1,17 @@
 import type { Project } from "@/types/models";
 
 export const uabc2024: Project = {
-    name: { title: "Event Registration & Payments Web App", extended: "UABC" },
+    name: { title: "Event Registration & Payments Web App", extended: "Event Registration & Payments Web App" },
     description:
-        "The Badminton Club hosts paid badminton sessions for its club members, of which there are generally 4 sessions per week, each with a maximum attendance that is often reached quite quickly. This project involves making a web application that supports badminton club members from selecting the weekday sessions that they want to pay for and sign up to and allow them to pay for these sessions online.",
+        "The UABC Event Registration & Payments Web App allows members to select the weekday sessions that they want to pay for and sign up to and pay for these sessions online.",
     icon: undefined,
     year: "2024",
-    client: "",
+    client: "University of Auckland Badminton Club",
     technologies: ["Mongodb", "Express", "React"],
     slug: "2024-UABC",
     brief: {
         description:
-            "The UABC Event Registration & Payments Web App allows members to select the weekday sessions that they want to pay for and sign up to and pay for these sessions online.",
+            "The Badminton Club hosts paid badminton sessions for its club members, of which there are generally 4 sessions per week, each with a maximum attendance that is often reached quite quickly. This project involves making a web application that supports badminton club members from selecting the weekday sessions that they want to pay for and sign up to and allow them to pay for these sessions online.",
         image: undefined,
     },
     team: {

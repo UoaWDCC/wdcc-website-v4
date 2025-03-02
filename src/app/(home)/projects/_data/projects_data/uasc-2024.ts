@@ -1,17 +1,17 @@
 import type { Project } from "@/types/models";
 
 export const uasc2024: Project = {
-    name: { title: "Hut Bookings & Payments Web App", extended: "UASC" },
+    name: { title: "Hut Bookings & Payments Web App", extended: "Hut Bookings & Payments Web App" },
     description:
-        "The University of Auckland Snowsports Club (UASC) aims to bring people together with a range of snow sport activities like skiing and snowboarding. This project allows members to log in, sign up, view upcoming events, register, pay and make booking for those events throughout the year.",
+        "The UASC Hut Bookings & Payments Web App allows members to log in, sign up, view upcoming events, register, pay and make booking for snowsports events throughout the year.",
     icon: undefined,
     year: "2024",
-    client: "",
+    client: "University of Auckland Snowsports Club",
     technologies: ["Mongodb", "Express", "React"],
     slug: "2024-UASC",
     brief: {
         description:
-            "The UASC Hut Bookings & Payments Web App allows members to log in, sign up, view upcoming events, register, pay and make booking for those events throughout the year.",
+            "The University of Auckland Snowsports Club (UASC) aims to bring people together with a range of snow sport activities like skiing and snowboarding. This project allows members to log in, sign up, view upcoming events, register, pay and make booking for those events throughout the year.",
         image: undefined,
     },
     team: {
