@@ -10,7 +10,7 @@ export default function DeveloperPage() {
             <Header
                 variant={{ style: "secondary", color: "blue" }}
                 title="Developers in a WDCC project"
-                backlink={{ label: "projects", href: "/projects" }}
+                backlink={{ label: "projects", href: "/projects#roles" }}
             />
 
             <div className="flex flex-col gap-24 py-24">

@@ -57,11 +57,11 @@ const BracketLink = ({ children, newTab, ...props }: BracketLinkProps) => {
         <Link {...props} className="group/link" target={newTab ? "_blank" : "_self"}>
             <div className={cn("relative z-10 flex items-center", props.className)}>
                 <p className="cursor-pointer whitespace-nowrap">
-                    <span className="inline-block -translate-x-1 transition-transform group-hover/link:!translate-x-0">
+                    <span className="inline-block -translate-x-1 transition-transform group-hover/link:translate-x-0!">
                         (
                     </span>
                     {children}
-                    <span className="inline-block translate-x-1 transition-transform group-hover/link:!translate-x-0">
+                    <span className="inline-block translate-x-1 transition-transform group-hover/link:translate-x-0!">
                         )
                     </span>
                 </p>
@@ -85,7 +85,7 @@ function DropDownSublink({ link, open }: { link: NavigationLink; open: boolean }
                         <motion.span variants={LetterVariant}>{char}</motion.span>
                     </motion.span>
                 ))}
-                <div className="absolute bottom-1 left-0 h-0.5 w-0 rounded bg-gray-700 transition-[left,width] group-hover/link:left-1 group-hover/link:w-1/2" />
+                <div className="absolute bottom-1 left-0 h-0.5 w-0 rounded-sm bg-gray-700 transition-[left,width] group-hover/link:left-1 group-hover/link:w-1/2" />
             </motion.div>
         </Link>
     );

@@ -9,7 +9,7 @@ import { cn } from "@/libs/utils";
 type ContentlistType = { level: number; label: string; id: string }[];
 
 const tableOfContent = tv({
-    base: "cursor-pointer select-none rounded p-0.5 px-2 font-normal transition-colors hover:bg-blue-100",
+    base: "cursor-pointer select-none rounded-sm p-0.5 px-2 font-normal transition-colors hover:bg-blue-100",
     variants: {
         active: {
             true: "",
@@ -106,7 +106,7 @@ export const TableOfContents = ({ variant }: TableOfContentsProps) => {
         <div
             data-current={currentId}
             className={cn(
-                "hidden h-min flex-col gap-2 rounded-bl-xl bg-gray-50 p-2 text-sm transition-transform xl:sticky xl:top-24 xl:flex xl:rounded"
+                "hidden h-min flex-col gap-2 rounded-bl-xl bg-gray-50 p-2 text-sm transition-transform xl:sticky xl:top-24 xl:flex xl:rounded-sm"
             )}
         >
             {/* main */}

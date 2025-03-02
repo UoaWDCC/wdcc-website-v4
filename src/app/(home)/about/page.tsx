@@ -54,9 +54,9 @@ export default async function AboutPage() {
                     <p className="whitespace-pre-line text-md font-semibold leading-tight sm:text-lg">
                         {genInfo.firstPart}
                     </p>
-                    <p className="whitespace-pre-line text-md font-semibold leading-tight text-blue-brand sm:text-lg">
-                        {genInfo.firstPart}
-                    </p>
+                    {/*<p className="whitespace-pre-line text-md font-semibold leading-tight text-blue-brand sm:text-lg">*/}
+                    {/*    {genInfo.firstPart}*/}
+                    {/*</p>*/}
                     <p className="whitespace-pre-line text-md font-semibold leading-tight text-blue-brand sm:text-lg">
                         {genInfo.secondPart}
                     </p>

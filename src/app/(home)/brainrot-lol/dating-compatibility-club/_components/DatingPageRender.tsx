@@ -28,7 +28,7 @@ export default function DatingPage() {
                 heroAnimEnded ?
                     <StandardPageLayout navColor="light">
                         <div
-                            className="fixed top-0 -z-20 w-full h-[100vh] bg-gradient-to-b from-[#ffbad3] to-[#FFF6F9]">
+                            className="fixed top-0 -z-20 w-full h-[100vh] bg-linear-to-b from-[#ffbad3] to-[#FFF6F9]">
                         </div>
                         {/*<View className="fixed -z-10 size-full scale-150" color="pink" background>*/}
                         {/*    <BackgroundEffect />*/}
@@ -48,7 +48,7 @@ export default function DatingPage() {
                     <>
                         <StandardPageLayout navColor="dark">
                             <div
-                                className="absolute top-0 -z-20 w-full h-[100vh] bg-gradient-to-b from-[#DD3173] to-[#DF99B9]">
+                                className="absolute top-0 -z-20 w-full h-[100vh] bg-linear-to-b from-[#DD3173] to-[#DF99B9]">
                             </div>
                             <div className="flex flex-col justify-center w-full">
                                 <div className="w-full h-[100vh] pb-40">

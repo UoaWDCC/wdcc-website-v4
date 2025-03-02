@@ -24,10 +24,9 @@ export default function EventCard({ event }: EventCardProps) {
         >
             <ImageCover
                 src={event.thumbnail.src}
-                width="600px"
-                height="400px"
+                height="240px"
                 alt={event.thumbnail.alt}
-                className="rounded-2xl"
+                className="rounded-2xl w-full"
             />
 
             <div className="flex flex-col items-center justify-start gap-6 self-stretch px-8 pb-8">

@@ -24,13 +24,29 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         notFound();
     }
 
+
+    /*
+    * We asked whether event pages should back link to /events or /events/all.
+    * Chris suggested we randomise it 50-50.
+    * The following code implements said effect.
+    */
+
+    let backlinkRef = "/events";
+    let backlinkTitle = "events"
+    const backlinkRandomNum = Math.floor(Math.random() * 2) + 1;
+
+    if(backlinkRandomNum > 1) {
+        backlinkRef = "/events/all"
+        backlinkTitle = "All events"
+    }
+
     return (
         <StandardPageLayout>
             <EventHeader
                 when={event.time.toLocaleString()}
                 where={event.location}
                 title={event.title}
-                backlink={{ label: "events", href: "/events" }}
+                backlink={{ label:backlinkTitle, href: backlinkRef }}
             />
             <IndividualEvent event={event} />
         </StandardPageLayout>

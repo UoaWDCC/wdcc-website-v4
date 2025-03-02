@@ -33,16 +33,16 @@ export const footerData: FooterData = {
                     href: "/projects",
                 },
                 {
+                    label: "Project roles",
+                    href: "/projects#roles",
+                },
+                {
                     label: "Past projects",
-                    href: "/projects/past",
+                    href: "/projects/all",
                 },
                 {
                     label: "Join a project",
-                    href: "/",
-                },
-                {
-                    label: "Placeholder",
-                    href: "/",
+                    href: "https://go.wdcc.co.nz",
                 },
             ],
         },
@@ -54,8 +54,12 @@ export const footerData: FooterData = {
                     href: "/events",
                 },
                 {
-                    label: "Upcoming events",
-                    href: "/events",
+                    label: "Events roadmap",
+                    href: "/events#roadmap",
+                },
+                {
+                    label: "Recent events",
+                    href: "/events#recent",
                 },
                 {
                     label: "Past events",
@@ -81,6 +85,11 @@ export const footerData: FooterData = {
         {
             name: "Linktree",
             href: "https://go.wdcc.co.nz",
+            icon: <social.linktree />,
+        },
+        {
+            name: "Mail",
+            href: "mailto:outreach@wdcc.co.nz",
             icon: <social.mail />,
         },
         {
