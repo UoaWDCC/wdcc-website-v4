@@ -24,7 +24,7 @@ export default async function AboutPage() {
     const header = aboutData.header;
     const genInfo = aboutData.genInfo;
     const whyJoin = aboutData.whyJoin;
-    const clubStory = aboutData.clubStory;
+    // const clubStory = aboutData.clubStory; TEMP - NEED COPY TEXT
     const ourPeople = aboutData.ourPeople;
     const quoteSection = aboutData.quoteSection;
     const endImage = aboutData.endImage;
@@ -64,12 +64,12 @@ export default async function AboutPage() {
                     <p className="leading-[1.3] whitespace-pre-line">{whyJoin.content}</p>
                 </Duo>
 
-                <Duo image={{ src: clubStory.image, alt: clubStory.imageAlt }} imgFirst>
+                {/* <Duo image={{ src: clubStory.image, alt: clubStory.imageAlt }} imgFirst>
                     <h3 className="text-md font-bold">{clubStory.title}</h3>
                     <p className="leading-[1.3] whitespace-pre-line">{clubStory.content}</p>
-                </Duo>
+                </Duo> */}
 
-                <Duo image={{ src: ourPeople.image, alt: ourPeople.imageAlt }}>
+                <Duo image={{ src: ourPeople.image, alt: ourPeople.imageAlt }} imgFirst>
                     <h3 className="text-md font-bold">{ourPeople.title}</h3>
                     <p className="leading-[1.3] whitespace-pre-line">{ourPeople.content}</p>
                     <div className="w-auto">
