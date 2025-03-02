@@ -1,21 +1,29 @@
+import { Event } from "@/types/models";
+import { ParsePayloadEvent } from "@/types/parser/ParsePayloadEvent";
+
+import { getAllEvents } from "@/actions/getAllEvents";
 import { EmptyListPlaceholder } from "@/components/EmptyListPlaceholder";
+//import Arrow from "@/assets/svg/Arrow";
+import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import EventCard from "../_components/EventCard";
 import { eventsData } from "../_data/events.data";
-//import Arrow from "@/assets/svg/Arrow";
-import Header from "@/components/layout/pageheaders/Header";
 
-const events = eventsData.eventsGrid.events;
+const hardcodedEvents = eventsData.eventsGrid.events;
 
-const page = () => {
+export default async function EventsPage() {
+    let events = (await getAllEvents()).map(ParsePayloadEvent) as Event[];
+    if (events.length === 0) {
+        events = hardcodedEvents;
+    }
+
     return (
         <StandardPageLayout>
             <Header
                 variant={{ style: "secondary", color: "green" }}
                 title="All events"
                 backlink={{ label: "events", href: "/events" }}
-
             />
             <div className="my-24 flex w-full flex-col">
                 {events.length ? (
@@ -30,6 +38,4 @@ const page = () => {
             </div>
         </StandardPageLayout>
     );
-};
-
-export default page;
+}

@@ -11,7 +11,7 @@ export interface Category {
     colors: string;
 }
 
-const projects = (await getAllEvents()).map(ParsePayloadEvent);
+const events = (await getAllEvents()).map(ParsePayloadEvent);
 
 export const eventsData = {
     header: {
@@ -50,7 +50,7 @@ export const eventsData = {
             },
         ],
         //merge payload and hardcoded events, sort them by date
-        events: [...events2024Data, ...events2025Data, ...projects]
+        events: [...events]
             .filter((event): event is Event => event !== undefined)
             .sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime()) as Event[],
     },
