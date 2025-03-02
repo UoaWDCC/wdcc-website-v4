@@ -18,13 +18,13 @@ export const ScrollProvider = ({ children }: { children: ReactNode }) => {
 
     function getScrollContainer() {
         if (!scrollRef.current) {
-            throw new Error("No scroll container found");
+            console.log("No scroll container found - defaulting to window");
+            return window;
         }
         return scrollRef.current;
     }
 
     function scrollTo(loc: number | string) {
-        console.log(loc);
         if (typeof loc === "number") {
             getScrollContainer().scroll({ top: loc, behavior: "smooth" });
         } else {
