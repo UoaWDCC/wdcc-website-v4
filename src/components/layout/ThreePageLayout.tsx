@@ -8,7 +8,6 @@ import { motion } from "motion/react";
 import { fadeopacity } from "@/libs/animations";
 
 import NavigationBar from "../navigation/navbar/NavigationBar";
-import { useScroll } from "../scroll/ScrollContext";
 
 const Scene = dynamic(() => import("@/components/three/scene/Scene"), { ssr: false });
 
