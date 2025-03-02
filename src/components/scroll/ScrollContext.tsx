@@ -9,6 +9,8 @@ type ScrollContextType = {
     scrollRef: RefObject<HTMLDivElement>;
     /** Get reference to scrollable container. Throws error if the page doesn't have one. */
     getScrollContainer: () => ScrollContainerType;
+    /** Get the current scrollY value of the scrollable container. */
+    getScrollY: () => number;
     /** Scroll to a specific location on the page - either a scrollY value or a querySelection (e.g. #myid). */
     scrollTo: (loc: number | string) => void;
 };
@@ -38,9 +40,19 @@ export const ScrollProvider = ({ children }: { children: ReactNode }) => {
         }
     }
 
+    // Purely because window and scrollRef.current have different APIs
+    function getScrollY() {
+        if (!scrollRef.current) {
+            return window.scrollY;
+        } else {
+            return scrollRef.current.scrollTop;
+        }
+    }
+
     const contextValue = {
         scrollRef,
         getScrollContainer,
+        getScrollY,
         scrollTo,
     };
 

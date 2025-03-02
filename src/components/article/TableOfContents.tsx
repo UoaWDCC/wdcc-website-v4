@@ -57,7 +57,7 @@ export const TableOfContents = ({ variant }: TableOfContentsProps) => {
     const [contents, setContents] = useState<ContentlistType>([]);
     const [currentId, setCurrentId] = useState("");
     const tags = ["h1", "h2", "h3"];
-    const { getScrollContainer } = useScroll();
+    const { getScrollContainer, getScrollY } = useScroll();
 
     useLayoutEffect(() => {
         const headers = document.getElementById("blog")?.querySelectorAll(tags.join(","));
@@ -95,7 +95,7 @@ export const TableOfContents = ({ variant }: TableOfContentsProps) => {
     const handleScrollTo = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
-            const elementY = element.getBoundingClientRect().top + getScrollContainer().scrollTop;
+            const elementY = element.getBoundingClientRect().top + getScrollY();
             const offset = window.innerHeight * 0.2;
             window.history.pushState(null, "", `#${id}`);
             getScrollContainer().scrollTo({
