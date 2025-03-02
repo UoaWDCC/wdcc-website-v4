@@ -3,17 +3,25 @@
 import { forwardRef, MutableRefObject, useImperativeHandle, useRef } from "react";
 import { OrbitControls, View as ViewImpl } from "@react-three/drei";
 
+import { useWebGL } from "@/providers/WebGLProvider";
+
 import { Three, ThreeBackground } from "./Three";
 
 interface ViewProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
+    fallback?: React.ReactNode;
     orbit?: boolean;
     background?: boolean;
 }
 
-const View = forwardRef(({ children, orbit, background, ...props }: ViewProps, ref) => {
+const View = forwardRef(({ children, orbit, background, fallback, ...props }: ViewProps, ref) => {
     const localRef = useRef<HTMLDivElement>(null);
+
+    const { webglSupport } = useWebGL();
+
     useImperativeHandle(ref, () => localRef.current);
+
+    if (!webglSupport) return fallback;
 
     return (
         <>
