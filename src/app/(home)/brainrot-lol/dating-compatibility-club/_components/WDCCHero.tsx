@@ -16,12 +16,12 @@ const transition = {
 
 const WDCCHero = () => {
     const [downTextVisible, setDownTextVisible] = useState(true);
-    const { getScrollContainer } = useScroll();
+    const { getScrollContainer, getScrollY } = useScroll();
     const scrollContainer = getScrollContainer();
 
     useEffect(() => {
         const handleScroll = () => {
-            if (scrollContainer.scrollTop > 100) {
+            if (getScrollY() > 100) {
                 setDownTextVisible(false);
             } else {
                 setDownTextVisible(true);
@@ -34,7 +34,7 @@ const WDCCHero = () => {
     }, []);
 
     function scrollDown() {
-        window.scrollTo({ top: 800, behavior: "smooth" });
+        getScrollContainer().scrollTo({ top: 800, behavior: "smooth" });
     }
 
     return (
@@ -43,13 +43,13 @@ const WDCCHero = () => {
                 <div className="flex flex-col gap-4">
                     <motion.h3
                         animate={{ y: [32, 0], transition: transition }}
-                        className="text-sm font-normal leading-none tracking-[0.25em]"
+                        className="text-sm leading-none font-normal tracking-[0.25em]"
                     >
                         WEB-BASED DATING AND COMPATIBILITY CLUB
                     </motion.h3>
                     <motion.h1
                         animate={{ y: [64, 0], transition: transition }}
-                        className="text-[60px] font-bold leading-[0.95] tracking-[-2px]"
+                        className="text-[60px] leading-[0.95] font-bold tracking-[-2px]"
                     >
                         From
                         <em className="text-[#8F0070]"> campus crushes</em>
@@ -59,7 +59,7 @@ const WDCCHero = () => {
                 </div>
                 <motion.p
                     animate={{ y: [48, 0], transition: transition }}
-                    className="max-w-[80%] text-md leading-tight sm:text-lg"
+                    className="text-md max-w-[80%] leading-tight sm:text-lg"
                 >
                     We help connect UoA’s coolest Computer Science, Software Engineering, and other degrees’ students
                     with the partners that <em>help them shine</em> in life, love, and LeetCode.
