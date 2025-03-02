@@ -77,7 +77,7 @@ export type OldEvent = {
     slug?: string;
 };
 
-export const EventCategories = ["Workshop", "Competition", "Social"] as const;
+export const EventCategories = ["Workshop", "Competition", "Social", "Projects", "Other"] as const;
 
 export type EventCategory = (typeof EventCategories)[number];
 

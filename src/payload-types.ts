@@ -126,7 +126,7 @@ export interface Event {
   Description: string;
   time: string;
   location: string;
-  category: 'Workshop' | 'Competition' | 'Social';
+  category: 'Workshop' | 'Competition' | 'Social' | 'Projects' | 'Other';
   page: {
     Description: string;
     image: number | Media;
