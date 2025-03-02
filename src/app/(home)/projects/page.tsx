@@ -18,6 +18,7 @@ export default async function ProjectsPage() {
     if (!projectsCopy) {
         projectsCopy = hardCodedProjectPage;
     }
+
     return (
         <StandardPageLayout>
             <Header
@@ -73,7 +74,8 @@ export default async function ProjectsPage() {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-8">
+                {/* Need copy */}
+                {/* <div className="flex flex-col gap-8">
                     <h2 className="text-3xl font-bold">{projectsCopy.featuredSection.title}</h2>
                     <div className="grid gap-6 lg:grid-cols-2">
                         <ProjectCard project={projectsData[0]} />
@@ -82,7 +84,7 @@ export default async function ProjectsPage() {
                     <Button variant={{ style: "secondary", color: "yellow" }} href="/projects/all" className="mx-auto">
                         {projectsCopy.featuredSection.cta}
                     </Button>
-                </div>
+                </div> */}
             </div>
         </StandardPageLayout>
     );
