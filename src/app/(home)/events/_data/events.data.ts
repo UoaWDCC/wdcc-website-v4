@@ -47,7 +47,7 @@ export const eventsData = {
             },
         ],
         //merge payload and hardcoded events, sort them by date
-        events: [...events]
+        events: events
             .filter((event): event is Event => event !== undefined)
             .sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime()) as Event[],
     },
