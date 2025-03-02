@@ -23,7 +23,7 @@ export default function FooterSocials({ socials, className, ...props }: FooterSo
                 <Anchor
                     key={social.name}
                     href={social.href}
-                    className="[&>svg]:fill-white [&>svg]:transition [&>svg]:duration-200 hover:[&>svg]:fill-blue-200"
+                    className="[&>svg]:fill-white [&>svg]:transition [&>svg]:duration-200 [&>svg]:hover:fill-blue-200"
                 >
                     {social.icon}
                 </Anchor>

@@ -1,7 +1,10 @@
 # See https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/
 
 name: Fly Deploy Staging
-on:   [workflow_dispatch]
+on:  
+  push:
+    branches:
+      tailwind-css
 
 jobs:
   deploy:

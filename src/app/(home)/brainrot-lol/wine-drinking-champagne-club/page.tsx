@@ -36,7 +36,7 @@ export default function PricingPage() {
 
                 <div className="border-y-[1px] border-white py-6">
                     <div
-                        className="w-[clamp(300px,75%,1800px)] mx-auto grid grid-cols-[3fr,2fr] gap-12 divide-x-[1px] divide-white">
+                        className="w-[clamp(300px,75%,1800px)] mx-auto grid grid-cols-[3fr_2fr] gap-12 divide-x-[1px] divide-white">
                         <div className="py-32 flex flex-col gap-4 max-w-[800px]">
                             <p className="text-md text-white opacity-75 mb-4">[I]</p>
                             <p className="text-white text-lg leading-tight">
@@ -100,7 +100,7 @@ export default function PricingPage() {
 
                     <div className="py-6 h-full">
                         <div
-                            className="h-full z-10 relative w-[clamp(300px,75%,1800px)] mx-auto grid grid-cols-[1fr,3fr] divide-x-[1px] divide-white">
+                            className="h-full z-10 relative w-[clamp(300px,75%,1800px)] mx-auto grid grid-cols-[1fr_3fr] divide-x-[1px] divide-white">
 
                             <div>
                             </div>
@@ -127,7 +127,7 @@ export default function PricingPage() {
 
                 <div className="border-y-[1px] border-white py-6 flex flex-col items-center justify-center gap-4">
                     <div
-                        className="w-[clamp(300px,75%,1400px)] mx-auto grid grid-cols-[1fr,1fr,1fr] divide-x-[1px] divide-white">
+                        className="w-[clamp(300px,75%,1400px)] mx-auto grid grid-cols-[1fr_1fr_1fr] divide-x-[1px] divide-white">
                         <FeatureCard number={"IV"} title={"Experience."} note="*Limits apply">
                             Membership grants you unlimited access* to WDCC’s extensive wine and champagne repositories,
                             two complimentary tickets to all regular WDCC events, and, most importantly, the knowledge
@@ -163,7 +163,7 @@ export default function PricingPage() {
 
                 <div className="border-y-[1px] border-white py-36 flex flex-col items-center justify-center gap-32">
                     <div
-                        className="w-[clamp(300px,75%,1800px)] mx-auto grid grid-cols-[4fr,3fr]">
+                        className="w-[clamp(300px,75%,1800px)] mx-auto grid grid-cols-[4fr_3fr]">
                         <p className="text-[74px] tracking-[-1.28px]  leading-none text-white">
                             For all <em>you</em> are.
                         </p>
@@ -220,7 +220,7 @@ export default function PricingPage() {
 
                     <div className="py-6 h-full">
                         <div
-                            className="h-full z-10 relative w-[clamp(300px,75%,1800px)] mx-auto grid grid-cols-[1fr,3fr] divide-x-[1px] divide-white">
+                            className="h-full z-10 relative w-[clamp(300px,75%,1800px)] mx-auto grid grid-cols-[1fr_3fr] divide-x-[1px] divide-white">
 
                             <div>
                             </div>

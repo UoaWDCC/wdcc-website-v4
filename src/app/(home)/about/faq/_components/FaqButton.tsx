@@ -10,7 +10,7 @@ const FaqButton = ({ rotate, className }: FaqButtonProps) => {
     return (
         <div
             className={cn(
-                "group grid place-items-center rounded-full bg-gradient-to-bl from-blue-400 to-blue-700",
+                "group grid place-items-center rounded-full bg-linear-to-bl from-blue-400 to-blue-700",
                 className
             )}
             data-rotate={rotate}

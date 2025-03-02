@@ -47,7 +47,7 @@ const WDCCHero = ({ hero }: WDCCHeroProps) => {
                         className="text-4xl font-bold leading-[0.95] tracking-[-2px] text-blue-700 sm:text-5xl">
                         Aotearoa’s
                         <em> largest </em>
-                        <span className="bg-gradient-to-br from-orange-400 to-purple-700 bg-clip-text text-transparent">
+                        <span className="bg-linear-to-br from-orange-400 to-purple-700 bg-clip-text text-transparent">
                             student technology society.
                         </span>
                     </motion.h1>
