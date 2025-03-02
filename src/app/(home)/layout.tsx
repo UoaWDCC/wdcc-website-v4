@@ -8,8 +8,6 @@ import type { Metadata } from "next";
 
 import WebGLProvider from "@/providers/WebGLProvider";
 
-export const dynamic = "force-dynamic";
-
 // SEO
 export const metadata: Metadata = {
     title: "Web Development & Consulting Club",
