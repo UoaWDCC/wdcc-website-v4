@@ -17,7 +17,7 @@ const DebounceTimer = 50;
 const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
     const progress = useProgress();
     const [isLoaded, setLoaded] = useState(false);
-    const { scrollRef } = useScroll();
+    // const { scrollRef } = useScroll();
 
     useEffect(() => {
         const loadId = setTimeout(() => {
@@ -32,7 +32,7 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
         <>
             <NavigationBar />
             <motion.div
-                ref={scrollRef}
+                // ref={scrollRef} commenting out to bind scrollContainer to HTML for landing page
                 initial="initial"
                 animate={isLoaded ? "animate" : "initial"}
                 variants={fadeopacity}
