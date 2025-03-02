@@ -1,12 +1,15 @@
 "use client";
 
 import { Button } from "@/components/primitives/Button";
+
 import { revalidateAllRoutes } from "./revalidate-action";
 
 export default function RevalidatePage() {
     function handleClick() {
-        revalidateAllRoutes();
-        console.log("All routes revalidated");
+        if (confirm(`Are you sure you want to revalidate all routes on ${process.env.NODE_ENV}?`)) {
+            revalidateAllRoutes();
+            alert("All routes revalidated!");
+        }
     }
 
     return (
