@@ -14,10 +14,10 @@ import { NavigationLink } from "@/components/navigation/navbar/_data/navbarTypes
 import DropDown from "@/components/navigation/navbar/DropDownLink";
 import { UnderlineLink } from "@/components/navigation/UnderlineLink";
 import { Button } from "@/components/primitives/Button";
+import { useScroll } from "@/components/scroll/ScrollContext";
 
 import { Anchor } from "../../primitives/Anchor";
 import NavigationMobileMenu from "./NavigationMobileMenu";
-import { useScroll } from "@/components/scroll/ScrollContext";
 
 const hoverContext = createContext({} as hoverContextProps);
 
@@ -116,12 +116,11 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isHovering ? 1 : 0 }}
                 className="pointer-events-none fixed inset-0 z-40 h-dvh w-dvw bg-black/40 backdrop-blur-xs data-[hover=true]:pointer-events-auto"
-                onPointerEnter={() => {console.log("bg leave"); handleDropExit();}}
+                onPointerEnter={handleDropExit}
                 data-hover={isHovering}
             />
             <nav className={navbar({ ...variant })}>
                 <div
-                    onPointerLeave={() => {console.log("nav leave"); handleDropExit();}}
                     className="pointer-events-none absolute top-0 left-0 -z-10 h-[180px] w-full data-[hover=true]:pointer-events-auto"
                     data-hover={isHovering}
                 >
