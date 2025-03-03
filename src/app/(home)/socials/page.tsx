@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 import Arrow from "@/assets/svg/Arrow";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
@@ -7,9 +6,7 @@ import { Button } from "@/components/primitives/Button";
 /*THIS USES THE FOOTER CODE BECAUSE IT'S A QUICK FIX LOL*/
 /* insert SOBBING EMOJI here */
 import { footerData } from "@/components/navigation/footer/_data/footer.data";
-import { FooterSocial } from "@/components/navigation/footer/_data/footerTypes";
 import { Anchor } from "@/components/primitives/Anchor";
-import { cn } from "@/libs/utils";
 
 
 export default function SocialsPage() {
