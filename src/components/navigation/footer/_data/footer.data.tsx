@@ -40,10 +40,11 @@ export const footerData: FooterData = {
                     label: "Past projects",
                     href: "/projects/all",
                 },
-                {
-                    label: "Join a project",
-                    href: "https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform?usp=sharing",
-                },
+                // PROJECT SIGNUP LINK
+                // {
+                //     label: "Join a project",
+                //     href: "https://go.wdcc.co.nz",
+                // },
             ],
         },
         {
