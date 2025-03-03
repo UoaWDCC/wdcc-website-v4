@@ -1,12 +1,6 @@
 {
     "extends": ["next/core-web-vitals", "next/typescript"],
-    "plugins": ["tailwindcss", "prettier"],
-    "settings": {
-        "tailwindcss": {
-            "callees": ["cn", "twMerge", "twJoin", "clsx", "tv"], // add tailwind linting and completion to these functions
-            "config": "tailwind.config.js"
-        }
-    },
+    "plugins": ["prettier"],
     "rules": {
         "@typescript-eslint/ban-ts-ignore": "off"
     },

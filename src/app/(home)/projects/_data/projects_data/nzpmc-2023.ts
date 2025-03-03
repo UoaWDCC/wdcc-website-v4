@@ -1,29 +1,30 @@
 import type { Project } from "@/types/models";
 
 export const nzpmc2023: Project = {
-    name: { title: "NZPMC exam portal", extended: "NZPMC exam portal etc" },
-    description: "A whole paragraph describing what kind of project it is, including tech stack??\n\nYup.",
+    name: { title: "NZPMC Exam Portal", extended: "NZPMC Exam Portal" },
+    description:
+        "The NZPMC Exam Portal allows students to sign up, log in, and sit online exams for the New Zealand Physics and Maths Competition (NZPMC). ",
     icon: undefined,
     year: "2023",
-    client: "NZPMC",
-    technologies: ["Astro", "Typescript"],
+    client: "New Zealand Physics and Maths Competition",
+    technologies: ["ViteJs", "Typescript"],
     slug: "2024-NZPMC",
     brief: {
-        description: "A brief overview of the NZPMC exam portal and its purpose.",
+        description:
+            "The NZPMC Exam Portal allows students to sign up, log in, and sit online exams for the New Zealand Physics and Maths Competition (NZPMC). After an exam has been completed and marked, students should also be able to see their exam results. Admin functionality includes creating exams, creating questions, assigning exams to students, and releasing marks.",
         image: undefined,
     },
     team: {
-        techlead: { name: "Youxiang Lei" },
-        manager: { name: "Gurjot Bhullar" },
+        techlead: { name: "John Chen" },
+        manager: { name: "Nate Williamson" },
         members: [
-            { name: "Tim Sinyakov", role: "engineer" },
-            { name: "Jason Peng", role: "engineer" },
-            { name: "Henry Ly", role: "engineer" },
-            { name: "Abdul-Qudas Amidu", role: "engineer" },
-            { name: "Alfie Na", role: "engineer" },
-            { name: "Soham Kulkarni", role: "engineer" },
-            { name: "Yoyo Chen", role: "engineer" },
+            { name: "Eugene Chua", role: "engineer" },
+            { name: "Aaron Rodrigues", role: "engineer" },
             { name: "Kevin Cheung", role: "engineer" },
+            { name: "Sophie Lee", role: "engineer" },
+            { name: "Erica Ngin", role: "engineer" },
+            { name: "Alex Kim", role: "engineer" },
+            { name: "Benson Cho", role: "engineer" },
         ],
     },
 };

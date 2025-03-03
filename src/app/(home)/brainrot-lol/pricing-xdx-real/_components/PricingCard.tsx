@@ -22,7 +22,7 @@ const titletext = tv({
         style: {
             free: "text-gray-600",
             standard: "text-foreground",
-            pro: "text-transparent bg-clip-text bg-gradient-to-r from-[#1B02F6] to-[#00009B]",
+            pro: "text-transparent bg-clip-text bg-linear-to-r from-[#1B02F6] to-[#00009B]",
         }
     }
 })

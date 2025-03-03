@@ -2,8 +2,9 @@ import { eduExecs } from "./eduExecs.data";
 import { techExecs } from "./techExecs.data";
 
 export const teamData = {
-    info: `The WDCC Executive consists of 973 members and is split into a few key role divisions, which are outlined below.`,
+    info: `The WDCC Executive consists of 33 members and is split into a few key role divisions, which are outlined below.`,
     teams: [
+        // backup data rn
         {
             title: "Tech",
             description: `The Tech team is responsible for managing all of WDCC’s deployments, project technologies, and internal tools - including  this very website!`,

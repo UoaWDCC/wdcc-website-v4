@@ -1,8 +1,9 @@
 import type { Project } from "@/types/models";
 
 export const youthOfOrakei2024: Project = {
-    name: { title: "Youth of Ōrākei", extended: "" },
-    description: "A whole paragraph describing what kind of project it is, including tech stack??\n\nYup.",
+    name: { title: "Youth of Ōrākei Informational Website", extended: "Youth of Ōrākei Informational Website" },
+    description:
+        "The Youth of Ōrākei Website is an informational and promotional platform for the titular youth council, showcasing their projects, people, and goals.",
     icon: undefined,
     client: "Youth of Ōrākei",
     year: "2024",

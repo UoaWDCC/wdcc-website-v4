@@ -1,31 +1,49 @@
-import React, { HTMLAttributes } from "react";
+import { HTMLAttributes } from "react";
 import { tv } from "tailwind-variants";
 
-import { sponsors, SponsorTierKeys } from "@/assets/image/sponsors";
+import { SponsorSectionType } from "@/types/pages/HeroPage";
+
 import { Button } from "@/components/primitives/Button";
 import { cn } from "@/libs/utils";
 
 import SponsorCard from "./sponsor/SponsorCard";
 
-export const SponsorSection = () => {
+interface SponsorSectionProps {
+    SponsorSection: SponsorSectionType;
+}
+
+export const SponsorSection = ({ SponsorSection }: SponsorSectionProps) => {
     return (
         <div className="flex flex-col items-center justify-center gap-10">
             <h2 className="text-balance text-3xl font-bold leading-none">Our sponsors for 2025</h2>
             <div className="flex w-full flex-col items-center justify-center">
-                {/* horror */}
-                {(Object.keys(sponsors) as Array<SponsorTierKeys>).map((tier) => (
-                    <>
-                        <SponsorLabel tier={tier} className="mt-8" />
-                        <div
-                            className="responsive-grid mt-6 grid w-full flex-col place-content-center place-items-center gap-2 md:gap-4"
-                            key={tier}
-                        >
-                            {sponsors[tier].map((logo, i) => (
-                                <SponsorCard tier={tier} src={logo} alt={logo} width="150px" height="100px" key={i} />
-                            ))}
-                        </div>
-                    </>
-                ))}
+                {(Object.keys(SponsorSection) as SponsorTierKeys[])
+                    .filter((tier) => SponsorSection[tier].sponsors.length > 0)
+                    .map((tier, i) => (
+                        <>
+                            <SponsorLabel
+                                key={`label-${tier}-${i}`}
+                                tier={tier}
+                                count={SponsorSection[tier].sponsors.length}
+                                className="mt-8"
+                            />
+                            <div
+                                key={`cards-${tier}-${i}`}
+                                className="responsive-grid mt-6 grid w-full flex-col place-content-center place-items-center gap-2 md:gap-4"
+                            >
+                                {SponsorSection[tier].sponsors.map(({ src, alt }, i) => (
+                                    <SponsorCard
+                                        key={`sponsor-${tier}-${i}`}
+                                        tier={tier}
+                                        src={src}
+                                        alt={alt}
+                                        width="150px"
+                                        height="100px"
+                                    />
+                                ))}
+                            </div>
+                        </>
+                    ))}
                 <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
                     <p>Interested in sponsoring us?</p>
                     <Button href="mailto:outreach@wdcc.co.nz" variant={{ style: "tertiary", color: "dark" }}>
@@ -53,15 +71,17 @@ const sponsorLabel = tv({
 });
 
 interface SponsorLabelProps extends HTMLAttributes<HTMLDivElement> {
-    tier: keyof typeof sponsors;
+    tier: SponsorTierKeys;
+    count: number;
 }
 
-const SponsorLabel = ({ tier, ...props }: SponsorLabelProps) => {
+const SponsorLabel = ({ tier, count, ...props }: SponsorLabelProps) => {
     return (
         <div {...props} className={cn(sponsorLabel({ tier: tier }), props.className)}>
-            {tier} sponsor
+            {tier} {count === 1 ? "sponsor" : "sponsors"}
         </div>
     );
 };
 
-export default SponsorCard;
+// Ensure TypeScript correctly recognizes the keys
+export type SponsorTierKeys = keyof SponsorSectionType;

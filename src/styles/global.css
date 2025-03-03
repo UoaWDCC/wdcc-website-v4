@@ -1,8 +1,205 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
+@theme {
+  --font-*: initial;
+  --font-font1: sans-serif;
+  --font-sans: sans-serif;
+
+  --font-weight-*: initial;
+  --font-weight-thin: 300;
+  --font-weight-light: 400;
+  --font-weight-normal: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.375rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+
+  --breakpoint-*: initial;
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --drop-shadow-card-lift:
+    1px 1px 1px rgba(156, 164, 186, 0.12),
+    2px 2px 3px rgba(156, 164, 186, 0.12),
+    4px 4px 6px rgba(156, 164, 186, 0.14),
+    9px 9px 14px rgba(156, 164, 186, 0.17);
+  --drop-shadow-down-shadow: 0px 4px 4px rgba(59, 62, 103, 0.25);
+
+  --color-background: white;
+  --color-foreground: #2E2B3B;
+
+  --color-sponsor-gold: hsl(var(--sponsor-gold));
+  --color-sponsor-tech: hsl(var(--sponsor-tech));
+  --color-sponsor-silver: hsl(var(--sponsor-silver));
+  --color-sponsor-community: hsl(var(--sponsor-community));
+
+  --color-gray-10: hsla(250, 10%, 99%, 1);
+  --color-gray-20: hsla(250, 15%, 98%, 1);
+  --color-gray-50: hsla(250, 15%, 95%, 1);
+  --color-gray-100: hsla(250, 15%, 90%, 1);
+  --color-gray-150: hsla(251, 14%, 85%, 1);
+  --color-gray-200: hsla(250, 12%, 80%, 1);
+  --color-gray-250: hsla(250, 12%, 75%, 1);
+  --color-gray-300: hsla(250, 10%, 70%, 1);
+  --color-gray-400: hsla(250, 10%, 60%, 1);
+  --color-gray-500: hsla(250, 8%, 50%, 1);
+  --color-gray-600: hsla(250, 10%, 40%, 1);
+  --color-gray-700: hsla(250, 10%, 30%, 1);
+  --color-gray-800: hsla(250, 15%, 20%, 1);
+  --color-gray-900: hsla(250, 15%, 10%, 1);
+
+  --color-orange-20: hsla(32, 100%, 98%, 1);
+  --color-orange-50: hsla(32, 100%, 95%, 1);
+  --color-orange-100: hsla(32, 90%, 90%, 1);
+  --color-orange-150: hsla(32, 90%, 85%, 1);
+  --color-orange-200: hsla(32, 85%, 80%, 1);
+  --color-orange-300: hsla(32, 85%, 70%, 1);
+  --color-orange-400: hsla(32, 90%, 60%, 1);
+  --color-orange-500: hsla(32, 100%, 49%, 1);
+  --color-orange-600: hsla(32, 90%, 40%, 1);
+  --color-orange-700: hsla(32, 95%, 30%, 1);
+  --color-orange-750: hsla(32, 100%, 25%, 1);
+  --color-orange-800: hsla(32, 100%, 20%, 1);
+  --color-orange-900: hsla(32, 100%, 10%, 1);
+  --color-orange-brand: hsla(32, 100%, 49%, 1);
+
+  --color-yellow-20: hsla(42, 100%, 98%, 1);
+  --color-yellow-50: hsla(42, 100%, 95%, 1);
+  --color-yellow-100: hsla(42, 100%, 90%, 1);
+  --color-yellow-150: hsla(42, 100%, 85%, 1);
+  --color-yellow-200: hsla(42, 100%, 80%, 1);
+  --color-yellow-300: hsla(42, 100%, 70%, 1);
+  --color-yellow-400: hsla(42, 100%, 60%, 1);
+  --color-yellow-500: hsla(42, 100%, 50%, 1);
+  --color-yellow-600: hsla(42, 100%, 40%, 1);
+  --color-yellow-700: hsla(42, 100%, 30%, 1);;
+  --color-yellow-750: hsla(42, 100%, 25%, 1);
+  --color-yellow-800: hsla(42, 100%, 20%, 1);
+  --color-yellow-900: hsla(42, 100%, 10%, 1);
+  --color-yellow-brand: hsla(42, 100%, 70%, 1);
+
+  --color-blue-20: hsla(217, 100%, 98%, 1);
+  --color-blue-50: hsla(217, 100%, 95%, 1);
+  --color-blue-100: hsla(217, 90%, 90%, 1);
+  --color-blue-150: hsla(217, 90%, 85%, 1);
+  --color-blue-200: hsla(217, 85%, 80%, 1);
+  --color-blue-300: hsla(217, 85%, 70%, 1);
+  --color-blue-400: hsla(217, 100%, 61%, 1);
+  --color-blue-500: hsla(217, 80%, 50%, 1);
+  --color-blue-600: hsla(217, 80%, 40%, 1);;
+  --color-blue-700: hsla(217, 85%, 30%, 1);
+  --color-blue-750: hsla(217, 90%, 25%, 1);
+  --color-blue-800: hsla(217, 90%, 20%, 1);
+  --color-blue-900: hsla(217, 95%, 10%, 1);
+  --color-blue-brand: hsla(217, 100%, 61%, 1);
+
+  --color-purple-20: hsla(276, 100%, 98%, 1);
+  --color-purple-50: hsla(276, 100%, 95%, 1);
+  --color-purple-100: hsla(276, 90%, 90%, 1);
+  --color-purple-150: hsla(276, 90%, 85%, 1);
+  --color-purple-200: hsla(276, 85%, 80%, 1);
+  --color-purple-300: hsla(276, 85%, 70%, 1);
+  --color-purple-400: hsla(276, 80%, 60%, 1);
+  --color-purple-500: hsla(276, 80%, 50%, 1);
+  --color-purple-600: hsla(276, 91%, 38%, 1);
+  --color-purple-700: hsla(276, 85%, 30%, 1);
+  --color-purple-750: hsla(276, 90%, 25%, 1);
+  --color-purple-800: hsla(276, 90%, 20%, 1);
+  --color-purple-900: hsla(276, 95%, 10%, 1);
+  --color-purple-brand: hsla(276, 91%, 38%, 1);
+
+  --color-green-20: hsla(165, 80%, 98%, 1);
+  --color-green-50: hsla(165, 80%, 95%, 1);
+  --color-green-100: hsla(165, 70%, 90%, 1);
+  --color-green-150: hsla(165, 60%, 85%, 1);
+  --color-green-200: hsla(165, 60%, 80%, 1);
+  --color-green-300: hsla(165, 50%, 70%, 1);
+  --color-green-400: hsla(165, 50%, 60%, 1);
+  --color-green-500: hsla(165, 50%, 50%, 1);
+  --color-green-600: hsla(165, 60%, 40%, 1);
+  --color-green-700: hsla(165, 60%, 30%, 1);
+  --color-green-750: hsla(165, 70%, 25%, 1);
+  --color-green-800: hsla(165, 70%, 20%, 1);
+  --color-green-900: hsla(165, 80%, 10%, 1);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility responsive-body {
+  /* 3 cols: empty_content_empty */
+  @apply grid grid-cols-[auto_clamp(300px,80%,1100px)_auto];
+
+  & > * {
+    /* Constrain children of main to middle column */
+    @apply col-start-2 col-end-3;
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility center-content {
+  @apply flex items-center justify-center;
+}
+
+@utility hidden-scrollbar {
+  scrollbar-width: none;
+}
+
+@utility mono {
+  font-family: var(--font-geist-mono);
+}
+
+@utility responsive-fullwidth {
+  /* Escape hatch to allow full-width 'breaking out' of the responsive-body grid layout */
+  @apply col-start-1 col-end-4;
+}
+
+@utility animate-bounce {
+  animation-name: bounce;
+  animation-duration: 0.6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@utility responsive-grid {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+}
+
+@layer utilities {
+  :root {
     --background: white;
     --foreground: #2e2b3b;
 
@@ -13,150 +210,105 @@
     --sponsor-community: var(--green-150);
 
     /* Color primitives below */
-    --gray-900: 250 15 10; /*hsla(250, 15%, 10%, 1)*/
-    --gray-800: 250 15 20; /*hsla(250, 15%, 20%, 1)*/
-    --gray-700: 250 10 30; /*hsla(250, 10%, 30%, 1)*/
-    --gray-600: 250 10 40; /*hsla(250, 10%, 40%, 1)*/
-    --gray-500: 250 8 50; /*hsla(250, 8%, 50%, 1)*/
-    --gray-400: 250 10 60; /*hsla(250, 10%, 60%, 1)*/
-    --gray-300: 250 10 70; /*hsla(250, 10%, 70%, 1)*/
-    --gray-250: 250 12 75; /*hsla(250, 12%, 75%, 1)*/
-    --gray-200: 250 12 80; /*hsla(250, 12%, 80%, 1)*/
-    --gray-150: 251 14 85; /*hsla(251, 14%, 85%, 1)*/
-    --gray-100: 250 15 90; /*hsla(250, 15%, 90%, 1)*/
-    --gray-050: 250 15 95; /*hsla(250, 15%, 95%, 1)*/
-    --gray-020: 250 15 98; /*hsla(250, 15%, 98%, 1)*/
-    --gray-010: 250 10 99; /*hsla(250, 10%, 99%, 1)*/
+    --gray-900: 250, 15%, 10%; /*hsla(250, 15%, 10%, 1)*/
+    --gray-800: 250, 15%, 20%; /*hsla(250, 15%, 20%, 1)*/
+    --gray-700: 250, 10%, 30%; /*hsla(250, 10%, 30%, 1)*/
+    --gray-600: 250, 10%, 40%; /*hsla(250, 10%, 40%, 1)*/
+    --gray-500: 250, 8%, 50%; /*hsla(250, 8%, 50%, 1)*/
+    --gray-400: 250, 10%, 60%; /*hsla(250, 10%, 60%, 1)*/
+    --gray-300: 250, 10%, 70%; /*hsla(250, 10%, 70%, 1)*/
+    --gray-250: 250, 12%, 75%; /*hsla(250, 12%, 75%, 1)*/
+    --gray-200: 250, 12%, 80%; /*hsla(250, 12%, 80%, 1)*/
+    --gray-150: 251, 14%, 85%; /*hsla(251, 14%, 85%, 1)*/
+    --gray-100: 250, 15%, 90%; /*hsla(250, 15%, 90%, 1)*/
+    --gray-050: 250, 15%, 95%; /*hsla(250, 15%, 95%, 1)*/
+    --gray-020: 250, 15%, 98%; /*hsla(250, 15%, 98%, 1)*/
+    --gray-010: 250, 10%, 99%; /*hsla(250, 10%, 99%, 1)*/
 
-    --blue-900: 217 95 10; /*hsla(217, 95%, 10%, 1)*/
-    --blue-800: 217 90 20; /*hsla(217, 90%, 20%, 1)*/
-    --blue-750: 217 90 25; /*hsla(217, 90%, 25%, 1)*/
-    --blue-700: 217 85 30; /*hsla(217, 85%, 30%, 1)*/
-    --blue-600: 217 80 40; /*hsla(217, 80%, 40%, 1)*/
-    --blue-500: 217 80 50; /*hsla(217, 80%, 50%, 1)*/
-    --blue-brand: 217 100 61; /*hsla(217, 100%, 61%, 1)*/
-    --blue-400: 217 100 61; /*hsla(217, 100%, 61%, 1)*/
-    --blue-300: 217 85 70; /*hsla(217, 85%, 70%, 1)*/
-    --blue-200: 217 85 80; /*hsla(217, 85%, 80%, 1)*/
-    --blue-150: 217 90 85; /*hsla(217, 90%, 85%, 1)*/
-    --blue-100: 217 90 90; /*hsla(217, 90%, 90%, 1)*/
-    --blue-050: 217 100 95; /*hsla(217, 100%, 95%, 1)*/
-    --blue-020: 217 100 98; /*hsla(217, 100%, 98%, 1)*/
+    --blue-900: 217, 95%, 10%; /*hsla(217, 95%, 10%, 1)*/
+    --blue-800: 217, 90%, 20%; /*hsla(217, 90%, 20%, 1)*/
+    --blue-750: 217, 90%, 25%; /*hsla(217, 90%, 25%, 1)*/
+    --blue-700: 217, 85%, 30%; /*hsla(217, 85%, 30%, 1)*/
+    --blue-600: 217, 80%, 40%; /*hsla(217, 80%, 40%, 1)*/
+    --blue-500: 217, 80%, 50%; /*hsla(217, 80%, 50%, 1)*/
+    --blue-brand: 217, 100%, 61%; /*hsla(217, 100%, 61%, 1)*/
+    --blue-400: 217, 100%, 61%; /*hsla(217, 100%, 61%, 1)*/
+    --blue-300: 217, 85%, 70%; /*hsla(217, 85%, 70%, 1)*/
+    --blue-200: 217, 85%, 80%; /*hsla(217, 85%, 80%, 1)*/
+    --blue-150: 217, 90%, 85%; /*hsla(217, 90%, 85%, 1)*/
+    --blue-100: 217, 90%, 90%; /*hsla(217, 90%, 90%, 1)*/
+    --blue-050: 217, 100%, 95%; /*hsla(217, 100%, 95%, 1)*/
+    --blue-020: 217, 100%, 98%; /*hsla(217, 100%, 98%, 1)*/
 
-    --orange-900: 32 100 10; /*hsla(32, 100%, 10%, 1)*/
-    --orange-800: 32 100 20; /*hsla(32, 100%, 20%, 1)*/
-    --orange-750: 32 100 25; /*hsla(32, 100%, 25%, 1)*/
-    --orange-700: 32 95 30; /*hsla(32, 95%, 30%, 1)*/
-    --orange-600: 32 90 40; /*hsla(32, 90%, 40%, 1)*/
-    --orange-brand: 32 100 49; /*hsla(32, 100%, 49%, 1)*/
-    --orange-500: 32 100 49; /*hsla(32, 100%, 49%, 1)*/
-    --orange-400: 32 90 60; /*hsla(32, 90%, 60%, 1)*/
-    --orange-300: 32 85 70; /*hsla(32, 85%, 70%, 1)*/
-    --orange-200: 32 85 80; /*hsla(32, 85%, 80%, 1)*/
-    --orange-150: 32 90 85; /*hsla(32, 90%, 85%, 1)*/
-    --orange-100: 32 90 90; /*hsla(32, 90%, 90%, 1)*/
-    --orange-050: 32 100 95; /*hsla(32, 100%, 95%, 1)*/
-    --orange-020: 32 100 98; /*hsla(32, 100%, 98%, 1)*/
+    --orange-900: 32, 100%, 10%; /*hsla(32, 100%, 10%, 1)*/
+    --orange-800: 32, 100%, 20%; /*hsla(32, 100%, 20%, 1)*/
+    --orange-750: 32, 100%, 25%; /*hsla(32, 100%, 25%, 1)*/
+    --orange-700: 32, 95%, 30%; /*hsla(32, 95%, 30%, 1)*/
+    --orange-600: 32, 90%, 40%; /*hsla(32, 90%, 40%, 1)*/
+    --orange-brand: 32, 100%, 49%; /*hsla(32, 100%, 49%, 1)*/
+    --orange-500: 32, 100%, 49%; /*hsla(32, 100%, 49%, 1)*/
+    --orange-400: 32, 90%, 60%; /*hsla(32, 90%, 60%, 1)*/
+    --orange-300: 32, 85%, 70%; /*hsla(32, 85%, 70%, 1)*/
+    --orange-200: 32, 85%, 80%; /*hsla(32, 85%, 80%, 1)*/
+    --orange-150: 32, 90%, 85%; /*hsla(32, 90%, 85%, 1)*/
+    --orange-100: 32, 90%, 90%; /*hsla(32, 90%, 90%, 1)*/
+    --orange-050: 32, 100%, 95%; /*hsla(32, 100%, 95%, 1)*/
+    --orange-020: 32, 100%, 98%; /*hsla(32, 100%, 98%, 1)*/
 
-    --yellow-900: 42 100 10; /*hsla(42, 100%, 10%, 1)*/
-    --yellow-800: 42 100 20; /*hsla(42, 100%, 20%, 1)*/
-    --yellow-750: 42 100 25; /*hsla(42, 100%, 25%, 1)*/
-    --yellow-700: 42 100 30; /*hsla(42, 100%, 30%, 1)*/
-    --yellow-600: 42 100 40; /*hsla(42, 100%, 40%, 1)*/
-    --yellow-500: 42 100 50; /*hsla(42, 100%, 50%, 1)*/
-    --yellow-400: 42 100 60; /*hsla(42, 100%, 60%, 1)*/
-    --yellow-300: 42 100 70; /*hsla(42, 100%, 70%, 1)*/
-    --yellow-brand: 42 100 70; /*hsla(42, 100%, 70%, 1)*/
-    --yellow-200: 42 100 80; /*hsla(42, 100%, 80%, 1)*/
-    --yellow-150: 42 100 85; /*hsla(42, 100%, 85%, 1)*/
-    --yellow-100: 42 100 90; /*hsla(42, 100%, 90%, 1)*/
-    --yellow-050: 42 100 95; /*hsla(42, 100%, 95%, 1)*/
-    --yellow-020: 42 100 98; /*hsla(42, 100%, 98%, 1)*/
+    --yellow-900: 42, 100%, 10%; /*hsla(42, 100%, 10%, 1)*/
+    --yellow-800: 42, 100%, 20%; /*hsla(42, 100%, 20%, 1)*/
+    --yellow-750: 42, 100%, 25%; /*hsla(42, 100%, 25%, 1)*/
+    --yellow-700: 42, 100%, 30%; /*hsla(42, 100%, 30%, 1)*/
+    --yellow-600: 42, 100%, 40%; /*hsla(42, 100%, 40%, 1)*/
+    --yellow-500: 42, 100%, 50%; /*hsla(42, 100%, 50%, 1)*/
+    --yellow-400: 42, 100%, 60%; /*hsla(42, 100%, 60%, 1)*/
+    --yellow-300: 42, 100%, 70%; /*hsla(42, 100%, 70%, 1)*/
+    --yellow-brand: 42, 100%, 70%; /*hsla(42, 100%, 70%, 1)*/
+    --yellow-200: 42, 100%, 80%; /*hsla(42, 100%, 80%, 1)*/
+    --yellow-150: 42, 100%, 85%; /*hsla(42, 100%, 85%, 1)*/
+    --yellow-100: 42, 100%, 90%; /*hsla(42, 100%, 90%, 1)*/
+    --yellow-050: 42, 100%, 95%; /*hsla(42, 100%, 95%, 1)*/
+    --yellow-020: 42, 100%, 98%; /*hsla(42, 100%, 98%, 1)*/
 
-    --purple-900: 276 95 10; /*hsla(276, 95%, 10%, 1)*/
-    --purple-800: 276 90 20; /*hsla(276, 90%, 20%, 1)*/
-    --purple-750: 276 90 25; /*hsla(276, 90%, 25%, 1)*/
-    --purple-700: 276 85 30; /*hsla(276, 85%, 30%, 1)*/
-    --purple-600: 276 91 38; /*hsla(276, 91%, 38%, 1)*/
-    --purple-brand: 276 91 38; /*hsla(276, 91%, 38%, 1)*/
-    --purple-500: 276 80 50; /*hsla(276, 80%, 50%, 1)*/
-    --purple-400: 276 80 60; /*hsla(276, 80%, 60%, 1)*/
-    --purple-300: 276 85 70; /*hsla(276, 85%, 70%, 1)*/
-    --purple-200: 276 85 80; /*hsla(276, 85%, 80%, 1)*/
-    --purple-150: 276 90 85; /*hsla(276, 90%, 85%, 1)*/
-    --purple-100: 276 90 90; /*hsla(276, 90%, 90%, 1)*/
-    --purple-050: 276 100 95; /*hsla(276, 100%, 95%, 1)*/
-    --purple-020: 276 100 98; /*hsla(276, 100%, 98%, 1)*/
+    --purple-900: 276, 95%, 10%; /*hsla(276, 95%, 10%, 1)*/
+    --purple-800: 276, 90%, 20%; /*hsla(276, 90%, 20%, 1)*/
+    --purple-750: 276, 90%, 25%; /*hsla(276, 90%, 25%, 1)*/
+    --purple-700: 276, 85%, 30%; /*hsla(276, 85%, 30%, 1)*/
+    --purple-600: 276, 91%, 38%; /*hsla(276, 91%, 38%, 1)*/
+    --purple-brand: 276, 91%, 38%; /*hsla(276, 91%, 38%, 1)*/
+    --purple-500: 276, 80%, 50%; /*hsla(276, 80%, 50%, 1)*/
+    --purple-400: 276, 80%, 60%; /*hsla(276, 80%, 60%, 1)*/
+    --purple-300: 276, 85%, 70%; /*hsla(276, 85%, 70%, 1)*/
+    --purple-200: 276, 85%, 80%; /*hsla(276, 85%, 80%, 1)*/
+    --purple-150: 276, 90%, 85%; /*hsla(276, 90%, 85%, 1)*/
+    --purple-100: 276, 90%, 90%; /*hsla(276, 90%, 90%, 1)*/
+    --purple-050: 276, 100%, 95%; /*hsla(276, 100%, 95%, 1)*/
+    --purple-020: 276, 100%, 98%; /*hsla(276, 100%, 98%, 1)*/
 
-    --green-900: 165 80 10; /*hsla(165, 80%, 10%, 1)*/
-    --green-800: 165 70 20; /*hsla(165, 70%, 20%, 1)*/
-    --green-750: 165 70 25; /*hsla(165, 70%, 25%, 1)*/
-    --green-700: 165 60 30; /*hsla(165, 60%, 30%, 1)*/
-    --green-600: 165 60 40; /*hsla(165, 60%, 40%, 1)*/
-    --green-500: 165 50 50; /*hsla(165, 50%, 50%, 1)*/
-    --green-400: 165 50 60; /*hsla(165, 50%, 60%, 1)*/
-    --green-300: 165 50 70; /*hsla(165, 50%, 70%, 1)*/
-    --green-200: 165 60 80; /*hsla(165, 60%, 80%, 1)*/
-    --green-150: 165 60 85; /*hsla(165, 60%, 85%, 1)*/
-    --green-100: 165 70 90; /*hsla(165, 70%, 90%, 1)*/
-    --green-050: 165 80 95; /*hsla(165, 80%, 95%, 1)*/
-    --green-020: 165 80 98; /*hsla(165, 80%, 98%, 1)*/
-}
+    --green-900: 165, 80%, 10%; /*hsla(165, 80%, 10%, 1)*/
+    --green-800: 165, 70%, 20%; /*hsla(165, 70%, 20%, 1)*/
+    --green-750: 165, 70%, 25%; /*hsla(165, 70%, 25%, 1)*/
+    --green-700: 165, 60%, 30%; /*hsla(165, 60%, 30%, 1)*/
+    --green-600: 165, 60%, 40%; /*hsla(165, 60%, 40%, 1)*/
+    --green-500: 165, 50%, 50%; /*hsla(165, 50%, 50%, 1)*/
+    --green-400: 165, 50%, 60%; /*hsla(165, 50%, 60%, 1)*/
+    --green-300: 165, 50%, 70%; /*hsla(165, 50%, 70%, 1)*/
+    --green-200: 165, 60%, 80%; /*hsla(165, 60%, 80%, 1)*/
+    --green-150: 165, 60%, 85%; /*hsla(165, 60%, 85%, 1)*/
+    --green-100: 165, 70%, 90%; /*hsla(165, 70%, 90%, 1)*/
+    --green-050: 165, 80%, 95%; /*hsla(165, 80%, 95%, 1)*/
+    --green-020: 165, 80%, 98%; /*hsla(165, 80%, 98%, 1)*/
+  }
 
-html {
+  html {
     color: var(--foreground);
     background: var(--background);
     overflow-x: hidden;
-}
+  }
 
-body {
+  body {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer components {
-    .responsive-body {
-        /* 3 cols: empty_content_empty */
-        @apply grid grid-cols-[auto_clamp(300px,80%,1100px)_auto];
-    }
-
-    .responsive-body > * {
-        /* Constrain children of main to middle column */
-        @apply col-start-2 col-end-3;
-    }
-}
-
-@layer utilities {
-    .text-balance {
-        text-wrap: balance;
-    }
-
-    .center-content {
-        @apply flex items-center justify-center;
-    }
-
-    .hidden-scrollbar {
-        scrollbar-width: none;
-    }
-
-    .mono {
-        font-family: var(--font-geist-mono);
-    }
-
-    .responsive-fullwidth {
-        /* Escape hatch to allow full-width 'breaking out' of the responsive-body grid layout */
-        @apply col-start-1 col-end-4;
-    }
-
-    .animate-bounce {
-        animation-name: bounce;
-        animation-duration: 0.6s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
-    }
-
-    .responsive-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
-    }
+  }
 }
 
 @keyframes bounce {

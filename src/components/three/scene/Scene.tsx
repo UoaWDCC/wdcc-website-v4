@@ -1,8 +1,11 @@
 "use client";
 
+import { useEffect } from "react";
 import { Preload } from "@react-three/drei";
-import { Canvas, CanvasProps } from "@react-three/fiber";
+import { Canvas, CanvasProps, useThree } from "@react-three/fiber";
 import * as THREE from "three";
+
+import { useWebGL } from "@/providers/WebGLProvider";
 
 import { bg, t } from "../globals/tunnel";
 
@@ -18,15 +21,38 @@ export default function Scene({ ...props }: Omit<CanvasProps, "children">) {
                 className="-z-10 blur-[6px]"
                 onCreated={(state) => (state.gl.toneMapping = THREE.AgXToneMapping)}
             >
+                <WebGLContextDetection />
                 <bg.Out />
                 <Preload all />
             </Canvas>
             <Canvas className="z-10" {...props} onCreated={(state) => (state.gl.toneMapping = THREE.AgXToneMapping)}>
+                <WebGLContextDetection />
                 <t.Out />
                 <Preload all />
             </Canvas>
         </>
     );
 }
+
+const WebGLContextDetection = () => {
+    const { gl } = useThree();
+    const { action } = useWebGL();
+    const abortController = new AbortController();
+    useEffect(() => {
+        const glCanvas = gl.domElement;
+        if (glCanvas) {
+            glCanvas.addEventListener("webglcontextlost", action.handleContextFailure, {
+                signal: abortController.signal,
+            });
+        }
+        // debugging code
+        // gl.getContext().getExtension("WEBGL_lose_context")?.loseContext();
+        return () => {
+            abortController.abort();
+        };
+    }, [gl]);
+
+    return null;
+};
 
 Scene.displayName = "Scene";

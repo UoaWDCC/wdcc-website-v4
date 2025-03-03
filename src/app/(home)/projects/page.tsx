@@ -1,14 +1,24 @@
+import { ParsePayloadProjectPage } from "@/types/parser/ParsePayloadProjectPage";
+
+import { getProjectsPage } from "@/actions/Pages/getProjectsPage";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import { Button } from "@/components/primitives/Button";
+// import { Button } from "@/components/primitives/Button";
 import Checklist from "@/components/primitives/Checklist";
 
-import { ProjectCard } from "./_components/ProjectCard";
+// import { ProjectCard } from "./_components/ProjectCard";
 import ProjectRoleCard from "./_components/ProjectRoleCard";
-import { projectsData } from "./_data/projects_data";
-import { projectsCopy } from "./_data/projects.data";
+// import { projectsData } from "./_data/projects_data";
+import { projectsCopy as hardCodedProjectPage } from "./_data/projects.data";
 
-export default function ProjectsPage() {
+export const revalidate = 60;
+
+export default async function ProjectsPage() {
+    let projectsCopy = ParsePayloadProjectPage(await getProjectsPage());
+    if (!projectsCopy) {
+        projectsCopy = hardCodedProjectPage;
+    }
+
     return (
         <StandardPageLayout>
             <Header
@@ -17,7 +27,7 @@ export default function ProjectsPage() {
                 description="Projects are your chance to build amazing, real world projects for genuine community clients. Develop your skills, work in an industry-like team environment, and gain practical work experience - all alongside motivated peers! "
                 primaryButton={{
                     label: "Apply for a project",
-                    href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                    href: "https://go.wdcc.co.nz",
                 }} // TODO remove, but lol
                 secondaryButton={{ label: "Past WDCC Projects", href: "/projects/all" }}
             />
@@ -31,7 +41,7 @@ export default function ProjectsPage() {
 
                         <div className="flex flex-col gap-4">
                             <p className="text-md font-semibold">{projectsCopy.infoSection.checkboxes.title}</p>
-                            <div className="flex flex-col gap-4 pl-4">
+                            <div className="flex flex-col gap-4 sm:pl-4">
                                 {projectsCopy.infoSection.checkboxes.checks.map((content, i) => (
                                     <Checklist label={content} key={i} checked={true} />
                                 ))}
@@ -40,13 +50,17 @@ export default function ProjectsPage() {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-8">
+                {/* Commenting out as we need copy */}
+                {/* <div className="flex flex-col gap-8">
                     <h2 className="text-3xl font-bold">{projectsCopy.operationSection.title}</h2>
                     <p>{projectsCopy.operationSection.content}</p>
-                </div>
+                </div> */}
 
                 <div>
-                    <h2 className="py-10 text-3xl font-bold" id="roles">{projectsCopy.rolesSection.title}</h2>
+                    {/* id for navbar link */}
+                    <h2 id="roles" className="py-10 text-3xl font-bold">
+                        {projectsCopy.rolesSection.title}
+                    </h2>
                     <div className="grid grid-cols-1 gap-8 sm:px-8 lg:grid-cols-2">
                         {projectsCopy.rolesSection.roles.map((role, i) => (
                             <ProjectRoleCard
@@ -60,20 +74,17 @@ export default function ProjectsPage() {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-8">
+                {/* Need copy */}
+                {/* <div className="flex flex-col gap-8">
                     <h2 className="text-3xl font-bold">{projectsCopy.featuredSection.title}</h2>
                     <div className="grid gap-6 lg:grid-cols-2">
-                        {
-                            //TODO logic to make this work
-                        }
-
                         <ProjectCard project={projectsData[0]} />
                         <ProjectCard project={projectsData[1]} />
                     </div>
                     <Button variant={{ style: "secondary", color: "yellow" }} href="/projects/all" className="mx-auto">
                         {projectsCopy.featuredSection.cta}
                     </Button>
-                </div>
+                </div> */}
             </div>
         </StandardPageLayout>
     );

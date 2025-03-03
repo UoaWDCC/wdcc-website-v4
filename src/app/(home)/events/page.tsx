@@ -23,9 +23,9 @@ export default function EventsPage() {
                             Recent events <Arrow className="rotate-90" />
                         </>
                     ),
-                    href: "#upcomingEvents",
+                    href: "/events#recent",
                 }}
-                secondaryButton={{ label: "All events", href: "/events/all" }}
+                secondaryButton={{ label: "All past events", href: "/events/all" }}
             />
             <EventsRoadmap title={roadmapData.title} image={roadmapData.image} />
             <RecentEventsSection

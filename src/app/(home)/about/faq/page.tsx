@@ -1,11 +1,21 @@
+import { ParsePayloadFaqPage } from "@/types/parser/ParsePayloadFaqPage";
+
+import { getFaqPage } from "@/actions/Pages/getFaqPage";
 import InfoPill from "@/components/InfoPill";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import { FaqSelector } from "./_components/FaqSelector";
-import { faqData } from "./_data/faq.data";
+import { faqData as hardCodedFaq } from "./_data/faq.data";
 
-export default function FaqPage() {
+export const revalidate = 60;
+
+export default async function FaqPage() {
+    //try get cms, if no cms then get hardCoded Faq
+    let faqData = ParsePayloadFaqPage(await getFaqPage());
+    if (!faqData) {
+        faqData = hardCodedFaq;
+    }
     const minHeight: number = 420 + Math.max(...faqData.sections.map((section) => section.faqs.length)) * 50;
 
     return (

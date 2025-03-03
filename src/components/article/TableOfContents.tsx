@@ -4,12 +4,13 @@ import { useLayoutEffect, useState } from "react";
 import { tv, VariantProps } from "tailwind-variants";
 
 import SimpleLoading from "@/components/loading/SimpleLoading";
+import { useScroll } from "@/components/scroll/ScrollContext";
 import { cn } from "@/libs/utils";
 
 type ContentlistType = { level: number; label: string; id: string }[];
 
 const tableOfContent = tv({
-    base: "cursor-pointer select-none rounded p-0.5 px-2 font-normal transition-colors hover:bg-blue-100",
+    base: "cursor-pointer rounded-sm p-0.5 px-2 font-normal transition-colors select-none hover:bg-blue-100",
     variants: {
         active: {
             true: "",
@@ -56,6 +57,8 @@ export const TableOfContents = ({ variant }: TableOfContentsProps) => {
     const [contents, setContents] = useState<ContentlistType>([]);
     const [currentId, setCurrentId] = useState("");
     const tags = ["h1", "h2", "h3"];
+    const { getScrollContainer, getScrollY } = useScroll();
+
     useLayoutEffect(() => {
         const headers = document.getElementById("blog")?.querySelectorAll(tags.join(","));
         if (!headers) return;
@@ -92,10 +95,10 @@ export const TableOfContents = ({ variant }: TableOfContentsProps) => {
     const handleScrollTo = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
-            const elementY = element.getBoundingClientRect().top + window.pageYOffset;
+            const elementY = element.getBoundingClientRect().top + getScrollY();
             const offset = window.innerHeight * 0.2;
             window.history.pushState(null, "", `#${id}`);
-            window.scrollTo({
+            getScrollContainer().scrollTo({
                 top: elementY - offset,
                 behavior: "smooth",
             });
@@ -106,7 +109,7 @@ export const TableOfContents = ({ variant }: TableOfContentsProps) => {
         <div
             data-current={currentId}
             className={cn(
-                "hidden h-min flex-col gap-2 rounded-bl-xl bg-gray-50 p-2 text-sm transition-transform xl:sticky xl:top-24 xl:flex xl:rounded"
+                "hidden h-min flex-col gap-2 rounded-bl-xl bg-gray-50 p-2 text-sm transition-transform xl:sticky xl:top-24 xl:flex xl:rounded-sm"
             )}
         >
             {/* main */}

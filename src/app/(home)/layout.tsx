@@ -1,9 +1,12 @@
-import type { Metadata } from "next";
-import "@/styles/global.css";
-import { ReactNode } from "react";
+import { ScrollProvider } from "@/components/scroll/ScrollContext";
 import { figtree } from "@/fonts";
 
-export const dynamic = "force-dynamic";
+import "@/styles/global.css";
+
+import { ReactNode } from "react";
+import type { Metadata } from "next";
+
+import WebGLProvider from "@/providers/WebGLProvider";
 
 // SEO
 export const metadata: Metadata = {
@@ -34,7 +37,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${figtree.className} antialiased`}>{children}</body>
+            <body className={`${figtree.className} antialiased`}>
+                <WebGLProvider>
+                    <ScrollProvider>{children}</ScrollProvider>
+                </WebGLProvider>
+            </body>
         </html>
     );
 }
