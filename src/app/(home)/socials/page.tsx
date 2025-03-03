@@ -37,7 +37,7 @@ export default function SocialsPage() {
 
                     <div className="flex flex-col gap-2 justify-center items-center">
                         <p className="font-semibold text-md text-white/50">and...</p>
-                            <Button variant={{ color: "purple", style: "primary" }} href="https://go.wdcc.co.nz">
+                            <Button variant={{ color: "purple", style: "primary" }} href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform">
                             <Arrow className=""/>
                             Join WDCC for 2025!
                         </Button>
