@@ -114,7 +114,7 @@ export type Team = {
 
 export type ProjectMember = {
     name: string;
-    role: "engineer" | "techlead" | "designer" | "manager";
+    role: "developer" | "techlead" | "designer" | "manager";
     image?: {
         src: string;
         alt: string;
