@@ -50,6 +50,7 @@ export default buildConfig({
         },
     },
     plugins: [
+        // https://payloadcms.com/docs/upload/storage-adapters
         s3Storage({
             collections: {
                 media: {
