@@ -7,7 +7,6 @@ import { getProject } from "@/actions/getProject";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
-import { projectsData } from "../_data/projects_data/index";
 import IndividualProject from "./_component/IndividualProject";
 
 type Props = {
@@ -17,9 +16,7 @@ type Props = {
 
 // auto generated seo metadata for each project
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-    const [, slug] = (await params).fullSlug;
-
-    const project = projectsData.find((project) => project.slug === slug);
+    const project = await getProjectFromSlug((await params).fullSlug);
 
     // get og-image of previous page
     const previousImages = (await parent).openGraph?.images || [];
@@ -63,13 +60,9 @@ async function getProjectFromSlug(fullSlug: string[]) {
     }
     const [year, slug] = fullSlug;
 
-    let project = projectsData.find((project) => project.slug === slug && project.year === year);
-
-    // If no hard coded project search payload CMS
-    if (!project) project = ParsePayloadProject(await getProject(year, slug));
+    const project = ParsePayloadProject(await getProject(year, slug));
     if (!project) {
         notFound();
     }
-
     return project;
 }

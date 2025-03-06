@@ -5,14 +5,14 @@ const card = tv({
     base: "flex w-min flex-col gap-4 rounded-lg p-4",
     variants: {
         role: {
-            engineer: "bg-blue-200",
+            developer: "bg-blue-200",
             techlead: "bg-yellow-200",
             designer: "bg-purple-200",
             manager: "bg-green-200",
         },
     },
     defaultVariants: {
-        role: "engineer",
+        role: "developer",
     },
 });
 

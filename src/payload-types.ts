@@ -219,7 +219,7 @@ export interface Project {
     members?:
       | {
           name: string;
-          role: 'engineer' | 'designer';
+          role: 'developer' | 'designer';
           image?: (number | null) | Media;
           id?: string | null;
         }[]
