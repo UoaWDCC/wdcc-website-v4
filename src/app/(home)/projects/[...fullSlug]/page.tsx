@@ -16,7 +16,6 @@ type Props = {
 
 // auto generated seo metadata for each project
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-    const [, slug] = (await params).fullSlug;
     const project = await getProjectFromSlug((await params).fullSlug);
 
     // get og-image of previous page
