@@ -6,6 +6,7 @@ import { getTechnologySvgWithName } from "@/assets/svg/technologies";
 import Duo from "@/components/Duo";
 
 import TeamMemberCard from "./TeamMemberCard";
+import { toTitleCase } from "@/libs/utils";
 
 interface IndividualProjectProps {
     project: Project;
@@ -63,7 +64,7 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
                             key={index}
                             variant={{ role: member.role }}
                             name={member.name}
-                            role={member.role}
+                            role={toTitleCase(member.role)}
                         />
                     ))}
                 </div>

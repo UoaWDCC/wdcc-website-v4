@@ -216,7 +216,7 @@ export const Project: CollectionConfig = {
                         {
                             name: "role",
                             type: "select",
-                            options: ["engineer", "designer"],
+                            options: ["developer", "designer"],
                             required: true,
                         },
                         { name: "image", type: "upload", relationTo: "media", displayPreview: true },
