@@ -4,7 +4,7 @@ import type { HTMLAttributes, ReactNode } from "react";
 import Link, { LinkProps } from "next/link";
 import { tv, type VariantProps } from "tailwind-variants";
 
-import { cn, isNullish } from "@/libs/utils";
+import { cn } from "@/libs/utils";
 
 const button = tv({
     base: "flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 py-2 font-bold transition duration-200 hover:cursor-pointer",

@@ -1,4 +1,3 @@
-import { Project } from "@/types/models";
 import { ParsePayloadProject } from "@/types/parser/ParsePayloadProject";
 
 import { getAllProjects } from "@/actions/getAllProjects";

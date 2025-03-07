@@ -1,7 +1,5 @@
 "use server";
 
-import { CollectionSlug } from "payload";
-
 import { SLUG } from "@/libs/enums/slug";
 import { getPayload } from "@/libs/payload";
 import { Project } from "@/payload-types";
