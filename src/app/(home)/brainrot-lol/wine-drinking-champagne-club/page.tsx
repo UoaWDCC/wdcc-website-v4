@@ -9,13 +9,14 @@ const cardo = Cardo({ weight: ['400', '700'], style: ["italic", "normal"], subse
 
 
 import React from "react";
+import Image from "next/image";
 
 export default function PricingPage() {
     return (
         <StandardPageLayout navColor={"dark"} className={`${cardo.className}`}>
             <div className="min-h-screen responsive-fullwidth bg-[#111121]">
                 <div className="h-screen w-full flex flex-col justify-end">
-                    <img className="h-screen w-full object-cover saturate-[.2] brightness-[0.4] absolute"
+                    <Image className="h-screen w-full object-cover saturate-[.2] brightness-[0.4] absolute"
                          src={"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Tuscany_landscape_view_skyline.jpg/4096px-Tuscany_landscape_view_skyline.jpg?20180626112559"}
                          alt={""} />
                     <div
@@ -52,7 +53,7 @@ export default function PricingPage() {
                         </div>
 
                         <div className="h-full flex pl-12 justify-center items-center">
-                            <img className="h-[60%] object-cover object-left brightness-[0.4]"
+                            <Image className="h-[60%] object-cover object-left brightness-[0.4]"
                                  src={"/brainrot/w3.jpg"}
                                  alt={"miku wine"} />
                         </div>
@@ -94,7 +95,7 @@ export default function PricingPage() {
 
                 <div className="h-[80vh] w-full flex flex-col">
 
-                    <img className="h-[80vh] w-full object-cover brightness-[0.4] absolute"
+                    <Image className="h-[80vh] w-full object-cover brightness-[0.4] absolute"
                          src={"/brainrot/w1.jpg"}
                          alt={"waiheke island"} />
 
@@ -214,7 +215,7 @@ export default function PricingPage() {
 
                 <div className="h-[50vh] w-full flex flex-col">
 
-                    <img className="h-[50vh] w-full object-cover brightness-[0.3] saturate-[0.25] absolute"
+                    <Image className="h-[50vh] w-full object-cover brightness-[0.3] saturate-[0.25] absolute"
                          src={"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Mainschleife_Weinberge_Herbst_140502-Pano.jpg/2048px-Mainschleife_Weinberge_Herbst_140502-Pano.jpg?20190904214257"}
                          alt={"waiheke island"} />
 
