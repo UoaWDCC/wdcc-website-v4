@@ -4,7 +4,7 @@ import type { HTMLAttributes, ReactNode } from "react";
 import Link, { LinkProps } from "next/link";
 import { tv, type VariantProps } from "tailwind-variants";
 
-import { cn } from "@/libs/utils";
+import { cn, isNullish } from "@/libs/utils";
 
 const button = tv({
     base: "flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 py-2 font-bold transition duration-200 hover:cursor-pointer",
@@ -176,9 +176,8 @@ function isLinkProps(props: ButtonVersionProps | LinkVersionProps): props is Lin
 function Button(props: ButtonVersionProps | LinkVersionProps) {
     // Conditionally render as Link or button depending on whether a local link (href attribute) is provided.
     if (isLinkProps(props)) {
-        // Is Link
-        const { children, href, className, newTab = false, ...rest } = props;
-        // TODO: use our anchor component for this
+        // Is Link (default to newTab if newTab undefined & href is external)
+        const { children, href, className, newTab = href.startsWith("http"), ...rest } = props;
         return (
             <Link
                 {...rest}
