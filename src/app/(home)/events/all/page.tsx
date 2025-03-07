@@ -27,7 +27,7 @@ export default async function EventsPage() {
             />
             <div className="my-24 flex w-full flex-col">
                 {events.length ? (
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                         {events.map((event, index) => (
                             <EventCard event={event} key={index} />
                         ))}
