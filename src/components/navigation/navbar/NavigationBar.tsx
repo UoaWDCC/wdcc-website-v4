@@ -161,10 +161,10 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
                         <Button
                             variant={{ style: "primary", color: "blue" }}
                             href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform?usp=sharing"
-                            className="hidden md:flex align-center"
+                            className="hidden md:flex items-center leading-none"
                             newTab
                         >
-                            Join WDCC <Arrow />
+                            <span className="py-1">Join WDCC</span> <Arrow />
                         </Button>
                     </div>
                 </div>
