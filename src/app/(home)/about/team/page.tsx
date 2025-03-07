@@ -6,14 +6,10 @@ import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import ExecTeam from "./_components/ExecTeam";
-import { teamData } from "./_data/team.data";
 
 export default async function TeamPage() {
-    let ExecPage = ParsePayloadExecTeam(await getExecPage());
-    //if can't find CMS page use hardcoded data
-    if (!ExecPage) {
-        ExecPage = teamData;
-    }
+    const ExecPage = ParsePayloadExecTeam(await getExecPage());
+
     return (
         <StandardPageLayout>
             <Header
