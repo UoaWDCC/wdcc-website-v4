@@ -18,7 +18,7 @@ export default async function TeamPage() {
                 backlink={{ label: "About WDCC", href: "/about" }}
             />
             <div className="flex w-full max-w-[1100px] flex-col items-center gap-24 py-20">
-                <InfoPill text={teamData.info} />
+                <InfoPill text={ExecPage.info} />
                 {ExecPage.teams.map((team, index) => (
                     <ExecTeam title={team.title} key={index} description={team.description} execs={team.execs ?? []} />
                 ))}
