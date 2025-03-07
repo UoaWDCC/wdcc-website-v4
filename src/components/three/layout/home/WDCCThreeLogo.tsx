@@ -62,7 +62,7 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
 
         const handlePointerMove = (event: MouseEvent) => {
             if (!parentComponent) return;
-            const rect = parentRef.current.getBoundingClientRect();
+            const rect = parentComponent.getBoundingClientRect();
 
             pointer.current.x = -((event.pageY - rect.top) / window.innerHeight) * (2 * CONSTAINT) + 1 * CONSTAINT; // Target rotation on X
             pointer.current.y = (event.pageX / window.innerWidth) * (2 * CONSTAINT) - 1 * CONSTAINT; // Target rotation on Y
