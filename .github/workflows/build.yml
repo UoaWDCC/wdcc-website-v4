@@ -1,59 +1,61 @@
 name: Check Next.js Build
 
 on:
-    # run on push to any branch
-    push:
-        branches: ["*"]
-    # run on pull request events
-    pull_request:
-        types: [opened, reopened]
-    # allow manual triggers
-    workflow_dispatch:
+  # run on push to any branch except main
+  push:
+    branches:
+      - '*'
+      - '!main'
+  # run on pull request events
+  pull_request:
+    types: [opened, reopened]
+  # allow manual triggers
+  workflow_dispatch:
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        env:
-          DATABASE_URI: ${{ secrets.DATABASE_URI }}
-          PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
-          S3_BUCKET: ${{ secrets.S3_BUCKET }}
-          S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
-          S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
-          S3_REGION: ${{ secrets.S3_REGION }}
-        steps:
-            # checkout the code
-            - name: Checkout code
-              uses: actions/checkout@v4
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URI: ${{ secrets.DATABASE_URI }}
+      PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
+      S3_BUCKET: ${{ secrets.S3_BUCKET }}
+      S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+      S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+      S3_REGION: ${{ secrets.S3_REGION }}
+    steps:
+      # checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-            # set-up pnpm https://github.com/pnpm/action-setup
-            - name: Set up pnpm
-              uses: pnpm/action-setup@v4
-              with:
-                  version: 9
+      # set-up pnpm https://github.com/pnpm/action-setup
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
 
-            # set-up node
-            - name: Set up Node.js
-              uses: actions/setup-node@v3
-              with:
-                  node-version: "20"
-                  cache: "pnpm"
+      # set-up node
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "pnpm"
 
-            # cache dependencies
-            - name: Cache pnpm dependencies
-              uses: actions/cache@v3
-              with:
-                  # pnpm stores dependencies in a 'node_modules/.pnpm' folder
-                  path: |
-                      ~/.pnpm-store
-                      node_modules
-                  key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
-                  restore-keys: |
-                      ${{ runner.os }}-pnpm-
+      # cache dependencies
+      - name: Cache pnpm dependencies
+        uses: actions/cache@v3
+        with:
+          # pnpm stores dependencies in a 'node_modules/.pnpm' folder
+          path: |
+            ~/.pnpm-store
+            node_modules
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
 
-            # install dependencies using pnpm
-            - name: Install dependencies
-              run: pnpm install --frozen-lockfile
+      # install dependencies using pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-            # build the application
-            - name: Build Next.js project
-              run: pnpm run build
+      # build the application
+      - name: Build Next.js project
+        run: pnpm run build
