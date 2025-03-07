@@ -3,7 +3,6 @@ import { ParsePayloadEvent } from "@/types/parser/ParsePayloadEvent";
 
 import { getAllEvents } from "@/actions/getAllEvents";
 import { EmptyListPlaceholder } from "@/components/EmptyListPlaceholder";
-//import Arrow from "@/assets/svg/Arrow";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
@@ -22,7 +21,7 @@ export default async function EventsPage() {
         <StandardPageLayout>
             <Header
                 variant={{ style: "secondary", color: "green" }}
-                title="All past events"
+                title="All events"
                 backlink={{ label: "events", href: "/events" }}
             />
             <div className="my-24 flex w-full flex-col">
