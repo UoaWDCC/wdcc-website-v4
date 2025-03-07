@@ -209,7 +209,7 @@ export const Project: CollectionConfig = {
                     admin: {
                         className: "horizontal-array",
                     },
-                    defaultValue: [{}, {}],
+                    defaultValue: [],
                     fields: [
                         {
                             name: "name",
@@ -223,6 +223,7 @@ export const Project: CollectionConfig = {
                             name: "role",
                             type: "select",
                             options: ["developer", "designer"],
+                            defaultValue: "developer",
                             required: true,
                         },
                         { name: "image", type: "upload", relationTo: "media", displayPreview: true },
