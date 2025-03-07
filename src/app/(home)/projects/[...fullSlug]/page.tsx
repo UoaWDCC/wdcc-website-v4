@@ -58,11 +58,12 @@ async function getProjectFromSlug(fullSlug: string[]) {
     if (fullSlug.length != 2) {
         notFound();
     }
+    
     const [year, slug] = fullSlug;
-
-    const project = ParsePayloadProject(await getProject(year, slug));
-    if (!project) {
+    const cmsProject = await getProject(year, slug);
+    if (!cmsProject) {
         notFound();
     }
-    return project;
+
+    return ParsePayloadProject(cmsProject);
 }

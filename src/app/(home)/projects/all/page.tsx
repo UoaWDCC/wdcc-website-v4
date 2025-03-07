@@ -8,7 +8,7 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import ProjectsSection from "../_components/ProjectsSection";
 
 export default async function ProjectsPage() {
-    const projects = (await getAllProjects()).map(ParsePayloadProject) as Project[];
+    const projects = (await getAllProjects()).map(ParsePayloadProject);
 
     return (
         <StandardPageLayout>

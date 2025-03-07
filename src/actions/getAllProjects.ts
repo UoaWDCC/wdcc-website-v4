@@ -7,11 +7,11 @@ import { getPayload } from "@/libs/payload";
 import { Project } from "@/payload-types";
 
 // return all projects
-export const getAllProjects = async () => {
+export const getAllProjects = async (): Promise<Project[]> => {
     const payload = await getPayload();
     const projects = await payload.find({
-        collection: SLUG.PROJECTS as CollectionSlug,
+        collection: SLUG.PROJECTS,
     });
 
-    return projects.docs as Project[];
+    return projects.docs;
 };
