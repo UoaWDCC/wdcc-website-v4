@@ -50,7 +50,7 @@ const WebGLContextDetection = () => {
         return () => {
             abortController.abort();
         };
-    }, [gl]);
+    }, [gl, abortController, action.handleContextFailure]);
 
     return null;
 };
