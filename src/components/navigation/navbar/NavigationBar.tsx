@@ -161,7 +161,7 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
                         <Button
                             variant={{ style: "primary", color: "blue" }}
                             href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform?usp=sharing"
-                            className="hidden md:block"
+                            className="hidden md:flex align-center"
                             newTab
                         >
                             Join WDCC <Arrow />
