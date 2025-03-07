@@ -100,7 +100,7 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
         return () => {
             getScrollContainer().removeEventListener("scroll", handleDropExit);
         };
-    }, []);
+    }, [getScrollContainer]);
 
     return (
         <hoverContext.Provider
