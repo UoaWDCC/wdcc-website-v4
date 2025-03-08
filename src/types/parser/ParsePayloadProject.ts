@@ -1,29 +1,23 @@
-import type { Project as CMSProject, Media } from "@/payload-types";
+import { media } from "@/libs/payload";
+import { isNullish, removeDuplicates } from "@/libs/utils";
+import type { Project as CMSProject } from "@/payload-types";
 
 import type { Project } from "../models";
 
-export const ParsePayloadProject = (cms: CMSProject): Project | undefined => {
-    if (!cms) return undefined;
-
+export const ParsePayloadProject = (cms: CMSProject): Project => {
     return {
         slug: cms.slug,
         year: cms.year,
         client: cms.client,
-        icon: {
-            src: (cms.thumbnail as Media)?.url || "",
-            alt: cms.slug || "",
-        },
+        icon: media(cms.thumbnail),
         name: {
-            title: cms.name.default,
-            extended: cms.name.extended || undefined,
+            title: cms.name,
+            extended: cms.extendedName ?? undefined,
         },
         description: cms.description,
         brief: {
-            description: cms["Project Page"].description,
-            image: (!!cms["Project Page"].image || undefined) && {
-                src: (cms["Project Page"].image as Media).url as string,
-                alt: (cms["Project Page"].image as Media).alt as string,
-            },
+            description: cms.extendedDescription,
+            image: media(cms.image),
         },
         primaryLink: cms.primaryLink && {
             label: cms.primaryLink.label,
@@ -33,31 +27,21 @@ export const ParsePayloadProject = (cms: CMSProject): Project | undefined => {
             label: cms.secondaryLink.label,
             href: cms.secondaryLink.href,
         },
-        technologies: cms.technologies?.flatMap((tech) => tech ?? []) || [],
+        technologies: removeDuplicates(cms.technologies),
         team: {
             techlead: {
-                name: cms.team.techlead.name,
-                image: (!!cms.team.techlead.image || undefined) && {
-                    src: (cms.team.techlead.image as Media).url as string,
-                    alt: (cms.team.techlead.image as Media).alt as string,
-                },
+                name: cms.techlead.name,
+                image: isNullish(cms.techlead.image) ? undefined : media(cms.techlead.image),
             },
             manager: {
-                name: cms.team.manager.name,
-                image: (!!cms.team.manager.image || undefined) && {
-                    src: (cms.team.manager.image as Media).url as string,
-                    alt: (cms.team.manager.image as Media).alt as string,
-                },
+                name: cms.manager.name,
+                image: isNullish(cms.manager.image) ? undefined : media(cms.manager.image),
             },
             members:
-                cms?.team?.members?.map((member) => ({
-                    name: member.name,
-                    role: member.role,
-                    image: (!!member.image || undefined) && {
-                        src: (member.image as Media).url as string,
-                        alt: (member.image as Media).alt as string,
-                    },
-                })) || [],
+                cms.members?.map((member) => ({
+                    ...member,
+                    image: isNullish(member.image) ? undefined : media(member.image),
+                })) ?? [],
         },
     };
 };
