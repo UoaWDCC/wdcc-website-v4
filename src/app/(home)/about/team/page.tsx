@@ -6,14 +6,10 @@ import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import ExecTeam from "./_components/ExecTeam";
-import { teamData } from "./_data/team.data";
 
 export default async function TeamPage() {
-    let ExecPage = ParsePayloadExecTeam(await getExecPage());
-    //if can't find CMS page use hardcoded data
-    if (!ExecPage) {
-        ExecPage = teamData;
-    }
+    const ExecPage = ParsePayloadExecTeam(await getExecPage());
+
     return (
         <StandardPageLayout>
             <Header
@@ -22,7 +18,7 @@ export default async function TeamPage() {
                 backlink={{ label: "About WDCC", href: "/about" }}
             />
             <div className="flex w-full max-w-[1100px] flex-col items-center gap-24 py-20">
-                <InfoPill text={teamData.info} />
+                <InfoPill text={ExecPage.info} />
                 {ExecPage.teams.map((team, index) => (
                     <ExecTeam title={team.title} key={index} description={team.description} execs={team.execs ?? []} />
                 ))}
