@@ -3,10 +3,9 @@
 import { Cardo } from "next/font/google";
 import Image from "next/image";
 
-import tuscanyLandscape from "@/assets/brainrot/tuscany-landscape.jpg";
 import mainschleifeLandscape from "@/assets/brainrot/mainschleife-landscape.jpg";
+import tuscanyLandscape from "@/assets/brainrot/tuscany-landscape.jpg";
 import w1 from "@/assets/brainrot/w1.jpg";
-import w2 from "@/assets/brainrot/w2.jpg";
 import w3 from "@/assets/brainrot/w3.jpg";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
