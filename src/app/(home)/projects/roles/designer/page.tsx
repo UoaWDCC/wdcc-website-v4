@@ -18,7 +18,6 @@ import MoreAboutProjects from "@app/projects/roles/_components/MoreAboutProjects
 import graphic1 from "@/assets/image/roles/roles_design-01.webp";
 import graphic2 from "@/assets/image/roles/roles_design-02.webp";
 import graphic3 from "@/assets/image/roles/roles_design-03.webp";
-import PastProjects from "@app/projects/roles/_components/PastProjects";
 
 export default function DesignerPage() {
 
@@ -33,8 +32,8 @@ export default function DesignerPage() {
                 variant={{ color: "purple" }}
                 title="design, align, and shine as a WDCC Designer"
                 role="Design"
-                description={["The best web development projects don’t get there just because of code.", <br />,
-                    <br />, "As a designer in a WDCC Project, you’ll help craft beautiful, usable, and practical solutions to some of our community’s coolest tech challenges."]}
+                description1="The best web development projects don’t get there just because of code."
+                description2="As a designer in a WDCC Project, you’ll help craft beautiful, usable, and practical solutions to some of our community’s coolest tech challenges."
                 backlink={{ label: "projects", href: "/projects#roles" }}
             />
 
@@ -74,7 +73,7 @@ export default function DesignerPage() {
                     <div className="flex flex-col gap-2 text-center">
                         <h2 className=" font-bold text-4xl">go a step past theory.</h2>
                         <p className="text-md leading-tight md:w-[75%] mx-auto">
-                            University tech curriculums will teach you the basics of code and craft, but projects let you apply those skills in the way lectures and tutorials can't.
+                            University tech curriculums will teach you the basics of code and craft, but projects let you apply those skills in the way lectures and tutorials can&apos;t.
                         </p>
                     </div>
                     <RiveDuo rive={{src: "/rive/wdcc_designer_2.riv", isPlaying: animEnabled}}>
@@ -120,7 +119,7 @@ export default function DesignerPage() {
                     </p>
                 </MoreAboutProjects>
 
-                <PastProjects/>
+                {/*<PastProjects/>*/}
 
 
                 <SignupCard

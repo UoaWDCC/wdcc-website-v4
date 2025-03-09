@@ -1,12 +1,9 @@
-// TODO showcase version of header and graphic
 
 // import { ReactNode } from "react";
-import { ReactNode } from "react";
 import Link from "next/link";
 import { tv, VariantProps } from "tailwind-variants";
 
 import Arrow from "@/assets/svg/Arrow";
-import { Button } from "@/components/primitives/Button";
 
 const header = tv({
     base: "flex w-full items-center justify-center pb-20 pt-36",
@@ -51,7 +48,8 @@ interface HeaderProps {
     variant?: VariantProps<typeof header>;
     title: string;
     role: string;
-    description?: string | string[];
+    description1?: string;
+    description2?: string;
     backlink: {
         label: string;
         href: string;
@@ -59,7 +57,7 @@ interface HeaderProps {
     // graphic?: string; TODO
 }
 
-export default function RolesHeader({ variant = { color: "blue" }, title, role, description, backlink, }: HeaderProps) {
+export default function RolesHeader({ variant = { color: "blue" }, title, role, description1, description2, backlink, }: HeaderProps) {
     return (
         <header className={header({...variant})}>
             <div className="grid grid-cols-2 gap-8">
@@ -74,9 +72,12 @@ export default function RolesHeader({ variant = { color: "blue" }, title, role, 
                         {title}
                     </h1>
                 </div>
-                <div className="h-full flex flex-col justify-end">
+                <div className="h-full flex flex-col gap-5 justify-end">
                     <p className="text-lg font-semibold text-white leading-tight">
-                        {description}
+                        {description1}
+                    </p>
+                    <p className="text-lg font-semibold text-white leading-tight">
+                        {description2}
                     </p>
                 </div>
             </div>
