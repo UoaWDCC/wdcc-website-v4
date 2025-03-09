@@ -31,7 +31,7 @@ const WDCCHero = () => {
         scrollContainer.addEventListener("scroll", handleScroll);
 
         return () => scrollContainer.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [getScrollY, scrollContainer]);
 
     function scrollDown() {
         getScrollContainer().scrollTo({ top: 800, behavior: "smooth" });

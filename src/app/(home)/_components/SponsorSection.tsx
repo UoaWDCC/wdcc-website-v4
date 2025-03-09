@@ -20,15 +20,13 @@ export const SponsorSection = ({ SponsorSection }: SponsorSectionProps) => {
                 {(Object.keys(SponsorSection) as SponsorTierKeys[])
                     .filter((tier) => SponsorSection[tier].sponsors.length > 0)
                     .map((tier, i) => (
-                        <>
+                        <div key={`${tier}-${i}`} className="w-full flex flex-col items-center">
                             <SponsorLabel
-                                key={`label-${tier}-${i}`}
                                 tier={tier}
                                 count={SponsorSection[tier].sponsors.length}
                                 className="mt-8"
                             />
                             <div
-                                key={`cards-${tier}-${i}`}
                                 className="responsive-grid mt-6 grid w-full flex-col place-content-center place-items-center gap-2 md:gap-4"
                             >
                                 {SponsorSection[tier].sponsors.map(({ src, alt }, i) => (
@@ -42,7 +40,7 @@ export const SponsorSection = ({ SponsorSection }: SponsorSectionProps) => {
                                     />
                                 ))}
                             </div>
-                        </>
+                        </div>
                     ))}
                 <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
                     <p>Interested in sponsoring us?</p>

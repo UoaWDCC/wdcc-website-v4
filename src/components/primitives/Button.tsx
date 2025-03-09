@@ -176,9 +176,8 @@ function isLinkProps(props: ButtonVersionProps | LinkVersionProps): props is Lin
 function Button(props: ButtonVersionProps | LinkVersionProps) {
     // Conditionally render as Link or button depending on whether a local link (href attribute) is provided.
     if (isLinkProps(props)) {
-        // Is Link
-        const { children, href, className, newTab = false, ...rest } = props;
-        // TODO: use our anchor component for this
+        // Is Link (default to newTab if newTab undefined & href is external)
+        const { children, href, className, newTab = href.startsWith("http"), ...rest } = props;
         return (
             <Link
                 {...rest}

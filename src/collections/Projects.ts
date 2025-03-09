@@ -9,18 +9,11 @@ export const Project: CollectionConfig = {
         read: () => true,
     },
     admin: {
-        useAsTitle: "thumbnail",
+        useAsTitle: "slug",
     },
     fields: [
         {
-            name: "thumbnail",
-            type: "upload",
-            relationTo: "media",
-            required: true,
-            displayPreview: true,
-        },
-        {
-            label: "general",
+            label: "General",
             type: "collapsible",
             fields: [
                 {
@@ -49,25 +42,26 @@ export const Project: CollectionConfig = {
                     required: true,
                 },
                 {
+                    name: "technologies",
+                    type: "select",
+                    defaultValue: ["react"],
+                    options: Array.from(technologiesList),
+                    hasMany: true,
+                    required: true,
+                },
+            ],
+        },
+        {
+            label: "Project Card",
+            type: "collapsible",
+            fields: [
+                {
                     name: "name",
-                    type: "group",
-                    fields: [
-                        {
-                            name: "default",
-                            type: "text",
-                            admin: {
-                                placeholder: "Please type the project name here. e.g (ASPA registration website)",
-                            },
-                            required: true,
-                        },
-                        {
-                            name: "extended",
-                            type: "text",
-                            admin: {
-                                placeholder: "Please type the extended project name here (will show inside the page)",
-                            },
-                        },
-                    ],
+                    type: "text",
+                    admin: {
+                        placeholder: "Please type the project name here. e.g (ASPA registration website)",
+                    },
+                    required: true,
                 },
                 {
                     name: "description",
@@ -79,14 +73,28 @@ export const Project: CollectionConfig = {
                     },
                     required: true,
                 },
+                {
+                    name: "thumbnail",
+                    type: "upload",
+                    relationTo: "media",
+                    required: true,
+                    displayPreview: true,
+                },
             ],
         },
         {
-            name: "Project Page",
-            type: "group",
+            label: "Project Page",
+            type: "collapsible",
             fields: [
                 {
-                    name: "description",
+                    name: "extendedName",
+                    type: "text",
+                    admin: {
+                        placeholder: "Please type the extended project name here (will show inside the page)",
+                    },
+                },
+                {
+                    name: "extendedDescription",
                     type: "textarea",
                     admin: {
                         placeholder:
@@ -104,67 +112,65 @@ export const Project: CollectionConfig = {
             ],
         },
         {
-            name: "technologies",
-            type: "select",
-            defaultValue: ["react"],
-            options: Array.from(technologiesList),
-            hasMany: true,
-            required: true,
-        },
-        {
-            name: "primaryLink",
-            type: "group",
+            label: "Links",
+            type: "collapsible",
             fields: [
                 {
-                    name: "label",
-                    type: "text",
-                    required: true,
-                    admin: {
-                        placeholder: "Please type the first link's label here.",
-                    },
+                    name: "primaryLink",
+                    type: "group",
+                    fields: [
+                        {
+                            name: "label",
+                            type: "text",
+                            required: true,
+                            admin: {
+                                placeholder: "Please type the first link's label here.",
+                            },
+                        },
+                        {
+                            name: "href",
+                            type: "text",
+                            required: true,
+                            admin: {
+                                placeholder: "Please type where the the first link should redirect to here.",
+                            },
+                        },
+                    ],
                 },
                 {
-                    name: "href",
-                    type: "text",
-                    required: true,
-                    admin: {
-                        placeholder: "Please type where the the first link should redirect to here.",
-                    },
+                    name: "secondaryLink",
+                    type: "group",
+                    fields: [
+                        {
+                            name: "label",
+                            type: "text",
+                            required: true,
+                            admin: {
+                                placeholder: "Please type the second link's label here.",
+                            },
+                        },
+                        {
+                            name: "href",
+                            type: "text",
+                            required: true,
+                            admin: {
+                                placeholder: "Please type where the the second link should redirect to here.",
+                            },
+                        },
+                    ],
                 },
             ],
         },
         {
-            name: "secondaryLink",
-            type: "group",
-            fields: [
-                {
-                    name: "label",
-                    type: "text",
-                    required: true,
-                    admin: {
-                        placeholder: "Please type the second link's label here.",
-                    },
-                },
-                {
-                    name: "href",
-                    type: "text",
-                    required: true,
-                    admin: {
-                        placeholder: "Please type where the the second link should redirect to here.",
-                    },
-                },
-            ],
-        },
-        {
-            name: "team",
-            type: "group",
+            label: "Team",
+            type: "collapsible",
             fields: [
                 {
                     type: "row",
                     fields: [
                         {
                             name: "manager",
-                            label: "project manager",
+                            label: "Project Manager",
                             type: "group",
                             fields: [
                                 {
@@ -180,7 +186,7 @@ export const Project: CollectionConfig = {
                         },
                         {
                             name: "techlead",
-                            label: "tech lead",
+                            label: "Tech Lead",
                             type: "group",
                             fields: [
                                 {
@@ -198,12 +204,12 @@ export const Project: CollectionConfig = {
                 },
                 {
                     name: "members",
-                    label: "project members",
+                    label: "Project Members",
                     type: "array",
                     admin: {
                         className: "horizontal-array",
                     },
-                    defaultValue: [{}, {}],
+                    defaultValue: [],
                     fields: [
                         {
                             name: "name",
@@ -217,6 +223,7 @@ export const Project: CollectionConfig = {
                             name: "role",
                             type: "select",
                             options: ["developer", "designer"],
+                            defaultValue: "developer",
                             required: true,
                         },
                         { name: "image", type: "upload", relationTo: "media", displayPreview: true },

@@ -12,5 +12,5 @@ export const useGUI = (callback: (gui: GUI) => void) => {
             gui.show();
             return callback(gui);
         }
-    }, []);
+    }, [callback]);
 };

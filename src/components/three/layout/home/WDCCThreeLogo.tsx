@@ -57,11 +57,12 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
     });
 
     useEffect(() => {
-        if (!parentRef?.current) return;
+        const parentComponent = parentRef.current;
+        if (!parentComponent) return;
 
         const handlePointerMove = (event: MouseEvent) => {
-            if (!parentRef?.current) return;
-            const rect = parentRef.current.getBoundingClientRect();
+            if (!parentComponent) return;
+            const rect = parentComponent.getBoundingClientRect();
 
             pointer.current.x = -((event.pageY - rect.top) / window.innerHeight) * (2 * CONSTAINT) + 1 * CONSTAINT; // Target rotation on X
             pointer.current.y = (event.pageX / window.innerWidth) * (2 * CONSTAINT) - 1 * CONSTAINT; // Target rotation on Y
@@ -76,13 +77,13 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
 
         handleMouseEnter();
 
-        parentRef.current.addEventListener("mouseenter", handleMouseEnter);
-        parentRef.current.addEventListener("mouseleave", handleMouseLeave);
+        parentComponent.addEventListener("mouseenter", handleMouseEnter);
+        parentComponent.addEventListener("mouseleave", handleMouseLeave);
 
         return () => {
-            if (!parentRef.current) return;
-            parentRef.current.removeEventListener("mouseenter", handleMouseEnter);
-            parentRef.current.removeEventListener("mouseleave", handleMouseLeave);
+            if (!parentComponent) return;
+            parentComponent.removeEventListener("mouseenter", handleMouseEnter);
+            parentComponent.removeEventListener("mouseleave", handleMouseLeave);
         };
     }, [parentRef]);
 
