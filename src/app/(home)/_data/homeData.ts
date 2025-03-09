@@ -101,9 +101,9 @@ export const HeroData: HeroPage = {
         },
     },
     SignUpCard: {
-        title: "Your university tech club dreams start here.",
+        title: "Start your web dev journey here.",
         descriptionLineOne:
-            "WDCC membership is totally free, and lets you access all kinds of member-exclusive messages, events, workshops, and more",
+            "WDCC membership is totally free, and lets you access all kinds of member-exclusive messages, events, workshops, and more.",
         descriptionLineTwo: "Plus, at the start of the year, you can apply to join a ",
     },
 };
