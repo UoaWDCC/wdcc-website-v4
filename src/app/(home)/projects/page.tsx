@@ -19,6 +19,9 @@ export default async function ProjectsPage() {
         projectsCopy = hardCodedProjectPage;
     }
 
+    /*TEMPORARY CMS BYPASS FOR PROJECT ROLE CARDS - FIX LATER*/
+    const roleCardsCopy = hardCodedProjectPage;
+
     return (
         <StandardPageLayout>
             <Header
@@ -63,12 +66,13 @@ export default async function ProjectsPage() {
                         {projectsCopy.rolesSection.title}
                     </h2>
                     <div className="grid grid-cols-1 gap-8 sm:px-8 lg:grid-cols-2">
-                        {projectsCopy.rolesSection.roles.map((role, i) => (
+                        {roleCardsCopy.rolesSection.roles.map((role, i) => (
                             <ProjectRoleCard
                                 variant={{ color: role.color }}
                                 title={role.title}
                                 description={role.description}
                                 slug={role.slug}
+                                graphic={role.graphic}
                                 key={i}
                             />
                         ))}
