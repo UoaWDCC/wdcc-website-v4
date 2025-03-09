@@ -71,7 +71,7 @@ export default function DesignerPage() {
                     </div>
                 </div>
                 <div className="flex flex-col gap-28">
-                    <div className="flex flex-col gap-2 text-center">
+                    <div className="flex flex-col gap-4 text-center">
                         <h2 className=" font-bold text-4xl leading-none">go a step past theory.</h2>
                         <p className="text-md leading-tight md:w-[75%] mx-auto">
                             University tech curriculums will teach you the basics of code and craft, but projects let you apply those skills in the way lectures and tutorials can&apos;t.

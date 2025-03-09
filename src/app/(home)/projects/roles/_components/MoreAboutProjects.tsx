@@ -10,7 +10,7 @@ interface props {
 
 export default function MoreAboutProjects({ children, }: props) {
     return (
-        <div className="w-full rounded-2xl flex flex-col gap-8 py-12 px-12 text-white text-center border-[3px] border-purple-300">
+        <div className="w-full rounded-2xl flex flex-col gap-8 py-22 px-12 text-white text-center border-[3px] border-gray-800/30">
             <div className="flex flex-col gap-4">
                 <h3 className="font-bold text-4xl leading-none">learn more about projects.</h3>
                 {children}
