@@ -56,10 +56,10 @@ export interface TableOfContentsProps {
 export const TableOfContents = ({ variant }: TableOfContentsProps) => {
     const [contents, setContents] = useState<ContentlistType>([]);
     const [currentId, setCurrentId] = useState("");
-    const tags = ["h1", "h2", "h3"];
     const { getScrollContainer, getScrollY } = useScroll();
 
     useLayoutEffect(() => {
+        const tags = ["h1", "h2", "h3"];
         const headers = document.getElementById("blog")?.querySelectorAll(tags.join(","));
         if (!headers) return;
 

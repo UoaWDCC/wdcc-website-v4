@@ -37,8 +37,8 @@ export default function Scene({ ...props }: Omit<CanvasProps, "children">) {
 const WebGLContextDetection = () => {
     const { gl } = useThree();
     const { action } = useWebGL();
-    const abortController = new AbortController();
     useEffect(() => {
+        const abortController = new AbortController();
         const glCanvas = gl.domElement;
         if (glCanvas) {
             glCanvas.addEventListener("webglcontextlost", action.handleContextFailure, {
@@ -50,7 +50,7 @@ const WebGLContextDetection = () => {
         return () => {
             abortController.abort();
         };
-    }, [gl]);
+    }, [gl, action.handleContextFailure]);
 
     return null;
 };

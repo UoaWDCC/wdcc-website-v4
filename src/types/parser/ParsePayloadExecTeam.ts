@@ -2,10 +2,7 @@ import { ExecsPage as CMSEventPage, Media } from "@/payload-types";
 
 import { ExecPage } from "../pages/ExecPage";
 
-export const ParsePayloadExecTeam = (CmsEventPage: CMSEventPage): ExecPage | undefined => {
-    if (!CmsEventPage) {
-        return undefined;
-    }
+export const ParsePayloadExecTeam = (CmsEventPage: CMSEventPage): ExecPage => {
     //hmmm
     return {
         info: CmsEventPage.description,

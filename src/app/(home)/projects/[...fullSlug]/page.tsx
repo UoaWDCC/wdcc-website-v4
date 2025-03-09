@@ -7,7 +7,6 @@ import { getProject } from "@/actions/getProject";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
-import { projectsData } from "../_data/projects_data/index";
 import IndividualProject from "./_component/IndividualProject";
 
 type Props = {
@@ -17,9 +16,7 @@ type Props = {
 
 // auto generated seo metadata for each project
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-    const [, slug] = (await params).fullSlug;
-
-    const project = projectsData.find((project) => project.slug === slug);
+    const project = await getProjectFromSlug((await params).fullSlug);
 
     // get og-image of previous page
     const previousImages = (await parent).openGraph?.images || [];
@@ -45,12 +42,8 @@ export default async function Page({ params }: Props) {
             <ProjectHeader
                 backlink={{ label: "projects", href: "/projects/all" }}
                 title={project.name.title}
-                primaryButton={
-                    project.primaryLink && { label: project.primaryLink.label, href: project.primaryLink.href }
-                }
-                secondaryButton={
-                    project.secondaryLink && { label: project.secondaryLink.label, href: project.secondaryLink.href }
-                }
+                primaryButton={project.primaryLink}
+                secondaryButton={project.secondaryLink}
             />
             <IndividualProject project={project} />
         </StandardPageLayout>
@@ -61,15 +54,12 @@ async function getProjectFromSlug(fullSlug: string[]) {
     if (fullSlug.length != 2) {
         notFound();
     }
+
     const [year, slug] = fullSlug;
-
-    let project = projectsData.find((project) => project.slug === slug && project.year === year);
-
-    // If no hard coded project search payload CMS
-    if (!project) project = ParsePayloadProject(await getProject(year, slug));
-    if (!project) {
+    const cmsProject = await getProject(year, slug);
+    if (!cmsProject) {
         notFound();
     }
 
-    return project;
+    return ParsePayloadProject(cmsProject);
 }

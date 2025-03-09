@@ -1,7 +1,5 @@
 "use server";
 
-import { CollectionSlug } from "payload";
-
 import { SLUG } from "@/libs/enums/slug";
 import { getPayload } from "@/libs/payload";
 import { Event } from "@/payload-types";
@@ -10,7 +8,8 @@ import { Event } from "@/payload-types";
 export const getAllEvents = async () => {
     const payload = await getPayload();
     const events = await payload.find({
-        collection: SLUG.EVENTS as CollectionSlug,
+        collection: SLUG.EVENTS,
+        pagination: false,
     });
 
     return events.docs as Event[];

@@ -39,7 +39,6 @@ const ProjectRoleCard = ({ variant, title, description, graphic }: ProjectRoleCa
             </div>
             <p className="leading-tight text-md font-normal">{description}</p>
 
-            {/*TODO graphic here*/}
             <div className="h-[180px] w-full rounded-xl bg-linear-to-r from-[#C9A9FF] to-[#FFA4A5] flex items-center justify-center">
                 <p className="text-white">More information coming soon!</p>
                 {graphic}

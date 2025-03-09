@@ -82,7 +82,8 @@
         "typescript-eslint": "^8.13.0"
     },
     "volta": {
-        "node": "20.18.1"
+        "node": "20.18.1",
+        "pnpm": "10.6.1"
     },
     "dockerfile": {
         "secrets": [

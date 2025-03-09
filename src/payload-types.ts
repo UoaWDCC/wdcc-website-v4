@@ -162,19 +162,9 @@ export interface Partner {
  */
 export interface Project {
   id: number;
-  thumbnail: number | Media;
   slug: string;
   year: string;
   client: string;
-  name: {
-    default: string;
-    extended?: string | null;
-  };
-  description: string;
-  'Project Page': {
-    description: string;
-    image: number | Media;
-  };
   technologies: (
     | 'astro'
     | 'aws'
@@ -199,6 +189,12 @@ export interface Project {
     | 'vite'
     | 'vitest'
   )[];
+  name: string;
+  description: string;
+  thumbnail: number | Media;
+  extendedName?: string | null;
+  extendedDescription: string;
+  image: number | Media;
   primaryLink: {
     label: string;
     href: string;
@@ -207,24 +203,22 @@ export interface Project {
     label: string;
     href: string;
   };
-  team: {
-    manager: {
-      name: string;
-      image?: (number | null) | Media;
-    };
-    techlead: {
-      name: string;
-      image?: (number | null) | Media;
-    };
-    members?:
-      | {
-          name: string;
-          role: 'engineer' | 'designer';
-          image?: (number | null) | Media;
-          id?: string | null;
-        }[]
-      | null;
+  manager: {
+    name: string;
+    image?: (number | null) | Media;
   };
+  techlead: {
+    name: string;
+    image?: (number | null) | Media;
+  };
+  members?:
+    | {
+        name: string;
+        role: 'developer' | 'designer';
+        image?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -433,24 +427,16 @@ export interface EventSelect<T extends boolean = true> {
  * via the `definition` "project_select".
  */
 export interface ProjectSelect<T extends boolean = true> {
-  thumbnail?: T;
   slug?: T;
   year?: T;
   client?: T;
-  name?:
-    | T
-    | {
-        default?: T;
-        extended?: T;
-      };
-  description?: T;
-  'Project Page'?:
-    | T
-    | {
-        description?: T;
-        image?: T;
-      };
   technologies?: T;
+  name?: T;
+  description?: T;
+  thumbnail?: T;
+  extendedName?: T;
+  extendedDescription?: T;
+  image?: T;
   primaryLink?:
     | T
     | {
@@ -463,29 +449,25 @@ export interface ProjectSelect<T extends boolean = true> {
         label?: T;
         href?: T;
       };
-  team?:
+  manager?:
     | T
     | {
-        manager?:
-          | T
-          | {
-              name?: T;
-              image?: T;
-            };
-        techlead?:
-          | T
-          | {
-              name?: T;
-              image?: T;
-            };
-        members?:
-          | T
-          | {
-              name?: T;
-              role?: T;
-              image?: T;
-              id?: T;
-            };
+        name?: T;
+        image?: T;
+      };
+  techlead?:
+    | T
+    | {
+        name?: T;
+        image?: T;
+      };
+  members?:
+    | T
+    | {
+        name?: T;
+        role?: T;
+        image?: T;
+        id?: T;
       };
   updatedAt?: T;
   createdAt?: T;

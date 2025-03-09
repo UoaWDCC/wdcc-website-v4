@@ -23,7 +23,7 @@ const ProjectsSection = ({ projects }: { projects: Project[] }) => {
         <div className="my-24 flex w-full flex-col">
             <ProjectFilter projects={projects} setSelectedYear={filterByYear} selectedYear={selectedYear} />
             {sortedProjects.length ? (
-                <div className="grid gap-6 lg:grid-cols-2">
+                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                     {sortedProjects.map((project, index) => (
                         <ProjectCard project={project} key={index} />
                     ))}

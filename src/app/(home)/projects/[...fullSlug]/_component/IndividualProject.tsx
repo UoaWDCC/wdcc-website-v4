@@ -1,9 +1,8 @@
-import React from "react";
-
 import { Project } from "@/types/models";
 
 import { getTechnologySvgWithName } from "@/assets/svg/technologies";
 import Duo from "@/components/Duo";
+import { toTitleCase } from "@/libs/utils";
 
 import TeamMemberCard from "./TeamMemberCard";
 
@@ -54,8 +53,14 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
                         variant={{ role: "manager" }}
                         name={project.team.manager.name}
                         role="Project Manager"
+                        image={project.team.manager.image}
                     />
-                    <TeamMemberCard variant={{ role: "techlead" }} name={project.team.techlead.name} role="Tech Lead" />
+                    <TeamMemberCard
+                        variant={{ role: "techlead" }}
+                        name={project.team.techlead.name}
+                        role="Tech Lead"
+                        image={project.team.techlead.image}
+                    />
                 </div>
                 <div className="flex flex-wrap justify-center gap-4">
                     {project?.team?.members?.map((member, index) => (
@@ -63,7 +68,8 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
                             key={index}
                             variant={{ role: member.role }}
                             name={member.name}
-                            role={member.role}
+                            role={toTitleCase(member.role)}
+                            image={member.image}
                         />
                     ))}
                 </div>
