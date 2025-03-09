@@ -60,7 +60,7 @@ interface HeaderProps {
 export default function RolesHeader({ variant = { color: "blue" }, title, role, description1, description2, backlink, }: HeaderProps) {
     return (
         <header className={header({...variant})}>
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid lg:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-3">
                     <Link href={backlink.href} className={backlinkvar({ color: variant.color })}>
                         <Arrow className="rotate-180" /> {backlink.label}
