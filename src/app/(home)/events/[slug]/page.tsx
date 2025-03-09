@@ -9,8 +9,6 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import { eventsData } from "../_data/events.data";
 import IndividualEvent from "./_components/IndividualEvent";
 
-export const revalidate = 1;
-
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const events = eventsData.eventsGrid.events;
 

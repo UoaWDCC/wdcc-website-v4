@@ -13,8 +13,6 @@ import { Button } from "@/components/primitives/Button";
 import Quote from "./_components/Quote";
 import { aboutData as hardCodedAboutPage } from "./_data/about.data";
 
-export const revalidate = 60;
-
 export default async function AboutPage() {
     let aboutData = ParsePayloadAboutPage(await getAboutPage());
 

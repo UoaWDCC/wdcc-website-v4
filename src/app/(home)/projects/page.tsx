@@ -11,8 +11,6 @@ import ProjectRoleCard from "./_components/ProjectRoleCard";
 // import { projectsData } from "./_data/projects_data";
 import { projectsCopy as hardCodedProjectPage } from "./_data/projects.data";
 
-export const revalidate = 60;
-
 export default async function ProjectsPage() {
     let projectsCopy = ParsePayloadProjectPage(await getProjectsPage());
     if (!projectsCopy) {
