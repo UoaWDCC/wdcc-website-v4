@@ -1,125 +1,133 @@
+"use client";
+
 import React from "react";
 
-import { ArticleContent } from "@/components/article/ArticleContent";
-import Header from "@/components/layout/pageheaders/Header";
+import RolesHeader from "@app/projects/roles/_components/RolesHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
+import { Button } from "@/components/primitives/Button";
+import SignupCard from "@app/_components/SignupCard";
+import LearnCard from "@app/projects/roles/_components/LearnCard";
+import RiveToggleButton from "@app/projects/roles/_components/RiveToggleButton";
+import RiveDuo from "@/components/rive/RiveDuo";
+import RiveWrapper from "@/components/rive/RiveWrapper";
+
+import Arrow from "@/assets/svg/Arrow"
+import MoreAboutProjects from "@app/projects/roles/_components/MoreAboutProjects";
+import PastProjects from "@app/projects/roles/_components/PastProjects";
+
+import graphic1 from "@/assets/image/roles/roles_devs-01.webp";
+import graphic2 from "@/assets/image/roles/roles_devs-02.webp";
+import graphic3 from "@/assets/image/roles/roles_devs-03.webp";
+
 export default function DeveloperPage() {
+    const [animEnabled, setAnimEnabled] = React.useState(true);
+
     return (
-        <StandardPageLayout>
-            <Header
-                variant={{ style: "secondary", color: "blue" }}
-                title="Developers in a WDCC project"
+        <StandardPageLayout className="bg-blue-500" navColor="dark">
+
+            <RiveToggleButton animEnabled={animEnabled} setAnimEnabled={setAnimEnabled} />
+
+
+            <RolesHeader
+                variant={{ color: "blue" }}
+                title="Code, load, and (don't) watch it explode as a WDCC Developer."
+                role="Developer"
+                description1="Lectures and labs teach you how to code, but projects teach you how to build."
+                description2="As a developer in a WDCC Project, you’ll join a team of other students who share a passion for tech. Together, you’ll jumpstart your dev skills, build a real product, and learn industry practices in a supportive environment."
                 backlink={{ label: "projects", href: "/projects#roles" }}
             />
 
-            <div className="flex flex-col gap-24 py-24">
-                <ArticleContent variant={{ color: "blue" }}>
-                    {/* replace with mdx or cms?too */}
-                    <h1 className="text-3xl font-bold" id="intro">
-                        How do project work?
-                    </h1>
-                    <p>
-                        Project is a way for WDCC to provide students to gain industry experience by establishing pro
-                        bono (voluntarily and without payment) projects on website design and development.
-                    </p>
-                    <h2 className="text-xl font-bold" id="whos-involved">
-                        Who’s involved
-                    </h2>
-                    <p>
-                        Project members (developers) form the majority of the project team. They&apos;re in charge for
-                        pretty much all the actual tasks and work output for the final solution. They would be working
-                        on implementing features, fixing bugs, writing unit tests, performing code reviews and other
-                        relevant work in making a software product.
-                    </p>
-                    <h2 className="text-xl font-bold" id="tools-to-use">
-                        Tools to use
-                    </h2>
-                    <p>
-                        WDCC&apos;s Project have a set list of technologies that we use across all our projects such as
-                        fly.io, github, github projects, github actions, figma, and google drive.
-                    </p>
-                    <p>
-                        Core techonologies for building the application such as databases, frontend frameworks, and
-                        backend frameworks are decided by project leads.
-                    </p>
-                    <h1 className="text-3xl font-bold" id="role-of-a-developer">
-                        Role of a developer
-                    </h1>
-                    <p>
-                        A project developer is responsible for dedicating a few hours a week towards collaborating with
-                        your project team. Role of a developer can differ from project to project, assigned based on
-                        personal interest and the requirements of a project.
-                    </p>
-                    <h2 className="text-xl font-bold" id="front-end-developer">
-                        Front-end developer
-                    </h2>
-                    <p>
-                        Frontend developers are responsible for building the visual and interactive elements on a
-                        website and how the content is presented, including all the little user interface elements like
-                        menus, dropdowns, transitions, and modals. As a frontend dev, you may work with HTML, CSS, and
-                        JavaScript and its frameworks to build and maintain the UI, ensuring that it is responsive,
-                        accessible, and visually appealing. You will work closely with the designer to turn wireframes
-                        into functioning web pages, and collaborate with backend devs to integrate the front-end and
-                        back-end functionality.
-                    </p>
-                    <h2 className="text-xl font-bold" id="back-end-developer">
-                        Back-end developer
-                    </h2>
-                    <p>
-                        Backend developers are responsible for creating the &quot;guts&quot; of the application which live on the
-                        server, with a focus on making sure all the right data gets sent out to the browser to be
-                        displayed. As a backend dev, you will create and maintain the server-side components of the
-                        website, including developing and maintaining databases and working with APIs. You will work
-                        with front-end devs to ensure the back-end functionality integrates seamlessly with the
-                        front-end, and also collaborate with designers to ensure that the user experience is smooth and
-                        consistent.
-                    </p>
-                    <h1 className="text-3xl font-bold" id="agile-and-meetings">
-                        Agile and Meetings
-                    </h1>
-                    <p>
-                        WDCC structures all project teams as agile scrum teams, with slight variations to the scrum
-                        methodology to work in a university context.
-                    </p>
-                    <p>
-                        Agile teams work in short, iterative cycles (2 weeks for WDCC) to deliver small increments of
-                        functionality that can be tested and validated by customers. Regular feedback and continuous
-                        improvement are key elements of agile, enabling teams to quickly adapt to changing requirements
-                        and priorities.
-                    </p>
-                    <h2 className="text-3xl font-bold" id="standups">
-                        Standups
-                    </h2>
-                    <p>
-                        At the start of all dev sessions, as well as other times where your team elects to run standups
-                        (either online, or via chat), the point is to get the PM/TL as well as other team members up to
-                        speed to where the team is up to. You will likely go through the following points:
-                    </p>
-                    <ul className="list-disc pl-6">
-                        <li>What progress have you made since the last meeting?</li>
-                        <li>What are you currently working on?</li>
-                        <li>Are you blocked by anything?</li>
-                        <li>Are you on track to finish your tasks by the end of the sprint?</li>
-                    </ul>
-                    <p>
-                        This should be really quick, roughly 10 - 15 minutes for the entire team and from
-                        everyone&apos;s responses PMs and TLs can then reorganise resources for areas that might need
-                        more help to meet sprint deadlines.
-                    </p>
-                    <h2 className="text-3xl font-bold" id="dev-sessions">
-                        Dev Sessions
-                    </h2>
-                    <p>
-                        This is where all the fun happens! Dev sessions (in the timeline) are just a block of time that
-                        everyone is available at, and is a chance for PMs and TLs to get up to date with everyone&apos;s
-                        progress. This is also a chance for you to work on your tasks, or get help from PM (relating to
-                        product queries) or the TL (relating to technical help). WDCC recommends teams to have time set
-                        aside per week to do some dev work so that you have a chance to peer-program / collaborate with
-                        other members of your team, and quickly get help if needed.
-                    </p>
-                </ArticleContent>
+
+            <div className="flex flex-col gap-42 pb-32 text-white responsive-fullwidth">
+                <div className="flex flex-col gap-2 justify-center items-center w-screen m-0">
+                    {/*<div className="h-[500px] rounded-2xl w-full bg-purple-300"></div>*/}
+                    <div className=" w-full min-w-[850px] h-[500px] lg:mx-auto lg:h-[850px]  m-0">
+                        <RiveWrapper src={"/rive/wdcc_developer_main.riv"} isPlaying={animEnabled} />
+                    </div>
+                    <div className="flex gap-4 flex-col sm:flex-row items-center justify-center">
+                        <Button variant={{ style: "primary", color: "yellow" }}>Apply for a project <Arrow /></Button>
+                        <Button variant={{ style: "secondary", color: "light" }} href="/about/faq">Projects FAQ</Button>
+                    </div>
+                </div>
             </div>
+
+            <div className="flex flex-col gap-46 pt-2 pb-32 text-white">
+                <div className="flex flex-col gap-20">
+                    <div className="flex flex-col gap-8 text-center">
+                        <h2 className=" font-bold text-4xl leading-[1.1]">practice {"<this>"} and {"</that>"}</h2>
+                        <div className="grid gap-12 sm:gap-8 md: gap-4 lg:grid-cols-3 sm:grid-cols-2">
+                            <LearnCard title={"teamwork"}
+                                       description={"producing something in a realistic agile tech team, making friends, and learning from each other."}
+                                       graphic={graphic1} />
+                            <LearnCard title={"building"}
+                                       description={"working in collaborative software teams. understand version control, the development lifecycle, and testing."}
+                                       graphic={graphic2} />
+                            <LearnCard title={"coding"}
+                                       description={"develop your programming skills in front and back-end technologies, with realistic tech stacks and tools."}
+                                       graphic={graphic3} />
+
+                        </div>
+                    </div>
+                </div>
+                <div className="flex flex-col gap-28">
+                    <div className="flex flex-col gap-4 text-center">
+                        <h2 className=" font-bold text-4xl leading-none">uni projects could never.</h2>
+                        <p className="text-md leading-tight md:w-[75%] mx-auto">
+                            University tech curriculums will teach you the basics of code and craft, but projects let
+                            you apply those skills in the way lectures and tutorials can&apos;t.
+                        </p>
+                    </div>
+                    <RiveDuo rive={{ src: "/rive/wdcc_designer_2.riv", isPlaying: animEnabled }}>
+                        <h3 className="font-bold text-2xl leading-none">Build something real.</h3>
+                        <p className="text-md leading-tight">WDCC Projects aren’t just random assignments given for the
+                            sake
+                            of doing
+                            something.</p>
+                        <p className="text-md leading-tight">We only run projects with real-world clients, so you’ll
+                            deliver
+                            work that actually goes out into the wild - from new brand websites for huge university
+                            clubs to
+                            patient simulators for the Faculty of Medicine.</p>
+                    </RiveDuo>
+                    <RiveDuo imgFirst={true} rive={{ src: "/rive/wdcc_designer_3.riv", isPlaying: animEnabled }}
+                             largeAnim>
+                        <h3 className="font-bold text-2xl leading-none">Learn the tools of the trade.</h3>
+                        <p className="text-md leading-tight">WDCC teams use the same industry-standard tools and
+                            processes - from Figma and Jira to GitHub and Fly - as real companies do.</p>
+                        <p className="text-md leading-tight">You’ll be working in a realistic tech team following an
+                            Agile
+                            format with several other developers, designers, and project leads. As a developer, you get to code in a collaborative environment, implement designer visions, and work with complex deployments, data, and infrastructure.</p>
+                    </RiveDuo>
+                    <RiveDuo rive={{ src: "/rive/wdcc_developer_4.riv", isPlaying: animEnabled }} largeAnim>
+                        <h3 className="font-bold text-2xl leading-none">Make your CV sparkle.</h3>
+                        <p className="text-md leading-tight">Project teams deliver apps, tools, and websites that have a
+                            real impact on your project portfolio and CV.</p>
+                        <p className="text-md leading-tight">The products you work on get deployed into real-world use,
+                            helping hundreds of other students, staff, and community members do all kinds of
+                            things. </p>
+                        <p className="text-md leading-tight">It&apos;s just like COMPSCI 399, but with bigger teams, bigger projects, and no risk of a legion of Marketing students coming after you on Reddit because your project got co-opted by the University.</p>
+                    </RiveDuo>
+                </div>
+
+                <MoreAboutProjects>
+                    <p className="text-md leading-tight">
+                        WDCC Projects are about more than code. Learn more about projects and how they work on these
+                        pages:
+                    </p>
+                </MoreAboutProjects>
+
+                <PastProjects />
+
+                <SignupCard
+                    SignUpCard={{
+                        title: "Not a member yet?",
+                        descriptionLineOne: "Joining WDCC lets you stay updated on all of our workshops, events, and projects. It's also free!",
+                        descriptionLineTwo: "Plus, membership lets you participate in a "
+                    }} />
+
+            </div>
+
         </StandardPageLayout>
     );
 }

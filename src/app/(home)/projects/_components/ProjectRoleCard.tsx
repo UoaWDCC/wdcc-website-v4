@@ -1,6 +1,12 @@
 import React from "react";
 import { tv, VariantProps } from "tailwind-variants";
 
+import { Button } from "@/components/primitives/Button";
+import Link from "next/link";
+import Arrow from "@/assets/svg/Arrow";
+
+import Image, {StaticImageData} from 'next/image';
+
 // Yes, I know it says "yellow" and the color is bg-orange (not bg-yellow). The yellow is just a bit too bright for this page lol.
 
 const card = tv({
@@ -20,30 +26,64 @@ export interface ProjectRoleCardProps {
     variant?: VariantProps<typeof card>;
     title: string;
     description: string;
-    slug: string;
-    graphic?: React.ReactNode; // TODO this is TBA
+    slug?: string;
+    graphic?: StaticImageData;
 }
 
 
-const ProjectRoleCard = ({ variant, title, description, graphic }: ProjectRoleCardProps) => {
+const ProjectRoleCard = ({ variant, title, description, slug, graphic }: ProjectRoleCardProps) => {
     return (
-        <div className={card({ ...variant })}>
-            <div className="flex justify-between items-center">
-                <h3 className="text-2xl font-bold text-gray-800 leading-none">{title}</h3>
-                {/*
-                <Button variant={{ style: "tertiary", color: "dark" }} className="min-h-[39px]">
-                    <span className="hidden sm:inline"> Learn </span>
-                    <Arrow></Arrow>
-                </Button>
-                */}
-            </div>
-            <p className="leading-tight text-md font-normal">{description}</p>
+        slug
+            ?
+            // Render typical card if there is a slug (i.e. the card links somewhere)
+            <Link className={card({ ...variant })} href={"/projects/roles/" + slug}>
+                <div className="flex justify-between items-center">
+                    <h3 className="text-2xl font-bold text-gray-800 leading-none">{title}</h3>
+                    <Button variant={{ style: "tertiary", color: "dark"}} className="min-h-[39px]">
+                        <span className="hidden sm:inline"> Learn </span>
+                        <Arrow></Arrow>
+                    </Button>
+                </div>
 
-            <div className="h-[180px] w-full rounded-xl bg-linear-to-r from-[#C9A9FF] to-[#FFA4A5] flex items-center justify-center">
-                <p className="text-white">More information coming soon!</p>
-                {graphic}
+                <p className="leading-tight text-md font-normal">
+                    {description}
+                </p>
+
+                {
+                    graphic ?
+                        <div className="w-full rounded-xl relative overflow-hidden">
+                            <Image src={graphic} alt="" height={1000}/>
+                        </div>
+                        :
+                        <div
+                            className="h-[60px] w-full rounded-xl bg-linear-to-r from-[#C9A9FF] to-[#FFA4A5] flex items-center justify-center">
+                            <p className="text-white">Coming soon!</p>
+                        </div>
+                }
+            </Link>
+            :
+            // Render non-clickable placeholder otherwise.
+            <div className={card({ ...variant })}>
+                <div className="flex justify-between items-center">
+                    <h3 className="text-2xl font-bold text-gray-800 leading-none">{title}</h3>
+                </div>
+
+                <p className="leading-tight text-md font-normal">
+                    {description}
+                </p>
+
+                {
+                    graphic ?
+                        <div className="w-full rounded-xl relative overflow-hidden">
+                            <Image src={graphic} alt="" height={1000}/>
+                        </div>
+                        :
+                        <div
+                            className="h-[60px] w-full rounded-xl bg-linear-to-r from-[#C9A9FF] to-[#FFA4A5] flex items-center justify-center">
+                            <p className="text-white">Coming soon!</p>
+                        </div>
+                }
             </div>
-        </div>
     );
 };
 
