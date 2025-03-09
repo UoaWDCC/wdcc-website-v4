@@ -106,7 +106,7 @@ export default function DeveloperPage() {
                         <p className="text-md leading-tight">The products you work on get deployed into real-world use,
                             helping hundreds of other students, staff, and community members do all kinds of
                             things. </p>
-                        <p className="text-md leading-tight">It's just like COMPSCI 399, but with bigger teams, bigger projects, and no risk of a legion of Marketing students coming after you on Reddit because your project got co-opted by the University.</p>
+                        <p className="text-md leading-tight">It&apos;s just like COMPSCI 399, but with bigger teams, bigger projects, and no risk of a legion of Marketing students coming after you on Reddit because your project got co-opted by the University.</p>
                     </RiveDuo>
                 </div>
 
