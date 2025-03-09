@@ -1,9 +1,4 @@
 {
-    "extends": ["next/core-web-vitals", "next/typescript"],
-    "plugins": ["prettier"],
-    "rules": {
-        "@typescript-eslint/ban-ts-ignore": "off"
-    },
     "overrides": [
         {
             "files": ["*.ts", "*.tsx"],
@@ -11,10 +6,12 @@
             "parserOptions": {
                 "project": "./tsconfig.json" // make eslint use our typescript settings
             },
-            "plugins": ["@typescript-eslint"],
+            "plugins": ["next/core-web-vitals", "next/typescript", "prettier", "@typescript-eslint"],
             "extends": ["plugin:@typescript-eslint/recommended"],
             "rules": {
-                "@typescript-eslint/no-explicit-any": "off"
+                "@typescript-eslint/ban-ts-ignore": "warn",
+                "@typescript-eslint/no-explicit-any": "warn",
+                "@typescript-eslint/no-unused-vars": "warn"
             }
         }
     ]
