@@ -18,7 +18,7 @@ const SignupCard = ({ SignUpCard }: SignupCardProps) => {
                 <h2 className="flex-1 text-2xl font-bold leading-[1.1] text-white md:text-3xl">{SignUpCard.title}</h2>
                 <p className="flex-1 text-md leading-[1.3] text-white">
                     {SignUpCard.descriptionLineOne}
-                    <br></br> {SignUpCard.descriptionLineTwo}
+                    <br/><br/> {SignUpCard.descriptionLineTwo}
                     <Link href="/projects" className="underline transition hover:opacity-75">
                         WDCC Project
                     </Link>

@@ -13,9 +13,14 @@ export default function RevalidatePage() {
     }
 
     return (
-        <div>
-            <h1>CMS Revalidation Page</h1>
+        <div className="p-10 text-md">
+            <h1 className="text-lg font-bold">CMS Revalidation Page</h1>
             <p>This is an admin tool to trigger a full site refresh. Use after changing the CMS.</p>
+            <ul className="list-disc list-inside">
+                <li>Dynamic pages (e.g. /projects/2024/vps) automatically revalidate</li>
+                <li>Static pages (e.g. /about) need to be rebuilt manually by pressing this button</li>
+            </ul>
+            <br />
             <Button onClick={handleClick}>Revalidate</Button>
         </div>
     );
