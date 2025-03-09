@@ -5,7 +5,7 @@ import { getPayload } from "@/libs/payload";
 import { Project } from "@/payload-types";
 
 // Return single project by year and slug
-export const getProject = async (year: string, slug: string) => {
+export const getProject = async (year: string, slug: string): Promise<Project | undefined> => {
     const payload = await getPayload();
     const projects = await payload.find({
         collection: SLUG.PROJECTS,
@@ -15,5 +15,5 @@ export const getProject = async (year: string, slug: string) => {
         limit: 1,
     });
 
-    return projects.docs[0] as Project;
+    return projects.docs[0];
 };

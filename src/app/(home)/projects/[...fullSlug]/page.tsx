@@ -42,12 +42,8 @@ export default async function Page({ params }: Props) {
             <ProjectHeader
                 backlink={{ label: "projects", href: "/projects/all" }}
                 title={project.name.title}
-                primaryButton={
-                    project.primaryLink && { label: project.primaryLink.label, href: project.primaryLink.href }
-                }
-                secondaryButton={
-                    project.secondaryLink && { label: project.secondaryLink.label, href: project.secondaryLink.href }
-                }
+                primaryButton={project.primaryLink}
+                secondaryButton={project.secondaryLink}
             />
             <IndividualProject project={project} />
         </StandardPageLayout>
@@ -58,11 +54,12 @@ async function getProjectFromSlug(fullSlug: string[]) {
     if (fullSlug.length != 2) {
         notFound();
     }
-    const [year, slug] = fullSlug;
 
-    const project = ParsePayloadProject(await getProject(year, slug));
-    if (!project) {
+    const [year, slug] = fullSlug;
+    const cmsProject = await getProject(year, slug);
+    if (!cmsProject) {
         notFound();
     }
-    return project;
+
+    return ParsePayloadProject(cmsProject);
 }

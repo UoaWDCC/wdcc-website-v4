@@ -1,4 +1,3 @@
-import { Project } from "@/types/models";
 import { ParsePayloadProject } from "@/types/parser/ParsePayloadProject";
 
 import { getAllProjects } from "@/actions/getAllProjects";
@@ -8,13 +7,13 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import ProjectsSection from "../_components/ProjectsSection";
 
 export default async function ProjectsPage() {
-    const projects = (await getAllProjects()).map(ParsePayloadProject) as Project[];
+    const projects = (await getAllProjects()).map(ParsePayloadProject);
 
     return (
         <StandardPageLayout>
             <Header
                 variant={{ style: "secondary", color: "blue" }}
-                title="Past projects"
+                title="All projects"
                 backlink={{ label: "projects", href: "/projects" }}
             />
             <ProjectsSection projects={projects} />
