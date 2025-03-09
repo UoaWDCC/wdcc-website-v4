@@ -23,7 +23,7 @@ export const Project: CollectionConfig = {
                         placeholder: "Please type the project slug here.",
                     },
                     required: true,
-                    unique: true,
+                    // unique: true, (combination of slug and year has to be unique, but there's no way to enforce that in Payload I think)
                 },
                 {
                     name: "year",
