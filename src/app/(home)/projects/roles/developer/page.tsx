@@ -112,7 +112,7 @@ export default function DeveloperPage() {
 
                 <MoreAboutProjects>
                     <p className="text-md leading-tight">
-                        WDCC Projects are about more than design. Learn more about projects and how they work on these
+                        WDCC Projects are about more than code. Learn more about projects and how they work on these
                         pages:
                     </p>
                 </MoreAboutProjects>
