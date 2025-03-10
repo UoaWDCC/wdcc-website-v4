@@ -44,9 +44,16 @@ export const Project: CollectionConfig = {
                 {
                     name: "technologies",
                     type: "select",
-                    defaultValue: ["react"],
+                    defaultValue: [],
                     options: Object.keys(technologiesList),
                     hasMany: true,
+                    required: true,
+                },
+                {
+                    name: "difficulty",
+                    type: "select",
+                    defaultValue: "unassigned",
+                    options: ["academy", "easy", "medium", "hard", "unassigned"],
                     required: true,
                 },
             ],

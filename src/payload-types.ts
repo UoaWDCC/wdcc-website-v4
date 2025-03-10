@@ -196,6 +196,7 @@ export interface Project {
     | 'vitest'
     | 'twitch'
   )[];
+  difficulty: 'academy' | 'easy' | 'medium' | 'hard' | 'unassigned';
   name: string;
   description: string;
   thumbnail: number | Media;
@@ -415,6 +416,7 @@ export interface ProjectSelect<T extends boolean = true> {
   year?: T;
   client?: T;
   technologies?: T;
+  difficulty?: T;
   name?: T;
   description?: T;
   thumbnail?: T;
