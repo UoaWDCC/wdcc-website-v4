@@ -248,7 +248,37 @@ export interface Test {
     description: string;
     image: number | Media;
   };
-  technologies: string[];
+  technologies: (
+    | 'html'
+    | 'css'
+    | 'javascript'
+    | 'typescript'
+    | 'node'
+    | 'react'
+    | 'vue'
+    | 'vite'
+    | 'tailwindcss'
+    | 'express'
+    | 'python'
+    | 'supabase'
+    | 'payload'
+    | 'notion'
+    | 'nextjs'
+    | 'astro'
+    | 'mongodb'
+    | 'firebase'
+    | 'postgresql'
+    | 'prisma'
+    | 'drizzleorm'
+    | 'redis'
+    | 'aws'
+    | 'fly'
+    | 'figma'
+    | 'motion'
+    | 'nextauth'
+    | 'vitest'
+    | 'twitch'
+  )[];
   primaryLink: {
     label: string;
     href: string;
