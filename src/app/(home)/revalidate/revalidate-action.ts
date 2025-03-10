@@ -3,6 +3,6 @@
 import { revalidatePath } from "next/cache";
 
 export async function revalidateAllRoutes() {
-    revalidatePath("/");
+    revalidatePath("/", "layout");
     console.log("All routes revalidated at", new Date().toISOString());
 }
