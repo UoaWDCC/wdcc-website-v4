@@ -1,38 +1,43 @@
 "use client";
 
 import { useState } from "react";
+
 import { Event } from "@/types/models";
+
 import { EmptyListPlaceholder } from "@/components/EmptyListPlaceholder";
+
 import { Category } from "../_data/events.data";
 import EventCard from "./EventCard";
 import EventCategoryFilter from "./EventCategoryFilter";
 
-interface RecentEventsProps {
-    title: string;
+interface EventsSectionProps {
+    title?: string;
     categories: Category[];
     events: Event[];
+    recent?: boolean;
 }
 
-export default function RecentEventsSection({ title, categories, events }: RecentEventsProps) {
+export default function EventsSection({ title, categories, events, recent = true }: EventsSectionProps) {
     const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
     const filterByCategory = (category: string) => () => {
         setSelectedCategory(category);
     };
 
+    const TWO_MONTHS_AGO = new Date(Date.now() - 1000 * 60 * 60 * 24 * 60);
+
     const filteredEvents =
         selectedCategory !== "All" ? events.filter((event) => event.category === selectedCategory) : events;
-
-    const TWO_MONTHS_AGO = new Date(Date.now() - 1000 * 60 * 60 * 24 * 60);
-    const recentEvents = filteredEvents
-        .sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime())
-        .filter(event => new Date(event.time) > TWO_MONTHS_AGO);
+    const sortedEvents = filteredEvents.sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime());
+    const recentEvents = recent ? sortedEvents.filter((event) => new Date(event.time) > TWO_MONTHS_AGO) : sortedEvents;
 
     return (
-        <div className="flex flex-col gap-4 py-20" id="upcomingEvents">
-            <div className="flex flex-col md:flex-row h-10 md:h-auto items-center md:items-end justify-between md:mb-2">
+        <div className="flex flex-col gap-4 py-20">
+            <div className="flex h-10 flex-col items-center justify-between md:mb-2 md:h-auto md:flex-row md:items-end">
                 {/* id for navbar link */}
-                <h2 id="recent" className="text-[38px] font-bold leading-10">{title}</h2>
+                <h2 id="recent" className="text-[38px] leading-10 font-bold">
+                    {title}
+                </h2>
                 <EventCategoryFilter
                     categories={categories}
                     selectedCategory={selectedCategory}
@@ -46,7 +51,9 @@ export default function RecentEventsSection({ title, categories, events }: Recen
                     ))}
                 </div>
             ) : (
-                <EmptyListPlaceholder>No events in the last 2 months</EmptyListPlaceholder>
+                <EmptyListPlaceholder>
+                    {recent ? `No events in the last 2 months` : `No events found`}
+                </EmptyListPlaceholder>
             )}
         </div>
     );

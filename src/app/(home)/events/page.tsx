@@ -3,7 +3,7 @@ import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import EventsRoadmap from "./_components/EventsRoadmap";
-import RecentEventsSection from "./_components/RecentEventsSection";
+import EventsSection from "./_components/EventsSection";
 import { eventsData } from "./_data/events.data";
 
 export default function EventsPage() {
@@ -28,7 +28,7 @@ export default function EventsPage() {
                 secondaryButton={{ label: "All past events", href: "/events/all" }}
             />
             <EventsRoadmap title={roadmapData.title} image={roadmapData.image} />
-            <RecentEventsSection
+            <EventsSection
                 title={eventsGridData.title}
                 categories={eventsGridData.categories}
                 events={eventsGridData.events}
