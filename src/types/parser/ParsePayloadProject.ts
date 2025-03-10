@@ -28,6 +28,7 @@ export const ParsePayloadProject = (cms: CMSProject): Project => {
             href: cms.secondaryLink.href,
         },
         technologies: removeDuplicates(cms.technologies),
+        difficulty: cms.difficulty,
         team: {
             techlead: {
                 name: cms.techlead.name,

@@ -28,6 +28,9 @@ export type oldProject = {
     team: Team;
 };
 
+type Difficulty = "academy" | "easy" | "medium" | "hard" | "unassigned";
+export const difficulties: Difficulty[] = ["academy", "easy", "medium", "hard", "unassigned"];
+
 export type Project = {
     // card stuff
     slug: string;
@@ -60,6 +63,7 @@ export type Project = {
         href: string;
     };
     technologies: string[];
+    difficulty: Difficulty;
     team: Team;
 };
 

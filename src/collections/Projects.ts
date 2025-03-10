@@ -2,6 +2,7 @@ import type { CollectionConfig } from "payload";
 
 import { technologiesList } from "@/assets/svg/technologies";
 import { SLUG } from "@/libs/enums/slug";
+import { difficulties } from "@/types/models";
 
 export const Project: CollectionConfig = {
     slug: SLUG.PROJECTS,
@@ -53,7 +54,7 @@ export const Project: CollectionConfig = {
                     name: "difficulty",
                     type: "select",
                     defaultValue: "unassigned",
-                    options: ["academy", "easy", "medium", "hard", "unassigned"],
+                    options: difficulties,
                     required: true,
                 },
             ],
