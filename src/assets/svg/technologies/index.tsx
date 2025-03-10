@@ -30,31 +30,38 @@ interface TechnologySVGProps<T = any> {
 
 type TechnologiesList = { [index: string]: TechnologySVGProps }
 
+/** Sort in reverse order on FE to make MERN acroynm work :D */
 export const technologiesList: TechnologiesList = {
     // Basic
     html: { name: "HTML", component: Html },
     css: { name: "CSS", component: Css },
     javascript: { name: "JavaScript", component: Javascript },
     typescript: { name: "TypeScript", component: Typescript },
-
-    // Full-Stack
-    nextjs: { name: "Next.JS", component: Nextjs },
-    astro: { name: "Astro", component: Astro },
+    node: { name: "Node", component: Missing },
 
     // FE
     react: { name: "React", component: React },
+    vue: { name: "Vue", component: Missing },
     vite: { name: "Vite", component: Vite },
     tailwindcss: { name: "TailwindCSS", component: Tailwindcss },
 
     // Backend
-    express: { name: "Express.JS", component: Missing },
+    express: { name: "Express", component: Missing },
     python: { name: "Python", component: Python },
     supabase: { name: "Supabase", component: Supabase },
+    payload: { name: "PayloadCMS", component: Missing },
+    notion: { name: "NotionCMS", component: Missing },
+
+    // Full-Stack
+    nextjs: { name: "Next", component: Nextjs },
+    astro: { name: "Astro", component: Astro },
 
     // DB
     mongodb: { name: "MongoDB", component: Mongodb },
+    firebase: { name: "Firebase", component: Missing },
     postgresql: { name: "Postgres", component: Postgresql },
-    drizzleorm: { name: "Drizzle ORM", component: Drizzleorm },
+    prisma: { name: "Prisma", component: Missing },
+    drizzleorm: { name: "Drizzle", component: Drizzleorm },
     redis: { name: "Redis", component: Redis },
 
     // Devops
@@ -64,8 +71,9 @@ export const technologiesList: TechnologiesList = {
     // Misc
     figma: { name: "Figma", component: Figma },
     motion: { name: "Motion", component: Motion },
+    nextauth: { name: "Next Auth", component: Missing },
     vitest: { name: "Vitest", component: Vitest },
-    twitch: { name: "Twitch", component: Twitch },
+    twitch: { name: "Twitch", component: Twitch }, // ???
 } as const;
 
 export function getTechnologySvgWithName(name: string): TechnologySVGProps {
