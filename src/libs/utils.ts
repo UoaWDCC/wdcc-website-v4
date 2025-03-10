@@ -16,3 +16,12 @@ export function removeDuplicates<T>(array: T[]): T[] {
 export function isNullish<T>(value: T | null | undefined): value is null | undefined {
     return value === null || value === undefined;
 }
+
+/**
+ * Used to satisfy TS when using a string to index an object
+ *
+ * @see https://dev.to/mapleleaf/indexing-objects-in-typescript-1cgi
+ */
+export function hasKey<O extends object>(obj: O, key: PropertyKey): key is keyof O {
+    return key in obj;
+}

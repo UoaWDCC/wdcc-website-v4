@@ -45,7 +45,7 @@ export const Project: CollectionConfig = {
                     name: "technologies",
                     type: "select",
                     defaultValue: ["react"],
-                    options: Array.from(technologiesList),
+                    options: Object.keys(technologiesList),
                     hasMany: true,
                     required: true,
                 },

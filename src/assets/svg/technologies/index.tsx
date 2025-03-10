@@ -1,3 +1,4 @@
+import { hasKey } from "@/libs/utils";
 import { Astro } from "./Astro";
 import { AWS } from "./AWS";
 import { Css } from "./Css";
@@ -21,81 +22,53 @@ import { Typescript } from "./Typescript";
 import { Vite } from "./ViteJs";
 import { Vitest } from "./Vitest";
 
+
 interface TechnologySVGProps<T = any> {
     name: string;
     component: (props: T) => JSX.Element;
 }
 
-export const technologiesList = new Set([
-    "astro",
-    "aws",
-    "css",
-    "drizzleorm",
-    "figma",
-    "fly",
-    "html",
-    "javascript",
-    "missing",
-    "mongodb",
-    "motion",
-    "nextjs",
-    "postgresql",
-    "python",
-    "react",
-    "redis",
-    "supabase",
-    "tailwindcss",
-    "twitch",
-    "typescript",
-    "vite",
-    "vitest",
-] as const);
+type TechnologiesList = { [index: string]: TechnologySVGProps }
+
+export const technologiesList: TechnologiesList = {
+    // Basic
+    html: { name: "HTML", component: Html },
+    css: { name: "CSS", component: Css },
+    javascript: { name: "JavaScript", component: Javascript },
+    typescript: { name: "TypeScript", component: Typescript },
+
+    // Full-Stack
+    nextjs: { name: "Next.JS", component: Nextjs },
+    astro: { name: "Astro", component: Astro },
+
+    // FE
+    react: { name: "React", component: React },
+    vite: { name: "Vite", component: Vite },
+    tailwindcss: { name: "TailwindCSS", component: Tailwindcss },
+
+    // Backend
+    express: { name: "Express.JS", component: Missing },
+    python: { name: "Python", component: Python },
+    supabase: { name: "Supabase", component: Supabase },
+
+    // DB
+    mongodb: { name: "MongoDB", component: Mongodb },
+    postgresql: { name: "Postgres", component: Postgresql },
+    drizzleorm: { name: "Drizzle ORM", component: Drizzleorm },
+    redis: { name: "Redis", component: Redis },
+
+    // Devops
+    aws: { name: "AWS", component: AWS },
+    fly: { name: "Fly", component: Fly },
+
+    // Misc
+    figma: { name: "Figma", component: Figma },
+    motion: { name: "Motion", component: Motion },
+    vitest: { name: "Vitest", component: Vitest },
+    twitch: { name: "Twitch", component: Twitch },
+} as const;
 
 export function getTechnologySvgWithName(name: string): TechnologySVGProps {
-    switch (String(name).toLowerCase()) {
-        case "astro":
-            return { name: "Astro", component: Astro };
-        case "aws":
-            return { name: "AWS", component: AWS };
-        case "css":
-            return { name: "Css", component: Css };
-        case "drizzleorm":
-            return { name: "Drizzleorm", component: Drizzleorm };
-        case "figma":
-            return { name: "Figma", component: Figma };
-        case "fly":
-            return { name: "Fly", component: Fly };
-        case "html":
-            return { name: "Html", component: Html };
-        case "javascript":
-            return { name: "Javascript", component: Javascript };
-        case "mongodb":
-            return { name: "Mongodb", component: Mongodb };
-        case "motion":
-            return { name: "Motion", component: Motion };
-        case "nextjs":
-            return { name: "Nextjs", component: Nextjs };
-        case "postgresql":
-            return { name: "Postgresql", component: Postgresql };
-        case "python":
-            return { name: "Python", component: Python };
-        case "redis":
-            return { name: "Redis", component: Redis };
-        case "supabase":
-            return { name: "Supabase", component: Supabase };
-        case "tailwindcss":
-            return { name: "Tailwindcss", component: Tailwindcss };
-        case "twitch":
-            return { name: "Twitch", component: Twitch };
-        case "typescript":
-            return { name: "Typescript", component: Typescript };
-        case "vite":
-            return { name: "Vite", component: Vite };
-        case "vitest":
-            return { name: "Vitest", component: Vitest };
-        case "react":
-            return { name: "React", component: React };
-        default:
-            return { name: name, component: Missing };
-    }
+    const key = name.toLowerCase();
+    return hasKey(technologiesList, key) ? technologiesList[key] : { name: name, component: Missing };
 }

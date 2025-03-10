@@ -166,28 +166,28 @@ export interface Project {
   year: string;
   client: string;
   technologies: (
-    | 'astro'
-    | 'aws'
-    | 'css'
-    | 'drizzleorm'
-    | 'figma'
-    | 'fly'
     | 'html'
+    | 'css'
     | 'javascript'
-    | 'missing'
-    | 'mongodb'
-    | 'motion'
-    | 'nextjs'
-    | 'postgresql'
-    | 'python'
-    | 'react'
-    | 'redis'
-    | 'supabase'
-    | 'tailwindcss'
-    | 'twitch'
     | 'typescript'
+    | 'nextjs'
+    | 'astro'
+    | 'react'
     | 'vite'
+    | 'tailwindcss'
+    | 'express'
+    | 'python'
+    | 'supabase'
+    | 'mongodb'
+    | 'postgresql'
+    | 'drizzleorm'
+    | 'redis'
+    | 'aws'
+    | 'fly'
+    | 'figma'
+    | 'motion'
     | 'vitest'
+    | 'twitch'
   )[];
   name: string;
   description: string;
@@ -240,30 +240,7 @@ export interface Test {
     description: string;
     image: number | Media;
   };
-  technologies: (
-    | 'astro'
-    | 'aws'
-    | 'css'
-    | 'drizzleorm'
-    | 'figma'
-    | 'fly'
-    | 'html'
-    | 'javascript'
-    | 'missing'
-    | 'mongodb'
-    | 'motion'
-    | 'nextjs'
-    | 'postgresql'
-    | 'python'
-    | 'react'
-    | 'redis'
-    | 'supabase'
-    | 'tailwindcss'
-    | 'twitch'
-    | 'typescript'
-    | 'vite'
-    | 'vitest'
-  )[];
+  technologies: string[];
   primaryLink: {
     label: string;
     href: string;
