@@ -8,7 +8,7 @@ export const navbarData: NavbarData = {
             drop: [
                 {
                     href: "/projects",
-                    label: "About Projects",
+                    label: "About projects",
                 },
                 {
                     href: "/projects#roles",
