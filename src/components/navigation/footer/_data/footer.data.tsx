@@ -137,7 +137,7 @@ export const footerData: FooterData = {
         },
         {
             label: "GDGC",
-            href: "https://linktr.ee/gdscuoa",
+            href: "https://linktr.ee/gdgcuoa",
             external: true,
         },
     ],
