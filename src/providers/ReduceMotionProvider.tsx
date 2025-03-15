@@ -1,21 +1,24 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext } from "react";
 
-type WebGLContextType = {
+import { useLocalStorage } from "@/hooks/useLocalStorage";
+
+type ReduceMotionType = {
     reduceMotion: boolean;
     action: {
         toggleReduceMotion: () => void;
     };
 };
 
-const ReduceMotionContext = createContext<WebGLContextType>({
+const ReduceMotionContext = createContext<ReduceMotionType>({
     reduceMotion: false,
     action: { toggleReduceMotion: () => {} },
 });
 
 const ReduceMotionProvider = ({ children }: { children: React.ReactNode }) => {
-    const [reduceMotion, setReduceMotion] = useState<boolean>(false);
+    // if check for reduce motion in localstorage or return default
+    const [reduceMotion, setReduceMotion] = useLocalStorage<boolean>("reduce-motion", detectReduceMotion());
 
     const toggleReduceMotion = () => setReduceMotion(!reduceMotion);
 
@@ -27,14 +30,10 @@ const ReduceMotionProvider = ({ children }: { children: React.ReactNode }) => {
         return isReduced;
     }
 
-    const value: WebGLContextType = {
+    const value: ReduceMotionType = {
         reduceMotion: reduceMotion,
         action: { toggleReduceMotion },
     };
-
-    useEffect(() => {
-        setReduceMotion(detectReduceMotion());
-    }, []);
 
     return <ReduceMotionContext.Provider value={value}>{children}</ReduceMotionContext.Provider>;
 };
@@ -45,6 +44,6 @@ const useReduceMotion = () => {
     return context;
 };
 
-export type { WebGLContextType };
-export { useReduceMotion as useWebGL };
+export type { ReduceMotionType };
+export { useReduceMotion };
 export default ReduceMotionProvider;
