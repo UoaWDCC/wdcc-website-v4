@@ -2,7 +2,7 @@ import { useState } from "react";
 
 // this is a hook to use local storage and it works like a useState
 export const useLocalStorage = <T>(key: string, initialValue: T) => {
-    const [state, setstate] = useState<T>(() => readValue());
+    const IS_SERVER = typeof window === "undefined";
 
     const setItem = (value: T) => {
         // catch if local storage is not available/full
@@ -15,6 +15,8 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
     };
 
     const readValue = () => {
+        if (IS_SERVER) return initialValue;
+
         const item = window.localStorage.getItem(key);
         return item ? JSON.parse(item) : initialValue;
     };
@@ -23,6 +25,10 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
         window.localStorage.removeItem(key);
         setstate(initialValue);
     };
+
+    const [state, setstate] = useState<T>(() => {
+        return readValue();
+    });
 
     return [state, setItem, removeItem] as const;
 };

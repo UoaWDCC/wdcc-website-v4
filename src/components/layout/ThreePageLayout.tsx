@@ -6,9 +6,11 @@ import { useProgress } from "@react-three/drei";
 import { motion } from "motion/react";
 
 import { fadeopacity } from "@/libs/animations";
+import { useReduceMotion } from "@/providers/ReduceMotionProvider";
 import { useWebGL } from "@/providers/WebGLProvider";
 
 import NavigationBar from "../navigation/navbar/NavigationBar";
+import ReduceMotionButton from "../ReduceMotionButton";
 
 const Scene = dynamic(() => import("@/components/three/scene/Scene"), { ssr: false });
 
@@ -20,6 +22,9 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
     // const { scrollRef } = useScroll();
 
     const { webglSupport } = useWebGL();
+    const { reduceMotion, action } = useReduceMotion();
+
+    const threeSupport = webglSupport && !reduceMotion;
 
     useEffect(() => {
         const loadId = setTimeout(() => {
@@ -36,7 +41,7 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
             <motion.div
                 // ref={scrollRef} commenting out to bind scrollContainer to HTML for landing page
                 initial="initial"
-                animate={isLoaded || !webglSupport ? "animate" : "initial"}
+                animate={isLoaded || !threeSupport ? "animate" : "initial"}
                 variants={fadeopacity}
                 style={{
                     position: "relative",
@@ -45,9 +50,10 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
                     touchAction: "auto",
                 }}
             >
+                <ReduceMotionButton />
                 <div className="relative flex h-dvh min-h-dvh flex-col">{children}</div>
                 {/* background scene by default */}
-                {webglSupport && (
+                {threeSupport && (
                     <Scene
                         style={{
                             zIndex: -1,

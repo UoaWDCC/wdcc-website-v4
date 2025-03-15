@@ -3,6 +3,7 @@
 import { forwardRef, MutableRefObject, useImperativeHandle, useRef } from "react";
 import { OrbitControls, View as ViewImpl } from "@react-three/drei";
 
+import { useReduceMotion } from "@/providers/ReduceMotionProvider";
 import { useWebGL } from "@/providers/WebGLProvider";
 
 import { Three, ThreeBackground } from "./Three";
@@ -18,10 +19,13 @@ const View = forwardRef(({ children, orbit, background, fallback, ...props }: Vi
     const localRef = useRef<HTMLDivElement>(null);
 
     const { webglSupport } = useWebGL();
+    const { reduceMotion } = useReduceMotion();
+
+    const threeSupport = webglSupport && !reduceMotion;
 
     useImperativeHandle(ref, () => localRef.current);
 
-    if (!webglSupport) return fallback;
+    if (!threeSupport) return fallback;
 
     return (
         <>
