@@ -22,7 +22,7 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
     // const { scrollRef } = useScroll();
 
     const { webglSupport } = useWebGL();
-    const { reduceMotion, action } = useReduceMotion();
+    const { reduceMotion } = useReduceMotion();
 
     const threeSupport = webglSupport && !reduceMotion;
 

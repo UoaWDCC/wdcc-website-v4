@@ -20,12 +20,12 @@ const ReduceMotionProvider = ({ children }: { children: React.ReactNode }) => {
     // if check for reduce motion in localstorage or return default
     const [reduceMotion, setReduceMotion] = useLocalStorage<boolean>("reduce-motion", detectReduceMotion());
 
-    console.log("reduce  motion status:", reduceMotion);
-
     const toggleReduceMotion = () => setReduceMotion(!reduceMotion);
 
     // Check for reduce motion
     function detectReduceMotion() {
+        if (typeof window === "undefined") return false;
+
         const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
         const isReduced = !mediaQuery || mediaQuery.matches;
 
@@ -36,7 +36,6 @@ const ReduceMotionProvider = ({ children }: { children: React.ReactNode }) => {
         reduceMotion: reduceMotion,
         action: { toggleReduceMotion },
     };
-
     return <ReduceMotionContext.Provider value={value}>{children}</ReduceMotionContext.Provider>;
 };
 
