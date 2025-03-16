@@ -6,6 +6,7 @@ import "@/styles/global.css";
 import { ReactNode } from "react";
 import type { Metadata } from "next";
 
+import ReduceMotionProvider from "@/providers/ReduceMotionProvider";
 import WebGLProvider from "@/providers/WebGLProvider";
 
 // SEO
@@ -38,9 +39,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${figtree.className} antialiased`}>
-                <WebGLProvider>
-                    <ScrollProvider>{children}</ScrollProvider>
-                </WebGLProvider>
+                <ReduceMotionProvider>
+                    <WebGLProvider>
+                        <ScrollProvider>{children}</ScrollProvider>
+                    </WebGLProvider>
+                </ReduceMotionProvider>
             </body>
         </html>
     );
