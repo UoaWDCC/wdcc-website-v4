@@ -32,7 +32,7 @@ export default function TLPage() {
 
             <RolesHeader
                 variant={{ color: "green" }}
-                title="Live your Lead SWE dream as a WDCC Tech Lead."
+                title="Build a team up to speed as a WDCC Tech Lead."
                 role="Tech Lead"
                 description1="The best web development projects don’t get there just because of code."
                 description2="As a designer in a WDCC Project, you’ll help craft beautiful, usable, and practical solutions to some of our community’s coolest tech challenges."
