@@ -14,10 +14,10 @@ interface EventsSectionProps {
     title?: string;
     categories: Category[];
     events: Event[];
-    recent?: boolean;
+    displayAll?: boolean;
 }
 
-export default function EventsSection({ title, categories, events, recent = true }: EventsSectionProps) {
+export default function EventsSection({ title, categories, events, displayAll = false }: EventsSectionProps) {
     const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
     const filterByCategory = (category: string) => () => {
@@ -29,7 +29,9 @@ export default function EventsSection({ title, categories, events, recent = true
     const filteredEvents =
         selectedCategory !== "All" ? events.filter((event) => event.category === selectedCategory) : events;
     const sortedEvents = filteredEvents.sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime());
-    const recentEvents = recent ? sortedEvents.filter((event) => new Date(event.time) > TWO_MONTHS_AGO) : sortedEvents;
+    const recentEvents = displayAll
+        ? sortedEvents
+        : sortedEvents.filter((event) => new Date(event.time) > TWO_MONTHS_AGO);
 
     return (
         <div className="flex flex-col gap-4 py-20">
@@ -52,7 +54,7 @@ export default function EventsSection({ title, categories, events, recent = true
                 </div>
             ) : (
                 <EmptyListPlaceholder>
-                    {recent ? `No events in the last 2 months` : `No events found`}
+                    {displayAll ? `No events found` : `No events in the last 2 months`}
                 </EmptyListPlaceholder>
             )}
         </div>

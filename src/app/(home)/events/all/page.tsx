@@ -23,7 +23,7 @@ export default async function EventsPage() {
                 title="All events"
                 backlink={{ label: "events", href: "/events" }}
             />
-            <EventsSection categories={eventsGridData.categories} events={events} recent={false} />
+            <EventsSection categories={eventsGridData.categories} events={events} displayAll />
         </StandardPageLayout>
     );
 }
