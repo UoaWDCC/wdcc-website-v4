@@ -2,19 +2,18 @@ import { Event } from "@/types/models";
 import { ParsePayloadEvent } from "@/types/parser/ParsePayloadEvent";
 
 import { getAllEvents } from "@/actions/getAllEvents";
-import { EmptyListPlaceholder } from "@/components/EmptyListPlaceholder";
 import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
-import EventCard from "../_components/EventCard";
+import EventsSection from "../_components/EventsSection";
 import { eventsData } from "../_data/events.data";
 
-const hardcodedEvents = eventsData.eventsGrid.events;
+const eventsGridData = eventsData.eventsGrid;
 
 export default async function EventsPage() {
     let events = (await getAllEvents()).map(ParsePayloadEvent) as Event[];
     if (events.length === 0) {
-        events = hardcodedEvents;
+        events = eventsGridData.events;
     }
 
     return (
@@ -24,17 +23,7 @@ export default async function EventsPage() {
                 title="All events"
                 backlink={{ label: "events", href: "/events" }}
             />
-            <div className="my-24 flex w-full flex-col">
-                {events.length ? (
-                    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                        {events.map((event, index) => (
-                            <EventCard event={event} key={index} />
-                        ))}
-                    </div>
-                ) : (
-                    <EmptyListPlaceholder>No events found</EmptyListPlaceholder>
-                )}
-            </div>
+            <EventsSection categories={eventsGridData.categories} events={events} displayAll />
         </StandardPageLayout>
     );
 }
