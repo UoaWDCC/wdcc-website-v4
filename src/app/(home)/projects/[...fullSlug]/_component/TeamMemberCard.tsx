@@ -11,9 +11,9 @@ const card = tv({
     variants: {
         role: {
             developer: "bg-blue-200",
-            techlead: "bg-yellow-200",
+            techlead: "bg-green-200",
             designer: "bg-purple-200",
-            manager: "bg-green-200",
+            manager: "bg-yellow-200",
         },
     },
     defaultVariants: {
