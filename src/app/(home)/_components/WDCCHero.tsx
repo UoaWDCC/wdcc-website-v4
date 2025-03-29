@@ -71,9 +71,9 @@ const WDCCHero = ({ hero }: WDCCHeroProps) => {
                     >
                         <Button
                             variant={{ style: "primary", color: "blue" }}
-                            href="https://forms.gle/o3jij89qCLMoDcr28"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform?usp=sharing"
                         >
-                            Sign up for Projects 2025
+                            Become a member for 2025
                         </Button>
                         <div className="flex gap-4">
                             <Button
