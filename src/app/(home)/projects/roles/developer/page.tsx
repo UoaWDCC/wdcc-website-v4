@@ -46,7 +46,7 @@ export default function DeveloperPage() {
                         <RiveWrapper src={"/rive/wdcc_developer_main.riv"} isPlaying={animEnabled} />
                     </div>
                     <div className="flex gap-4 flex-col sm:flex-row items-center justify-center">
-                        <Button variant={{ style: "primary", color: "yellow" }} href="https://forms.gle/o3jij89qCLMoDcr28">Project applications open now! <Arrow /></Button>
+                        <Button variant={{ style: "primary", color: "yellow" }} href="/projects/all">View all projects <Arrow/></Button>
                         <Button variant={{ style: "secondary", color: "light" }} href="/about/faq">Projects FAQ</Button>
                     </div>
                 </div>
