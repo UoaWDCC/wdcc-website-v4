@@ -26,7 +26,7 @@ export default async function ProjectsPage() {
                 variant={{ style: "primary", color: "blue" }}
                 title="Projects"
                 description="Projects are your chance to build amazing, real world projects for genuine community clients. Develop your skills, work in an industry-like team environment, and gain practical work experience - all alongside motivated peers! "
-                PROJECT SIGNUP LINK
+                //PROJECT SIGNUP LINK
                 primaryButton={{
                     label: "View all projects",
                     href: "/projects/all",

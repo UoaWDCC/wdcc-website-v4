@@ -46,7 +46,7 @@ export default function DesignerPage() {
                         <RiveWrapper src={"/rive/wdcc_designer_main.riv"} isPlaying={animEnabled} />
                     </div>
                     <div className="flex gap-4 flex-col sm:flex-row items-center justify-center">
-                        <Button variant={{ style: "primary", color: "yellow" }} href: "/projects/all">View all projects <Arrow/></Button>
+                        <Button variant={{ style: "primary", color: "yellow" }} href="/projects/all">View all projects <Arrow/></Button>
                         <Button variant={{ style: "secondary", color: "light" }} href="/about/faq">Projects FAQ</Button>
                     </div>
                 </div>
@@ -124,10 +124,9 @@ export default function DesignerPage() {
                         descriptionLineTwo: "Plus, membership lets you participate in a "
                     }} />
 
-        </div>
+            </div>
 
-
-</StandardPageLayout>
+    </StandardPageLayout>
 )
     ;
 }
