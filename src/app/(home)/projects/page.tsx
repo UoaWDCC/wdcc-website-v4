@@ -26,10 +26,11 @@ export default async function ProjectsPage() {
                 variant={{ style: "primary", color: "blue" }}
                 title="Projects"
                 description="Projects are your chance to build amazing, real world projects for genuine community clients. Develop your skills, work in an industry-like team environment, and gain practical work experience - all alongside motivated peers! "
-                primaryButton={{
-                    label: "Apply for a project",
-                    href: "https://forms.gle/o3jij89qCLMoDcr28",
-                }}
+                // PROJECT SIGNUP LINK
+                // primaryButton={{
+                //     label: "Apply for a project",
+                //     href: "https://go.wdcc.co.nz",
+                // }}
                 secondaryButton={{ label: "Past WDCC projects", href: "/projects/all" }}
             />
 
