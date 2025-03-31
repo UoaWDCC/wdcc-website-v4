@@ -7,7 +7,7 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import DatingPage from "./_components/DatingPageRender"
 
-export default function Home() {
+export default function DatingPageRoot() {
     const [showPage, setShowPage] = React.useState(false);
 
 
