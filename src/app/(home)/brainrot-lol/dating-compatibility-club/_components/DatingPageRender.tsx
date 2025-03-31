@@ -33,9 +33,9 @@ export default function DatingPage() {
                         {/*<View className="fixed -z-10 size-full scale-150" color="pink" background>*/}
                         {/*    <BackgroundEffect />*/}
                         {/*</View>*/}
-                        <main className="flex-col gap-2 items-center justify-center pb-44">
+                        <main className="flex-col gap-2 items-center justify-center pb-44 pt-36 sm:pt-20 md:pt-0">
                             <WDCCHero />
-                            <div className="flex flex-col gap-64">
+                            <div className="flex flex-col gap-64 mt-36 sm:mt-20 md:mt-0">
                                 <ThisIsWDCC />
                                 <DatingTextSection />
                                 <DatingQuoteSection />
