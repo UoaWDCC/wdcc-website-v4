@@ -68,3 +68,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Learn More
 
 This is the WDCC website for 2025 🔥
+
+This is the readme edit test
