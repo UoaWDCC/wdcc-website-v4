@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
             use: ['raw-loader', 'glslify-loader'],
         });
         return config
-      },
+    },
     async redirects() {
         return [
             {
