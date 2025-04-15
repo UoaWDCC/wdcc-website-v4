@@ -11,7 +11,7 @@ interface IndividualProjectProps {
 }
 
 const IndividualProject = ({ project }: IndividualProjectProps) => {
-    const technologies = project?.technologies?.map((tech) => {
+    const technologies = project.technologies.map((tech) => {
         return getTechnologySvgWithName(tech);
     });
 
@@ -29,20 +29,20 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
             <div className="mt-8 flex flex-col gap-4">
                 <h2 className="text-center text-3xl font-semibold md:text-left">Technologies</h2>
                 <hr />
-                <div className="flex flex-wrap gap-12">
-                    {technologies &&
-                        technologies.map((tech) => {
-                            if (!tech) return;
-                            return (
-                                <div
-                                    key={tech.name}
-                                    className="relative flex flex-col items-center justify-center gap-2 p-2"
-                                >
-                                    {<tech.component className="mb-4 h-12 w-12" />}
-                                    <p className="absolute bottom-0">{tech.name}</p>
-                                </div>
-                            );
-                        })}
+                <div className="flex flex-wrap gap-1">
+                    {technologies.map((tech) => {
+                        console.log(tech);
+                        if (!tech) return;
+                        return (
+                            <div
+                                key={tech.name}
+                                className="flex flex-col items-center justify-center py-2 w-28 gap-2"
+                            >
+                                {<tech.component className="h-12 w-12" />}
+                                <p className="text-center overflow-clip">{tech.name}</p>
+                            </div>
+                        );
+                    })}
                 </div>
                 <hr />
             </div>
