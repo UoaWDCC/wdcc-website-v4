@@ -222,7 +222,7 @@ export interface Project {
   members?:
     | {
         name: string;
-        role: 'developer' | 'designer';
+        role: 'developer' | 'designer' | 'tutor';
         image?: (number | null) | Media;
         id?: string | null;
       }[]
