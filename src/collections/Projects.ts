@@ -230,7 +230,7 @@ export const Project: CollectionConfig = {
                         {
                             name: "role",
                             type: "select",
-                            options: ["developer", "designer"],
+                            options: ["developer", "designer", "tutor"],
                             defaultValue: "developer",
                             required: true,
                         },

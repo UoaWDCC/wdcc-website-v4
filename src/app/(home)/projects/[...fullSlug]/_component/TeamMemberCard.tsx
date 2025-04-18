@@ -14,6 +14,7 @@ const card = tv({
             techlead: "bg-green-200",
             designer: "bg-purple-200",
             manager: "bg-yellow-200",
+            tutor: "bg-red-200",
         },
     },
     defaultVariants: {
