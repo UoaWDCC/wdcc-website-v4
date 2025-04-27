@@ -56,6 +56,11 @@ FROM base
 # Copy built application
 COPY --from=build /app /app
 
+# Print the final image file structure
+RUN apt-get update -qq && \
+    apt-get install tree
+RUN tree -I "node_modules"
+
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 CMD [ "pnpm", "run", "start" ]
