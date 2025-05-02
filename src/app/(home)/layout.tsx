@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         description:
             "WDCC (Web Development & Consulting Club Incorporated) is a not-for-profit organisation, that aims to bridge the gap between university knowledge and real-world industry practices.",
         url: "https://wdcc.co.nz/",
-        images: "https://wdcc-website-v4-staging.fly.dev/images/og-image.png",
+        images: "https://wdcc.co.nz/images/og-image.png",
         siteName: "Web Development & Consulting Club",
     },
 };
