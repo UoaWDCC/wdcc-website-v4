@@ -1,5 +1,5 @@
-import devgraphic from "@/assets/image/roles/role_card_dev.webp"
-import desgraphic from "@/assets/image/roles/role_card_designer.webp"
+import desgraphic from "@/assets/image/roles/role_card_designer.webp";
+import devgraphic from "@/assets/image/roles/role_card_dev.webp";
 
 export const projectsCopy = {
     header: {
@@ -20,13 +20,19 @@ export const projectsCopy = {
         main: "WDCC Projects are pro-bono web development projects for external student groups, charities, and other organisations, worked on by small teams of 10-12 WDCC members.",
         checkboxes: {
             title: "By participating in WDCC Projects, you get to:",
-            checks: ["Work on a real product, used by real people.", "Gain practical experience alongside friends and peers.", "Experience an Agile development team.",
-            "Learn industry best-practices in a comfortable environment.", "Boost your CV!", "astfasdf"]
-        }
+            checks: [
+                "Work on a real product, used by real people.",
+                "Gain practical experience alongside friends and peers.",
+                "Experience an Agile development team.",
+                "Learn industry best-practices in a comfortable environment.",
+                "Boost your CV!",
+                "astfasdf",
+            ],
+        },
     },
     operationSection: {
         title: "How we operate projects",
-        content: "TBA"
+        content: "TBA",
     },
     rolesSection: {
         title: "Project Roles",
@@ -35,33 +41,36 @@ export const projectsCopy = {
                 color: "blue" as const,
                 title: "Developer",
                 slug: "developer",
-                description: "WDCC Developers are the heart of every project team. You could work on anything - from adding a brand-new CMS through to keyframing in CSS.",
+                description:
+                    "WDCC Developers are the heart of every project team. You could work on anything - from adding a brand-new CMS through to keyframing in CSS.",
                 graphic: devgraphic,
             },
             {
                 color: "purple" as const,
                 title: "Designer",
                 slug: "designer",
-                description: "WDCC Designers are a step beyond theory. You'll navigate genuine design problems with a real-world project backed by a large technical team.",
+                description:
+                    "WDCC Designers are a step beyond theory. You'll navigate genuine design problems with a real-world project backed by a large technical team.",
                 graphic: desgraphic,
             },
             {
                 color: "yellow" as const,
                 title: "Tech Lead",
                 slug: "",
-                description: "WDCC Tech Leads get the senior dev experience (without the clout). Direct a large student team, and make your CV shine along the way.",
+                description:
+                    "WDCC Tech Leads get the senior dev experience (without the clout). Direct a large student team, and make your CV shine along the way.",
             },
             {
                 color: "green" as const,
                 title: "Project Manager",
                 slug: "",
-                description: "WDCC PMs get to handle communication and Agile workflows in industry-like ways, but helped by friends instead of managers.",
-            }
+                description:
+                    "WDCC PMs get to handle communication and Agile workflows in industry-like ways, but helped by friends instead of managers.",
+            },
         ],
-
     },
     featuredSection: {
         title: "Featured past projects",
-        cta: "View all past projects"
-    }
+        cta: "View all past projects",
+    },
 };

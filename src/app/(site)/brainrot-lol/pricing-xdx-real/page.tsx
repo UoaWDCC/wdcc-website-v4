@@ -1,31 +1,31 @@
 "use client";
 
+import React from "react";
 import { motion, Variants } from "motion/react";
 
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import { Button } from "@/components/primitives/Button";
+import Checklist from "@/components/primitives/Checklist";
 import { easeOutQuad } from "@/libs/ease";
 
 import AddonCards from "./_components/AddonCards";
-import Checklist from "@/components/primitives/Checklist";
 import HighlightBlock from "./_components/Highlights";
 import PricingCard from "./_components/PricingCard";
 import { addonData } from "./_data/addon.data";
 import { enterpriseData } from "./_data/enterprise.data";
 import { pricingData } from "./_data/pricing.data";
-import React from "react";
 
 export default function PricingPage() {
     return (
         <StandardPageLayout>
             {/* Epic background hack: add StandardPageLayout, immediately escape it, and then add it back again. #ifitworksitworks */}
-            <div className="bg-linear-to-b from-blue-50 via-blue-20 to-white responsive-fullwidth responsive-body">
+            <div className="via-blue-20 responsive-fullwidth responsive-body bg-linear-to-b from-blue-50 to-white">
                 <div className="flex w-full justify-center pt-24">
                     <motion.div
                         initial="initial"
                         animate="animate"
                         transition={{ staggerChildren: 0.25 }}
-                        className="mb-10 mt-10 flex w-full flex-col gap-16"
+                        className="mt-10 mb-10 flex w-full flex-col gap-16"
                     >
                         <motion.div variants={fadeup} className="space-y-3">
                             <HighlightBlock>
@@ -42,9 +42,9 @@ export default function PricingPage() {
                                 </p>
                             </HighlightBlock>
                         </motion.div>
-                        <motion.div variants={fadeup} className="flex flex-col items-center text-center gap-6">
-                            <p className="font-bold uppercase tracking-widest text-gray-400">Pricing</p>
-                            <h3 className="text-[36px] font-bold leading-6">
+                        <motion.div variants={fadeup} className="flex flex-col items-center gap-6 text-center">
+                            <p className="font-bold tracking-widest text-gray-400 uppercase">Pricing</p>
+                            <h3 className="text-[36px] leading-6 font-bold">
                                 Clear and transparent pricing for anyone, anywhere.
                             </h3>
                             <p className="w-[80%] px-12 leading-tight text-gray-600">
@@ -57,12 +57,16 @@ export default function PricingPage() {
                                 <PricingCard {...checklist} key={i} />
                             ))}
                         </motion.div>
-                        <motion.div variants={fadeup}
-                                    className="grid grid-cols-[2.5fr_3fr_2fr] gap-4 rounded-2xl border-2 border-gray-200 p-8 px-12 drop-shadow-downShadow">
+                        <motion.div
+                            variants={fadeup}
+                            className="drop-shadow-downShadow grid grid-cols-[2.5fr_3fr_2fr] gap-4 rounded-2xl border-2 border-gray-200 p-8 px-12"
+                        >
                             <div className="flex flex-col gap-4">
                                 <h3 className="text-xl font-bold">WDCC Enterprise</h3>
-                                <p className="w-[80%] leading-tight font-normal">Our best offering for large teams or
-                                    organisations that expect the most advanced WDCC experience, without limits.</p>
+                                <p className="w-[80%] leading-tight font-normal">
+                                    Our best offering for large teams or organisations that expect the most advanced
+                                    WDCC experience, without limits.
+                                </p>
                                 <p className="w-full text-left text-sm text-gray-600">Everything in Pro, plus...</p>
                             </div>
 
@@ -74,8 +78,8 @@ export default function PricingPage() {
                             </div>
                             <div className="flex flex-col items-end gap-4">
                                 <p className="text-xl font-semibold text-gray-800">Price on enquiry</p>
-                                <Button variant={{color: "dark"}}>Contact Sales</Button>
-                                <small className="text-right text-gray-300 leading-tight">
+                                <Button variant={{ color: "dark" }}>Contact Sales</Button>
+                                <small className="text-right leading-tight text-gray-300">
                                     Terms and Conditions will vary by agreed conditions, depending on the nature of your
                                     organisation.
                                 </small>
@@ -87,12 +91,13 @@ export default function PricingPage() {
                             <Button variant={{ style: "secondary", color: "dark" }}>
                                 Why can’t I date Chris and Kimberley?
                             </Button>
-                            <Button variant={{ style: "secondary", color: "dark" }}>How can I get an
-                                internship?</Button>
+                            <Button variant={{ style: "secondary", color: "dark" }}>
+                                How can I get an internship?
+                            </Button>
                         </motion.div>
                         <motion.div variants={fadeup} className="flex flex-col gap-6 text-center">
                             {/*🔥*/}
-                            <h3 className="my-6 text-2xl font-bold leading-6" /*🔥*/>Optional Addons</h3>
+                            <h3 className="my-6 text-2xl leading-6 font-bold" /*🔥*/>Optional Addons</h3>
                             {/* prettier-ignore */}
                             <div className=/*🔥*/"grid w-full grid-cols-3 gap-6"/*🔥*/>
                                 {/*🔥*/}{addonData.addons/*🔥*/.map((addon, index) => (
@@ -102,20 +107,22 @@ export default function PricingPage() {
                             {/*🔥*/}
                             <small className="text-red-500">
                                 Deals are exclusively available while limited stocks last.{" "}
-                                <small className="cursor-pointer text-gray-300 hover:underline">Terms and
-                                    Conditions</small>
+                                <small className="cursor-pointer text-gray-300 hover:underline">
+                                    Terms and Conditions
+                                </small>
                             </small>
                         </motion.div>
 
                         {/* Disclaimer to avoid awkward situations if someone accidentally finds this page. */}
-                        <div className="flex gap-6 my-16">
-                            <p className="leading-tight text-center mx-auto font-normal text-md text-red-600 bg-red-50 px-6 py-5 rounded-2xl">As with all pages under /brainrot-lol, the Pricing Page is an internal joke used by the WDCC Tech Team. WDCC membership is not actually tiered, and does not involve a charge.</p>
+                        <div className="my-16 flex gap-6">
+                            <p className="text-md mx-auto rounded-2xl bg-red-50 px-6 py-5 text-center leading-tight font-normal text-red-600">
+                                As with all pages under /brainrot-lol, the Pricing Page is an internal joke used by the
+                                WDCC Tech Team. WDCC membership is not actually tiered, and does not involve a charge.
+                            </p>
                         </div>
-
                     </motion.div>
                 </div>
             </div>
-
         </StandardPageLayout>
     );
 }

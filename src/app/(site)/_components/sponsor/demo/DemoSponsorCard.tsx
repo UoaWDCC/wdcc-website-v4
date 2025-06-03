@@ -14,8 +14,8 @@ interface SponsorCardTest2Props extends ImageFitProps {
 export const SponsorCardTest2 = ({ color, ...image }: SponsorCardTest2Props) => {
     return (
         <div className="relative overflow-hidden rounded-xl bg-white p-4 px-8 shadow-lg">
-            <div className={cn("absolute left-0 top-0 h-1 w-full bg-yellow-brand", color)} />
-            <div className={cn("absolute bottom-0 left-0 h-1 w-full bg-yellow-brand", color)} />
+            <div className={cn("bg-yellow-brand absolute top-0 left-0 h-1 w-full", color)} />
+            <div className={cn("bg-yellow-brand absolute bottom-0 left-0 h-1 w-full", color)} />
             <ImageFit {...image} />
         </div>
     );
@@ -26,11 +26,11 @@ export const SponsorCardTest3 = ({ color, ...image }: SponsorCardTest2Props) => 
         <motion.div
             initial="hide"
             whileHover="show"
-            className={cn("relative cursor-pointer rounded-xl bg-gray-20 p-4 px-8 shadow-lg backdrop-blur-md", color)}
+            className={cn("bg-gray-20 relative cursor-pointer rounded-xl p-4 px-8 shadow-lg backdrop-blur-md", color)}
         >
             <motion.p
                 variants={textvariants}
-                className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-center font-bold drop-shadow-[0px_0px_4px_white]"
+                className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-center font-bold drop-shadow-[0px_0px_4px_white]"
             >
                 Sponsor
             </motion.p>

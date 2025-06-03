@@ -7,7 +7,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 import { cn } from "@/libs/utils";
 
 const button = tv({
-    base: "flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 py-2 font-bold transition duration-200 hover:cursor-pointer",
+    base: "flex items-center justify-center gap-2 rounded-full px-6 py-2 font-bold whitespace-nowrap transition duration-200 hover:cursor-pointer",
     variants: {
         style: {
             primary: "border-2 py-[calc(0.5rem-2px)]",
@@ -44,7 +44,7 @@ const button = tv({
         {
             style: "primary",
             color: "yellow",
-            class: "border-yellow-400 bg-yellow-brand text-gray-800 hover:bg-yellow-200",
+            class: "bg-yellow-brand border-yellow-400 text-gray-800 hover:bg-yellow-200",
         },
         {
             style: "primary",
@@ -64,17 +64,17 @@ const button = tv({
         {
             style: "secondary",
             color: "blue",
-            class: "bg-blue-100 text-blue-750 hover:bg-blue-150",
+            class: "text-blue-750 hover:bg-blue-150 bg-blue-100",
         },
         {
             style: "secondary",
             color: "yellow",
-            class: "bg-yellow-100 text-yellow-750 hover:bg-yellow-150",
+            class: "text-yellow-750 hover:bg-yellow-150 bg-yellow-100",
         },
         {
             style: "secondary",
             color: "purple",
-            class: "bg-purple-100 text-purple-750 hover:bg-purple-150",
+            class: "text-purple-750 hover:bg-purple-150 bg-purple-100",
         },
         {
             style: "secondary",
@@ -89,17 +89,17 @@ const button = tv({
         {
             style: "tertiary",
             color: "blue",
-            class: "border-blue-200 text-blue-750 hover:bg-blue-50",
+            class: "text-blue-750 border-blue-200 hover:bg-blue-50",
         },
         {
             style: "tertiary",
             color: "yellow",
-            class: "border-yellow-200 text-yellow-750 hover:bg-yellow-50",
+            class: "text-yellow-750 border-yellow-200 hover:bg-yellow-50",
         },
         {
             style: "tertiary",
             color: "purple",
-            class: "border-purple-200 text-purple-750 hover:bg-purple-50",
+            class: "text-purple-750 border-purple-200 hover:bg-purple-50",
         },
         {
             style: "tertiary",

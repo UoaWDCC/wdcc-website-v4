@@ -124,19 +124,19 @@ const FaqSelect = ({ sections, handleTabSelect }: FaqSelectProps) => {
             <button
                 onClick={handleToggle}
                 className={cn(
-                    "flex items-center rounded-full bg-gray-20 p-0.5 px-4 font-semibold transition-colors",
+                    "bg-gray-20 flex items-center rounded-full p-0.5 px-4 font-semibold transition-colors",
                     selected.colors.tabBg
                 )}
             >
                 {selected.name} <ChevronDown className="size-6" />
             </button>
             {isOpen && (
-                <div className="absolute right-0 top-full translate-y-1 flex-col gap-1 rounded-xl border border-gray-150 bg-gray-20 p-1">
+                <div className="border-gray-150 bg-gray-20 absolute top-full right-0 translate-y-1 flex-col gap-1 rounded-xl border p-1">
                     {sections.map((section) => (
                         <button
                             key={section.name}
                             onClick={() => handleSelect(section)}
-                            className="w-full cursor-pointer rounded-lg px-4 text-right hover:bg-gray-150"
+                            className="hover:bg-gray-150 w-full cursor-pointer rounded-lg px-4 text-right"
                         >
                             {section.name}
                         </button>

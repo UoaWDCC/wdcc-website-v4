@@ -1,8 +1,6 @@
 import configPromise from "@payload-config";
 import { getPayload as getPayloadInstance } from "payload";
 
-
-
 import { Media } from "@/payload-types";
 
 export async function getPayload(): ReturnType<typeof getPayloadInstance> {

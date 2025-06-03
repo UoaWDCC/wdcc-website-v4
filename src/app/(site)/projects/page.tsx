@@ -37,7 +37,7 @@ export default async function ProjectsPage() {
             <div className="flex flex-col gap-24 py-24">
                 <div className="flex gap-8">
                     <div className="flex flex-col gap-8 sm:w-[60%]">
-                        <p className="whitespace-pre-line text-md font-semibold leading-tight">
+                        <p className="text-md leading-tight font-semibold whitespace-pre-line">
                             {projectsCopy.infoSection.main}
                         </p>
 

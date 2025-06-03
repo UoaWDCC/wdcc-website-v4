@@ -1,9 +1,8 @@
 import React from "react";
 
 import { Button } from "@/components/primitives/Button";
-import { cn } from "@/libs/utils";
-
 import Checklist, { ChecklistType } from "@/components/primitives/Checklist";
+import { cn } from "@/libs/utils";
 
 export type AddonCardType = {
     title: string;
@@ -20,7 +19,8 @@ const AddonCards = ({ ...data }: AddonCardType) => {
                 <Checklist {...data.checklist} />
             </div>
             <h3 className={cn("mt-auto text-xl font-bold", data.urgent && "text-orange-500")}>
-                {data.urgent && <span className="text-md font-semibold">NOW</span>} ${data.price}{data.urgent && <span>!</span>}
+                {data.urgent && <span className="text-md font-semibold">NOW</span>} ${data.price}
+                {data.urgent && <span>!</span>}
             </h3>
             <Button variant={{ style: "secondary", color: "yellow" }}>Add this</Button>
         </div>

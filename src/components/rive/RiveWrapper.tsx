@@ -1,10 +1,9 @@
-import { useRive } from "@rive-app/react-canvas";
 import React from "react";
+import { useRive } from "@rive-app/react-canvas";
 
 // Wrapper component to isolate useRive logic that
 // renders the <RiveComponent />
-function RiveWrapper({src, isPlaying}: {src: string, isPlaying: boolean}){
-
+function RiveWrapper({ src, isPlaying }: { src: string; isPlaying: boolean }) {
     const { rive, RiveComponent } = useRive({
         src: src,
         artboard: "Artboard",
@@ -14,12 +13,11 @@ function RiveWrapper({src, isPlaying}: {src: string, isPlaying: boolean}){
     React.useEffect(() => {
         if (rive) {
             if (isPlaying) rive.play();
-            else rive.pause()
+            else rive.pause();
         }
     }, [isPlaying]);
 
-
     return <RiveComponent />;
-};
+}
 
 export default RiveWrapper;

@@ -5,15 +5,12 @@ import InfoCard from "./WhatWeDoCard";
 
 // IMPORTANT This is for the DATING BRAINROT page - not the actual production landing!
 
-
 const ThisIsWDCC = () => {
     return (
-        <div className="w-full flex flex-col gap-16 justify-center">
-            <div className="flex flex-col gap-8 w-[80%]">
-                <h2 className="text-3xl font-bold leading-none text-[#E70068]">
-                    Find your best pair.
-                </h2>
-                <p className="text-lg leading-tight italic font-semibold">
+        <div className="flex w-full flex-col justify-center gap-16">
+            <div className="flex w-[80%] flex-col gap-8">
+                <h2 className="text-3xl leading-none font-bold text-[#E70068]">Find your best pair.</h2>
+                <p className="text-lg leading-tight font-semibold italic">
                     Graph theory helped you find the shortest path between nodes, but can you find the shortest path to
                     their heart?
                 </p>
@@ -22,7 +19,7 @@ const ThisIsWDCC = () => {
                     expertise. We run events with real students to help you find that spark.
                 </p>
             </div>
-            <div className="w-full flex flex-col gap-8 justify-between lg:flex-row">
+            <div className="flex w-full flex-col justify-between gap-8 lg:flex-row">
                 {whatWeDoData.columns.map((column, i) => (
                     <InfoCard {...column} key={i} />
                 ))}

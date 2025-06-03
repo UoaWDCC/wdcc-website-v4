@@ -197,9 +197,7 @@ export default function PricingPage() {
                 <div className="flex h-[50vh] w-full flex-col">
                     <Image
                         className="absolute h-[50vh] w-full object-cover brightness-[0.3] saturate-[0.25]"
-                        src={
-                            mainschleifeLandscape
-                        }
+                        src={mainschleifeLandscape}
                         alt={"waiheke island"}
                     />
 

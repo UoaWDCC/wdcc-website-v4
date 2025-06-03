@@ -16,10 +16,16 @@ export const UnderlineLink = ({ children, newTab, mode = "dark", shift, ...props
     return (
         <Link {...props} target={newTab ? "_blank" : "_self"}>
             <div className="group z-10 w-min">
-                <p className={cn(shift && "transition-transform group-hover:translate-x-1 group-hover:duration-150 duration-300")}>{children}</p>
+                <p
+                    className={cn(
+                        shift && "transition-transform duration-300 group-hover:translate-x-1 group-hover:duration-150"
+                    )}
+                >
+                    {children}
+                </p>
                 <div
                     className={cn(
-                        "pointer-events-none h-0.5 w-0 rounded-sm transition-[width,transform] group-hover:duration-150 duration-300 group-hover:w-1/2",
+                        "pointer-events-none h-0.5 w-0 rounded-sm transition-[width,transform] duration-300 group-hover:w-1/2 group-hover:duration-150",
                         shift && "group-hover:translate-x-1",
                         mode === "light" ? "bg-blue-100" : "bg-gray-700"
                     )}

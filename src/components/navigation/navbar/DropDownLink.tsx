@@ -33,7 +33,7 @@ export default function DropDown({ link, ...props }: DropdownProps) {
                 <motion.div
                     initial="hide"
                     animate={isHovering ? "show" : "hide"}
-                    className="absolute flex flex-col whitespace-pre pt-8"
+                    className="absolute flex flex-col pt-8 whitespace-pre"
                     transition={{ staggerChildren: 1 }}
                     variants={containerVariant}
                 >

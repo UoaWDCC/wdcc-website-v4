@@ -6,10 +6,6 @@ import { motion } from "motion/react";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import { Button } from "@/components/primitives/Button";
 
-
-
-
-
 export default function NotFound() {
     const router = useRouter();
 
@@ -60,7 +56,8 @@ export default function NotFound() {
                     Think you found this through an error? Help keep our tech team working overtime by{" "}
                     <a href="mailto:tech@wdcc.co.nz" className="underline transition duration-200 hover:text-white">
                         contacting us
-                    </a>.
+                    </a>
+                    .
                 </motion.p>
             </div>
 

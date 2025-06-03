@@ -1,4 +1,3 @@
-
 export const pricingData = {
     cards: [
         {
@@ -16,7 +15,7 @@ export const pricingData = {
                 { label: "Date Chris and Kimberley", checked: false },
             ],
             pricing: 0,
-            variant: { style: "free" as const}
+            variant: { style: "free" as const },
         },
         {
             header: "best value",
@@ -35,7 +34,7 @@ export const pricingData = {
                 { label: "Date Chris and Kimberley", checked: false },
             ],
             pricing: 15.99,
-            variant: { style: "standard" as const}
+            variant: { style: "standard" as const },
         },
         {
             header: "most popular!",
@@ -59,7 +58,7 @@ export const pricingData = {
             ],
             pricing: 49.99,
             mostPopular: true,
-            variant: { style: "pro" as const}
+            variant: { style: "pro" as const },
         },
     ],
 };

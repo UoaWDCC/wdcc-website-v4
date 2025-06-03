@@ -10,7 +10,7 @@ const anchor = tv({
         type: {
             primary: "bg-blue-500 text-white",
             secondary: "bg-yellow-300 text-white",
-            muted: "bg-blue-100 text-blue-750",
+            muted: "text-blue-750 bg-blue-100",
             ghost: "bg-transparent text-black",
             icon: "flex items-center justify-center rounded-full bg-blue-950 px-4 py-2.5",
         },

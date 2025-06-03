@@ -14,9 +14,9 @@
         "format": "pnpm dlx prettier . --write",
         "i:ci": "pnpm install --frozen-lockfile",
         "list": "pnpm list --depth 0",
-        "clear:next": "pnpm dlx rimraf .next",
-        "clear:modules": "pnpm dlx rimraf node_modules",
-        "nuke": "pnpm dlx rimraf .next && pnpm dlx rimraf node_modules",
+        "clear:next": "rimraf .next",
+        "clear:modules": "rimraf node_modules",
+        "nuke": "rimraf .next && rimraf node_modules",
         "payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload",
         "generate:type": "pnpm run payload generate:types"
     },
@@ -63,8 +63,9 @@
         "lil-gui": "^0.20.0",
         "nanoid": ">=3.3.8",
         "postcss": "^8.4.49",
-        "prettier": "^3.4.1",
+        "prettier": "^3.5.3",
         "prettier-plugin-tailwindcss": "^0.6.11",
+        "rimraf": "^6.0.1",
         "tailwindcss": "^4.0.9",
         "typescript": "^5",
         "typescript-eslint": "^8.13.0"

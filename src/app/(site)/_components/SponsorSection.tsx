@@ -15,20 +15,14 @@ interface SponsorSectionProps {
 export const SponsorSection = ({ SponsorSection }: SponsorSectionProps) => {
     return (
         <div className="flex flex-col items-center justify-center gap-10">
-            <h2 className="text-balance text-3xl font-bold leading-none">Our sponsors for 2025</h2>
+            <h2 className="text-3xl leading-none font-bold text-balance">Our sponsors for 2025</h2>
             <div className="flex w-full flex-col items-center justify-center">
                 {(Object.keys(SponsorSection) as SponsorTierKeys[])
                     .filter((tier) => SponsorSection[tier].sponsors.length > 0)
                     .map((tier, i) => (
-                        <div key={`${tier}-${i}`} className="w-full flex flex-col items-center">
-                            <SponsorLabel
-                                tier={tier}
-                                count={SponsorSection[tier].sponsors.length}
-                                className="mt-8"
-                            />
-                            <div
-                                className="responsive-grid mt-6 grid w-full flex-col place-content-center place-items-center gap-2 md:gap-4"
-                            >
+                        <div key={`${tier}-${i}`} className="flex w-full flex-col items-center">
+                            <SponsorLabel tier={tier} count={SponsorSection[tier].sponsors.length} className="mt-8" />
+                            <div className="responsive-grid mt-6 grid w-full flex-col place-content-center place-items-center gap-2 md:gap-4">
                                 {SponsorSection[tier].sponsors.map(({ src, alt }, i) => (
                                     <SponsorCard
                                         key={`sponsor-${tier}-${i}`}
@@ -54,13 +48,13 @@ export const SponsorSection = ({ SponsorSection }: SponsorSectionProps) => {
 };
 
 const sponsorLabel = tv({
-    base: "whitespace-nowrap rounded-full border-2 px-4 font-semibold",
+    base: "rounded-full border-2 px-4 font-semibold whitespace-nowrap",
     variants: {
         tier: {
-            gold: "border-yellow-400 bg-sponsor-gold",
-            tech: "border-purple-200 bg-sponsor-tech",
-            silver: "border-gray-200 bg-sponsor-silver",
-            community: "border-green-200 bg-sponsor-community",
+            gold: "bg-sponsor-gold border-yellow-400",
+            tech: "bg-sponsor-tech border-purple-200",
+            silver: "bg-sponsor-silver border-gray-200",
+            community: "bg-sponsor-community border-green-200",
         },
     },
     defaultVariants: {

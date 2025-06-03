@@ -12,11 +12,8 @@ const FeatureCard = ({ number, title, children, note }: FeatureCardType) => {
         <div className="flex flex-col gap-4 px-16 py-24 text-white">
             <p className="text-md opacity-75">[{number}]</p>
             <p className="text-2xl">{title}</p>
-            <div className="flex flex-col gap-4 leading-[1.3] text-md">
-                {children}
-            </div>
+            <div className="text-md flex flex-col gap-4 leading-[1.3]">{children}</div>
             <p className="text-xs opacity-50">{note}</p>
-
         </div>
     );
 };

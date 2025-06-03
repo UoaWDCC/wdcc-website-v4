@@ -52,22 +52,22 @@ export default function EventHeader({
                             </Link>
                         )}
 
-                        <h1 className="text-2xl font-bold leading-none tracking-tight md:text-4xl">{title}</h1>
+                        <h1 className="text-2xl leading-none font-bold tracking-tight md:text-4xl">{title}</h1>
                         <p className="text-md leading-tight text-gray-600">{description}</p>
 
                         <div className="flex flex-col">
                             {when && (
                                 <>
-                                    <p className="text-md font-semibold leading-tight">
-                                        <span className="italic text-gray-600">when </span>
+                                    <p className="text-md leading-tight font-semibold">
+                                        <span className="text-gray-600 italic">when </span>
                                         <span className="text-green-700">{when}</span>
                                     </p>
                                 </>
                             )}
                             {where && (
                                 <>
-                                    <p className="text-md font-semibold leading-tight">
-                                        <span className="italic text-gray-600">where </span>
+                                    <p className="text-md leading-tight font-semibold">
+                                        <span className="text-gray-600 italic">where </span>
                                         <span className="text-green-700">{where}</span>
                                     </p>
                                 </>

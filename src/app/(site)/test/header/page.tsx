@@ -1,8 +1,8 @@
 "use client";
 
+import EventHeader from "@/components/layout/pageheaders/EventHeader";
 import Header from "@/components/layout/pageheaders/Header";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
-import EventHeader from "@/components/layout/pageheaders/EventHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 // import { Button } from "@/components/primitives/Button";
@@ -76,7 +76,6 @@ export default function TestPage() {
                 when="11:30am, February 31 2025"
                 where="SkyCity Auckland (meet by the Sky Tower)"
             />
-
         </StandardPageLayout>
     );
 }

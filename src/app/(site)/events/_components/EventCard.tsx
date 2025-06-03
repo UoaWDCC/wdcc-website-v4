@@ -54,7 +54,9 @@ export default function EventCard({ event }: EventCardProps) {
                             {event.location}
                         </p>
                     </div>
-                    <p className="self-stretch text-center leading-tight font-medium line-clamp-4">{event.description}</p>
+                    <p className="line-clamp-4 self-stretch text-center leading-tight font-medium">
+                        {event.description}
+                    </p>
                 </div>
             </div>
         </Link>

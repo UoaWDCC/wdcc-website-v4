@@ -1,4 +1,3 @@
-
 // import { ReactNode } from "react";
 import Link from "next/link";
 import { tv, VariantProps } from "tailwind-variants";
@@ -6,7 +5,7 @@ import { tv, VariantProps } from "tailwind-variants";
 import Arrow from "@/assets/svg/Arrow";
 
 const header = tv({
-    base: "flex w-full items-center justify-center pb-20 pt-36",
+    base: "flex w-full items-center justify-center pt-36 pb-20",
     variants: {
         color: {
             purple: "",
@@ -31,7 +30,7 @@ const backlinkvar = tv({
 });
 
 const categorypill = tv({
-    base:"w-fit text-gray-800 font-bold rounded-full py-2 px-5 leading-none tracking-tight",
+    base: "w-fit rounded-full px-5 py-2 leading-none font-bold tracking-tight text-gray-800",
     variants: {
         color: {
             yellow: "bg-yellow-150",
@@ -41,8 +40,7 @@ const categorypill = tv({
             brand: "text-white",
         },
     },
-})
-
+});
 
 interface HeaderProps {
     variant?: VariantProps<typeof header>;
@@ -57,31 +55,31 @@ interface HeaderProps {
     // graphic?: string; TODO
 }
 
-export default function RolesHeader({ variant = { color: "blue" }, title, role, description1, description2, backlink, }: HeaderProps) {
+export default function RolesHeader({
+    variant = { color: "blue" },
+    title,
+    role,
+    description1,
+    description2,
+    backlink,
+}: HeaderProps) {
     return (
-        <header className={header({...variant})}>
-            <div className="grid lg:grid-cols-2 gap-8">
+        <header className={header({ ...variant })}>
+            <div className="grid gap-8 lg:grid-cols-2">
                 <div className="flex flex-col gap-3">
                     <Link href={backlink.href} className={backlinkvar({ color: variant.color })}>
                         <Arrow className="rotate-180" /> {backlink.label}
                     </Link>
-                    <div className={categorypill({...variant})}>
+                    <div className={categorypill({ ...variant })}>
                         <p>the {role} role</p>
                     </div>
-                    <h1 className="text-white font-bold text-5xl leading-[1.05] tracking-tight">
-                        {title}
-                    </h1>
+                    <h1 className="text-5xl leading-[1.05] font-bold tracking-tight text-white">{title}</h1>
                 </div>
-                <div className="h-full flex flex-col gap-5 justify-end">
-                    <p className="text-lg font-semibold text-white leading-tight">
-                        {description1}
-                    </p>
-                    <p className="text-lg font-semibold text-white leading-tight">
-                        {description2}
-                    </p>
+                <div className="flex h-full flex-col justify-end gap-5">
+                    <p className="text-lg leading-tight font-semibold text-white">{description1}</p>
+                    <p className="text-lg leading-tight font-semibold text-white">{description2}</p>
                 </div>
             </div>
         </header>
-    )
-
+    );
 }

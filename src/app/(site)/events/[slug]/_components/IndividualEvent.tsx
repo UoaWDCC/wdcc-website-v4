@@ -9,7 +9,7 @@ const IndividualEvent = ({ event }: { event: Event }) => {
     return (
         <div className="flex grow flex-col py-16">
             <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
-                <p className="whitespace-pre-line text-md">{event.page.description}</p>
+                <p className="text-md whitespace-pre-line">{event.page.description}</p>
 
                 <div className="relative aspect-square w-full">
                     <Image fill src={event.page.image.src} alt={event.page.image.alt} />

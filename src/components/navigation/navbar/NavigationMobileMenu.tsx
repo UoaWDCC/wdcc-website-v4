@@ -61,7 +61,7 @@ const NavigationMobileMenu = ({ links, className, variant }: NavbarProps) => {
             {/* todo: this should lock scrolling from happening */}
 
             <motion.div
-                className={cn("fixed left-0 top-0 h-screen w-full px-8 py-4 backdrop-blur-lg", className)}
+                className={cn("fixed top-0 left-0 h-screen w-full px-8 py-4 backdrop-blur-lg", className)}
                 //please remove ASAP
                 style={{ backgroundColor: hslaColor }}
                 // animation to make it look like it's opening/closing
@@ -94,7 +94,10 @@ const NavigationMobileMenu = ({ links, className, variant }: NavbarProps) => {
                             <social.linktree />
                         </div>
                     </Button>
-                    <Button variant={{ style: "secondary", color: "light", isJustified: true }} href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform?usp=sharing">
+                    <Button
+                        variant={{ style: "secondary", color: "light", isJustified: true }}
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform?usp=sharing"
+                    >
                         Join WDCC <Arrow />
                     </Button>
 
@@ -138,7 +141,7 @@ const NavigationMenuLinks = ({ links }: { links: NavigationLink[] }) =>
         <Link
             key={link.label}
             href={link.href}
-            className="group/item w-full py-4 text-2xl font-semibold leading-none hover:duration-200"
+            className="group/item w-full py-4 text-2xl leading-none font-semibold hover:duration-200"
         >
             <p className="transition duration-500 group-hover/item:translate-x-3 group-hover/item:text-blue-100 group-hover/item:duration-200">
                 {link.label}

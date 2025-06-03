@@ -40,7 +40,7 @@ export default function ProjectHeader({ title, description, primaryButton, secon
                                 <Arrow className="rotate-180" /> {backlink.label}
                             </Link>
                         )}
-                        <h1 className="text-3xl font-bold leading-none tracking-tight md:text-4xl">{title}</h1>
+                        <h1 className="text-3xl leading-none font-bold tracking-tight md:text-4xl">{title}</h1>
                         <p className="text-md leading-tight text-gray-600">{description}</p>
                     </div>
                     <div className="flex flex-wrap gap-3">

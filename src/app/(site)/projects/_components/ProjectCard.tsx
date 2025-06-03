@@ -17,10 +17,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
     return (
         <Link
-            className="flex w-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-gray-50 transition duration-500 will-change-auto hover:-translate-x-1 hover:-translate-y-1 hover:drop-shadow-cardLift hover:duration-200"
+            className="hover:drop-shadow-cardLift flex w-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-gray-50 transition duration-500 will-change-auto hover:-translate-x-1 hover:-translate-y-1 hover:duration-200"
             href={`/projects/${year}/${slug}`}
         >
-            <div className="center-content relative h-60 w-full bg-blue-brand">
+            <div className="center-content bg-blue-brand relative h-60 w-full">
                 {project.icon ? (
                     <SuspenseImage fill className="object-cover" src={project.icon.src} alt={project.icon.alt} />
                 ) : (
@@ -29,7 +29,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
             <div className="flex flex-col gap-6 px-12 py-10">
                 <div className="flex flex-col gap-3">
-                    <h2 className="text-2xl font-bold leading-none">{project.name.title}</h2>
+                    <h2 className="text-2xl leading-none font-bold">{project.name.title}</h2>
                     <p className="leading-[1.25]">{project.description}</p>
                 </div>
                 <div className="mt-auto flex flex-wrap gap-2 whitespace-nowrap">

@@ -1,8 +1,8 @@
 import React from "react";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image, { StaticImageData } from "next/image";
 
 import { cn } from "@/libs/utils";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 export interface ImageFitProps {
     src: string | StaticImageData | StaticImport;

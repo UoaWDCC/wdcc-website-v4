@@ -19,18 +19,18 @@ const nextConfig: NextConfig = {
     webpack: (config) => {
         config.module.rules.push({
             test: /\.(glsl|vs|fs|vert|frag)$/,
-            use: ['raw-loader', 'glslify-loader'],
+            use: ["raw-loader", "glslify-loader"],
         });
-        return config
+        return config;
     },
     async redirects() {
         return [
             {
-                source: '/workshops',
-                destination: '/events',
+                source: "/workshops",
+                destination: "/events",
                 permanent: true,
             },
-        ]
+        ];
     },
 };
 

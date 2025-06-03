@@ -1,27 +1,24 @@
-
 import Arrow from "@/assets/svg/Arrow";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import { Button } from "@/components/primitives/Button";
-
 /*THIS USES THE FOOTER CODE BECAUSE IT'S A QUICK FIX LOL*/
 /* insert SOBBING EMOJI here */
 import { footerData } from "@/components/navigation/footer/_data/footer.data";
 import { Anchor } from "@/components/primitives/Anchor";
-
+import { Button } from "@/components/primitives/Button";
 
 export default function SocialsPage() {
-
     const socials = footerData.socials;
 
     return (
         <StandardPageLayout navColor="dark">
-            <div className="responsive-fullwidth bg-blue-brand min-h-screen grid place-items-center">
-                <div className="w-[80%] flex flex-col gap-8 text-center items-center justify-center">
-                    <div className="flex flex-col text-white text-md">
-                        <h1 className="text-white font-bold text-lg">Come check us out :)</h1>
-                        <p className="opactiy-50 font-semibold leading-tight">Follow WDCC on our socials, join us, or just look around our website!</p>
+            <div className="responsive-fullwidth bg-blue-brand grid min-h-screen place-items-center">
+                <div className="flex w-[80%] flex-col items-center justify-center gap-8 text-center">
+                    <div className="text-md flex flex-col text-white">
+                        <h1 className="text-lg font-bold text-white">Come check us out :)</h1>
+                        <p className="opactiy-50 leading-tight font-semibold">
+                            Follow WDCC on our socials, join us, or just look around our website!
+                        </p>
                     </div>
-
 
                     <div className="flex w-full items-center justify-center gap-6">
                         {socials.map((social) => (
@@ -35,18 +32,20 @@ export default function SocialsPage() {
                         ))}
                     </div>
 
-                    <div className="flex flex-col gap-2 justify-center items-center">
-                        <p className="font-semibold text-md text-white/50">and...</p>
-                            <Button variant={{ color: "purple", style: "primary" }} href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform">
-                            <Arrow className=""/>
+                    <div className="flex flex-col items-center justify-center gap-2">
+                        <p className="text-md font-semibold text-white/50">and...</p>
+                        <Button
+                            variant={{ color: "purple", style: "primary" }}
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform"
+                        >
+                            <Arrow className="" />
                             Join WDCC for 2025!
                         </Button>
                         <Button variant={{ color: "purple", style: "secondary" }} href="/">
-                            <Arrow className="rotate-180"/>
+                            <Arrow className="rotate-180" />
                             Visit our new website!
                         </Button>
                     </div>
-
                 </div>
             </div>
         </StandardPageLayout>

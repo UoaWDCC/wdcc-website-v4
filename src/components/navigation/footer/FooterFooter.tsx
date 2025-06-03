@@ -2,6 +2,7 @@ import { LinkType } from "@/types/link";
 
 import FooterFriends from "@/components/navigation/footer/FooterFriends";
 import FooterSocials from "@/components/navigation/footer/FooterSocials";
+
 import { FooterSocial } from "./_data/footerTypes";
 
 interface FooterFooterProps {
@@ -11,7 +12,7 @@ interface FooterFooterProps {
 
 export default function FooterFooter({ socials, friends }: FooterFooterProps) {
     return (
-        <div className="flex flex-col gap-8 px-2 overflow-x-auto hidden-scrollbar">
+        <div className="hidden-scrollbar flex flex-col gap-8 overflow-x-auto px-2">
             <FooterSocials socials={socials} />
             <FooterFriends friends={friends} />
         </div>

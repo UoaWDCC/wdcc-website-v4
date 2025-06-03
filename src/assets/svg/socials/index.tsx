@@ -39,13 +39,15 @@ export const social = {
     ),
 
     linktree: () => (
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1"  width="28" height="28" viewBox="0 0 32 32">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="28" height="28" viewBox="0 0 32 32">
             <g>
                 <g id="Layer_1">
-                    <path className="cls-1"
-                          d="M3,10.8h7.9l-5.6-5.3,3.1-3.2,5.3,5.5V0h4.6v7.8l5.3-5.5,3.1,3.2-5.6,5.3h7.9v4.4h-7.9l5.6,5.5-3.1,3.1-7.7-7.7-7.7,7.7-3.1-3.1,5.6-5.5H3v-4.4ZM13.7,21.5h4.6v10.5h-4.6v-10.5Z" />
+                    <path
+                        className="cls-1"
+                        d="M3,10.8h7.9l-5.6-5.3,3.1-3.2,5.3,5.5V0h4.6v7.8l5.3-5.5,3.1,3.2-5.6,5.3h7.9v4.4h-7.9l5.6,5.5-3.1,3.1-7.7-7.7-7.7,7.7-3.1-3.1,5.6-5.5H3v-4.4ZM13.7,21.5h4.6v10.5h-4.6v-10.5Z"
+                    />
                 </g>
             </g>
         </svg>
-    )
+    ),
 };

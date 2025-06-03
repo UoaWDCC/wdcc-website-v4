@@ -8,28 +8,32 @@ interface props {
     children: ReactNode;
 }
 
-export default function MoreAboutProjects({ children, }: props) {
+export default function MoreAboutProjects({ children }: props) {
     return (
-        <div className="w-full rounded-2xl flex flex-col gap-8 py-22 px-12 text-white text-center border-[3px] border-gray-800/30">
+        <div className="flex w-full flex-col gap-8 rounded-2xl border-[3px] border-gray-800/30 px-12 py-22 text-center text-white">
             <div className="flex flex-col gap-4">
-                <h3 className="font-bold text-4xl leading-none">learn more about projects.</h3>
+                <h3 className="text-4xl leading-none font-bold">learn more about projects.</h3>
                 {children}
             </div>
 
-
-            <div className="flex gap-4 flex-col w-full md:flex-row md:w-[75%] mx-auto text-gray-800 font-semibold">
-                <Link href="/projects" className="w-full h-[100px] bg-pink-300 rounded-xl relative  transition duration-200 hover:opacity-80">
-                    <div className="absolute right-6 bottom-4 text-md">
-                        <span>projects overview</span> <Arrow className="-rotate-45"/>
+            <div className="mx-auto flex w-full flex-col gap-4 font-semibold text-gray-800 md:w-[75%] md:flex-row">
+                <Link
+                    href="/projects"
+                    className="relative h-[100px] w-full rounded-xl bg-pink-300 transition duration-200 hover:opacity-80"
+                >
+                    <div className="text-md absolute right-6 bottom-4">
+                        <span>projects overview</span> <Arrow className="-rotate-45" />
                     </div>
                 </Link>
-                <Link href="/about/faq" className="w-full h-[100px] bg-orange-200 rounded-xl relative  transition duration-200 hover:opacity-80">
-                    <div className="absolute right-6 bottom-4 text-md">
-                        <span>projects faq</span> <Arrow className="-rotate-45"/>
+                <Link
+                    href="/about/faq"
+                    className="relative h-[100px] w-full rounded-xl bg-orange-200 transition duration-200 hover:opacity-80"
+                >
+                    <div className="text-md absolute right-6 bottom-4">
+                        <span>projects faq</span> <Arrow className="-rotate-45" />
                     </div>
                 </Link>
             </div>
         </div>
-    )
-
+    );
 }

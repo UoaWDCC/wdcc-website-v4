@@ -1,4 +1,5 @@
 import { hasKey } from "@/libs/utils";
+
 import { Astro } from "./Astro";
 import { AWS } from "./AWS";
 import { Css } from "./Css";
@@ -22,13 +23,12 @@ import { Typescript } from "./Typescript";
 import { Vite } from "./ViteJs";
 import { Vitest } from "./Vitest";
 
-
 interface TechnologySVGProps<T = any> {
     name: string;
     component: (props: T) => JSX.Element;
 }
 
-type TechnologiesList = { [index: string]: TechnologySVGProps }
+type TechnologiesList = { [index: string]: TechnologySVGProps };
 
 /** Sort in reverse order on FE to make MERN acroynm work :D */
 export const technologiesList: TechnologiesList = {

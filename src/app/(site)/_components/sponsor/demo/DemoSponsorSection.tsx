@@ -197,7 +197,7 @@ const SponsorLabel = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
     return (
         <div
             {...props}
-            className={cn("size-min whitespace-nowrap rounded-full p-4 px-8 font-semibold", props.className)}
+            className={cn("size-min rounded-full p-4 px-8 font-semibold whitespace-nowrap", props.className)}
         >
             Gold Sponsor
         </div>

@@ -34,12 +34,9 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
                         console.log(tech);
                         if (!tech) return;
                         return (
-                            <div
-                                key={tech.name}
-                                className="flex flex-col items-center justify-center py-2 w-28 gap-2"
-                            >
+                            <div key={tech.name} className="flex w-28 flex-col items-center justify-center gap-2 py-2">
                                 {<tech.component className="h-12 w-12" />}
-                                <p className="text-center overflow-clip">{tech.name}</p>
+                                <p className="overflow-clip text-center">{tech.name}</p>
                             </div>
                         );
                     })}

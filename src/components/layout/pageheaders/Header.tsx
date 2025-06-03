@@ -12,8 +12,8 @@ const header = tv({
     base: "responsive-fullwidth flex w-full items-center justify-center",
     variants: {
         style: {
-            primary: "pb-20 pt-36",
-            secondary: "pb-16 pt-32",
+            primary: "pt-36 pb-20",
+            secondary: "pt-32 pb-16",
         },
         color: {
             yellow: "bg-orange-20",
@@ -117,7 +117,7 @@ export default function Header({
                 <header className={header({ ...variant })}>
                     <div className="flex w-[80%] max-w-[1100px] flex-col gap-8">
                         <div className="flex max-w-[700px] flex-col gap-4">
-                            <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
+                            <h1 className="text-4xl leading-none font-bold tracking-tight">{title}</h1>
                             {variant.color !== "brand" ? (
                                 <>
                                     {description && (
@@ -184,7 +184,7 @@ export default function Header({
                                     <Arrow className="rotate-180" /> {backlink.label}
                                 </Link>
                             )}
-                            <h1 className="text-4xl font-bold leading-none tracking-tight">{title}</h1>
+                            <h1 className="text-4xl leading-none font-bold tracking-tight">{title}</h1>
                         </div>
                     </div>
                 </header>
