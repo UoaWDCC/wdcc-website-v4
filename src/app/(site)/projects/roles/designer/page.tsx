@@ -2,19 +2,19 @@
 
 import React from "react";
 
-import RolesHeader from "@app/projects/roles/_components/RolesHeader";
+import RolesHeader from "@/app/(site)/projects/roles/_components/RolesHeader";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 import { Button } from "@/components/primitives/Button";
-import SignupCard from "@app/_components/SignupCard";
-import LearnCard from "@app/projects/roles/_components/LearnCard";
-import RiveToggleButton from "@app/projects/roles/_components/RiveToggleButton";
+import SignupCard from "@/app/(site)/_components/SignupCard";
+import LearnCard from "@/app/(site)/projects/roles/_components/LearnCard";
+import RiveToggleButton from "@/app/(site)/projects/roles/_components/RiveToggleButton";
 import RiveDuo from "@/components/rive/RiveDuo";
 import RiveWrapper from "@/components/rive/RiveWrapper";
 
 import Arrow from "@/assets/svg/Arrow"
-import MoreAboutProjects from "@app/projects/roles/_components/MoreAboutProjects";
-import PastProjects from "@app/projects/roles/_components/PastProjects";
+import MoreAboutProjects from "@/app/(site)/projects/roles/_components/MoreAboutProjects";
+import PastProjects from "@/app/(site)/projects/roles/_components/PastProjects";
 
 import graphic1 from "@/assets/image/roles/roles_design-01.webp";
 import graphic2 from "@/assets/image/roles/roles_design-02.webp";

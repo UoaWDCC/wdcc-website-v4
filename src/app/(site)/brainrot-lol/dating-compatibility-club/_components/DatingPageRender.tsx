@@ -1,7 +1,7 @@
 "use client";
 
-import DatingQuoteSection from "@app/brainrot-lol/dating-compatibility-club/_components/QuoteSection";
-import DatingTextSection from "@app/brainrot-lol/dating-compatibility-club/_components/DatingTextSection";
+import DatingQuoteSection from "@/app/(site)/brainrot-lol/dating-compatibility-club/_components/QuoteSection";
+import DatingTextSection from "@/app/(site)/brainrot-lol/dating-compatibility-club/_components/DatingTextSection";
 import ThisIsWDCC from "./ThisIsWDCCSection";
 import WDCCHero from "./WDCCHero";
 import SignupCard from "./SignupCard";

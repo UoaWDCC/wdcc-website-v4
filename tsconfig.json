@@ -18,7 +18,7 @@
             }
         ],
         "paths": {
-            "@app/*": ["./src/app/(home)/*"],
+            "@app/*": ["src/app/(site)/*"],
             "@public/*": ["./public/*"],
             "@payload-config": ["./src/payload.config.ts"],
             "@/*": ["./src/*"]
