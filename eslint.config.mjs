@@ -14,7 +14,7 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
     ...compat.config({
-        ignorePatterns: ["node_modules/", ".next/", "public/", "payload-types.ts"],
+        ignorePatterns: ["node_modules/", ".next/", "public/", "payload-types.ts", "(payload)/"],
         extends: ["next", "prettier"],
     }),
     ...tseslint.configs.strictTypeChecked,

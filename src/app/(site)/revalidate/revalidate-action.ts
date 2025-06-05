@@ -2,7 +2,8 @@
 
 import { revalidatePath } from "next/cache";
 
-export function revalidateAllRoutes() {
+// eslint-disable-next-line @typescript-eslint/require-await
+export async function revalidateAllRoutes() {
     revalidatePath("/", "layout");
     console.log("All routes revalidated at", new Date().toISOString());
 }
