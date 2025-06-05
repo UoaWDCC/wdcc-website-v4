@@ -12,14 +12,14 @@ import IndividualProject from "./_component/IndividualProject";
 type Props = {
     // fullSlug = [year, slug]
     params: Promise<{ fullSlug: string[] }>;
-}
+};
 
 // auto generated seo metadata for each project
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
     const project = await getProjectFromSlug((await params).fullSlug);
 
     // get og-image of previous page
-    const previousImages = (await parent).openGraph?.images || [];
+    const previousImages = (await parent).openGraph?.images ?? [];
 
     if (!project) {
         return {};

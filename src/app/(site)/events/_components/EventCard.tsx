@@ -17,7 +17,7 @@ const categoryColors = {
 };
 
 export default function EventCard({ event }: EventCardProps) {
-    const slug = event.slug || "not-found";
+    const slug = event.slug ?? "not-found";
 
     return (
         <Link

@@ -1,12 +1,14 @@
 "use server";
 
 import { getPayload } from "@/libs/payload";
+import { FaqPage } from "@/payload-types";
 
-export const getFaqPage = async () => {
+export const getFaqPage = async (): Promise<FaqPage> => {
     const payload = await getPayload();
-    const getFaqPage = await payload.findGlobal({
+    const faqPage = await payload.findGlobal({
         slug: "faq-page",
     });
 
-    return getFaqPage;
+    // @ts-ignore TODO FIX THIS
+    return faqPage;
 };

@@ -65,7 +65,7 @@ export const TableOfContents = ({ variant }: TableOfContentsProps) => {
 
         const contents: ContentlistType = [];
         for (const header of headers) {
-            contents.push({ level: tags.indexOf(header.localName), label: header.textContent || "", id: header.id });
+            contents.push({ level: tags.indexOf(header.localName), label: header.textContent ?? "", id: header.id });
         }
 
         setContents(contents);
