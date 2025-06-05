@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, SVGAttributes } from "react";
 
 import { hasKey } from "@/libs/utils";
 
@@ -25,9 +25,9 @@ import { Typescript } from "./Typescript";
 import { Vite } from "./ViteJs";
 import { Vitest } from "./Vitest";
 
-type TechnologySVGProps<T extends object = object> = {
+type TechnologySVGProps = {
     name: string;
-    component: (props: T) => ReactNode;
+    component: (props: SVGAttributes<SVGSVGElement>) => ReactNode;
 };
 
 type TechnologiesList = Record<string, TechnologySVGProps>;

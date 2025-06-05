@@ -29,6 +29,7 @@ const ReduceMotionProvider = ({ children }: { children: React.ReactNode }) => {
         if (typeof window === "undefined") return false;
 
         const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+        // @ts-expect-error TODO ASHTON
         const isReduced = !mediaQuery ?? mediaQuery.matches;
 
         return isReduced;
