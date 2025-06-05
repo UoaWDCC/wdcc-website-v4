@@ -18,6 +18,8 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
         if (IS_SERVER) return initialValue;
 
         const item = window.localStorage.getItem(key);
+        // TODO ASHTON
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return item ? JSON.parse(item) : initialValue;
     };
 
@@ -27,6 +29,8 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
     };
 
     const [state, setstate] = useState<T>(() => {
+        // TODO ASHTON
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return readValue();
     });
 

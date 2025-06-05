@@ -1,7 +1,8 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck TODO ASHTON
 "use client";
 
-import React, { RefObject, useEffect, useRef } from "react";
+import { RefObject, useEffect, useRef } from "react";
 import { Float } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";

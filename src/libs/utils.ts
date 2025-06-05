@@ -13,7 +13,7 @@ export function removeDuplicates<T>(array: T[]): T[] {
     return [...new Set(array)];
 }
 
-export function isNullish<T>(value: T | null | undefined): value is null | undefined {
+export function isNullish(value: unknown): value is null | undefined {
     return value === null || value === undefined;
 }
 

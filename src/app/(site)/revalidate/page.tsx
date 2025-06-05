@@ -7,7 +7,7 @@ import { revalidateAllRoutes } from "./revalidate-action";
 export default function RevalidatePage() {
     function handleClick() {
         if (confirm(`Are you sure you want to revalidate all routes on ${process.env.NODE_ENV}?`)) {
-            void revalidateAllRoutes();
+            revalidateAllRoutes();
             alert("All routes revalidated!");
         }
     }

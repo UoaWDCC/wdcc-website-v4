@@ -1,6 +1,9 @@
 import { ExecsPage as CMSEventPage, Media } from "@/payload-types";
 
+
+
 import { ExecPage } from "../pages/ExecPage";
+
 
 export const ParsePayloadExecTeam = (CmsEventPage: CMSEventPage): ExecPage => {
     //hmmm
@@ -14,6 +17,8 @@ export const ParsePayloadExecTeam = (CmsEventPage: CMSEventPage): ExecPage => {
                       ? team.execs.map((exec) => ({
                             name: exec.name,
                             role: exec.role,
+                            // TODO ANTON
+                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                             image: (exec.image as Media).url!,
                             description: exec.description,
                             joined: exec.joined,

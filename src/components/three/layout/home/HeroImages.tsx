@@ -53,7 +53,7 @@ type FloatImageProps = {
 }
 
 const FloatImage = ({ offset, src, rps = 0.5 }: FloatImageProps) => {
-    const meshRef = React.useRef<THREE.Mesh>(null!);
+    const meshRef = React.useRef<THREE.Mesh>(null);
     const textureLoader = new THREE.TextureLoader();
     const image = textureLoader.load(src);
     const alpha = textureLoader.load("/images/alphamask.png");
