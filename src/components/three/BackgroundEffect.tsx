@@ -31,7 +31,7 @@ const TRIANGLEOBJ = ({
     faceRotation: number;
     color: THREE.Color;
 }) => {
-    const meshRef = useRef<Mesh>(null!);
+    const meshRef = useRef<Mesh>(null);
 
     const rotationDY = SPEED + Math.random() * ROTCHAOS;
     const rotationDX = SPEED + Math.random() * ROTCHAOS;
@@ -62,6 +62,8 @@ const TRIANGLEOBJ = ({
 };
 
 const TRIANGLES = ({ color }: { color: THREE.Color }) => {
+    // TODO ASHTON
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     return [...Array(COUNT)].map((_, i) => {
         // calculate initial values here
         const x = Math.cos(RAD_INCREMENT * i) * RADIUS + (Math.random() - 0.5) * POSCHAOS;
@@ -84,7 +86,7 @@ const TRIANGLES = ({ color }: { color: THREE.Color }) => {
 const BackgroundEffect = () => {
     const [color, setColor] = useState(new THREE.Color("hsl(217, 100%, 61%)"));
     const backgroundSpeed = useRef(0.02);
-    const [, forceUpdate] = useReducer((x) => x + 1, 0);
+    const [, forceUpdate] = useReducer((x: number) => x + 1, 0);
 
     useGUI((gui) => {
         const folder = gui.addFolder("Background");

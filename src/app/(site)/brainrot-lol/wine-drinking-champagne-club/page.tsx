@@ -18,7 +18,7 @@ const cardo = Cardo({ weight: ["400", "700"], style: ["italic", "normal"], subse
 
 export default function PricingPage() {
     return (
-        <StandardPageLayout navColor={"dark"} className={`${cardo.className}`}>
+        <StandardPageLayout navColor={"dark"} className={cardo.className}>
             <div className="responsive-fullwidth min-h-screen bg-[#111121]">
                 <div className="flex h-screen w-full flex-col justify-end">
                     <Image

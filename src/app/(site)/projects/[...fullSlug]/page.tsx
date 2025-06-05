@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     const project = await getProjectFromSlug((await params).fullSlug);
 
     // get og-image of previous page
-    const previousImages = (await parent).openGraph?.images || [];
+    const previousImages = (await parent).openGraph?.images ?? [];
 
     if (!project) {
         return {};

@@ -1,8 +1,8 @@
-interface QuoteProps {
+type QuoteProps = {
     quote: string;
     author: string;
     subscript?: string;
-}
+};
 
 export default function Quote({ quote, author, subscript }: QuoteProps) {
     return (

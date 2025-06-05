@@ -7,9 +7,9 @@ import { cn } from "@/libs/utils";
 
 export const SponsorCardTest = ImageFit;
 
-interface SponsorCardTest2Props extends ImageFitProps {
+type SponsorCardTest2Props = {
     color: string;
-}
+} & ImageFitProps;
 
 export const SponsorCardTest2 = ({ color, ...image }: SponsorCardTest2Props) => {
     return (

@@ -9,16 +9,17 @@
         "build:analyze": "ANALYZE=true next build",
         "start": "next start",
         "deploy:staging": "fly deploy --config fly.staging.toml",
-        "lint": "eslint ./src --fix",
+        "lint": "next lint --fix",
         "lint:no-cache": "next lint --no-cache",
-        "format": "pnpm dlx prettier . --write",
+        "format": "prettier . --write",
+        "l": "pnpm run format && pnpm run lint",
+        "lint:ci": "prettier . --check && next lint",
         "i:ci": "pnpm install --frozen-lockfile",
         "list": "pnpm list --depth 0",
         "clear:next": "rimraf .next",
         "clear:modules": "rimraf node_modules",
         "nuke": "rimraf .next && rimraf node_modules",
-        "payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload",
-        "generate:type": "pnpm run payload generate:types"
+        "generate:type": "payload generate:types"
     },
     "dependencies": {
         "@next/bundle-analyzer": "^15.1.0",
@@ -36,7 +37,7 @@
         "glslify-loader": "^2.0.0",
         "graphql": "^16.10.0",
         "motion": "^12.0.5",
-        "next": "15.2.3",
+        "next": "15.3.3",
         "payload": "3.22.0",
         "raw-loader": "^4.0.2",
         "react": "^19.0.0",
@@ -48,6 +49,8 @@
         "tunnel-rat": "^0.1.2"
     },
     "devDependencies": {
+        "@eslint/eslintrc": "^3",
+        "@eslint/js": "^9.28.0",
         "@flydotio/dockerfile": "^0.5.9",
         "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
         "@tailwindcss/postcss": "^4.0.9",
@@ -55,11 +58,10 @@
         "@types/react": "^18",
         "@types/react-dom": "^18",
         "@types/three": "0.170.0",
-        "eslint": "8.57.1",
-        "eslint-config-next": "15.1.6",
-        "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-prettier": "^5.2.1",
-        "eslint-plugin-tailwindcss": "^3.17.5",
+        "eslint": "^9.28.0",
+        "eslint-config-next": "15.3.3",
+        "eslint-config-prettier": "^10.1.5",
+        "eslint-plugin-unused-imports": "^4.1.4",
         "lil-gui": "^0.20.0",
         "nanoid": ">=3.3.8",
         "postcss": "^8.4.49",
@@ -67,8 +69,8 @@
         "prettier-plugin-tailwindcss": "^0.6.11",
         "rimraf": "^6.0.1",
         "tailwindcss": "^4.0.9",
-        "typescript": "^5",
-        "typescript-eslint": "^8.13.0"
+        "typescript": "^5.8.2",
+        "typescript-eslint": "^8.26.1"
     },
     "volta": {
         "node": "20.18.1",
@@ -82,6 +84,11 @@
             "S3_ACCESS_KEY_ID",
             "S3_SECRET_ACCESS_KEY",
             "S3_REGION"
+        ]
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "sharp"
         ]
     }
 }

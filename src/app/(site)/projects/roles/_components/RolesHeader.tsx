@@ -42,7 +42,7 @@ const categorypill = tv({
     },
 });
 
-interface HeaderProps {
+type HeaderProps = {
     variant?: VariantProps<typeof header>;
     title: string;
     role: string;
@@ -52,8 +52,7 @@ interface HeaderProps {
         label: string;
         href: string;
     };
-    // graphic?: string; TODO
-}
+};
 
 export default function RolesHeader({
     variant = { color: "blue" },

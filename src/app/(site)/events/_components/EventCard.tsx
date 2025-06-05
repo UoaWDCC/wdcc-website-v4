@@ -4,9 +4,9 @@ import { Event } from "@/types/models";
 
 import ImageCover from "@/components/ImageCover";
 
-interface EventCardProps {
+type EventCardProps = {
     event: Event;
-}
+};
 
 const categoryColors = {
     Workshop: "bg-blue-150",
@@ -17,7 +17,7 @@ const categoryColors = {
 };
 
 export default function EventCard({ event }: EventCardProps) {
-    const slug = event.slug || "not-found";
+    const slug = event.slug ?? "not-found";
 
     return (
         <Link

@@ -12,9 +12,9 @@ import { cn } from "@/libs/utils";
 import { FaqItem } from "./FaqItem";
 import { FaqTab } from "./FaqTab";
 
-interface FaqSelectorProps {
+type FaqSelectorProps = {
     sections: FaqSection[];
-}
+};
 
 export function FaqSelector({ sections }: FaqSelectorProps) {
     const [selectedTab, setSelectedTab] = useState(sections[0]);
@@ -48,7 +48,9 @@ export function FaqSelector({ sections }: FaqSelectorProps) {
                         key={faq.question}
                         faq={faq}
                         selected={selectedFaq?.question === faq.question}
-                        handleClick={() => handleItemSelect(faq)}
+                        handleClick={() => {
+                            handleItemSelect(faq);
+                        }}
                     />
                 ))}
             </motion.div>
@@ -56,11 +58,11 @@ export function FaqSelector({ sections }: FaqSelectorProps) {
     );
 }
 
-interface FaqCategorySelectorProps {
+type FaqCategorySelectorProps = {
     sections: FaqSection[];
     selectedTab: FaqSection;
     handleTabSelect: (tabName: string) => void;
-}
+};
 
 const FaqCategorySelect = ({ sections, handleTabSelect, selectedTab }: FaqCategorySelectorProps) => {
     return (
@@ -76,7 +78,9 @@ const FaqCategorySelect = ({ sections, handleTabSelect, selectedTab }: FaqCatego
                         colors={section.colors}
                         text={section.name}
                         selected={selectedTab.name === section.name}
-                        handleClick={() => handleTabSelect(section.name)}
+                        handleClick={() => {
+                            handleTabSelect(section.name);
+                        }}
                     />
                 ))}
             </div>
@@ -84,10 +88,10 @@ const FaqCategorySelect = ({ sections, handleTabSelect, selectedTab }: FaqCatego
     );
 };
 
-interface FaqSelectProps {
+type FaqSelectProps = {
     sections: FaqSection[];
     handleTabSelect: (section: string) => void;
-}
+};
 
 const FaqSelect = ({ sections, handleTabSelect }: FaqSelectProps) => {
     const selectorRef = useRef<HTMLDivElement>(null);
@@ -135,7 +139,9 @@ const FaqSelect = ({ sections, handleTabSelect }: FaqSelectProps) => {
                     {sections.map((section) => (
                         <button
                             key={section.name}
-                            onClick={() => handleSelect(section)}
+                            onClick={() => {
+                                handleSelect(section);
+                            }}
                             className="hover:bg-gray-150 w-full cursor-pointer rounded-lg px-4 text-right"
                         >
                             {section.name}

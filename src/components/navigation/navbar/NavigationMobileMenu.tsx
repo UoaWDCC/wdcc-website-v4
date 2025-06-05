@@ -29,11 +29,11 @@ const mobileNav = tv({
     },
 });
 
-export interface NavbarProps {
+export type NavbarProps = {
     variant?: VariantProps<typeof mobileNav>;
     className?: string;
     links: NavigationLink[];
-}
+};
 
 // ONLY USE CLASSNAME TO CHANGE MEDIA QUERY
 const NavigationMobileMenu = ({ links, className, variant }: NavbarProps) => {
@@ -58,7 +58,7 @@ const NavigationMobileMenu = ({ links, className, variant }: NavbarProps) => {
             <button className={cn("", className, mobileNav({ ...variant }))} onClick={handleToggle}>
                 <MenuIcon />
             </button>
-            {/* todo: this should lock scrolling from happening */}
+            {/* TODO ASHTON: this should lock scrolling from happening */}
 
             <motion.div
                 className={cn("fixed top-0 left-0 h-screen w-full px-8 py-4 backdrop-blur-lg", className)}

@@ -15,7 +15,7 @@ function RiveWrapper({ src, isPlaying }: { src: string; isPlaying: boolean }) {
             if (isPlaying) rive.play();
             else rive.pause();
         }
-    }, [isPlaying]);
+    }, [isPlaying, rive]);
 
     return <RiveComponent />;
 }

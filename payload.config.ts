@@ -7,17 +7,17 @@ import { s3Storage } from "@payloadcms/storage-s3";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 
-import { Events } from "./collections/Events";
-import AboutPage from "./collections/globals/AboutPage";
-import { ExecsPage } from "./collections/globals/ExecsPage";
-import { FaqPage } from "./collections/globals/FaqPage";
-import HeroPage from "./collections/globals/HeroPage";
-import ProjectsPage from "./collections/globals/ProjectsPage";
-import { Media } from "./collections/Media";
-import { Partners } from "./collections/Partners";
-import { Project } from "./collections/Projects";
-import { TestSlug } from "./collections/TestSlug";
-import { Users } from "./collections/Users";
+import { Events } from "./src/collections/Events";
+import AboutPage from "./src/collections/globals/AboutPage";
+import { ExecsPage } from "./src/collections/globals/ExecsPage";
+import { FaqPage } from "./src/collections/globals/FaqPage";
+import HeroPage from "./src/collections/globals/HeroPage";
+import ProjectsPage from "./src/collections/globals/ProjectsPage";
+import { Media } from "./src/collections/Media";
+import { Partners } from "./src/collections/Partners";
+import { Project } from "./src/collections/Projects";
+import { TestSlug } from "./src/collections/TestSlug";
+import { Users } from "./src/collections/Users";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -34,13 +34,13 @@ export default buildConfig({
     editor: lexicalEditor({
         features: ({ defaultFeatures }) => [...defaultFeatures, LinkFeature({}), HTMLConverterFeature({})],
     }),
-    secret: process.env.PAYLOAD_SECRET || "",
+    secret: process.env.PAYLOAD_SECRET ?? "",
     typescript: {
-        outputFile: path.resolve(dirname, "payload-types.ts"),
+        outputFile: path.resolve(dirname, "src/types/payload-types.ts"),
     },
     db: postgresAdapter({
         pool: {
-            connectionString: process.env.DATABASE_URI || "",
+            connectionString: process.env.DATABASE_URI ?? "",
         },
         migrationDir: "./src/migrations",
     }),
@@ -60,11 +60,11 @@ export default buildConfig({
                     prefix: "partners",
                 },
             },
-            bucket: process.env.S3_BUCKET || "",
+            bucket: process.env.S3_BUCKET ?? "",
             config: {
                 credentials: {
-                    accessKeyId: process.env.S3_ACCESS_KEY_ID || "",
-                    secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || "",
+                    accessKeyId: process.env.S3_ACCESS_KEY_ID ?? "",
+                    secretAccessKey: process.env.S3_SECRET_ACCESS_KEY ?? "",
                 },
                 region: process.env.S3_REGION,
             },

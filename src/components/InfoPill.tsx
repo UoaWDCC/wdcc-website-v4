@@ -1,6 +1,6 @@
-interface InfoPillProps {
+type InfoPillProps = {
     text: string;
-}
+};
 
 export default function InfoPill({ text }: InfoPillProps) {
     return (

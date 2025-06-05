@@ -2,14 +2,14 @@ import React from "react";
 
 import InfoCard, { WhatWeDoCardProps } from "./WhatWeDoCard";
 
-interface ThisIsWDCCProps {
+type ThisIsWDCCProps = {
     ThisIsWDCC: {
         description: string;
         whatWeDo: {
             columns: WhatWeDoCardProps[];
         };
     };
-}
+};
 const ThisIsWDCC = ({ ThisIsWDCC }: ThisIsWDCCProps) => {
     return (
         <div className="flex flex-col items-center justify-center gap-10">

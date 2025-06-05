@@ -5,7 +5,7 @@ import Link from "next/link";
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
 
-interface HeaderProps {
+type HeaderProps = {
     title: string;
     description?: string;
     when?: string;
@@ -22,7 +22,7 @@ interface HeaderProps {
         label: string;
         href: string;
     };
-}
+};
 
 /**
  Project header description tba

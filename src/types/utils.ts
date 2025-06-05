@@ -1,5 +1,5 @@
 // only exist beacuse im too lazy to write {className: string}
 
-export interface ClassName {
+export type ClassName = {
     className?: string;
-}
+};

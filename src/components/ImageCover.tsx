@@ -4,13 +4,13 @@ import Image, { StaticImageData } from "next/image";
 
 import { cn } from "@/libs/utils";
 
-export interface ImageFitProps {
+export type ImageFitProps = {
     src: string | StaticImageData | StaticImport;
     alt: string;
     width?: string;
     height?: string;
     className?: string;
-}
+};
 
 //the exact same component except now theres cover 😭
 const ImageCover = ({ src, alt, width = "150px", height = "80px", className }: ImageFitProps) => {

@@ -1,4 +1,4 @@
-import { FaqPage as CmsFaqPage } from "@/payload-types";
+import { FaqPage as CmsFaqPage } from "@/types/payload-types";
 
 import { FaqPage } from "../pages/FaqPage";
 

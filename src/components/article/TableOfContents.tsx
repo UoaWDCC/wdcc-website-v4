@@ -49,9 +49,9 @@ const tableOfContent = tv({
     },
 });
 
-export interface TableOfContentsProps {
+export type TableOfContentsProps = {
     variant?: VariantProps<typeof tableOfContent>;
-}
+};
 
 export const TableOfContents = ({ variant }: TableOfContentsProps) => {
     const [contents, setContents] = useState<ContentlistType>([]);
@@ -65,7 +65,7 @@ export const TableOfContents = ({ variant }: TableOfContentsProps) => {
 
         const contents: ContentlistType = [];
         for (const header of headers) {
-            contents.push({ level: tags.indexOf(header.localName), label: header.textContent || "", id: header.id });
+            contents.push({ level: tags.indexOf(header.localName), label: header.textContent ?? "", id: header.id });
         }
 
         setContents(contents);
@@ -85,10 +85,14 @@ export const TableOfContents = ({ variant }: TableOfContentsProps) => {
         );
 
         // register all headers
-        headers.forEach((heading) => observer.observe(heading));
+        headers.forEach((heading) => {
+            observer.observe(heading);
+        });
 
         return () => {
-            headers.forEach((heading) => observer.unobserve(heading));
+            headers.forEach((heading) => {
+                observer.unobserve(heading);
+            });
         };
     }, []);
 
@@ -118,7 +122,9 @@ export const TableOfContents = ({ variant }: TableOfContentsProps) => {
                 <a
                     key={content.id}
                     style={{ marginLeft: content.level * 16 }}
-                    onClick={() => handleScrollTo(content.id)}
+                    onClick={() => {
+                        handleScrollTo(content.id);
+                    }}
                     className={tableOfContent({ ...variant, active: content.id === currentId })}
                 >
                     {content.label}

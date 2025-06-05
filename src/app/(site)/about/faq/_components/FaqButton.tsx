@@ -1,10 +1,10 @@
 import Plus from "@/assets/svg/Plus";
 import { cn } from "@/libs/utils";
 
-interface FaqButtonProps {
+type FaqButtonProps = {
     rotate?: boolean;
     className?: string;
-}
+};
 
 const FaqButton = ({ rotate, className }: FaqButtonProps) => {
     return (

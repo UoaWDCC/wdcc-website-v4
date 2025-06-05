@@ -22,13 +22,13 @@ const card = tv({
     },
 });
 
-export interface ProjectRoleCardProps {
+export type ProjectRoleCardProps = {
     variant?: VariantProps<typeof card>;
     title: string;
     description: string;
     slug?: string;
     graphic?: StaticImageData;
-}
+};
 
 const ProjectRoleCard = ({ variant, title, description, slug, graphic }: ProjectRoleCardProps) => {
     return slug ? (

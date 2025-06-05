@@ -4,9 +4,9 @@ import Link from "next/link";
 
 import Arrow from "@/assets/svg/Arrow";
 
-interface props {
+type props = {
     children: ReactNode;
-}
+};
 
 export default function MoreAboutProjects({ children }: props) {
     return (

@@ -20,12 +20,12 @@ const anchor = tv({
     },
 });
 
-interface AnchorProps extends LinkProps<HTMLAnchorElement> {
+type AnchorProps = {
     set?: VariantProps<typeof anchor>;
     className?: string;
     newTab?: boolean;
     children?: ReactNode;
-}
+} & LinkProps<HTMLAnchorElement>;
 
 export const Anchor = ({ set, className, newTab = false, children, ...props }: AnchorProps) => {
     return (

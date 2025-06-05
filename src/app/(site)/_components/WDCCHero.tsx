@@ -23,15 +23,15 @@ const transition = {
     ease: [0.13, 0.71, 0.35, 1],
 };
 
-interface WDCCHeroProps {
+type WDCCHeroProps = {
     hero: {
         title: string;
         blurb: string;
     };
-}
+};
 const WDCCHero = ({ hero }: WDCCHeroProps) => {
     const ref = useRef<HTMLDivElement>(null);
-    const camera = useRef<THREE.PerspectiveCamera>(null!);
+    const camera = useRef<THREE.PerspectiveCamera>(null);
 
     return (
         <div ref={ref} className="relative flex w-full flex-col items-center justify-center gap-20">

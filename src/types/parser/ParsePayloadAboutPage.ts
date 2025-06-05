@@ -1,5 +1,6 @@
+import { AboutPage as CmsAboutPage, Media } from "@/types/payload-types";
+
 import placeholder from "@/assets/image/600x400.png";
-import { AboutPage as CmsAboutPage, Media } from "@/payload-types";
 
 import { AboutPage } from "../pages/AboutPage";
 

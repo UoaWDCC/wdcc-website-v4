@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-interface EventsRoadmapProps {
+type EventsRoadmapProps = {
     title: string;
     image: {
         src: string;
         alt: string;
     };
-}
+};
 
 export default function EventsRoadmap({ title, image }: EventsRoadmapProps) {
     return (

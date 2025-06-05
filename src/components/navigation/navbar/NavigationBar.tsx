@@ -65,10 +65,10 @@ const navbarLine = tv({
     },
 });
 
-export interface NavbarProps {
+export type NavbarProps = {
     variant?: VariantProps<typeof navbar>;
     className?: ClassName;
-}
+};
 
 /**
  * General navbar component - the navigation bar (top) for all pages.

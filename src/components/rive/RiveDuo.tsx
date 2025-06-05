@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import RiveWrapper from "@/components/rive/RiveWrapper";
 import { cn } from "@/libs/utils";
 
-interface DuoProps {
+type DuoProps = {
     children: ReactNode;
     rive: {
         src: string;
@@ -11,7 +11,7 @@ interface DuoProps {
     };
     largeAnim?: boolean;
     imgFirst?: boolean;
-}
+};
 
 export default function RiveDuo({ children, rive, largeAnim = false, imgFirst = false }: DuoProps) {
     return (

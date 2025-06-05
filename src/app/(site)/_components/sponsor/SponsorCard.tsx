@@ -1,5 +1,3 @@
-import React from "react";
-
 import { SponsorTierKeys } from "@/assets/image/sponsors";
 import ImageFit, { ImageFitProps } from "@/components/ImageFit";
 
@@ -10,14 +8,14 @@ const tierWidth: Record<SponsorTierKeys, number> = {
     community: 150,
 };
 
-interface SponsorCardProps extends ImageFitProps {
+type SponsorCardProps = {
     tier: SponsorTierKeys;
-}
+} & ImageFitProps;
 const SponsorCard = ({ tier, ...image }: SponsorCardProps) => {
     return (
         <ImageFit
             {...image}
-            width={`${tierWidth[tier || "gold"]}px`}
+            width={`${tierWidth[tier ?? "gold"]}px`}
             className="drop-shadow-[0px_0px_8px_var(--background)]"
         />
     );

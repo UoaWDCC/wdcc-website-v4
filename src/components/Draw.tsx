@@ -5,9 +5,9 @@ import { motion } from "motion/react";
 
 import { cn } from "@/libs/utils";
 
-interface DrawProps extends React.HTMLAttributes<HTMLSpanElement> {
+type DrawProps = {
     children: React.ReactNode;
-}
+} & React.HTMLAttributes<HTMLSpanElement>;
 
 const Draw = ({ children, ...props }: DrawProps) => {
     return (

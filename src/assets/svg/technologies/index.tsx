@@ -1,3 +1,5 @@
+import { ReactNode, SVGAttributes } from "react";
+
 import { hasKey } from "@/libs/utils";
 
 import { Astro } from "./Astro";
@@ -23,12 +25,12 @@ import { Typescript } from "./Typescript";
 import { Vite } from "./ViteJs";
 import { Vitest } from "./Vitest";
 
-interface TechnologySVGProps<T = any> {
+type TechnologySVGProps = {
     name: string;
-    component: (props: T) => JSX.Element;
-}
+    component: (props: SVGAttributes<SVGSVGElement>) => ReactNode;
+};
 
-type TechnologiesList = { [index: string]: TechnologySVGProps };
+type TechnologiesList = Record<string, TechnologySVGProps>;
 
 /** Sort in reverse order on FE to make MERN acroynm work :D */
 export const technologiesList: TechnologiesList = {

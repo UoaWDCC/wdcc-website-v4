@@ -4,12 +4,13 @@ import Link, { LinkProps } from "next/link";
 import { cn } from "@/libs/utils";
 
 // Need to omit href from AnchorHTMLAttributes because it conflicts with Next LinkProps
-interface UnderlineLinkProps extends LinkProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
+type UnderlineLinkProps = {
     mode?: "light" | "dark"; // Underline color
     shift?: boolean; // Controls whether the underline shifts on hover
     children: ReactNode;
     newTab?: boolean;
-}
+} & LinkProps &
+    Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">;
 
 // See variant in src/components/navigation/navbar/DropDownLink.tsx
 export const UnderlineLink = ({ children, newTab, mode = "dark", shift, ...props }: UnderlineLinkProps) => {

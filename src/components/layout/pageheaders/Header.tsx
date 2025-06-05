@@ -1,4 +1,4 @@
-// TODO showcase version of header and graphic
+// TODO ANDREW showcase version of header and graphic
 
 // import { ReactNode } from "react";
 import { ReactNode } from "react";
@@ -51,7 +51,7 @@ const backlinkvar = tv({
     },
 });
 
-interface HeaderProps {
+type HeaderProps = {
     variant?: VariantProps<typeof header>;
     title: string;
     description?: string;
@@ -67,8 +67,8 @@ interface HeaderProps {
         label: string;
         href: string;
     };
-    // graphic?: string; TODO
-}
+    // graphic?: string; TODO ANDREW
+};
 
 /**
  * General global header component - used to provide general headings for all (or most) content pages.

@@ -19,13 +19,13 @@ const card = tv({
     },
 });
 
-export interface WhatWeDoCardProps {
+export type WhatWeDoCardProps = {
     variant?: VariantProps<typeof card>;
     index: string;
     title: string;
     description: string;
     slug: string;
-}
+};
 
 const InfoCard = ({ variant, index, title, description, slug }: WhatWeDoCardProps) => {
     return (

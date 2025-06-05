@@ -2,11 +2,11 @@ import { cn } from "@/libs/utils";
 
 import { Category } from "../_data/events.data";
 
-interface EventCategoryFilterProps {
+type EventCategoryFilterProps = {
     categories: Category[];
     selectedCategory: string;
     filterByCategory: (category: string) => () => void;
-}
+};
 
 export default function EventCategoryFilter({
     categories,
@@ -31,7 +31,12 @@ export default function EventCategoryFilter({
                     </button>
                 ))}
             </div>
-            <select className="flex md:hidden" onChange={(e) => filterByCategory(e.target.value)()}>
+            <select
+                className="flex md:hidden"
+                onChange={(e) => {
+                    filterByCategory(e.target.value)();
+                }}
+            >
                 {categories.map((category) => (
                     <option key={category.name} value={category.name}>
                         {category.name}

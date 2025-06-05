@@ -8,9 +8,9 @@ import SuspenseImage from "@/components/SuspenseImage";
 
 import { ProjectTag } from "./ProjectTag";
 
-interface ProjectCardProps {
+type ProjectCardProps = {
     project: Project;
-}
+};
 
 export function ProjectCard({ project }: ProjectCardProps) {
     const { year, slug } = project;
@@ -34,10 +34,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 </div>
                 <div className="mt-auto flex flex-wrap gap-2 whitespace-nowrap">
                     <ProjectTag className="bg-blue-100 text-blue-800" tagText={`${project.year} project`} />
-                    {project.technologies &&
-                        project.technologies.map((technology, index) => (
-                            <ProjectTag className="bg-gray-100" tagText={technology} key={index} />
-                        ))}
+                    {project.technologies?.map((technology, index) => (
+                        <ProjectTag className="bg-gray-100" tagText={technology} key={index} />
+                    ))}
                 </div>
             </div>
         </Link>

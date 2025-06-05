@@ -19,9 +19,9 @@ const loading = tv({
     },
 });
 
-interface SimpleLoadingProps extends HTMLAttributes<HTMLDivElement> {
+type SimpleLoadingProps = {
     variant?: VariantProps<typeof loading>;
-}
+} & HTMLAttributes<HTMLDivElement>;
 
 const SimpleLoading = ({ variant, ...props }: SimpleLoadingProps) => {
     return (

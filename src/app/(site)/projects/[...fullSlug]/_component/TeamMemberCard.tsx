@@ -24,17 +24,17 @@ const card = tv({
 
 type Variant = { variant?: VariantProps<typeof card> };
 
-interface TeamCardProps extends Variant {
+type TeamCardProps = {
     name: string;
     role: string;
     image?: ImageType;
-}
+} & Variant;
 
 const TeamMemberCard = ({ name, role, image, variant }: TeamCardProps) => {
     return (
         <div className={card(variant)}>
             <div className="h-[150px] w-[200px] rounded-md bg-gray-50">
-                <ImageCover src={image?.src || placeholder} alt={image?.alt || name} height={"150px"} width="200px" />
+                <ImageCover src={image?.src ?? placeholder} alt={image?.alt ?? name} height={"150px"} width="200px" />
             </div>
             <div className="space-2">
                 <p className="font-semibold">{name}</p>

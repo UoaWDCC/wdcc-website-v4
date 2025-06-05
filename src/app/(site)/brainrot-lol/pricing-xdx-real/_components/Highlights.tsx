@@ -16,10 +16,10 @@ const highlightblock = tv({
     },
 });
 
-interface highlightProps extends HTMLAttributes<HTMLDivElement> {
+type highlightProps = {
     variant?: VariantProps<typeof highlightblock>;
     children: ReactNode;
-}
+} & HTMLAttributes<HTMLDivElement>;
 
 const HighlightBlock = ({ variant, children, ...props }: highlightProps) => {
     return (

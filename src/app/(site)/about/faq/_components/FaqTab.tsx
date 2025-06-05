@@ -2,12 +2,12 @@ import { FaqColors } from "@/types/pages/FaqPage";
 
 import { cn } from "@/libs/utils";
 
-interface FaqTabProps {
+type FaqTabProps = {
     colors: FaqColors;
     text: string;
     selected?: boolean;
     handleClick?: () => void;
-}
+};
 
 export function FaqTab({ colors, text, selected, handleClick }: FaqTabProps) {
     return (

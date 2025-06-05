@@ -8,11 +8,11 @@ import { easeOutExpo } from "@/libs/ease";
 
 import FaqButton from "./FaqButton";
 
-interface FaqItemProps {
+type FaqItemProps = {
     faq: Faq;
     selected: boolean;
     handleClick: () => void;
-}
+};
 
 export function FaqItem({ faq, selected, handleClick }: FaqItemProps) {
     return (

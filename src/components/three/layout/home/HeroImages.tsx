@@ -6,7 +6,7 @@ import * as THREE from "three";
 
 import { useGUI } from "@/hooks/useGUI";
 
-// todo: refactor this so that it supports multiple animations
+// TODO ASHTON: refactor this so that it supports multiple animations
 const HeroImages = () => {
     const [speed, setSpeed] = useState(0.5);
 
@@ -34,7 +34,7 @@ const HeroImages = () => {
     );
 };
 
-// todo: move to another file when there are more stuff
+// TODO ASHTON: move to another file when there are more stuff
 // should probably only have 4 images max
 const images = [
     "/images/heroImage_1.png",
@@ -46,14 +46,14 @@ const offsets = images.map((_, i) => ((Math.PI * 2) / images.length) * i); // of
 const phaseRotation = (Math.PI * 2) / images.length; // amount image should be rotated by phase amount
 const phaseOffset = Math.PI / images.length; // fixed phase offset to put images on the side of the logo instead of center
 
-interface FloatImageProps {
+type FloatImageProps = {
     offset: number;
     src: string;
     rps?: number;
-}
+};
 
 const FloatImage = ({ offset, src, rps = 0.5 }: FloatImageProps) => {
-    const meshRef = React.useRef<THREE.Mesh>(null!);
+    const meshRef = React.useRef<THREE.Mesh>(null);
     const textureLoader = new THREE.TextureLoader();
     const image = textureLoader.load(src);
     const alpha = textureLoader.load("/images/alphamask.png");

@@ -4,14 +4,14 @@ import Image, { StaticImageData } from "next/image";
 import placeholder from "@/assets/image/600x400.png";
 import { cn } from "@/libs/utils";
 
-interface DuoProps {
+type DuoProps = {
     children: ReactNode;
     image?: {
         src: string | undefined | StaticImageData;
         alt: string | undefined;
     };
     imgFirst?: boolean;
-}
+};
 
 export default function Duo({ children, image, imgFirst = false }: DuoProps) {
     return (

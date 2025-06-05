@@ -16,9 +16,9 @@ export default function FooterFriends({ friends }: { friends: LinkType[] }) {
     );
 }
 
-interface FriendLinkProps {
+type FriendLinkProps = {
     friend: LinkType;
-}
+};
 
 export function FriendLink({ friend }: FriendLinkProps) {
     const { label, href, external } = friend;

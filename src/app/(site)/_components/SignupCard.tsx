@@ -4,13 +4,13 @@ import Link from "next/link";
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
 
-interface SignupCardProps {
+type SignupCardProps = {
     SignUpCard: {
         title: string;
         descriptionLineOne: string;
         descriptionLineTwo: string;
     };
-}
+};
 const SignupCard = ({ SignUpCard }: SignupCardProps) => {
     return (
         <div className="bg-blue-brand flex w-full flex-col items-center justify-center gap-10 rounded-2xl px-12 py-10 md:px-16 md:py-12">

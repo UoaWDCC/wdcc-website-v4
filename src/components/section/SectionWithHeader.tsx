@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
-interface SectionWithHeaderProps {
+type SectionWithHeaderProps = {
     children: ReactNode;
     headerText: string;
-}
+};
 
 export default function SectionWithHeader({ children, headerText }: SectionWithHeaderProps) {
     return (
