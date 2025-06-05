@@ -14,6 +14,12 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
     ...compat.config({
+        ignorePatterns: [
+            "node_modules/",
+            ".next/",
+            "public/",
+            "payload-types.ts",
+        ],
         extends: ["next", "prettier"],
     }),
     ...tseslint.configs.strictTypeChecked,
@@ -31,7 +37,7 @@ const eslintConfig = [
         },
         rules: {
             // Custom overrides
-            "no-unused-vars": "error",
+            "@typescript-eslint/no-unused-vars": ["error"],
             "unused-imports/no-unused-imports": "error",
             "@typescript-eslint/consistent-type-definitions": ["error", "type"],
             "@typescript-eslint/no-confusing-void-expression": "off",
@@ -44,7 +50,16 @@ const eslintConfig = [
                     allowAny: false,
                 },
             ],
+            "@typescript-eslint/no-empty-function": [
+                "error",
+                {
+                    allow: ["arrowFunctions"], // Allow for function typing
+                },
+            ],
             "@typescript-eslint/no-misused-promises": "off",
+
+            // For migration
+            "@typescript-eslint/no-unnecessary-condition": "off",
         },
     },
 ];

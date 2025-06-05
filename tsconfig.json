@@ -20,7 +20,7 @@
         "paths": {
             "@app/*": ["./src/app/(site)/*"],
             "@public/*": ["./public/*"],
-            "@payload-config": ["./src/payload.config.ts"],
+            "@payload-config": ["./payload.config.ts"],
             "@/*": ["./src/*"]
         },
         "target": "ES2017"

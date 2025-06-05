@@ -19,8 +19,7 @@
         "clear:next": "rimraf .next",
         "clear:modules": "rimraf node_modules",
         "nuke": "rimraf .next && rimraf node_modules",
-        "payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload",
-        "generate:type": "pnpm run payload generate:types"
+        "generate:type": "payload generate:types"
     },
     "dependencies": {
         "@next/bundle-analyzer": "^15.1.0",
