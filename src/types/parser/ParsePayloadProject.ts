@@ -1,6 +1,7 @@
+import type { Project as CMSProject } from "@/types/payload-types";
+
 import { media } from "@/libs/payload";
 import { isNullish, removeDuplicates } from "@/libs/utils";
-import type { Project as CMSProject } from "@/types/payload-types";
 
 import type { Project } from "../models";
 

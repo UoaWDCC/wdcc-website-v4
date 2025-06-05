@@ -51,7 +51,6 @@ const eslintConfig = [
                     allow: ["arrowFunctions"], // Allow for function typing
                 },
             ],
-            "@typescript-eslint/no-misused-promises": "off",
 
             // For migration
             "@typescript-eslint/no-unnecessary-condition": "off",
