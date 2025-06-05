@@ -10,7 +10,7 @@ import SponsorCard from "./sponsor/SponsorCard";
 
 type SponsorSectionProps = {
     SponsorSection: SponsorSectionType;
-}
+};
 
 export const SponsorSection = ({ SponsorSection }: SponsorSectionProps) => {
     return (
@@ -65,7 +65,7 @@ const sponsorLabel = tv({
 type SponsorLabelProps = {
     tier: SponsorTierKeys;
     count: number;
-} & HTMLAttributes<HTMLDivElement>
+} & HTMLAttributes<HTMLDivElement>;
 
 const SponsorLabel = ({ tier, count, ...props }: SponsorLabelProps) => {
     return (

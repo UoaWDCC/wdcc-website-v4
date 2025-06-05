@@ -8,7 +8,7 @@ import TeamMemberCard from "./TeamMemberCard";
 
 type IndividualProjectProps = {
     project: Project;
-}
+};
 
 const IndividualProject = ({ project }: IndividualProjectProps) => {
     const technologies = project.technologies.map((tech) => {

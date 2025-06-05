@@ -7,1007 +7,1006 @@
  */
 
 export interface Config {
-  auth: {
-    users: UserAuthOperations;
-  };
-  collections: {
-    users: User;
-    media: Media;
-    event: Event;
-    project: Project;
-    test: Test;
-    partners: Partner;
-    'payload-locked-documents': PayloadLockedDocument;
-    'payload-preferences': PayloadPreference;
-    'payload-migrations': PayloadMigration;
-  };
-  collectionsJoins: {};
-  collectionsSelect: {
-    users: UsersSelect<false> | UsersSelect<true>;
-    media: MediaSelect<false> | MediaSelect<true>;
-    event: EventSelect<false> | EventSelect<true>;
-    project: ProjectSelect<false> | ProjectSelect<true>;
-    test: TestSelect<false> | TestSelect<true>;
-    partners: PartnersSelect<false> | PartnersSelect<true>;
-    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
-    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
-    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
-  };
-  db: {
-    defaultIDType: number;
-  };
-  globals: {
-    'execs-page': ExecsPage;
-    'faq-page': FaqPage;
-    'about-page': AboutPage;
-    'projects-page': ProjectsPage;
-    'hero-page': HeroPage;
-  };
-  globalsSelect: {
-    'execs-page': ExecsPageSelect<false> | ExecsPageSelect<true>;
-    'faq-page': FaqPageSelect<false> | FaqPageSelect<true>;
-    'about-page': AboutPageSelect<false> | AboutPageSelect<true>;
-    'projects-page': ProjectsPageSelect<false> | ProjectsPageSelect<true>;
-    'hero-page': HeroPageSelect<false> | HeroPageSelect<true>;
-  };
-  locale: null;
-  user: User & {
-    collection: 'users';
-  };
-  jobs: {
-    tasks: unknown;
-    workflows: unknown;
-  };
+    auth: {
+        users: UserAuthOperations;
+    };
+    collections: {
+        users: User;
+        media: Media;
+        event: Event;
+        project: Project;
+        test: Test;
+        partners: Partner;
+        "payload-locked-documents": PayloadLockedDocument;
+        "payload-preferences": PayloadPreference;
+        "payload-migrations": PayloadMigration;
+    };
+    collectionsJoins: {};
+    collectionsSelect: {
+        users: UsersSelect<false> | UsersSelect<true>;
+        media: MediaSelect<false> | MediaSelect<true>;
+        event: EventSelect<false> | EventSelect<true>;
+        project: ProjectSelect<false> | ProjectSelect<true>;
+        test: TestSelect<false> | TestSelect<true>;
+        partners: PartnersSelect<false> | PartnersSelect<true>;
+        "payload-locked-documents": PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
+        "payload-preferences": PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
+        "payload-migrations": PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
+    };
+    db: {
+        defaultIDType: number;
+    };
+    globals: {
+        "execs-page": ExecsPage;
+        "faq-page": FaqPage;
+        "about-page": AboutPage;
+        "projects-page": ProjectsPage;
+        "hero-page": HeroPage;
+    };
+    globalsSelect: {
+        "execs-page": ExecsPageSelect<false> | ExecsPageSelect<true>;
+        "faq-page": FaqPageSelect<false> | FaqPageSelect<true>;
+        "about-page": AboutPageSelect<false> | AboutPageSelect<true>;
+        "projects-page": ProjectsPageSelect<false> | ProjectsPageSelect<true>;
+        "hero-page": HeroPageSelect<false> | HeroPageSelect<true>;
+    };
+    locale: null;
+    user: User & {
+        collection: "users";
+    };
+    jobs: {
+        tasks: unknown;
+        workflows: unknown;
+    };
 }
 export interface UserAuthOperations {
-  forgotPassword: {
-    email: string;
-    password: string;
-  };
-  login: {
-    email: string;
-    password: string;
-  };
-  registerFirstUser: {
-    email: string;
-    password: string;
-  };
-  unlock: {
-    email: string;
-    password: string;
-  };
+    forgotPassword: {
+        email: string;
+        password: string;
+    };
+    login: {
+        email: string;
+        password: string;
+    };
+    registerFirstUser: {
+        email: string;
+        password: string;
+    };
+    unlock: {
+        email: string;
+        password: string;
+    };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
-  id: number;
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  password?: string | null;
+    id: number;
+    updatedAt: string;
+    createdAt: string;
+    email: string;
+    resetPasswordToken?: string | null;
+    resetPasswordExpiration?: string | null;
+    salt?: string | null;
+    hash?: string | null;
+    loginAttempts?: number | null;
+    lockUntil?: string | null;
+    password?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
 export interface Media {
-  id: number;
-  alt: string;
-  prefix?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
+    id: number;
+    alt: string;
+    prefix?: string | null;
+    updatedAt: string;
+    createdAt: string;
+    url?: string | null;
+    thumbnailURL?: string | null;
+    filename?: string | null;
+    mimeType?: string | null;
+    filesize?: number | null;
+    width?: number | null;
+    height?: number | null;
+    focalX?: number | null;
+    focalY?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "event".
  */
 export interface Event {
-  id: number;
-  thumbnail: number | Media;
-  slug: string;
-  title: string;
-  Description: string;
-  time: string;
-  location: string;
-  category: 'Workshop' | 'Competition' | 'Social' | 'Projects' | 'Other';
-  page: {
+    id: number;
+    thumbnail: number | Media;
+    slug: string;
+    title: string;
     Description: string;
-    image: number | Media;
-  };
-  Partners?: (number | Partner)[] | null;
-  updatedAt: string;
-  createdAt: string;
+    time: string;
+    location: string;
+    category: "Workshop" | "Competition" | "Social" | "Projects" | "Other";
+    page: {
+        Description: string;
+        image: number | Media;
+    };
+    Partners?: (number | Partner)[] | null;
+    updatedAt: string;
+    createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "partners".
  */
 export interface Partner {
-  id: number;
-  href: string;
-  alt: string;
-  prefix?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
+    id: number;
+    href: string;
+    alt: string;
+    prefix?: string | null;
+    updatedAt: string;
+    createdAt: string;
+    url?: string | null;
+    thumbnailURL?: string | null;
+    filename?: string | null;
+    mimeType?: string | null;
+    filesize?: number | null;
+    width?: number | null;
+    height?: number | null;
+    focalX?: number | null;
+    focalY?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "project".
  */
 export interface Project {
-  id: number;
-  slug: string;
-  year: string;
-  client: string;
-  technologies: (
-    | 'html'
-    | 'css'
-    | 'javascript'
-    | 'typescript'
-    | 'node'
-    | 'react'
-    | 'vue'
-    | 'vite'
-    | 'tailwindcss'
-    | 'express'
-    | 'python'
-    | 'supabase'
-    | 'payload'
-    | 'notion'
-    | 'nextjs'
-    | 'astro'
-    | 'mongodb'
-    | 'firebase'
-    | 'postgresql'
-    | 'prisma'
-    | 'drizzleorm'
-    | 'redis'
-    | 'aws'
-    | 'fly'
-    | 'figma'
-    | 'motion'
-    | 'nextauth'
-    | 'vitest'
-    | 'twitch'
-  )[];
-  difficulty: 'academy' | 'easy' | 'medium' | 'hard' | 'unassigned';
-  name: string;
-  description: string;
-  thumbnail: number | Media;
-  extendedName?: string | null;
-  extendedDescription: string;
-  image: number | Media;
-  primaryLink: {
-    label: string;
-    href: string;
-  };
-  secondaryLink: {
-    label: string;
-    href: string;
-  };
-  manager: {
+    id: number;
+    slug: string;
+    year: string;
+    client: string;
+    technologies: (
+        | "html"
+        | "css"
+        | "javascript"
+        | "typescript"
+        | "node"
+        | "react"
+        | "vue"
+        | "vite"
+        | "tailwindcss"
+        | "express"
+        | "python"
+        | "supabase"
+        | "payload"
+        | "notion"
+        | "nextjs"
+        | "astro"
+        | "mongodb"
+        | "firebase"
+        | "postgresql"
+        | "prisma"
+        | "drizzleorm"
+        | "redis"
+        | "aws"
+        | "fly"
+        | "figma"
+        | "motion"
+        | "nextauth"
+        | "vitest"
+        | "twitch"
+    )[];
+    difficulty: "academy" | "easy" | "medium" | "hard" | "unassigned";
     name: string;
-    image?: (number | null) | Media;
-  };
-  techlead: {
-    name: string;
-    image?: (number | null) | Media;
-  };
-  members?:
-    | {
+    description: string;
+    thumbnail: number | Media;
+    extendedName?: string | null;
+    extendedDescription: string;
+    image: number | Media;
+    primaryLink: {
+        label: string;
+        href: string;
+    };
+    secondaryLink: {
+        label: string;
+        href: string;
+    };
+    manager: {
         name: string;
-        role: 'developer' | 'designer' | 'tutor';
         image?: (number | null) | Media;
-        id?: string | null;
-      }[]
-    | null;
-  updatedAt: string;
-  createdAt: string;
+    };
+    techlead: {
+        name: string;
+        image?: (number | null) | Media;
+    };
+    members?:
+        | {
+              name: string;
+              role: "developer" | "designer" | "tutor";
+              image?: (number | null) | Media;
+              id?: string | null;
+          }[]
+        | null;
+    updatedAt: string;
+    createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "test".
  */
 export interface Test {
-  id: number;
-  slug: string;
-  year: string;
-  client: string;
-  name: {
-    default: string;
-    extended?: string | null;
-  };
-  description: string;
-  brief: {
+    id: number;
+    slug: string;
+    year: string;
+    client: string;
+    name: {
+        default: string;
+        extended?: string | null;
+    };
     description: string;
-    image: number | Media;
-  };
-  technologies: (
-    | 'html'
-    | 'css'
-    | 'javascript'
-    | 'typescript'
-    | 'node'
-    | 'react'
-    | 'vue'
-    | 'vite'
-    | 'tailwindcss'
-    | 'express'
-    | 'python'
-    | 'supabase'
-    | 'payload'
-    | 'notion'
-    | 'nextjs'
-    | 'astro'
-    | 'mongodb'
-    | 'firebase'
-    | 'postgresql'
-    | 'prisma'
-    | 'drizzleorm'
-    | 'redis'
-    | 'aws'
-    | 'fly'
-    | 'figma'
-    | 'motion'
-    | 'nextauth'
-    | 'vitest'
-    | 'twitch'
-  )[];
-  primaryLink: {
-    label: string;
-    href: string;
-  };
-  secondaryLink: {
-    label: string;
-    href: string;
-  };
-  team: {
-    manager: {
-      name: string;
-      image?: (number | null) | Media;
+    brief: {
+        description: string;
+        image: number | Media;
     };
-    techlead: {
-      name: string;
-      image?: (number | null) | Media;
+    technologies: (
+        | "html"
+        | "css"
+        | "javascript"
+        | "typescript"
+        | "node"
+        | "react"
+        | "vue"
+        | "vite"
+        | "tailwindcss"
+        | "express"
+        | "python"
+        | "supabase"
+        | "payload"
+        | "notion"
+        | "nextjs"
+        | "astro"
+        | "mongodb"
+        | "firebase"
+        | "postgresql"
+        | "prisma"
+        | "drizzleorm"
+        | "redis"
+        | "aws"
+        | "fly"
+        | "figma"
+        | "motion"
+        | "nextauth"
+        | "vitest"
+        | "twitch"
+    )[];
+    primaryLink: {
+        label: string;
+        href: string;
     };
-    members?:
-      | {
-          name: string;
-          role: 'engineer' | 'designer';
-          image?: (number | null) | Media;
-          id?: string | null;
-        }[]
-      | null;
-  };
-  updatedAt: string;
-  createdAt: string;
+    secondaryLink: {
+        label: string;
+        href: string;
+    };
+    team: {
+        manager: {
+            name: string;
+            image?: (number | null) | Media;
+        };
+        techlead: {
+            name: string;
+            image?: (number | null) | Media;
+        };
+        members?:
+            | {
+                  name: string;
+                  role: "engineer" | "designer";
+                  image?: (number | null) | Media;
+                  id?: string | null;
+              }[]
+            | null;
+    };
+    updatedAt: string;
+    createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: number;
-  document?:
-    | ({
-        relationTo: 'users';
+    id: number;
+    document?:
+        | ({
+              relationTo: "users";
+              value: number | User;
+          } | null)
+        | ({
+              relationTo: "media";
+              value: number | Media;
+          } | null)
+        | ({
+              relationTo: "event";
+              value: number | Event;
+          } | null)
+        | ({
+              relationTo: "project";
+              value: number | Project;
+          } | null)
+        | ({
+              relationTo: "test";
+              value: number | Test;
+          } | null)
+        | ({
+              relationTo: "partners";
+              value: number | Partner;
+          } | null);
+    globalSlug?: string | null;
+    user: {
+        relationTo: "users";
         value: number | User;
-      } | null)
-    | ({
-        relationTo: 'media';
-        value: number | Media;
-      } | null)
-    | ({
-        relationTo: 'event';
-        value: number | Event;
-      } | null)
-    | ({
-        relationTo: 'project';
-        value: number | Project;
-      } | null)
-    | ({
-        relationTo: 'test';
-        value: number | Test;
-      } | null)
-    | ({
-        relationTo: 'partners';
-        value: number | Partner;
-      } | null);
-  globalSlug?: string | null;
-  user: {
-    relationTo: 'users';
-    value: number | User;
-  };
-  updatedAt: string;
-  createdAt: string;
+    };
+    updatedAt: string;
+    createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: number;
-  user: {
-    relationTo: 'users';
-    value: number | User;
-  };
-  key?: string | null;
-  value?:
-    | {
-        [k: string]: unknown;
-      }
-    | unknown[]
-    | string
-    | number
-    | boolean
-    | null;
-  updatedAt: string;
-  createdAt: string;
+    id: number;
+    user: {
+        relationTo: "users";
+        value: number | User;
+    };
+    key?: string | null;
+    value?:
+        | {
+              [k: string]: unknown;
+          }
+        | unknown[]
+        | string
+        | number
+        | boolean
+        | null;
+    updatedAt: string;
+    createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: number;
-  name?: string | null;
-  batch?: number | null;
-  updatedAt: string;
-  createdAt: string;
+    id: number;
+    name?: string | null;
+    batch?: number | null;
+    updatedAt: string;
+    createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
-  updatedAt?: T;
-  createdAt?: T;
-  email?: T;
-  resetPasswordToken?: T;
-  resetPasswordExpiration?: T;
-  salt?: T;
-  hash?: T;
-  loginAttempts?: T;
-  lockUntil?: T;
+    updatedAt?: T;
+    createdAt?: T;
+    email?: T;
+    resetPasswordToken?: T;
+    resetPasswordExpiration?: T;
+    salt?: T;
+    hash?: T;
+    loginAttempts?: T;
+    lockUntil?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
-  alt?: T;
-  prefix?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
+    alt?: T;
+    prefix?: T;
+    updatedAt?: T;
+    createdAt?: T;
+    url?: T;
+    thumbnailURL?: T;
+    filename?: T;
+    mimeType?: T;
+    filesize?: T;
+    width?: T;
+    height?: T;
+    focalX?: T;
+    focalY?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "event_select".
  */
 export interface EventSelect<T extends boolean = true> {
-  thumbnail?: T;
-  slug?: T;
-  title?: T;
-  Description?: T;
-  time?: T;
-  location?: T;
-  category?: T;
-  page?:
-    | T
-    | {
-        Description?: T;
-        image?: T;
-      };
-  Partners?: T;
-  updatedAt?: T;
-  createdAt?: T;
+    thumbnail?: T;
+    slug?: T;
+    title?: T;
+    Description?: T;
+    time?: T;
+    location?: T;
+    category?: T;
+    page?:
+        | T
+        | {
+              Description?: T;
+              image?: T;
+          };
+    Partners?: T;
+    updatedAt?: T;
+    createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "project_select".
  */
 export interface ProjectSelect<T extends boolean = true> {
-  slug?: T;
-  year?: T;
-  client?: T;
-  technologies?: T;
-  difficulty?: T;
-  name?: T;
-  description?: T;
-  thumbnail?: T;
-  extendedName?: T;
-  extendedDescription?: T;
-  image?: T;
-  primaryLink?:
-    | T
-    | {
-        label?: T;
-        href?: T;
-      };
-  secondaryLink?:
-    | T
-    | {
-        label?: T;
-        href?: T;
-      };
-  manager?:
-    | T
-    | {
-        name?: T;
-        image?: T;
-      };
-  techlead?:
-    | T
-    | {
-        name?: T;
-        image?: T;
-      };
-  members?:
-    | T
-    | {
-        name?: T;
-        role?: T;
-        image?: T;
-        id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
+    slug?: T;
+    year?: T;
+    client?: T;
+    technologies?: T;
+    difficulty?: T;
+    name?: T;
+    description?: T;
+    thumbnail?: T;
+    extendedName?: T;
+    extendedDescription?: T;
+    image?: T;
+    primaryLink?:
+        | T
+        | {
+              label?: T;
+              href?: T;
+          };
+    secondaryLink?:
+        | T
+        | {
+              label?: T;
+              href?: T;
+          };
+    manager?:
+        | T
+        | {
+              name?: T;
+              image?: T;
+          };
+    techlead?:
+        | T
+        | {
+              name?: T;
+              image?: T;
+          };
+    members?:
+        | T
+        | {
+              name?: T;
+              role?: T;
+              image?: T;
+              id?: T;
+          };
+    updatedAt?: T;
+    createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "test_select".
  */
 export interface TestSelect<T extends boolean = true> {
-  slug?: T;
-  year?: T;
-  client?: T;
-  name?:
-    | T
-    | {
-        default?: T;
-        extended?: T;
-      };
-  description?: T;
-  brief?:
-    | T
-    | {
-        description?: T;
-        image?: T;
-      };
-  technologies?: T;
-  primaryLink?:
-    | T
-    | {
-        label?: T;
-        href?: T;
-      };
-  secondaryLink?:
-    | T
-    | {
-        label?: T;
-        href?: T;
-      };
-  team?:
-    | T
-    | {
-        manager?:
-          | T
-          | {
-              name?: T;
+    slug?: T;
+    year?: T;
+    client?: T;
+    name?:
+        | T
+        | {
+              default?: T;
+              extended?: T;
+          };
+    description?: T;
+    brief?:
+        | T
+        | {
+              description?: T;
               image?: T;
-            };
-        techlead?:
-          | T
-          | {
-              name?: T;
-              image?: T;
-            };
-        members?:
-          | T
-          | {
-              name?: T;
-              role?: T;
-              image?: T;
-              id?: T;
-            };
-      };
-  updatedAt?: T;
-  createdAt?: T;
+          };
+    technologies?: T;
+    primaryLink?:
+        | T
+        | {
+              label?: T;
+              href?: T;
+          };
+    secondaryLink?:
+        | T
+        | {
+              label?: T;
+              href?: T;
+          };
+    team?:
+        | T
+        | {
+              manager?:
+                  | T
+                  | {
+                        name?: T;
+                        image?: T;
+                    };
+              techlead?:
+                  | T
+                  | {
+                        name?: T;
+                        image?: T;
+                    };
+              members?:
+                  | T
+                  | {
+                        name?: T;
+                        role?: T;
+                        image?: T;
+                        id?: T;
+                    };
+          };
+    updatedAt?: T;
+    createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "partners_select".
  */
 export interface PartnersSelect<T extends boolean = true> {
-  href?: T;
-  alt?: T;
-  prefix?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
+    href?: T;
+    alt?: T;
+    prefix?: T;
+    updatedAt?: T;
+    createdAt?: T;
+    url?: T;
+    thumbnailURL?: T;
+    filename?: T;
+    mimeType?: T;
+    filesize?: T;
+    width?: T;
+    height?: T;
+    focalX?: T;
+    focalY?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents_select".
  */
 export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
-  document?: T;
-  globalSlug?: T;
-  user?: T;
-  updatedAt?: T;
-  createdAt?: T;
+    document?: T;
+    globalSlug?: T;
+    user?: T;
+    updatedAt?: T;
+    createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences_select".
  */
 export interface PayloadPreferencesSelect<T extends boolean = true> {
-  user?: T;
-  key?: T;
-  value?: T;
-  updatedAt?: T;
-  createdAt?: T;
+    user?: T;
+    key?: T;
+    value?: T;
+    updatedAt?: T;
+    createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-migrations_select".
  */
 export interface PayloadMigrationsSelect<T extends boolean = true> {
-  name?: T;
-  batch?: T;
-  updatedAt?: T;
-  createdAt?: T;
+    name?: T;
+    batch?: T;
+    updatedAt?: T;
+    createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "execs-page".
  */
 export interface ExecsPage {
-  id: number;
-  title: string;
-  description: string;
-  teams: {
-    teamName: string;
-    teamDescription: string;
-    execs?:
-      | {
-          name: string;
-          role: string;
-          image?: (number | null) | Media;
-          description: string;
-          joined: string;
-          id?: string | null;
-        }[]
-      | null;
-    id?: string | null;
-  }[];
-  updatedAt?: string | null;
-  createdAt?: string | null;
+    id: number;
+    title: string;
+    description: string;
+    teams: {
+        teamName: string;
+        teamDescription: string;
+        execs?:
+            | {
+                  name: string;
+                  role: string;
+                  image?: (number | null) | Media;
+                  description: string;
+                  joined: string;
+                  id?: string | null;
+              }[]
+            | null;
+        id?: string | null;
+    }[];
+    updatedAt?: string | null;
+    createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "faq-page".
  */
 export interface FaqPage {
-  id: number;
-  info: string;
-  sections: {
-    name: string;
-    faqs: {
-      question: string;
-      answer: string;
-      id?: string | null;
+    id: number;
+    info: string;
+    sections: {
+        name: string;
+        faqs: {
+            question: string;
+            answer: string;
+            id?: string | null;
+        }[];
+        colors: {
+            tabBg: string;
+            tabCircle: string;
+        };
+        id?: string | null;
     }[];
-    colors: {
-      tabBg: string;
-      tabCircle: string;
-    };
-    id?: string | null;
-  }[];
-  updatedAt?: string | null;
-  createdAt?: string | null;
+    updatedAt?: string | null;
+    createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "about-page".
  */
 export interface AboutPage {
-  id: number;
-  header: {
-    title: string;
-    content: string;
-  };
-  genInfo: {
-    firstPart: string;
-    secondPart: string;
-    image: number | Media;
-  };
-  whyJoin: {
-    title: string;
-    content: string;
-    image: number | Media;
-  };
-  clubStory: {
-    title: string;
-    content: string;
-    image: number | Media;
-  };
-  ourPeople: {
-    title: string;
-    content: string;
-    image: number | Media;
-  };
-  quoteSection: {
-    quote: string;
-    author: string;
-    subscript: string;
-  };
-  endImage: {
-    image: number | Media;
-  };
-  updatedAt?: string | null;
-  createdAt?: string | null;
+    id: number;
+    header: {
+        title: string;
+        content: string;
+    };
+    genInfo: {
+        firstPart: string;
+        secondPart: string;
+        image: number | Media;
+    };
+    whyJoin: {
+        title: string;
+        content: string;
+        image: number | Media;
+    };
+    clubStory: {
+        title: string;
+        content: string;
+        image: number | Media;
+    };
+    ourPeople: {
+        title: string;
+        content: string;
+        image: number | Media;
+    };
+    quoteSection: {
+        quote: string;
+        author: string;
+        subscript: string;
+    };
+    endImage: {
+        image: number | Media;
+    };
+    updatedAt?: string | null;
+    createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "projects-page".
  */
 export interface ProjectsPage {
-  id: number;
-  header: {
-    title: string;
-    content: string;
-    buttons: {
-      text: string;
-      link: string;
-      id?: string | null;
-    }[];
-  };
-  infoSection: {
-    main: string;
-    checkboxes: {
-      title: string;
-      checks?:
-        | {
+    id: number;
+    header: {
+        title: string;
+        content: string;
+        buttons: {
             text: string;
+            link: string;
             id?: string | null;
-          }[]
-        | null;
+        }[];
     };
-  };
-  operationSection: {
-    title: string;
-    content: string;
-  };
-  rolesSection: {
-    title: string;
-    roles?:
-      | {
-          color: 'blue' | 'purple' | 'yellow' | 'green';
-          title: string;
-          slug: string;
-          description: string;
-          id?: string | null;
-        }[]
-      | null;
-  };
-  featuredSection: {
-    title: string;
-    cta: string;
-  };
-  updatedAt?: string | null;
-  createdAt?: string | null;
+    infoSection: {
+        main: string;
+        checkboxes: {
+            title: string;
+            checks?:
+                | {
+                      text: string;
+                      id?: string | null;
+                  }[]
+                | null;
+        };
+    };
+    operationSection: {
+        title: string;
+        content: string;
+    };
+    rolesSection: {
+        title: string;
+        roles?:
+            | {
+                  color: "blue" | "purple" | "yellow" | "green";
+                  title: string;
+                  slug: string;
+                  description: string;
+                  id?: string | null;
+              }[]
+            | null;
+    };
+    featuredSection: {
+        title: string;
+        cta: string;
+    };
+    updatedAt?: string | null;
+    createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "hero-page".
  */
 export interface HeroPage {
-  id: number;
-  hero: {
-    title: string;
-    blurb: string;
-  };
-  thisIsWDCC: {
-    description: string;
-    whatWeDo?:
-      | {
-          index: string;
-          title: string;
-          slug: string;
-          description: string;
-          variant: 'blue' | 'green' | 'yellow';
-          id?: string | null;
-        }[]
-      | null;
-  };
-  sponsorSection?: {
-    gold?: (number | Partner)[] | null;
-    silver?: (number | Partner)[] | null;
-    tech?: (number | Partner)[] | null;
-    community?: (number | Partner)[] | null;
-  };
-  signUpCard: {
-    title: string;
-    descriptionLineOne: string;
-    descriptionLineTwo: string;
-  };
-  updatedAt?: string | null;
-  createdAt?: string | null;
+    id: number;
+    hero: {
+        title: string;
+        blurb: string;
+    };
+    thisIsWDCC: {
+        description: string;
+        whatWeDo?:
+            | {
+                  index: string;
+                  title: string;
+                  slug: string;
+                  description: string;
+                  variant: "blue" | "green" | "yellow";
+                  id?: string | null;
+              }[]
+            | null;
+    };
+    sponsorSection?: {
+        gold?: (number | Partner)[] | null;
+        silver?: (number | Partner)[] | null;
+        tech?: (number | Partner)[] | null;
+        community?: (number | Partner)[] | null;
+    };
+    signUpCard: {
+        title: string;
+        descriptionLineOne: string;
+        descriptionLineTwo: string;
+    };
+    updatedAt?: string | null;
+    createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "execs-page_select".
  */
 export interface ExecsPageSelect<T extends boolean = true> {
-  title?: T;
-  description?: T;
-  teams?:
-    | T
-    | {
-        teamName?: T;
-        teamDescription?: T;
-        execs?:
-          | T
-          | {
-              name?: T;
-              role?: T;
-              image?: T;
-              description?: T;
-              joined?: T;
+    title?: T;
+    description?: T;
+    teams?:
+        | T
+        | {
+              teamName?: T;
+              teamDescription?: T;
+              execs?:
+                  | T
+                  | {
+                        name?: T;
+                        role?: T;
+                        image?: T;
+                        description?: T;
+                        joined?: T;
+                        id?: T;
+                    };
               id?: T;
-            };
-        id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+          };
+    updatedAt?: T;
+    createdAt?: T;
+    globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "faq-page_select".
  */
 export interface FaqPageSelect<T extends boolean = true> {
-  info?: T;
-  sections?:
-    | T
-    | {
-        name?: T;
-        faqs?:
-          | T
-          | {
-              question?: T;
-              answer?: T;
+    info?: T;
+    sections?:
+        | T
+        | {
+              name?: T;
+              faqs?:
+                  | T
+                  | {
+                        question?: T;
+                        answer?: T;
+                        id?: T;
+                    };
+              colors?:
+                  | T
+                  | {
+                        tabBg?: T;
+                        tabCircle?: T;
+                    };
               id?: T;
-            };
-        colors?:
-          | T
-          | {
-              tabBg?: T;
-              tabCircle?: T;
-            };
-        id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+          };
+    updatedAt?: T;
+    createdAt?: T;
+    globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "about-page_select".
  */
 export interface AboutPageSelect<T extends boolean = true> {
-  header?:
-    | T
-    | {
-        title?: T;
-        content?: T;
-      };
-  genInfo?:
-    | T
-    | {
-        firstPart?: T;
-        secondPart?: T;
-        image?: T;
-      };
-  whyJoin?:
-    | T
-    | {
-        title?: T;
-        content?: T;
-        image?: T;
-      };
-  clubStory?:
-    | T
-    | {
-        title?: T;
-        content?: T;
-        image?: T;
-      };
-  ourPeople?:
-    | T
-    | {
-        title?: T;
-        content?: T;
-        image?: T;
-      };
-  quoteSection?:
-    | T
-    | {
-        quote?: T;
-        author?: T;
-        subscript?: T;
-      };
-  endImage?:
-    | T
-    | {
-        image?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+    header?:
+        | T
+        | {
+              title?: T;
+              content?: T;
+          };
+    genInfo?:
+        | T
+        | {
+              firstPart?: T;
+              secondPart?: T;
+              image?: T;
+          };
+    whyJoin?:
+        | T
+        | {
+              title?: T;
+              content?: T;
+              image?: T;
+          };
+    clubStory?:
+        | T
+        | {
+              title?: T;
+              content?: T;
+              image?: T;
+          };
+    ourPeople?:
+        | T
+        | {
+              title?: T;
+              content?: T;
+              image?: T;
+          };
+    quoteSection?:
+        | T
+        | {
+              quote?: T;
+              author?: T;
+              subscript?: T;
+          };
+    endImage?:
+        | T
+        | {
+              image?: T;
+          };
+    updatedAt?: T;
+    createdAt?: T;
+    globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "projects-page_select".
  */
 export interface ProjectsPageSelect<T extends boolean = true> {
-  header?:
-    | T
-    | {
-        title?: T;
-        content?: T;
-        buttons?:
-          | T
-          | {
-              text?: T;
-              link?: T;
-              id?: T;
-            };
-      };
-  infoSection?:
-    | T
-    | {
-        main?: T;
-        checkboxes?:
-          | T
-          | {
+    header?:
+        | T
+        | {
               title?: T;
-              checks?:
-                | T
-                | {
-                    text?: T;
-                    id?: T;
-                  };
-            };
-      };
-  operationSection?:
-    | T
-    | {
-        title?: T;
-        content?: T;
-      };
-  rolesSection?:
-    | T
-    | {
-        title?: T;
-        roles?:
-          | T
-          | {
-              color?: T;
+              content?: T;
+              buttons?:
+                  | T
+                  | {
+                        text?: T;
+                        link?: T;
+                        id?: T;
+                    };
+          };
+    infoSection?:
+        | T
+        | {
+              main?: T;
+              checkboxes?:
+                  | T
+                  | {
+                        title?: T;
+                        checks?:
+                            | T
+                            | {
+                                  text?: T;
+                                  id?: T;
+                              };
+                    };
+          };
+    operationSection?:
+        | T
+        | {
               title?: T;
-              slug?: T;
-              description?: T;
-              id?: T;
-            };
-      };
-  featuredSection?:
-    | T
-    | {
-        title?: T;
-        cta?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+              content?: T;
+          };
+    rolesSection?:
+        | T
+        | {
+              title?: T;
+              roles?:
+                  | T
+                  | {
+                        color?: T;
+                        title?: T;
+                        slug?: T;
+                        description?: T;
+                        id?: T;
+                    };
+          };
+    featuredSection?:
+        | T
+        | {
+              title?: T;
+              cta?: T;
+          };
+    updatedAt?: T;
+    createdAt?: T;
+    globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "hero-page_select".
  */
 export interface HeroPageSelect<T extends boolean = true> {
-  hero?:
-    | T
-    | {
-        title?: T;
-        blurb?: T;
-      };
-  thisIsWDCC?:
-    | T
-    | {
-        description?: T;
-        whatWeDo?:
-          | T
-          | {
-              index?: T;
+    hero?:
+        | T
+        | {
               title?: T;
-              slug?: T;
+              blurb?: T;
+          };
+    thisIsWDCC?:
+        | T
+        | {
               description?: T;
-              variant?: T;
-              id?: T;
-            };
-      };
-  sponsorSection?:
-    | T
-    | {
-        gold?: T;
-        silver?: T;
-        tech?: T;
-        community?: T;
-      };
-  signUpCard?:
-    | T
-    | {
-        title?: T;
-        descriptionLineOne?: T;
-        descriptionLineTwo?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+              whatWeDo?:
+                  | T
+                  | {
+                        index?: T;
+                        title?: T;
+                        slug?: T;
+                        description?: T;
+                        variant?: T;
+                        id?: T;
+                    };
+          };
+    sponsorSection?:
+        | T
+        | {
+              gold?: T;
+              silver?: T;
+              tech?: T;
+              community?: T;
+          };
+    signUpCard?:
+        | T
+        | {
+              title?: T;
+              descriptionLineOne?: T;
+              descriptionLineTwo?: T;
+          };
+    updatedAt?: T;
+    createdAt?: T;
+    globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "auth".
  */
 export interface Auth {
-  [k: string]: unknown;
+    [k: string]: unknown;
 }
 
-
-declare module 'payload' {
-  export interface GeneratedTypes extends Config {}
+declare module "payload" {
+    export interface GeneratedTypes extends Config {}
 }

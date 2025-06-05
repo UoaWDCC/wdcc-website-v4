@@ -9,7 +9,7 @@ export const SponsorCardTest = ImageFit;
 
 type SponsorCardTest2Props = {
     color: string;
-} & ImageFitProps
+} & ImageFitProps;
 
 export const SponsorCardTest2 = ({ color, ...image }: SponsorCardTest2Props) => {
     return (

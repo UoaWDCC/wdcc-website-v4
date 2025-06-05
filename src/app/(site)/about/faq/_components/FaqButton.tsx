@@ -4,7 +4,7 @@ import { cn } from "@/libs/utils";
 type FaqButtonProps = {
     rotate?: boolean;
     className?: string;
-}
+};
 
 const FaqButton = ({ rotate, className }: FaqButtonProps) => {
     return (

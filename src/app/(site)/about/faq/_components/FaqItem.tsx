@@ -12,7 +12,7 @@ type FaqItemProps = {
     faq: Faq;
     selected: boolean;
     handleClick: () => void;
-}
+};
 
 export function FaqItem({ faq, selected, handleClick }: FaqItemProps) {
     return (

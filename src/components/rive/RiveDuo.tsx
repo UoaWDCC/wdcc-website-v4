@@ -11,7 +11,7 @@ type DuoProps = {
     };
     largeAnim?: boolean;
     imgFirst?: boolean;
-}
+};
 
 export default function RiveDuo({ children, rive, largeAnim = false, imgFirst = false }: DuoProps) {
     return (

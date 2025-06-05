@@ -8,12 +8,12 @@ export type Exec = {
     description: string;
     joined: string;
     id?: string | null;
-}
+};
 
 export type Faq = {
     question: string;
     answer: string;
-}
+};
 
 export type oldProject = {
     projectName: string;
@@ -26,7 +26,7 @@ export type oldProject = {
     technologies: string[];
     slug?: string;
     team: Team;
-}
+};
 
 type Difficulty = "academy" | "easy" | "medium" | "hard" | "unassigned";
 export const difficulties: Difficulty[] = ["academy", "easy", "medium", "hard", "unassigned"];
@@ -65,7 +65,7 @@ export type Project = {
     technologies: string[];
     difficulty: Difficulty;
     team: Team;
-}
+};
 
 export type OldEvent = {
     title: string;
@@ -79,7 +79,7 @@ export type OldEvent = {
     imageAlt: string;
     collabPartners: string[];
     slug?: string;
-}
+};
 
 export const EventCategories = ["Workshop", "Competition", "Social", "Projects", "Other"] as const;
 
@@ -108,13 +108,13 @@ export type Event = {
         src: string;
         alt: string;
     }[];
-}
+};
 
 export type Team = {
     techlead: { name: string; image?: { src: string; alt: string } };
     manager: { name: string; image?: { src: string; alt: string } };
     members: ProjectMember[];
-}
+};
 
 export type ProjectMember = {
     name: string;
@@ -123,4 +123,4 @@ export type ProjectMember = {
         src: string;
         alt: string;
     };
-}
+};

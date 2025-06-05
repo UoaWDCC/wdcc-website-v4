@@ -5,7 +5,7 @@ type AboutSection = {
     content: string;
     image: string | StaticImageData;
     imageAlt: string;
-}
+};
 
 export type AboutPage = {
     header: {
@@ -30,4 +30,4 @@ export type AboutPage = {
         image: string | StaticImageData;
         imageAlt: string;
     };
-}
+};

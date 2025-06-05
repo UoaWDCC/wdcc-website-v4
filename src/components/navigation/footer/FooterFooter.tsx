@@ -8,7 +8,7 @@ import { FooterSocial } from "./_data/footerTypes";
 type FooterFooterProps = {
     socials: FooterSocial[];
     friends: LinkType[];
-}
+};
 
 export default function FooterFooter({ socials, friends }: FooterFooterProps) {
     return (

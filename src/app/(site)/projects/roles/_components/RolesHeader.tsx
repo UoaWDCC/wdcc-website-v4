@@ -52,7 +52,7 @@ type HeaderProps = {
         label: string;
         href: string;
     };
-}
+};
 
 export default function RolesHeader({
     variant = { color: "blue" },

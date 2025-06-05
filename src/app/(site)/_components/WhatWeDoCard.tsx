@@ -25,7 +25,7 @@ export type WhatWeDoCardProps = {
     title: string;
     description: string;
     slug: string;
-}
+};
 
 const InfoCard = ({ variant, index, title, description, slug }: WhatWeDoCardProps) => {
     return (

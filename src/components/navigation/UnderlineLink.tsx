@@ -9,7 +9,8 @@ type UnderlineLinkProps = {
     shift?: boolean; // Controls whether the underline shifts on hover
     children: ReactNode;
     newTab?: boolean;
-} & LinkProps & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">
+} & LinkProps &
+    Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">;
 
 // See variant in src/components/navigation/navbar/DropDownLink.tsx
 export const UnderlineLink = ({ children, newTab, mode = "dark", shift, ...props }: UnderlineLinkProps) => {

@@ -28,7 +28,7 @@ export type ProjectRoleCardProps = {
     description: string;
     slug?: string;
     graphic?: StaticImageData;
-}
+};
 
 const ProjectRoleCard = ({ variant, title, description, slug, graphic }: ProjectRoleCardProps) => {
     return slug ? (

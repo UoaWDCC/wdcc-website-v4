@@ -5,7 +5,7 @@ type props = {
     title: string;
     description: string;
     graphic?: StaticImageData;
-}
+};
 
 export default function LearnCard({ title, description, graphic }: props) {
     return (

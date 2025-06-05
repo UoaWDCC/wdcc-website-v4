@@ -8,7 +8,7 @@ import FooterColumn from "./FooterColumn";
 
 type FooterProps = {
     className?: string;
-} & HTMLAttributes<HTMLDivElement>
+} & HTMLAttributes<HTMLDivElement>;
 
 export default function Footer({ className, ...props }: FooterProps) {
     return (

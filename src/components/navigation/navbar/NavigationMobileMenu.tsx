@@ -33,7 +33,7 @@ export type NavbarProps = {
     variant?: VariantProps<typeof mobileNav>;
     className?: string;
     links: NavigationLink[];
-}
+};
 
 // ONLY USE CLASSNAME TO CHANGE MEDIA QUERY
 const NavigationMobileMenu = ({ links, className, variant }: NavbarProps) => {

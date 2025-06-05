@@ -6,7 +6,7 @@ type FilterTagProps = {
     year: string;
     setSelectedYear: (year: string) => () => void;
     isSelected: boolean;
-}
+};
 
 export function FilterTag({ setSelectedYear, year, isSelected }: FilterTagProps) {
     return (

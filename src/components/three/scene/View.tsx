@@ -13,7 +13,7 @@ type ViewProps = {
     fallback?: React.ReactNode;
     orbit?: boolean;
     background?: boolean;
-} & React.HTMLAttributes<HTMLDivElement>
+} & React.HTMLAttributes<HTMLDivElement>;
 
 const View = forwardRef(({ children, orbit, background, fallback, ...props }: ViewProps, ref) => {
     const localRef = useRef<HTMLDivElement>(null);

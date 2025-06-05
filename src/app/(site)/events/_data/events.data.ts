@@ -6,7 +6,7 @@ import { getAllEvents } from "@/actions/getAllEvents";
 export type Category = {
     name: string;
     colors: string;
-}
+};
 
 const events = (await getAllEvents()).map(ParsePayloadEvent);
 

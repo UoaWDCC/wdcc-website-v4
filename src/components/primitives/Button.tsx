@@ -141,9 +141,9 @@ const button = tv({
 
 type CommonProps = {
     children: ReactNode;
-}
+};
 
-type Variant = { variant?: VariantProps<typeof button> }
+type Variant = { variant?: VariantProps<typeof button> };
 
 // Type if rendered as a button (no href provided)
 type ButtonVersionProps = Variant & HTMLAttributes<HTMLButtonElement> & CommonProps & { href?: never };

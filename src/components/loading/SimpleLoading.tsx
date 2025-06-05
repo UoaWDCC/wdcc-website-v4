@@ -21,7 +21,7 @@ const loading = tv({
 
 type SimpleLoadingProps = {
     variant?: VariantProps<typeof loading>;
-} & HTMLAttributes<HTMLDivElement>
+} & HTMLAttributes<HTMLDivElement>;
 
 const SimpleLoading = ({ variant, ...props }: SimpleLoadingProps) => {
     return (

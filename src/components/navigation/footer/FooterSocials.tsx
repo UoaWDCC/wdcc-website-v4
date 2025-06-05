@@ -12,7 +12,7 @@ import { FooterSocial } from "./_data/footerTypes";
 type FooterSocialsProps = {
     socials: FooterSocial[];
     className?: string;
-} & HTMLAttributes<HTMLDivElement>
+} & HTMLAttributes<HTMLDivElement>;
 
 export default function FooterSocials({ socials, className, ...props }: FooterSocialsProps) {
     const { scrollTo } = useScroll();
@@ -28,7 +28,13 @@ export default function FooterSocials({ socials, className, ...props }: FooterSo
                     {social.icon}
                 </Anchor>
             ))}
-            <Button variant={{ color: "blue" }} onClick={() => { scrollTo(0); }} className="ml-auto hidden sm:block">
+            <Button
+                variant={{ color: "blue" }}
+                onClick={() => {
+                    scrollTo(0);
+                }}
+                className="ml-auto hidden sm:block"
+            >
                 Back to Top
             </Button>
         </div>

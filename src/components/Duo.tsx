@@ -11,7 +11,7 @@ type DuoProps = {
         alt: string | undefined;
     };
     imgFirst?: boolean;
-}
+};
 
 export default function Duo({ children, image, imgFirst = false }: DuoProps) {
     return (

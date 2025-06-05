@@ -25,7 +25,7 @@ type hoverContextProps = {
     handleDropEnter: () => void;
     handleDropExit: () => void;
     isHovering: boolean;
-}
+};
 
 export const useNavHover = () => {
     const context = useContext(hoverContext);
@@ -68,7 +68,7 @@ const navbarLine = tv({
 export type NavbarProps = {
     variant?: VariantProps<typeof navbar>;
     className?: ClassName;
-}
+};
 
 /**
  * General navbar component - the navigation bar (top) for all pages.

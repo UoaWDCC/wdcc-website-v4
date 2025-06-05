@@ -13,7 +13,7 @@ type TextProps = {
     type?: "char" | "word";
     variants?: Variants;
     debug?: boolean;
-} & HTMLAtrributeNoMotion<"p">
+} & HTMLAtrributeNoMotion<"p">;
 
 const AnimatedText = ({ text, type = "word", variants = textVariantDefault, debug, ...props }: TextProps) => {
     if (debug) {

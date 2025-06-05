@@ -50,7 +50,7 @@ type FloatImageProps = {
     offset: number;
     src: string;
     rps?: number;
-}
+};
 
 const FloatImage = ({ offset, src, rps = 0.5 }: FloatImageProps) => {
     const meshRef = React.useRef<THREE.Mesh>(null);

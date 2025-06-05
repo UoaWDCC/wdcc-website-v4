@@ -1,9 +1,6 @@
 import type { ProjectsPage as CmsProjectPage } from "@/payload-types";
 
-
-
 import { ProjectsPage } from "../pages/ProjectsPage";
-
 
 export const ParsePayloadProjectPage = (CmsProjectPage: CmsProjectPage): ProjectsPage | undefined => {
     if (!CmsProjectPage) {

@@ -10,7 +10,7 @@ export type ImageFitProps = {
     width?: string;
     height?: string;
     className?: string;
-}
+};
 
 const ImageFit = ({ src, alt, width = "150px", height = "80px", className }: ImageFitProps) => {
     return (

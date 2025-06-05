@@ -13,7 +13,7 @@ type ScrollContextType = {
     getScrollY: () => number;
     /** Scroll to a specific location on the page - either a scrollY value or a querySelection (e.g. #myid). */
     scrollTo: (loc: number | string) => void;
-}
+};
 
 const scrollContext = createContext<ScrollContextType | null>(null);
 

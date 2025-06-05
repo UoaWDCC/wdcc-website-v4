@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 type SectionWithHeaderProps = {
     children: ReactNode;
     headerText: string;
-}
+};
 
 export default function SectionWithHeader({ children, headerText }: SectionWithHeaderProps) {
     return (

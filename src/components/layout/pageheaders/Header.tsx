@@ -68,7 +68,7 @@ type HeaderProps = {
         href: string;
     };
     // graphic?: string; TODO ANDREW
-}
+};
 
 /**
  * General global header component - used to provide general headings for all (or most) content pages.

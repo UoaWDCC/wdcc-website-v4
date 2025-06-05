@@ -7,7 +7,7 @@ import { cn } from "@/libs/utils";
 
 type DrawProps = {
     children: React.ReactNode;
-} & React.HTMLAttributes<HTMLSpanElement>
+} & React.HTMLAttributes<HTMLSpanElement>;
 
 const Draw = ({ children, ...props }: DrawProps) => {
     return (

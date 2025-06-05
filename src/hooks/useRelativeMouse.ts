@@ -3,11 +3,11 @@ import { RefObject, useCallback, useEffect, useRef, useState } from "react";
 type Position = {
     position: { x: number; y: number };
     normal: { rx: number; ry: number };
-}
+};
 
 type Settings = {
     persist?: boolean;
-}
+};
 
 /*
     this hook is used to get the mouse position inside of an element,

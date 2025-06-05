@@ -7,4 +7,4 @@ export type ExecPage = {
         description: string;
         execs: Exec[];
     }[];
-}
+};

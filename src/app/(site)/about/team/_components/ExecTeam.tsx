@@ -6,7 +6,7 @@ type ExecTeamProps = {
     title: string;
     description: string;
     execs: Exec[];
-}
+};
 
 export default function ExecTeam({ title, description, execs }: ExecTeamProps) {
     return (

@@ -7,7 +7,7 @@ import { easeOutQuad } from "@/libs/ease";
 
 type IntroProps = {
     children: ReactNode;
-}
+};
 
 const Intro = ({ children }: IntroProps) => {
     return (

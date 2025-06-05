@@ -19,7 +19,7 @@ const highlightblock = tv({
 type highlightProps = {
     variant?: VariantProps<typeof highlightblock>;
     children: ReactNode;
-} & HTMLAttributes<HTMLDivElement>
+} & HTMLAttributes<HTMLDivElement>;
 
 const HighlightBlock = ({ variant, children, ...props }: highlightProps) => {
     return (

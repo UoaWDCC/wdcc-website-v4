@@ -3,7 +3,7 @@ import { TableOfContents, TableOfContentsProps } from "./TableOfContents";
 type ArticleContentProps = {
     children: React.ReactNode;
     variant: TableOfContentsProps["variant"];
-}
+};
 
 export const ArticleContent = ({ children, variant }: ArticleContentProps) => {
     return (

@@ -6,7 +6,7 @@ type EventsRoadmapProps = {
         src: string;
         alt: string;
     };
-}
+};
 
 export default function EventsRoadmap({ title, image }: EventsRoadmapProps) {
     return (

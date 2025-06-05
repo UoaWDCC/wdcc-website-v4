@@ -28,7 +28,7 @@ type WDCCHeroProps = {
         title: string;
         blurb: string;
     };
-}
+};
 const WDCCHero = ({ hero }: WDCCHeroProps) => {
     const ref = useRef<HTMLDivElement>(null);
     const camera = useRef<THREE.PerspectiveCamera>(null);

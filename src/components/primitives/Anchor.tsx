@@ -25,7 +25,7 @@ type AnchorProps = {
     className?: string;
     newTab?: boolean;
     children?: ReactNode;
-} & LinkProps<HTMLAnchorElement>
+} & LinkProps<HTMLAnchorElement>;
 
 export const Anchor = ({ set, className, newTab = false, children, ...props }: AnchorProps) => {
     return (

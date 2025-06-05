@@ -3,7 +3,7 @@ type ExecCardTextProps = {
     role: string;
     description: string;
     joined: string;
-}
+};
 
 export default function ExecCardText({ name, role, description, joined }: ExecCardTextProps) {
     return (

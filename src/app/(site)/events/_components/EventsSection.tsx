@@ -15,7 +15,7 @@ type EventsSectionProps = {
     categories: Category[];
     events: Event[];
     displayAll?: boolean;
-}
+};
 
 export default function EventsSection({ title, categories, events, displayAll = false }: EventsSectionProps) {
     const [selectedCategory, setSelectedCategory] = useState<string>("All");

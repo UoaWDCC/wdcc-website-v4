@@ -12,7 +12,8 @@ import { useNavHover } from "./NavigationBar";
 // Need to omit href from AnchorHTMLAttributes because it conflicts with Next LinkProps
 type DropdownProps = {
     link: NavigationLink;
-} & LinkProps & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">
+} & LinkProps &
+    Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">;
 
 export default function DropDown({ link, ...props }: DropdownProps) {
     const { isHovering, handleDropEnter } = useNavHover();
@@ -50,7 +51,8 @@ export default function DropDown({ link, ...props }: DropdownProps) {
 type BracketLinkProps = {
     children: ReactNode;
     newTab?: boolean;
-} & LinkProps & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">
+} & LinkProps &
+    Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">;
 
 const BracketLink = ({ children, newTab, ...props }: BracketLinkProps) => {
     return (

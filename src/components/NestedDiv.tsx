@@ -4,7 +4,7 @@ type NestedDivProps = {
     children?: ReactNode;
     outer?: string;
     inner?: string;
-}
+};
 
 export default function NestedDiv({ children, outer, inner }: NestedDivProps) {
     return (

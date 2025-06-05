@@ -9,7 +9,7 @@ export type AddonCardType = {
     checklist: ChecklistType;
     price: number;
     urgent?: boolean;
-}
+};
 
 const AddonCards = ({ ...data }: AddonCardType) => {
     return (

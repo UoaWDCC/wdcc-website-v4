@@ -6,7 +6,7 @@ import Arrow from "@/assets/svg/Arrow";
 
 type props = {
     children: ReactNode;
-}
+};
 
 export default function MoreAboutProjects({ children }: props) {
     return (

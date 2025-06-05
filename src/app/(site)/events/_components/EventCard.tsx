@@ -6,7 +6,7 @@ import ImageCover from "@/components/ImageCover";
 
 type EventCardProps = {
     event: Event;
-}
+};
 
 const categoryColors = {
     Workshop: "bg-blue-150",

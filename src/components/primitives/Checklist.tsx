@@ -3,7 +3,7 @@ import React from "react";
 export type ChecklistType = {
     label: string;
     checked?: boolean;
-}
+};
 
 const Checklist = ({ ...item }: ChecklistType) => {
     return (

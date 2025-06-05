@@ -10,7 +10,7 @@ type SignupCardProps = {
         descriptionLineOne: string;
         descriptionLineTwo: string;
     };
-}
+};
 const SignupCard = ({ SignUpCard }: SignupCardProps) => {
     return (
         <div className="bg-blue-brand flex w-full flex-col items-center justify-center gap-10 rounded-2xl px-12 py-10 md:px-16 md:py-12">

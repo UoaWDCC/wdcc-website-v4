@@ -1,14 +1,14 @@
 export type Button = {
     text: string;
     link: string;
-}
+};
 
 export type Role = {
     color: "blue" | "purple" | "yellow" | "green";
     title: string;
     slug: string;
     description: string;
-}
+};
 
 export type ProjectsPage = {
     header: {
@@ -35,4 +35,4 @@ export type ProjectsPage = {
         title: string;
         cta: string;
     };
-}
+};

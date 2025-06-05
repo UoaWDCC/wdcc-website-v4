@@ -20,7 +20,7 @@ type HeaderProps = {
         label: string;
         href: string;
     };
-}
+};
 
 /**
  * Project header description tba

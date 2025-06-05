@@ -9,7 +9,7 @@ type ThisIsWDCCProps = {
             columns: WhatWeDoCardProps[];
         };
     };
-}
+};
 const ThisIsWDCC = ({ ThisIsWDCC }: ThisIsWDCCProps) => {
     return (
         <div className="flex flex-col items-center justify-center gap-10">

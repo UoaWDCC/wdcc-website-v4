@@ -7,7 +7,7 @@ type FaqTabProps = {
     text: string;
     selected?: boolean;
     handleClick?: () => void;
-}
+};
 
 export function FaqTab({ colors, text, selected, handleClick }: FaqTabProps) {
     return (

@@ -11,7 +11,7 @@ import { useScroll } from "../scroll/ScrollContext";
 type StandardPageLayoutProps = {
     children: ReactNode;
     navColor?: "light" | "dark";
-} & HtmlHTMLAttributes<HTMLElement>
+} & HtmlHTMLAttributes<HTMLElement>;
 
 /** This component replaces a typical layout.tsx - allowing us to benefit from a consistent layout, but also optionally disable it. */
 export default function StandardPageLayout({ children, navColor = "light", ...props }: StandardPageLayoutProps) {
