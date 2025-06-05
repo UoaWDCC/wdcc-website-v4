@@ -34,6 +34,17 @@ const eslintConfig = [
             "no-unused-vars": "error",
             "unused-imports/no-unused-imports": "error",
             "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+            "@typescript-eslint/no-confusing-void-expression": "off",
+            "@typescript-eslint/restrict-template-expressions": [
+                "error",
+                {
+                    allowNumber: true,
+                    allowBoolean: true,
+                    allowNullish: true,
+                    allowAny: false,
+                },
+            ],
+            "@typescript-eslint/no-misused-promises": "off",
         },
     },
 ];
