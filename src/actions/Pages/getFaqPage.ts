@@ -9,6 +9,6 @@ export const getFaqPage = async (): Promise<FaqPage> => {
         slug: "faq-page",
     });
 
-    // @ts-ignore TODO FIX THIS
+    // @ts-expect-error TODO FIX THIS
     return faqPage;
 };

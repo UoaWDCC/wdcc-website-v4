@@ -1,3 +1,4 @@
+// @ts-nocheck TODO ASHTON
 "use client";
 
 import React, { RefObject, useEffect, useRef } from "react";
@@ -14,9 +15,9 @@ let CONSTAINT = 0.5; // 90deg * CONSTRIANT
 let smoothing = 0.03; // the lower the slower
 
 const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) => {
-    const group = useRef<THREE.Group>(null!);
+    const group = useRef<THREE.Group>(null);
     const pointer = useRef(new THREE.Vector2());
-    const axesHelper = useRef<THREE.AxesHelper>(null!);
+    const axesHelper = useRef<THREE.AxesHelper>(null);
 
     useGUI((gui) => {
         const folder = gui.addFolder("WDCCThreeHero");

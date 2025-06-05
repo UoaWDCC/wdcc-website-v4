@@ -52,7 +52,6 @@ type HeaderProps = {
         label: string;
         href: string;
     };
-    // graphic?: string; TODO
 }
 
 export default function RolesHeader({

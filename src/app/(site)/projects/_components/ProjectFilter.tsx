@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Project } from "@/types/models";
 
 import { FilterTag } from "./FilterTag";
@@ -8,7 +6,7 @@ type ProjectFilterProps = {
     projects: Project[];
     setSelectedYear: (year: string) => () => void;
     selectedYear: string | null;
-}
+};
 
 export function ProjectFilter({ projects, setSelectedYear, selectedYear }: ProjectFilterProps) {
     const availableYears = Array.from(new Set(projects.map((project) => project.year)));

@@ -6,7 +6,7 @@ import * as THREE from "three";
 
 import { useGUI } from "@/hooks/useGUI";
 
-// todo: refactor this so that it supports multiple animations
+// TODO ASHTON: refactor this so that it supports multiple animations
 const HeroImages = () => {
     const [speed, setSpeed] = useState(0.5);
 
@@ -34,7 +34,7 @@ const HeroImages = () => {
     );
 };
 
-// todo: move to another file when there are more stuff
+// TODO ASHTON: move to another file when there are more stuff
 // should probably only have 4 images max
 const images = [
     "/images/heroImage_1.png",

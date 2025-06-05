@@ -1,4 +1,4 @@
-// TODO showcase version of header and graphic
+// TODO ANDREW showcase version of header and graphic
 
 // import { ReactNode } from "react";
 import { ReactNode } from "react";
@@ -67,7 +67,7 @@ type HeaderProps = {
         label: string;
         href: string;
     };
-    // graphic?: string; TODO
+    // graphic?: string; TODO ANDREW
 }
 
 /**

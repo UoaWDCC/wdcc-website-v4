@@ -1,3 +1,7 @@
+import { ReactNode } from "react";
+
+
+
 import { hasKey } from "@/libs/utils";
 
 import { Astro } from "./Astro";
@@ -25,8 +29,8 @@ import { Vitest } from "./Vitest";
 
 type TechnologySVGProps<T extends object = object> = {
     name: string;
-    component: (props: T) => JSX.Element;
-}
+    component: (props: T) => ReactNode;
+};
 
 type TechnologiesList = Record<string, TechnologySVGProps>;
 

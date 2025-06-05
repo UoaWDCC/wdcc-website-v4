@@ -31,7 +31,7 @@ type WDCCHeroProps = {
 }
 const WDCCHero = ({ hero }: WDCCHeroProps) => {
     const ref = useRef<HTMLDivElement>(null);
-    const camera = useRef<THREE.PerspectiveCamera>(null!);
+    const camera = useRef<THREE.PerspectiveCamera>(null);
 
     return (
         <div ref={ref} className="relative flex w-full flex-col items-center justify-center gap-20">
