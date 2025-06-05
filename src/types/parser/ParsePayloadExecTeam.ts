@@ -1,4 +1,4 @@
-import { ExecsPage as CMSEventPage, Media } from "@/payload-types";
+import { ExecsPage as CMSEventPage, Media } from "@/types/payload-types";
 
 import { ExecPage } from "../pages/ExecPage";
 

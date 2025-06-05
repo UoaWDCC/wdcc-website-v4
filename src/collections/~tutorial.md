@@ -98,8 +98,8 @@ const { docs: events } = await payload.find({
 ### working with slug
 
 ```ts
-// import the types from @/payload-types
-import { Event } from "@/payload-types";
+// import the types from @/types/payload-types
+import { Event } from "@/types/payload-types";
 
 {(events as Event[]).map((event) => (
     do anything with it

@@ -4,7 +4,7 @@ import { CollectionSlug } from "payload";
 
 import { SLUG } from "@/libs/enums/slug";
 import { getPayload } from "@/libs/payload";
-import { Event } from "@/payload-types";
+import { Event } from "@/types/payload-types";
 
 // return Event
 export const getEvent = async (slug: string) => {

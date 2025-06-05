@@ -1,4 +1,4 @@
-import { Event as CMSEVENT, Media, Partner } from "@/payload-types";
+import { Event as CMSEVENT, Media, Partner } from "@/types/payload-types";
 
 import { Event } from "../models";
 

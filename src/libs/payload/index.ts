@@ -1,6 +1,6 @@
 import { getPayload as getPayloadInstance } from "payload";
 
-import { Media } from "@/payload-types";
+import { Media } from "@/types/payload-types";
 
 import configPromise from "../../../payload.config";
 
