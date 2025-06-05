@@ -7,7 +7,7 @@ type WebGLContextType = {
     action: {
         handleContextFailure: () => void;
     };
-};
+}
 
 const webGLContext = createContext<WebGLContextType>({
     webglSupport: undefined,
@@ -17,7 +17,7 @@ const webGLContext = createContext<WebGLContextType>({
 const WebGLProvider = ({ children }: { children: React.ReactNode }) => {
     const [webglSupport, setWebglSupport] = useState<boolean | undefined>(undefined);
 
-    const handleContextFailure = () => setWebglSupport(false);
+    const handleContextFailure = () => { setWebglSupport(false); };
 
     // Create a canvas element that is never added to the DOM and check if webgl is supported
     function detectWebGLContext() {

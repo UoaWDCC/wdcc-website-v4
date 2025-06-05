@@ -18,7 +18,7 @@ export default function DatingPage() {
         src: "/rive/wdcc_dating_lander.riv",
         artboard: "Artboard",
         autoplay: true,
-        onStop: () => setHeroAnimEnded(true),
+        onStop: () => { setHeroAnimEnded(true); },
     });
 
     return (

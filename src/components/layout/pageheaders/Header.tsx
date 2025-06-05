@@ -51,7 +51,7 @@ const backlinkvar = tv({
     },
 });
 
-interface HeaderProps {
+type HeaderProps = {
     variant?: VariantProps<typeof header>;
     title: string;
     description?: string;

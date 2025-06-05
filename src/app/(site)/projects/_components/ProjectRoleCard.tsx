@@ -22,7 +22,7 @@ const card = tv({
     },
 });
 
-export interface ProjectRoleCardProps {
+export type ProjectRoleCardProps = {
     variant?: VariantProps<typeof card>;
     title: string;
     description: string;

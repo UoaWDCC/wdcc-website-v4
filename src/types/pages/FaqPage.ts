@@ -1,17 +1,17 @@
 import { Faq } from "../models";
 
-export interface FaqSection {
+export type FaqSection = {
     name: string;
     faqs: Faq[];
     colors: FaqColors;
 }
 
-export interface FaqColors {
+export type FaqColors = {
     tabBg: string;
     tabCircle: string;
 }
 
-export interface FaqPage {
+export type FaqPage = {
     info: string;
     sections: FaqSection[];
 }

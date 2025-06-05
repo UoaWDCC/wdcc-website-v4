@@ -12,7 +12,7 @@ import IndividualProject from "./_component/IndividualProject";
 type Props = {
     // fullSlug = [year, slug]
     params: Promise<{ fullSlug: string[] }>;
-};
+}
 
 // auto generated seo metadata for each project
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {

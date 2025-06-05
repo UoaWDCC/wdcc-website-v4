@@ -10,7 +10,7 @@ export const useGUI = (callback: (gui: GUI) => void) => {
     useEffect(() => {
         if (window.location.hash === "#debug") {
             gui.show();
-            return callback(gui);
+            callback(gui); return;
         }
     }, [callback]);
 };

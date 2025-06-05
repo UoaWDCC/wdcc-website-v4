@@ -8,15 +8,15 @@ export type FooterData = {
     columns: FooterColumn[];
     socials: FooterSocial[];
     friends: LinkType[];
-};
+}
 
 export type FooterColumn = {
     title: string;
     links: LinkType[];
-};
+}
 
 export type FooterSocial = {
     name: string;
     href: string;
     icon: ReactNode;
-};
+}

@@ -46,7 +46,7 @@ const offsets = images.map((_, i) => ((Math.PI * 2) / images.length) * i); // of
 const phaseRotation = (Math.PI * 2) / images.length; // amount image should be rotated by phase amount
 const phaseOffset = Math.PI / images.length; // fixed phase offset to put images on the side of the logo instead of center
 
-interface FloatImageProps {
+type FloatImageProps = {
     offset: number;
     src: string;
     rps?: number;

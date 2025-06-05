@@ -2,7 +2,7 @@ import React from "react";
 
 import { cn } from "@/libs/utils";
 
-interface FilterTagProps {
+type FilterTagProps = {
     year: string;
     setSelectedYear: (year: string) => () => void;
     isSelected: boolean;

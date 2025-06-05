@@ -5,7 +5,7 @@ import FooterSocials from "@/components/navigation/footer/FooterSocials";
 
 import { FooterSocial } from "./_data/footerTypes";
 
-interface FooterFooterProps {
+type FooterFooterProps = {
     socials: FooterSocial[];
     friends: LinkType[];
 }

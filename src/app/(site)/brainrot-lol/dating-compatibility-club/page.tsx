@@ -31,7 +31,7 @@ export default function Home() {
                             recommended. please accept to view.
                         </p>
                         <Button
-                            onClick={() => setShowPage(true)}
+                            onClick={() => { setShowPage(true); }}
                             className="bg-opacity-25 bg-black font-semibold"
                             variant={{ color: "light", style: "secondary" }}
                         >

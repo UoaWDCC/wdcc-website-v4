@@ -23,7 +23,7 @@ const transition = {
     ease: [0.13, 0.71, 0.35, 1],
 };
 
-interface WDCCHeroProps {
+type WDCCHeroProps = {
     hero: {
         title: string;
         blurb: string;

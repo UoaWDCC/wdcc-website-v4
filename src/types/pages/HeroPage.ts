@@ -44,7 +44,7 @@ export type HeroPage = {
         descriptionLineOne: string;
         descriptionLineTwo: string;
     };
-};
+}
 
 //too many same named things kill me
 export type SponsorSectionType = {
@@ -72,4 +72,4 @@ export type SponsorSectionType = {
             alt: string;
         }[];
     };
-};
+}

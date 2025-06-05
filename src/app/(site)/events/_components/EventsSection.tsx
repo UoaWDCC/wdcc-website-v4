@@ -10,7 +10,7 @@ import { Category } from "../_data/events.data";
 import EventCard from "./EventCard";
 import EventCategoryFilter from "./EventCategoryFilter";
 
-interface EventsSectionProps {
+type EventsSectionProps = {
     title?: string;
     categories: Category[];
     events: Event[];

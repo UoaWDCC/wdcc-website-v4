@@ -5,7 +5,7 @@ import { motion, Variants } from "motion/react";
 
 import { easeOutQuad } from "@/libs/ease";
 
-interface IntroProps {
+type IntroProps = {
     children: ReactNode;
 }
 

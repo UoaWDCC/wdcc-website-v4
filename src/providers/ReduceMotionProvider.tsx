@@ -9,7 +9,7 @@ type ReduceMotionType = {
     action: {
         toggleReduceMotion: () => void;
     };
-};
+}
 
 const ReduceMotionContext = createContext<ReduceMotionType>({
     reduceMotion: false,
@@ -20,7 +20,7 @@ const ReduceMotionProvider = ({ children }: { children: React.ReactNode }) => {
     // if check for reduce motion in localstorage or return default
     const [reduceMotion, setReduceMotion] = useLocalStorage<boolean>("reduce-motion", detectReduceMotion());
 
-    const toggleReduceMotion = () => setReduceMotion(!reduceMotion);
+    const toggleReduceMotion = () => { setReduceMotion(!reduceMotion); };
 
     // Check for reduce motion
     function detectReduceMotion() {

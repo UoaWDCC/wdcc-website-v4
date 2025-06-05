@@ -8,7 +8,7 @@ import SuspenseImage from "@/components/SuspenseImage";
 
 import { ProjectTag } from "./ProjectTag";
 
-interface ProjectCardProps {
+type ProjectCardProps = {
     project: Project;
 }
 

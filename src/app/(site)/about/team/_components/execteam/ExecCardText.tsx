@@ -1,4 +1,4 @@
-interface ExecCardTextProps {
+type ExecCardTextProps = {
     name: string;
     role: string;
     description: string;

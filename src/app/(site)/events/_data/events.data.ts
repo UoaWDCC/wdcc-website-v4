@@ -3,7 +3,7 @@ import { ParsePayloadEvent } from "@/types/parser/ParsePayloadEvent";
 
 import { getAllEvents } from "@/actions/getAllEvents";
 
-export interface Category {
+export type Category = {
     name: string;
     colors: string;
 }
@@ -49,6 +49,6 @@ export const eventsData = {
         //merge payload and hardcoded events, sort them by date
         events: events
             .filter((event): event is Event => event !== undefined)
-            .sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime()) as Event[],
+            .sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime()),
     },
 };

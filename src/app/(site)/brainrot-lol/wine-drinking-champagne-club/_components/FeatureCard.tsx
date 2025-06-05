@@ -5,7 +5,7 @@ export type FeatureCardType = {
     title: string;
     children: React.ReactNode;
     note?: string;
-};
+}
 
 const FeatureCard = ({ number, title, children, note }: FeatureCardType) => {
     return (

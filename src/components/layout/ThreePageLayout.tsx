@@ -32,7 +32,7 @@ const ThreeLayout = ({ children }: { children: React.ReactNode }) => {
                 setLoaded(true);
             }
         }, DebounceTimer);
-        return () => clearTimeout(loadId);
+        return () => { clearTimeout(loadId); };
     }, [progress]);
 
     return (

@@ -58,7 +58,7 @@ type pricingType = {
     checklists: ChecklistType[];
     pricing: number;
     variant: VariantProps<typeof pricingcard>;
-};
+}
 
 const PricingCard = ({ header, plan, checklists, pricing, variant }: pricingType) => {
     return (

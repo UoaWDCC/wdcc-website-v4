@@ -8,10 +8,10 @@ import Footer from "../navigation/footer/Footer";
 import NavigationBar from "../navigation/navbar/NavigationBar";
 import { useScroll } from "../scroll/ScrollContext";
 
-interface StandardPageLayoutProps extends HtmlHTMLAttributes<HTMLElement> {
+type StandardPageLayoutProps = {
     children: ReactNode;
     navColor?: "light" | "dark";
-}
+} & HtmlHTMLAttributes<HTMLElement>
 
 /** This component replaces a typical layout.tsx - allowing us to benefit from a consistent layout, but also optionally disable it. */
 export default function StandardPageLayout({ children, navColor = "light", ...props }: StandardPageLayoutProps) {

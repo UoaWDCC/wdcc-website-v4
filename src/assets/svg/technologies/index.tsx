@@ -23,12 +23,12 @@ import { Typescript } from "./Typescript";
 import { Vite } from "./ViteJs";
 import { Vitest } from "./Vitest";
 
-interface TechnologySVGProps<T extends object = object> {
+type TechnologySVGProps<T extends object = object> = {
     name: string;
     component: (props: T) => JSX.Element;
 }
 
-type TechnologiesList = { [index: string]: TechnologySVGProps };
+type TechnologiesList = Record<string, TechnologySVGProps>;
 
 /** Sort in reverse order on FE to make MERN acroynm work :D */
 export const technologiesList: TechnologiesList = {

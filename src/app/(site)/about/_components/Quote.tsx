@@ -1,4 +1,4 @@
-interface QuoteProps {
+type QuoteProps = {
     quote: string;
     author: string;
     subscript?: string;

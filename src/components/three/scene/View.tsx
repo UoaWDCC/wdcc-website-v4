@@ -8,12 +8,12 @@ import { useWebGL } from "@/providers/WebGLProvider";
 
 import { Three, ThreeBackground } from "./Three";
 
-interface ViewProps extends React.HTMLAttributes<HTMLDivElement> {
+type ViewProps = {
     children: React.ReactNode;
     fallback?: React.ReactNode;
     orbit?: boolean;
     background?: boolean;
-}
+} & React.HTMLAttributes<HTMLDivElement>
 
 const View = forwardRef(({ children, orbit, background, fallback, ...props }: ViewProps, ref) => {
     const localRef = useRef<HTMLDivElement>(null);

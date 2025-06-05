@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import placeholder from "@/assets/image/600x400.png";
 import { cn } from "@/libs/utils";
 
-interface DuoProps {
+type DuoProps = {
     children: ReactNode;
     image?: {
         src: string | undefined | StaticImageData;

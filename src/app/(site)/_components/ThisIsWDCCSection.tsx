@@ -2,7 +2,7 @@ import React from "react";
 
 import InfoCard, { WhatWeDoCardProps } from "./WhatWeDoCard";
 
-interface ThisIsWDCCProps {
+type ThisIsWDCCProps = {
     ThisIsWDCC: {
         description: string;
         whatWeDo: {

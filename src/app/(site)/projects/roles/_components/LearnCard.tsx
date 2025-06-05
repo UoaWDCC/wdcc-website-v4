@@ -1,7 +1,7 @@
 // import { ReactNode } from "react";
 import Image, { StaticImageData } from "next/image";
 
-interface props {
+type props = {
     title: string;
     description: string;
     graphic?: StaticImageData;

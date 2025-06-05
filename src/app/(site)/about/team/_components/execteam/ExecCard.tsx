@@ -6,7 +6,7 @@ import ImageCover from "@/components/ImageCover";
 
 import ExecCardText from "./ExecCardText";
 
-interface ExecCardProps {
+type ExecCardProps = {
     exec: Exec;
 }
 

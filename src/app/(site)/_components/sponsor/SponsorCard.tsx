@@ -10,9 +10,9 @@ const tierWidth: Record<SponsorTierKeys, number> = {
     community: 150,
 };
 
-interface SponsorCardProps extends ImageFitProps {
+type SponsorCardProps = {
     tier: SponsorTierKeys;
-}
+} & ImageFitProps
 const SponsorCard = ({ tier, ...image }: SponsorCardProps) => {
     return (
         <ImageFit

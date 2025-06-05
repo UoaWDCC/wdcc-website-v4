@@ -2,7 +2,7 @@ import { FaqColors } from "@/types/pages/FaqPage";
 
 import { cn } from "@/libs/utils";
 
-interface FaqTabProps {
+type FaqTabProps = {
     colors: FaqColors;
     text: string;
     selected?: boolean;

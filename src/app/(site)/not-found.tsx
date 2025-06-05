@@ -44,7 +44,7 @@ export default function NotFound() {
                     </div>
 
                     <motion.div animate={{ y: [8, 0], opacity: [0, 1], transition }}>
-                        <Button onClick={() => router.back()} variant={{ style: "secondary", color: "purple" }}>
+                        <Button onClick={() => { router.back(); }} variant={{ style: "secondary", color: "purple" }}>
                             Go back
                         </Button>
                     </motion.div>

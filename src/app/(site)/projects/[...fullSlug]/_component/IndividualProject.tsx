@@ -6,7 +6,7 @@ import { toTitleCase } from "@/libs/utils";
 
 import TeamMemberCard from "./TeamMemberCard";
 
-interface IndividualProjectProps {
+type IndividualProjectProps = {
     project: Project;
 }
 
@@ -60,7 +60,7 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
                     />
                 </div>
                 <div className="flex flex-wrap justify-center gap-4">
-                    {project?.team?.members?.map((member, index) => (
+                    {project.team.members.map((member, index) => (
                         <TeamMemberCard
                             key={index}
                             variant={{ role: member.role }}

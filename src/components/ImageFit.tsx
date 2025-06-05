@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 
 import { cn } from "@/libs/utils";
 
-export interface ImageFitProps {
+export type ImageFitProps = {
     src: string | StaticImageData | StaticImport;
     alt: string;
     width?: string;

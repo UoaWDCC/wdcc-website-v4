@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-interface NestedDivProps {
+type NestedDivProps = {
     children?: ReactNode;
     outer?: string;
     inner?: string;

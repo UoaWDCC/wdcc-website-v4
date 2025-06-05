@@ -47,29 +47,29 @@ export const ParsePayloadHeroPage = (CmsHeroPage: CmsHeroPage): HeroPage | undef
             gold: {
                 sponsors:
                     CmsHeroPage.sponsorSection?.gold?.map((partner) => ({
-                        src: (partner as Partner)?.url || placeholder,
-                        alt: (partner as Partner)?.alt,
+                        src: (partner as Partner).url || placeholder,
+                        alt: (partner as Partner).alt,
                     })) ?? [],
             },
             silver: {
                 sponsors:
                     CmsHeroPage.sponsorSection?.silver?.map((partner) => ({
-                        src: (partner as Partner)?.url || placeholder,
-                        alt: (partner as Partner)?.alt,
+                        src: (partner as Partner).url || placeholder,
+                        alt: (partner as Partner).alt,
                     })) ?? [],
             },
             tech: {
                 sponsors:
                     CmsHeroPage.sponsorSection?.tech?.map((partner) => ({
-                        src: (partner as Partner)?.url || placeholder,
-                        alt: (partner as Partner)?.alt,
+                        src: (partner as Partner).url || placeholder,
+                        alt: (partner as Partner).alt,
                     })) ?? [],
             },
             community: {
                 sponsors:
                     CmsHeroPage.sponsorSection?.community?.map((partner) => ({
-                        src: (partner as Partner)?.url || placeholder,
-                        alt: (partner as Partner)?.alt,
+                        src: (partner as Partner).url || placeholder,
+                        alt: (partner as Partner).alt,
                     })) ?? [],
             },
         },

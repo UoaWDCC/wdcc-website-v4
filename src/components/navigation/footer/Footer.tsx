@@ -6,9 +6,9 @@ import { cn } from "@/libs/utils";
 
 import FooterColumn from "./FooterColumn";
 
-interface FooterProps extends HTMLAttributes<HTMLDivElement> {
+type FooterProps = {
     className?: string;
-}
+} & HTMLAttributes<HTMLDivElement>
 
 export default function Footer({ className, ...props }: FooterProps) {
     return (

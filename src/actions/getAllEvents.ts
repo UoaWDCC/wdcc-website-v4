@@ -2,7 +2,6 @@
 
 import { SLUG } from "@/libs/enums/slug";
 import { getPayload } from "@/libs/payload";
-import { Event } from "@/payload-types";
 
 // return all events
 export const getAllEvents = async () => {
@@ -12,5 +11,5 @@ export const getAllEvents = async () => {
         pagination: false,
     });
 
-    return events.docs as Event[];
+    return events.docs;
 };

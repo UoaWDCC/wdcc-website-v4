@@ -4,7 +4,7 @@ import { Event } from "@/types/models";
 
 import ImageCover from "@/components/ImageCover";
 
-interface EventCardProps {
+type EventCardProps = {
     event: Event;
 }
 

@@ -8,7 +8,7 @@ import { cn } from "@/libs/utils";
 
 import SponsorCard from "./sponsor/SponsorCard";
 
-interface SponsorSectionProps {
+type SponsorSectionProps = {
     SponsorSection: SponsorSectionType;
 }
 
@@ -62,10 +62,10 @@ const sponsorLabel = tv({
     },
 });
 
-interface SponsorLabelProps extends HTMLAttributes<HTMLDivElement> {
+type SponsorLabelProps = {
     tier: SponsorTierKeys;
     count: number;
-}
+} & HTMLAttributes<HTMLDivElement>
 
 const SponsorLabel = ({ tier, count, ...props }: SponsorLabelProps) => {
     return (

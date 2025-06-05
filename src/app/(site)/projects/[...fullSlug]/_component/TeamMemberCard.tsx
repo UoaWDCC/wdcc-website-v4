@@ -22,13 +22,13 @@ const card = tv({
     },
 });
 
-type Variant = { variant?: VariantProps<typeof card> };
+type Variant = { variant?: VariantProps<typeof card> }
 
-interface TeamCardProps extends Variant {
+type TeamCardProps = {
     name: string;
     role: string;
     image?: ImageType;
-}
+} & Variant
 
 const TeamMemberCard = ({ name, role, image, variant }: TeamCardProps) => {
     return (

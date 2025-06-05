@@ -4,7 +4,7 @@ import { Project } from "@/types/models";
 
 import { FilterTag } from "./FilterTag";
 
-interface ProjectFilterProps {
+type ProjectFilterProps = {
     projects: Project[];
     setSelectedYear: (year: string) => () => void;
     selectedYear: string | null;

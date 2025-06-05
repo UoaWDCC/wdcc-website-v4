@@ -35,7 +35,7 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
         folder.add(params, "smoothing", 0, 1).onChange((c) => {
             smoothing = c;
         });
-        if (group?.current) {
+        if (group.current) {
             folder.add(params, "x", -3, 3).onChange((c) => {
                 group.current.position.x = c;
             });
@@ -46,7 +46,7 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
                 group.current.position.z = c;
             });
         }
-        if (axesHelper?.current) {
+        if (axesHelper.current) {
             folder.add(params, "axesHerlper").onChange((c) => {
                 axesHelper.current.visible = c;
             });
@@ -88,7 +88,7 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
     }, [parentRef]);
 
     useFrame(() => {
-        if (!group?.current) return;
+        if (!group.current) return;
 
         // Smoothly interpolate the current rotation towards the target rotation
         group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, -pointer.current.x, smoothing);

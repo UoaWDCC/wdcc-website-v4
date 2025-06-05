@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-const redirects: { [key: string]: string } = {
+const redirects: Record<string, string> = {
     staging: "https://staging.wdcc.co.nz",
     wdcc: "https://wdcc.co.nz",
     go: "https://go.wdcc.co.nz",

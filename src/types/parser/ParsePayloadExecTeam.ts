@@ -14,7 +14,7 @@ export const ParsePayloadExecTeam = (CmsEventPage: CMSEventPage): ExecPage => {
                       ? team.execs.map((exec) => ({
                             name: exec.name,
                             role: exec.role,
-                            image: (exec.image as Media)?.url as string,
+                            image: (exec.image as Media).url!,
                             description: exec.description,
                             joined: exec.joined,
                             id: exec.id,

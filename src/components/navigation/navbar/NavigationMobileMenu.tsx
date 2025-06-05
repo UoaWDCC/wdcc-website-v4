@@ -29,7 +29,7 @@ const mobileNav = tv({
     },
 });
 
-export interface NavbarProps {
+export type NavbarProps = {
     variant?: VariantProps<typeof mobileNav>;
     className?: string;
     links: NavigationLink[];

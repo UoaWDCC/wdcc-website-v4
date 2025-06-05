@@ -42,7 +42,7 @@ const categorypill = tv({
     },
 });
 
-interface HeaderProps {
+type HeaderProps = {
     variant?: VariantProps<typeof header>;
     title: string;
     role: string;

@@ -1,4 +1,4 @@
-interface InfoPillProps {
+type InfoPillProps = {
     text: string;
 }
 

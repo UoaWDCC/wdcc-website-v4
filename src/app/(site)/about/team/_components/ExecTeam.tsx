@@ -2,7 +2,7 @@ import { Exec } from "@/types/models";
 
 import ExecCard from "./execteam/ExecCard";
 
-interface ExecTeamProps {
+type ExecTeamProps = {
     title: string;
     description: string;
     execs: Exec[];

@@ -11,8 +11,8 @@ const SuspenseImage = ({ ...props }: ImageProps) => {
     useEffect(() => {
         if (typeof window !== "undefined") {
             const img = new window.Image();
-            img.src = (props?.src || "") as string;
-            img.onload = () => setLoaded(true);
+            img.src = (props.src || "") as string;
+            img.onload = () => { setLoaded(true); };
         }
     }, [props.src]);
 

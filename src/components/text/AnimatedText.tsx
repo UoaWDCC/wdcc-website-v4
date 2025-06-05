@@ -8,12 +8,12 @@ import { HTMLAtrributeNoMotion } from "@/types/motion";
 import { cn } from "@/libs/utils";
 import { textVariantDefault } from "@/variants/animatedTextVariants";
 
-interface TextProps extends HTMLAtrributeNoMotion<"p"> {
+type TextProps = {
     text: string;
     type?: "char" | "word";
     variants?: Variants;
     debug?: boolean;
-}
+} & HTMLAtrributeNoMotion<"p">
 
 const AnimatedText = ({ text, type = "word", variants = textVariantDefault, debug, ...props }: TextProps) => {
     if (debug) {

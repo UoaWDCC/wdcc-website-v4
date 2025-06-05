@@ -1,6 +1,6 @@
 import { TableOfContents, TableOfContentsProps } from "./TableOfContents";
 
-interface ArticleContentProps {
+type ArticleContentProps = {
     children: React.ReactNode;
     variant: TableOfContentsProps["variant"];
 }

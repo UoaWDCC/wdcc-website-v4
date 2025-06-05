@@ -1,6 +1,9 @@
 import type { ProjectsPage as CmsProjectPage } from "@/payload-types";
 
+
+
 import { ProjectsPage } from "../pages/ProjectsPage";
+
 
 export const ParsePayloadProjectPage = (CmsProjectPage: CmsProjectPage): ProjectsPage | undefined => {
     if (!CmsProjectPage) {
@@ -12,16 +15,16 @@ export const ParsePayloadProjectPage = (CmsProjectPage: CmsProjectPage): Project
             title: CmsProjectPage.header.title,
             content: CmsProjectPage.header.content,
             buttons:
-                CmsProjectPage.header.buttons?.map((button) => ({
+                CmsProjectPage.header.buttons.map((button) => ({
                     text: button.text,
                     link: button.link,
-                })) || [],
+                })) ?? [],
         },
         infoSection: {
             main: CmsProjectPage.infoSection.main,
             checkboxes: {
                 title: CmsProjectPage.infoSection.checkboxes.title,
-                checks: CmsProjectPage.infoSection.checkboxes.checks?.map((check) => check.text) || [],
+                checks: CmsProjectPage.infoSection.checkboxes.checks?.map((check) => check.text) ?? [],
             },
         },
         operationSection: {
@@ -36,7 +39,7 @@ export const ParsePayloadProjectPage = (CmsProjectPage: CmsProjectPage): Project
                     title: role.title,
                     slug: role.slug,
                     description: role.description,
-                })) || [],
+                })) ?? [],
         },
         featuredSection: {
             title: CmsProjectPage.featuredSection.title,

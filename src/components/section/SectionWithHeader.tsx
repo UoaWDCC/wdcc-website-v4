@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-interface SectionWithHeaderProps {
+type SectionWithHeaderProps = {
     children: ReactNode;
     headerText: string;
 }

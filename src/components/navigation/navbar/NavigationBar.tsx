@@ -25,7 +25,7 @@ type hoverContextProps = {
     handleDropEnter: () => void;
     handleDropExit: () => void;
     isHovering: boolean;
-};
+}
 
 export const useNavHover = () => {
     const context = useContext(hoverContext);
@@ -65,7 +65,7 @@ const navbarLine = tv({
     },
 });
 
-export interface NavbarProps {
+export type NavbarProps = {
     variant?: VariantProps<typeof navbar>;
     className?: ClassName;
 }
