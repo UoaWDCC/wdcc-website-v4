@@ -1,4 +1,4 @@
-name: Check Build
+name: Check Linting
 
 on:
   # Run on push to any branch except main
@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       # Checkout the code
@@ -29,6 +29,17 @@ jobs:
           path: frontend/node_modules
           key: ${{ runner.os }}-frontend-${{ hashFiles('frontend/package-lock.json') }}
 
-      # Build with Docker
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile
+      # Set up Pnpm
+      - name: Set up Pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+        cache: "pnpm"
+
+      # Install dependencies
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Run ESLint
+      - name: Run ESLint
+        run: pnpm run lint:ci
