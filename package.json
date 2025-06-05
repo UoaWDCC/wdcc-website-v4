@@ -12,7 +12,7 @@
         "lint": "next lint --fix",
         "lint:no-cache": "next lint --no-cache",
         "format": "prettier . --write",
-        "lint:all": "pnpm run format && pnpm run lint",
+        "l": "pnpm run format && pnpm run lint",
         "lint:ci": "prettier . --check && next lint",
         "i:ci": "pnpm install --frozen-lockfile",
         "list": "pnpm list --depth 0",
@@ -38,7 +38,7 @@
         "glslify-loader": "^2.0.0",
         "graphql": "^16.10.0",
         "motion": "^12.0.5",
-        "next": "15.2.3",
+        "next": "15.3.3",
         "payload": "3.22.0",
         "raw-loader": "^4.0.2",
         "react": "^19.0.0",
@@ -50,19 +50,17 @@
         "tunnel-rat": "^0.1.2"
     },
     "devDependencies": {
+        "@eslint/eslintrc": "^3",
         "@flydotio/dockerfile": "^0.5.9",
         "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
-        "@eslint/eslintrc": "^3",
         "@tailwindcss/postcss": "^4.0.9",
         "@types/node": "^22.10.1",
         "@types/react": "^18",
         "@types/react-dom": "^18",
         "@types/three": "0.170.0",
-        "eslint": "8.57.1",
-        "eslint-config-next": "15.1.6",
-        "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-prettier": "^5.2.1",
-        "eslint-plugin-tailwindcss": "^3.17.5",
+        "eslint": "^9",
+        "eslint-config-next": "15.3.3",
+        "eslint-config-prettier": "^10.1.5",
         "lil-gui": "^0.20.0",
         "nanoid": ">=3.3.8",
         "postcss": "^8.4.49",
@@ -85,6 +83,11 @@
             "S3_ACCESS_KEY_ID",
             "S3_SECRET_ACCESS_KEY",
             "S3_REGION"
+        ]
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "sharp"
         ]
     }
 }

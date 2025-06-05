@@ -23,7 +23,7 @@ import { Typescript } from "./Typescript";
 import { Vite } from "./ViteJs";
 import { Vitest } from "./Vitest";
 
-interface TechnologySVGProps<T = any> {
+interface TechnologySVGProps<T extends object = object> {
     name: string;
     component: (props: T) => JSX.Element;
 }

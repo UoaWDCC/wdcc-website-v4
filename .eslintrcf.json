@@ -6,8 +6,15 @@
             "parserOptions": {
                 "project": "./tsconfig.json" // make eslint use our typescript settings
             },
-            "plugins": ["next/core-web-vitals", "next/typescript", "prettier", "@typescript-eslint"],
-            "extends": ["plugin:@typescript-eslint/recommended"],
+            "plugins": ["prettier", "@typescript-eslint"],
+            "extends": [
+                "next/core-web-vitals",
+                "next/typescript",
+                "plugin:@next/next/recommended",
+                "plugin:@typescript-eslint/recommended",
+                "plugin:prettier/recommended",
+                "next"
+            ],
             "rules": {
                 "@typescript-eslint/ban-ts-ignore": "warn",
                 "@typescript-eslint/no-explicit-any": "warn",
