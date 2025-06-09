@@ -1,10 +1,12 @@
 "use client";
 
 import type { HTMLAttributes, ReactNode } from "react";
-import Link, { LinkProps } from "next/link";
-import { tv, type VariantProps } from "tailwind-variants";
 
-import { cn } from "@/libs/utils";
+import Link, { LinkProps } from "next/link";
+
+import { type VariantProps, tv } from "tailwind-variants";
+
+import { cn } from "@/utils/misc";
 
 const button = tv({
     base: "flex items-center justify-center gap-2 rounded-full px-6 py-2 font-bold whitespace-nowrap transition duration-200 hover:cursor-pointer",

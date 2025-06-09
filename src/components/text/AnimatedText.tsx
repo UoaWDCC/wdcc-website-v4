@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
-import { motion, Variants } from "motion/react";
+import { Variants, motion } from "motion/react";
 
 import { HTMLAtrributeNoMotion } from "@/types/motion";
 
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/misc";
 import { textVariantDefault } from "@/variants/animatedTextVariants";
 
 type TextProps = {

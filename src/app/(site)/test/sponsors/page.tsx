@@ -1,4 +1,5 @@
-import { sponsorRegister } from "@/app/(site)/_components/sponsor/demo/DemoSponsorSection";
+import { sponsorRegister } from "@app/(landing)/_components/sponsor/demo/DemoSponsorSection";
+
 import ThreeLayout from "@/components/layout/ThreePageLayout";
 import BackgroundEffect from "@/components/three/BackgroundEffect";
 import { View } from "@/components/three/scene/View";

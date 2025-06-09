@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useReducer, useRef, useState } from "react";
+
 import { PerspectiveCamera } from "@react-three/drei";
-import { useFrame, Vector3 } from "@react-three/fiber";
+import { Vector3, useFrame } from "@react-three/fiber";
 import { DoubleSide, Euler, Group, Mesh } from "three";
 import * as THREE from "three";
 

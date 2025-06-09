@@ -1,9 +1,9 @@
 "use client";
 
+import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import EventHeader from "@/components/layout/pageheaders/EventHeader";
 import Header from "@/components/layout/pageheaders/Header";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
 
 // import { Button } from "@/components/primitives/Button";
 

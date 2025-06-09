@@ -2,7 +2,8 @@
 
 import React from "react";
 
-import SignupCard from "@/app/(site)/_components/SignupCard";
+import SignupCard from "@app/(landing)/_components/SignupCard";
+
 import LearnCard from "@/app/(site)/projects/roles/_components/LearnCard";
 import MoreAboutProjects from "@/app/(site)/projects/roles/_components/MoreAboutProjects";
 import PastProjects from "@/app/(site)/projects/roles/_components/PastProjects";

@@ -2,7 +2,7 @@
 
 import { HtmlHTMLAttributes, ReactNode } from "react";
 
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/misc";
 
 import Footer from "../navigation/footer/Footer";
 import NavigationBar from "../navigation/navbar/NavigationBar";

@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+
 import { motion } from "motion/react";
 
 import { Faq } from "@/types/models";
 import { FaqSection } from "@/types/pages/FaqPage";
 
 import ChevronDown from "@/assets/svg/ChevronDown";
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/misc";
 
 import { FaqItem } from "./FaqItem";
 import { FaqTab } from "./FaqTab";

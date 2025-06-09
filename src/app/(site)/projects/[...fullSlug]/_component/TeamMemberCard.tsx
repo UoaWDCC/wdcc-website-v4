@@ -1,4 +1,4 @@
-import { tv, VariantProps } from "tailwind-variants";
+import { VariantProps, tv } from "tailwind-variants";
 
 import { ImageType } from "@/types/image";
 

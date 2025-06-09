@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+
 import { Preload } from "@react-three/drei";
 import { Canvas, CanvasProps, useThree } from "@react-three/fiber";
 import * as THREE from "three";

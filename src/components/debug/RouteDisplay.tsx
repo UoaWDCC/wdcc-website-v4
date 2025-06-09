@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import { usePathname } from "next/navigation";
 
 const RouteDisplay = ({ slug }: { slug: string }) => {

@@ -1,11 +1,12 @@
 "use client";
 
 import { useLayoutEffect, useState } from "react";
-import { tv, VariantProps } from "tailwind-variants";
+
+import { VariantProps, tv } from "tailwind-variants";
 
 import SimpleLoading from "@/components/loading/SimpleLoading";
 import { useScroll } from "@/components/scroll/ScrollContext";
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/misc";
 
 type ContentlistType = { level: number; label: string; id: string }[];
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, ReactNode, RefObject, useContext, useRef } from "react";
+import { ReactNode, RefObject, createContext, useContext, useRef } from "react";
 
 type ScrollContainerType = HTMLDivElement | (Window & typeof globalThis);
 

@@ -1,6 +1,7 @@
 "use client";
 
-import { forwardRef, MutableRefObject, useImperativeHandle, useRef } from "react";
+import { MutableRefObject, forwardRef, useImperativeHandle, useRef } from "react";
+
 import { OrbitControls, View as ViewImpl } from "@react-three/drei";
 
 import { useReduceMotion } from "@/providers/ReduceMotionProvider";

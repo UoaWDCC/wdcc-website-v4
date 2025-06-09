@@ -1,7 +1,8 @@
-import React, { HTMLAttributes } from "react";
-import { tv, VariantProps } from "tailwind-variants";
+import { HTMLAttributes } from "react";
 
-import { cn } from "@/libs/utils";
+import { VariantProps, tv } from "tailwind-variants";
+
+import { cn } from "@/utils/misc";
 
 const loading = tv({
     base: "h-3 w-3 animate-bounce rounded-full bg-white",

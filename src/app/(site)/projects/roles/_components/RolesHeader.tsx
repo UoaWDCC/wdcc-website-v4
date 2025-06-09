@@ -1,6 +1,7 @@
 // import { ReactNode } from "react";
 import Link from "next/link";
-import { tv, VariantProps } from "tailwind-variants";
+
+import { VariantProps, tv } from "tailwind-variants";
 
 import Arrow from "@/assets/svg/Arrow";
 

@@ -1,4 +1,4 @@
-import { easeOutQuad } from "@/libs/ease";
+import { easeOutQuad } from "@/utils/ease";
 
 export const textVariantDefault = {
     initial: {

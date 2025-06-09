@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import { useRive } from "@rive-app/react-canvas";
 
 import DatingTextSection from "@/app/(site)/brainrot-lol/dating-compatibility-club/_components/DatingTextSection";

@@ -3,7 +3,7 @@ import type { CollectionConfig } from "payload";
 import { difficulties } from "@/types/models";
 
 import { technologiesList } from "@/assets/svg/technologies";
-import { SLUG } from "@/libs/enums/slug";
+import { SLUG } from "@/utils/enums/slug";
 
 export const Project: CollectionConfig = {
     slug: SLUG.PROJECTS,

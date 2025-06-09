@@ -1,8 +1,8 @@
 import { ParsePayloadProject } from "@/types/parser/ParsePayloadProject";
 
 import { getAllProjects } from "@/actions/getAllProjects";
-import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
+import Header from "@/components/layout/pageheaders/Header";
 
 import ProjectsSection from "../_components/ProjectsSection";
 
