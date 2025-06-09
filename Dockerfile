@@ -6,13 +6,6 @@ FROM node:${NODE_VERSION}-slim AS base
 
 LABEL fly_launch_runtime="Next.js"
 
-# Ensure required secrets are available
-RUN --mount=type=secret,id=DATABASE_URI \
-    cat /run/secrets/DATABASE_URI
-
-# Print environment variables
-RUN printenv
-
 # Next.js app lives here
 WORKDIR /app
 
@@ -26,6 +19,13 @@ RUN npm install -g pnpm@$PNPM_VERSION
 
 # Throw-away build stage to reduce size of final image
 FROM base AS build
+
+# Ensure required secrets are available
+RUN --mount=type=secret,id=DATABASE_URI \
+    cat /run/secrets/DATABASE_URI
+
+# Print environment variables
+RUN printenv
 
 # Install packages needed to build node modules
 RUN apt-get update -qq && \
