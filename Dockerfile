@@ -1,10 +1,17 @@
-# syntax = docker/dockerfile:1
+# syntax = docker/dockerfile:1.4
 
 # Adjust NODE_VERSION as desired
 ARG NODE_VERSION=20.18.1
-FROM node:${NODE_VERSION}-slim as base
+FROM node:${NODE_VERSION}-slim AS base
 
 LABEL fly_launch_runtime="Next.js"
+
+# Ensure required secrets are available
+RUN --mount=type=secret,id=DATABASE_URI \
+    cat /run/secrets/DATABASE_URI
+
+# Print environment variables
+RUN printenv
 
 # Next.js app lives here
 WORKDIR /app
@@ -18,7 +25,7 @@ RUN npm install -g pnpm@$PNPM_VERSION
 
 
 # Throw-away build stage to reduce size of final image
-FROM base as build
+FROM base AS build
 
 # Install packages needed to build node modules
 RUN apt-get update -qq && \

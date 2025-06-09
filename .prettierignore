@@ -4,3 +4,4 @@ out
 *.md
 *.yml
 *.yaml
+payload-types.ts
