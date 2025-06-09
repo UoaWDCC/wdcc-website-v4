@@ -34,7 +34,7 @@ jobs:
       - name: Build Docker image
         uses: docker/build-push-action@v5
         with:
-          secrets: |
+          build-args: |
             DOCKER_BUILDKIT: 1
             DATABASE_URI: ${{ secrets.DATABASE_URI }}
             PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
