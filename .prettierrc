@@ -4,19 +4,18 @@
     "tabWidth": 4,
     "printWidth": 120,
     "useTabs": false,
-    "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
+    "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
     "importOrder": [
         "^(react/(.*)$)|^(react$)",
         "^(next/(.*)$)|^(next$)",
         "<THIRD_PARTY_MODULES>",
-        "",
         "^types$",
         "^@/types/(.*)$",
-        "",
         "^@/(.*)$",
-        "",
         "^[./]"
     ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
     "tailwindFunctions": ["tv", "cva"],
     "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"]
 }
