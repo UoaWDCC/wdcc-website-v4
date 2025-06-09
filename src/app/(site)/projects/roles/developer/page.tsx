@@ -60,7 +60,7 @@ export default function DeveloperPage() {
                         <h2 className="text-4xl leading-[1.1] font-bold">
                             practice {"<this>"} and {"</that>"}
                         </h2>
-                        <div className="md: grid gap-4 gap-12 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
+                        <div className="grid gap-12 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
                             <LearnCard
                                 title={"teamwork"}
                                 description={
