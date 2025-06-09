@@ -1,10 +1,14 @@
-# syntax = docker/dockerfile:1
+# syntax = docker/dockerfile:1.4
 
 # Adjust NODE_VERSION as desired
 ARG NODE_VERSION=20.18.1
 FROM node:${NODE_VERSION}-slim AS base
 
 LABEL fly_launch_runtime="Next.js"
+
+# Ensure required secrets are available
+RUN --mount=type=secret,id=DATABASE_URI \
+    cat /run/secrets/DATABASE_URI
 
 # Print environment variables
 RUN printenv
@@ -33,14 +37,6 @@ RUN pnpm install --frozen-lockfile --prod=false
 
 # Copy application code
 COPY . .
-
-# Ensure required secrets are available
-RUN test -f /run/secrets/DATABASE_URI || (echo "Missing secret DATABASE_URI" && exit 1)
-RUN test -f /run/secrets/PAYLOAD_SECRET || (echo "Missing secret PAYLOAD_SECRET" && exit 1)
-RUN test -f /run/secrets/S3_BUCKET || (echo "Missing secret S3_BUCKET" && exit 1)
-RUN test -f /run/secrets/S3_ACCESS_KEY_ID || (echo "Missing secret S3_ACCESS_KEY_ID" && exit 1)
-RUN test -f /run/secrets/S3_SECRET_ACCESS_KEY || (echo "Missing secret S3_SECRET_ACCESS_KEY" && exit 1)
-RUN test -f /run/secrets/S3_REGION || (echo "Missing secret S3_REGION" && exit 1)
 
 # Build application
 RUN --mount=type=secret,id=DATABASE_URI \
