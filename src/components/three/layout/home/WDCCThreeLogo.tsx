@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck TODO ASHTON
 "use client";
 
 import { RefObject, useEffect, useRef } from "react";
@@ -26,9 +24,13 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
         const params = {
             rotationContraint: CONSTAINT,
             smoothing: smoothing,
+            // @ts-expect-error TODO ASHTON
             x: group.current.position.x,
+            // @ts-expect-error TODO ASHTON
             y: group.current.position.y,
+            // @ts-expect-error TODO ASHTON
             z: group.current.position.z,
+            // @ts-expect-error TODO ASHTON
             axesHerlper: axesHelper.current.visible,
         };
 
@@ -40,17 +42,21 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
         });
         if (group.current) {
             folder.add(params, "x", -3, 3).onChange((c) => {
+                // @ts-expect-error TODO ASHTON
                 group.current.position.x = c;
             });
             folder.add(params, "y", -3, 3).onChange((c) => {
+                // @ts-expect-error TODO ASHTON
                 group.current.position.y = c;
             });
             folder.add(params, "z", -3, 3).onChange((c) => {
+                // @ts-expect-error TODO ASHTON
                 group.current.position.z = c;
             });
         }
         if (axesHelper.current) {
             folder.add(params, "axesHerlper").onChange((c) => {
+                // @ts-expect-error TODO ASHTON
                 axesHelper.current.visible = c;
             });
         }
