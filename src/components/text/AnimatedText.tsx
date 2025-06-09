@@ -1,6 +1,5 @@
 "use client";
 
-
 import { Variants, motion } from "motion/react";
 
 import { HTMLAtrributeNoMotion } from "@/types/motion";
