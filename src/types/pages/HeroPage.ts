@@ -1,6 +1,9 @@
 import { StaticImageData } from "next/image";
+import { WhatWeDoCardProps } from "@app/(landing)/_components/WhatWeDoCard";
 
-import { WhatWeDoCardProps } from "@/app/(site)/_components/WhatWeDoCard";
+
+
+
 
 export type HeroPage = {
     Hero: {
