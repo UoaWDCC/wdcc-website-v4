@@ -1,8 +1,7 @@
 "use client";
 
 import { Button } from "@/components/primitives/Button";
-
-import { revalidateAllRoutes } from "./revalidate-action";
+import { revalidateAllRoutes } from "./_actions/revalidateAction";
 
 export default function RevalidatePage() {
     function handleClick() {
@@ -20,6 +19,8 @@ export default function RevalidatePage() {
                 <li>Dynamic pages (e.g. /projects/2024/vps) automatically revalidate</li>
                 <li>Static pages (e.g. /about) need to be rebuilt manually by pressing this button</li>
             </ul>
+            <br />
+            <p>NOT CURRENTLY FUNCTIONAL - TRIGGER REDEPLOY INSTEAD.</p>
             <br />
             <Button onClick={handleClick}>Revalidate</Button>
         </div>
