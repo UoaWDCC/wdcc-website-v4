@@ -1,8 +1,8 @@
-import React, { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
 import { VariantProps, tv } from "tailwind-variants";
 
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/misc";
 
 const highlightblock = tv({
     base: "flex justify-center rounded-2xl px-9 py-3 leading-tight text-gray-800",

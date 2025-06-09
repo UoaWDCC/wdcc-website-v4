@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import Image, { StaticImageData } from "next/image";
 
 import placeholder from "@/assets/image/600x400.png";
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/misc";
 
 type DuoProps = {
     children: ReactNode;

@@ -2,7 +2,7 @@
 
 import { FaqPage } from "@/types/payload-types";
 
-import { getPayload } from "@/libs/payload";
+import { getPayload } from "@/utils/payload";
 
 export const getFaqPage = async (): Promise<FaqPage> => {
     const payload = await getPayload();

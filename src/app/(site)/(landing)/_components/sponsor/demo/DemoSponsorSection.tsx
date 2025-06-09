@@ -1,8 +1,8 @@
-import React, { HTMLAttributes } from "react";
+import { HTMLAttributes } from "react";
 
 import { sponsorsCommunity, sponsorsGold, sponsorsSilver, sponsorsTech } from "@/assets/image/sponsors";
 import SectionHeader from "@/components/section/SectionHeader";
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/misc";
 
 import { SponsorCardTest, SponsorCardTest2, SponsorCardTest3 } from "./DemoSponsorCard";
 

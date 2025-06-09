@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +17,7 @@ import WDCCLogo from "@/assets/svg/WDCCLogo";
 import { social } from "@/assets/svg/socials";
 import { Anchor } from "@/components/primitives/Anchor";
 import { Button } from "@/components/primitives/Button";
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/misc";
 
 import type { NavigationLink } from "./_data/navbarTypes";
 

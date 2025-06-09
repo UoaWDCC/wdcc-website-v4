@@ -4,7 +4,7 @@ import Link, { LinkProps } from "next/link";
 
 import { type VariantProps, tv } from "tailwind-variants";
 
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/misc";
 
 const anchor = tv({
     base: "flex items-center justify-center whitespace-nowrap",

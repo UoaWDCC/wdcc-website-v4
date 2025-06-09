@@ -7,7 +7,7 @@ import Link, { LinkProps } from "next/link";
 import { type Variants, motion } from "motion/react";
 
 import type { NavigationLink } from "@/components/navigation/navbar/_data/navbarTypes";
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/misc";
 
 import { useNavHover } from "./NavigationBar";
 

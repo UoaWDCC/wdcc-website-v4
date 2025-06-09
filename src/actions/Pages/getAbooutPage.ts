@@ -1,6 +1,6 @@
 "use server";
 
-import { getPayload } from "@/libs/payload";
+import { getPayload } from "@/utils/payload";
 
 export const getAboutPage = async () => {
     const payload = await getPayload();

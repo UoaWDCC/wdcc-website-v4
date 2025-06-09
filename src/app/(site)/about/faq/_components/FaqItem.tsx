@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 
 import { Faq } from "@/types/models";
 
-import { easeOutExpo } from "@/libs/ease";
+import { easeOutExpo } from "@/utils/ease";
 
 import FaqButton from "./FaqButton";
 

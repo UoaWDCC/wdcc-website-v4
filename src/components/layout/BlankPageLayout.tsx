@@ -1,6 +1,6 @@
-import React, { HtmlHTMLAttributes } from "react";
+import { HtmlHTMLAttributes } from "react";
 
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/misc";
 
 export default function BlankPageLayout({ children, ...props }: HtmlHTMLAttributes<HTMLElement>) {
     return (

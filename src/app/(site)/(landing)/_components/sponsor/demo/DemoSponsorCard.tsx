@@ -3,7 +3,7 @@
 import { Variants, motion } from "motion/react";
 
 import ImageFit, { ImageFitProps } from "@/components/ImageFit";
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/misc";
 
 export const SponsorCardTest = ImageFit;
 

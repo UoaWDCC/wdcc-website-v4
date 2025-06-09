@@ -1,13 +1,12 @@
 "use client";
 
-import React from "react";
 
 import { Variants, motion } from "motion/react";
 
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import { Button } from "@/components/primitives/Button";
 import Checklist from "@/components/primitives/Checklist";
-import { easeOutQuad } from "@/libs/ease";
+import { easeOutQuad } from "@/utils/ease";
 
 import AddonCards from "./_components/AddonCards";
 import HighlightBlock from "./_components/Highlights";

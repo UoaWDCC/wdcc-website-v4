@@ -1,4 +1,4 @@
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/misc";
 
 import { Category } from "../_data/events.data";
 

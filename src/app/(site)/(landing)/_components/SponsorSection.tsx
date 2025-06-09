@@ -5,7 +5,7 @@ import { tv } from "tailwind-variants";
 import { SponsorSectionType } from "@/types/pages/HeroPage";
 
 import { Button } from "@/components/primitives/Button";
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/misc";
 
 import SponsorCard from "./sponsor/SponsorCard";
 
