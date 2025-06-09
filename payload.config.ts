@@ -1,23 +1,23 @@
 // storage-adapter-import-placeholder
-import path from "path";
-import { fileURLToPath } from "url";
 import { postgresAdapter } from "@payloadcms/db-postgres";
-import { HTMLConverterFeature, lexicalEditor, LinkFeature } from "@payloadcms/richtext-lexical";
+import { HTMLConverterFeature, LinkFeature, lexicalEditor } from "@payloadcms/richtext-lexical";
 import { s3Storage } from "@payloadcms/storage-s3";
+import path from "path";
 import { buildConfig } from "payload";
 import sharp from "sharp";
+import { fileURLToPath } from "url";
 
 import { Events } from "./src/collections/Events";
-import AboutPage from "./src/collections/globals/AboutPage";
-import { ExecsPage } from "./src/collections/globals/ExecsPage";
-import { FaqPage } from "./src/collections/globals/FaqPage";
-import HeroPage from "./src/collections/globals/HeroPage";
-import ProjectsPage from "./src/collections/globals/ProjectsPage";
 import { Media } from "./src/collections/Media";
 import { Partners } from "./src/collections/Partners";
 import { Project } from "./src/collections/Projects";
 import { TestSlug } from "./src/collections/TestSlug";
 import { Users } from "./src/collections/Users";
+import AboutPage from "./src/collections/globals/AboutPage";
+import { ExecsPage } from "./src/collections/globals/ExecsPage";
+import { FaqPage } from "./src/collections/globals/FaqPage";
+import HeroPage from "./src/collections/globals/HeroPage";
+import ProjectsPage from "./src/collections/globals/ProjectsPage";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);

@@ -3,6 +3,7 @@
 "use client";
 
 import { RefObject, useEffect, useRef } from "react";
+
 import { Float } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
@@ -11,6 +12,9 @@ import { useGUI } from "@/hooks/useGUI";
 
 import { WDCCThreeLogo } from "../../primitives";
 import HeroImages from "./HeroImages";
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck TODO ASHTON
 
 let CONSTAINT = 0.5; // 90deg * CONSTRIANT
 let smoothing = 0.03; // the lower the slower

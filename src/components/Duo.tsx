@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+
 import Image, { StaticImageData } from "next/image";
 
 import placeholder from "@/assets/image/600x400.png";

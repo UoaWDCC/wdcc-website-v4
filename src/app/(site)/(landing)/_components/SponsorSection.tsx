@@ -1,4 +1,5 @@
 import { HTMLAttributes } from "react";
+
 import { tv } from "tailwind-variants";
 
 import { SponsorSectionType } from "@/types/pages/HeroPage";

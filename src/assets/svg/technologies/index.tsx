@@ -2,8 +2,8 @@ import { ReactNode, SVGAttributes } from "react";
 
 import { hasKey } from "@/libs/utils";
 
-import { Astro } from "./Astro";
 import { AWS } from "./AWS";
+import { Astro } from "./Astro";
 import { Css } from "./Css";
 import { Drizzleorm } from "./Drizzleorm";
 import { Figma } from "./Figma";

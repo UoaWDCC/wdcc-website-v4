@@ -1,8 +1,8 @@
 "use client";
 
 import { ArticleContent } from "@/components/article/ArticleContent";
-import Header from "@/components/layout/pageheaders/Header";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
+import Header from "@/components/layout/pageheaders/Header";
 
 export default function TLPage() {
     return (

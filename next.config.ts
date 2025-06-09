@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+
 import withBundleAnalyzer from "@next/bundle-analyzer";
 import { withPayload } from "@payloadcms/next/withPayload";
 

@@ -1,18 +1,19 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
+
 import { motion } from "motion/react";
-import { tv, VariantProps } from "tailwind-variants";
+import { VariantProps, tv } from "tailwind-variants";
 
 import type { ClassName } from "@/types/utils";
 
 import Arrow from "@/assets/svg/Arrow";
-import { social } from "@/assets/svg/socials";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
+import { social } from "@/assets/svg/socials";
+import { UnderlineLink } from "@/components/navigation/UnderlineLink";
+import DropDown from "@/components/navigation/navbar/DropDownLink";
 import { navbarData } from "@/components/navigation/navbar/_data/navbar.data";
 import { NavigationLink } from "@/components/navigation/navbar/_data/navbarTypes";
-import DropDown from "@/components/navigation/navbar/DropDownLink";
-import { UnderlineLink } from "@/components/navigation/UnderlineLink";
 import { Button } from "@/components/primitives/Button";
 import { useScroll } from "@/components/scroll/ScrollContext";
 

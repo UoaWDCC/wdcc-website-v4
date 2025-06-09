@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+
 import { motion } from "motion/react";
 
 import { Faq } from "@/types/models";

@@ -1,4 +1,5 @@
 import React from "react";
+
 import { useProgress } from "@react-three/drei";
 
 const LoadingScreen = () => {

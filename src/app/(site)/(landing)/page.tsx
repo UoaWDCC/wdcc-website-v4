@@ -1,7 +1,5 @@
 import SignupCard from "@app/(landing)/_components/SignupCard";
 
-
-
 import { ParsePayloadHeroPage } from "@/types/parser/ParsePayloadHeroPage";
 
 import { getHeroPage } from "@/actions/Pages/getHeroPage";

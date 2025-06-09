@@ -1,8 +1,10 @@
 "use client";
 
 import type { HTMLAttributes, ReactNode } from "react";
+
 import Link, { LinkProps } from "next/link";
-import { tv, type VariantProps } from "tailwind-variants";
+
+import { type VariantProps, tv } from "tailwind-variants";
 
 import { cn } from "@/libs/utils";
 

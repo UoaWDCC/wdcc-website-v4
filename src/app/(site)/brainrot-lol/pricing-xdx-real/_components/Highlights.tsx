@@ -1,5 +1,6 @@
 import React, { HTMLAttributes, ReactNode } from "react";
-import { tv, VariantProps } from "tailwind-variants";
+
+import { VariantProps, tv } from "tailwind-variants";
 
 import { cn } from "@/libs/utils";
 

@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { motion, Variants } from "motion/react";
+
+import { Variants, motion } from "motion/react";
 
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import { Button } from "@/components/primitives/Button";

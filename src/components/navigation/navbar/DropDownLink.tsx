@@ -1,8 +1,10 @@
 "use client";
 
 import { AnchorHTMLAttributes, ReactNode } from "react";
+
 import Link, { LinkProps } from "next/link";
-import { motion, type Variants } from "motion/react";
+
+import { type Variants, motion } from "motion/react";
 
 import type { NavigationLink } from "@/components/navigation/navbar/_data/navbarTypes";
 import { cn } from "@/libs/utils";
