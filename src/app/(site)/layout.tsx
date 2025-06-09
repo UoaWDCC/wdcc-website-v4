@@ -6,7 +6,7 @@ import { ScrollProvider } from "@/components/scroll/ScrollContext";
 import { figtree } from "@/fonts";
 import ReduceMotionProvider from "@/providers/ReduceMotionProvider";
 import WebGLProvider from "@/providers/WebGLProvider";
-import "@/styles/global.css";
+import "@/assets/global.css";
 
 // SEO
 export const metadata: Metadata = {
