@@ -34,10 +34,10 @@ jobs:
       - name: Build Docker image
         uses: docker/build-push-action@v5
         with:
-          secrets: |
-            id=DATABASE_URI,src=secrets/database_uri.txt
-            id=PAYLOAD_SECRET,src=secrets/payload_secret.txt
-            id=S3_BUCKET,src=secrets/s3_bucket.txt
-            id=S3_ACCESS_KEY_ID,src=secrets/s3_access_key_id.txt
-            id=S3_SECRET_ACCESS_KEY,src=secrets/s3_secret_access_key.txt
-            id=S3_REGION,src=secrets/s3_region.txt
+          secrets: DATABASE_URI=${{ secrets.DATABASE_URI }}
+            # id=DATABASE_URI,src=secrets/database_uri.txt
+            # id=PAYLOAD_SECRET,src=secrets/payload_secret.txt
+            # id=S3_BUCKET,src=secrets/s3_bucket.txt
+            # id=S3_ACCESS_KEY_ID,src=secrets/s3_access_key_id.txt
+            # id=S3_SECRET_ACCESS_KEY,src=secrets/s3_secret_access_key.txt
+            # id=S3_REGION,src=secrets/s3_region.txt
