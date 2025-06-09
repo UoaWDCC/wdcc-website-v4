@@ -30,11 +30,11 @@ jobs:
           key: ${{ runner.os }}-frontend-${{ hashFiles('frontend/package-lock.json') }}
 
       # Build with Docker
+      # https://github.com/docker/build-push-action
       - name: Build Docker image
         uses: docker/build-push-action@v5
         with:
-          context: .
-          build-args: |
+          secrets: |
             DOCKER_BUILDKIT: 1
             DATABASE_URI: ${{ secrets.DATABASE_URI }}
             PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}

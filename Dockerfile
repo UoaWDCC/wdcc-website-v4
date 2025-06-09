@@ -6,6 +6,9 @@ FROM node:${NODE_VERSION}-slim as base
 
 LABEL fly_launch_runtime="Next.js"
 
+# Print environment variables
+RUN printenv
+
 # Next.js app lives here
 WORKDIR /app
 
