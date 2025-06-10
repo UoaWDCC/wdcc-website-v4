@@ -1,8 +1,7 @@
-import SignupCard from "@app/(landing)/_components/SignupCard";
-
 import { ParsePayloadHeroPage } from "@/types/parser/ParsePayloadHeroPage";
 
 import { getHeroPage } from "@/actions/Pages/getHeroPage";
+import SignupCard from "@/app/(main)/(landing)/_components/SignupCard";
 import ThreeLayout from "@/components/layout/ThreePageLayout";
 import Footer from "@/components/navigation/footer/Footer";
 import BackgroundEffect from "@/components/three/BackgroundEffect";

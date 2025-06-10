@@ -1,4 +1,6 @@
-import { WhatWeDoData } from "./whatWeDoTypes";
+import { WhatWeDoCardProps } from "../_components/WhatWeDoCard";
+
+type WhatWeDoData = { columns: WhatWeDoCardProps[] };
 
 export const whatWeDoData: WhatWeDoData = {
     columns: [
