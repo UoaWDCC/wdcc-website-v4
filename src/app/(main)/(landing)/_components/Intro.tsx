@@ -1,9 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-
 import { Variants, motion } from "motion/react";
-
 import { easeOutQuad } from "@/utils/ease";
 
 type IntroProps = {

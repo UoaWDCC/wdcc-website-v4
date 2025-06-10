@@ -1,5 +1,4 @@
 import { FaqColors } from "@/types/pages/FaqPage";
-
 import { cn } from "@/utils/misc";
 
 type FaqTabProps = {

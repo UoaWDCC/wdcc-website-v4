@@ -1,7 +1,6 @@
 "use server";
 
 import { Project } from "@/types/payload-types";
-
 import { SLUG } from "@/utils/enums/slug";
 import { getPayload } from "@/utils/payload";
 

@@ -1,13 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
-
 import { Preload } from "@react-three/drei";
 import { Canvas, CanvasProps, useThree } from "@react-three/fiber";
 import * as THREE from "three";
-
 import { useWebGL } from "@/providers/WebGLProvider";
-
 import { bg, t } from "../globals/tunnel";
 
 export default function Scene({ ...props }: Omit<CanvasProps, "children">) {

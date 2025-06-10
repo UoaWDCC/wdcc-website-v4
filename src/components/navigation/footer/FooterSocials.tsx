@@ -1,11 +1,9 @@
 "use client";
 
 import { HTMLAttributes } from "react";
-
 import { Anchor } from "@/components/primitives/Anchor";
 import { useScroll } from "@/components/scroll/ScrollContext";
 import { cn } from "@/utils/misc";
-
 import { Button } from "../../primitives/Button";
 import { FooterSocial } from "./_data/footerTypes";
 

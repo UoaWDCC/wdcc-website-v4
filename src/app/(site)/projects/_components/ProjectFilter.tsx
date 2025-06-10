@@ -1,5 +1,4 @@
 import { Project } from "@/types/models";
-
 import { FilterTag } from "./FilterTag";
 
 type ProjectFilterProps = {

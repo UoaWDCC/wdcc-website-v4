@@ -1,5 +1,4 @@
 import type { Event } from "@/types/models";
-
 import placeholder from "@/assets/image/600x400.png";
 
 export const wdccChiasma2024: Event = {

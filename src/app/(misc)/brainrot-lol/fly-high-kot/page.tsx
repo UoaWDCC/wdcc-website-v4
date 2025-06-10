@@ -1,9 +1,7 @@
 "use client";
 
 import Image from "next/image";
-
 import { Canvas } from "@react-three/fiber";
-
 import { Fire } from "./Fire";
 
 export default function Page() {

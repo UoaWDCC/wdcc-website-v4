@@ -1,11 +1,8 @@
 // TODO ANDREW showcase version of header and graphic
 // import { ReactNode } from "react";
 import { ReactNode } from "react";
-
 import Link from "next/link";
-
 import { VariantProps, tv } from "tailwind-variants";
-
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
 

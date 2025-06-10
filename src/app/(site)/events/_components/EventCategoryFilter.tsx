@@ -1,5 +1,4 @@
 import { cn } from "@/utils/misc";
-
 import { Category } from "../_data/events.data";
 
 type EventCategoryFilterProps = {

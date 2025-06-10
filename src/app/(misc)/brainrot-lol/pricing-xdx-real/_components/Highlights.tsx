@@ -1,7 +1,5 @@
 import { HTMLAttributes, ReactNode } from "react";
-
 import { VariantProps, tv } from "tailwind-variants";
-
 import { cn } from "@/utils/misc";
 
 const highlightblock = tv({

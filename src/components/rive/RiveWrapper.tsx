@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useRive } from "@rive-app/react-canvas";
 
 // Wrapper component to isolate useRive logic that

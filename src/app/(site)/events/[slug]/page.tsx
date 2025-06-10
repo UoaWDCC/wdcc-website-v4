@@ -1,11 +1,8 @@
 import { notFound } from "next/navigation";
-
 import { ParsePayloadEvent } from "@/types/parser/ParsePayloadEvent";
-
 import { getEvent } from "@/actions/getEvent";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import EventHeader from "@/components/layout/pageheaders/EventHeader";
-
 import { eventsData } from "../_data/events.data";
 import IndividualEvent from "./_components/IndividualEvent";
 

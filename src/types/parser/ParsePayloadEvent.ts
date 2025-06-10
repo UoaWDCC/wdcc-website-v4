@@ -1,5 +1,4 @@
 import { Event as CMSEVENT, Media, Partner } from "@/types/payload-types";
-
 import { Event } from "../models";
 
 export const ParsePayloadEvent = (CmsEvent: CMSEVENT): Event | undefined => {

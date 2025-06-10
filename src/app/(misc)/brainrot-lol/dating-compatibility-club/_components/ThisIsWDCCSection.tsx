@@ -1,5 +1,4 @@
 import React from "react";
-
 import { whatWeDoData } from "../_data/infoCard.data";
 import InfoCard from "./WhatWeDoCard";
 

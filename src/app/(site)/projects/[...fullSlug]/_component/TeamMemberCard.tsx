@@ -1,9 +1,6 @@
 import { VariantProps, tv } from "tailwind-variants";
-
 import { ImageType } from "@/types/image";
-
 import ImageCover from "@/components/ImageCover";
-
 import placeholder from "../_assets/placeholder.png";
 
 const card = tv({

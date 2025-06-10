@@ -1,14 +1,11 @@
 "use client";
 
 import { useRef } from "react";
-
 import dynamic from "next/dynamic";
 import Image from "next/image";
-
 import { PerspectiveCamera } from "@react-three/drei";
 import { motion } from "motion/react";
 import * as THREE from "three";
-
 import HeroFallback from "@/assets/image/hero/herofallback.png";
 import { social } from "@/assets/svg/socials";
 import Draw from "@/components/Draw";

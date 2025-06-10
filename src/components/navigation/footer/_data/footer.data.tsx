@@ -1,5 +1,4 @@
 import { social } from "@/assets/svg/socials";
-
 import { FooterData } from "./footerTypes";
 
 export const footerData: FooterData = {

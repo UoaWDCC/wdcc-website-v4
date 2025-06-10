@@ -6,7 +6,6 @@ import path from "path";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 import { fileURLToPath } from "url";
-
 import { Events } from "./src/collections/Events";
 import { Media } from "./src/collections/Media";
 import { Partners } from "./src/collections/Partners";

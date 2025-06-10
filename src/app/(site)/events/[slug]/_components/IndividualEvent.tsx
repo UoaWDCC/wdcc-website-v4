@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import { Event } from "@/types/models";
-
 import ImageFit from "@/components/ImageFit";
 
 const IndividualEvent = ({ event }: { event: Event }) => {

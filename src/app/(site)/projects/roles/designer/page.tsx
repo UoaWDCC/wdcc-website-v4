@@ -1,9 +1,6 @@
 "use client";
 
 import React from "react";
-
-
-
 import SignupCard from "@/app/(main)/(landing)/_components/SignupCard";
 import LearnCard from "@/app/(site)/projects/roles/_components/LearnCard";
 import MoreAboutProjects from "@/app/(site)/projects/roles/_components/MoreAboutProjects";
@@ -18,10 +15,6 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import { Button } from "@/components/primitives/Button";
 import RiveDuo from "@/components/rive/RiveDuo";
 import RiveWrapper from "@/components/rive/RiveWrapper";
-
-
-
-
 
 export default function DesignerPage() {
     const [animEnabled, setAnimEnabled] = React.useState(true);

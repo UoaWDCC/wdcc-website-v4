@@ -1,12 +1,8 @@
 import React from "react";
-
 import Link from "next/link";
-
 import { Project } from "@/types/models";
-
 import WDCCLogo from "@/assets/svg/WDCCLogo";
 import SuspenseImage from "@/components/SuspenseImage";
-
 import { ProjectTag } from "./ProjectTag";
 
 type ProjectCardProps = {

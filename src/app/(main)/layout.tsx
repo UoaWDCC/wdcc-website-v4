@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
-
 import type { Metadata } from "next";
-
 import "@/assets/global.css";
 import { ScrollProvider } from "@/components/scroll/ScrollContext";
 import { figtree } from "@/fonts";

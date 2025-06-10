@@ -1,7 +1,6 @@
 "use client";
 
 import { ReactNode } from "react";
-
 import { CommonLight } from "./CommonLight";
 import { Three } from "./scene/Three";
 

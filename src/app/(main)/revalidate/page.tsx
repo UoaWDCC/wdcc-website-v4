@@ -25,7 +25,9 @@ export default function RevalidatePage() {
             <br />
             <div className="flex gap-4">
                 <Button onClick={handleClick}>Revalidate</Button>
-                <Button href="/" variant={{ style: "secondary" }}>Home</Button>
+                <Button href="/" variant={{ style: "secondary" }}>
+                    Home
+                </Button>
             </div>
         </div>
     );

@@ -1,5 +1,4 @@
 import { HtmlHTMLAttributes } from "react";
-
 import { cn } from "@/utils/misc";
 
 type ProjectTagProps = {

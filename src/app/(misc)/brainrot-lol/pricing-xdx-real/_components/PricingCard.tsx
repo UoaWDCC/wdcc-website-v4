@@ -1,7 +1,5 @@
 import React from "react";
-
 import { VariantProps, tv } from "tailwind-variants";
-
 import { Button } from "@/components/primitives/Button";
 import Checklist, { ChecklistType } from "@/components/primitives/Checklist";
 

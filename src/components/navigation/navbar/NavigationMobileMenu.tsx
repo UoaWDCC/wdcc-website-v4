@@ -1,13 +1,10 @@
 "use client";
 
 import { useState } from "react";
-
 import Image from "next/image";
 import Link from "next/link";
-
 import { motion } from "motion/react";
 import { VariantProps, tv } from "tailwind-variants";
-
 //import websterBL from "@/assets/image/webster-blue.png"
 import websterCL from "@/assets/image/webster-color.png";
 import Arrow from "@/assets/svg/Arrow";
@@ -18,7 +15,6 @@ import { social } from "@/assets/svg/socials";
 import { Anchor } from "@/components/primitives/Anchor";
 import { Button } from "@/components/primitives/Button";
 import { cn } from "@/utils/misc";
-
 import type { NavigationLink } from "./_data/navbarTypes";
 
 const mobileNav = tv({

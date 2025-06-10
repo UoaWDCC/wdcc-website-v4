@@ -1,9 +1,7 @@
 import { Project } from "@/types/models";
-
 import { getTechnologySvgWithName } from "@/assets/svg/technologies";
 import Duo from "@/components/Duo";
 import { toTitleCase } from "@/utils/misc";
-
 import TeamMemberCard from "./TeamMemberCard";
 
 type IndividualProjectProps = {

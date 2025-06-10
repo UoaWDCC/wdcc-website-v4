@@ -1,7 +1,5 @@
 import React from "react";
-
 import Link from "next/link";
-
 import SectionHeader from "@/components/section/SectionHeader";
 
 const testpages = [

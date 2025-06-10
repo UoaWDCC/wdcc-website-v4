@@ -1,5 +1,4 @@
 import { cn } from "@/utils/misc";
-
 import { UnderlineLink } from "../UnderlineLink";
 import type { FooterColumn } from "./_data/footerTypes";
 

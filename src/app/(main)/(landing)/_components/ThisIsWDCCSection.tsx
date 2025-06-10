@@ -1,5 +1,4 @@
 import React from "react";
-
 import InfoCard, { WhatWeDoCardProps } from "./WhatWeDoCard";
 
 type ThisIsWDCCProps = {

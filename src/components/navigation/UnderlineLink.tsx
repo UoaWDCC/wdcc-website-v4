@@ -1,7 +1,5 @@
 import { AnchorHTMLAttributes, ReactNode } from "react";
-
 import Link, { LinkProps } from "next/link";
-
 import { cn } from "@/utils/misc";
 
 // Need to omit href from AnchorHTMLAttributes because it conflicts with Next LinkProps
