@@ -1,13 +1,13 @@
 "use client";
 
 import { Button } from "@/components/primitives/Button";
+import { revalidateAllRoutesAction } from "./revalidateAllRoutesAction";
 
-import { revalidateAllRoutes } from "./_actions/revalidateAction";
-
+/** Currently non-functional page to revalidate (regenerate) all static pages after changing CMS */
 export default function RevalidatePage() {
     function handleClick() {
         if (confirm(`Are you sure you want to revalidate all routes on ${process.env.NODE_ENV}?`)) {
-            void revalidateAllRoutes();
+            void revalidateAllRoutesAction();
             alert("All routes revalidated!");
         }
     }
@@ -23,7 +23,10 @@ export default function RevalidatePage() {
             <br />
             <p>NOT CURRENTLY FUNCTIONAL - TRIGGER REDEPLOY INSTEAD.</p>
             <br />
-            <Button onClick={handleClick}>Revalidate</Button>
+            <div className="flex gap-4">
+                <Button onClick={handleClick}>Revalidate</Button>
+                <Button href="/" variant={{ style: "secondary" }}>Home</Button>
+            </div>
         </div>
     );
 }

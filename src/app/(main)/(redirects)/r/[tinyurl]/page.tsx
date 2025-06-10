@@ -12,6 +12,7 @@ const redirects: Record<string, string> = {
     miku: "https://www.youtube.com/watch?v=28FVxYQuLOQ",
 };
 
+/** Redirects - like tinyurl at wdcc.co.nz/r/[...] */
 export default async function RedirectPage({ params }: { params: Promise<{ tinyurl: string }> }) {
     const tinyurl = (await params).tinyurl;
     redirect(redirects[tinyurl] ?? `/${tinyurl}`);
