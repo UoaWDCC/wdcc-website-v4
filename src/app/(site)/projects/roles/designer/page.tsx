@@ -60,7 +60,7 @@ export default function DesignerPage() {
                 <div className="flex flex-col gap-20">
                     <div className="flex flex-col gap-8 text-center">
                         <h2 className="text-4xl leading-[1.1] font-bold">practice fantastic things.</h2>
-                        <div className="md: grid gap-4 gap-12 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
+                        <div className="grid gap-12 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
                             <LearnCard
                                 title={"teamwork"}
                                 description={

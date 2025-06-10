@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import { Button } from "@/components/primitives/Button";
 
-export default function NotFound() {
+export default function NotFoundPage() {
     const router = useRouter();
 
     const transition = {
