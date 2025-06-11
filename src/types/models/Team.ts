@@ -1,15 +1,21 @@
+import { ImageType } from "../misc/ImageType";
 
-export type ProjectMember = {
+type Role = "developer" | "techlead" | "designer" | "manager" | "tutor";
+
+type ProjectMember = {
     name: string;
-    role: "developer" | "techlead" | "designer" | "manager" | "tutor";
-    image?: {
-        src: string;
-        alt: string;
-    };
+    role: Role;
+    image?: ImageType;
 };
 
 export type Team = {
-    techlead: { name: string; image?: { src: string; alt: string } };
-    manager: { name: string; image?: { src: string; alt: string } };
+    techlead: {
+        name: string;
+        image?: ImageType;
+    };
+    manager: {
+        name: string;
+        image?: ImageType;
+    };
     members: ProjectMember[];
 };

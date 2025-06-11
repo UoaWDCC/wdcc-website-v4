@@ -1,17 +1,16 @@
+import { ButtonType2 } from "../misc/ButtonType";
+import { ImageType } from "../misc/ImageType";
 import { Team } from "./Team";
 
-type Difficulty = "academy" | "easy" | "medium" | "hard" | "unassigned";
-export const difficulties: Difficulty[] = ["academy", "easy", "medium", "hard", "unassigned"];
+export const difficulties = ["academy", "easy", "medium", "hard", "unassigned"] as const;
+type Difficulty = (typeof difficulties)[number];
 
 export type Project = {
     // card stuff
     slug: string;
     year: string;
     client: string;
-    icon?: {
-        src: string;
-        alt: string;
-    };
+    icon?: ImageType;
     // shared
     name: {
         title: string;
@@ -21,19 +20,10 @@ export type Project = {
     // for page
     brief: {
         description: string;
-        image?: {
-            src: string;
-            alt: string;
-        };
+        image?: ImageType;
     };
-    primaryLink?: {
-        label: string;
-        href: string;
-    };
-    secondaryLink?: {
-        label: string;
-        href: string;
-    };
+    primaryLink?: ButtonType2;
+    secondaryLink?: ButtonType2;
     technologies: string[];
     difficulty: Difficulty;
     team: Team;

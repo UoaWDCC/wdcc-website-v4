@@ -1,8 +1,13 @@
-import { StaticImageData } from "next/image";
+import { ImageType } from "../misc/ImageType";
 
-
-export type EventCategory = (typeof EventCategories)[number];
 export const EventCategories = ["Workshop", "Competition", "Social", "Projects", "Other"] as const;
+type EventCategory = (typeof EventCategories)[number];
+
+type Partner = {
+    href: string;
+    src: string | ImageType;
+    alt: string;
+}
 
 export type Event = {
     title: string;
@@ -11,20 +16,10 @@ export type Event = {
     location: string;
     description: string;
     category: EventCategory;
-    thumbnail: {
-        src: string | StaticImageData;
-        alt: string;
-    };
+    thumbnail: ImageType;
     page: {
         description: string;
-        image: {
-            src: string;
-            alt: string;
-        };
+        image: ImageType;
     };
-    partners: {
-        href: string;
-        src: string;
-        alt: string;
-    }[];
+    partners: Partner[];
 };
