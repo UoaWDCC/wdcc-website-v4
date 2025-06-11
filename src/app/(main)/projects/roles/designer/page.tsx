@@ -2,11 +2,11 @@
 
 import React from "react";
 import SignupCard from "@/app/(main)/(landing)/_components/SignupCard";
-import LearnCard from "@/app/(site)/projects/roles/_components/LearnCard";
-import MoreAboutProjects from "@/app/(site)/projects/roles/_components/MoreAboutProjects";
-import PastProjects from "@/app/(site)/projects/roles/_components/PastProjects";
-import RiveToggleButton from "@/app/(site)/projects/roles/_components/RiveToggleButton";
-import RolesHeader from "@/app/(site)/projects/roles/_components/RolesHeader";
+import LearnCard from "@/app/(main)/projects/roles/_components/LearnCard";
+import MoreAboutProjects from "@/app/(main)/projects/roles/_components/MoreAboutProjects";
+import PastProjects from "@/app/(main)/projects/roles/_components/PastProjects";
+import RiveToggleButton from "@/app/(main)/projects/roles/_components/RiveToggleButton";
+import RolesHeader from "@/app/(main)/projects/roles/_components/RolesHeader";
 import graphic1 from "@/assets/image/roles/roles_design-01.webp";
 import graphic2 from "@/assets/image/roles/roles_design-02.webp";
 import graphic3 from "@/assets/image/roles/roles_design-03.webp";
