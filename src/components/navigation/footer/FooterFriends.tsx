@@ -1,8 +1,8 @@
+import { Link } from "@/types/misc/Link";
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
-import { LinkType } from "@/types/misc/LinkType";
 
-export default function FooterFriends({ friends }: { friends: LinkType[] }) {
+export default function FooterFriends({ friends }: { friends: Link[] }) {
     return (
         <div className="flex flex-col items-center justify-end gap-2 sm:flex-row">
             <p className="text-xs font-semibold">Check out our friends</p>
@@ -16,7 +16,7 @@ export default function FooterFriends({ friends }: { friends: LinkType[] }) {
 }
 
 type FriendLinkProps = {
-    friend: LinkType;
+    friend: Link;
 };
 
 export function FriendLink({ friend }: FriendLinkProps) {

@@ -1,5 +1,5 @@
-import { ButtonType } from "../misc/ButtonType";
-import { ImageType } from "../misc/ImageType";
+import { Button } from "../misc/Button";
+import { Image } from "../misc/Image";
 import { Team } from "./Team";
 
 export const difficulties = ["academy", "easy", "medium", "hard", "unassigned"] as const;
@@ -10,7 +10,7 @@ export type Project = {
     slug: string;
     year: string;
     client: string;
-    icon?: ImageType;
+    icon?: Image;
     // shared
     name: {
         title: string;
@@ -20,10 +20,10 @@ export type Project = {
     // for page
     brief: {
         description: string;
-        image?: ImageType;
+        image?: Image;
     };
-    primaryLink?: ButtonType;
-    secondaryLink?: ButtonType;
+    primaryLink?: Button;
+    secondaryLink?: Button;
     technologies: string[];
     difficulty: Difficulty;
     team: Team;

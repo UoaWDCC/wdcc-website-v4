@@ -1,13 +1,13 @@
-import { ImageType } from "../misc/ImageType";
+import { Image } from "../misc/Image";
 
 export const EventCategories = ["Workshop", "Competition", "Social", "Projects", "Other"] as const;
 type EventCategory = (typeof EventCategories)[number];
 
 type Partner = {
     href: string;
-    src: string | ImageType;
+    src: string | Image;
     alt: string;
-}
+};
 
 export type Event = {
     title: string;
@@ -16,10 +16,10 @@ export type Event = {
     location: string;
     description: string;
     category: EventCategory;
-    thumbnail: ImageType;
+    thumbnail: Image;
     page: {
         description: string;
-        image: ImageType;
+        image: Image;
     };
     partners: Partner[];
 };

@@ -1,5 +1,5 @@
 import { VariantProps, tv } from "tailwind-variants";
-import { ImageType } from "@/types/misc/ImageType";
+import { Image } from "@/types/misc/Image";
 import ImageCover from "@/components/ImageCover";
 import placeholder from "../_assets/placeholder.png";
 
@@ -24,7 +24,7 @@ type Variant = { variant?: VariantProps<typeof card> };
 type TeamCardProps = {
     name: string;
     role: string;
-    image?: ImageType;
+    image?: Image;
 } & Variant;
 
 const TeamMemberCard = ({ name, role, image, variant }: TeamCardProps) => {

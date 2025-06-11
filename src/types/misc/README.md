@@ -1,1 +1,0 @@
-These types are so generic I think we should call them XType not just X so we don't get confused with other libraries' types

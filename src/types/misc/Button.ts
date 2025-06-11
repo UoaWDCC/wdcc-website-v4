@@ -1,4 +1,4 @@
-export type ButtonType = {
+export type Button = {
     label: string;
     href: string;
 };
