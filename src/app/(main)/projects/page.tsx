@@ -1,9 +1,9 @@
-import { ParsePayloadProjectPage } from "@/types/parser/ParsePayloadProjectPage";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import Header from "@/components/layout/pageheaders/Header";
 // import { Button } from "@/components/primitives/Button";
 import Checklist from "@/components/primitives/Checklist";
-import { getProjectsPage } from "@/payload/actions/Pages/getProjectsPage";
+import { ParsePayloadProjectPage } from "@/payload/globals/projectspage/ParsePayloadProjectPage";
+import { getProjectsPage } from "@/payload/globals/projectspage/getProjectsPage";
 // import { ProjectCard } from "./_components/ProjectCard";
 import ProjectRoleCard from "./_components/ProjectRoleCard";
 // import { projectsData } from "./_data/projects_data";

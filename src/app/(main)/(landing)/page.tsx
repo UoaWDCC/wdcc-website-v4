@@ -1,10 +1,10 @@
 import SignupCard from "@main/(landing)/_components/SignupCard";
-import { ParsePayloadHeroPage } from "@/types/parser/ParsePayloadHeroPage";
 import ThreeLayout from "@/components/layout/ThreePageLayout";
 import Footer from "@/components/navigation/footer/Footer";
 import BackgroundEffect from "@/components/three/BackgroundEffect";
 import { View } from "@/components/three/scene/View";
-import { getHeroPage } from "@/payload/actions/Pages/getHeroPage";
+import { ParsePayloadHeroPage } from "@/payload/globals/heropage/ParsePayloadHeroPage";
+import { getHeroPage } from "@/payload/globals/heropage/getHeroPage";
 import { SponsorSection } from "./_components/SponsorSection";
 import ThisIsWDCC from "./_components/ThisIsWDCCSection";
 import WDCCHero from "./_components/WDCCHero";
