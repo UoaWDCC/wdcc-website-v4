@@ -1,4 +1,4 @@
-import SignupCard from "@main/(landing)/_components/SignupCard";
+import SignupCard from "@/app/(main)/(hero)/_components/SignupCard";
 import ThreeLayout from "@/components/layout/ThreePageLayout";
 import Footer from "@/components/navigation/footer/Footer";
 import BackgroundEffect from "@/components/three/BackgroundEffect";
@@ -10,7 +10,7 @@ import ThisIsWDCC from "./_components/ThisIsWDCCSection";
 import WDCCHero from "./_components/WDCCHero";
 import { HeroData as hardCodedHeroData } from "./_data/homeData";
 
-export default async function Home() {
+export default async function HeroPage() {
     let HeroData = ParsePayloadHeroPage(await getHeroPage());
     if (!HeroData) {
         HeroData = hardCodedHeroData;
