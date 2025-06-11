@@ -3,8 +3,8 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import adsf from "./glsl/flamesFragment.glsl";
-import asd from "./glsl/vertexShader.glsl";
+import adsf from "./_glsl/flamesFragment.glsl";
+import asd from "./_glsl/vertexShader.glsl";
 
 export const Fire = () => {
     //   const three = useThree();

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Canvas } from "@react-three/fiber";
 import { Fire } from "./Fire";
+import car from "./_assets/techedu-retreat.png";
 
 export default function Page() {
     return (
@@ -23,7 +24,7 @@ export default function Page() {
                         <Fire />
                     </Canvas>
                 </div>
-                <Image src={"/brainrot/techedu-retreat.png"} alt="Fly high kot" width={200} height={150} />
+                <Image src={car} alt="Fly high kot" width={200} height={150} />
             </div>
         </>
     );
