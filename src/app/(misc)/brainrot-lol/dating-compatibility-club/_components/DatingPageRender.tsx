@@ -9,7 +9,6 @@ import SignupCard from "./SignupCard";
 import ThisIsWDCC from "./ThisIsWDCCSection";
 import WDCCHero from "./WDCCHero";
 
-
 export default function DatingPage() {
     const [heroAnimEnded, setHeroAnimEnded] = React.useState(false);
 

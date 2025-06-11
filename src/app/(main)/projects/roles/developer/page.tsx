@@ -16,7 +16,6 @@ import { Button } from "@/components/primitives/Button";
 import RiveDuo from "@/components/rive/RiveDuo";
 import RiveWrapper from "@/components/rive/RiveWrapper";
 
-
 export default function DeveloperPage() {
     const [animEnabled, setAnimEnabled] = React.useState(true);
 
