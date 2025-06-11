@@ -1,4 +1,4 @@
-import { Faq } from "../models";
+import { Faq } from "../models/Faq";
 
 export type FaqSection = {
     name: string;

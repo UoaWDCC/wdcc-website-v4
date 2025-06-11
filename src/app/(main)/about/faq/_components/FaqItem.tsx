@@ -1,8 +1,8 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
-import { Faq } from "@/types/models";
+import { Faq } from "@/types/models/Faq";
 import { easeOutExpo } from "@/utils/ease";
+import { AnimatePresence, motion } from "motion/react";
 import FaqButton from "./FaqButton";
 
 type FaqItemProps = {

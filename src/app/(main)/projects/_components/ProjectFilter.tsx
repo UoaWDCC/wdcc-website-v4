@@ -1,4 +1,4 @@
-import { Project } from "@/types/models";
+import { Project } from "@/types/models/Project";
 import { FilterTag } from "./FilterTag";
 
 type ProjectFilterProps = {

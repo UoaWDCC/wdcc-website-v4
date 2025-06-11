@@ -1,5 +1,5 @@
-import type { Event } from "@/types/models";
 import placeholder from "@/assets/image/600x400.png";
+import type { Event } from "@/types/models/Event";
 
 export const wdccAGM2025: Event = {
     title: "WDCC AGM 2025",

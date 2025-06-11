@@ -1,6 +1,6 @@
-import { Project } from "@/types/models";
 import { getTechnologySvgWithName } from "@/assets/svg/technologies";
 import Duo from "@/components/Duo";
+import { Project } from "@/types/models/Project";
 import { toTitleCase } from "@/utils/misc";
 import TeamMemberCard from "./TeamMemberCard";
 

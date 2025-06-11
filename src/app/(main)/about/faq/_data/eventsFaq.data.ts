@@ -1,4 +1,4 @@
-import { Faq } from "@/types/models";
+import { Faq } from "@/types/models/Faq";
 
 export const eventsFaqData: Faq[] = [
     {
