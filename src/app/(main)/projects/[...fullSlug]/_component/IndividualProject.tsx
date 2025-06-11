@@ -12,10 +12,11 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
     const technologies = project.technologies.map((tech) => {
         return getTechnologySvgWithName(tech);
     });
+    const briefImage = project.brief.image;
 
     return (
         <div className="flex flex-col py-16">
-            <Duo image={{ src: project.brief.image?.src, alt: project.brief.image?.alt }}>
+            <Duo image={briefImage && { src: briefImage.src, alt: briefImage.alt }}>
                 <div className="text-center md:text-left">
                     <h3 className="text-lg font-semibold">{project.name.extended}</h3>
                     <br />

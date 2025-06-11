@@ -5,7 +5,7 @@ type EventCategory = (typeof EventCategories)[number];
 
 type Partner = {
     href: string;
-    src: string | Image;
+    src: string;
     alt: string;
 };
 

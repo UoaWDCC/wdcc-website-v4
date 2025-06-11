@@ -53,7 +53,7 @@ export const ProjectsCollection: CollectionConfig = {
                     name: "difficulty",
                     type: "select",
                     defaultValue: "unassigned",
-                    options: difficulties,
+                    options: [...difficulties],
                     required: true,
                 },
             ],
