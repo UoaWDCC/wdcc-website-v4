@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect } from @/contexts/WebGLProvider
 import { Preload } from "@react-three/drei";
 import { Canvas, CanvasProps, useThree } from "@react-three/fiber";
 import * as THREE from "three";
-import { useWebGL } from "@/providers/WebGLProvider";
+import { useWebGL } from "@/context/WebGLProvider";
 import { bg, t } from "../globals/tunnel";
+
 
 export default function Scene({ ...props }: Omit<CanvasProps, "children">) {
     // stolen from https://github.com/pmndrs/react-three-next

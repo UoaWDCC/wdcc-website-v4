@@ -4,9 +4,10 @@ import { RefObject, useEffect, useRef } from "react";
 import { Float } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { useGUI } from "@/hooks/useGUI";
+import { useGUI } from "@/utils/hooks/useGUI";
 import { WDCCThreeLogo } from "../../primitives";
 import HeroImages from "./HeroImages";
+
 
 let CONSTAINT = 0.5; // 90deg * CONSTRIANT
 let smoothing = 0.03; // the lower the slower

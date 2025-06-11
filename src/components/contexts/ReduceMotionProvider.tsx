@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext } from "react";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { useLocalStorage } from "@/utils/hooks/useLocalStorage";
 
 type ReduceMotionType = {
     reduceMotion: boolean;
