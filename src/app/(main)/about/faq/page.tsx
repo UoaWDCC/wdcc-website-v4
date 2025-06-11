@@ -1,8 +1,8 @@
 import { ParsePayloadFaqPage } from "@/types/parser/ParsePayloadFaqPage";
-import { getFaqPage } from "@/actions/Pages/getFaqPage";
 import InfoPill from "@/components/InfoPill";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import Header from "@/components/layout/pageheaders/Header";
+import { getFaqPage } from "@/payload/actions/Pages/getFaqPage";
 import { FaqSelector } from "./_components/FaqSelector";
 import { faqData as hardCodedFaq } from "./_data/faq.data";
 

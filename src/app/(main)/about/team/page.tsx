@@ -1,8 +1,8 @@
 import { ParsePayloadExecTeam } from "@/types/parser/ParsePayloadExecTeam";
-import { getExecPage } from "@/actions/Pages/getExecPage";
 import InfoPill from "@/components/InfoPill";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import Header from "@/components/layout/pageheaders/Header";
+import { getExecPage } from "@/payload/actions/Pages/getExecPage";
 import ExecTeam from "./_components/ExecTeam";
 
 export default async function TeamPage() {

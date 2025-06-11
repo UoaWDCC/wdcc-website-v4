@@ -1,9 +1,9 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import { ParsePayloadProject } from "@/types/parser/ParsePayloadProject";
-import { getProject } from "@/actions/getProject";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
+import { getProject } from "@/payload/actions/getProject";
 import IndividualProject from "./_component/IndividualProject";
 
 type Props = {

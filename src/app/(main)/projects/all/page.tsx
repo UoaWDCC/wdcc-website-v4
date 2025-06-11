@@ -1,7 +1,7 @@
 import { ParsePayloadProject } from "@/types/parser/ParsePayloadProject";
-import { getAllProjects } from "@/actions/getAllProjects";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import Header from "@/components/layout/pageheaders/Header";
+import { getAllProjects } from "@/payload/actions/getAllProjects";
 import ProjectsSection from "../_components/ProjectsSection";
 
 export default async function ProjectsPage() {
