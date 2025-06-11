@@ -18,10 +18,11 @@
             }
         ],
         "paths": {
-            "@app/*": ["./src/app/(site)/*"],
+            "@/*": ["./src/*"],
+            "@main/*": ["./src/app/(main)/*"],
+            "@misc/*": ["./src/app/(misc)/*"],
             "@public/*": ["./public/*"],
-            "@payload-config": ["./payload.config.ts"],
-            "@/*": ["./src/*"]
+            "@payload-config": ["./payload.config.ts"]
         },
         "target": "ES2017"
     },

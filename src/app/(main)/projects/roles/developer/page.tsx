@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import SignupCard from "@/app/(main)/(landing)/_components/SignupCard";
-import LearnCard from "@/app/(main)/projects/roles/_components/LearnCard";
-import MoreAboutProjects from "@/app/(main)/projects/roles/_components/MoreAboutProjects";
-import PastProjects from "@/app/(main)/projects/roles/_components/PastProjects";
-import RiveToggleButton from "@/app/(main)/projects/roles/_components/RiveToggleButton";
-import RolesHeader from "@/app/(main)/projects/roles/_components/RolesHeader";
+import SignupCard from "@main/(landing)/_components/SignupCard";
+import LearnCard from "@main/projects/roles/_components/LearnCard";
+import MoreAboutProjects from "@main/projects/roles/_components/MoreAboutProjects";
+import PastProjects from "@main/projects/roles/_components/PastProjects";
+import RiveToggleButton from "@main/projects/roles/_components/RiveToggleButton";
+import RolesHeader from "@main/projects/roles/_components/RolesHeader";
 import graphic1 from "@/assets/image/roles/roles_devs-01.webp";
 import graphic2 from "@/assets/image/roles/roles_devs-02.webp";
 import graphic3 from "@/assets/image/roles/roles_devs-03.webp";
@@ -15,6 +15,7 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import { Button } from "@/components/primitives/Button";
 import RiveDuo from "@/components/rive/RiveDuo";
 import RiveWrapper from "@/components/rive/RiveWrapper";
+
 
 export default function DeveloperPage() {
     const [animEnabled, setAnimEnabled] = React.useState(true);

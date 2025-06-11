@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import RootLayout from "@app/layout";
+import RootLayout from "@main/layout";
 
 export default function MiscRootLayout({
     children,

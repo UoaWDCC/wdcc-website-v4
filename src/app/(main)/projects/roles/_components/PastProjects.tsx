@@ -2,11 +2,6 @@
 import React from "react";
 import { Button } from "@/components/primitives/Button";
 
-// import { ParsePayloadProject } from "@/types/parser/ParsePayloadProject";
-//
-// import { getAllProjects } from "@/actions/getAllProjects";
-// import ProjectsSection from "@app/projects/_components/ProjectsSection";
-
 export default function PastProjects() {
     // const projects = (await getAllProjects()).map(ParsePayloadProject);
 

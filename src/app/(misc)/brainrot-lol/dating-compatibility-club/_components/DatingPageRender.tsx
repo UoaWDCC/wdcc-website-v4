@@ -1,13 +1,14 @@
 "use client";
 
 import React from "react";
+import DatingTextSection from "@misc/brainrot-lol/dating-compatibility-club/_components/DatingTextSection";
+import DatingQuoteSection from "@misc/brainrot-lol/dating-compatibility-club/_components/QuoteSection";
 import { useRive } from "@rive-app/react-canvas";
-import DatingTextSection from "@/app/(site)/brainrot-lol/dating-compatibility-club/_components/DatingTextSection";
-import DatingQuoteSection from "@/app/(site)/brainrot-lol/dating-compatibility-club/_components/QuoteSection";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import SignupCard from "./SignupCard";
 import ThisIsWDCC from "./ThisIsWDCCSection";
 import WDCCHero from "./WDCCHero";
+
 
 export default function DatingPage() {
     const [heroAnimEnded, setHeroAnimEnded] = React.useState(false);
