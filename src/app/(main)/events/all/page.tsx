@@ -1,8 +1,8 @@
 import { Event } from "@/types/models";
 import { ParsePayloadEvent } from "@/types/parser/ParsePayloadEvent";
-import { getAllEvents } from "@/actions/getAllEvents";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import Header from "@/components/layout/pageheaders/Header";
+import { getAllEvents } from "@/payload/actions/getAllEvents";
 import EventsSection from "../_components/EventsSection";
 import { eventsData } from "../_data/events.data";
 

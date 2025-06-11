@@ -2,8 +2,8 @@
 
 import { Variants, motion } from "motion/react";
 import { HTMLAtrributeNoMotion } from "@/types/motion";
+import { textVariantDefault } from "@/components/text/animatedTextVariants";
 import { cn } from "@/utils/misc";
-import { textVariantDefault } from "@/variants/animatedTextVariants";
 
 type TextProps = {
     text: string;

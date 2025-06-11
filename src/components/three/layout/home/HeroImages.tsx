@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { useGUI } from "@/hooks/useGUI";
+import { useGUI } from "@/utils/hooks/useGUI";
 
 // TODO ASHTON: refactor this so that it supports multiple animations
 const HeroImages = () => {

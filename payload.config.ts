@@ -6,17 +6,17 @@ import path from "path";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 import { fileURLToPath } from "url";
-import { Events } from "./src/collections/Events";
-import { Media } from "./src/collections/Media";
-import { Partners } from "./src/collections/Partners";
-import { Project } from "./src/collections/Projects";
-import { TestSlug } from "./src/collections/TestSlug";
-import { Users } from "./src/collections/Users";
-import AboutPage from "./src/collections/globals/AboutPage";
-import { ExecsPage } from "./src/collections/globals/ExecsPage";
-import { FaqPage } from "./src/collections/globals/FaqPage";
-import HeroPage from "./src/collections/globals/HeroPage";
-import ProjectsPage from "./src/collections/globals/ProjectsPage";
+import { Events } from "./src/payload/collections/Events";
+import { Media } from "./src/payload/collections/Media";
+import { Partners } from "./src/payload/collections/Partners";
+import { Project } from "./src/payload/collections/Projects";
+import { TestSlug } from "./src/payload/collections/TestSlug";
+import { Users } from "./src/payload/collections/Users";
+import AboutPage from "./src/payload/collections/globals/AboutPage";
+import { ExecsPage } from "./src/payload/collections/globals/ExecsPage";
+import { FaqPage } from "./src/payload/collections/globals/FaqPage";
+import HeroPage from "./src/payload/collections/globals/HeroPage";
+import ProjectsPage from "./src/payload/collections/globals/ProjectsPage";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -31,6 +31,8 @@ export default buildConfig({
     collections: [Users, Media, Events, Project, TestSlug, Partners],
     globals: [ExecsPage, FaqPage, AboutPage, ProjectsPage, HeroPage],
     editor: lexicalEditor({
+        // TODO ASHTON
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
         features: ({ defaultFeatures }) => [...defaultFeatures, LinkFeature({}), HTMLConverterFeature({})],
     }),
     secret: process.env.PAYLOAD_SECRET ?? "",
