@@ -4,7 +4,7 @@ import { HeroPage as CmsHeroPage, Partner } from "@/payload/payload-types";
 import { HeroPage } from "@/types/pages/HeroPage";
 import { VariantProps } from "tailwind-variants";
 
-export const ParsePayloadHeroPage = (CmsHeroPage: CmsHeroPage): HeroPage | undefined => {
+export const parseHeroPage = (CmsHeroPage: CmsHeroPage): HeroPage | undefined => {
     if (!CmsHeroPage) {
         return undefined;
     }

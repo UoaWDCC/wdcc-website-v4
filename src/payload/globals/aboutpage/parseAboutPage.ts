@@ -2,7 +2,7 @@ import placeholder from "@/assets/image/600x400.png";
 import { AboutPage as CmsAboutPage, Media } from "@/payload/payload-types";
 import { AboutPage } from "../../../types/pages/AboutPage";
 
-export const ParsePayloadAboutPage = (CmsAboutPage: CmsAboutPage): AboutPage | undefined => {
+export const parseAboutPage = (CmsAboutPage: CmsAboutPage): AboutPage | undefined => {
     if (!CmsAboutPage) {
         return undefined;
     }

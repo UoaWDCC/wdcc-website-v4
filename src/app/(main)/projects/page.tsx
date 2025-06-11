@@ -2,15 +2,15 @@ import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import Header from "@/components/layout/pageheaders/Header";
 // import { Button } from "@/components/primitives/Button";
 import Checklist from "@/components/primitives/Checklist";
-import { ParsePayloadProjectPage } from "@/payload/globals/projectspage/ParsePayloadProjectPage";
 import { getProjectsPage } from "@/payload/globals/projectspage/getProjectsPage";
+import { parseProjectPage } from "@/payload/globals/projectspage/parseProjectPage";
 // import { ProjectCard } from "./_components/ProjectCard";
 import ProjectRoleCard from "./_components/ProjectRoleCard";
 // import { projectsData } from "./_data/projects_data";
 import { projectsCopy as hardCodedProjectPage } from "./_data/projects.data";
 
 export default async function ProjectsPage() {
-    let projectsCopy = ParsePayloadProjectPage(await getProjectsPage());
+    let projectsCopy = parseProjectPage(await getProjectsPage());
     if (!projectsCopy) {
         projectsCopy = hardCodedProjectPage;
     }

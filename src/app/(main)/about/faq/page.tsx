@@ -1,14 +1,14 @@
 import InfoPill from "@/components/InfoPill";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import Header from "@/components/layout/pageheaders/Header";
-import { ParsePayloadFaqPage } from "@/payload/globals/faqpage/ParsePayloadFaqPage";
 import { getFaqPage } from "@/payload/globals/faqpage/getFaqPage";
+import { parseFaqPage } from "@/payload/globals/faqpage/parseFaqPage";
 import { FaqSelector } from "./_components/FaqSelector";
 import { faqData as hardCodedFaq } from "./_data/faq.data";
 
 export default async function FaqPage() {
     //try get cms, if no cms then get hardCoded Faq
-    let faqData = ParsePayloadFaqPage(await getFaqPage());
+    let faqData = parseFaqPage(await getFaqPage());
     if (!faqData) {
         faqData = hardCodedFaq;
     }

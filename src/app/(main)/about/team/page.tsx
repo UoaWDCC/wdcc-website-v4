@@ -1,12 +1,12 @@
 import InfoPill from "@/components/InfoPill";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import Header from "@/components/layout/pageheaders/Header";
-import { ParsePayloadExecTeam } from "@/payload/globals/execspage/ParsePayloadExecTeam";
 import { getExecPage } from "@/payload/globals/execspage/getExecPage";
+import { parseExecTeam } from "@/payload/globals/execspage/parseExecTeam";
 import ExecTeam from "./_components/ExecTeam";
 
 export default async function TeamPage() {
-    const ExecPage = ParsePayloadExecTeam(await getExecPage());
+    const ExecPage = parseExecTeam(await getExecPage());
 
     return (
         <StandardPageLayout>

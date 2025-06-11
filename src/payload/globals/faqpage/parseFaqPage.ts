@@ -1,7 +1,7 @@
 import { FaqPage as CmsFaqPage } from "@/payload/payload-types";
 import { FaqPage } from "../../../types/pages/FaqPage";
 
-export const ParsePayloadFaqPage = (CmsFaqPage: CmsFaqPage): FaqPage | undefined => {
+export const parseFaqPage = (CmsFaqPage: CmsFaqPage): FaqPage | undefined => {
     if (!CmsFaqPage) {
         return undefined;
     }

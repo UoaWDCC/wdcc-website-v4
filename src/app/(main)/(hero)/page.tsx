@@ -3,15 +3,15 @@ import ThreeLayout from "@/components/layout/ThreePageLayout";
 import Footer from "@/components/navigation/footer/Footer";
 import BackgroundEffect from "@/components/three/BackgroundEffect";
 import { View } from "@/components/three/scene/View";
-import { ParsePayloadHeroPage } from "@/payload/globals/heropage/ParsePayloadHeroPage";
 import { getHeroPage } from "@/payload/globals/heropage/getHeroPage";
+import { parseHeroPage } from "@/payload/globals/heropage/parseHeroPage";
 import { SponsorSection } from "./_components/SponsorSection";
 import ThisIsWDCC from "./_components/ThisIsWDCCSection";
 import WDCCHero from "./_components/WDCCHero";
 import { HeroData as hardCodedHeroData } from "./_data/homeData";
 
 export default async function HeroPage() {
-    let HeroData = ParsePayloadHeroPage(await getHeroPage());
+    let HeroData = parseHeroPage(await getHeroPage());
     if (!HeroData) {
         HeroData = hardCodedHeroData;
     }

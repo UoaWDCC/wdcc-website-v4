@@ -1,13 +1,13 @@
-import type { Event } from "@/types/models";
-import { ParsePayloadEvent } from "@/payload/collections/events/ParsePayloadEvent";
 import { getAllEvents } from "@/payload/collections/events/getAllEvents";
+import { parseEvent } from "@/payload/collections/events/parseEvent";
+import type { Event } from "@/types/models";
 
 export type Category = {
     name: string;
     colors: string;
 };
 
-const events = (await getAllEvents()).map(ParsePayloadEvent);
+const events = (await getAllEvents()).map(parseEvent);
 
 export const eventsData = {
     header: {
