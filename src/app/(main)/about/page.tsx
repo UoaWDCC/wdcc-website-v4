@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { ParsePayloadAboutPage } from "@/types/parser/ParsePayloadAboutPage";
 import Arrow from "@/assets/svg/Arrow";
 import Duo from "@/components/Duo";
 import NestedDiv from "@/components/NestedDiv";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import Header from "@/components/layout/pageheaders/Header";
 import { Button } from "@/components/primitives/Button";
-import { getAboutPage } from "@/payload/actions/Pages/getAbooutPage";
+import { ParsePayloadAboutPage } from "@/payload/globals/aboutpage/ParsePayloadAboutPage";
+import { getAboutPage } from "@/payload/globals/aboutpage/getAboutPage";
 import Quote from "./_components/Quote";
 import { aboutData as hardCodedAboutPage } from "./_data/about.data";
 

@@ -1,6 +1,6 @@
 import type { Event } from "@/types/models";
-import { ParsePayloadEvent } from "@/types/parser/ParsePayloadEvent";
-import { getAllEvents } from "@/payload/actions/getAllEvents";
+import { ParsePayloadEvent } from "@/payload/collections/events/ParsePayloadEvent";
+import { getAllEvents } from "@/payload/collections/events/getAllEvents";
 
 export type Category = {
     name: string;

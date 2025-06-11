@@ -1,5 +1,5 @@
-import { FaqPage as CmsFaqPage } from "@/types/payload-types";
-import { FaqPage } from "../pages/FaqPage";
+import { FaqPage as CmsFaqPage } from "@/payload/payload-types";
+import { FaqPage } from "../../../types/pages/FaqPage";
 
 export const ParsePayloadFaqPage = (CmsFaqPage: CmsFaqPage): FaqPage | undefined => {
     if (!CmsFaqPage) {

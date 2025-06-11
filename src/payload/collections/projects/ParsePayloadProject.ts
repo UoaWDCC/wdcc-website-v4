@@ -1,7 +1,7 @@
-import type { Project as CMSProject } from "@/types/payload-types";
+import type { Project } from "@/types/models";
+import type { Project as CMSProject } from "@/payload/payload-types";
 import { isNullish, removeDuplicates } from "@/utils/misc";
 import { media } from "@/utils/payload";
-import type { Project } from "../models";
 
 export const ParsePayloadProject = (cms: CMSProject): Project => {
     return {
