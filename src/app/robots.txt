@@ -1,5 +1,8 @@
 User-Agent: *
 Allow: /
 Disallow: /brainrot-lol/
+Disallow: /test/
+Disallow: /admin/
+Disallow: /redirect
 
-# Allows all pages except for the brainrot ones. Can be changed later if needed.
+# Allows all pages except for the misc ones and admin ones.
