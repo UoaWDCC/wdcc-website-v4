@@ -1,9 +1,9 @@
-import type { CollectionConfig } from "payload";
-import { difficulties } from "@/types/models";
 import { technologiesList } from "@/assets/svg/technologies";
+import { difficulties } from "@/types/models";
 import { SLUG } from "@/utils/enums/slug";
+import type { CollectionConfig } from "payload";
 
-export const Project: CollectionConfig = {
+export const ProjectsCollection: CollectionConfig = {
     slug: SLUG.PROJECTS,
     access: {
         read: () => true,

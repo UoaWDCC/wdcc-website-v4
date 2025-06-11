@@ -1,8 +1,8 @@
-import type { CollectionConfig } from "payload";
 import { EventCategories } from "@/types/models";
 import { SLUG } from "@/utils/enums/slug";
+import type { CollectionConfig } from "payload";
 
-export const Events: CollectionConfig = {
+export const EventsCollection: CollectionConfig = {
     slug: SLUG.EVENTS,
     access: {
         read: () => true,

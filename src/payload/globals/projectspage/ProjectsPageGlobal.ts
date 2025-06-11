@@ -1,6 +1,6 @@
 import { GlobalConfig } from "payload";
 
-export const ProjectsPage: GlobalConfig = {
+export const ProjectsPageGlobal: GlobalConfig = {
     slug: "projects-page",
     label: "Projects Page",
     fields: [
@@ -86,4 +86,4 @@ export const ProjectsPage: GlobalConfig = {
     ],
 };
 
-export default ProjectsPage;
+export default ProjectsPageGlobal;

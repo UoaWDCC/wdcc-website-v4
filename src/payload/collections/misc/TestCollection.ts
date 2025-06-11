@@ -1,8 +1,8 @@
-import type { CollectionConfig } from "payload";
 import { technologiesList } from "@/assets/svg/technologies";
 import { SLUG } from "@/utils/enums/slug";
+import type { CollectionConfig } from "payload";
 
-export const TestSlug: CollectionConfig = {
+export const TestCollection: CollectionConfig = {
     slug: SLUG.TEST,
     access: {
         read: () => true,

@@ -1,16 +1,11 @@
 import type { CollectionConfig } from "payload";
 
-export const Partners: CollectionConfig = {
-    slug: "partners",
+export const MediaCollection: CollectionConfig = {
+    slug: "media",
     access: {
         read: () => true,
     },
     fields: [
-        {
-            name: "href",
-            type: "text",
-            required: true,
-        },
         {
             name: "alt",
             type: "text",
