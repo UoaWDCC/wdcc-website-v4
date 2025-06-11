@@ -2,11 +2,11 @@
 
 import { Cardo } from "next/font/google";
 import Image from "next/image";
+import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import mainschleifeLandscape from "./_assets/mainschleife-landscape.jpg";
 import tuscanyLandscape from "./_assets/tuscany-landscape.jpg";
 import w1 from "./_assets/w1.jpg";
 import w3 from "./_assets/w3.jpg";
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import FeatureCard from "./_components/FeatureCard";
 
 {
