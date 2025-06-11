@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
-import "@/assets/global.css";
+import "@/styles/global.css";
 import { ScrollProvider } from "@/components/scroll/ScrollContext";
-import { figtree } from "@/fonts";
+import { figtree } from "@/styles/fonts";
 import ReduceMotionProvider from "@/providers/ReduceMotionProvider";
 import WebGLProvider from "@/providers/WebGLProvider";
 
