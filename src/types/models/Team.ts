@@ -1,21 +1,21 @@
-import { Image } from "../misc/Image";
+import { ImageType } from "../misc/Image";
 
 type Role = "developer" | "techlead" | "designer" | "manager" | "tutor";
 
 type ProjectMember = {
     name: string;
     role: Role;
-    image?: Image;
+    image?: ImageType;
 };
 
 export type Team = {
     techlead: {
         name: string;
-        image?: Image;
+        image?: ImageType;
     };
     manager: {
         name: string;
-        image?: Image;
+        image?: ImageType;
     };
     members: ProjectMember[];
 };

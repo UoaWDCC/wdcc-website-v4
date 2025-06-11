@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import Image from "next/image";
+import { ImageType } from "@/types/misc/Image";
 import placeholder from "@/assets/image/600x400.png";
 import { cn } from "@/utils/misc";
-import { Image as ImageType } from "@/types/misc/Image";
 
 type DuoProps = {
     children: ReactNode;
