@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import ReduceMotionProvider from "@/components/contexts/ReduceMotionProvider";
 import WebGLProvider from "@/components/contexts/WebGLProvider";
 import { ScrollProvider } from "@/components/scroll/ScrollContext";
-import { figtree } from "@/styles/fonts";
-import "@/styles/global.css";
+import { figtree } from "@/assets/fonts";
+import "@/assets/global.css";
 
 // SEO
 export const metadata: Metadata = {
