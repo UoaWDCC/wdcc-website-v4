@@ -3,7 +3,7 @@
 import { Variants, motion } from "motion/react";
 import { HTMLAtrributeNoMotion } from "@/types/motion";
 import { cn } from "@/utils/misc";
-import { textVariantDefault } from "@/variants/animatedTextVariants";
+import { textVariantDefault } from "@/components/text/animatedTextVariants";
 
 type TextProps = {
     text: string;
