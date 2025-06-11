@@ -3,7 +3,7 @@ import { GlobalConfig } from "payload";
 // guess we doing globals now
 //global's are different from collections as collections can have multiples records (or rows i guess) but globals only
 //corrosponds to one record
-export const ExecsPage: GlobalConfig = {
+export const ExecsPageGlobal: GlobalConfig = {
     slug: "execs-page",
     label: "Execs Page",
     access: {
@@ -99,4 +99,4 @@ export const ExecsPage: GlobalConfig = {
     ],
 };
 
-export default ExecsPage;
+export default ExecsPageGlobal;

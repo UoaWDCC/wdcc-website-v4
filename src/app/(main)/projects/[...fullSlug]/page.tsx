@@ -2,8 +2,8 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
-import { ParsePayloadProject } from "@/payload/collections/projects/ParsePayloadProject";
 import { getProject } from "@/payload/collections/projects/getProject";
+import { parseProject } from "@/payload/collections/projects/parseProject";
 import IndividualProject from "./_component/IndividualProject";
 
 type Props = {
@@ -58,5 +58,5 @@ async function getProjectFromSlug(fullSlug: string[]) {
         notFound();
     }
 
-    return ParsePayloadProject(cmsProject);
+    return parseProject(cmsProject);
 }

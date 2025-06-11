@@ -1,14 +1,12 @@
 import { ReactNode } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
+import { ImageType } from "@/types/misc/Image";
 import placeholder from "@/assets/image/600x400.png";
 import { cn } from "@/utils/misc";
 
 type DuoProps = {
     children: ReactNode;
-    image?: {
-        src: string | undefined | StaticImageData;
-        alt: string | undefined;
-    };
+    image?: ImageType;
     imgFirst?: boolean;
 };
 

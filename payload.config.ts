@@ -5,30 +5,37 @@ import path from "path";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 import { fileURLToPath } from "url";
-import { Events } from "./src/payload/collections/events/Events";
-import { Media } from "./src/payload/collections/misc/Media";
-import { TestSlug } from "./src/payload/collections/misc/TestSlug";
-import { Users } from "./src/payload/collections/misc/Users";
-import { Partners } from "./src/payload/collections/partners/Partners";
-import { Project } from "./src/payload/collections/projects/Projects";
-import AboutPage from "./src/payload/globals/aboutpage/AboutPage";
-import { ExecsPage } from "./src/payload/globals/execspage/ExecsPage";
-import { FaqPage } from "./src/payload/globals/faqpage/FaqPage";
-import HeroPage from "./src/payload/globals/heropage/HeroPage";
-import ProjectsPage from "./src/payload/globals/projectspage/ProjectsPage";
+import { EventsCollection } from "./src/payload/collections/events/EventsCollection";
+import { MediaCollection } from "./src/payload/collections/misc/MediaCollection";
+import { TestCollection } from "./src/payload/collections/misc/TestCollection";
+import { UsersCollection } from "./src/payload/collections/misc/UsersCollection";
+import { PartnersCollection } from "./src/payload/collections/partners/PartnersCollection";
+import { ProjectsCollection } from "./src/payload/collections/projects/ProjectsCollection";
+import AboutPageGlobal from "./src/payload/globals/aboutpage/AboutPageGlobal";
+import { ExecsPageGlobal } from "./src/payload/globals/execspage/ExecsPageGlobal";
+import { FaqPageGlobal } from "./src/payload/globals/faqpage/FaqPageGlobal";
+import HeroPageGlobal from "./src/payload/globals/heropage/HeroPageGlobal";
+import ProjectsPageGlobal from "./src/payload/globals/projectspage/ProjectsPageGlobal";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 export default buildConfig({
     admin: {
-        user: Users.slug,
+        user: UsersCollection.slug,
         importMap: {
             baseDir: path.resolve(dirname),
         },
     },
-    collections: [Users, Media, Events, Project, TestSlug, Partners],
-    globals: [ExecsPage, FaqPage, AboutPage, ProjectsPage, HeroPage],
+    collections: [
+        UsersCollection,
+        MediaCollection,
+        EventsCollection,
+        ProjectsCollection,
+        TestCollection,
+        PartnersCollection,
+    ],
+    globals: [ExecsPageGlobal, FaqPageGlobal, AboutPageGlobal, ProjectsPageGlobal, HeroPageGlobal],
     editor: lexicalEditor({
         // TODO ASHTON
         // eslint-disable-next-line @typescript-eslint/no-deprecated

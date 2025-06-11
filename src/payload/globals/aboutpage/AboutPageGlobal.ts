@@ -1,6 +1,6 @@
 import { GlobalConfig } from "payload";
 
-export const AboutPage: GlobalConfig = {
+export const AboutPageGlobal: GlobalConfig = {
     slug: "about-page",
     label: "About Us",
     access: {
@@ -107,4 +107,4 @@ export const AboutPage: GlobalConfig = {
     ],
 };
 
-export default AboutPage;
+export default AboutPageGlobal;

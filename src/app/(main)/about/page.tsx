@@ -5,13 +5,13 @@ import NestedDiv from "@/components/NestedDiv";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import Header from "@/components/layout/pageheaders/Header";
 import { Button } from "@/components/primitives/Button";
-import { ParsePayloadAboutPage } from "@/payload/globals/aboutpage/ParsePayloadAboutPage";
 import { getAboutPage } from "@/payload/globals/aboutpage/getAboutPage";
+import { parseAboutPage } from "@/payload/globals/aboutpage/parseAboutPage";
 import Quote from "./_components/Quote";
 import { aboutData as hardCodedAboutPage } from "./_data/about.data";
 
 export default async function AboutPage() {
-    let aboutData = ParsePayloadAboutPage(await getAboutPage());
+    let aboutData = parseAboutPage(await getAboutPage());
 
     if (!aboutData) {
         aboutData = hardCodedAboutPage;

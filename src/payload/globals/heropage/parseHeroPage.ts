@@ -1,10 +1,10 @@
-import { card } from "@main/(landing)/_components/WhatWeDoCard";
 import { VariantProps } from "tailwind-variants";
 import { HeroPage } from "@/types/pages/HeroPage";
+import { card } from "@/app/(main)/(hero)/_components/WhatWeDoCard";
 import placeholder from "@/assets/image/600x400.png";
 import { HeroPage as CmsHeroPage, Partner } from "@/payload/payload-types";
 
-export const ParsePayloadHeroPage = (CmsHeroPage: CmsHeroPage): HeroPage | undefined => {
+export const parseHeroPage = (CmsHeroPage: CmsHeroPage): HeroPage | undefined => {
     if (!CmsHeroPage) {
         return undefined;
     }

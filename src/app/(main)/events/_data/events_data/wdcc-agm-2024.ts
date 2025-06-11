@@ -1,4 +1,4 @@
-import type { Event } from "@/types/models";
+import type { Event } from "@/types/models/Event";
 import placeholder from "@/assets/image/600x400.png";
 
 export const wdccAGM2024: Event = {

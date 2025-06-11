@@ -1,6 +1,6 @@
 import type { GlobalConfig } from "payload";
 
-export const HeroPage: GlobalConfig = {
+export const HeroPageGlobal: GlobalConfig = {
     slug: "hero-page",
     access: {
         read: () => true,
@@ -79,4 +79,4 @@ export const HeroPage: GlobalConfig = {
     ],
 };
 
-export default HeroPage;
+export default HeroPageGlobal;

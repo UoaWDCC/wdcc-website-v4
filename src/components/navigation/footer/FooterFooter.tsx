@@ -1,4 +1,4 @@
-import { LinkType } from "@/types/link";
+import { LinkType } from "@/types/misc/Link";
 import FooterFriends from "@/components/navigation/footer/FooterFriends";
 import FooterSocials from "@/components/navigation/footer/FooterSocials";
 import { FooterSocial } from "./_data/footerTypes";

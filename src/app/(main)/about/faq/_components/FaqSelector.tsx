@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import { Faq } from "@/types/models";
+import { Faq } from "@/types/models/Faq";
 import { FaqSection } from "@/types/pages/FaqPage";
 import ChevronDown from "@/assets/svg/ChevronDown";
 import { cn } from "@/utils/misc";

@@ -1,9 +1,9 @@
 import type { CollectionConfig } from "payload";
-import { difficulties } from "@/types/models";
+import { difficulties } from "@/types/models/Project";
 import { technologiesList } from "@/assets/svg/technologies";
 import { SLUG } from "@/utils/enums/slug";
 
-export const Project: CollectionConfig = {
+export const ProjectsCollection: CollectionConfig = {
     slug: SLUG.PROJECTS,
     access: {
         read: () => true,
@@ -53,7 +53,7 @@ export const Project: CollectionConfig = {
                     name: "difficulty",
                     type: "select",
                     defaultValue: "unassigned",
-                    options: difficulties,
+                    options: [...difficulties],
                     required: true,
                 },
             ],

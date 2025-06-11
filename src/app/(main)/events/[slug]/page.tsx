@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import EventHeader from "@/components/layout/pageheaders/EventHeader";
-import { ParsePayloadEvent } from "@/payload/collections/events/ParsePayloadEvent";
 import { getEvent } from "@/payload/collections/events/getEvent";
+import { parseEvent } from "@/payload/collections/events/parseEvent";
 import { eventsData } from "../_data/events.data";
 import IndividualEvent from "./_components/IndividualEvent";
 
@@ -13,7 +13,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     let event = events.find((e) => e.slug === slug);
 
     if (!event) {
-        event = ParsePayloadEvent(await getEvent(slug));
+        event = parseEvent(await getEvent(slug));
     }
     if (!event) {
         notFound();

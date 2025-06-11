@@ -1,7 +1,7 @@
+import { ProjectsPage } from "@/types/pages/ProjectsPage";
 import type { ProjectsPage as CmsProjectPage } from "@/payload/payload-types";
-import { ProjectsPage } from "../../../types/pages/ProjectsPage";
 
-export const ParsePayloadProjectPage = (CmsProjectPage: CmsProjectPage): ProjectsPage | undefined => {
+export const parseProjectPage = (CmsProjectPage: CmsProjectPage): ProjectsPage | undefined => {
     if (!CmsProjectPage) {
         return undefined;
     }
@@ -12,8 +12,8 @@ export const ParsePayloadProjectPage = (CmsProjectPage: CmsProjectPage): Project
             content: CmsProjectPage.header.content,
             buttons:
                 CmsProjectPage.header.buttons.map((button) => ({
-                    text: button.text,
-                    link: button.link,
+                    label: button.text,
+                    href: button.link,
                 })) ?? [],
         },
         infoSection: {

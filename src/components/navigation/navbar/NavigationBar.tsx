@@ -3,7 +3,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { VariantProps, tv } from "tailwind-variants";
-import type { ClassName } from "@/types/utils";
 import Arrow from "@/assets/svg/Arrow";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
 import { social } from "@/assets/svg/socials";
@@ -64,7 +63,7 @@ const navbarLine = tv({
 
 export type NavbarProps = {
     variant?: VariantProps<typeof navbar>;
-    className?: ClassName;
+    className?: string;
 };
 
 /**
