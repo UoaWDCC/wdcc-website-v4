@@ -1,7 +1,8 @@
-import React from "react";
-import { ClassName } from "@/types/utils";
+type PlusProps = {
+    className?: string;
+};
 
-const Plus = ({ className }: ClassName) => {
+const Plus = ({ className }: PlusProps) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

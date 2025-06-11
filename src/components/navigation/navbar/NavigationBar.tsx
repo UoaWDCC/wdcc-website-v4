@@ -1,9 +1,5 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
-import { motion } from "motion/react";
-import { VariantProps, tv } from "tailwind-variants";
-import type { ClassName } from "@/types/utils";
 import Arrow from "@/assets/svg/Arrow";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
 import { social } from "@/assets/svg/socials";
@@ -13,6 +9,9 @@ import { navbarData } from "@/components/navigation/navbar/_data/navbar.data";
 import { NavigationLink } from "@/components/navigation/navbar/_data/navbarTypes";
 import { Button } from "@/components/primitives/Button";
 import { useScroll } from "@/components/scroll/ScrollContext";
+import { motion } from "motion/react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { VariantProps, tv } from "tailwind-variants";
 import { Anchor } from "../../primitives/Anchor";
 import NavigationMobileMenu from "./NavigationMobileMenu";
 
@@ -64,7 +63,7 @@ const navbarLine = tv({
 
 export type NavbarProps = {
     variant?: VariantProps<typeof navbar>;
-    className?: ClassName;
+    className?: string;
 };
 
 /**

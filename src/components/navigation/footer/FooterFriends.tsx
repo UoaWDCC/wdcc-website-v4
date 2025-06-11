@@ -1,6 +1,6 @@
-import { LinkType } from "@/types/link";
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
+import { LinkType } from "@/types/misc/LinkType";
 
 export default function FooterFriends({ friends }: { friends: LinkType[] }) {
     return (

@@ -1,5 +1,5 @@
 import { VariantProps, tv } from "tailwind-variants";
-import { ImageType } from "@/types/image";
+import { ImageType } from "@/types/misc/ImageType";
 import ImageCover from "@/components/ImageCover";
 import placeholder from "../_assets/placeholder.png";
 

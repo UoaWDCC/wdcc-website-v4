@@ -1,7 +1,4 @@
-export type Button = {
-    text: string;
-    link: string;
-};
+import { ButtonType } from "../misc/ButtonType";
 
 export type Role = {
     color: "blue" | "purple" | "yellow" | "green";
@@ -14,7 +11,7 @@ export type ProjectsPage = {
     header: {
         title: string;
         content: string;
-        buttons: Button[];
+        buttons: ButtonType[];
     };
     infoSection: {
         main: string;

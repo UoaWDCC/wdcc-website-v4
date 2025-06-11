@@ -1,6 +1,6 @@
 // I know having types and data files within components is a bit unconventional, but I want to trial this and see how it works out
+import { LinkType } from "@/types/misc/LinkType";
 import { ReactNode } from "react";
-import { LinkType } from "@/types/link";
 
 export type FooterData = {
     columns: FooterColumn[];
