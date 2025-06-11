@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-
 import RiveWrapper from "@/components/rive/RiveWrapper";
 import { cn } from "@/utils/misc";
 

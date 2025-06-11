@@ -1,9 +1,7 @@
 "use client";
 
 import { Variants, motion } from "motion/react";
-
 import { HTMLAtrributeNoMotion } from "@/types/motion";
-
 import { cn } from "@/utils/misc";
 import { textVariantDefault } from "@/variants/animatedTextVariants";
 

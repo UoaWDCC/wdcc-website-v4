@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-
 import { BufferAttribute, BufferGeometry } from "three";
 
 // Define the vertices of the triangle

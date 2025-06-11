@@ -1,6 +1,5 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image, { StaticImageData } from "next/image";
-
 import { cn } from "@/utils/misc";
 
 export type ImageFitProps = {

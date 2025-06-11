@@ -1,5 +1,4 @@
 import React from "react";
-
 import { ClassName } from "@/types/utils";
 
 const Plus = ({ className }: ClassName) => {

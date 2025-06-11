@@ -1,9 +1,7 @@
 "use server";
 
 import { CollectionSlug } from "payload";
-
 import { Event } from "@/types/payload-types";
-
 import { SLUG } from "@/utils/enums/slug";
 import { getPayload } from "@/utils/payload";
 

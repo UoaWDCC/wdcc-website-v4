@@ -14,7 +14,6 @@
         "^@/(.*)$",
         "^[./]"
     ],
-    "importOrderSeparation": true,
     "importOrderSortSpecifiers": true,
     "tailwindFunctions": ["tv", "cva"],
     "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"]

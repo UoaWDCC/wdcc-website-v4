@@ -1,9 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
 import NextImage, { type ImageProps } from "next/image";
-
 import SimpleLoading from "./loading/SimpleLoading";
 
 const SuspenseImage = ({ ...props }: ImageProps) => {

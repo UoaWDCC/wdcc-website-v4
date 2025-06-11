@@ -1,8 +1,6 @@
 // import { ReactNode } from "react";
 import { ReactNode } from "react";
-
 import Link from "next/link";
-
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
 

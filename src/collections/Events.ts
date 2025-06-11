@@ -1,7 +1,5 @@
 import type { CollectionConfig } from "payload";
-
 import { EventCategories } from "@/types/models";
-
 import { SLUG } from "@/utils/enums/slug";
 
 export const Events: CollectionConfig = {

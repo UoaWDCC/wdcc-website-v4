@@ -1,7 +1,5 @@
 import { HTMLAttributes } from "react";
-
 import { VariantProps, tv } from "tailwind-variants";
-
 import { cn } from "@/utils/misc";
 
 const loading = tv({

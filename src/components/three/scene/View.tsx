@@ -1,12 +1,9 @@
 "use client";
 
 import { MutableRefObject, forwardRef, useImperativeHandle, useRef } from "react";
-
 import { OrbitControls, View as ViewImpl } from "@react-three/drei";
-
 import { useReduceMotion } from "@/providers/ReduceMotionProvider";
 import { useWebGL } from "@/providers/WebGLProvider";
-
 import { Three, ThreeBackground } from "./Three";
 
 type ViewProps = {
