@@ -5,7 +5,6 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useGUI } from "@/utils/hooks/useGUI";
 
-
 // TODO ASHTON: refactor this so that it supports multiple animations
 const HeroImages = () => {
     const [speed, setSpeed] = useState(0.5);

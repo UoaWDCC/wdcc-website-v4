@@ -8,7 +8,6 @@ import { DoubleSide, Euler, Group, Mesh } from "three";
 import { useGUI } from "@/utils/hooks/useGUI";
 import { TrianglePlane } from "./primitives/TrianglePlane";
 
-
 // instance settings
 let RADIUS = 32;
 let COUNT = 64;

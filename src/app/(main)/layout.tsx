@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
+import { figtree } from "@/assets/fonts";
+import "@/assets/global.css";
 import ReduceMotionProvider from "@/components/contexts/ReduceMotionProvider";
 import WebGLProvider from "@/components/contexts/WebGLProvider";
 import { ScrollProvider } from "@/components/scroll/ScrollContext";
-import { figtree } from "@/assets/fonts";
-import "@/assets/global.css";
 
 // SEO
 export const metadata: Metadata = {
