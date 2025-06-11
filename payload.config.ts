@@ -27,7 +27,14 @@ export default buildConfig({
             baseDir: path.resolve(dirname),
         },
     },
-    collections: [UsersCollection, MediaCollection, EventsCollection, ProjectsCollection, TestCollection, PartnersCollection],
+    collections: [
+        UsersCollection,
+        MediaCollection,
+        EventsCollection,
+        ProjectsCollection,
+        TestCollection,
+        PartnersCollection,
+    ],
     globals: [ExecsPageGlobal, FaqPageGlobal, AboutPageGlobal, ProjectsPageGlobal, HeroPageGlobal],
     editor: lexicalEditor({
         // TODO ASHTON

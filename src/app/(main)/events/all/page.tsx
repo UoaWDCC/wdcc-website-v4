@@ -1,8 +1,8 @@
-import Header from "@/components/layout/pageheaders/Header";
+import { Event } from "@/types/models";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
+import Header from "@/components/layout/pageheaders/Header";
 import { getAllEvents } from "@/payload/collections/events/getAllEvents";
 import { parseEvent } from "@/payload/collections/events/parseEvent";
-import { Event } from "@/types/models";
 import EventsSection from "../_components/EventsSection";
 import { eventsData } from "../_data/events.data";
 
