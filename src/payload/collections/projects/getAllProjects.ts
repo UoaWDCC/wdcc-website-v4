@@ -4,7 +4,6 @@ import { Project } from "@/payload/payload-types";
 import { SLUG } from "@/utils/enums/slug";
 import { getPayload } from "@/utils/payload";
 
-
 // return all projects
 export const getAllProjects = async (): Promise<Project[]> => {
     const payload = await getPayload();

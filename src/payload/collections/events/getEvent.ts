@@ -5,7 +5,6 @@ import { Event } from "@/payload/payload-types";
 import { SLUG } from "@/utils/enums/slug";
 import { getPayload } from "@/utils/payload";
 
-
 // return Event
 export const getEvent = async (slug: string) => {
     const payload = await getPayload();

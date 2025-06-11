@@ -4,7 +4,6 @@ import { Project } from "@/payload/payload-types";
 import { SLUG } from "@/utils/enums/slug";
 import { getPayload } from "@/utils/payload";
 
-
 // Return single project by year and slug
 export const getProject = async (year: string, slug: string): Promise<Project | undefined> => {
     const payload = await getPayload();

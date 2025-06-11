@@ -1,6 +1,6 @@
-import { ParsePayloadProject } from "@/payload/collections/projects/ParsePayloadProject";
 import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import Header from "@/components/layout/pageheaders/Header";
+import { ParsePayloadProject } from "@/payload/collections/projects/ParsePayloadProject";
 import { getAllProjects } from "@/payload/collections/projects/getAllProjects";
 import ProjectsSection from "../_components/ProjectsSection";
 
