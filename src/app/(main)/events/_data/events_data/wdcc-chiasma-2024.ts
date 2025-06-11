@@ -1,5 +1,5 @@
-import placeholder from "@/assets/image/600x400.png";
 import type { Event } from "@/types/models/Event";
+import placeholder from "@/assets/image/600x400.png";
 
 export const wdccChiasma2024: Event = {
     title: "WDCC Chiasma",

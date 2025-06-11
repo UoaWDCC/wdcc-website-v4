@@ -1,11 +1,11 @@
 "use client";
 
-import ChevronDown from "@/assets/svg/ChevronDown";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "motion/react";
 import { Faq } from "@/types/models/Faq";
 import { FaqSection } from "@/types/pages/FaqPage";
+import ChevronDown from "@/assets/svg/ChevronDown";
 import { cn } from "@/utils/misc";
-import { motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
 import { FaqItem } from "./FaqItem";
 import { FaqTab } from "./FaqTab";
 
