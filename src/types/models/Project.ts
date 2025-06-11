@@ -1,4 +1,4 @@
-import { ButtonType2 } from "../misc/ButtonType";
+import { ButtonType } from "../misc/ButtonType";
 import { ImageType } from "../misc/ImageType";
 import { Team } from "./Team";
 
@@ -22,8 +22,8 @@ export type Project = {
         description: string;
         image?: ImageType;
     };
-    primaryLink?: ButtonType2;
-    secondaryLink?: ButtonType2;
+    primaryLink?: ButtonType;
+    secondaryLink?: ButtonType;
     technologies: string[];
     difficulty: Difficulty;
     team: Team;

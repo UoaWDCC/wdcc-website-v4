@@ -68,7 +68,6 @@ export default async function ProjectsPage() {
                                 title={role.title}
                                 description={role.description}
                                 slug={role.slug}
-                                graphic={role.graphic}
                                 key={i}
                             />
                         ))}

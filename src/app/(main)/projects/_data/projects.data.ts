@@ -1,18 +1,17 @@
-import desgraphic from "@/assets/image/roles/role_card_designer.webp";
-import devgraphic from "@/assets/image/roles/role_card_dev.webp";
+import { ProjectsPage } from "@/types/pages/ProjectsPage";
 
-export const projectsCopy = {
+export const projectsCopy: ProjectsPage = {
     header: {
         title: `About Us`,
         content: `The Web Development and Consulting Club is Aotearoa New Zealand’s largest student technology club. Read more about our history, goals, and achievements - as well as the people that help make it all happen.`,
         buttons: [
             {
-                text: `Meet the team`,
-                link: `/about/team`,
+                label: `Meet the team`,
+                href: `/about/team`,
             },
             {
-                text: `Frequently asked questions`,
-                link: `/faq`,
+                label: `Frequently asked questions`,
+                href: `/faq`,
             },
         ],
     },
@@ -43,7 +42,6 @@ export const projectsCopy = {
                 slug: "developer",
                 description:
                     "WDCC Developers are the heart of every project team. You could work on anything - from adding a brand-new CMS through to keyframing in CSS.",
-                graphic: devgraphic,
             },
             {
                 color: "purple" as const,
@@ -51,7 +49,6 @@ export const projectsCopy = {
                 slug: "designer",
                 description:
                     "WDCC Designers are a step beyond theory. You'll navigate genuine design problems with a real-world project backed by a large technical team.",
-                graphic: desgraphic,
             },
             {
                 color: "yellow" as const,
