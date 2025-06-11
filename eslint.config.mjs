@@ -51,6 +51,7 @@ const eslintConfig = [
                     allow: ["arrowFunctions"], // Allow for function typing
                 },
             ],
+            "@typescript-eslint/require-await": "off", // Allow async functions without await
 
             // For migration
             "@typescript-eslint/no-unnecessary-condition": "off",
