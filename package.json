@@ -18,7 +18,7 @@
         "clear:next": "rimraf .next",
         "clear:modules": "rimraf node_modules",
         "nuke": "rimraf .next && rimraf node_modules",
-        "generate:type": "payload generate:types"
+        "typegen": "payload generate:types"
     },
     "dependencies": {
         "@next/bundle-analyzer": "^15.1.0",
