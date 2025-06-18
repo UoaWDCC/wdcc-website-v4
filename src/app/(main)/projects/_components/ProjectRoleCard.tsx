@@ -1,9 +1,8 @@
-import React from "react";
+import Arrow from "@/assets/svg/Arrow";
+import { Button } from "@/components/old/primitives/Button";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { VariantProps, tv } from "tailwind-variants";
-import Arrow from "@/assets/svg/Arrow";
-import { Button } from "@/components/primitives/Button";
 
 // Yes, I know it says "yellow" and the color is bg-orange (not bg-yellow). The yellow is just a bit too bright for this page lol.
 

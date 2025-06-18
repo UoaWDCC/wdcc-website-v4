@@ -1,7 +1,7 @@
 "use client";
 
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import Header from "@/components/layout/pageheaders/Header";
+import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
+import Header from "@/components/old/layout/pageheaders/Header";
 
 export default function PMPage() {
     return (

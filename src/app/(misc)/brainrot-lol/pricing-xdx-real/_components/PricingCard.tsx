@@ -1,7 +1,6 @@
-import React from "react";
+import { Button } from "@/components/old/primitives/Button";
+import Checklist, { ChecklistType } from "@/components/old/primitives/Checklist";
 import { VariantProps, tv } from "tailwind-variants";
-import { Button } from "@/components/primitives/Button";
-import Checklist, { ChecklistType } from "@/components/primitives/Checklist";
 
 const pricingcard = tv({
     base: "drop-shadow-downShadow mt-2 flex flex-col items-center gap-6 rounded-[32px] px-8 py-10",

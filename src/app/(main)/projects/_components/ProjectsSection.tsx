@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { Project } from "@/types/models/Project";
-import { EmptyListPlaceholder } from "../../../../components/EmptyListPlaceholder";
+import { useState } from "react";
+import { EmptyListPlaceholder } from "../../../../components/old/EmptyListPlaceholder";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectFilter } from "./ProjectFilter";
 

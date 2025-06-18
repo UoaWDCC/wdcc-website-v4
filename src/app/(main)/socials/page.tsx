@@ -1,10 +1,10 @@
 import Arrow from "@/assets/svg/Arrow";
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
+import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
 /*THIS USES THE FOOTER CODE BECAUSE IT'S A QUICK FIX LOL*/
 /* insert SOBBING EMOJI here */
-import { footerData } from "@/components/navigation/footer/_data/footer.data";
-import { Anchor } from "@/components/primitives/Anchor";
-import { Button } from "@/components/primitives/Button";
+import { footerData } from "@/components/old/navigation/footer/_data/footer.data";
+import { Anchor } from "@/components/old/primitives/Anchor";
+import { Button } from "@/components/old/primitives/Button";
 
 export default function SocialsPage() {
     const socials = footerData.socials;

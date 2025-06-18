@@ -1,7 +1,7 @@
 "use client";
 
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import { Button } from "@/components/primitives/Button";
+import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
+import { Button } from "@/components/old/primitives/Button";
 
 export default function TestSponsorPage() {
     return (

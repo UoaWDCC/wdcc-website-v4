@@ -1,16 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
+import { useReduceMotion } from "@/components/old/contexts/ReduceMotionProvider";
+import { useWebGL } from "@/components/old/contexts/WebGLProvider";
+import { fadeopacity } from "@/utils/animations";
 import { useProgress } from "@react-three/drei";
 import { motion } from "motion/react";
-import { useReduceMotion } from "@/components/contexts/ReduceMotionProvider";
-import { useWebGL } from "@/components/contexts/WebGLProvider";
-import { fadeopacity } from "@/utils/animations";
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import ReduceMotionButton from "../ReduceMotionButton";
 import NavigationBar from "../navigation/navbar/NavigationBar";
 
-const Scene = dynamic(() => import("@/components/three/scene/Scene"), { ssr: false });
+const Scene = dynamic(() => import("@/components/old/three/scene/Scene"), { ssr: false });
 
 const DebounceTimer = 50;
 

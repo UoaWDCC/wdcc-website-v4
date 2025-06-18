@@ -1,6 +1,6 @@
 import Arrow from "@/assets/svg/Arrow";
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import Header from "@/components/layout/pageheaders/Header";
+import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
+import Header from "@/components/old/layout/pageheaders/Header";
 import EventsRoadmap from "./_components/EventsRoadmap";
 import EventsSection from "./_components/EventsSection";
 import { eventsData } from "./_data/events.data";

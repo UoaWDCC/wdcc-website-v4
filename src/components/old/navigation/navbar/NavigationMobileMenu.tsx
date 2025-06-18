@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "motion/react";
+import { useState } from "react";
 import { VariantProps, tv } from "tailwind-variants";
 //import websterBL from "@/assets/image/webster-blue.png"
 import websterCL from "@/assets/image/webster-color.png";
@@ -12,8 +12,8 @@ import ExitIcon from "@/assets/svg/ExitIcon";
 import MenuIcon from "@/assets/svg/MenuIcon";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
 import { social } from "@/assets/svg/socials";
-import { Anchor } from "@/components/primitives/Anchor";
-import { Button } from "@/components/primitives/Button";
+import { Anchor } from "@/components/old/primitives/Anchor";
+import { Button } from "@/components/old/primitives/Button";
 import { cn } from "@/utils/misc";
 import type { NavigationLink } from "./_data/navbarTypes";
 

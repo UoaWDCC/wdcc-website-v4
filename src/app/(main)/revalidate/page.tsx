@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/primitives/Button";
+import { Button } from "@/components/old/primitives/Button";
 import { revalidateAllRoutesAction } from "./revalidateAllRoutesAction";
 
 /** Currently non-functional page to revalidate (regenerate) all static pages after changing CMS */

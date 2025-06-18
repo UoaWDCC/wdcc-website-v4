@@ -1,6 +1,6 @@
-import Link from "next/link";
+import ImageCover from "@/components/old/ImageCover";
 import { Event } from "@/types/models/Event";
-import ImageCover from "@/components/ImageCover";
+import Link from "next/link";
 
 type EventCardProps = {
     event: Event;

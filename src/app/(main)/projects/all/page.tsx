@@ -1,5 +1,5 @@
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import Header from "@/components/layout/pageheaders/Header";
+import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
+import Header from "@/components/old/layout/pageheaders/Header";
 import { getAllProjects } from "@/payload/collections/projects/getAllProjects";
 import { parseProject } from "@/payload/collections/projects/parseProject";
 import ProjectsSection from "../_components/ProjectsSection";

@@ -1,7 +1,7 @@
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import Header from "@/components/layout/pageheaders/Header";
+import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
+import Header from "@/components/old/layout/pageheaders/Header";
 // import { Button } from "@/components/primitives/Button";
-import Checklist from "@/components/primitives/Checklist";
+import Checklist from "@/components/old/primitives/Checklist";
 import { getProjectsPage } from "@/payload/globals/projectspage/getProjectsPage";
 import { parseProjectPage } from "@/payload/globals/projectspage/parseProjectPage";
 // import { ProjectCard } from "./_components/ProjectCard";

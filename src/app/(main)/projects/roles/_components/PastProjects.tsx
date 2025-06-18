@@ -1,6 +1,5 @@
 // import { ReactNode } from "react";
-import React from "react";
-import { Button } from "@/components/primitives/Button";
+import { Button } from "@/components/old/primitives/Button";
 
 export default function PastProjects() {
     // const projects = (await getAllProjects()).map(ParsePayloadProject);

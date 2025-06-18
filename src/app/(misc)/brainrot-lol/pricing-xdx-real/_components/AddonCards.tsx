@@ -1,5 +1,5 @@
-import { Button } from "@/components/primitives/Button";
-import Checklist, { ChecklistType } from "@/components/primitives/Checklist";
+import { Button } from "@/components/old/primitives/Button";
+import Checklist, { ChecklistType } from "@/components/old/primitives/Checklist";
 import { cn } from "@/utils/misc";
 
 export type AddonCardType = {

@@ -1,4 +1,4 @@
-import { LinkType } from "../../../../types/misc/Link";
+import { LinkType } from "../../../../../types/misc/Link";
 
 export type NavbarData = {
     links: NavigationLink[];

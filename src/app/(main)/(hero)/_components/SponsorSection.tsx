@@ -1,8 +1,8 @@
+import { Button } from "@/components/old/primitives/Button";
+import { SponsorSectionType } from "@/types/pages/HeroPage";
+import { cn } from "@/utils/misc";
 import { HTMLAttributes } from "react";
 import { tv } from "tailwind-variants";
-import { SponsorSectionType } from "@/types/pages/HeroPage";
-import { Button } from "@/components/primitives/Button";
-import { cn } from "@/utils/misc";
 import SponsorCard from "./sponsor/SponsorCard";
 
 type SponsorSectionProps = {

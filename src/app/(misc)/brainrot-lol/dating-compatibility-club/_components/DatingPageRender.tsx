@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
+import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
 import DatingTextSection from "@misc/brainrot-lol/dating-compatibility-club/_components/DatingTextSection";
 import DatingQuoteSection from "@misc/brainrot-lol/dating-compatibility-club/_components/QuoteSection";
 import { useRive } from "@rive-app/react-canvas";
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
+import React from "react";
 import SignupCard from "./SignupCard";
 import ThisIsWDCC from "./ThisIsWDCCSection";
 import WDCCHero from "./WDCCHero";

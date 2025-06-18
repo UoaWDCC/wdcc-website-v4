@@ -1,5 +1,5 @@
 // import { ReactNode } from "react";
-import { Button } from "@/components/primitives/Button";
+import { Button } from "@/components/old/primitives/Button";
 
 type props = {
     animEnabled: boolean;

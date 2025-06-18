@@ -1,8 +1,8 @@
 "use client";
 
-import { HTMLMotionProps, MotionProps, Variants, motion } from "motion/react";
-import { textVariantDefault } from "@/components/text/animatedTextVariants";
+import { textVariantDefault } from "@/components/old/text/animatedTextVariants";
 import { cn } from "@/utils/misc";
+import { HTMLMotionProps, MotionProps, Variants, motion } from "motion/react";
 
 type HTMLAtrributeNoMotion<T extends keyof HTMLElementTagNameMap> = Omit<HTMLMotionProps<T>, keyof MotionProps>;
 

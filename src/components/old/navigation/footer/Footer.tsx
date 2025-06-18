@@ -1,7 +1,7 @@
-import { HTMLAttributes } from "react";
-import FooterFooter from "@/components/navigation/footer/FooterFooter";
-import { footerData } from "@/components/navigation/footer/_data/footer.data";
+import FooterFooter from "@/components/old/navigation/footer/FooterFooter";
+import { footerData } from "@/components/old/navigation/footer/_data/footer.data";
 import { cn } from "@/utils/misc";
+import { HTMLAttributes } from "react";
 import FooterColumn from "./FooterColumn";
 
 type FooterProps = {
