@@ -2,7 +2,7 @@ import Arrow from "@/assets/svg/Arrow";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 /*THIS USES THE FOOTER CODE BECAUSE IT'S A QUICK FIX LOL*/
 /* insert SOBBING EMOJI here */
-import { footerData } from "@/components/layout/footer/_data/footer.data";
+import { footerData } from "@/components/layout/footer/data/footerData";
 import { Anchor } from "@/components/old/primitives/Anchor";
 import { Button } from "@/components/old/primitives/Button";
 

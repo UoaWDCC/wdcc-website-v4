@@ -1,7 +1,7 @@
-import FooterFriends from "@/components/layout/footer/FooterFriends";
-import FooterSocials from "@/components/layout/footer/FooterSocials";
+import FooterFriends from "@/components/layout/footer/components/FooterFriends";
+import FooterSocials from "@/components/layout/footer/components/FooterSocials";
 import { LinkType } from "@/types/misc/Link";
-import { FooterSocial } from "./_data/footerTypes";
+import { FooterSocial } from "../data/footerTypes";
 
 type FooterFooterProps = {
     socials: FooterSocial[];

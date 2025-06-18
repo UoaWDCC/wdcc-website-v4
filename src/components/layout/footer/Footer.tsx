@@ -1,14 +1,15 @@
-import FooterFooter from "@/components/layout/footer/FooterFooter";
-import { footerData } from "@/components/layout/footer/_data/footer.data";
+import FooterFooter from "@/components/layout/footer/components/FooterFooter";
+import { footerData } from "@/components/layout/footer/data/footerData";
 import { cn } from "@/utils/misc";
 import { HTMLAttributes } from "react";
-import FooterColumn from "./FooterColumn";
+import FooterColumn from "./components/FooterColumn";
+import { FooterBar } from "./components/FooterBar";
 
-type FooterProps = {
+export type FooterProps = {
     className?: string;
 } & HTMLAttributes<HTMLDivElement>;
 
-export default function Footer({ className, ...props }: FooterProps) {
+export function Footer({ className, ...props }: FooterProps) {
     return (
         <footer {...props} className={cn("xs:px-10 flex justify-center bg-blue-900 pt-12 pb-16 text-white", className)}>
             <div className="flex w-full flex-col gap-8 whitespace-nowrap lg:max-w-(--breakpoint-md)">
@@ -24,6 +25,3 @@ export default function Footer({ className, ...props }: FooterProps) {
     );
 }
 
-function FooterBar() {
-    return <div className="h-[3px] w-full rounded-full bg-linear-to-tr from-blue-300 to-blue-500" />;
-}
