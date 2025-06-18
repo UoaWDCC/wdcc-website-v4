@@ -1,7 +1,7 @@
+import { HTMLAttributes } from "react";
 import { sponsorsCommunity, sponsorsGold, sponsorsSilver, sponsorsTech } from "@/assets/image/sponsors";
 import SectionHeader from "@/components/layout/sections/SectionHeader";
 import { cn } from "@/utils/misc";
-import { HTMLAttributes } from "react";
 import { SponsorCardTest, SponsorCardTest2, SponsorCardTest3 } from "./DemoSponsorCard";
 
 export const SponsorSection = () => {

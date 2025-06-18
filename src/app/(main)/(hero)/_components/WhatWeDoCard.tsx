@@ -1,6 +1,6 @@
-import { Button } from "@/components/primitives/Button";
 import Link from "next/link";
 import { VariantProps, tv } from "tailwind-variants";
+import { Button } from "@/components/primitives/Button";
 
 // Yes, I know it says "yellow" and the color is bg-orange (not bg-yellow). The yellow is just a bit too bright for this page lol.
 

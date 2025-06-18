@@ -1,5 +1,8 @@
 "use client";
 
+import { createContext, useContext, useEffect, useState } from "react";
+import { motion } from "motion/react";
+import { VariantProps, tv } from "tailwind-variants";
 import Arrow from "@/assets/svg/Arrow";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
 import { social } from "@/assets/svg/socials";
@@ -9,9 +12,6 @@ import { navbarData } from "@/components/layout/navbar/data/navbarData";
 import { NavigationLink } from "@/components/layout/navbar/data/navbarTypes";
 import { UnderlineLink } from "@/components/old/UnderlineLink";
 import { Button } from "@/components/primitives/Button";
-import { motion } from "motion/react";
-import { createContext, useContext, useEffect, useState } from "react";
-import { VariantProps, tv } from "tailwind-variants";
 import { Anchor } from "../../primitives/Anchor";
 import NavigationMobileMenu from "./components/NavigationMobileMenu";
 

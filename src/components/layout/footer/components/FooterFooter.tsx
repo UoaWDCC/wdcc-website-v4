@@ -1,6 +1,6 @@
+import { LinkType } from "@/types/misc/Link";
 import FooterFriends from "@/components/layout/footer/components/FooterFriends";
 import FooterSocials from "@/components/layout/footer/components/FooterSocials";
-import { LinkType } from "@/types/misc/Link";
 import { FooterSocial } from "../data/footerTypes";
 
 type FooterFooterProps = {

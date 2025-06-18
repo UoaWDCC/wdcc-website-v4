@@ -1,21 +1,24 @@
 "use client";
 
+import { useRef } from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import { PerspectiveCamera } from "@react-three/drei";
+import { motion } from "motion/react";
+import * as THREE from "three";
 import HeroFallback from "@/assets/image/hero/herofallback.png";
 import { social } from "@/assets/svg/socials";
 import Draw from "@/components/old/Draw";
 import { CommonLight } from "@/components/old/three/CommonLight";
 import { View } from "@/components/old/three/scene/View";
 import { Button } from "@/components/primitives/Button";
-import { PerspectiveCamera } from "@react-three/drei";
-import { motion } from "motion/react";
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import { useRef } from "react";
-import * as THREE from "three";
 
-const WDCCThreeHero = dynamic(() => import("@/components/old/three/layout/home/WDCCThreeLogo").then((mod) => mod.default), {
-    ssr: false,
-});
+const WDCCThreeHero = dynamic(
+    () => import("@/components/old/three/layout/home/WDCCThreeLogo").then((mod) => mod.default),
+    {
+        ssr: false,
+    }
+);
 
 const transition = {
     duration: 2,

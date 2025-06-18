@@ -1,8 +1,8 @@
 "use client";
 
+import React from "react";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { Button } from "@/components/primitives/Button";
-import React from "react";
 import DatingPage from "./_components/DatingPageRender";
 
 export default function Home() {

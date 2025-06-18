@@ -1,8 +1,8 @@
 "use client";
 
-import { EmptyListPlaceholder } from "@/components/old/EmptyListPlaceholder";
-import { Event } from "@/types/models/Event";
 import { useState } from "react";
+import { Event } from "@/types/models/Event";
+import { EmptyListPlaceholder } from "@/components/old/EmptyListPlaceholder";
 import { Category } from "../_data/events.data";
 import EventCard from "./EventCard";
 import EventCategoryFilter from "./EventCategoryFilter";

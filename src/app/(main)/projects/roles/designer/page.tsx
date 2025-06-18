@@ -1,5 +1,11 @@
 "use client";
 
+import React from "react";
+import LearnCard from "@main/projects/roles/_components/LearnCard";
+import MoreAboutProjects from "@main/projects/roles/_components/MoreAboutProjects";
+import PastProjects from "@main/projects/roles/_components/PastProjects";
+import RiveToggleButton from "@main/projects/roles/_components/RiveToggleButton";
+import RolesHeader from "@main/projects/roles/_components/RolesHeader";
 import SignupCard from "@/app/(main)/(hero)/_components/SignupCard";
 import graphic1 from "@/assets/image/roles/roles_design-01.webp";
 import graphic2 from "@/assets/image/roles/roles_design-02.webp";
@@ -9,12 +15,6 @@ import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayo
 import RiveDuo from "@/components/old/rive/RiveDuo";
 import RiveWrapper from "@/components/old/rive/RiveWrapper";
 import { Button } from "@/components/primitives/Button";
-import LearnCard from "@main/projects/roles/_components/LearnCard";
-import MoreAboutProjects from "@main/projects/roles/_components/MoreAboutProjects";
-import PastProjects from "@main/projects/roles/_components/PastProjects";
-import RiveToggleButton from "@main/projects/roles/_components/RiveToggleButton";
-import RolesHeader from "@main/projects/roles/_components/RolesHeader";
-import React from "react";
 
 export default function DesignerPage() {
     const [animEnabled, setAnimEnabled] = React.useState(true);

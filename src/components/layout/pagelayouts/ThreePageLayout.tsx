@@ -1,12 +1,12 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { useProgress } from "@react-three/drei";
+import { motion } from "motion/react";
 import { useReduceMotion } from "@/components/contexts/ReduceMotionContext";
 import { useWebGL } from "@/components/contexts/WebGLContext";
 import { fadeopacity } from "@/utils/animations";
-import { useProgress } from "@react-three/drei";
-import { motion } from "motion/react";
-import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
 import ReduceMotionButton from "../../old/ReduceMotionButton";
 import NavigationBar from "../navbar/NavigationBar";
 

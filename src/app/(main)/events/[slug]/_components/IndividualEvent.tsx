@@ -1,7 +1,7 @@
-import ImageFit from "@/components/primitives/ImageFit";
-import { Event } from "@/types/models/Event";
 import Image from "next/image";
 import Link from "next/link";
+import { Event } from "@/types/models/Event";
+import ImageFit from "@/components/primitives/ImageFit";
 
 const IndividualEvent = ({ event }: { event: Event }) => {
     return (

@@ -1,9 +1,9 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import { motion } from "motion/react";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { Button } from "@/components/primitives/Button";
-import { motion } from "motion/react";
-import { useRouter } from "next/navigation";
 
 export default function NotFoundPage() {
     const router = useRouter();

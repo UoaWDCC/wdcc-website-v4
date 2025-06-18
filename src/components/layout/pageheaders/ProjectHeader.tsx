@@ -1,8 +1,8 @@
 // import { ReactNode } from "react";
+import { ReactNode } from "react";
+import Link from "next/link";
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
-import Link from "next/link";
-import { ReactNode } from "react";
 
 type HeaderProps = {
     title: string;

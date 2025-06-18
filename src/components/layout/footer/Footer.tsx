@@ -1,9 +1,9 @@
+import { HTMLAttributes } from "react";
 import FooterFooter from "@/components/layout/footer/components/FooterFooter";
 import { footerData } from "@/components/layout/footer/data/footerData";
 import { cn } from "@/utils/misc";
-import { HTMLAttributes } from "react";
-import FooterColumn from "./components/FooterColumn";
 import { FooterBar } from "./components/FooterBar";
+import FooterColumn from "./components/FooterColumn";
 
 export type FooterProps = {
     className?: string;
@@ -24,4 +24,3 @@ export function Footer({ className, ...props }: FooterProps) {
         </footer>
     );
 }
-

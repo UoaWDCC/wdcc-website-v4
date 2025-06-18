@@ -1,9 +1,7 @@
 "use client";
 
+import { EventHeader, PageHeader, ProjectHeader } from "@/components/layout";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
-import EventHeader from "@/components/old/layout/pageheaders/EventHeader";
-import Header from "@/components/old/layout/pageheaders/Header";
-import ProjectHeader from "@/components/old/layout/pageheaders/ProjectHeader";
 
 // import { Button } from "@/components/primitives/Button";
 
@@ -13,7 +11,7 @@ export default function TestPage() {
     return (
         <StandardPageLayout>
             {/* Blue primary header with two buttons */}
-            <Header
+            <PageHeader
                 variant={{ style: "primary", color: "blue" }}
                 title="projects"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
@@ -22,24 +20,24 @@ export default function TestPage() {
             />
 
             {/* Brand-color primary header without buttons */}
-            <Header
+            <PageHeader
                 variant={{ style: "primary", color: "brand" }}
                 title="projects"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
             />
 
             {/* Green secondary header with backlink */}
-            <Header
+            <PageHeader
                 variant={{ style: "secondary", color: "green" }}
                 title="i'm a header"
                 backlink={{ label: "Back to the home page", href: "/" }}
             />
 
             {/* Yellow secondary header without backlink */}
-            <Header variant={{ style: "secondary", color: "yellow" }} title="i'm a header" />
+            <PageHeader variant={{ style: "secondary", color: "yellow" }} title="i'm a header" />
 
             {/* You can pass unused props e.g. buttons/descriptions to secondary headers, but they won't do anything */}
-            <Header
+            <PageHeader
                 variant={{ style: "secondary", color: "brand" }}
                 title="i'm also a header!"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis condimentum orci et congue. Donec at sagittis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "

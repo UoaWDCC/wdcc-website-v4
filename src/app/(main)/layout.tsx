@@ -1,8 +1,8 @@
+import { ReactNode } from "react";
+import type { Metadata } from "next";
 import { figtree } from "@/assets/fonts";
 import "@/assets/global.css";
 import { ReduceMotionProvider, ScrollProvider, WebGLProvider } from "@/components/contexts";
-import type { Metadata } from "next";
-import { ReactNode } from "react";
 
 // SEO
 export const metadata: Metadata = {

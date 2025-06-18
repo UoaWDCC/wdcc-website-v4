@@ -1,8 +1,8 @@
 "use client";
 
-import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { Cardo } from "next/font/google";
 import Image from "next/image";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import mainschleifeLandscape from "./_assets/mainschleife-landscape.jpg";
 import tuscanyLandscape from "./_assets/tuscany-landscape.jpg";
 import w1 from "./_assets/w1.jpg";

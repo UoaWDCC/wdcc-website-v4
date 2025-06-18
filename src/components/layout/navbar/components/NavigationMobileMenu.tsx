@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { motion } from "motion/react";
 import { VariantProps, tv } from "tailwind-variants";
 //import websterBL from "@/assets/image/webster-blue.png"
 import websterCL from "@/assets/image/webster-color.png";

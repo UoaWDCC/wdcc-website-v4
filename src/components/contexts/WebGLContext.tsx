@@ -54,4 +54,3 @@ const useWebGL = () => {
 
 export { useWebGL, WebGLProvider };
 export type { WebGLContextType };
-

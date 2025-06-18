@@ -1,6 +1,6 @@
+import Link from "next/link";
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
-import Link from "next/link";
 
 type SignupCardProps = {
     SignUpCard: {

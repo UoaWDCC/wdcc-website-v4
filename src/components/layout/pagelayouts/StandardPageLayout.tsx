@@ -1,10 +1,9 @@
 "use client";
 
-import { cn } from "@/utils/misc";
 import { HtmlHTMLAttributes, ReactNode } from "react";
+import { Footer, NavigationBar } from "@/components/layout";
+import { cn } from "@/utils/misc";
 import { useScroll } from "../../contexts/ScrollContext";
-import Footer from "../footer/Footer";
-import NavigationBar from "../navigation/navbar/NavigationBar";
 
 type StandardPageLayoutProps = {
     children: ReactNode;
