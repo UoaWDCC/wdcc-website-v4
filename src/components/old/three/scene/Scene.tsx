@@ -1,6 +1,6 @@
 "use client";
 
-import { useWebGL } from "@/components/old/contexts/WebGLProvider";
+import { useWebGL } from "@/components/contexts/WebGLContext";
 import { Preload } from "@react-three/drei";
 import { Canvas, CanvasProps, useThree } from "@react-three/fiber";
 import { useEffect } from "react";

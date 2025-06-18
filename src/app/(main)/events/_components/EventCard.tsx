@@ -1,4 +1,4 @@
-import ImageCover from "@/components/old/ImageCover";
+import ImageCover from "@/components/primitives/ImageCover";
 import { Event } from "@/types/models/Event";
 import Link from "next/link";
 

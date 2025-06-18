@@ -1,7 +1,7 @@
 "use client";
 
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
-import { Button } from "@/components/old/primitives/Button";
+import { Button } from "@/components/primitives/Button";
 import React from "react";
 import DatingPage from "./_components/DatingPageRender";
 

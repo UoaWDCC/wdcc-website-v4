@@ -1,7 +1,7 @@
 "use client";
 
-import { createContext, useContext } from "react";
 import { useLocalStorage } from "@/utils/hooks/useLocalStorage";
+import { createContext, useContext } from "react";
 
 type ReduceMotionType = {
     reduceMotion: boolean;
@@ -47,6 +47,6 @@ const useReduceMotion = () => {
     return context;
 };
 
-export { useReduceMotion };
+export { ReduceMotionProvider, useReduceMotion };
 export type { ReduceMotionType };
-export default ReduceMotionProvider;
+

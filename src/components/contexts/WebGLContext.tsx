@@ -52,6 +52,6 @@ const useWebGL = () => {
     return context;
 };
 
-export { useWebGL };
+export { useWebGL, WebGLProvider };
 export type { WebGLContextType };
-export default WebGLProvider;
+

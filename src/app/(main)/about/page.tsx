@@ -1,9 +1,9 @@
 import Arrow from "@/assets/svg/Arrow";
 import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
-import Duo from "@/components/old/Duo";
 import NestedDiv from "@/components/old/NestedDiv";
-import { Button } from "@/components/old/primitives/Button";
+import { Button } from "@/components/primitives/Button";
+import Duo from "@/components/primitives/Duo";
 import { getAboutPage } from "@/payload/globals/aboutpage/getAboutPage";
 import { parseAboutPage } from "@/payload/globals/aboutpage/parseAboutPage";
 import Image from "next/image";

@@ -1,5 +1,5 @@
 import Arrow from "@/assets/svg/Arrow";
-import { Button } from "@/components/old/primitives/Button";
+import { Button } from "@/components/primitives/Button";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { VariantProps, tv } from "tailwind-variants";

@@ -1,5 +1,5 @@
-import { useReduceMotion } from "@/components/old/contexts/ReduceMotionProvider";
-import { Button } from "@/components/old/primitives/Button";
+import { useReduceMotion } from "@/components/contexts/ReduceMotionContext";
+import { Button } from "@/components/primitives/Button";
 
 export default function ReduceMotionButton() {
     const { reduceMotion, action } = useReduceMotion();

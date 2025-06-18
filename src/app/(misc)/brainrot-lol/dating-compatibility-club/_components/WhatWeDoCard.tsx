@@ -1,4 +1,4 @@
-import { Button } from "@/components/old/primitives/Button";
+import { Button } from "@/components/primitives/Button";
 import { VariantProps, tv } from "tailwind-variants";
 
 // IMPORTANT This is for the DATING BRAINROT page - not the actual production landing!

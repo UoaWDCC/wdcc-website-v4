@@ -1,7 +1,7 @@
 "use client";
 
-import { useReduceMotion } from "@/components/old/contexts/ReduceMotionProvider";
-import { useWebGL } from "@/components/old/contexts/WebGLProvider";
+import { useReduceMotion } from "@/components/contexts/ReduceMotionContext";
+import { useWebGL } from "@/components/contexts/WebGLContext";
 import { OrbitControls, View as ViewImpl } from "@react-three/drei";
 import { MutableRefObject, forwardRef, useImperativeHandle, useRef } from "react";
 import { Three, ThreeBackground } from "./Three";
@@ -49,3 +49,4 @@ const View = forwardRef(({ children, orbit, background, fallback, ...props }: Vi
 View.displayName = "View";
 
 export { View };
+

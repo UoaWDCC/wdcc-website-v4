@@ -1,8 +1,6 @@
 import { figtree } from "@/assets/fonts";
 import "@/assets/global.css";
-import ReduceMotionProvider from "@/components/old/contexts/ReduceMotionProvider";
-import { ScrollProvider } from "@/components/old/contexts/ScrollContext";
-import WebGLProvider from "@/components/old/contexts/WebGLProvider";
+import { ReduceMotionProvider, ScrollProvider, WebGLProvider } from "@/components/contexts";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 

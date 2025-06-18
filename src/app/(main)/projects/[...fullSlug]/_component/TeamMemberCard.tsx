@@ -1,4 +1,4 @@
-import ImageCover from "@/components/old/ImageCover";
+import ImageCover from "@/components/primitives/ImageCover";
 import { ImageType } from "@/types/misc/Image";
 import { VariantProps, tv } from "tailwind-variants";
 import placeholder from "../_assets/placeholder.png";

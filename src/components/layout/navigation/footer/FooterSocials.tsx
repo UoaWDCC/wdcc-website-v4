@@ -1,11 +1,11 @@
 "use client";
 
-import { useScroll } from "@/components/contexts/ScrollContext";
-import { Anchor } from "@/components/primitives/Anchor";
+import { Anchor } from "@/components/old/primitives/Anchor";
+import { useScroll } from "@/components/old/scroll/ScrollContext";
 import { cn } from "@/utils/misc";
 import { HTMLAttributes } from "react";
 import { Button } from "../../../primitives/Button";
-import { FooterSocial } from "../data/footerTypes";
+import { FooterSocial } from "./_data/footerTypes";
 
 type FooterSocialsProps = {
     socials: FooterSocial[];

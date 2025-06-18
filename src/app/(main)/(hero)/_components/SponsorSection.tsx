@@ -1,4 +1,4 @@
-import { Button } from "@/components/old/primitives/Button";
+import { Button } from "@/components/primitives/Button";
 import { SponsorSectionType } from "@/types/pages/HeroPage";
 import { cn } from "@/utils/misc";
 import { HTMLAttributes } from "react";

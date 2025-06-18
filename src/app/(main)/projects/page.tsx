@@ -1,7 +1,7 @@
 import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 // import { Button } from "@/components/primitives/Button";
-import Checklist from "@/components/old/primitives/Checklist";
+import Checklist from "@/components/primitives/Checklist";
 import { getProjectsPage } from "@/payload/globals/projectspage/getProjectsPage";
 import { parseProjectPage } from "@/payload/globals/projectspage/parseProjectPage";
 // import { ProjectCard } from "./_components/ProjectCard";

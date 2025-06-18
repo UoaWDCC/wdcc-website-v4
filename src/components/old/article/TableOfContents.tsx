@@ -1,6 +1,6 @@
 "use client";
 
-import { useScroll } from "@/components/old/contexts/ScrollContext";
+import { useScroll } from "@/components/contexts/ScrollContext";
 import SimpleLoading from "@/components/old/loading/SimpleLoading";
 import { cn } from "@/utils/misc";
 import { useLayoutEffect, useState } from "react";

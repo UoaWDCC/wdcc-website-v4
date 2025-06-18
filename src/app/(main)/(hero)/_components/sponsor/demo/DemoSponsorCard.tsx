@@ -1,6 +1,6 @@
 "use client";
 
-import ImageFit, { ImageFitProps } from "@/components/old/ImageFit";
+import ImageFit, { ImageFitProps } from "@/components/primitives/ImageFit";
 import { cn } from "@/utils/misc";
 import { Variants, motion } from "motion/react";
 

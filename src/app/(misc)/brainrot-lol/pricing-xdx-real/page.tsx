@@ -1,8 +1,8 @@
 "use client";
 
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
-import { Button } from "@/components/old/primitives/Button";
-import Checklist from "@/components/old/primitives/Checklist";
+import { Button } from "@/components/primitives/Button";
+import Checklist from "@/components/primitives/Checklist";
 import { easeOutQuad } from "@/utils/ease";
 import { Variants, motion } from "motion/react";
 import AddonCards from "./_components/AddonCards";

@@ -1,5 +1,5 @@
 import Arrow from "@/assets/svg/Arrow";
-import { Button } from "@/components/old/primitives/Button";
+import { Button } from "@/components/primitives/Button";
 
 // IMPORTANT This is for the DATING BRAINROT page - not the actual production landing!
 

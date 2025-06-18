@@ -12,8 +12,8 @@ import ExitIcon from "@/assets/svg/ExitIcon";
 import MenuIcon from "@/assets/svg/MenuIcon";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
 import { social } from "@/assets/svg/socials";
-import { Anchor } from "@/components/old/primitives/Anchor";
-import { Button } from "@/components/old/primitives/Button";
+import { Anchor } from "@/components/primitives/Anchor";
+import { Button } from "@/components/primitives/Button";
 import { cn } from "@/utils/misc";
 import type { NavigationLink } from "../data/navbarTypes";
 

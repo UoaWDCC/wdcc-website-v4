@@ -10,7 +10,8 @@ export type ImageFitProps = {
     className?: string;
 };
 
-//the exact same component except now theres cover 😭
+// the exact same component except now theres cover 😭
+// TODO ANTON: merge this into ImageFit.tsx and add a prop to choose between cover and contain
 const ImageCover = ({ src, alt, width = "150px", height = "80px", className }: ImageFitProps) => {
     return (
         <div className={cn("", className)} style={{ position: "relative", minWidth: width, minHeight: height }}>

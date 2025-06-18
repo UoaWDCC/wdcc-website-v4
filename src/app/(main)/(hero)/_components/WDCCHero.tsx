@@ -3,9 +3,9 @@
 import HeroFallback from "@/assets/image/hero/herofallback.png";
 import { social } from "@/assets/svg/socials";
 import Draw from "@/components/old/Draw";
-import { Button } from "@/components/old/primitives/Button";
 import { CommonLight } from "@/components/old/three/CommonLight";
 import { View } from "@/components/old/three/scene/View";
+import { Button } from "@/components/primitives/Button";
 import { PerspectiveCamera } from "@react-three/drei";
 import { motion } from "motion/react";
 import dynamic from "next/dynamic";

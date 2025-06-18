@@ -3,17 +3,17 @@
 import Arrow from "@/assets/svg/Arrow";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
 import { social } from "@/assets/svg/socials";
-import { useScroll } from "@/components/contexts/ScrollContext";
-import DropDown from "@/components/layout/navbar/components/DropDownLink";
-import { navbarData } from "@/components/layout/navbar/data/navbarData";
-import { NavigationLink } from "@/components/layout/navbar/data/navbarTypes";
+import DropDown from "@/components/layout/navigation/navbar/DropDownLink";
+import { navbarData } from "@/components/layout/navigation/navbar/_data/navbar.data";
+import { NavigationLink } from "@/components/layout/navigation/navbar/_data/navbarTypes";
 import { UnderlineLink } from "@/components/old/UnderlineLink";
-import { Button } from "@/components/primitives/Button";
+import { Button } from "@/components/old/primitives/Button";
+import { useScroll } from "@/components/old/scroll/ScrollContext";
 import { motion } from "motion/react";
 import { createContext, useContext, useEffect, useState } from "react";
 import { VariantProps, tv } from "tailwind-variants";
-import { Anchor } from "../../primitives/Anchor";
-import NavigationMobileMenu from "./components/NavigationMobileMenu";
+import { Anchor } from "../../../primitives/Anchor";
+import NavigationMobileMenu from "./NavigationMobileMenu";
 
 const hoverContext = createContext({} as hoverContextProps);
 
