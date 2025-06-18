@@ -1,4 +1,4 @@
-import SectionHeader from "@/components/old/section/SectionHeader";
+import SectionHeader from "@/components/layout/sections/SectionHeader";
 import Link from "next/link";
 
 const testpages = [

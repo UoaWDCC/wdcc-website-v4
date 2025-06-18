@@ -1,6 +1,6 @@
+import Header from "@/components/layout/pageheaders/Header";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import InfoPill from "@/components/old/InfoPill";
-import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
-import Header from "@/components/old/layout/pageheaders/Header";
 import { getFaqPage } from "@/payload/globals/faqpage/getFaqPage";
 import { parseFaqPage } from "@/payload/globals/faqpage/parseFaqPage";
 import { FaqSelector } from "./_components/FaqSelector";

@@ -4,7 +4,7 @@ import { Anchor } from "@/components/old/primitives/Anchor";
 import { useScroll } from "@/components/old/scroll/ScrollContext";
 import { cn } from "@/utils/misc";
 import { HTMLAttributes } from "react";
-import { Button } from "../../primitives/Button";
+import { Button } from "../../../old/primitives/Button";
 import { FooterSocial } from "./_data/footerTypes";
 
 type FooterSocialsProps = {

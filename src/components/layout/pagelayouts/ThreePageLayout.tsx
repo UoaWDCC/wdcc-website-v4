@@ -7,7 +7,7 @@ import { useProgress } from "@react-three/drei";
 import { motion } from "motion/react";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import ReduceMotionButton from "../ReduceMotionButton";
+import ReduceMotionButton from "../../old/ReduceMotionButton";
 import NavigationBar from "../navigation/navbar/NavigationBar";
 
 const Scene = dynamic(() => import("@/components/old/three/scene/Scene"), { ssr: false });

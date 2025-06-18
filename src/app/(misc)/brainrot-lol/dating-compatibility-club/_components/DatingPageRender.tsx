@@ -1,6 +1,6 @@
 "use client";
 
-import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import DatingTextSection from "@misc/brainrot-lol/dating-compatibility-club/_components/DatingTextSection";
 import DatingQuoteSection from "@misc/brainrot-lol/dating-compatibility-club/_components/QuoteSection";
 import { useRive } from "@rive-app/react-canvas";

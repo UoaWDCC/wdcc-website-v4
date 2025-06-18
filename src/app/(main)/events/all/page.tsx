@@ -1,5 +1,5 @@
-import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
-import Header from "@/components/old/layout/pageheaders/Header";
+import Header from "@/components/layout/pageheaders/Header";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { getAllEvents } from "@/payload/collections/events/getAllEvents";
 import { parseEvent } from "@/payload/collections/events/parseEvent";
 import { Event } from "@/types/models/Event";

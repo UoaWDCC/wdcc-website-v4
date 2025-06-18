@@ -1,5 +1,5 @@
 import { sponsorRegister } from "@/app/(main)/(hero)/_components/sponsor/demo/DemoSponsorSection";
-import ThreeLayout from "@/components/old/layout/ThreePageLayout";
+import ThreeLayout from "@/components/layout/pagelayouts/ThreePageLayout";
 import BackgroundEffect from "@/components/old/three/BackgroundEffect";
 import { View } from "@/components/old/three/scene/View";
 

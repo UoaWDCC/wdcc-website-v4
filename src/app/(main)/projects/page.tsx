@@ -1,5 +1,5 @@
-import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
-import Header from "@/components/old/layout/pageheaders/Header";
+import Header from "@/components/layout/pageheaders/Header";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 // import { Button } from "@/components/primitives/Button";
 import Checklist from "@/components/old/primitives/Checklist";
 import { getProjectsPage } from "@/payload/globals/projectspage/getProjectsPage";

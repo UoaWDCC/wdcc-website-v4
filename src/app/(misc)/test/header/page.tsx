@@ -1,6 +1,6 @@
 "use client";
 
-import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import EventHeader from "@/components/old/layout/pageheaders/EventHeader";
 import Header from "@/components/old/layout/pageheaders/Header";
 import ProjectHeader from "@/components/old/layout/pageheaders/ProjectHeader";

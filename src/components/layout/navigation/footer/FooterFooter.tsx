@@ -1,5 +1,5 @@
-import FooterFriends from "@/components/old/navigation/footer/FooterFriends";
-import FooterSocials from "@/components/old/navigation/footer/FooterSocials";
+import FooterFriends from "@/components/layout/navigation/footer/FooterFriends";
+import FooterSocials from "@/components/layout/navigation/footer/FooterSocials";
 import { LinkType } from "@/types/misc/Link";
 import { FooterSocial } from "./_data/footerTypes";
 

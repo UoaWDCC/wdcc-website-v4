@@ -1,6 +1,6 @@
 "use client";
 
-import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { Cardo } from "next/font/google";
 import Image from "next/image";
 import mainschleifeLandscape from "./_assets/mainschleife-landscape.jpg";

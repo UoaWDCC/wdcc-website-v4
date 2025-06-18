@@ -1,6 +1,6 @@
 "use client";
 
-import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { Button } from "@/components/old/primitives/Button";
 import Checklist from "@/components/old/primitives/Checklist";
 import { easeOutQuad } from "@/utils/ease";

@@ -1,5 +1,5 @@
-import StandardPageLayout from "@/components/old/layout/StandardPageLayout";
-import ProjectHeader from "@/components/old/layout/pageheaders/ProjectHeader";
+import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { getProject } from "@/payload/collections/projects/getProject";
 import { parseProject } from "@/payload/collections/projects/parseProject";
 import type { Metadata, ResolvingMetadata } from "next";
