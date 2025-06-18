@@ -1,8 +1,8 @@
 "use client";
 
 import Arrow from "@/assets/svg/Arrow";
+import { useScroll } from "@/components/old/contexts/ScrollContext";
 import { Button } from "@/components/old/primitives/Button";
-import { useScroll } from "@/components/old/scroll/ScrollContext";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 

@@ -2,7 +2,7 @@
 
 import { cn } from "@/utils/misc";
 import { HtmlHTMLAttributes, ReactNode } from "react";
-import { useScroll } from "../../old/scroll/ScrollContext";
+import { useScroll } from "../../old/contexts/ScrollContext";
 import Footer from "../footer/Footer";
 import NavigationBar from "../navigation/navbar/NavigationBar";
 

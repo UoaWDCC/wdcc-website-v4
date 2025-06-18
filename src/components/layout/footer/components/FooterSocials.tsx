@@ -1,7 +1,7 @@
 "use client";
 
+import { useScroll } from "@/components/old/contexts/ScrollContext";
 import { Anchor } from "@/components/old/primitives/Anchor";
-import { useScroll } from "@/components/old/scroll/ScrollContext";
 import { cn } from "@/utils/misc";
 import { HTMLAttributes } from "react";
 import { Button } from "../../../old/primitives/Button";

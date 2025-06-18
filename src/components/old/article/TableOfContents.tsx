@@ -1,7 +1,7 @@
 "use client";
 
+import { useScroll } from "@/components/old/contexts/ScrollContext";
 import SimpleLoading from "@/components/old/loading/SimpleLoading";
-import { useScroll } from "@/components/old/scroll/ScrollContext";
 import { cn } from "@/utils/misc";
 import { useLayoutEffect, useState } from "react";
 import { VariantProps, tv } from "tailwind-variants";
