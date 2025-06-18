@@ -1,11 +1,11 @@
 "use client";
 
-import type { NavigationLink } from "@/components/layout/navbar/_data/navbarTypes";
+import type { NavigationLink } from "@/components/layout/navbar/data/navbarTypes";
 import { cn } from "@/utils/misc";
 import { type Variants, motion } from "motion/react";
 import Link, { LinkProps } from "next/link";
 import { AnchorHTMLAttributes, ReactNode } from "react";
-import { useNavHover } from "./NavigationBar";
+import { useNavHover } from "../NavigationBar";
 
 // Need to omit href from AnchorHTMLAttributes because it conflicts with Next LinkProps
 type DropdownProps = {

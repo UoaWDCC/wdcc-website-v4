@@ -15,7 +15,7 @@ import { social } from "@/assets/svg/socials";
 import { Anchor } from "@/components/old/primitives/Anchor";
 import { Button } from "@/components/old/primitives/Button";
 import { cn } from "@/utils/misc";
-import type { NavigationLink } from "./_data/navbarTypes";
+import type { NavigationLink } from "../data/navbarTypes";
 
 const mobileNav = tv({
     base: "transition duration-300",
