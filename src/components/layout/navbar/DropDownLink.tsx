@@ -1,6 +1,6 @@
 "use client";
 
-import type { NavigationLink } from "@/components/layout/navigation/navbar/_data/navbarTypes";
+import type { NavigationLink } from "@/components/layout/navbar/_data/navbarTypes";
 import { cn } from "@/utils/misc";
 import { type Variants, motion } from "motion/react";
 import Link, { LinkProps } from "next/link";

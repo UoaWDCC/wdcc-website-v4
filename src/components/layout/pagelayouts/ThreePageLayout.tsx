@@ -8,7 +8,7 @@ import { motion } from "motion/react";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import ReduceMotionButton from "../../old/ReduceMotionButton";
-import NavigationBar from "../navigation/navbar/NavigationBar";
+import NavigationBar from "../navbar/NavigationBar";
 
 const Scene = dynamic(() => import("@/components/old/three/scene/Scene"), { ssr: false });
 

@@ -1,5 +1,5 @@
 import { cn } from "@/utils/misc";
-import { UnderlineLink } from "../UnderlineLink";
+import { UnderlineLink } from "../../old/UnderlineLink";
 import type { FooterColumn } from "./_data/footerTypes";
 
 export default function FooterColumn({ title, links }: FooterColumn) {

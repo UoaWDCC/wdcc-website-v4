@@ -1,5 +1,5 @@
-import FooterFooter from "@/components/layout/navigation/footer/FooterFooter";
-import { footerData } from "@/components/layout/navigation/footer/_data/footer.data";
+import FooterFooter from "@/components/layout/footer/FooterFooter";
+import { footerData } from "@/components/layout/footer/_data/footer.data";
 import { cn } from "@/utils/misc";
 import { HTMLAttributes } from "react";
 import FooterColumn from "./FooterColumn";

@@ -1,4 +1,4 @@
-import type { NavbarData } from "@/components/layout/navigation/navbar/_data/navbarTypes";
+import type { NavbarData } from "@/components/layout/navbar/_data/navbarTypes";
 
 export const navbarData: NavbarData = {
     links: [

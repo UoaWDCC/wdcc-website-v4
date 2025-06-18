@@ -3,7 +3,7 @@
 import { cn } from "@/utils/misc";
 import { HtmlHTMLAttributes, ReactNode } from "react";
 import { useScroll } from "../../old/scroll/ScrollContext";
-import Footer from "../navigation/footer/Footer";
+import Footer from "../footer/Footer";
 import NavigationBar from "../navigation/navbar/NavigationBar";
 
 type StandardPageLayoutProps = {

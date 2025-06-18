@@ -1,5 +1,5 @@
 import SignupCard from "@/app/(main)/(hero)/_components/SignupCard";
-import Footer from "@/components/layout/navigation/footer/Footer";
+import Footer from "@/components/layout/footer/Footer";
 import ThreeLayout from "@/components/layout/pagelayouts/ThreePageLayout";
 import BackgroundEffect from "@/components/old/three/BackgroundEffect";
 import { View } from "@/components/old/three/scene/View";
