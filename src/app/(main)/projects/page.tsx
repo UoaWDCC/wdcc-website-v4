@@ -1,4 +1,4 @@
-import Header from "@/components/layout/pageheaders/Header";
+import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 // import { Button } from "@/components/primitives/Button";
 import Checklist from "@/components/old/primitives/Checklist";
@@ -20,7 +20,7 @@ export default async function ProjectsPage() {
 
     return (
         <StandardPageLayout>
-            <Header
+            <PageHeader
                 variant={{ style: "primary", color: "blue" }}
                 title="Projects"
                 description="Projects are your chance to build amazing, real world projects for genuine community clients. Develop your skills, work in an industry-like team environment, and gain practical work experience - all alongside motivated peers! "

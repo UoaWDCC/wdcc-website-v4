@@ -1,5 +1,5 @@
 import Arrow from "@/assets/svg/Arrow";
-import Header from "@/components/layout/pageheaders/Header";
+import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import Duo from "@/components/old/Duo";
 import NestedDiv from "@/components/old/NestedDiv";
@@ -26,7 +26,7 @@ export default async function AboutPage() {
 
     return (
         <StandardPageLayout navColor="dark">
-            <Header
+            <PageHeader
                 variant={{ style: "primary", color: "brand" }}
                 title={header.title}
                 description={header.content}

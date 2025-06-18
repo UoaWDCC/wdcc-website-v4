@@ -1,4 +1,4 @@
-import Header from "@/components/layout/pageheaders/Header";
+import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { getAllProjects } from "@/payload/collections/projects/getAllProjects";
 import { parseProject } from "@/payload/collections/projects/parseProject";
@@ -9,7 +9,7 @@ export default async function ProjectsPage() {
 
     return (
         <StandardPageLayout>
-            <Header
+            <PageHeader
                 variant={{ style: "secondary", color: "blue" }}
                 title="All projects"
                 backlink={{ label: "projects", href: "/projects" }}

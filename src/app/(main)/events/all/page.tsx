@@ -1,4 +1,4 @@
-import Header from "@/components/layout/pageheaders/Header";
+import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { getAllEvents } from "@/payload/collections/events/getAllEvents";
 import { parseEvent } from "@/payload/collections/events/parseEvent";
@@ -16,7 +16,7 @@ export default async function EventsPage() {
 
     return (
         <StandardPageLayout>
-            <Header
+            <PageHeader
                 variant={{ style: "secondary", color: "green" }}
                 title="All events"
                 backlink={{ label: "events", href: "/events" }}

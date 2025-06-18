@@ -1,12 +1,12 @@
 "use client";
 
-import Header from "@/components/layout/pageheaders/Header";
+import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 
 export default function PMPage() {
     return (
         <StandardPageLayout>
-            <Header
+            <PageHeader
                 variant={{ style: "secondary", color: "green" }}
                 title="make agile great again as a WDCC Project Manager"
                 backlink={{ label: "projects", href: "/projects#roles" }}

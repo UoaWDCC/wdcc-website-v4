@@ -1,4 +1,4 @@
-import Header from "@/components/layout/pageheaders/Header";
+import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import InfoPill from "@/components/old/InfoPill";
 import { getFaqPage } from "@/payload/globals/faqpage/getFaqPage";
@@ -16,7 +16,7 @@ export default async function FaqPage() {
 
     return (
         <StandardPageLayout>
-            <Header
+            <PageHeader
                 variant={{ style: "secondary", color: "blue" }}
                 title="Frequently Asked Questions"
                 backlink={{ label: "About WDCC", href: "/about" }}

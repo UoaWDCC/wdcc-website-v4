@@ -101,7 +101,7 @@ type HeaderProps = {
  * }
  */
 
-export default function Header({
+export default function PageHeader({
     variant = { style: "primary", color: "yellow" },
     title,
     description,
