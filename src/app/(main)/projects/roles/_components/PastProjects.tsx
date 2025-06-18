@@ -1,5 +1,4 @@
 // import { ReactNode } from "react";
-import React from "react";
 import { Button } from "@/components/primitives/Button";
 
 export default function PastProjects() {

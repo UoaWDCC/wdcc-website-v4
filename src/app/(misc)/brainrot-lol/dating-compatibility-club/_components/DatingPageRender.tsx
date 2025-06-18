@@ -4,7 +4,7 @@ import React from "react";
 import DatingTextSection from "@misc/brainrot-lol/dating-compatibility-club/_components/DatingTextSection";
 import DatingQuoteSection from "@misc/brainrot-lol/dating-compatibility-club/_components/QuoteSection";
 import { useRive } from "@rive-app/react-canvas";
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import SignupCard from "./SignupCard";
 import ThisIsWDCC from "./ThisIsWDCCSection";
 import WDCCHero from "./WDCCHero";

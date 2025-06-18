@@ -1,5 +1,5 @@
 import { SponsorTierKeys } from "@/assets/image/sponsors";
-import ImageFit, { ImageFitProps } from "@/components/ImageFit";
+import ImageFit, { ImageFitProps } from "@/components/primitives/ImageFit";
 
 const tierWidth: Record<SponsorTierKeys, number> = {
     gold: 250,

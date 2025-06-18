@@ -1,13 +1,13 @@
 "use client";
 
-import { ArticleContent } from "@/components/article/ArticleContent";
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import Header from "@/components/layout/pageheaders/Header";
+import PageHeader from "@/components/layout/pageheaders/PageHeader";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
+import { ArticleContent } from "@/components/old/article/ArticleContent";
 
 export default function TLPage() {
     return (
         <StandardPageLayout>
-            <Header
+            <PageHeader
                 variant={{ style: "secondary", color: "yellow" }}
                 title="Techlead in a WDCC project"
                 backlink={{ label: "projects", href: "/projects#roles" }}

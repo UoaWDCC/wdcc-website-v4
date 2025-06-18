@@ -1,7 +1,7 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { getProject } from "@/payload/collections/projects/getProject";
 import { parseProject } from "@/payload/collections/projects/parseProject";
 import IndividualProject from "./_component/IndividualProject";

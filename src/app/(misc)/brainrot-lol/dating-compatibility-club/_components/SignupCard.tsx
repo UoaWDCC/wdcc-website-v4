@@ -1,4 +1,3 @@
-import React from "react";
 import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
 

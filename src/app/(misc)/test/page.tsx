@@ -1,6 +1,5 @@
-import React from "react";
 import Link from "next/link";
-import SectionHeader from "@/components/section/SectionHeader";
+import SectionHeader from "@/components/layout/sections/SectionHeader";
 
 const testpages = [
     { label: "header", href: "/test/header" },

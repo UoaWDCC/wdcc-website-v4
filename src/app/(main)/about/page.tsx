@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Arrow from "@/assets/svg/Arrow";
-import Duo from "@/components/Duo";
-import NestedDiv from "@/components/NestedDiv";
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import Header from "@/components/layout/pageheaders/Header";
+import PageHeader from "@/components/layout/pageheaders/PageHeader";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
+import NestedDiv from "@/components/old/NestedDiv";
 import { Button } from "@/components/primitives/Button";
+import Duo from "@/components/primitives/Duo";
 import { getAboutPage } from "@/payload/globals/aboutpage/getAboutPage";
 import { parseAboutPage } from "@/payload/globals/aboutpage/parseAboutPage";
 import Quote from "./_components/Quote";
@@ -26,7 +26,7 @@ export default async function AboutPage() {
 
     return (
         <StandardPageLayout navColor="dark">
-            <Header
+            <PageHeader
                 variant={{ style: "primary", color: "brand" }}
                 title={header.title}
                 description={header.content}

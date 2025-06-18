@@ -1,5 +1,5 @@
 import Link from "next/link";
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 
 export default function BrainrotLol() {
     return (

@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import { VariantProps, tv } from "tailwind-variants";
 import { Button } from "@/components/primitives/Button";

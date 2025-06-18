@@ -1,8 +1,8 @@
 import SignupCard from "@/app/(main)/(hero)/_components/SignupCard";
-import ThreeLayout from "@/components/layout/ThreePageLayout";
-import Footer from "@/components/navigation/footer/Footer";
-import BackgroundEffect from "@/components/three/BackgroundEffect";
-import { View } from "@/components/three/scene/View";
+import { Footer } from "@/components/layout";
+import ThreeLayout from "@/components/layout/pagelayouts/ThreePageLayout";
+import BackgroundEffect from "@/components/old/three/BackgroundEffect";
+import { View } from "@/components/old/three/scene/View";
 import { getHeroPage } from "@/payload/globals/heropage/getHeroPage";
 import { parseHeroPage } from "@/payload/globals/heropage/parseHeroPage";
 import { SponsorSection } from "./_components/SponsorSection";

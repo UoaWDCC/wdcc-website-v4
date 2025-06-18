@@ -2,9 +2,7 @@ import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { figtree } from "@/assets/fonts";
 import "@/assets/global.css";
-import ReduceMotionProvider from "@/components/contexts/ReduceMotionProvider";
-import WebGLProvider from "@/components/contexts/WebGLProvider";
-import { ScrollProvider } from "@/components/scroll/ScrollContext";
+import { ReduceMotionProvider, ScrollProvider, WebGLProvider } from "@/components/contexts";
 
 // SEO
 export const metadata: Metadata = {

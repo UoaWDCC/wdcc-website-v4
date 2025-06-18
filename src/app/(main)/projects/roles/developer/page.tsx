@@ -11,10 +11,10 @@ import graphic1 from "@/assets/image/roles/roles_devs-01.webp";
 import graphic2 from "@/assets/image/roles/roles_devs-02.webp";
 import graphic3 from "@/assets/image/roles/roles_devs-03.webp";
 import Arrow from "@/assets/svg/Arrow";
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
+import RiveDuo from "@/components/old/rive/RiveDuo";
+import RiveWrapper from "@/components/old/rive/RiveWrapper";
 import { Button } from "@/components/primitives/Button";
-import RiveDuo from "@/components/rive/RiveDuo";
-import RiveWrapper from "@/components/rive/RiveWrapper";
 
 export default function DeveloperPage() {
     const [animEnabled, setAnimEnabled] = React.useState(true);

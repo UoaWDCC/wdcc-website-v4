@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Project } from "@/types/models/Project";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
-import SuspenseImage from "@/components/SuspenseImage";
+import SuspenseImage from "@/components/old/SuspenseImage";
 import { ProjectTag } from "./ProjectTag";
 
 type ProjectCardProps = {

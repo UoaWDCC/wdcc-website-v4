@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Project } from "@/types/models/Project";
-import { EmptyListPlaceholder } from "../../../../components/EmptyListPlaceholder";
+import { EmptyListPlaceholder } from "../../../../components/old/EmptyListPlaceholder";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectFilter } from "./ProjectFilter";
 

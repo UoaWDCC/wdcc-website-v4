@@ -1,6 +1,6 @@
 import { HTMLAttributes } from "react";
 import { sponsorsCommunity, sponsorsGold, sponsorsSilver, sponsorsTech } from "@/assets/image/sponsors";
-import SectionHeader from "@/components/section/SectionHeader";
+import SectionHeader from "@/components/layout/sections/SectionHeader";
 import { cn } from "@/utils/misc";
 import { SponsorCardTest, SponsorCardTest2, SponsorCardTest3 } from "./DemoSponsorCard";
 

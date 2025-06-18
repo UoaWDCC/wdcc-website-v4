@@ -1,7 +1,7 @@
 "use client";
 
 import { Variants, motion } from "motion/react";
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { Button } from "@/components/primitives/Button";
 import Checklist from "@/components/primitives/Checklist";
 import { easeOutQuad } from "@/utils/ease";

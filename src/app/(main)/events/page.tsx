@@ -1,6 +1,6 @@
 import Arrow from "@/assets/svg/Arrow";
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import Header from "@/components/layout/pageheaders/Header";
+import PageHeader from "@/components/layout/pageheaders/PageHeader";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import EventsRoadmap from "./_components/EventsRoadmap";
 import EventsSection from "./_components/EventsSection";
 import { eventsData } from "./_data/events.data";
@@ -12,7 +12,7 @@ export default function EventsPage() {
 
     return (
         <StandardPageLayout>
-            <Header
+            <PageHeader
                 variant={{ style: "primary", color: "green" }}
                 title={headerData.title}
                 description={headerData.description}

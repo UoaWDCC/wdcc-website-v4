@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import Arrow from "@/assets/svg/Arrow";
+import { useScroll } from "@/components/contexts/ScrollContext";
 import { Button } from "@/components/primitives/Button";
-import { useScroll } from "@/components/scroll/ScrollContext";
 
 const transition = {
     duration: 2,

@@ -1,7 +1,7 @@
 "use client";
 
 import { Variants, motion } from "motion/react";
-import ImageFit, { ImageFitProps } from "@/components/ImageFit";
+import ImageFit, { ImageFitProps } from "@/components/primitives/ImageFit";
 import { cn } from "@/utils/misc";
 
 export const SponsorCardTest = ImageFit;

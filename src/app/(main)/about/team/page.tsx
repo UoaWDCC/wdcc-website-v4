@@ -1,6 +1,6 @@
-import InfoPill from "@/components/InfoPill";
-import StandardPageLayout from "@/components/layout/StandardPageLayout";
-import Header from "@/components/layout/pageheaders/Header";
+import PageHeader from "@/components/layout/pageheaders/PageHeader";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
+import InfoPill from "@/components/old/InfoPill";
 import { getExecPage } from "@/payload/globals/execspage/getExecPage";
 import { parseExecTeam } from "@/payload/globals/execspage/parseExecTeam";
 import ExecTeam from "./_components/ExecTeam";
@@ -10,7 +10,7 @@ export default async function TeamPage() {
 
     return (
         <StandardPageLayout>
-            <Header
+            <PageHeader
                 variant={{ style: "secondary", color: "blue" }}
                 title="Meet the team"
                 backlink={{ label: "About WDCC", href: "/about" }}

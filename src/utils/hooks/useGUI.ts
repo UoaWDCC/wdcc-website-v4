@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import GUI from "three/examples/jsm/libs/lil-gui.module.min.js";
-import { gui } from "@/components/three/globals/gui";
+import { gui } from "@/components/old/three/globals/gui";
 
 // this hook will only activate if the url hash is #debug
 // http://localhost:3000/#debug

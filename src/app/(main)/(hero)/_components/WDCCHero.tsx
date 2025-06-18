@@ -8,14 +8,17 @@ import { motion } from "motion/react";
 import * as THREE from "three";
 import HeroFallback from "@/assets/image/hero/herofallback.png";
 import { social } from "@/assets/svg/socials";
-import Draw from "@/components/Draw";
+import Draw from "@/components/old/Draw";
+import { CommonLight } from "@/components/old/three/CommonLight";
+import { View } from "@/components/old/three/scene/View";
 import { Button } from "@/components/primitives/Button";
-import { CommonLight } from "@/components/three/CommonLight";
-import { View } from "@/components/three/scene/View";
 
-const WDCCThreeHero = dynamic(() => import("@/components/three/layout/home/WDCCThreeLogo").then((mod) => mod.default), {
-    ssr: false,
-});
+const WDCCThreeHero = dynamic(
+    () => import("@/components/old/three/layout/home/WDCCThreeLogo").then((mod) => mod.default),
+    {
+        ssr: false,
+    }
+);
 
 const transition = {
     duration: 2,
