@@ -1,20 +1,25 @@
 import SignupCard from "@/app/(main)/(hero)/_components/SignupCard";
-import { Footer } from "@/components/layout";
-import ThreeLayout from "@/components/layout/pagelayouts/ThreePageLayout";
-import BackgroundEffect from "@/components/old/three/BackgroundEffect";
-import { View } from "@/components/old/three/scene/View";
+import ThreeLayout from "@/components/layout/ThreePageLayout";
+import Footer from "@/components/navigation/footer/Footer";
+import BackgroundEffect from "@/components/three/BackgroundEffect";
+import { View } from "@/components/three/scene/View";
 import { getHeroPage } from "@/payload/globals/heropage/getHeroPage";
 import { parseHeroPage } from "@/payload/globals/heropage/parseHeroPage";
 import { SponsorSection } from "./_components/SponsorSection";
 import ThisIsWDCC from "./_components/ThisIsWDCCSection";
-import WDCCHero from "./_components/WDCCHero";
+import Hero from "./_components/WDCCHero";
 import { HeroData as hardCodedHeroData } from "./_data/homeData";
+import { createContext } from "react";
+import { HeroPage } from "@/types/pages/HeroPage";
+
+export const DataContext = createContext<HeroPage>(null);
 
 export default async function HeroPage() {
     let HeroData = parseHeroPage(await getHeroPage());
     if (!HeroData) {
         HeroData = hardCodedHeroData;
     }
+
     return (
         <ThreeLayout>
             <div className="absolute -z-20 h-[60vh] w-full bg-linear-to-b from-blue-50 to-white"></div>
@@ -22,7 +27,7 @@ export default async function HeroPage() {
                 <BackgroundEffect />
             </View>
             <main className="responsive-body flex-col items-center justify-center gap-24 py-44">
-                <WDCCHero hero={HeroData.Hero} />
+                <Hero hero={HeroData.Hero} />
                 <div className="flex flex-col gap-36">
                     <ThisIsWDCC ThisIsWDCC={HeroData.ThisIsWDCC} />
                     <SponsorSection SponsorSection={HeroData.SponsorSection} />
