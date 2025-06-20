@@ -2,7 +2,6 @@
 
 import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
-import { ArticleContent } from "@/components/old/article/ArticleContent";
 
 export default function TLPage() {
     return (
@@ -14,7 +13,8 @@ export default function TLPage() {
             />
 
             <div className="flex flex-col gap-24 py-24">
-                <ArticleContent variant={{ color: "yellow" }}>
+                {/* This page is unused anyway and we wanna delete this component */}
+                {/* <ArticleContent variant={{ color: "yellow" }}> */}
                     {/* replace with mdx or cms?too */}
                     <h1 className="text-3xl font-bold" id="role-of-a-techlead">
                         Role of a techlead
@@ -81,7 +81,7 @@ export default function TLPage() {
                         aside per week to do some dev work so that you have a chance to peer-program / collaborate with
                         other members of your team, and quickly get help if needed.
                     </p>
-                </ArticleContent>
+                {/* </ArticleContent> */}
             </div>
         </StandardPageLayout>
     );

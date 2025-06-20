@@ -10,7 +10,7 @@ import { fadeopacity } from "@/utils/animations";
 import ReduceMotionButton from "../../old/ReduceMotionButton";
 import NavigationBar from "../navbar/NavigationBar";
 
-const Scene = dynamic(() => import("@/components/old/three/scene/Scene"), { ssr: false });
+const Scene = dynamic(() => import("@/components/animation/three/scene/Scene"), { ssr: false });
 
 const DebounceTimer = 50;
 

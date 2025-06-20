@@ -1,7 +1,8 @@
 import { sponsorRegister } from "@/app/(main)/(hero)/_components/sponsor/demo/DemoSponsorSection";
+import BackgroundEffect from "@/components/animation/three/BackgroundEffect";
+import { View } from "@/components/animation/three/scene/View";
 import ThreeLayout from "@/components/layout/pagelayouts/ThreePageLayout";
-import BackgroundEffect from "@/components/old/three/BackgroundEffect";
-import { View } from "@/components/old/three/scene/View";
+
 
 export default function TestSponsorPage() {
     return (

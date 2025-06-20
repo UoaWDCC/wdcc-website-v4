@@ -1,6 +1,6 @@
 "use client";
 
-import { bg, t } from "@/components/old/three/globals/tunnel";
+import { bg, t } from "@/components/animation/three/globals/tunnel";
 
 export const Three = ({ children }: { children: React.ReactNode }) => {
     return <t.In>{children}</t.In>;
