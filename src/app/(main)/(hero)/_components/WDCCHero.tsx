@@ -10,9 +10,8 @@ import HeroFallback from "@/assets/image/hero/herofallback.png";
 import { social } from "@/assets/svg/socials";
 import { CommonLight } from "@/components/animation/three/CommonLight";
 import { View } from "@/components/animation/three/scene/View";
-import Draw from "@/components/misc/Draw";
+import CircleAnimation from "@/app/(main)/(hero)/_components/CircleAnimation";
 import { Button } from "@/components/primitives/Button";
-
 
 const WDCCThreeHero = dynamic(
     () => import("@/components/animation/three/layout/home/WDCCThreeLogo").then((mod) => mod.default),
@@ -63,9 +62,9 @@ const WDCCHero = ({ hero }: WDCCHeroProps) => {
                         className="text-md leading-tight text-blue-700 sm:text-lg"
                     >
                         {hero.blurb}{" "}
-                        <Draw className="italic underline">
+                        <CircleAnimation className="italic underline">
                             <span className="font-normal italic underline">help them shine</span>
-                        </Draw>
+                        </CircleAnimation>
                         .
                     </motion.p>
                     <motion.div

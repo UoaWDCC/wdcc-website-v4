@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import RiveWrapper from "@/components/old/rive/RiveWrapper";
+import RiveWrapper from "./RiveWrapper";
 import { cn } from "@/utils/misc";
 
 type DuoProps = {
