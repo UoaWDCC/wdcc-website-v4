@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import { Event } from "@/types/models/Event";
-import { EmptyListPlaceholder } from "@/components/old/EmptyListPlaceholder";
+import { EmptyListPlaceholder } from "@/components/misc/EmptyListPlaceholder";
 import { Category } from "../_data/events.data";
 import EventCard from "./EventCard";
 import EventCategoryFilter from "./EventCategoryFilter";
+
 
 type EventsSectionProps = {
     title?: string;

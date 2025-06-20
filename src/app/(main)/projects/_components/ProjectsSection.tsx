@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { Project } from "@/types/models/Project";
-import { EmptyListPlaceholder } from "../../../../components/old/EmptyListPlaceholder";
+import { EmptyListPlaceholder } from "../../../../components/misc/EmptyListPlaceholder";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectFilter } from "./ProjectFilter";
+
 
 const ProjectsSection = ({ projects }: { projects: Project[] }) => {
     const [selectedYear, setYear] = useState<string | null>(null);
