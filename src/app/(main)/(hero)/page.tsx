@@ -1,18 +1,13 @@
 import SignupCard from "@/app/(main)/(hero)/_components/SignupCard";
-import ThreeLayout from "@/components/layout/ThreePageLayout";
-import Footer from "@/components/navigation/footer/Footer";
-import BackgroundEffect from "@/components/three/BackgroundEffect";
-import { View } from "@/components/three/scene/View";
+import { Footer, ThreePageLayout } from "@/components/layout";
+import BackgroundEffect from "@/components/old/three/BackgroundEffect";
+import { View } from "@/components/old/three/scene/View";
 import { getHeroPage } from "@/payload/globals/heropage/getHeroPage";
 import { parseHeroPage } from "@/payload/globals/heropage/parseHeroPage";
 import { SponsorSection } from "./_components/SponsorSection";
 import ThisIsWDCC from "./_components/ThisIsWDCCSection";
 import Hero from "./_components/WDCCHero";
 import { HeroData as hardCodedHeroData } from "./_data/homeData";
-import { createContext } from "react";
-import { HeroPage } from "@/types/pages/HeroPage";
-
-export const DataContext = createContext<HeroPage>(null);
 
 export default async function HeroPage() {
     let HeroData = parseHeroPage(await getHeroPage());
@@ -21,7 +16,7 @@ export default async function HeroPage() {
     }
 
     return (
-        <ThreeLayout>
+        <ThreePageLayout>
             <div className="absolute -z-20 h-[60vh] w-full bg-linear-to-b from-blue-50 to-white"></div>
             <View className="fixed -z-10 size-full scale-150" background>
                 <BackgroundEffect />
@@ -35,6 +30,6 @@ export default async function HeroPage() {
                 </div>
             </main>
             <Footer className="mt-16" />
-        </ThreeLayout>
+        </ThreePageLayout>
     );
 }

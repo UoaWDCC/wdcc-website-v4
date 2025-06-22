@@ -6,15 +6,18 @@ import Image from "next/image";
 import { PerspectiveCamera } from "@react-three/drei";
 import type { PerspectiveCamera as PerspectiveCameraType } from "three";
 import HeroFallback from "@/assets/image/hero/herofallback.png";
-import { CommonLight } from "@/components/three/CommonLight";
-import { View } from "@/components/three/scene/View";
+import { CommonLight } from "@/components/old/three/CommonLight";
+import { View } from "@/components/old/three/scene/View";
 import { HeroHeading } from "./HeroHeading";
 import { HeroLinks } from "./HeroLinks";
 import { HeroSubHeading } from "./HeroSubHeading";
 
-const WDCCThreeHero = dynamic(() => import("@/components/three/layout/home/WDCCThreeLogo").then((mod) => mod.default), {
-    ssr: false,
-});
+const WDCCThreeHero = dynamic(
+    () => import("@/components/old/three/layout/home/WDCCThreeLogo").then((mod) => mod.default),
+    {
+        ssr: false,
+    }
+);
 
 type WDCCHeroProps = {
     hero: {

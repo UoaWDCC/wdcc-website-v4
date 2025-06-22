@@ -1,6 +1,6 @@
 import React from "react";
 import * as motion from "motion/react-client";
-import { Draw } from "@/components/Draw";
+import { Draw } from "@/components/old/Draw";
 import { animation } from "@/utils/animations";
 
 export const HeroSubHeading = ({ blurb }: { blurb: string }) => {
