@@ -1,11 +1,11 @@
-import { HeroPage } from "@/types/pages/HeroPage";
+import { HeroPageSchema } from "@/payload/globals/heropage/parseHeroPage";
 
-export const HeroData: HeroPage = {
-    Hero: {
+export const HeroData: HeroPageSchema = {
+    HERO: {
         title: "WEB DEVELOPMENT AND CONSULTING CLUB",
         blurb: "We connect tomorrow’s developers, designers, and tech project leaders with the real-world experience and opportunities that",
     },
-    ThisIsWDCC: {
+    THIS_IS_WDCC: {
         description:
             "We’re a student club that aims to bridge the gap between university knowledge and real-world expertise. We run projects with real clients to solve challenging technical problems, and conduct a range of events to better equip tomorrow’s talent.",
         whatWeDo: {
@@ -38,7 +38,7 @@ export const HeroData: HeroPage = {
         },
     },
     //could've and probably should've abstracted this and then imported it in here but oh well.
-    SponsorSection: {
+    SPONSOR_SECTION: {
         gold: {
             sponsors: [
                 {
@@ -100,7 +100,7 @@ export const HeroData: HeroPage = {
             ],
         },
     },
-    SignUpCard: {
+    SIGN_UP_CARD: {
         title: "Start your web dev journey here.",
         descriptionLineOne:
             "WDCC membership is totally free, and lets you access all kinds of member-exclusive messages, events, workshops, and more.",
