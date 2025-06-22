@@ -3,18 +3,12 @@ import { Footer } from "@/components/layout";
 import ThreeLayout from "@/components/layout/pagelayouts/ThreePageLayout";
 import BackgroundEffect from "@/components/old/three/BackgroundEffect";
 import { View } from "@/components/old/three/scene/View";
-import { getHeroPage } from "@/payload/globals/heropage/getHeroPage";
-import { parseHeroPage } from "@/payload/globals/heropage/parseHeroPage";
 import { SponsorSection } from "./_components/SponsorSection";
 import ThisIsWDCC from "./_components/ThisIsWDCCSection";
 import WDCCHero from "./_components/WDCCHero";
-import { HeroData as hardCodedHeroData } from "./_data/homeData";
 
 export default async function HeroPage() {
-    let HeroData = parseHeroPage(await getHeroPage());
-    if (!HeroData) {
-        HeroData = hardCodedHeroData;
-    }
+    // TODO: waiting for #216 to be merged
     return (
         <ThreeLayout>
             <div className="absolute -z-20 h-[60vh] w-full bg-linear-to-b from-blue-50 to-white"></div>
