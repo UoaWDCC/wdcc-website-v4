@@ -1,14 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { HTMLAttributes, ReactNode } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/utils/misc";
 
-type CircleAnimationProps = {
-    children: React.ReactNode;
-} & React.HTMLAttributes<HTMLSpanElement>;
+type DrawProps = {
+    children: ReactNode;
+} & HTMLAttributes<HTMLSpanElement>;
 
-const CircleAnimation = ({ children, ...props }: CircleAnimationProps) => {
+export const Draw = ({ children, ...props }: DrawProps) => {
     return (
         <span {...props} className={cn("relative whitespace-nowrap", props.className)}>
             <svg
@@ -35,5 +35,3 @@ const CircleAnimation = ({ children, ...props }: CircleAnimationProps) => {
         </span>
     );
 };
-
-export default CircleAnimation;

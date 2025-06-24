@@ -4,29 +4,28 @@ import { useRef } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { PerspectiveCamera } from "@react-three/drei";
-import { PerspectiveCamera as PerspectiveCameraType } from "three";
+import type { PerspectiveCamera as PerspectiveCameraType } from "three";
 import HeroFallback from "@/assets/image/hero/herofallback.png";
-import { CommonLight } from "@/components/animation/three/CommonLight";
-import { View } from "@/components/animation/three/scene/View";
+import { CommonLight } from "@/components/old/three/CommonLight";
+import { View } from "@/components/old/three/scene/View";
 import { HeroHeading } from "./HeroHeading";
 import { HeroLinks } from "./HeroLinks";
 import { HeroSubHeading } from "./HeroSubHeading";
 
 const WDCCThreeHero = dynamic(
-    () => import("@/components/animation/three/layout/home/WDCCThreeLogo").then((mod) => mod.default),
+    () => import("@/components/old/three/layout/home/WDCCThreeLogo").then((mod) => mod.default),
     {
         ssr: false,
     }
 );
 
-type HeroProps = {
+type WDCCHeroProps = {
     hero: {
         title: string;
         blurb: string;
     };
 };
-
-const Hero = ({ hero }: HeroProps) => {
+const Hero = ({ hero }: WDCCHeroProps) => {
     const ref = useRef<HTMLDivElement>(null);
     const camera = useRef<PerspectiveCameraType>(null);
 
