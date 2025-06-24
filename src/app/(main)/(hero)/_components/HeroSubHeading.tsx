@@ -1,7 +1,7 @@
 import React from "react";
 import * as motion from "motion/react-client";
-import { CircleAnimation } from "./CircleAnimation";
 import { animation } from "@/utils/animations";
+import { CircleAnimation } from "./CircleAnimation";
 
 export const HeroSubHeading = ({ blurb }: { blurb: string }) => {
     return (
