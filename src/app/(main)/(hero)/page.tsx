@@ -10,7 +10,6 @@ import ThisIsWDCC from "./_components/ThisIsWDCCSection";
 import WDCCHero from "./_components/WDCCHero";
 import { HeroData as hardCodedHeroData } from "./_data/homeData";
 
-
 export default async function HeroPage() {
     let HeroData = parseHeroPage(await getHeroPage());
     if (!HeroData) {

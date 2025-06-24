@@ -6,7 +6,6 @@ import { EmptyListPlaceholder } from "../../../../components/misc/EmptyListPlace
 import { ProjectCard } from "./ProjectCard";
 import { ProjectFilter } from "./ProjectFilter";
 
-
 const ProjectsSection = ({ projects }: { projects: Project[] }) => {
     const [selectedYear, setYear] = useState<string | null>(null);
 

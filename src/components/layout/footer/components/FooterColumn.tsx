@@ -2,7 +2,6 @@ import { cn } from "@/utils/misc";
 import { UnderlineLink } from "../../../misc/UnderlineLink";
 import type { FooterColumn } from "../data/footerTypes";
 
-
 export default function FooterColumn({ title, links }: FooterColumn) {
     return (
         <div className="flex flex-col gap-2 select-none">

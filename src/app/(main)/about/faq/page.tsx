@@ -6,7 +6,6 @@ import { parseFaqPage } from "@/payload/globals/faqpage/parseFaqPage";
 import { FaqSelector } from "./_components/FaqSelector";
 import { faqData as hardCodedFaq } from "./_data/faq.data";
 
-
 export default async function FaqPage() {
     //try get cms, if no cms then get hardCoded Faq
     let faqData = parseFaqPage(await getFaqPage());

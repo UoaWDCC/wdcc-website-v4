@@ -3,7 +3,6 @@ import BackgroundEffect from "@/components/animation/three/BackgroundEffect";
 import { View } from "@/components/animation/three/scene/View";
 import ThreeLayout from "@/components/layout/pagelayouts/ThreePageLayout";
 
-
 export default function TestSponsorPage() {
     return (
         <ThreeLayout>

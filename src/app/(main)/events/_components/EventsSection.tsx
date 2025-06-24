@@ -7,7 +7,6 @@ import { Category } from "../_data/events.data";
 import EventCard from "./EventCard";
 import EventCategoryFilter from "./EventCategoryFilter";
 
-
 type EventsSectionProps = {
     title?: string;
     categories: Category[];

@@ -6,11 +6,11 @@ import Image from "next/image";
 import { PerspectiveCamera } from "@react-three/drei";
 import { motion } from "motion/react";
 import * as THREE from "three";
+import CircleAnimation from "@/app/(main)/(hero)/_components/CircleAnimation";
 import HeroFallback from "@/assets/image/hero/herofallback.png";
 import { social } from "@/assets/svg/socials";
 import { CommonLight } from "@/components/animation/three/CommonLight";
 import { View } from "@/components/animation/three/scene/View";
-import CircleAnimation from "@/app/(main)/(hero)/_components/CircleAnimation";
 import { Button } from "@/components/primitives/Button";
 
 const WDCCThreeHero = dynamic(

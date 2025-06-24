@@ -11,9 +11,9 @@ import graphic1 from "@/assets/image/roles/roles_design-01.webp";
 import graphic2 from "@/assets/image/roles/roles_design-02.webp";
 import graphic3 from "@/assets/image/roles/roles_design-03.webp";
 import Arrow from "@/assets/svg/Arrow";
-import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import RiveDuo from "@/components/animation/rive/RiveDuo";
 import RiveWrapper from "@/components/animation/rive/RiveWrapper";
+import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { Button } from "@/components/primitives/Button";
 
 export default function DesignerPage() {

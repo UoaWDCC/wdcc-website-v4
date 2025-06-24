@@ -5,7 +5,6 @@ import { getExecPage } from "@/payload/globals/execspage/getExecPage";
 import { parseExecTeam } from "@/payload/globals/execspage/parseExecTeam";
 import ExecTeam from "./_components/ExecTeam";
 
-
 export default async function TeamPage() {
     const ExecPage = parseExecTeam(await getExecPage());
 

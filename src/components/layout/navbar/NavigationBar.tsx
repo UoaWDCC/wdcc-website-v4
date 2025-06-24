@@ -15,7 +15,6 @@ import { Button } from "@/components/primitives/Button";
 import { Anchor } from "../../primitives/Anchor";
 import NavigationMobileMenu from "./components/NavigationMobileMenu";
 
-
 const hoverContext = createContext({} as hoverContextProps);
 
 type hoverContextProps = {
