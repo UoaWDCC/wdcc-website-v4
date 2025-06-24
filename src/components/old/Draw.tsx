@@ -1,14 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { HTMLAttributes, ReactNode } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/utils/misc";
 
 type DrawProps = {
-    children: React.ReactNode;
-} & React.HTMLAttributes<HTMLSpanElement>;
+    children: ReactNode;
+} & HTMLAttributes<HTMLSpanElement>;
 
-const Draw = ({ children, ...props }: DrawProps) => {
+export const Draw = ({ children, ...props }: DrawProps) => {
     return (
         <span {...props} className={cn("relative whitespace-nowrap", props.className)}>
             <svg
@@ -35,5 +35,3 @@ const Draw = ({ children, ...props }: DrawProps) => {
         </span>
     );
 };
-
-export default Draw;
