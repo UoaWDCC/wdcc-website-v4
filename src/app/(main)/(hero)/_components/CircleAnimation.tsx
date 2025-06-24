@@ -4,11 +4,11 @@ import React, { HTMLAttributes, ReactNode } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/utils/misc";
 
-type DrawProps = {
+type CircleAnimationProps = {
     children: ReactNode;
 } & HTMLAttributes<HTMLSpanElement>;
 
-export const Draw = ({ children, ...props }: DrawProps) => {
+export const CircleAnimation = ({ children, ...props }: CircleAnimationProps) => {
     return (
         <span {...props} className={cn("relative whitespace-nowrap", props.className)}>
             <svg

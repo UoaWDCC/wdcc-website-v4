@@ -11,9 +11,9 @@ import graphic1 from "@/assets/image/roles/roles_devs-01.webp";
 import graphic2 from "@/assets/image/roles/roles_devs-02.webp";
 import graphic3 from "@/assets/image/roles/roles_devs-03.webp";
 import Arrow from "@/assets/svg/Arrow";
+import RiveDuo from "@/components/animation/rive/RiveDuo";
+import RiveWrapper from "@/components/animation/rive/RiveWrapper";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
-import RiveDuo from "@/components/old/rive/RiveDuo";
-import RiveWrapper from "@/components/old/rive/RiveWrapper";
 import { Button } from "@/components/primitives/Button";
 
 export default function DeveloperPage() {

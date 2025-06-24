@@ -1,6 +1,6 @@
 import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
-import InfoPill from "@/components/old/InfoPill";
+import InfoPill from "@/components/misc/InfoPill";
 import { getExecPage } from "@/payload/globals/execspage/getExecPage";
 import { parseExecTeam } from "@/payload/globals/execspage/parseExecTeam";
 import ExecTeam from "./_components/ExecTeam";

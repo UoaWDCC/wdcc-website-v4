@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import NextImage, { type ImageProps } from "next/image";
-import SimpleLoading from "./loading/SimpleLoading";
+import SimpleLoading from "./SimpleLoading";
 
 const SuspenseImage = ({ ...props }: ImageProps) => {
     const [isLoaded, setLoaded] = useState(false);

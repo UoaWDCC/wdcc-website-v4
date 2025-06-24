@@ -10,7 +10,7 @@ import { useScroll } from "@/components/contexts/ScrollContext";
 import DropDown from "@/components/layout/navbar/components/DropDownLink";
 import { navbarData } from "@/components/layout/navbar/data/navbarData";
 import { NavigationLink } from "@/components/layout/navbar/data/navbarTypes";
-import { UnderlineLink } from "@/components/old/UnderlineLink";
+import { UnderlineLink } from "@/components/misc/UnderlineLink";
 import { Button } from "@/components/primitives/Button";
 import { Anchor } from "../../primitives/Anchor";
 import NavigationMobileMenu from "./components/NavigationMobileMenu";
