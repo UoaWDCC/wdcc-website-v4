@@ -1,6 +1,11 @@
 # WDCC website v4
 
-This repository hosts the in progress codebase for [WDCC](https://wdcc.co.nz/)'s V4 website! <br/>
+This is the repository for the 4th iteration of WDCC's website!  
+Hand-crafted with care by [tech team 2025 🥬](https://wdcc.co.nz/about/team)
+
+[🚀 Deployment](https://wdcc.co.nz/)
+
+## Getting Started
 
 > [!NOTE]  
 > **Node version:** v22.11.0 \
@@ -10,8 +15,6 @@ This repository hosts the in progress codebase for [WDCC](https://wdcc.co.nz/)'s
 > **Package Installer:** PnPm@9.14.2
 
 Please install [Volta](https://volta.sh/) and make sure you have pnpm installed (you can use `volta install pnpm` ) before starting development! If it's working correctly, Volta should automatically detect (from package.json) and switch to the correct node version for this project. Check this by running `node --version` in the terminal.
-
-## Getting Started
 
 ```bash
 # cloning the project
@@ -31,11 +34,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Resources
 
-#### Structure: [here](STRUCTURE.md)
+Structure: [here](STRUCTURE.md)
 
-#### Eslint config: [here](.eslintrc.json)
-
-#### Prettier config: [here](.prettierrc)
+Internal docs: [here](https://drive.google.com/drive/u/4/folders/1ysDM_Vw4oCDQvgawTqlj5g_UVd_nKaeq)
 
 ## Technologies
 
@@ -65,6 +66,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     <img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E"/>
 </div>
 
-## Learn More
+## Contact Us
 
-This is the WDCC website for 2025 🔥
+tech@wdcc.co.nz :)
