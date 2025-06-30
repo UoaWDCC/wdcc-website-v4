@@ -1,9 +1,10 @@
 "use server";
 
+import { ProjectsPage } from "@/payload/payload-types";
 import { getPayload } from "@/utils/payload";
 
 export const getProjectsPage = async () => {
-    let projectsPage;
+    let projectsPage: ProjectsPage;
     if (process.env.MOCK_DATA === "true") {
         const { mockProjectsPageData } = await import("./mockProjectsPageData");
         projectsPage = mockProjectsPageData;
@@ -12,7 +13,6 @@ export const getProjectsPage = async () => {
         projectsPage = await payload.findGlobal({
             slug: "projects-page",
         });
-        console.log(JSON.stringify(projectsPage, null, 2)); // Log the full result for mock data
     }
     return projectsPage;
 };
