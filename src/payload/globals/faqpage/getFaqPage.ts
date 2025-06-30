@@ -2,11 +2,11 @@
 
 import { FaqPage } from "@/payload/payload-types";
 import { getPayload } from "@/utils/payload";
+import { mockFaqPageData } from "./mockFaqPageData";
 
 export const getFaqPage = async () => {
     let faqPage: FaqPage;
     if (process.env.MOCK_DATA === "true") {
-        const { mockFaqPageData } = await import("./mockFaqPageData");
         faqPage = mockFaqPageData;
     } else {
         const payload = await getPayload();

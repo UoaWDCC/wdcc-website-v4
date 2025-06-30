@@ -3,12 +3,12 @@
 import { Project } from "@/payload/payload-types";
 import { SLUG } from "@/utils/enums/slug";
 import { getPayload } from "@/utils/payload";
+import { mockProjectsData } from "./mockProjectsData";
 
 // return all projects
 export const getAllProjects = async (): Promise<Project[]> => {
     let projects: Project[];
     if (process.env.MOCK_DATA === "true") {
-        const { mockProjectsData } = await import("./mockProjectsData");
         projects = mockProjectsData.docs;
     } else {
         const payload = await getPayload();
