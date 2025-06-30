@@ -3,12 +3,12 @@
 import { Event } from "@/payload/payload-types";
 import { SLUG } from "@/utils/enums/slug";
 import { getPayload } from "@/utils/payload";
+import { mockEventsData } from "./mockEventsData";
 
 // return Event
 export const getEvent = async (slug: string) => {
     let event: Event | undefined;
     if (process.env.MOCK_DATA === "true") {
-        const { mockEventsData } = await import("./mockEventsData");
         event = mockEventsData.docs.find((e) => e.slug === slug);
     } else {
         const payload = await getPayload();

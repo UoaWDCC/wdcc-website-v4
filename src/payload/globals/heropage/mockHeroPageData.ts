@@ -3,7 +3,7 @@ import { HeroPage } from "@/payload/payload-types";
 export const mockHeroPageData: HeroPage = {
     id: 1,
     hero: {
-        title: "WEB DEVELOPMENT AND CONSULTING CLUB",
+        title: "--- MOCK DATA ---",
         blurb: "We connect tomorrow’s developers, designers, and tech leaders with the real-world experience and opportunities that ",
     },
     thisIsWDCC: {
