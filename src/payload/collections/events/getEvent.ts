@@ -6,10 +6,10 @@ import { getPayload } from "@/utils/payload";
 
 // return Event
 export const getEvent = async (slug: string) => {
-    let event: Event;
+    let event: Event | undefined;
     if (process.env.MOCK_DATA === "true") {
         const { mockEventsData } = await import("./mockEventsData");
-        event = mockEventsData.docs[0];
+        event = mockEventsData.docs.find((e) => e.slug === slug);
     } else {
         const payload = await getPayload();
         const events = await payload.find({
@@ -19,7 +19,7 @@ export const getEvent = async (slug: string) => {
             },
             limit: 1,
         });
-        event = events.docs[0];
+        event = events.docs.at(0);
     }
     return event;
 };
