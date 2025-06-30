@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 import { EventsCollection } from "./src/payload/collections/events/EventsCollection";
 import { MediaCollection } from "./src/payload/collections/misc/MediaCollection";
 import { UsersCollection } from "./src/payload/collections/misc/UsersCollection";
-import { PartnersCollection } from "./src/payload/collections/partners/PartnersCollection";
+import { PartnersCollection } from "./src/payload/collections/misc/PartnersCollection";
 import { ProjectsCollection } from "./src/payload/collections/projects/ProjectsCollection";
 import AboutPageGlobal from "./src/payload/globals/aboutpage/AboutPageGlobal";
 import { ExecsPageGlobal } from "./src/payload/globals/execspage/ExecsPageGlobal";
