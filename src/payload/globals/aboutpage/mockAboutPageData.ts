@@ -1,5 +1,6 @@
 import { AboutPage } from "@/payload/payload-types";
 
+
 export const mockAboutPageData: AboutPage = {
     id: 1,
     header: {
@@ -18,7 +19,7 @@ export const mockAboutPageData: AboutPage = {
             prefix: "media",
             updatedAt: "2025-03-02T19:39:29.703Z",
             createdAt: "2025-03-02T19:35:44.614Z",
-            url: "/api/media/file/mic.png",
+            url: "/images/miku-leek.webp",
             thumbnailURL: null,
             filename: "mic.png",
             mimeType: "image/png",
@@ -39,7 +40,7 @@ export const mockAboutPageData: AboutPage = {
             prefix: "media",
             updatedAt: "2025-03-02T19:37:16.951Z",
             createdAt: "2025-03-02T19:37:16.798Z",
-            url: "/api/media/file/workshop.png",
+            url: "/images/miku-leek.webp",
             thumbnailURL: null,
             filename: "workshop.png",
             mimeType: "image/png",
@@ -59,7 +60,7 @@ export const mockAboutPageData: AboutPage = {
             prefix: "media",
             updatedAt: "2025-03-01T07:26:03.749Z",
             createdAt: "2025-03-01T07:26:03.612Z",
-            url: "/api/media/file/600x400.png",
+            url: "/images/miku-leek.webp",
             thumbnailURL: null,
             filename: "600x400.png",
             mimeType: "image/png",
@@ -80,7 +81,7 @@ export const mockAboutPageData: AboutPage = {
             prefix: "media",
             updatedAt: "2025-03-02T19:38:15.613Z",
             createdAt: "2025-03-02T19:38:15.421Z",
-            url: "/api/media/file/team.jpg",
+            url: "/images/miku-leek.webp",
             thumbnailURL: null,
             filename: "team.jpg",
             mimeType: "image/jpeg",
@@ -103,7 +104,7 @@ export const mockAboutPageData: AboutPage = {
             prefix: "media",
             updatedAt: "2025-03-02T07:59:14.387Z",
             createdAt: "2025-03-02T07:59:14.250Z",
-            url: "/api/media/file/industry-night-cropped.png",
+            url: "/images/miku-leek.webp",
             thumbnailURL: null,
             filename: "industry-night-cropped.png",
             mimeType: "image/png",
