@@ -6,11 +6,17 @@ import { getPayload } from "@/utils/payload";
 
 // return all projects
 export const getAllProjects = async (): Promise<Project[]> => {
-    const payload = await getPayload();
-    const projects = await payload.find({
-        collection: SLUG.PROJECTS,
-        pagination: false,
-    });
-
-    return projects.docs;
+    let projects: Project[];
+    if (process.env.MOCK_DATA === "true") {
+        const { mockProjectsData } = await import("./mockProjectsData");
+        projects = mockProjectsData.docs;
+    } else {
+        const payload = await getPayload();
+        const result = await payload.find({
+            collection: SLUG.PROJECTS,
+            pagination: false,
+        });
+        projects = result.docs;
+    }
+    return projects;
 };
