@@ -7,7 +7,6 @@ import sharp from "sharp";
 import { fileURLToPath } from "url";
 import { EventsCollection } from "./src/payload/collections/events/EventsCollection";
 import { MediaCollection } from "./src/payload/collections/misc/MediaCollection";
-import { PartnersCollection } from "./src/payload/collections/misc/PartnersCollection";
 import { UsersCollection } from "./src/payload/collections/misc/UsersCollection";
 import { ProjectsCollection } from "./src/payload/collections/projects/ProjectsCollection";
 import AboutPageGlobal from "./src/payload/globals/aboutpage/AboutPageGlobal";
