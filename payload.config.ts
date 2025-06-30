@@ -7,9 +7,8 @@ import sharp from "sharp";
 import { fileURLToPath } from "url";
 import { EventsCollection } from "./src/payload/collections/events/EventsCollection";
 import { MediaCollection } from "./src/payload/collections/misc/MediaCollection";
-import { TestCollection } from "./src/payload/collections/misc/TestCollection";
 import { UsersCollection } from "./src/payload/collections/misc/UsersCollection";
-import { PartnersCollection } from "./src/payload/collections/partners/PartnersCollection";
+import { PartnersCollection } from "./src/payload/collections/misc/PartnersCollection";
 import { ProjectsCollection } from "./src/payload/collections/projects/ProjectsCollection";
 import AboutPageGlobal from "./src/payload/globals/aboutpage/AboutPageGlobal";
 import { ExecsPageGlobal } from "./src/payload/globals/execspage/ExecsPageGlobal";
@@ -27,14 +26,7 @@ export default buildConfig({
             baseDir: path.resolve(dirname),
         },
     },
-    collections: [
-        UsersCollection,
-        MediaCollection,
-        EventsCollection,
-        ProjectsCollection,
-        TestCollection,
-        PartnersCollection,
-    ],
+    collections: [UsersCollection, MediaCollection, EventsCollection, ProjectsCollection, PartnersCollection],
     globals: [ExecsPageGlobal, FaqPageGlobal, AboutPageGlobal, ProjectsPageGlobal, HeroPageGlobal],
     editor: lexicalEditor({
         // TODO ASHTON

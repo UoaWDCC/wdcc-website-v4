@@ -39,7 +39,7 @@
         "raw-loader": "^4.0.2",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-        "sharp": "^0.33.5",
+        "sharp": "^0.34.2",
         "tailwind-merge": "^2.5.5",
         "tailwind-variants": "^0.3.0",
         "three": "0.171.0",
