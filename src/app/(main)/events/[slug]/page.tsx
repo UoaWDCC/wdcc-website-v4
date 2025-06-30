@@ -3,18 +3,11 @@ import EventHeader from "@/components/layout/pageheaders/EventHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { getEvent } from "@/payload/collections/events/getEvent";
 import { parseEvent } from "@/payload/collections/events/parseEvent";
-import { eventsData } from "../_data/events.data";
 import IndividualEvent from "./_components/IndividualEvent";
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
-    const events = eventsData.eventsGrid.events;
-
     const slug = (await params).slug;
-    let event = events.find((e) => e.slug === slug);
-
-    if (!event) {
-        event = parseEvent(await getEvent(slug));
-    }
+    const event = parseEvent(await getEvent(slug));
     if (!event) {
         notFound();
     }
@@ -24,7 +17,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
      * Chris suggested we randomise it 50-50.
      * The following code implements said effect.
      */
-
+    // Wtf
     let backlinkRef = "/events";
     let backlinkTitle = "events";
     const backlinkRandomNum = Math.floor(Math.random() * 2) + 1;
