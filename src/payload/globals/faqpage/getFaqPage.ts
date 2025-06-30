@@ -1,9 +1,10 @@
 "use server";
 
+import { FaqPage } from "@/payload/payload-types";
 import { getPayload } from "@/utils/payload";
 
 export const getFaqPage = async () => {
-    let faqPage;
+    let faqPage: FaqPage;
     if (process.env.MOCK_DATA === "true") {
         const { mockFaqPageData } = await import("./mockFaqPageData");
         faqPage = mockFaqPageData;
@@ -12,7 +13,6 @@ export const getFaqPage = async () => {
         faqPage = await payload.findGlobal({
             slug: "faq-page",
         });
-        console.log(JSON.stringify(faqPage, null, 2)); // Log the full result for mock data
     }
     return faqPage;
 };
