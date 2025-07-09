@@ -9,10 +9,9 @@ export const MediaCollection: CollectionConfig = {
         {
             name: "alt",
             type: "text",
-            required: true,
+            defaultValue: "",
         },
     ],
-
     upload: {
         disableLocalStorage: true,
     },
