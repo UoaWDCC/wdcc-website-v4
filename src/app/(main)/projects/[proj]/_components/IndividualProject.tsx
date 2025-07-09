@@ -74,4 +74,4 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
     );
 };
 
-export default IndividualProject; 
+export default IndividualProject;
