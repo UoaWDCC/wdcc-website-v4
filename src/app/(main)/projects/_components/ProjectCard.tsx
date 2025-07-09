@@ -14,7 +14,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     return (
         <Link
             className="hover:drop-shadow-cardLift flex w-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-gray-50 transition duration-500 will-change-auto hover:-translate-x-1 hover:-translate-y-1 hover:duration-200"
-            href={`/projects/${year}/${slug}`}
+            href={`/projects/${slug}/${year}`}
         >
             <div className="center-content bg-blue-brand relative h-60 w-full">
                 {project.icon ? (
