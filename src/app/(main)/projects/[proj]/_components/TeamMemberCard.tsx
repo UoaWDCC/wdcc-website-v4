@@ -1,7 +1,7 @@
 import { VariantProps, tv } from "tailwind-variants";
 import { ImageType } from "@/types/misc/Image";
 import ImageCover from "@/components/primitives/ImageCover";
-import placeholder from "@/assets/image/200x200.png";
+import placeholder from "../_assets/placeholder.png";
 
 const card = tv({
     base: "flex w-min flex-col gap-4 rounded-lg p-4",
@@ -41,4 +41,4 @@ const TeamMemberCard = ({ name, role, image, variant }: TeamCardProps) => {
     );
 };
 
-export default TeamMemberCard; 
+export default TeamMemberCard;
