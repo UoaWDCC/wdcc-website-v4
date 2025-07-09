@@ -185,6 +185,16 @@
     @apply col-start-1 col-end-4;
 }
 
+@utility background-certificate-radial {
+    background:
+        radial-gradient(75% 27.5% at 50% 100%, #c8c6d2 5%, rgba(200, 198, 210, 0) 67.5%),
+        radial-gradient(90% 55% at 50% 100%, #79758a 27.5%, rgba(255, 255, 255, 0) 87.5%);
+    filter: blur(25px);
+}
+@utility background-certificate {
+    background: linear-gradient(180deg, #17161d 0%, #052961 50%);
+}
+
 @utility animate-bounce {
     animation-name: bounce;
     animation-duration: 0.6s;
@@ -194,6 +204,17 @@
 
 @utility responsive-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
+}
+
+@utility use-fixed-scale {
+    /* 0.07vw per pixel */
+    --text-3xl: 2.66vw;
+    --text-2xl: 2.24vw;
+    --text-xl: 1.82vw;
+    --text-lg: 1.54vw;
+    --text-md: 1.26vw;
+    --text-base: 1.12vw;
+    --spacing: 0.28vw;
 }
 
 @layer utilities {
