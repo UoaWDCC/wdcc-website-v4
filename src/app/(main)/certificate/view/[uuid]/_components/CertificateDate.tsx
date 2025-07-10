@@ -1,7 +1,7 @@
-import { receiver } from "../_data/mock.data";
+import { CertificateType } from "../_data/mock.data";
 import { CertificateContentBlock } from "./CertificateContentBlock";
 
-export const CertificateDate = () => {
+export const CertificateDate = (receiver: CertificateType) => {
     return (
         <CertificateContentBlock className="items-end text-white">
             <div />
