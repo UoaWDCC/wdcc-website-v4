@@ -2,26 +2,31 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import ProjectHeader from "@/components/layout/pageheaders/ProjectHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
+import { getAllProjects } from "@/payload/collections/projects/getAllProjects";
 import { getProject } from "@/payload/collections/projects/getProject";
 import { parseProject } from "@/payload/collections/projects/parseProject";
-import IndividualProject from "./_component/IndividualProject";
+import IndividualProject from "../_components/IndividualProject";
 
+// [proj]/[year] params
 type Props = {
-    // fullSlug = [year, slug]
-    params: Promise<{ fullSlug: string[] }>;
+    params: Promise<{ proj: string; year: string }>;
 };
 
-// auto generated seo metadata for each project
+export async function generateStaticParams() {
+    const projects = await getAllProjects();
+    return projects.map((project) => ({
+        proj: project.slug,
+        year: project.year,
+    }));
+}
+
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-    const project = await getProjectFromSlug((await params).fullSlug);
-
-    // get og-image of previous page
+    const { proj, year } = await params;
+    const project = await getProjectFromParams({ proj, year });
     const previousImages = (await parent).openGraph?.images ?? [];
-
     if (!project) {
         return {};
     }
-
     return {
         title: project.name.title,
         description: project.description,
@@ -32,8 +37,8 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 }
 
 export default async function Page({ params }: Props) {
-    const project = await getProjectFromSlug((await params).fullSlug);
-
+    const { proj, year } = await params;
+    const project = await getProjectFromParams({ proj, year });
     return (
         <StandardPageLayout>
             <ProjectHeader
@@ -47,16 +52,14 @@ export default async function Page({ params }: Props) {
     );
 }
 
-async function getProjectFromSlug(fullSlug: string[]) {
-    if (fullSlug.length != 2) {
+async function getProjectFromParams(params: { proj: string; year: string }) {
+    const { proj, year } = params;
+    if (!proj || !year) {
         notFound();
     }
-
-    const [year, slug] = fullSlug;
-    const cmsProject = await getProject(year, slug);
+    const cmsProject = await getProject(year, proj);
     if (!cmsProject) {
         notFound();
     }
-
     return parseProject(cmsProject);
 }
