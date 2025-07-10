@@ -207,14 +207,20 @@
 }
 
 @utility use-fixed-scale {
-    /* 0.07vw per pixel */
-    --text-3xl: 2.66vw;
-    --text-2xl: 2.24vw;
-    --text-xl: 1.82vw;
-    --text-lg: 1.54vw;
-    --text-md: 1.26vw;
-    --text-base: 1.12vw;
-    --spacing: 0.28vw;
+    /* 0.06vw per pixel */
+    --unit: 0.055vw;
+    --spacing: calc(4 * var(--unit));
+    /* 
+    rem * px/rem * unit 
+    */
+    --text-base: calc(1 * 16 * var(--unit));
+    --text-md: calc(1.125 * 16 * var(--unit));
+    --text-lg: calc(1.375 * 16 * var(--unit));
+    --text-xl: calc(1.625 * 16 * var(--unit));
+    --text-2xl: calc(2 * 16 * var(--unit));
+    --text-3xl: calc(2.375 * 16 * var(--unit));
+    --text-4xl: calc(3 * 16 * var(--unit));
+    --text-5xl: calc(4 * 16 * var(--unit));
 }
 
 @layer utilities {

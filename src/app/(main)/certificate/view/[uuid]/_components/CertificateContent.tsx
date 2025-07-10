@@ -1,9 +1,9 @@
 import Link from "next/link";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
-import { receiver } from "../_data/mock.data";
+import { CertificateType } from "../_data/mock.data";
 import { CertificateContentBlock } from "./CertificateContentBlock";
 
-export const CertificateContent = () => {
+export const CertificateContent = (receiver: CertificateType) => {
     return (
         <CertificateContentBlock>
             <div className="flex flex-col gap-6">
