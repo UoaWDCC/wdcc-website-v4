@@ -90,6 +90,14 @@ export const EventsCollection: CollectionConfig = {
                     required: true,
                     displayPreview: true,
                 },
+                {
+                    name: "gallery",
+                    type: "upload",
+                    relationTo: "media",
+                    displayPreview: true,
+                    maxDepth: 0,
+                    hasMany: true,
+                },
             ],
         },
         {
