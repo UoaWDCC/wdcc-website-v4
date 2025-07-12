@@ -5,7 +5,7 @@ type CertificateBorderType = {
     children: ReactNode;
 } & HTMLAttributes<HTMLDivElement>;
 
-export const CertificateBorder = ({ children, ...props }: CertificateBorderType) => {
+export const CertificatePadding = ({ children, ...props }: CertificateBorderType) => {
     return (
         <div {...props} className={cn("text-md size-full p-16", props.className)}>
             {children}

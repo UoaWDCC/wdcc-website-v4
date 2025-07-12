@@ -1,10 +1,11 @@
 import { Metadata } from "next";
-import { CertificateBorder } from "./_components/CertificateBorder";
+import CertificateBase from "./_components/CertificateBase";
 import { CertificateContainer } from "./_components/CertificateContainer";
 import { CertificateContent } from "./_components/CertificateContent";
 import { CertificateDate } from "./_components/CertificateDate";
+import { CertificatePadding } from "./_components/CertificatePadding";
 import { CertificateSignature } from "./_components/CertificateSignature";
-import { receiver } from "./_data/mock.data";
+import { receivers } from "./_data/mock.data";
 
 export const metadata: Metadata = {
     openGraph: {
@@ -20,20 +21,19 @@ export const metadata: Metadata = {
 export default async function Page({ params }: { params: Promise<{ uuid: string }> }) {
     const { uuid } = await params;
 
+    const receiver = receivers.find((receiver) => receiver.uuid === uuid);
+
+    if (!receiver) return <p>not found</p>;
+
     return (
-        <div className="background-certificate use-fixed-scale relative h-dvh w-dvw p-16">
-            {/* bad code, erm anyways */}
-            <div className="absolute inset-0 z-10 size-full p-16">
-                <div className="size-full border-[0.07vw] border-white/20" />
-            </div>
-            <div className="background-certificate-radial absolute inset-0"></div>
-            <CertificateBorder>
+        <CertificateBase>
+            <CertificatePadding>
                 <CertificateContainer>
                     <CertificateContent {...receiver} />
                     <CertificateSignature />
                     <CertificateDate {...receiver} />
                 </CertificateContainer>
-            </CertificateBorder>
-        </div>
+            </CertificatePadding>
+        </CertificateBase>
     );
 }
