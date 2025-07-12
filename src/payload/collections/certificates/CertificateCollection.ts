@@ -20,7 +20,7 @@ export const CertificateCollection: CollectionConfig = {
         {
             name: "project",
             type: "relationship",
-            relationTo: SLUG.PROJECTS,
+            relationTo: SLUG.PROJECT,
             required: true,
         },
         {

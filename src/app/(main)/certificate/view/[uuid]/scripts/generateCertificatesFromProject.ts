@@ -11,7 +11,7 @@ async function seed() {
     console.log("fetching all projects...");
 
     const projects = await payload.find({
-        collection: SLUG.PROJECTS,
+        collection: SLUG.PROJECT,
         pagination: false,
     });
 
