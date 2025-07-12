@@ -1,7 +1,8 @@
 import type { CollectionConfig } from "payload";
+import { SLUG } from "@/utils/enums/slug";
 
-export const MediaCollection: CollectionConfig = {
-    slug: "media",
+export const CertificateCollection: CollectionConfig = {
+    slug: SLUG.CERTIFICATE,
     access: {
         read: () => true,
     },
@@ -9,6 +10,23 @@ export const MediaCollection: CollectionConfig = {
         {
             name: "name",
             type: "text",
+            required: true,
+        },
+        {
+            name: "role",
+            type: "text",
+            required: true,
+        },
+        {
+            name: "project",
+            type: "relationship",
+            relationTo: SLUG.PROJECTS,
+            required: true,
+        },
+        {
+            name: "style",
+            type: "text",
+            defaultValue: "default-2025",
             required: true,
         },
     ],

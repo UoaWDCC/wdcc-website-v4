@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { CertificateAbsBorder } from "./CertificateAbsBorder";
 
-const CertificateBase = ({ children, style }: { children: ReactNode; style?: string }) => {
+export const CertificateBase = ({ children, style = "" }: { children: ReactNode; style?: string }) => {
     switch (style) {
         // dark blue with pastel blue glow
         default: {
@@ -16,4 +16,3 @@ const CertificateBase = ({ children, style }: { children: ReactNode; style?: str
         }
     }
 };
-export default CertificateBase;

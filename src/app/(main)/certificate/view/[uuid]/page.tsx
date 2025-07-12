@@ -1,11 +1,12 @@
 import { Metadata } from "next";
-import CertificateBase from "./_components/CertificateBase";
+import { notFound } from "next/navigation";
+import { getCertificate } from "@/payload/collections/certificates/getCertificate";
+import { CertificateBase } from "./_components/CertificateBase";
 import { CertificateContainer } from "./_components/CertificateContainer";
 import { CertificateContent } from "./_components/CertificateContent";
 import { CertificateDate } from "./_components/CertificateDate";
 import { CertificatePadding } from "./_components/CertificatePadding";
 import { CertificateSignature } from "./_components/CertificateSignature";
-import { receivers } from "./_data/mock.data";
 
 export const metadata: Metadata = {
     openGraph: {
@@ -21,9 +22,11 @@ export const metadata: Metadata = {
 export default async function Page({ params }: { params: Promise<{ uuid: string }> }) {
     const { uuid } = await params;
 
-    const receiver = receivers.find((receiver) => receiver.uuid === uuid);
+    const receiver = await getCertificate(uuid);
 
-    if (!receiver) return <p>not found</p>;
+    if (!receiver) {
+        notFound();
+    }
 
     return (
         <CertificateBase>
