@@ -1,4 +1,4 @@
-import { CertificateType } from "../_data/mock.data";
+import { CertificateType } from "@/types/models/Certificate";
 import { CertificateContentBlock } from "./CertificateContentBlock";
 
 export const CertificateDate = (receiver: CertificateType) => {
@@ -7,7 +7,7 @@ export const CertificateDate = (receiver: CertificateType) => {
             <div />
             {/* spacer */}
             <h3 className="w-min text-2xl font-bold whitespace-nowrap">
-                {receiver.date.month} {receiver.date.year}
+                {receiver.name} {receiver.project.year}
             </h3>
         </CertificateContentBlock>
     );

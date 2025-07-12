@@ -1,6 +1,5 @@
-import Link from "next/link";
+import { CertificateType } from "@/types/models/Certificate";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
-import { CertificateType } from "../_data/mock.data";
 import { CertificateContentBlock } from "./CertificateContentBlock";
 
 export const CertificateContent = (receiver: CertificateType) => {
@@ -23,10 +22,8 @@ export const CertificateContent = (receiver: CertificateType) => {
                     Has participated in a year long pro-bono project at the Web development and consultant club as
                     <br />
                     <span className="font-bold underline">{receiver.role}</span> for{" "}
-                    <Link href={receiver.project.link} className="font-bold underline">
-                        {receiver.project.name}
-                    </Link>{" "}
-                    during the year {receiver.date.year}.
+                    <strong className="font-bold">{receiver.project.name}</strong> during the year{" "}
+                    {receiver.project.year}.
                 </p>
                 <p className="w-[45.5vw]">
                     For his active and significant participation in this project we, web development and consultant club
