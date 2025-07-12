@@ -4,7 +4,7 @@ import { technologiesList } from "@/assets/svg/technologies";
 import { SLUG } from "@/utils/enums/slug";
 
 export const ProjectsCollection: CollectionConfig = {
-    slug: SLUG.PROJECTS,
+    slug: SLUG.PROJECT,
     access: {
         read: () => true,
     },
