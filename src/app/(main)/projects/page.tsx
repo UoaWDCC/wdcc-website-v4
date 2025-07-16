@@ -28,7 +28,7 @@ export default async function ProjectsPage() {
                 primaryButton={{
                     label: "View all projects",
                     href: "/projects/all",
-                // }}
+                }}
                 secondaryButton={{ label: "Past WDCC projects", href: "/projects/all" }}
             />
 
