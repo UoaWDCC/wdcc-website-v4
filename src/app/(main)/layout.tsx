@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { figtree } from "@/assets/fonts";
 import "@/assets/global.css";
 import { ReduceMotionProvider, ScrollProvider, WebGLProvider } from "@/components/contexts";
+import { RoutingDevTools } from "@/components/devtools/DevToolsProvider";
 
 // SEO
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${figtree.className} antialiased`}>
+                <RoutingDevTools />
                 <ReduceMotionProvider>
                     <WebGLProvider>
                         <ScrollProvider>{children}</ScrollProvider>
