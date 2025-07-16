@@ -1,17 +1,14 @@
 import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
-import InfoPill from "@/components/misc/InfoPill";
 import { getFaqPage } from "@/payload/globals/faqpage/getFaqPage";
 import { parseFaqPage } from "@/payload/globals/faqpage/parseFaqPage";
+import InfoPill from "../_components/InfoPill";
 import { FaqSelector } from "./_components/FaqSelector";
-import { faqData as hardCodedFaq } from "./_data/faq.data";
+import { faqData as faqFallbackData } from "./_data/faq.data";
 
 export default async function FaqPage() {
-    //try get cms, if no cms then get hardCoded Faq
-    let faqData = parseFaqPage(await getFaqPage());
-    if (!faqData) {
-        faqData = hardCodedFaq;
-    }
+    const faqData = parseFaqPage(await getFaqPage()) ?? faqFallbackData;
+
     const minHeight: number = 420 + Math.max(...faqData.sections.map((section) => section.faqs.length)) * 50;
 
     return (

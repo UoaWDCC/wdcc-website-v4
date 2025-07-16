@@ -3,10 +3,6 @@ import { AboutPage as CmsAboutPage, Media } from "@/payload/payload-types";
 import { AboutPage } from "../../../types/pages/AboutPage";
 
 export const parseAboutPage = (CmsAboutPage: CmsAboutPage): AboutPage | undefined => {
-    if (!CmsAboutPage) {
-        return undefined;
-    }
-
     //need to move this to all parsers
     const getImageUrl = (image?: Media) => image?.url ?? placeholder;
     const getImageAlt = (image?: Media) => image?.url ?? "placeholder";

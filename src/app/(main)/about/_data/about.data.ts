@@ -1,6 +1,6 @@
 import { AboutPage } from "@/types/pages/AboutPage";
 import placeholder from "@/assets/image/600x400.png";
-import endImage from "@/assets/image/industry-night-1.png";
+import endImageSrc from "@/assets/image/industry-night-1.png";
 
 export const aboutData: AboutPage = {
     header: {
@@ -38,7 +38,7 @@ export const aboutData: AboutPage = {
         subscript: `(identity withheld)`,
     },
     endImage: {
-        image: endImage,
+        image: endImageSrc,
         imageAlt: `Industry Night 2021 or something idk`,
     },
 };
