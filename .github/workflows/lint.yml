@@ -17,24 +17,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Cache Node.js dependencies
-      - name: Cache dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.pnpm-store
-            ${{ github.workspace }}/.next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('pnpm-lock.yaml') }}-${{ hashFiles('**/*.ts', '**/*.tsx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('pnpm-lock.yaml') }}-
-
       # Set up Pnpm
       - name: Set up Pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 10
+
+      # set up node, restoring pnpm cache
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "pnpm"
 
       # Install dependencies
       - name: Install dependencies
