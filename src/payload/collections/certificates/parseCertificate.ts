@@ -7,6 +7,7 @@ export const parseCertificate = (certificate: Certificate | null): CertificateTy
     }
 
     return {
+        id: certificate.id,
         name: certificate.name,
         role: certificate.role,
         project: {
