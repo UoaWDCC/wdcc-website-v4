@@ -17,18 +17,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Cache Node.js dependencies
-      - name: Cache node_modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('pnpm-lock.yaml') }}
-
       # Set up Pnpm
       - name: Set up Pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 10
+
+      # set up node, restoring pnpm cache
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "pnpm"
 
       # Install dependencies
       - name: Install dependencies

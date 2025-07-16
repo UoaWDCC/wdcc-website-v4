@@ -6,6 +6,7 @@
         "dev": "next dev --turbo",
         "build": "next build",
         "build:analyze": "cross-env ANALYZE=true next build",
+        "build:turbo": "next build --turbo",
         "start": "next start",
         "deploy:staging": "fly deploy --config fly.staging.toml",
         "lint": "next lint --fix",

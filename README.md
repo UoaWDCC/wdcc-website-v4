@@ -12,7 +12,7 @@ Hand-crafted with care by [tech team 2025 🥬](https://wdcc.co.nz/about/team)
 > **Next version:** v14.2.16 \
 > **css-styling:** mainly tailwind \
 > **Path:** src/app/ \
-> **Package Installer:** PnPm@9.14.2
+> **Package Installer:** pnpm v10
 
 Please install [Volta](https://volta.sh/) and make sure you have pnpm installed (you can use `volta install pnpm` ) before starting development! If it's working correctly, Volta should automatically detect (from package.json) and switch to the correct node version for this project. Check this by running `node --version` in the terminal.
 
@@ -21,7 +21,7 @@ Please install [Volta](https://volta.sh/) and make sure you have pnpm installed 
 git clone https://github.com/UoaWDCC/wdcc-website-v4.
 
 # change directory
-cd .\wdcc-website-v4\
+cd ./wdcc-website-v4/
 
 # install dependencies
 pnpm install
