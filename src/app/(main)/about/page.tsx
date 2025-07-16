@@ -1,13 +1,10 @@
 import Image from "next/image";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { getAboutPage } from "@/payload/globals/aboutpage/getAboutPage";
-import { parseAboutPage } from "@/payload/globals/aboutpage/parseAboutPage";
 import { AboutPageHeader, GenInfo, NestedDiv, OurPeople, Quote, WhyJoin } from "./_components";
-import { aboutData as aboutDataFallback } from "./_data/about.data";
 
 export default async function AboutPage() {
-    // TODO: standardize fetching, parsing, and removing of fallback data
-    const aboutData = parseAboutPage(await getAboutPage()) ?? aboutDataFallback;
+    const aboutData = await getAboutPage();
 
     return (
         <StandardPageLayout navColor="dark">
