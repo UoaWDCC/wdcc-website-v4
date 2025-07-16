@@ -1,5 +1,5 @@
 import { Exec } from "@/types/models/Exec";
-import ExecCard from "./execteam/ExecCard";
+import ExecCard from "./execcard";
 
 type ExecTeamProps = {
     title: string;
