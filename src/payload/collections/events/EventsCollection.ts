@@ -3,7 +3,7 @@ import { EventCategories } from "@/types/models/Event";
 import { SLUG } from "@/utils/enums/slug";
 
 export const EventsCollection: CollectionConfig = {
-    slug: SLUG.EVENTS,
+    slug: SLUG.EVENT,
     access: {
         read: () => true,
     },
