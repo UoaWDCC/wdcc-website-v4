@@ -12,6 +12,15 @@ const redirects: Record<string, string> = {
     miku: "https://www.youtube.com/watch?v=28FVxYQuLOQ",
 };
 
+export async function generateStaticParams() {
+    const arr: string[] = ["staging", "wdcc", "go", "pass", "passport", "check", "membership", "checker", "miku"];
+
+    return arr.map((url) => ({
+        tinyurl: url,
+    }));
+}
+
+
 /** Redirects - like tinyurl at wdcc.co.nz/r/[...] */
 export default async function RedirectPage({ params }: { params: Promise<{ tinyurl: string }> }) {
     const tinyurl = (await params).tinyurl;
