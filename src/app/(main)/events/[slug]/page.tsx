@@ -4,6 +4,14 @@ import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayo
 import { getEvent } from "@/payload/collections/events/getEvent";
 import { parseEvent } from "@/payload/collections/events/parseEvent";
 import IndividualEvent from "./_components/IndividualEvent";
+import { getAllEvents } from "@/payload/collections/events/getAllEvents";
+
+export async function generateStaticParams() {
+    const events = await getAllEvents()
+    return events.map((event) => ({
+        slug: event.slug,
+    }));
+}
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug;
