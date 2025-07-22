@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 import EventHeader from "@/components/layout/pageheaders/EventHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
+import { getAllEvents } from "@/payload/collections/events/getAllEvents";
 import { getEvent } from "@/payload/collections/events/getEvent";
 import { parseEvent } from "@/payload/collections/events/parseEvent";
 import IndividualEvent from "./_components/IndividualEvent";
-import { getAllEvents } from "@/payload/collections/events/getAllEvents";
 
 export async function generateStaticParams() {
-    const events = await getAllEvents()
+    const events = await getAllEvents();
     return events.map((event) => ({
         slug: event.slug,
     }));
