@@ -20,7 +20,6 @@ export async function generateStaticParams() {
     }));
 }
 
-
 /** Redirects - like tinyurl at wdcc.co.nz/r/[...] */
 export default async function RedirectPage({ params }: { params: Promise<{ tinyurl: string }> }) {
     const tinyurl = (await params).tinyurl;
