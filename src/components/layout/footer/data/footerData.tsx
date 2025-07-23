@@ -99,7 +99,7 @@ export const footerData: FooterData = {
         },
         {
             name: "Discord",
-            href: "https://discord.gg/CZX8aSSrGj",
+            href: "https://discord.gg/GpZrRjbtVs",
             icon: <social.discord />,
         },
         {

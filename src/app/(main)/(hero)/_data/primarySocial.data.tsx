@@ -9,7 +9,7 @@ export type SocialLinkType = {
 export const primarySocial = [
     {
         icon: <social.discord />,
-        link: "https://discord.gg/CZX8aSSrGj",
+        link: "https://discord.gg/GpZrRjbtVs",
     },
     {
         icon: <social.instagram />,
