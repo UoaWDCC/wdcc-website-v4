@@ -156,11 +156,11 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
                         </Button>
                         <Button
                             variant={{ style: "primary", color: "blue" }}
-                            href="https://wdccxsesahackathon.com/"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform?usp=sharing"
                             className="hidden items-center leading-none md:flex"
                             newTab
                         >
-                            <span className="py-1">WDCCxSESA Hackathon</span> <Arrow />
+                            <span className="py-1">Join WDCC</span> <Arrow />
                         </Button>
                     </div>
                 </div>

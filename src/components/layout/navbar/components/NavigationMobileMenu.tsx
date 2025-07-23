@@ -94,9 +94,9 @@ const NavigationMobileMenu = ({ links, className, variant }: NavbarProps) => {
                     </Button>
                     <Button
                         variant={{ style: "secondary", color: "light", isJustified: true }}
-                        href="https://wdccxsesahackathon.com/"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform?usp=sharing"
                     >
-                        WDCCxSESA Hackathon <Arrow />
+                        Join WDCC <Arrow />
                     </Button>
 
                     {/*
