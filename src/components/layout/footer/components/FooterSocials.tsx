@@ -21,6 +21,7 @@ export default function FooterSocials({ socials, className, ...props }: FooterSo
                 <Anchor
                     key={social.name}
                     href={social.href}
+                    newTab
                     className="[&>svg]:fill-white [&>svg]:transition [&>svg]:duration-200 [&>svg]:hover:fill-blue-200"
                 >
                     {social.icon}
