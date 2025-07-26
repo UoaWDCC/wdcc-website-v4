@@ -1,6 +1,6 @@
-import { VariantProps, tv } from "tailwind-variants";
-import { ImageType } from "@/types/misc/Image";
-import ImageCover from "@/components/primitives/ImageCover";
+import { type VariantProps, tv } from "tailwind-variants";
+import type { ImageType } from "@/types/misc/Image";
+import { ImageFit } from "@/components/primitives";
 import placeholder from "../_assets/placeholder.png";
 
 const card = tv({
@@ -31,7 +31,13 @@ const TeamMemberCard = ({ name, role, image, variant }: TeamCardProps) => {
     return (
         <div className={card(variant)}>
             <div className="h-[150px] w-[200px] rounded-md bg-gray-50">
-                <ImageCover src={image?.src ?? placeholder} alt={image?.alt ?? name} height={"150px"} width="200px" />
+                <ImageFit
+                    src={image?.src ?? placeholder}
+                    alt={image?.alt ?? name}
+                    height={"150px"}
+                    width="200px"
+                    objectFit="cover"
+                />
             </div>
             <div className="space-2">
                 <p className="font-semibold">{name}</p>
