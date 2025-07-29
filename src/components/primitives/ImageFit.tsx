@@ -1,5 +1,5 @@
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Image, { StaticImageData } from "next/image";
+import type { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Image, { type StaticImageData } from "next/image";
 import { cn } from "@/utils/misc";
 
 export type ImageFitProps = {
@@ -8,9 +8,10 @@ export type ImageFitProps = {
     width?: string;
     height?: string;
     className?: string;
+    objectFit?: "cover" | "contain";
 };
 
-const ImageFit = ({ src, alt, width = "150px", height = "80px", className }: ImageFitProps) => {
+const ImageFit = ({ src, alt, width = "150px", height = "80px", className, objectFit = "contain" }: ImageFitProps) => {
     return (
         <div className={cn("", className)} style={{ position: "relative", minWidth: width, minHeight: height }}>
             <Image
@@ -20,7 +21,7 @@ const ImageFit = ({ src, alt, width = "150px", height = "80px", className }: Ima
                 alt={alt}
                 src={src}
                 style={{
-                    objectFit: "contain",
+                    objectFit,
                 }}
             />
         </div>

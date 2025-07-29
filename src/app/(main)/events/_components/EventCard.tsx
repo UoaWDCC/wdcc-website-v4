@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Event } from "@/types/models/Event";
-import ImageCover from "@/components/primitives/ImageCover";
+import type { Event } from "@/types/models/Event";
+import { ImageFit } from "@/components/primitives";
 
 type EventCardProps = {
     event: Event;
@@ -22,11 +22,12 @@ export default function EventCard({ event }: EventCardProps) {
             href={`/events/${slug}`}
             className="hover:drop-shadow-cardLift inline-flex cursor-pointer flex-col items-end justify-start gap-9 overflow-hidden rounded-2xl bg-gray-50 transition duration-500 will-change-auto hover:-translate-x-1 hover:-translate-y-1 hover:duration-200"
         >
-            <ImageCover
+            <ImageFit
                 src={event.thumbnail.src}
                 height="240px"
                 alt={event.thumbnail.alt}
                 className="w-full rounded-2xl"
+                objectFit="cover"
             />
 
             <div className="flex flex-col items-center justify-start gap-6 self-stretch px-8 pb-8">
