@@ -1,10 +1,9 @@
 "use server";
 
 import { CollectionSlug } from "payload";
+import { getPayload } from "@/payload/mock";
 import { Event } from "@/payload/payload-types";
 import { SLUG } from "@/utils/enums/slug";
-import { getPayload } from "@/payload/mock";
-
 
 // return Event
 export const getEvent = async (slug: string) => {

@@ -1,9 +1,8 @@
 "use server";
 
-import { CmsFetchError, CmsParseError } from "@/utils/errors/CmsErrors";
 import { getPayload } from "@/payload/mock";
+import { CmsFetchError, CmsParseError } from "@/utils/errors/CmsErrors";
 import { parseAboutPage } from "./parseAboutPage";
-
 
 export const getAboutPage = async () => {
     const payload = await getPayload();

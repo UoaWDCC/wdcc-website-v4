@@ -1,8 +1,7 @@
 "use server";
 
-import { FaqPage } from "@/payload/payload-types";
 import { getPayload } from "@/payload/mock";
-
+import { FaqPage } from "@/payload/payload-types";
 
 export const getFaqPage = async (): Promise<FaqPage> => {
     const payload = await getPayload();
