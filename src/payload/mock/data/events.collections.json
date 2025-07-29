@@ -1,0 +1,142 @@
+[
+    {
+        "title": "WDCC x CSEA x FilmSoc: Into the Spider-Verse Private Screening! 🎬🕷️",
+        "slug": "movie-night-2024",
+        "time": "2024-09-20T05:30:00.000Z",
+        "location": "Academy Cinemas (44 Lorne Street)",
+        "description": "Calling all tech lovers and film buffs—we took a well-deserved break from assignments with an exclusive private screening of Spider-Man: Into the Spider-Verse! 🕷️🎥",
+        "category": "Social",
+        "thumbnail": {
+            "src": "/api/media/file/cover%20(6).png",
+            "alt": "Movie night advertising graphic."
+        },
+        "page": {
+            "description": "Calling all tech lovers and film buffs—we took a well-deserved break from assignments with an exclusive private screening of Spider-Man: Into the Spider-Verse! 🕷️🎥 In collaboration with WDCC, CSEA, and FilmSoc, attendees enjoyed a premium movie experience at Academy Cinemas, surrounded by fellow tech enthusiasts and movie lovers. It was the perfect way to unwind, immerse ourselves in stunning animation, and geek out over one of the best superhero films ever made! 🎞️✨ With koha-based tickets and limited spots, this was a sold-out event, proving once again that great movies and great company make for an unforgettable night. A huge thanks to everyone who joined—we can’t wait for the next one! 🍿💻🎬",
+            "image": {
+                "src": "/api/media/file/cover%20(6).png",
+                "alt": "Movie night advertising graphic."
+            }
+        },
+        "partners": []
+    },
+    {
+        "title": "WDCC x Partly: Find Your Future in Tech! 🚀💼",
+        "slug": "partly-find-your-future-2024",
+        "time": "2024-08-06T06:00:00.000Z",
+        "location": "405-430",
+        "description": "Still searching for that perfect summer internship or graduate role? WDCC teamed up with our Gold sponsor, Partly, to help students gain insider insights into the hiring process 🔥",
+        "category": "Other",
+        "thumbnail": {
+            "src": "/api/media/file/cover%20(5).png",
+            "alt": "Find Your Future with Partly advertising graphic."
+        },
+        "page": {
+            "description": "Still searching for that perfect summer internship or graduate role? WDCC teamed up with our Gold sponsor, Partly, to help students gain insider insights into the hiring process and what it takes to succeed in the tech industry. Attendees had the chance to hear from Dan, Partly’s Head of Talent Cultivation, who shared the company’s incredible journey to becoming New Zealand’s largest startup and what makes a standout candidate. 💡 Jo, a recent graduate and now a software engineer at Partly, also gave firsthand insights into the transition from university to industry. Beyond the talks, students engaged in networking, Q&As, and problem-solving discussions, making meaningful connections while enjoying some free food 😋. A huge thank you to Partly and everyone who attended! We hope this event helped pave the way for exciting career opportunities ahead. 🚀💼",
+            "image": {
+                "src": "/api/media/file/cover%20(5).png",
+                "alt": "Find Your Future with Partly advertising graphic."
+            }
+        },
+        "partners": []
+    },
+    {
+        "title": "League of Legends 1v1 Tournament: The Ultimate Showdown! 🎮🔥",
+        "slug": "league-of-legends-2024",
+        "time": "2024-10-01T16:00:00.000Z",
+        "location": "UoA Esports Arena",
+        "description": "Until next time—stay cracked and keep climbing! 🚀",
+        "category": "Competition",
+        "thumbnail": {
+            "src": "/api/media/file/cover%20(4).png",
+            "alt": "League of Legends advertising graphic."
+        },
+        "page": {
+            "description": "On October 2nd, the UoA Esports Arena transformed into a battlefield as players clashed in our League of Legends 1v1 Tournament! With only 32 spots up for grabs, the competition was fierce as challengers stepped onto the Rift to prove their skills. The night was packed with epic plays, clutch outplays, and intense duels, as each match brought us closer to crowning the ultimate champion. Between games, players bonded over their shared love for League, enjoyed some free food, and hyped up the competition. In the end, our top two contenders walked away with $100 and $50 RP gift cards, securing not just victory but ultimate bragging rights. 💪🏆 A huge shoutout to everyone who participated and made the event such a blast! Whether you dominated the Rift or just came for the vibes, we loved seeing the community come together. Until next time—stay cracked and keep climbing! 🚀",
+            "image": {
+                "src": "/api/media/file/cover%20(4).png",
+                "alt": "League of Legends advertising graphic."
+            }
+        },
+        "partners": []
+    },
+    {
+        "title": "WDCC Journey to Web Dev 2: Diving into JavaScript & Backend Development! 💻🚀 ",
+        "slug": "journey-to-web-dev-2-2024",
+        "time": "2024-04-19T23:00:00.000Z",
+        "location": "405-430 & 405-422",
+        "description": "Our Journey to Web Dev series continued with an exciting deep dive into JavaScript, Node.js, and Express.js, where attendees leveled up their skills by building the backend of their contacts app!",
+        "category": "Workshop",
+        "thumbnail": {
+            "src": "/api/media/file/cover%20(3).png",
+            "alt": "Journey to web dev JS/Node.js/Express.js advertising graphic."
+        },
+        "page": {
+            "description": "Our Journey to Web Dev series continued with an exciting deep dive into JavaScript, Node.js, and Express.js, where attendees leveled up their skills by building the backend of their contacts app! This hands-on workshop was all about bringing web apps to life, teaching participants how to set up a server, create APIs, and seamlessly connect the frontend to the backend. Whether attendees were total beginners or looking to sharpen their backend development skills, everyone got the chance to code, learn, and collaborate in a supportive environment. No workshop is complete without some free food and snacks 🍕, and of course, plenty of aha! moments as concepts clicked into place. From JavaScript fundamentals to building functional APIs, this session set the stage for even bigger web development projects ahead. A huge shoutout to everyone who joined—we can’t wait to see what you build next! 🔥💡 Stay tuned for more workshops in the series!",
+            "image": {
+                "src": "/api/media/file/cover%20(3).png",
+                "alt": "Journey to web dev JS/Node.js/Express.js advertising graphic."
+            }
+        },
+        "partners": []
+    },
+    {
+        "title": "WDCC Industry Night: Connecting Students with Top Tech Companies! 💼💻",
+        "slug": "industry-night-2024",
+        "time": "2024-07-17T06:00:00.000Z",
+        "location": "401 - 439",
+        "description": "Our highly anticipated Industry Night brought together students and some of the biggest names in tech for an evening of networking, insights, and career opportunities! 🚀",
+        "category": "Other",
+        "thumbnail": {
+            "src": "/api/media/file/cover%20(2).png",
+            "alt": "Industry Night advertising graphic."
+        },
+        "page": {
+            "description": "Our highly anticipated Industry Night brought together students and some of the biggest names in tech for an evening of networking, insights, and career opportunities! 🚀 Attendees had the chance to hear directly from recruiters and representatives from top companies like Partly, KPMG, EY, Sandfield, Datacom, Potentia, Serato, and more! They shared valuable advice on what they look for in interns and graduates, giving students a unique inside look at landing roles in the industry. Beyond the presentations, the night was filled with meaningful conversations, career tips, and plenty of food! 🍕😋 Students connected with professionals, asked burning questions, and walked away with new insights and potential career opportunities. A massive thank you to everyone who attended and to our amazing sponsors for making this event such a success! We can’t wait to see where your careers take you next. 🚀📈",
+            "image": {
+                "src": "/api/media/file/cover%20(2).png",
+                "alt": "Industry Night advertising graphic."
+            }
+        },
+        "partners": []
+    },
+    {
+        "title": "WDCC Journey to Web Dev 1: HTML/CSS",
+        "slug": "journey-to-web-dev-1-2024",
+        "time": "2024-03-15T22:00:00.000Z",
+        "location": "260 - 005",
+        "description": "Our Journey to Web Dev series kicked off with an exciting introduction to HTML and CSS, where attendees got hands-on experience in frontend development! 🎉",
+        "category": "Workshop",
+        "thumbnail": {
+            "src": "/api/media/file/cover.png",
+            "alt": "Journey to web dev HTML/CSS advertising graphic."
+        },
+        "page": {
+            "description": "Our Journey to Web Dev series kicked off with an exciting introduction to HTML and CSS, where attendees got hands-on experience in frontend development! 🎉 This workshop was all about structuring and styling web pages, laying the foundation for building a fully functional contacts app. From learning the basics of HTML to crafting sleek and responsive designs with CSS, participants explored the core skills needed to create user-friendly web interfaces. With the help of experienced mentors, everyone had the chance to turn ideas into reality, experimenting with different layouts and styling techniques. And of course, no WDCC workshop is complete without free food and great vibes! 🍕 A huge thank you to everyone who joined us for this hands-on session! Whether it was your first time coding or a refresher on frontend fundamentals, we loved seeing your creativity come to life. Stay tuned for Part 2, where we take things to the backend with JavaScript, Node.js, and Express.js! 🚀",
+            "image": {
+                "src": "/api/media/file/cover.png",
+                "alt": "Journey to web dev HTML/CSS advertising graphic."
+            }
+        },
+        "partners": []
+    },
+    {
+        "title": "Projects Celebration Evening: A Night to Remember! 🎉",
+        "slug": "projects-celebration-evening-2024",
+        "time": "2024-10-20T17:30:00.000Z",
+        "location": "Birdcage Tavern",
+        "description": "As the semester wrapped up, we gathered at The Birdcage Tavern for an unforgettable Projects Celebration Evening on October 21st. With free food, drinks, and—new this year...",
+        "category": "Social",
+        "thumbnail": {
+            "src": "/api/media/file/cover.webp",
+            "alt": "Projects Celebration Evening 21st October 2024 6-9pm at Birdside Tavern"
+        },
+        "page": {
+            "description": "As the semester wrapped up, we gathered at The Birdcage Tavern for an unforgettable Projects Celebration Evening on October 21st. With free food, drinks, and—new this year—a photo booth, the night was all about celebrating the incredible projects everyone had worked on throughout the semester. It was great to see so many familiar faces, project teams coming together one last time, and everyone sharing laughs, memories, and, of course, some well-earned drinks! The energy in the room was a testament to the hard work and dedication that went into each project. From passionate discussions about milestones to striking a pose at the photo booth, the evening was a perfect way to close out the year. A huge thank you to everyone who came along and made the night so special. Until next time—keep building, keep creating, and keep collaborating! 🚀✨",
+            "image": {
+                "src": "/api/media/file/cover.webp",
+                "alt": "Projects Celebration Evening 21st October 2024 6-9pm at Birdside Tavern"
+            }
+        },
+        "partners": []
+    }
+]

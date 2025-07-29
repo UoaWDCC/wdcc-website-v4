@@ -1,7 +1,7 @@
 "use server";
 
+import { getPayload } from "@/payload/mock";
 import { CmsFetchError, CmsParseError } from "@/utils/errors/CmsErrors";
-import { getPayload } from "@/utils/payload";
 import { parseAboutPage } from "./parseAboutPage";
 
 export const getAboutPage = async () => {

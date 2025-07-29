@@ -1,8 +1,11 @@
-import { getPayload as getPayloadInstance } from "payload";
+import { BasePayload, getPayload as getPayloadInstance } from "payload";
 import { Media } from "@/payload/payload-types";
 import configPromise from "../../../payload.config";
+import { getMockPayload } from "./mockPayload";
 
-export async function getPayload(): ReturnType<typeof getPayloadInstance> {
+export async function getPayload(): Promise<BasePayload> {
+    if (process.env.NODE_ENV !== "production" && process.env.USE_MOCK_PAYLOAD === "true") return getMockPayload();
+
     return getPayloadInstance({ config: await configPromise });
 }
 
@@ -14,6 +17,17 @@ export async function getPayload(): ReturnType<typeof getPayloadInstance> {
  * @param media The media object from Payload.
  */
 export function media(media: Media | number): Media & { src: string } {
+    if (process.env.NODE_ENV !== "production" && process.env.USE_MOCK_PAYLOAD === "true") {
+        return {
+            id: 1,
+            alt: "",
+            updatedAt: "",
+            createdAt: "",
+            url: "/",
+            src: "/",
+        };
+    }
+
     if (typeof media === "number") {
         // Probably should automatically requery for an actual media object here.
         // See https://payloadcms.com/community-help/discord/property-sizes-does-not-exist-on-type-number-media
