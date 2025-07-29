@@ -1,7 +1,8 @@
 "use server";
 
 import { SLUG } from "@/utils/enums/slug";
-import { getPayload } from "@/utils/payload";
+import { getPayload } from "@/payload/mock";
+
 
 // return all events
 export const getAllEvents = async () => {

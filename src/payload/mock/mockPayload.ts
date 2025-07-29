@@ -1,11 +1,11 @@
 import { BasePayload } from "payload";
-import G_about from "./mock/about.global.json";
-import C_events from "./mock/events.collections.json";
-import G_exec from "./mock/exec.global.json";
-import G_faq from "./mock/faq.global.json";
-import G_hero from "./mock/hero.global.json";
-import G_project from "./mock/project.global.json";
-import C_projects from "./mock/projects.collections.json";
+import G_about from "./data/about.global.json";
+import C_events from "./data/events.collections.json";
+import G_exec from "./data/exec.global.json";
+import G_faq from "./data/faq.global.json";
+import G_hero from "./data/hero.global.json";
+import G_project from "./data/project.global.json";
+import C_projects from "./data/projects.collections.json";
 
 export async function getMockPayload(): Promise<BasePayload> {
     const payload = {} as BasePayload;

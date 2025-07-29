@@ -1,6 +1,7 @@
 "use server";
 
-import { getPayload } from "@/utils/payload";
+import { getPayload } from "@/payload/mock";
+
 
 export const getHeroPage = async () => {
     const payload = await getPayload();
