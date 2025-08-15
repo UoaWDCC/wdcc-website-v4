@@ -4,7 +4,7 @@ import { card } from "@/app/(main)/(hero)/_components/WhatWeDoCard";
 import placeholder from "@/assets/image/600x400.png";
 import { HeroPage as CmsHeroPage, Partner } from "@/payload/payload-types";
 
-export const parseHeroPage = (CmsHeroPage: CmsHeroPage): HeroPage | undefined => {
+export function parseHeroPage(CmsHeroPage: CmsHeroPage): HeroPage | undefined {
     if (!CmsHeroPage) {
         return undefined;
     }
@@ -77,4 +77,4 @@ export const parseHeroPage = (CmsHeroPage: CmsHeroPage): HeroPage | undefined =>
             descriptionLineTwo: CmsHeroPage.signUpCard.descriptionLineTwo,
         },
     };
-};
+}

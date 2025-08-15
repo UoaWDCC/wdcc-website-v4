@@ -1,12 +1,23 @@
 "use server";
 
+import { CmsFetchError, CmsParseError } from "@/utils/errors/CmsErrors";
 import { getPayload } from "@/utils/payload";
+import { parseExecPage } from "./parseExecPage";
 
-export const getExecPage = async () => {
+export async function getExecPage() {
     const payload = await getPayload();
-    const getExecPage = await payload.findGlobal({
+
+    const execPage = await payload.findGlobal({
         slug: "execs-page",
     });
+    if (!execPage) {
+        throw new CmsFetchError("Failed to fetch Exec Page data from Payload CMS.");
+    }
 
-    return getExecPage;
-};
+    const parsedExecPage = parseExecPage(execPage);
+    if (!parsedExecPage) {
+        throw new CmsParseError("Failed to parse Exec Page data from Payload CMS.");
+    }
+
+    return parsedExecPage;
+}
