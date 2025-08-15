@@ -2,7 +2,7 @@ import placeholder from "@/assets/image/600x400.png";
 import { AboutPage as CmsAboutPage, Media } from "@/payload/payload-types";
 import { AboutPage } from "../../../types/pages/AboutPage";
 
-export const parseAboutPage = (CmsAboutPage: CmsAboutPage): AboutPage | undefined => {
+export function parseAboutPage(CmsAboutPage: CmsAboutPage): AboutPage | undefined {
     //need to move this to all parsers
     const getImageUrl = (image?: Media) => image?.url ?? placeholder;
     const getImageAlt = (image?: Media) => image?.url ?? "placeholder";
@@ -46,4 +46,4 @@ export const parseAboutPage = (CmsAboutPage: CmsAboutPage): AboutPage | undefine
             imageAlt: getImageAlt(CmsAboutPage.endImage.image as Media),
         },
     };
-};
+}
