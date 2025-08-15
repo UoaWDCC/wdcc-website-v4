@@ -6,11 +6,15 @@ const redirects: Record<string, string> = {
     go: "https://go.wdcc.co.nz",
     pass: "https://passport.wdcc.co.nz",
     passport: "https://passport.wdcc.co.nz",
-    check: "https://membership.wdcc.co.nz",
     membership: "https://membership.wdcc.co.nz",
-    checker: "https://membership.wdcc.co.nz",
+    ami: "https://membership.wdcc.co.nz/sejJBBABIXoePtuQlPkbY",
     miku: "https://www.youtube.com/watch?v=28FVxYQuLOQ",
 };
+
+export async function generateStaticParams() {
+    // { tinyurl: "staging" } etc
+    return Object.keys(redirects).map((key) => ({ tinyurl: key }));
+}
 
 /** Redirects - like tinyurl at wdcc.co.nz/r/[...] */
 export default async function RedirectPage({ params }: { params: Promise<{ tinyurl: string }> }) {
