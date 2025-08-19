@@ -1,11 +1,7 @@
 import { Event } from "@/types/models/Event";
 import { Event as CMSEVENT, Media, Partner } from "@/payload/payload-types";
 
-export const parseEvent = (CmsEvent: CMSEVENT | undefined): Event | undefined => {
-    if (!CmsEvent) {
-        return undefined;
-    }
-
+export const parseEvent = (CmsEvent: CMSEVENT): Event => {
     return {
         title: CmsEvent.title,
         slug: CmsEvent.slug,

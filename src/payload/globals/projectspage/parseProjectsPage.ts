@@ -1,7 +1,7 @@
 import { ProjectsPage } from "@/types/pages/ProjectsPage";
 import type { ProjectsPage as CmsProjectPage } from "@/payload/payload-types";
 
-export const parseProjectPage = (CmsProjectPage: CmsProjectPage): ProjectsPage | undefined => {
+export function parseProjectsPage(CmsProjectPage: CmsProjectPage): ProjectsPage | undefined {
     if (!CmsProjectPage) {
         return undefined;
     }
@@ -42,4 +42,4 @@ export const parseProjectPage = (CmsProjectPage: CmsProjectPage): ProjectsPage |
             cta: CmsProjectPage.featuredSection.cta,
         },
     };
-};
+}

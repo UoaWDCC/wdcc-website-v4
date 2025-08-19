@@ -3,17 +3,12 @@ import BackgroundEffect from "@/components/animation/three/BackgroundEffect";
 import { View } from "@/components/animation/three/scene/View";
 import { Footer, ThreePageLayout } from "@/components/layout";
 import { getHeroPage } from "@/payload/globals/heropage/getHeroPage";
-import { parseHeroPage } from "@/payload/globals/heropage/parseHeroPage";
 import { SponsorSection } from "./_components/SponsorSection";
 import ThisIsWDCC from "./_components/ThisIsWDCCSection";
 import Hero from "./_components/WDCCHero";
-import { HeroData as hardCodedHeroData } from "./_data/homeData";
 
 export default async function HeroPage() {
-    let HeroData = parseHeroPage(await getHeroPage());
-    if (!HeroData) {
-        HeroData = hardCodedHeroData;
-    }
+    const heroData = await getHeroPage();
 
     return (
         <ThreePageLayout>
@@ -22,11 +17,11 @@ export default async function HeroPage() {
                 <BackgroundEffect />
             </View>
             <main className="responsive-body flex-col items-center justify-center gap-24 py-44">
-                <Hero hero={HeroData.Hero} />
+                <Hero hero={heroData.Hero} />
                 <div className="flex flex-col gap-36">
-                    <ThisIsWDCC ThisIsWDCC={HeroData.ThisIsWDCC} />
-                    <SponsorSection SponsorSection={HeroData.SponsorSection} />
-                    <SignupCard SignUpCard={HeroData.SignUpCard} />
+                    <ThisIsWDCC ThisIsWDCC={heroData.ThisIsWDCC} />
+                    <SponsorSection SponsorSection={heroData.SponsorSection} />
+                    <SignupCard SignUpCard={heroData.SignUpCard} />
                 </div>
             </main>
             <Footer className="mt-16" />
