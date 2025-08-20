@@ -9,7 +9,7 @@ import { getPayload } from "@/utils/payload";
 export const getEvent = async (slug: string) => {
     const payload = await getPayload();
     const events = await payload.find({
-        collection: SLUG.EVENTS as CollectionSlug,
+        collection: SLUG.EVENT as CollectionSlug,
         where: {
             slug: { equals: slug },
         },

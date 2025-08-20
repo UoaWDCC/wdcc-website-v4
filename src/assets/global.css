@@ -185,6 +185,16 @@
     @apply col-start-1 col-end-4;
 }
 
+@utility background-certificate-radial {
+    background:
+        radial-gradient(75% 27.5% at 50% 100%, #c8c6d2 5%, rgba(200, 198, 210, 0) 67.5%),
+        radial-gradient(90% 55% at 50% 100%, #79758a 27.5%, rgba(255, 255, 255, 0) 87.5%);
+    filter: blur(25px);
+}
+@utility background-certificate {
+    background: linear-gradient(180deg, #17161d 0%, #052961 50%);
+}
+
 @utility animate-bounce {
     animation-name: bounce;
     animation-duration: 0.6s;
@@ -194,6 +204,23 @@
 
 @utility responsive-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
+}
+
+@utility use-fixed-scale {
+    /* 0.06vw per pixel */
+    --unit: 0.055vw;
+    --spacing: calc(4 * var(--unit));
+    /* 
+    rem * px/rem * unit 
+    */
+    --text-base: calc(1 * 16 * var(--unit));
+    --text-md: calc(1.125 * 16 * var(--unit));
+    --text-lg: calc(1.375 * 16 * var(--unit));
+    --text-xl: calc(1.625 * 16 * var(--unit));
+    --text-2xl: calc(2 * 16 * var(--unit));
+    --text-3xl: calc(2.375 * 16 * var(--unit));
+    --text-4xl: calc(3 * 16 * var(--unit));
+    --text-5xl: calc(4 * 16 * var(--unit));
 }
 
 @layer utilities {
