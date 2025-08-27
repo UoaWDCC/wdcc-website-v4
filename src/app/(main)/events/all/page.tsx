@@ -1,4 +1,3 @@
-import { Event } from "@/types/models/Event";
 import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { getAllEvents } from "@/payload/collections/events/getAllEvents";
@@ -9,7 +8,7 @@ import { eventsData } from "../_data/events.data";
 const eventsGridData = eventsData.eventsGrid;
 
 export default async function EventsPage() {
-    let events = (await getAllEvents()).map(parseEvent) as Event[];
+    let events = (await getAllEvents()).map(parseEvent);
     if (events.length === 0) {
         events = eventsGridData.events;
     }

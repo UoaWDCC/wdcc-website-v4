@@ -1,7 +1,7 @@
 import { ExecsPage as CMSEventPage, Media } from "@/payload/payload-types";
 import { ExecPage } from "../../../types/pages/ExecPage";
 
-export const parseExecTeam = (CmsEventPage: CMSEventPage): ExecPage => {
+export function parseExecPage(CmsEventPage: CMSEventPage): ExecPage {
     //hmmm
     return {
         info: CmsEventPage.description,
@@ -24,4 +24,4 @@ export const parseExecTeam = (CmsEventPage: CMSEventPage): ExecPage => {
               }))
             : [],
     };
-};
+}
