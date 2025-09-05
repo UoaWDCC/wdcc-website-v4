@@ -1,7 +1,7 @@
 import { FaqPage as CmsFaqPage } from "@/payload/payload-types";
 import { FaqPage } from "../../../types/pages/FaqPage";
 
-export const parseFaqPage = (CmsFaqPage: CmsFaqPage): FaqPage | undefined => {
+export function parseFaqPage(CmsFaqPage: CmsFaqPage): FaqPage | undefined {
     if (!CmsFaqPage) {
         return undefined;
     }
@@ -20,4 +20,4 @@ export const parseFaqPage = (CmsFaqPage: CmsFaqPage): FaqPage | undefined => {
             },
         })),
     };
-};
+}

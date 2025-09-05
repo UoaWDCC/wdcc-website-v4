@@ -1,13 +1,11 @@
 import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { getFaqPage } from "@/payload/globals/faqpage/getFaqPage";
-import { parseFaqPage } from "@/payload/globals/faqpage/parseFaqPage";
 import InfoPill from "../_components/InfoPill";
 import { FaqSelector } from "./_components/FaqSelector";
-import { faqData as faqFallbackData } from "./_data/faq.data";
 
 export default async function FaqPage() {
-    const faqData = parseFaqPage(await getFaqPage()) ?? faqFallbackData;
+    const faqData = await getFaqPage();
 
     const minHeight: number = 420 + Math.max(...faqData.sections.map((section) => section.faqs.length)) * 50;
 
