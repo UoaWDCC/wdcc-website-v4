@@ -3,7 +3,7 @@ import type { Project as CMSProject } from "@/payload/payload-types";
 import { isNullish, removeDuplicates } from "@/utils/misc";
 import { media } from "@/utils/payload";
 
-export const parseProject = (cms: CMSProject): Project => {
+export function parseProject(cms: CMSProject): Project {
     return {
         slug: cms.slug,
         year: cms.year,
@@ -44,4 +44,4 @@ export const parseProject = (cms: CMSProject): Project => {
                 })) ?? [],
         },
     };
-};
+}
