@@ -1,8 +1,8 @@
+import { ExecPage } from "@/types/pages/ExecPage";
 import { ExecsPage as CMSEventPage, Media } from "@/payload/payload-types";
-import { ExecPage } from "../../../types/pages/ExecPage";
 
 export function parseExecPage(CmsEventPage: CMSEventPage): ExecPage {
-    //hmmm
+    // hmmm
     return {
         info: CmsEventPage.description,
         teams: Array.isArray(CmsEventPage.teams)

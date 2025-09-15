@@ -14,10 +14,9 @@ export async function getProjectsPage() {
         throw new CmsFetchError("Failed to fetch Projects Page data from Payload CMS.");
     }
 
-    const parsedProjectsPage = parseProjectsPage(projectsPage);
-    if (!parsedProjectsPage) {
+    try {
+        return parseProjectsPage(projectsPage);
+    } catch {
         throw new CmsParseError("Failed to parse Projects Page data from Payload CMS.");
     }
-
-    return parsedProjectsPage;
 }

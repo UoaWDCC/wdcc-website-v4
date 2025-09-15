@@ -14,10 +14,9 @@ export async function getExecPage() {
         throw new CmsFetchError("Failed to fetch Exec Page data from Payload CMS.");
     }
 
-    const parsedExecPage = parseExecPage(execPage);
-    if (!parsedExecPage) {
+    try {
+        return parseExecPage(execPage);
+    } catch {
         throw new CmsParseError("Failed to parse Exec Page data from Payload CMS.");
     }
-
-    return parsedExecPage;
 }

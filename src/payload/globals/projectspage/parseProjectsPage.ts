@@ -1,11 +1,7 @@
 import { ProjectsPage } from "@/types/pages/ProjectsPage";
 import type { ProjectsPage as CmsProjectPage } from "@/payload/payload-types";
 
-export function parseProjectsPage(CmsProjectPage: CmsProjectPage): ProjectsPage | undefined {
-    if (!CmsProjectPage) {
-        return undefined;
-    }
-
+export function parseProjectsPage(CmsProjectPage: CmsProjectPage): ProjectsPage {
     return {
         header: {
             title: CmsProjectPage.header.title,

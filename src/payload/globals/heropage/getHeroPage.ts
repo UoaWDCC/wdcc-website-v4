@@ -1,6 +1,6 @@
 "use server";
 
-import { CmsFetchError, CmsParseError } from "@/utils/errors/CmsErrors";
+import { CmsFetchError } from "@/utils/errors/CmsErrors";
 import { getPayload } from "@/utils/payload";
 import { parseHeroPage } from "./parseHeroPage";
 
@@ -14,10 +14,5 @@ export async function getHeroPage() {
         throw new CmsFetchError("Failed to fetch Hero Page data from Payload CMS.");
     }
 
-    const parsedHeroPage = parseHeroPage(heroPage);
-    if (!parsedHeroPage) {
-        throw new CmsParseError("Failed to parse Hero Page data from Payload CMS.");
-    }
-
-    return parsedHeroPage;
+    return parseHeroPage(heroPage);
 }
