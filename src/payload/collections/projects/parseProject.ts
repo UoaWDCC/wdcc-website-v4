@@ -18,6 +18,7 @@ export const parseProject = (cms: CMSProject): Project => {
             description: cms.extendedDescription,
             image: media(cms.image),
         },
+        websiteUrl: cms.websiteUrl ?? undefined,
         primaryLink: cms.primaryLink && {
             label: cms.primaryLink.label,
             href: cms.primaryLink.href,

@@ -116,6 +116,15 @@ export const ProjectsCollection: CollectionConfig = {
                     required: true,
                     displayPreview: true,
                 },
+                {
+                    name: "websiteUrl",
+                    type: "text",
+                    admin: {
+                        placeholder:
+                            "Please type the project website URL here (optional). e.g (https://esports.wdcc.co.nz/)",
+                    },
+                    required: false,
+                },
             ],
         },
         {

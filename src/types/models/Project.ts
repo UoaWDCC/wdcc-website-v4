@@ -22,6 +22,7 @@ export type Project = {
         description: string;
         image?: ImageType;
     };
+    websiteUrl?: string;
     primaryLink?: ButtonType;
     secondaryLink?: ButtonType;
     technologies: string[];
