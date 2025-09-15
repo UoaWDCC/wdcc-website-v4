@@ -5,6 +5,7 @@ import path from "path";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 import { fileURLToPath } from "url";
+import { CertificateCollection } from "./src/payload/collections/certificates/CertificateCollection";
 import { EventsCollection } from "./src/payload/collections/events/EventsCollection";
 import { MediaCollection } from "./src/payload/collections/misc/MediaCollection";
 import { PartnersCollection } from "./src/payload/collections/misc/PartnersCollection";
@@ -26,7 +27,14 @@ export default buildConfig({
             baseDir: path.resolve(dirname),
         },
     },
-    collections: [UsersCollection, MediaCollection, EventsCollection, ProjectsCollection, PartnersCollection],
+    collections: [
+        UsersCollection,
+        MediaCollection,
+        EventsCollection,
+        ProjectsCollection,
+        PartnersCollection,
+        CertificateCollection,
+    ],
     globals: [ExecsPageGlobal, FaqPageGlobal, AboutPageGlobal, ProjectsPageGlobal, HeroPageGlobal],
     editor: lexicalEditor({
         // TODO ASHTON

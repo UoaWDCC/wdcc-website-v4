@@ -91,7 +91,7 @@ to use it you can call
 ```ts
 const payload = await getPayload({ config: payloadConfig });
 const { docs: events } = await payload.find({
-    collection: SLUG.EVENTS,
+    collection: SLUG.EVENT,
 });
 ```
 
