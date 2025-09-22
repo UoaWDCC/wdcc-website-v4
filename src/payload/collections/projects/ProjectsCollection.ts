@@ -123,7 +123,7 @@ export const ProjectsCollection: CollectionConfig = {
             type: "collapsible",
             fields: [
                 {
-                    name: "primaryLink",
+                    name: "deploymentLink",
                     type: "group",
                     fields: [
                         {
@@ -131,7 +131,7 @@ export const ProjectsCollection: CollectionConfig = {
                             type: "text",
                             required: true,
                             admin: {
-                                placeholder: "Please type the first link's label here.",
+                                placeholder: "Please type the deployment link's label here.",
                             },
                         },
                         {
@@ -139,7 +139,7 @@ export const ProjectsCollection: CollectionConfig = {
                             type: "text",
                             required: true,
                             admin: {
-                                placeholder: "Please type where the the first link should redirect to here.",
+                                placeholder: "Please type the deployment URL here.",
                             },
                         },
                     ],

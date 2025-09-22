@@ -44,7 +44,7 @@ export default async function Page({ params }: Props) {
             <ProjectHeader
                 backlink={{ label: "projects", href: "/projects/all" }}
                 title={project.name.title}
-                primaryButton={project.primaryLink}
+                primaryButton={project.deploymentLink}
                 secondaryButton={project.secondaryLink}
             />
             <IndividualProject project={project} />

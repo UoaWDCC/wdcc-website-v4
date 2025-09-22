@@ -258,7 +258,7 @@ export interface Project {
   extendedName?: string | null;
   extendedDescription: string;
   image: number | Media;
-  primaryLink: {
+  deploymentLink: {
     label: string;
     href: string;
   };
@@ -427,7 +427,7 @@ export interface ProjectSelect<T extends boolean = true> {
   extendedName?: T;
   extendedDescription?: T;
   image?: T;
-  primaryLink?:
+  deploymentLink?:
     | T
     | {
         label?: T;

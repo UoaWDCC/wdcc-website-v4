@@ -18,9 +18,9 @@ export function parseProject(cms: CMSProject): Project {
             description: cms.extendedDescription,
             image: media(cms.image),
         },
-        primaryLink: cms.primaryLink && {
-            label: cms.primaryLink.label,
-            href: cms.primaryLink.href,
+        deploymentLink: cms.deploymentLink && {
+            label: cms.deploymentLink.label,
+            href: cms.deploymentLink.href,
         },
         secondaryLink: cms.secondaryLink && {
             label: cms.secondaryLink.label,
