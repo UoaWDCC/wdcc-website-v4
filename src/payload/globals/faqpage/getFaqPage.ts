@@ -14,10 +14,9 @@ export async function getFaqPage() {
         throw new CmsFetchError("Failed to fetch FAQ Page data from Payload CMS.");
     }
 
-    const parsedFaqPage = parseFaqPage(faqPage);
-    if (!parsedFaqPage) {
+    try {
+        return parseFaqPage(faqPage);
+    } catch {
         throw new CmsParseError("Failed to parse FAQ Page data from Payload CMS.");
     }
-
-    return parsedFaqPage;
 }

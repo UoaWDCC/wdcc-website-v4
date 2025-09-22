@@ -4,7 +4,7 @@ import { SLUG } from "@/utils/enums/slug";
 import { getPayload } from "@/utils/payload";
 
 // return Event
-export const getEvent = async (slug: string) => {
+export async function getEvent(slug: string) {
     const payload = await getPayload();
     const events = await payload.find({
         collection: SLUG.EVENTS,
@@ -15,4 +15,4 @@ export const getEvent = async (slug: string) => {
     });
 
     return events.docs[0];
-};
+}

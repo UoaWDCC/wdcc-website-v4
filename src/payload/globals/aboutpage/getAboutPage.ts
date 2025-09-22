@@ -1,6 +1,6 @@
 "use server";
 
-import { CmsFetchError } from "@/utils/errors/CmsErrors";
+import { CmsFetchError, CmsParseError } from "@/utils/errors/CmsErrors";
 import { getPayload } from "@/utils/payload";
 import { parseAboutPage } from "./parseAboutPage";
 
@@ -14,5 +14,9 @@ export async function getAboutPage() {
         throw new CmsFetchError("Failed to fetch About Page data from Payload CMS.");
     }
 
-    return parseAboutPage(aboutPage);
+    try {
+        return parseAboutPage(aboutPage);
+    } catch {
+        throw new CmsParseError("Failed to parse About Page data from Payload CMS.");
+    }
 }

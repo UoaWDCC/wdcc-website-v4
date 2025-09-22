@@ -4,12 +4,8 @@ import { card } from "@/app/(main)/(hero)/_components/WhatWeDoCard";
 import placeholder from "@/assets/image/600x400.png";
 import { HeroPage as CmsHeroPage, Partner } from "@/payload/payload-types";
 
-export function parseHeroPage(CmsHeroPage: CmsHeroPage): HeroPage | undefined {
-    if (!CmsHeroPage) {
-        return undefined;
-    }
-
-    //forgive me
+export function parseHeroPage(CmsHeroPage: CmsHeroPage): HeroPage {
+    // forgive me
     const mapVariantToProps = (variant: "blue" | "green" | "yellow"): VariantProps<typeof card> => {
         switch (variant) {
             case "blue":
