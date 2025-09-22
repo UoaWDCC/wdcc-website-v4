@@ -70,10 +70,11 @@ const IndividualProject = ({ project }: IndividualProjectProps) => {
                     ))}
                 </div>
             </div>
-            {project.websiteUrl && (
+            {/* deployment of website in an iframe */}
+            {project.primaryLink?.href && (
                 <iframe
-                    src={project.websiteUrl}
-                    className="h-screen w-full border-0"
+                    src={project.primaryLink.href}
+                    className="border-0v mt-8 h-screen w-full"
                     title={`${project.name.extended || project.name.title} Website`}
                     allowFullScreen
                 />

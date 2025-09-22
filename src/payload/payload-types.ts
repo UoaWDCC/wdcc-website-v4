@@ -258,7 +258,6 @@ export interface Project {
   extendedName?: string | null;
   extendedDescription: string;
   image: number | Media;
-  websiteUrl?: string | null;
   primaryLink: {
     label: string;
     href: string;
@@ -428,7 +427,6 @@ export interface ProjectSelect<T extends boolean = true> {
   extendedName?: T;
   extendedDescription?: T;
   image?: T;
-  websiteUrl?: T;
   primaryLink?:
     | T
     | {
