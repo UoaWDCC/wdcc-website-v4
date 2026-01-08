@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { Transition, motion } from "motion/react";
 import Arrow from "@/assets/svg/Arrow";
 import { useScroll } from "@/components/contexts/ScrollContext";
 import { Button } from "@/components/primitives/Button";
 
-const transition = {
+const transition: Transition = {
     duration: 2,
     ease: [0.13, 0.71, 0.35, 1],
 };

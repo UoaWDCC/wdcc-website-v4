@@ -1,14 +1,14 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { motion } from "motion/react";
+import { Transition, motion } from "motion/react";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { Button } from "@/components/primitives/Button";
 
 export default function NotFoundPage() {
     const router = useRouter();
 
-    const transition = {
+    const transition: Transition = {
         duration: 2,
         ease: [0.1, 0.7, 0.3, 1],
     };
