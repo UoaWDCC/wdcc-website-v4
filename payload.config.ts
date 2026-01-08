@@ -30,7 +30,7 @@ export default buildConfig({
     globals: [ExecsPageGlobal, FaqPageGlobal, AboutPageGlobal, ProjectsPageGlobal, HeroPageGlobal],
     editor: lexicalEditor({
         // TODO ASHTON
-        // eslint-disable-next-line @typescript-eslint/no-deprecated
+
         features: ({ defaultFeatures }) => [...defaultFeatures, LinkFeature({}), HTMLConverterFeature({})],
     }),
     secret: process.env.PAYLOAD_SECRET ?? "",

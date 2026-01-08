@@ -1,14 +1,14 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { motion } from "motion/react";
+import { Transition, motion } from "motion/react";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { Button } from "@/components/primitives/Button";
 
 export default function NotFoundPage() {
     const router = useRouter();
 
-    const transition = {
+    const transition: Transition = {
         duration: 2,
         ease: [0.1, 0.7, 0.3, 1],
     };
@@ -81,7 +81,7 @@ export default function NotFoundPage() {
                         width="100%"
                         height="352"
                         // TODO ANDREW
-                        // eslint-disable-next-line @typescript-eslint/no-deprecated
+
                         frameBorder="0"
                         allowFullScreen
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"

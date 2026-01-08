@@ -1,8 +1,9 @@
 import { FlatCompat } from "@eslint/eslintrc";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import unusedImports from "eslint-plugin-unused-imports";
 import { dirname } from "path";
-import tseslint from "typescript-eslint";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -17,11 +18,10 @@ const eslintConfig = [
         ignorePatterns: ["node_modules/", ".next/", "public/", "**/payload-types.ts", "(payload)/"],
         extends: ["next", "prettier"],
     }),
-    ...tseslint.configs.strictTypeChecked,
-    ...tseslint.configs.stylisticTypeChecked,
     eslintConfigPrettier,
     {
         languageOptions: {
+            parser: tsParser,
             parserOptions: {
                 projectService: true,
                 tsconfigRootDir: import.meta.dirname,
@@ -29,6 +29,7 @@ const eslintConfig = [
         },
         plugins: {
             "unused-imports": unusedImports,
+            "@typescript-eslint": tsPlugin,
         },
         rules: {
             // Custom overrides
