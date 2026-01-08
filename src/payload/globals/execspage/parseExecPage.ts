@@ -14,7 +14,7 @@ export function parseExecPage(CmsEventPage: CMSEventPage): ExecPage {
                             name: exec.name,
                             role: exec.role,
                             // TODO ANTON
-                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                             
                             image: (exec.image as Media).url!,
                             description: exec.description,
                             joined: exec.joined,
