@@ -1,56 +1,40 @@
 {
-  "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@main/*": [
-        "./src/app/(main)/*"
-      ],
-      "@misc/*": [
-        "./src/app/(main)/(misc)/*"
-      ],
-      "@public/*": [
-        "./public/*"
-      ],
-      "@payload-config": [
-        "./payload.config.ts"
-      ]
+    "compilerOptions": {
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "incremental": true,
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "paths": {
+            "@/*": ["./src/*"],
+            "@main/*": ["./src/app/(main)/*"],
+            "@misc/*": ["./src/app/(main)/(misc)/*"],
+            "@public/*": ["./public/*"],
+            "@payload-config": ["./payload.config.ts"]
+        },
+        "target": "ES2017"
     },
-    "target": "ES2017"
-  },
-  "include": [
-    "**/*.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "next.config.js",
-    "eslint.config.mjs",
-    "postcss.config.mjs",
-    ".next/dev/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "include": [
+        "**/*.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        ".next/types/**/*.ts",
+        "next.config.js",
+        "eslint.config.mjs",
+        "postcss.config.mjs",
+        ".next/dev/types/**/*.ts"
+    ],
+    "exclude": ["node_modules"]
 }
