@@ -14,7 +14,7 @@ export function parseExecPage(CmsEventPage: CMSEventPage): ExecPage {
                             name: exec.name,
                             role: exec.role,
                             // TODO ANTON
-                             
+
                             image: (exec.image as Media).url!,
                             description: exec.description,
                             joined: exec.joined,

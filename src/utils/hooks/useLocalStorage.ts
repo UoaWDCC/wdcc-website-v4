@@ -19,7 +19,7 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
 
         const item = window.localStorage.getItem(key);
         // TODO ASHTON
-         
+
         return item ? JSON.parse(item) : initialValue;
     };
 
@@ -30,7 +30,7 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
 
     const [state, setstate] = useState<T>(() => {
         // TODO ASHTON
-         
+
         return readValue();
     });
 

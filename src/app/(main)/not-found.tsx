@@ -81,7 +81,7 @@ export default function NotFoundPage() {
                         width="100%"
                         height="352"
                         // TODO ANDREW
-                         
+
                         frameBorder="0"
                         allowFullScreen
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
