@@ -12,6 +12,14 @@ export const HeroPageGlobal: GlobalConfig = {
             fields: [
                 { name: "title", type: "text", required: true },
                 { name: "blurb", type: "textarea", required: true },
+                {
+                    name: "memberButton",
+                    type: "group",
+                    fields: [
+                        { name: "label", type: "text", required: true },
+                        { name: "href", type: "text", required: true },
+                    ],
+                },
             ],
         },
         {

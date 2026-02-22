@@ -32,6 +32,10 @@ export type HeroPage = {
     Hero: {
         title: string;
         blurb: string;
+        memberButton: {
+            label: string;
+            href: string;
+        };
     };
     ThisIsWDCC: {
         description: string;

@@ -5,14 +5,18 @@ import { animation } from "@/utils/animations";
 import { primarySocial } from "../_data/primarySocial.data";
 import { SocialLink } from "./SocialLink";
 
-export const HeroLinks = () => {
+type HeroLinksProps = {
+    memberButton: {
+        label: string;
+        href: string;
+    };
+};
+
+export const HeroLinks = ({ memberButton }: HeroLinksProps) => {
     return (
         <motion.div {...animation.slideUp} className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button
-                variant={{ style: "primary", color: "blue" }}
-                href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform?usp=sharing"
-            >
-                Become a member for 2025
+            <Button variant={{ style: "primary", color: "blue" }} href={memberButton.href}>
+                {memberButton.label}
             </Button>
             <div className="flex gap-4">
                 {primarySocial.map((social) => (

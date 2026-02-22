@@ -23,6 +23,10 @@ type HeroProps = {
     hero: {
         title: string;
         blurb: string;
+        memberButton: {
+            label: string;
+            href: string;
+        };
     };
 };
 
@@ -36,7 +40,7 @@ const Hero = ({ hero }: HeroProps) => {
                 <HeroHeading title={hero.title} />
                 <div className="flex flex-col items-center gap-6 self-center">
                     <HeroSubHeading blurb={hero.blurb} />
-                    <HeroLinks />
+                    <HeroLinks memberButton={hero.memberButton} />
                 </div>
             </div>
             <View
