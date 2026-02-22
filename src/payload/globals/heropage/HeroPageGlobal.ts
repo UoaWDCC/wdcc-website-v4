@@ -49,6 +49,7 @@ export const HeroPageGlobal: GlobalConfig = {
             name: "sponsorSection",
             type: "group",
             fields: [
+                { name: "title", type: "text", required: true },
                 {
                     name: "gold",
                     type: "relationship",

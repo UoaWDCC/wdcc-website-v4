@@ -12,6 +12,9 @@ export function parseHeroPage(CmsHeroPage: CmsHeroPage): HeroPage {
     const hero = CmsHeroPage.hero as CmsHeroPage["hero"] & {
         memberButton?: { label?: string; href?: string };
     };
+    const sponsorSection = CmsHeroPage.sponsorSection as CmsHeroPage["sponsorSection"] & {
+        title?: string;
+    };
 
     // forgive me
     const mapVariantToProps = (variant: "blue" | "green" | "yellow"): VariantProps<typeof card> => {
@@ -50,30 +53,31 @@ export function parseHeroPage(CmsHeroPage: CmsHeroPage): HeroPage {
             },
         },
         SponsorSection: {
+            title: sponsorSection?.title ?? "Our sponsors for 2025",
             gold: {
                 sponsors:
-                    CmsHeroPage.sponsorSection?.gold?.map((partner) => ({
+                    sponsorSection?.gold?.map((partner) => ({
                         src: (partner as Partner).url ?? placeholder,
                         alt: (partner as Partner).alt,
                     })) ?? [],
             },
             silver: {
                 sponsors:
-                    CmsHeroPage.sponsorSection?.silver?.map((partner) => ({
+                    sponsorSection?.silver?.map((partner) => ({
                         src: (partner as Partner).url ?? placeholder,
                         alt: (partner as Partner).alt,
                     })) ?? [],
             },
             tech: {
                 sponsors:
-                    CmsHeroPage.sponsorSection?.tech?.map((partner) => ({
+                    sponsorSection?.tech?.map((partner) => ({
                         src: (partner as Partner).url ?? placeholder,
                         alt: (partner as Partner).alt,
                     })) ?? [],
             },
             community: {
                 sponsors:
-                    CmsHeroPage.sponsorSection?.community?.map((partner) => ({
+                    sponsorSection?.community?.map((partner) => ({
                         src: (partner as Partner).url ?? placeholder,
                         alt: (partner as Partner).alt,
                     })) ?? [],
