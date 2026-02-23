@@ -5,17 +5,6 @@ import placeholder from "@/assets/image/600x400.png";
 import { HeroPage as CmsHeroPage, Partner } from "@/payload/payload-types";
 
 export function parseHeroPage(CmsHeroPage: CmsHeroPage): HeroPage {
-    const defaultMemberButton = {
-        label: "Become a member for 2025",
-        href: "https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform?usp=sharing",
-    };
-    const hero = CmsHeroPage.hero as CmsHeroPage["hero"] & {
-        memberButton?: { label?: string; href?: string };
-    };
-    const sponsorSection = CmsHeroPage.sponsorSection as CmsHeroPage["sponsorSection"] & {
-        title?: string;
-    };
-
     // forgive me
     const mapVariantToProps = (variant: "blue" | "green" | "yellow"): VariantProps<typeof card> => {
         switch (variant) {
@@ -32,11 +21,12 @@ export function parseHeroPage(CmsHeroPage: CmsHeroPage): HeroPage {
 
     return {
         Hero: {
-            title: hero.title,
-            blurb: hero.blurb,
+            title: CmsHeroPage.hero.title,
+            blurb: CmsHeroPage.hero.blurb,
+
             memberButton: {
-                label: hero.memberButton?.label ?? defaultMemberButton.label,
-                href: hero.memberButton?.href ?? defaultMemberButton.href,
+                label: CmsHeroPage.hero.memberButton.label,
+                href: CmsHeroPage.hero.memberButton.href,
             },
         },
         ThisIsWDCC: {
@@ -53,31 +43,31 @@ export function parseHeroPage(CmsHeroPage: CmsHeroPage): HeroPage {
             },
         },
         SponsorSection: {
-            title: sponsorSection?.title ?? "Our sponsors for 2025",
+            title: CmsHeroPage.sponsorSection?.title,
             gold: {
                 sponsors:
-                    sponsorSection?.gold?.map((partner) => ({
+                    CmsHeroPage.sponsorSection?.gold?.map((partner) => ({
                         src: (partner as Partner).url ?? placeholder,
                         alt: (partner as Partner).alt,
                     })) ?? [],
             },
             silver: {
                 sponsors:
-                    sponsorSection?.silver?.map((partner) => ({
+                    CmsHeroPage.sponsorSection?.silver?.map((partner) => ({
                         src: (partner as Partner).url ?? placeholder,
                         alt: (partner as Partner).alt,
                     })) ?? [],
             },
             tech: {
                 sponsors:
-                    sponsorSection?.tech?.map((partner) => ({
+                    CmsHeroPage.sponsorSection?.tech?.map((partner) => ({
                         src: (partner as Partner).url ?? placeholder,
                         alt: (partner as Partner).alt,
                     })) ?? [],
             },
             community: {
                 sponsors:
-                    sponsorSection?.community?.map((partner) => ({
+                    CmsHeroPage.sponsorSection?.community?.map((partner) => ({
                         src: (partner as Partner).url ?? placeholder,
                         alt: (partner as Partner).alt,
                     })) ?? [],
