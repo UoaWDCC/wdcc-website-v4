@@ -22,7 +22,7 @@ export type Project = {
         description: string;
         image?: ImageType;
     };
-    primaryLink?: ButtonType;
+    deploymentLink?: ButtonType;
     secondaryLink?: ButtonType;
     technologies: string[];
     difficulty: Difficulty;

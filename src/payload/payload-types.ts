@@ -71,7 +71,6 @@ export interface Config {
     media: Media;
     event: Event;
     project: Project;
-    test: Test;
     partners: Partner;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -83,7 +82,6 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     event: EventSelect<false> | EventSelect<true>;
     project: ProjectSelect<false> | ProjectSelect<true>;
-    test: TestSelect<false> | TestSelect<true>;
     partners: PartnersSelect<false> | PartnersSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -156,7 +154,7 @@ export interface User {
  */
 export interface Media {
   id: number;
-  alt: string;
+  alt?: string | null;
   prefix?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -186,6 +184,7 @@ export interface Event {
   page: {
     Description: string;
     image: number | Media;
+    gallery?: (number | Media)[] | null;
   };
   Partners?: (number | Partner)[] | null;
   updatedAt: string;
@@ -259,7 +258,7 @@ export interface Project {
   extendedName?: string | null;
   extendedDescription: string;
   image: number | Media;
-  primaryLink: {
+  deploymentLink: {
     label: string;
     href: string;
   };
@@ -288,84 +287,6 @@ export interface Project {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "test".
- */
-export interface Test {
-  id: number;
-  slug: string;
-  year: string;
-  client: string;
-  name: {
-    default: string;
-    extended?: string | null;
-  };
-  description: string;
-  brief: {
-    description: string;
-    image: number | Media;
-  };
-  technologies: (
-    | 'html'
-    | 'css'
-    | 'javascript'
-    | 'typescript'
-    | 'node'
-    | 'react'
-    | 'vue'
-    | 'vite'
-    | 'tailwindcss'
-    | 'express'
-    | 'python'
-    | 'supabase'
-    | 'payload'
-    | 'notion'
-    | 'nextjs'
-    | 'astro'
-    | 'mongodb'
-    | 'firebase'
-    | 'postgresql'
-    | 'prisma'
-    | 'drizzleorm'
-    | 'redis'
-    | 'aws'
-    | 'fly'
-    | 'figma'
-    | 'motion'
-    | 'nextauth'
-    | 'vitest'
-    | 'twitch'
-  )[];
-  primaryLink: {
-    label: string;
-    href: string;
-  };
-  secondaryLink: {
-    label: string;
-    href: string;
-  };
-  team: {
-    manager: {
-      name: string;
-      image?: (number | null) | Media;
-    };
-    techlead: {
-      name: string;
-      image?: (number | null) | Media;
-    };
-    members?:
-      | {
-          name: string;
-          role: 'engineer' | 'designer';
-          image?: (number | null) | Media;
-          id?: string | null;
-        }[]
-      | null;
-  };
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -386,10 +307,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'project';
         value: number | Project;
-      } | null)
-    | ({
-        relationTo: 'test';
-        value: number | Test;
       } | null)
     | ({
         relationTo: 'partners';
@@ -488,6 +405,7 @@ export interface EventSelect<T extends boolean = true> {
     | {
         Description?: T;
         image?: T;
+        gallery?: T;
       };
   Partners?: T;
   updatedAt?: T;
@@ -509,7 +427,7 @@ export interface ProjectSelect<T extends boolean = true> {
   extendedName?: T;
   extendedDescription?: T;
   image?: T;
-  primaryLink?:
+  deploymentLink?:
     | T
     | {
         label?: T;
@@ -540,67 +458,6 @@ export interface ProjectSelect<T extends boolean = true> {
         role?: T;
         image?: T;
         id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "test_select".
- */
-export interface TestSelect<T extends boolean = true> {
-  slug?: T;
-  year?: T;
-  client?: T;
-  name?:
-    | T
-    | {
-        default?: T;
-        extended?: T;
-      };
-  description?: T;
-  brief?:
-    | T
-    | {
-        description?: T;
-        image?: T;
-      };
-  technologies?: T;
-  primaryLink?:
-    | T
-    | {
-        label?: T;
-        href?: T;
-      };
-  secondaryLink?:
-    | T
-    | {
-        label?: T;
-        href?: T;
-      };
-  team?:
-    | T
-    | {
-        manager?:
-          | T
-          | {
-              name?: T;
-              image?: T;
-            };
-        techlead?:
-          | T
-          | {
-              name?: T;
-              image?: T;
-            };
-        members?:
-          | T
-          | {
-              name?: T;
-              role?: T;
-              image?: T;
-              id?: T;
-            };
       };
   updatedAt?: T;
   createdAt?: T;
