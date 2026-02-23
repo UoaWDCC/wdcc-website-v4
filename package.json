@@ -2,6 +2,7 @@
     "name": "wdcc-website-v4",
     "version": "0.0.0-beta",
     "private": true,
+    "type": "module",
     "scripts": {
         "dev": "next dev --turbo",
         "build": "next build",
