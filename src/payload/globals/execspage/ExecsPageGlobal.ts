@@ -8,6 +8,7 @@ export const ExecsPageGlobal: GlobalConfig = {
     label: "Execs Page",
     access: {
         read: () => true,
+        update: () => true,
     },
     fields: [
         {
@@ -29,68 +30,84 @@ export const ExecsPageGlobal: GlobalConfig = {
             },
         },
         {
-            //maybe execs could be a collection and this could reference that collection instead.
-            name: "teams",
+            name: "years",
+            label: "Years",
             type: "array",
             required: true,
+            defaultValue: [{ year: "2025", teams: [] }],
             fields: [
                 {
-                    name: "teamName",
+                    name: "year",
                     type: "text",
                     required: true,
                     admin: {
-                        placeholder: "Please type the team's name here.",
+                        placeholder: "e.g 2025",
                     },
                 },
                 {
-                    name: "teamDescription",
-                    type: "textarea",
-                    required: true,
-                    admin: {
-                        placeholder: "Please type the team's description here.",
-                    },
-                },
-                {
-                    name: "execs",
+                    name: "teams",
                     type: "array",
+                    required: true,
                     fields: [
                         {
-                            name: "name",
+                            name: "teamName",
                             type: "text",
                             required: true,
                             admin: {
-                                placeholder: "Please type the exec's name here.",
+                                placeholder: "Please type the team's name here.",
                             },
                         },
                         {
-                            name: "role",
-                            type: "text",
-                            required: true,
-                            admin: {
-                                placeholder: "Please type the exec's role here. e.g Tech Director",
-                            },
-                        },
-                        {
-                            name: "image",
-                            type: "upload",
-                            relationTo: "media",
-                        },
-                        {
-                            name: "description",
+                            name: "teamDescription",
                             type: "textarea",
                             required: true,
                             admin: {
-                                placeholder:
-                                    "Please type the exec's description here. e.g BE(Hons) - Software Engineering The University of Auckland",
+                                placeholder: "Please type the team's description here.",
                             },
                         },
                         {
-                            name: "joined",
-                            type: "text",
-                            required: true,
-                            admin: {
-                                placeholder: "Please type the exec's join date here. In the format Joined Jan 2023",
-                            },
+                            name: "execs",
+                            type: "array",
+                            fields: [
+                                {
+                                    name: "name",
+                                    type: "text",
+                                    required: true,
+                                    admin: {
+                                        placeholder: "Please type the exec's name here.",
+                                    },
+                                },
+                                {
+                                    name: "role",
+                                    type: "text",
+                                    required: true,
+                                    admin: {
+                                        placeholder: "Please type the exec's role here. e.g Tech Director",
+                                    },
+                                },
+                                {
+                                    name: "image",
+                                    type: "upload",
+                                    relationTo: "media",
+                                },
+                                {
+                                    name: "description",
+                                    type: "textarea",
+                                    required: true,
+                                    admin: {
+                                        placeholder:
+                                            "Please type the exec's description here. e.g BE(Hons) - Software Engineering The University of Auckland",
+                                    },
+                                },
+                                {
+                                    name: "joined",
+                                    type: "text",
+                                    required: true,
+                                    admin: {
+                                        placeholder: "Please type the exec's join date here. In the format Joined Jan 2023",
+                                    },
+                                },
+                            ],
                         },
                     ],
                 },

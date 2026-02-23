@@ -2,9 +2,10 @@ import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { getExecPage } from "@/payload/globals/execspage/getExecPage";
 import InfoPill from "../_components/InfoPill";
-import ExecTeam from "./_components/ExecTeam";
+import TeamYearSwitcher from "./_components/TeamYearSwitcher";
 
 export default async function TeamPage() {
+    // Source: Payload global "execs-page" via getExecPage().
     const execData = await getExecPage();
 
     return (
@@ -16,9 +17,7 @@ export default async function TeamPage() {
             />
             <div className="flex w-full max-w-[1100px] flex-col items-center gap-24 py-20">
                 <InfoPill text={execData.info} />
-                {execData.teams.map((team, index) => (
-                    <ExecTeam title={team.title} key={index} description={team.description} execs={team.execs ?? []} />
-                ))}
+                <TeamYearSwitcher data={execData.years} />
             </div>
         </StandardPageLayout>
     );
