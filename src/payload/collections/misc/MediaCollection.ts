@@ -10,6 +10,7 @@ export const MediaCollection: CollectionConfig = {
             name: "alt",
             type: "text",
             defaultValue: "",
+            required: true,
         },
     ],
     upload: {

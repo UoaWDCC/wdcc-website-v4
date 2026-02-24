@@ -161,7 +161,7 @@ export interface User {
  */
 export interface Media {
   id: number;
-  alt?: string | null;
+  alt: string;
   prefix?: string | null;
   updatedAt: string;
   createdAt: string;
