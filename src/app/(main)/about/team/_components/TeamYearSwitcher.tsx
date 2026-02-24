@@ -27,7 +27,7 @@ export default function TeamYearSwitcher({ data }: TeamYearSwitcherProps) {
                 if (Number.isNaN(aNum) || Number.isNaN(bNum)) return b.localeCompare(a);
                 return bNum - aNum;
             }),
-        [data],
+        [data]
     );
 
     const defaultYear = years[0] ?? "";

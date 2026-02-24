@@ -104,7 +104,8 @@ export const ExecsPageGlobal: GlobalConfig = {
                                     type: "text",
                                     required: true,
                                     admin: {
-                                        placeholder: "Please type the exec's join date here. In the format Joined Jan 2023",
+                                        placeholder:
+                                            "Please type the exec's join date here. In the format Joined Jan 2023",
                                     },
                                 },
                             ],
