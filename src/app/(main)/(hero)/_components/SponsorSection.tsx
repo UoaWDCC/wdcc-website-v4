@@ -12,9 +12,9 @@ type SponsorSectionProps = {
 export const SponsorSection = ({ SponsorSection }: SponsorSectionProps) => {
     return (
         <div className="flex flex-col items-center justify-center gap-10">
-            <h2 className="text-3xl leading-none font-bold text-balance">Our sponsors for 2025</h2>
+            <h2 className="text-3xl leading-none font-bold text-balance">{SponsorSection.title}</h2>
             <div className="flex w-full flex-col items-center justify-center">
-                {(Object.keys(SponsorSection) as SponsorTierKeys[])
+                {sponsorTierOrder
                     .filter((tier) => SponsorSection[tier].sponsors.length > 0)
                     .map((tier, i) => (
                         <div key={`${tier}-${i}`} className="flex w-full flex-col items-center">
@@ -43,6 +43,8 @@ export const SponsorSection = ({ SponsorSection }: SponsorSectionProps) => {
         </div>
     );
 };
+
+const sponsorTierOrder: SponsorTierKeys[] = ["gold", "silver", "tech", "community"];
 
 const sponsorLabel = tv({
     base: "rounded-full border-2 px-4 font-semibold whitespace-nowrap",
@@ -73,4 +75,4 @@ const SponsorLabel = ({ tier, count, ...props }: SponsorLabelProps) => {
 };
 
 // Ensure TypeScript correctly recognizes the keys
-export type SponsorTierKeys = keyof SponsorSectionType;
+export type SponsorTierKeys = Exclude<keyof SponsorSectionType, "title">;

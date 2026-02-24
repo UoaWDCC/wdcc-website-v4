@@ -71,7 +71,6 @@ export interface Config {
     media: Media;
     event: Event;
     project: Project;
-    test: Test;
     partners: Partner;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -83,7 +82,6 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     event: EventSelect<false> | EventSelect<true>;
     project: ProjectSelect<false> | ProjectSelect<true>;
-    test: TestSelect<false> | TestSelect<true>;
     partners: PartnersSelect<false> | PartnersSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -148,6 +146,13 @@ export interface User {
   hash?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
   password?: string | null;
 }
 /**
@@ -186,6 +191,7 @@ export interface Event {
   page: {
     Description: string;
     image: number | Media;
+    gallery?: (number | Media)[] | null;
   };
   Partners?: (number | Partner)[] | null;
   updatedAt: string;
@@ -288,84 +294,6 @@ export interface Project {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "test".
- */
-export interface Test {
-  id: number;
-  slug: string;
-  year: string;
-  client: string;
-  name: {
-    default: string;
-    extended?: string | null;
-  };
-  description: string;
-  brief: {
-    description: string;
-    image: number | Media;
-  };
-  technologies: (
-    | 'html'
-    | 'css'
-    | 'javascript'
-    | 'typescript'
-    | 'node'
-    | 'react'
-    | 'vue'
-    | 'vite'
-    | 'tailwindcss'
-    | 'express'
-    | 'python'
-    | 'supabase'
-    | 'payload'
-    | 'notion'
-    | 'nextjs'
-    | 'astro'
-    | 'mongodb'
-    | 'firebase'
-    | 'postgresql'
-    | 'prisma'
-    | 'drizzleorm'
-    | 'redis'
-    | 'aws'
-    | 'fly'
-    | 'figma'
-    | 'motion'
-    | 'nextauth'
-    | 'vitest'
-    | 'twitch'
-  )[];
-  primaryLink: {
-    label: string;
-    href: string;
-  };
-  secondaryLink: {
-    label: string;
-    href: string;
-  };
-  team: {
-    manager: {
-      name: string;
-      image?: (number | null) | Media;
-    };
-    techlead: {
-      name: string;
-      image?: (number | null) | Media;
-    };
-    members?:
-      | {
-          name: string;
-          role: 'engineer' | 'designer';
-          image?: (number | null) | Media;
-          id?: string | null;
-        }[]
-      | null;
-  };
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -386,10 +314,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'project';
         value: number | Project;
-      } | null)
-    | ({
-        relationTo: 'test';
-        value: number | Test;
       } | null)
     | ({
         relationTo: 'partners';
@@ -451,6 +375,13 @@ export interface UsersSelect<T extends boolean = true> {
   hash?: T;
   loginAttempts?: T;
   lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -488,6 +419,7 @@ export interface EventSelect<T extends boolean = true> {
     | {
         Description?: T;
         image?: T;
+        gallery?: T;
       };
   Partners?: T;
   updatedAt?: T;
@@ -540,67 +472,6 @@ export interface ProjectSelect<T extends boolean = true> {
         role?: T;
         image?: T;
         id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "test_select".
- */
-export interface TestSelect<T extends boolean = true> {
-  slug?: T;
-  year?: T;
-  client?: T;
-  name?:
-    | T
-    | {
-        default?: T;
-        extended?: T;
-      };
-  description?: T;
-  brief?:
-    | T
-    | {
-        description?: T;
-        image?: T;
-      };
-  technologies?: T;
-  primaryLink?:
-    | T
-    | {
-        label?: T;
-        href?: T;
-      };
-  secondaryLink?:
-    | T
-    | {
-        label?: T;
-        href?: T;
-      };
-  team?:
-    | T
-    | {
-        manager?:
-          | T
-          | {
-              name?: T;
-              image?: T;
-            };
-        techlead?:
-          | T
-          | {
-              name?: T;
-              image?: T;
-            };
-        members?:
-          | T
-          | {
-              name?: T;
-              role?: T;
-              image?: T;
-              id?: T;
-            };
       };
   updatedAt?: T;
   createdAt?: T;
@@ -806,6 +677,10 @@ export interface HeroPage {
   hero: {
     title: string;
     blurb: string;
+    memberButton: {
+      label: string;
+      href: string;
+    };
   };
   thisIsWDCC: {
     description: string;
@@ -820,7 +695,8 @@ export interface HeroPage {
         }[]
       | null;
   };
-  sponsorSection?: {
+  sponsorSection: {
+    title: string;
     gold?: (number | Partner)[] | null;
     silver?: (number | Partner)[] | null;
     tech?: (number | Partner)[] | null;
@@ -1020,6 +896,12 @@ export interface HeroPageSelect<T extends boolean = true> {
     | {
         title?: T;
         blurb?: T;
+        memberButton?:
+          | T
+          | {
+              label?: T;
+              href?: T;
+            };
       };
   thisIsWDCC?:
     | T
@@ -1039,6 +921,7 @@ export interface HeroPageSelect<T extends boolean = true> {
   sponsorSection?:
     | T
     | {
+        title?: T;
         gold?: T;
         silver?: T;
         tech?: T;

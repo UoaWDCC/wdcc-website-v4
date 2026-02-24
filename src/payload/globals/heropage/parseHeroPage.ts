@@ -23,6 +23,11 @@ export function parseHeroPage(CmsHeroPage: CmsHeroPage): HeroPage {
         Hero: {
             title: CmsHeroPage.hero.title,
             blurb: CmsHeroPage.hero.blurb,
+
+            memberButton: {
+                label: CmsHeroPage.hero.memberButton.label,
+                href: CmsHeroPage.hero.memberButton.href,
+            },
         },
         ThisIsWDCC: {
             description: CmsHeroPage.thisIsWDCC.description,
@@ -38,6 +43,7 @@ export function parseHeroPage(CmsHeroPage: CmsHeroPage): HeroPage {
             },
         },
         SponsorSection: {
+            title: CmsHeroPage.sponsorSection?.title,
             gold: {
                 sponsors:
                     CmsHeroPage.sponsorSection?.gold?.map((partner) => ({
