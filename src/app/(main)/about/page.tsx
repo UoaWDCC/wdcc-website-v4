@@ -1,7 +1,7 @@
 import Image from "next/image";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { getAboutPage } from "@/payload/globals/aboutpage/getAboutPage";
-import { AboutPageHeader, GenInfo, NestedDiv, OurPeople, Quote, WhyJoin } from "./_components";
+import { AboutPageHeader, ClubStory, GenInfo, NestedDiv, OurPeople, Quote, WhyJoin } from "./_components";
 
 export default async function AboutPage() {
     const aboutData = await getAboutPage();
@@ -16,8 +16,7 @@ export default async function AboutPage() {
             >
                 <GenInfo genInfo={aboutData.genInfo} />
                 <WhyJoin whyJoin={aboutData.whyJoin} />
-                {/* TODO: need ClubStory copy text */}
-                {/* <ClubStory clubStory={aboutData.clubStory} /> */}
+                <ClubStory clubStory={aboutData.clubStory} />
                 <OurPeople ourPeople={aboutData.ourPeople} />
             </NestedDiv>
 
