@@ -10,7 +10,7 @@ type ExecYearTagProps = {
 export function ExecYearTag({ year, slug, isSelected }: ExecYearTagProps) {
     return (
         <Link
-            href={`/about/team?year=${slug}`}
+            href={`/about/team/${slug}`}
             scroll={false}
             className={cn(
                 "cursor-pointer rounded-full border-2 bg-gray-50 px-5 py-2 leading-none font-semibold transition duration-500 will-change-auto hover:rotate-3 hover:bg-gray-100 hover:duration-200",
