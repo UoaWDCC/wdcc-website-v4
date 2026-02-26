@@ -8,6 +8,5 @@ export function parseExecPage(cmsExecPage: ExecsPage) {
     return {
         title: cmsExecPage.title,
         info: cmsExecPage.description,
-        defaultYearSlug: cmsExecPage.defaultYearSlug,
     };
 }

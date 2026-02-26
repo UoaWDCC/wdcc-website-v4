@@ -618,7 +618,6 @@ export interface ExecsPage {
   id: number;
   title: string;
   description: string;
-  defaultYearSlug: string;
   teams: {
     teamName: string;
     teamDescription: string;
@@ -800,7 +799,6 @@ export interface HeroPage {
 export interface ExecsPageSelect<T extends boolean = true> {
   title?: T;
   description?: T;
-  defaultYearSlug?: T;
   teams?:
     | T
     | {

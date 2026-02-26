@@ -5,6 +5,8 @@ import { getExecPage } from "@/payload/globals/execspage/getExecPage";
 import InfoPill from "../../_components/InfoPill";
 import ExecTeamsSection from "../_components/ExecTeamsSection";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     const years = await getAllExecTeamYears();
     return years.map((entry) => ({ year: entry.slug }));

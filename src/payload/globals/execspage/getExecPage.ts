@@ -18,14 +18,16 @@ export async function getExecPage(yearSlug?: string): Promise<ExecPage> {
 
     const pageMeta = parseExecPage(execPage);
     const availableYears = await getAllExecTeamYears();
-    const selectedSlug = yearSlug ?? pageMeta.defaultYearSlug;
+    const selectedSlug = yearSlug ?? availableYears[0]?.slug;
+    if (!selectedSlug) {
+        throw new CmsFetchError("No exec teams found in Payload CMS.");
+    }
     const execTeam = await getExecTeamBySlug(selectedSlug);
     const teams = parseExecTeam(execTeam);
 
     return {
         title: pageMeta.title,
         info: pageMeta.info,
-        defaultYearSlug: pageMeta.defaultYearSlug,
         availableYears,
         teams,
     };

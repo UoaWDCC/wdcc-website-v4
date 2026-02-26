@@ -1,11 +1,9 @@
 import { redirect } from "next/navigation";
-import { parseExecPage } from "@/payload/globals/execspage/parseExecPage";
-import { getPayload } from "@/utils/payload";
+import { getAllExecTeamYears } from "@/payload/collections/executives/getAllExecTeamYears";
 
 export default async function TeamPage() {
-    const payload = await getPayload();
-    const execPage = await payload.findGlobal({ slug: "execs-page" });
-    const { defaultYearSlug } = parseExecPage(execPage);
+    const years = await getAllExecTeamYears();
+    const latestSlug = years[0]?.slug;
 
-    redirect(`/about/team/${defaultYearSlug}`);
+    redirect(`/about/team/${latestSlug}`);
 }

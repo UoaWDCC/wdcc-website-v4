@@ -97,15 +97,6 @@ async function migrate() {
 
     console.log(`  Created exec team: ${currentYear} (id: ${execTeam.id})`);
 
-    // 3. Update the global to point to the new default year
-    await payload.updateGlobal({
-        slug: "execs-page",
-        data: {
-            defaultYearSlug: currentYear,
-        },
-    });
-
-    console.log(`  Updated execs-page global defaultYearSlug to "${currentYear}"`);
     console.log(`\nMigration complete: ${execMap.size} executive(s), 1 exec team.`);
     process.exit(0);
 }
