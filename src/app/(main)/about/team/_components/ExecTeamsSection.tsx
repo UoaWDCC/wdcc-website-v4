@@ -1,8 +1,4 @@
-"use client";
-
-import { useState, useTransition } from "react";
 import { Exec } from "@/types/models/Exec";
-import { getExecPage } from "@/payload/globals/execspage/getExecPage";
 import ExecTeam from "./ExecTeam";
 import { ExecYearTag } from "./ExecYearTag";
 
@@ -13,26 +9,12 @@ type Team = {
 };
 
 type ExecTeamsSectionProps = {
-    defaultYearSlug: string;
+    selectedYearSlug: string;
     availableYears: { year: string; slug: string }[];
-    initialTeams: Team[];
+    teams: Team[];
 };
 
-export default function ExecTeamsSection({ defaultYearSlug, availableYears, initialTeams }: ExecTeamsSectionProps) {
-    const [selectedSlug, setSelectedSlug] = useState(defaultYearSlug);
-    const [teams, setTeams] = useState(initialTeams);
-    const [isPending, startTransition] = useTransition();
-
-    const handleYearSelect = (slug: string) => () => {
-        if (slug === selectedSlug) return;
-        setSelectedSlug(slug);
-
-        startTransition(async () => {
-            const data = await getExecPage(slug);
-            setTeams(data.teams);
-        });
-    };
-
+export default function ExecTeamsSection({ selectedYearSlug, availableYears, teams }: ExecTeamsSectionProps) {
     return (
         <>
             <div className="flex items-center justify-center gap-4">
@@ -43,14 +25,13 @@ export default function ExecTeamsSection({ defaultYearSlug, availableYears, init
                             key={entry.slug}
                             year={entry.year}
                             slug={entry.slug}
-                            onSelect={handleYearSelect}
-                            isSelected={selectedSlug === entry.slug}
+                            isSelected={selectedYearSlug === entry.slug}
                         />
                     ))}
                 </div>
             </div>
 
-            <div className={`flex w-full flex-col gap-24 transition-opacity ${isPending ? "opacity-50" : ""}`}>
+            <div className="flex w-full flex-col gap-24">
                 {teams.map((team, index) => (
                     <ExecTeam key={index} title={team.title} description={team.description} execs={team.execs ?? []} />
                 ))}

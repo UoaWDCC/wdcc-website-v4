@@ -1,5 +1,3 @@
-"use server";
-
 import { ExecPage } from "@/types/pages/ExecPage";
 import { getAllExecTeamYears } from "@/payload/collections/executives/getAllExecTeamYears";
 import { getExecTeamBySlug } from "@/payload/collections/executives/getExecYear";

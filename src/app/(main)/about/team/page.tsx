@@ -4,8 +4,9 @@ import { getExecPage } from "@/payload/globals/execspage/getExecPage";
 import InfoPill from "../_components/InfoPill";
 import ExecTeamsSection from "./_components/ExecTeamsSection";
 
-export default async function TeamPage() {
-    const execData = await getExecPage();
+export default async function TeamPage({ searchParams }: { searchParams: Promise<{ year?: string }> }) {
+    const { year } = await searchParams;
+    const execData = await getExecPage(year);
 
     return (
         <StandardPageLayout>
@@ -17,9 +18,9 @@ export default async function TeamPage() {
             <div className="flex w-full max-w-275 flex-col items-center gap-24 py-20">
                 <InfoPill text={execData.info} />
                 <ExecTeamsSection
-                    defaultYearSlug={execData.defaultYearSlug}
+                    selectedYearSlug={year ?? execData.defaultYearSlug}
                     availableYears={execData.availableYears}
-                    initialTeams={execData.teams}
+                    teams={execData.teams}
                 />
             </div>
         </StandardPageLayout>
