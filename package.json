@@ -21,7 +21,8 @@
         "clear:next": "rimraf .next",
         "clear:modules": "rimraf node_modules",
         "nuke": "rimraf .next && rimraf node_modules",
-        "typegen": "payload generate:types"
+        "typegen": "payload generate:types",
+        "migrate:execs": "npx tsx --env-file=.env scripts/migrate-execs.ts"
     },
     "dependencies": {
         "@next/bundle-analyzer": "^15.5.9",
@@ -72,6 +73,7 @@
         "prettier-plugin-tailwindcss": "^0.6.14",
         "rimraf": "^6.1.2",
         "tailwindcss": "^4.1.18",
+        "tsx": "^4.21.0",
         "typescript": "^5.9.3",
         "typescript-eslint": "^8.52.0"
     },

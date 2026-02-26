@@ -29,6 +29,15 @@ export const ExecsPageGlobal: GlobalConfig = {
             },
         },
         {
+            name: "defaultYearSlug",
+            type: "text",
+            required: true,
+            defaultValue: "2026",
+            admin: {
+                placeholder: "Please type the default exec year slug here. e.g (2026)",
+            },
+        },
+        {
             //maybe execs could be a collection and this could reference that collection instead.
             name: "teams",
             type: "array",

@@ -72,6 +72,8 @@ export interface Config {
     event: Event;
     project: Project;
     partners: Partner;
+    executives: Executive;
+    'exec-teams': ExecTeam;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -83,6 +85,8 @@ export interface Config {
     event: EventSelect<false> | EventSelect<true>;
     project: ProjectSelect<false> | ProjectSelect<true>;
     partners: PartnersSelect<false> | PartnersSelect<true>;
+    executives: ExecutivesSelect<false> | ExecutivesSelect<true>;
+    'exec-teams': ExecTeamsSelect<false> | ExecTeamsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -294,6 +298,40 @@ export interface Project {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "executives".
+ */
+export interface Executive {
+  id: number;
+  name: string;
+  image?: (number | null) | Media;
+  description: string;
+  joined: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "exec-teams".
+ */
+export interface ExecTeam {
+  id: number;
+  year: string;
+  slug: string;
+  teams: {
+    teamName: string;
+    teamDescription: string;
+    execs: {
+      exec: number | Executive;
+      role: string;
+      id?: string | null;
+    }[];
+    id?: string | null;
+  }[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -318,6 +356,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'partners';
         value: number | Partner;
+      } | null)
+    | ({
+        relationTo: 'executives';
+        value: number | Executive;
+      } | null)
+    | ({
+        relationTo: 'exec-teams';
+        value: number | ExecTeam;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -498,6 +544,42 @@ export interface PartnersSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "executives_select".
+ */
+export interface ExecutivesSelect<T extends boolean = true> {
+  name?: T;
+  image?: T;
+  description?: T;
+  joined?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "exec-teams_select".
+ */
+export interface ExecTeamsSelect<T extends boolean = true> {
+  year?: T;
+  slug?: T;
+  teams?:
+    | T
+    | {
+        teamName?: T;
+        teamDescription?: T;
+        execs?:
+          | T
+          | {
+              exec?: T;
+              role?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents_select".
  */
 export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
@@ -536,6 +618,7 @@ export interface ExecsPage {
   id: number;
   title: string;
   description: string;
+  defaultYearSlug: string;
   teams: {
     teamName: string;
     teamDescription: string;
@@ -717,6 +800,7 @@ export interface HeroPage {
 export interface ExecsPageSelect<T extends boolean = true> {
   title?: T;
   description?: T;
+  defaultYearSlug?: T;
   teams?:
     | T
     | {
