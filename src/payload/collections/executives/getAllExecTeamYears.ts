@@ -4,10 +4,10 @@ import { SLUG } from "@/utils/enums/slug";
 import { getPayload } from "@/utils/payload";
 
 /**
- * Fetches all exec team year slugs from the exec-teams collection.
+ * Fetches all exec team years from the exec-teams collection.
  * Returns them sorted by year descending (newest first).
  */
-export async function getAllExecTeamYears(): Promise<{ year: string; slug: string }[]> {
+export async function getAllExecTeamYears(): Promise<string[]> {
     const payload = await getPayload();
 
     const execTeams = await payload.find({
@@ -17,8 +17,5 @@ export async function getAllExecTeamYears(): Promise<{ year: string; slug: strin
         limit: 100,
     });
 
-    return execTeams.docs.map((doc) => ({
-        year: doc.year,
-        slug: doc.slug,
-    }));
+    return execTeams.docs.map((doc) => doc.year);
 }

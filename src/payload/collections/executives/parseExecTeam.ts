@@ -1,17 +1,11 @@
-import { Exec } from "@/types/models/Exec";
+import { ExecutiveTeam } from "@/types/models/ExecutiveTeam";
 import { ExecTeam as CmsExecTeam, Executive, Media } from "@/payload/payload-types";
-
-type ParsedTeam = {
-    title: string;
-    description: string;
-    execs: Exec[];
-};
 
 /**
  * Parses a populated ExecTeam CMS document into frontend-friendly team data.
  * Expects depth >= 2 so that exec relationships and their media are populated.
  */
-export function parseExecTeam(cmsExecTeam: CmsExecTeam): ParsedTeam[] {
+export function parseExecTeam(cmsExecTeam: CmsExecTeam): ExecutiveTeam[] {
     return cmsExecTeam.teams.map((team) => ({
         title: team.teamName,
         description: team.teamDescription,

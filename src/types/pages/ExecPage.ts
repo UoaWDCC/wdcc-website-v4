@@ -1,12 +1,8 @@
-import { Exec } from "../models/Exec";
+import { ExecutiveTeam } from "../models/ExecutiveTeam";
 
 export type ExecPage = {
     title: string;
     info: string;
-    availableYears: { year: string; slug: string }[];
-    teams: {
-        title: string;
-        description: string;
-        execs: Exec[];
-    }[];
+    availableYears: string[];
+    teams: ExecutiveTeam[];
 };

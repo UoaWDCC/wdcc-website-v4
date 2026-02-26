@@ -3,7 +3,7 @@ import { getAllExecTeamYears } from "@/payload/collections/executives/getAllExec
 
 export default async function TeamPage() {
     const years = await getAllExecTeamYears();
-    const latestSlug = years[0]?.slug;
+    const latestYear = years[0];
 
-    redirect(`/about/team/${latestSlug}`);
+    redirect(`/about/team/${latestYear}`);
 }

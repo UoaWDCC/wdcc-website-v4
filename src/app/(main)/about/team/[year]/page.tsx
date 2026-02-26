@@ -9,7 +9,7 @@ export const dynamicParams = false;
 
 export async function generateStaticParams() {
     const years = await getAllExecTeamYears();
-    return years.map((entry) => ({ year: entry.slug }));
+    return years.map((year) => ({ year }));
 }
 
 export default async function TeamPage({ params }: { params: Promise<{ year: string }> }) {
@@ -25,11 +25,7 @@ export default async function TeamPage({ params }: { params: Promise<{ year: str
             />
             <div className="flex w-full max-w-275 flex-col items-center gap-24 py-20">
                 <InfoPill text={execData.info} />
-                <ExecTeamsSection
-                    selectedYearSlug={year}
-                    availableYears={execData.availableYears}
-                    teams={execData.teams}
-                />
+                <ExecTeamsSection selectedYear={year} availableYears={execData.availableYears} teams={execData.teams} />
             </div>
         </StandardPageLayout>
     );

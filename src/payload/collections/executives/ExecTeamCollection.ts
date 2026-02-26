@@ -7,24 +7,16 @@ export const ExecTeamCollection: CollectionConfig = {
         read: () => true,
     },
     admin: {
-        useAsTitle: "slug",
+        useAsTitle: "year",
     },
     fields: [
         {
             name: "year",
             type: "text",
             required: true,
-            admin: {
-                placeholder: "Please type the year here. e.g (2026)",
-            },
-        },
-        {
-            name: "slug",
-            type: "text",
-            required: true,
             unique: true,
             admin: {
-                placeholder: "Please type the year slug here. e.g (2026)",
+                placeholder: "Please type the year here. e.g (2026)",
             },
         },
         {
