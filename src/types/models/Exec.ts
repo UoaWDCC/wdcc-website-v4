@@ -6,5 +6,5 @@ export type Exec = {
     image?: string | StaticImport;
     description: string;
     joined: string;
-    id?: string | null;
+    id?: string | number | null;
 };

@@ -1,3 +1,5 @@
+"use client";
+
 type ExecCardTextProps = {
     name: string;
     role: string;

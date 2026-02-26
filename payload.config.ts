@@ -15,6 +15,8 @@ import { ExecsPageGlobal } from "./src/payload/globals/execspage/ExecsPageGlobal
 import { FaqPageGlobal } from "./src/payload/globals/faqpage/FaqPageGlobal";
 import HeroPageGlobal from "./src/payload/globals/heropage/HeroPageGlobal";
 import ProjectsPageGlobal from "./src/payload/globals/projectspage/ProjectsPageGlobal";
+import { ExecYearsCollection } from "@/payload/collections/executives/ExecYearsCollection";
+import { ExecutivesCollection } from "@/payload/collections/executives/ExecutivesCollection";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -26,7 +28,7 @@ export default buildConfig({
             baseDir: path.resolve(dirname),
         },
     },
-    collections: [UsersCollection, MediaCollection, EventsCollection, ProjectsCollection, PartnersCollection],
+    collections: [UsersCollection, MediaCollection, EventsCollection, ExecutivesCollection, ExecYearsCollection,ProjectsCollection, PartnersCollection],
     globals: [ExecsPageGlobal, FaqPageGlobal, AboutPageGlobal, ProjectsPageGlobal, HeroPageGlobal],
     editor: lexicalEditor({
         // TODO ASHTON

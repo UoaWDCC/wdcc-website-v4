@@ -29,70 +29,46 @@ export const ExecsPageGlobal: GlobalConfig = {
             },
         },
         {
-            //maybe execs could be a collection and this could reference that collection instead.
-            name: "teams",
+            name: "defaultYearSlug",
+            type: "text",
+            required: true,
+            defaultValue: "2026",
+            admin: {
+                placeholder: "Please type the default exec year slug here. e.g (2026)",
+            },
+        },
+        {
+            name: "yearOptions",
             type: "array",
             required: true,
             fields: [
                 {
-                    name: "teamName",
+                    name: "label",
                     type: "text",
                     required: true,
                     admin: {
-                        placeholder: "Please type the team's name here.",
+                        placeholder: "Please type the button label here. e.g (2026)",
                     },
                 },
                 {
-                    name: "teamDescription",
-                    type: "textarea",
+                    name: "slug",
+                    type: "text",
                     required: true,
                     admin: {
-                        placeholder: "Please type the team's description here.",
+                        readOnly: true,
+                        placeholder: "Auto-generated from the label.",
                     },
-                },
-                {
-                    name: "execs",
-                    type: "array",
-                    fields: [
-                        {
-                            name: "name",
-                            type: "text",
-                            required: true,
-                            admin: {
-                                placeholder: "Please type the exec's name here.",
+                    hooks: {
+                        beforeValidate: [
+                            ({ value, siblingData }) => {
+                                if (typeof siblingData?.label === "string" && siblingData.label.trim().length > 0) {
+                                    return siblingData.label.trim();
+                                }
+
+                                return value;
                             },
-                        },
-                        {
-                            name: "role",
-                            type: "text",
-                            required: true,
-                            admin: {
-                                placeholder: "Please type the exec's role here. e.g Tech Director",
-                            },
-                        },
-                        {
-                            name: "image",
-                            type: "upload",
-                            relationTo: "media",
-                        },
-                        {
-                            name: "description",
-                            type: "textarea",
-                            required: true,
-                            admin: {
-                                placeholder:
-                                    "Please type the exec's description here. e.g BE(Hons) - Software Engineering The University of Auckland",
-                            },
-                        },
-                        {
-                            name: "joined",
-                            type: "text",
-                            required: true,
-                            admin: {
-                                placeholder: "Please type the exec's join date here. In the format Joined Jan 2023",
-                            },
-                        },
-                    ],
+                        ],
+                    },
                 },
             ],
         },

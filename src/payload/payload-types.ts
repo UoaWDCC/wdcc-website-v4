@@ -70,8 +70,9 @@ export interface Config {
     users: User;
     media: Media;
     event: Event;
+    executives: Executive;
+    'exec-years': ExecYear;
     project: Project;
-    test: Test;
     partners: Partner;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -82,8 +83,9 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     event: EventSelect<false> | EventSelect<true>;
+    executives: ExecutivesSelect<false> | ExecutivesSelect<true>;
+    'exec-years': ExecYearsSelect<false> | ExecYearsSelect<true>;
     project: ProjectSelect<false> | ProjectSelect<true>;
-    test: TestSelect<false> | TestSelect<true>;
     partners: PartnersSelect<false> | PartnersSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -148,6 +150,13 @@ export interface User {
   hash?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
   password?: string | null;
 }
 /**
@@ -156,7 +165,7 @@ export interface User {
  */
 export interface Media {
   id: number;
-  alt: string;
+  alt?: string | null;
   prefix?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -186,6 +195,7 @@ export interface Event {
   page: {
     Description: string;
     image: number | Media;
+    gallery?: (number | Media)[] | null;
   };
   Partners?: (number | Partner)[] | null;
   updatedAt: string;
@@ -211,6 +221,37 @@ export interface Partner {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "executives".
+ */
+export interface Executive {
+  id: number;
+  name: string;
+  role: string;
+  image?: (number | null) | Media;
+  description: string;
+  joined: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "exec-years".
+ */
+export interface ExecYear {
+  id: number;
+  year: string;
+  slug: string;
+  teams: {
+    teamName: string;
+    teamDescription: string;
+    execs: (number | Executive)[];
+    id?: string | null;
+  }[];
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -288,84 +329,6 @@ export interface Project {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "test".
- */
-export interface Test {
-  id: number;
-  slug: string;
-  year: string;
-  client: string;
-  name: {
-    default: string;
-    extended?: string | null;
-  };
-  description: string;
-  brief: {
-    description: string;
-    image: number | Media;
-  };
-  technologies: (
-    | 'html'
-    | 'css'
-    | 'javascript'
-    | 'typescript'
-    | 'node'
-    | 'react'
-    | 'vue'
-    | 'vite'
-    | 'tailwindcss'
-    | 'express'
-    | 'python'
-    | 'supabase'
-    | 'payload'
-    | 'notion'
-    | 'nextjs'
-    | 'astro'
-    | 'mongodb'
-    | 'firebase'
-    | 'postgresql'
-    | 'prisma'
-    | 'drizzleorm'
-    | 'redis'
-    | 'aws'
-    | 'fly'
-    | 'figma'
-    | 'motion'
-    | 'nextauth'
-    | 'vitest'
-    | 'twitch'
-  )[];
-  primaryLink: {
-    label: string;
-    href: string;
-  };
-  secondaryLink: {
-    label: string;
-    href: string;
-  };
-  team: {
-    manager: {
-      name: string;
-      image?: (number | null) | Media;
-    };
-    techlead: {
-      name: string;
-      image?: (number | null) | Media;
-    };
-    members?:
-      | {
-          name: string;
-          role: 'engineer' | 'designer';
-          image?: (number | null) | Media;
-          id?: string | null;
-        }[]
-      | null;
-  };
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -384,12 +347,16 @@ export interface PayloadLockedDocument {
         value: number | Event;
       } | null)
     | ({
-        relationTo: 'project';
-        value: number | Project;
+        relationTo: 'executives';
+        value: number | Executive;
       } | null)
     | ({
-        relationTo: 'test';
-        value: number | Test;
+        relationTo: 'exec-years';
+        value: number | ExecYear;
+      } | null)
+    | ({
+        relationTo: 'project';
+        value: number | Project;
       } | null)
     | ({
         relationTo: 'partners';
@@ -451,6 +418,13 @@ export interface UsersSelect<T extends boolean = true> {
   hash?: T;
   loginAttempts?: T;
   lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -488,8 +462,40 @@ export interface EventSelect<T extends boolean = true> {
     | {
         Description?: T;
         image?: T;
+        gallery?: T;
       };
   Partners?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "executives_select".
+ */
+export interface ExecutivesSelect<T extends boolean = true> {
+  name?: T;
+  role?: T;
+  image?: T;
+  description?: T;
+  joined?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "exec-years_select".
+ */
+export interface ExecYearsSelect<T extends boolean = true> {
+  year?: T;
+  slug?: T;
+  teams?:
+    | T
+    | {
+        teamName?: T;
+        teamDescription?: T;
+        execs?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -540,67 +546,6 @@ export interface ProjectSelect<T extends boolean = true> {
         role?: T;
         image?: T;
         id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "test_select".
- */
-export interface TestSelect<T extends boolean = true> {
-  slug?: T;
-  year?: T;
-  client?: T;
-  name?:
-    | T
-    | {
-        default?: T;
-        extended?: T;
-      };
-  description?: T;
-  brief?:
-    | T
-    | {
-        description?: T;
-        image?: T;
-      };
-  technologies?: T;
-  primaryLink?:
-    | T
-    | {
-        label?: T;
-        href?: T;
-      };
-  secondaryLink?:
-    | T
-    | {
-        label?: T;
-        href?: T;
-      };
-  team?:
-    | T
-    | {
-        manager?:
-          | T
-          | {
-              name?: T;
-              image?: T;
-            };
-        techlead?:
-          | T
-          | {
-              name?: T;
-              image?: T;
-            };
-        members?:
-          | T
-          | {
-              name?: T;
-              role?: T;
-              image?: T;
-              id?: T;
-            };
       };
   updatedAt?: T;
   createdAt?: T;
@@ -665,19 +610,10 @@ export interface ExecsPage {
   id: number;
   title: string;
   description: string;
-  teams: {
-    teamName: string;
-    teamDescription: string;
-    execs?:
-      | {
-          name: string;
-          role: string;
-          image?: (number | null) | Media;
-          description: string;
-          joined: string;
-          id?: string | null;
-        }[]
-      | null;
+  defaultYearSlug: string;
+  yearOptions: {
+    label: string;
+    slug: string;
     id?: string | null;
   }[];
   updatedAt?: string | null;
@@ -841,21 +777,12 @@ export interface HeroPage {
 export interface ExecsPageSelect<T extends boolean = true> {
   title?: T;
   description?: T;
-  teams?:
+  defaultYearSlug?: T;
+  yearOptions?:
     | T
     | {
-        teamName?: T;
-        teamDescription?: T;
-        execs?:
-          | T
-          | {
-              name?: T;
-              role?: T;
-              image?: T;
-              description?: T;
-              joined?: T;
-              id?: T;
-            };
+        label?: T;
+        slug?: T;
         id?: T;
       };
   updatedAt?: T;

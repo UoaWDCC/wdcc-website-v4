@@ -1,3 +1,5 @@
+"use client";
+
 import { Exec } from "@/types/models/Exec";
 import ExecCard from "./execcard";
 
