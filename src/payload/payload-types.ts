@@ -316,7 +316,6 @@ export interface Executive {
 export interface ExecTeam {
   id: number;
   year: string;
-  slug: string;
   teams: {
     teamName: string;
     teamDescription: string;
@@ -560,7 +559,6 @@ export interface ExecutivesSelect<T extends boolean = true> {
  */
 export interface ExecTeamsSelect<T extends boolean = true> {
   year?: T;
-  slug?: T;
   teams?:
     | T
     | {

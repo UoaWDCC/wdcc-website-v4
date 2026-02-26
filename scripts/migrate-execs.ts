@@ -90,7 +90,7 @@ async function migrate() {
         collection: "exec-teams",
         data: {
             year: currentYear,
-            slug: currentYear,
+
             teams: teamsData,
         },
     });
