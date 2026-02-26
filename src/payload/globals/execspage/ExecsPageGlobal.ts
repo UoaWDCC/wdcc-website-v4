@@ -37,41 +37,6 @@ export const ExecsPageGlobal: GlobalConfig = {
                 placeholder: "Please type the default exec year slug here. e.g (2026)",
             },
         },
-        {
-            name: "yearOptions",
-            type: "array",
-            required: true,
-            fields: [
-                {
-                    name: "label",
-                    type: "text",
-                    required: true,
-                    admin: {
-                        placeholder: "Please type the button label here. e.g (2026)",
-                    },
-                },
-                {
-                    name: "slug",
-                    type: "text",
-                    required: true,
-                    admin: {
-                        readOnly: true,
-                        placeholder: "Auto-generated from the label.",
-                    },
-                    hooks: {
-                        beforeValidate: [
-                            ({ value, siblingData }) => {
-                                if (typeof siblingData?.label === "string" && siblingData.label.trim().length > 0) {
-                                    return siblingData.label.trim();
-                                }
-
-                                return value;
-                            },
-                        ],
-                    },
-                },
-            ],
-        },
     ],
 };
 

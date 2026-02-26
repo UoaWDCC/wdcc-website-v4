@@ -50,10 +50,24 @@ export const ExecYearsCollection: CollectionConfig = {
                 },
                 {
                     name: "execs",
-                    type: "relationship",
-                    relationTo: SLUG.EXECUTIVES,
-                    hasMany: true,
+                    type: "array",
                     required: true,
+                    fields: [
+                        {
+                            name: "exec",
+                            type: "relationship",
+                            relationTo: SLUG.EXECUTIVES,
+                            required: true,
+                        },
+                        {
+                            name: "role",
+                            type: "text",
+                            required: true,
+                            admin: {
+                                placeholder: "Please type the exec's role for this year. e.g President",
+                            },
+                        },
+                    ],
                 },
             ],
         },

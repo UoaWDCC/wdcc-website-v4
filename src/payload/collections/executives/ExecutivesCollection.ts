@@ -7,7 +7,7 @@ export const ExecutivesCollection: CollectionConfig = {
         read: () => true,
     },
     admin: {
-        useAsTitle: "name", 
+        useAsTitle: "name",
     },
     fields: [
         {
@@ -16,14 +16,6 @@ export const ExecutivesCollection: CollectionConfig = {
             required: true,
             admin: {
                 placeholder: "Please type the exec's name here.",
-            },
-        },
-        {
-            name: "role",
-            type: "text",
-            required: true,
-            admin: {
-                placeholder: "Please type the exec's role here. e.g Tech Director",
             },
         },
         {
