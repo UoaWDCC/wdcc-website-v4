@@ -10,6 +10,7 @@ overrides:
   esbuild: '>=0.25.0'
   diff: '>=5.2.2'
   fast-xml-parser: '>=5.3.8'
+  lodash: '>=4.17.23'
 
 importers:
 
@@ -3540,9 +3541,6 @@ packages:
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
-  lodash@4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-
   lodash@4.17.23:
     resolution: {integrity: sha512-LgVTMpQtIopCi79SJeDiP0TfWi5CNEc/L/aRdTh3yIvmZXTnheWpKjSZhnvMl8iXbC1tFg9gdHHDMLoV7CnG+w==}
 
@@ -7001,7 +6999,7 @@ snapshots:
       '@babel/traverse': 7.28.5
       '@babel/types': 7.28.5
       javascript-natural-sort: 0.7.1
-      lodash: 4.17.21
+      lodash: 4.17.23
       prettier: 3.7.4
     transitivePeerDependencies:
       - supports-color
@@ -8909,8 +8907,6 @@ snapshots:
       p-locate: 5.0.0
 
   lodash.merge@4.6.2: {}
-
-  lodash@4.17.21: {}
 
   lodash@4.17.23: {}
 
