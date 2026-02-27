@@ -97,7 +97,8 @@
             "minimatch": ">=10.2.3",
             "@isaacs/brace-expansion": ">=5.0.1",
             "esbuild": ">=0.25.0",
-            "diff": ">=5.2.2"
+            "diff": ">=5.2.2",
+            "fast-xml-parser": ">=5.3.8"
         }
     }
 }
