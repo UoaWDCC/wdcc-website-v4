@@ -1,7 +1,7 @@
 import Image from "next/image";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { getAboutPage } from "@/payload/globals/aboutpage/getAboutPage";
-import { AboutPageHeader, GenInfo, NestedDiv, OurPeople, Quote, WhyJoin } from "./_components";
+import { AboutPageHeader, ClubStory, GenInfo, NestedDiv, OurPeople, Quote, WhyJoin } from "./_components";
 
 export default async function AboutPage() {
     const aboutData = await getAboutPage();
@@ -12,12 +12,11 @@ export default async function AboutPage() {
 
             <NestedDiv
                 outer="flex w-full items-center justify-center py-20 responsive-fullwidth"
-                inner="flex w-[80%] max-w-[1100px] flex-col gap-16 sm:gap-24"
+                inner="flex w-[80%] max-w-275 flex-col gap-16 sm:gap-24"
             >
                 <GenInfo genInfo={aboutData.genInfo} />
                 <WhyJoin whyJoin={aboutData.whyJoin} />
-                {/* TODO: need ClubStory copy text */}
-                {/* <ClubStory clubStory={aboutData.clubStory} /> */}
+                <ClubStory clubStory={aboutData.clubStory} />
                 <OurPeople ourPeople={aboutData.ourPeople} />
             </NestedDiv>
 

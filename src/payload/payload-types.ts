@@ -72,6 +72,8 @@ export interface Config {
     event: Event;
     project: Project;
     partners: Partner;
+    executives: Executive;
+    'exec-teams': ExecTeam;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -84,6 +86,8 @@ export interface Config {
     event: EventSelect<false> | EventSelect<true>;
     project: ProjectSelect<false> | ProjectSelect<true>;
     partners: PartnersSelect<false> | PartnersSelect<true>;
+    executives: ExecutivesSelect<false> | ExecutivesSelect<true>;
+    'exec-teams': ExecTeamsSelect<false> | ExecTeamsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -163,7 +167,7 @@ export interface User {
  */
 export interface Media {
   id: number;
-  alt?: string | null;
+  alt: string;
   prefix?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -296,6 +300,39 @@ export interface Project {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "executives".
+ */
+export interface Executive {
+  id: number;
+  name: string;
+  image?: (number | null) | Media;
+  description: string;
+  joined: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "exec-teams".
+ */
+export interface ExecTeam {
+  id: number;
+  year: string;
+  teams: {
+    teamName: string;
+    teamDescription: string;
+    execs: {
+      exec: number | Executive;
+      role: string;
+      id?: string | null;
+    }[];
+    id?: string | null;
+  }[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -337,6 +374,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'partners';
         value: number | Partner;
+      } | null)
+    | ({
+        relationTo: 'executives';
+        value: number | Executive;
+      } | null)
+    | ({
+        relationTo: 'exec-teams';
+        value: number | ExecTeam;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -514,6 +559,41 @@ export interface PartnersSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "executives_select".
+ */
+export interface ExecutivesSelect<T extends boolean = true> {
+  name?: T;
+  image?: T;
+  description?: T;
+  joined?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "exec-teams_select".
+ */
+export interface ExecTeamsSelect<T extends boolean = true> {
+  year?: T;
+  teams?:
+    | T
+    | {
+        teamName?: T;
+        teamDescription?: T;
+        execs?:
+          | T
+          | {
+              exec?: T;
+              role?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -704,6 +784,10 @@ export interface HeroPage {
   hero: {
     title: string;
     blurb: string;
+    memberButton: {
+      label: string;
+      href: string;
+    };
   };
   thisIsWDCC: {
     description: string;
@@ -718,7 +802,8 @@ export interface HeroPage {
         }[]
       | null;
   };
-  sponsorSection?: {
+  sponsorSection: {
+    title: string;
     gold?: (number | Partner)[] | null;
     silver?: (number | Partner)[] | null;
     tech?: (number | Partner)[] | null;
@@ -918,6 +1003,12 @@ export interface HeroPageSelect<T extends boolean = true> {
     | {
         title?: T;
         blurb?: T;
+        memberButton?:
+          | T
+          | {
+              label?: T;
+              href?: T;
+            };
       };
   thisIsWDCC?:
     | T
@@ -937,6 +1028,7 @@ export interface HeroPageSelect<T extends boolean = true> {
   sponsorSection?:
     | T
     | {
+        title?: T;
         gold?: T;
         silver?: T;
         tech?: T;

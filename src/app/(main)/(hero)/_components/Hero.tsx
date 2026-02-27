@@ -23,6 +23,10 @@ type WDCCHeroProps = {
     hero: {
         title: string;
         blurb: string;
+        memberButton: {
+            label: string;
+            href: string;
+        };
     };
 };
 const Hero = ({ hero }: WDCCHeroProps) => {
@@ -35,7 +39,7 @@ const Hero = ({ hero }: WDCCHeroProps) => {
                 <HeroHeading title={hero.title} />
                 <div className="flex flex-col items-center gap-6 self-center">
                     <HeroSubHeading blurb={hero.blurb} />
-                    <HeroLinks />
+                    <HeroLinks memberButton={hero.memberButton} />
                 </div>
             </div>
             <View
