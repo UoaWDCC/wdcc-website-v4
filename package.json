@@ -95,7 +95,8 @@
         ],
         "overrides": {
             "minimatch": ">=10.2.3",
-            "@isaacs/brace-expansion": ">=5.0.1"
+            "@isaacs/brace-expansion": ">=5.0.1",
+            "esbuild": ">=0.25.0"
         }
     }
 }
