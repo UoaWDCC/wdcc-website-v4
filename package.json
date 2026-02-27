@@ -94,7 +94,8 @@
             "sharp"
         ],
         "overrides": {
-            "minimatch": ">=9.0.6"
+            "minimatch": ">=9.0.6",
+            "@isaacs/brace-expansion": ">=5.0.1"
         }
     }
 }
