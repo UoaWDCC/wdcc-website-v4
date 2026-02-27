@@ -39,7 +39,7 @@
         "graphql": "^16.12.0",
         "motion": "^12.24.11",
         "next": "16.1.1",
-        "payload": "3.57.0",
+        "payload": "3.75.0",
         "raw-loader": "^4.0.2",
         "react": "^19.2.3",
         "react-dom": "^19.2.3",
