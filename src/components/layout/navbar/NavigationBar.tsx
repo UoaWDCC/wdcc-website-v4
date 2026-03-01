@@ -156,7 +156,7 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
                         </Button>
                         <Button
                             variant={{ style: "primary", color: "blue" }}
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform?usp=sharing"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScJbNOt3G583BetdEkQ56o2VJX9VTvD-_X0PdBYpCaucO27Uw/viewform?usp=header"
                             className="hidden items-center leading-none md:flex"
                             newTab
                         >
