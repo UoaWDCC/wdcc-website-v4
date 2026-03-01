@@ -643,21 +643,6 @@ export interface ExecsPage {
   id: number;
   title: string;
   description: string;
-  teams: {
-    teamName: string;
-    teamDescription: string;
-    execs?:
-      | {
-          name: string;
-          role: string;
-          image?: (number | null) | Media;
-          description: string;
-          joined: string;
-          id?: string | null;
-        }[]
-      | null;
-    id?: string | null;
-  }[];
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -824,23 +809,6 @@ export interface HeroPage {
 export interface ExecsPageSelect<T extends boolean = true> {
   title?: T;
   description?: T;
-  teams?:
-    | T
-    | {
-        teamName?: T;
-        teamDescription?: T;
-        execs?:
-          | T
-          | {
-              name?: T;
-              role?: T;
-              image?: T;
-              description?: T;
-              joined?: T;
-              id?: T;
-            };
-        id?: T;
-      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
