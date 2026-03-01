@@ -6,7 +6,7 @@ type ScrollContainerType = HTMLDivElement | (Window & typeof globalThis);
 
 type ScrollContextType = {
     /** The main scrollable component on the page. */
-    scrollRef: RefObject<HTMLDivElement>;
+    scrollRef: RefObject<HTMLDivElement | null>;
     /** Get reference to scrollable container. Throws error if the page doesn't have one. */
     getScrollContainer: () => ScrollContainerType;
     /** Get the current scrollY value of the scrollable container. */
