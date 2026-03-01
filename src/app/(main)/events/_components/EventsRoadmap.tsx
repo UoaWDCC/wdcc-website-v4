@@ -1,15 +1,14 @@
 import { EmptyListPlaceholder } from "@/components/misc/EmptyListPlaceholder";
-import Image from "next/image";
 
 type EventsRoadmapProps = {
     title: string;
-    image: {
+    image?: {
         src: string;
         alt: string;
     };
 };
 
-export default function EventsRoadmap({ title, image }: EventsRoadmapProps) {
+export default function EventsRoadmap({ title }: EventsRoadmapProps) {
     return (
         <div className="py-20" id="roadmap">
             <h2 className="py-10 text-3xl font-bold">{title}</h2>
