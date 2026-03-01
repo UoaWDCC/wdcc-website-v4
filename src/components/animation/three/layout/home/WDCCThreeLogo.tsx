@@ -11,7 +11,7 @@ import HeroImages from "./HeroImages";
 let CONSTAINT = 0.5; // 90deg * CONSTRIANT
 let smoothing = 0.03; // the lower the slower
 
-const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement | null> }) => {
+const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) => {
     const group = useRef<THREE.Group>(null);
     const pointer = useRef(new THREE.Vector2());
     const axesHelper = useRef<THREE.AxesHelper>(null);
