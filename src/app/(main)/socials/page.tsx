@@ -36,10 +36,10 @@ export default function SocialsPage() {
                         <p className="text-md font-semibold text-white/50">and...</p>
                         <Button
                             variant={{ color: "purple", style: "primary" }}
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSf9p1n1GpuuFxXbhx_7iWDQkDqRpxVDAjUOeyyzYeavC6d48A/viewform"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScJbNOt3G583BetdEkQ56o2VJX9VTvD-_X0PdBYpCaucO27Uw/viewform?usp=header"
                         >
                             <Arrow className="" />
-                            Join WDCC for 2025!
+                            Join WDCC for 2026!
                         </Button>
                         <Button variant={{ color: "purple", style: "secondary" }} href="/">
                             <Arrow className="rotate-180" />
