@@ -15,10 +15,11 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug;
-    const event = parseEvent(await getEvent(slug));
-    if (!event) {
+    const cmsEvent = await getEvent(slug);
+    if (!cmsEvent) {
         notFound();
     }
+    const event = parseEvent(cmsEvent);
 
     /*
      * We asked whether event pages should back link to /events or /events/all.
