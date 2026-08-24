@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import PageHeader from "@/components/layout/pageheaders/PageHeader";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { getAllExecTeamYears } from "@/payload/collections/executives/getAllExecTeamYears";
@@ -12,6 +13,14 @@ export async function generateStaticParams() {
 
 export default async function TeamPage({ params }: { params: Promise<{ year: string }> }) {
     const { year } = await params;
+
+    // dynamicParams is on, so any year reaches this page. Unknown ones 404 rather than
+    // letting getExecPage throw a CmsFetchError.
+    const years = await getAllExecTeamYears();
+    if (!years.includes(year)) {
+        notFound();
+    }
+
     const execData = await getExecPage(year);
 
     return (

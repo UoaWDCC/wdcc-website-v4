@@ -27,8 +27,10 @@ export const WHOLE_SITE = "";
 export function purge(path: string, type: "page" | "layout"): void {
     try {
         revalidatePath(`${ROUTE_GROUP}${path}`, type);
-    } catch {
-        // Runs outside a request scope (CLI scripts, migrations), where there is no cache to purge.
+    } catch (error) {
+        // Expected outside a request scope (CLI scripts, migrations), where there is no cache
+        // to purge. Warn rather than throw, so a failed purge cannot fail the write it follows.
+        console.warn(`Could not revalidate ${ROUTE_GROUP}${path} (${type}):`, error);
     }
 }
 
