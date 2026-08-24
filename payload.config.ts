@@ -17,6 +17,7 @@ import { ExecsPageGlobal } from "./src/payload/globals/execspage/ExecsPageGlobal
 import { FaqPageGlobal } from "./src/payload/globals/faqpage/FaqPageGlobal";
 import HeroPageGlobal from "./src/payload/globals/heropage/HeroPageGlobal";
 import ProjectsPageGlobal from "./src/payload/globals/projectspage/ProjectsPageGlobal";
+import { WHOLE_SITE, purge, withGlobalRevalidation, withRevalidation } from "./src/payload/hooks/revalidate";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -28,16 +29,27 @@ export default buildConfig({
             baseDir: path.resolve(dirname),
         },
     },
+    // Which pages each piece of content affects. Media and partners are embedded almost
+    // everywhere and Payload keeps no reverse index for relations, so they can only purge
+    // the lot. UsersCollection is left alone — it holds no public content, and auth writes
+    // on every login would purge the site for nothing.
     collections: [
         UsersCollection,
-        MediaCollection,
-        EventsCollection,
-        ProjectsCollection,
-        PartnersCollection,
-        ExecutivesCollection,
-        ExecTeamCollection,
+        withRevalidation(MediaCollection, () => purge(WHOLE_SITE, "layout")),
+        withRevalidation(EventsCollection, () => purge("/events", "layout")),
+        withRevalidation(ProjectsCollection, () => purge("/projects", "layout")),
+        withRevalidation(PartnersCollection, () => purge(WHOLE_SITE, "layout")),
+        withRevalidation(ExecutivesCollection, () => purge("/about/team", "layout")),
+        withRevalidation(ExecTeamCollection, () => purge("/about/team", "layout")),
     ],
-    globals: [ExecsPageGlobal, FaqPageGlobal, AboutPageGlobal, ProjectsPageGlobal, HeroPageGlobal],
+    globals: [
+        withGlobalRevalidation(ExecsPageGlobal, () => purge("/about/team", "layout")),
+        withGlobalRevalidation(FaqPageGlobal, () => purge("/about/faq", "page")),
+        withGlobalRevalidation(AboutPageGlobal, () => purge("/about", "page")),
+        withGlobalRevalidation(ProjectsPageGlobal, () => purge("/projects", "page")),
+        // The home page is src/app/(main)/(hero)/page.tsx.
+        withGlobalRevalidation(HeroPageGlobal, () => purge("/(hero)", "page")),
+    ],
     editor: lexicalEditor({
         // TODO ASHTON
 
