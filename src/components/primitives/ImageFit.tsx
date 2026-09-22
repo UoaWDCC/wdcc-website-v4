@@ -26,7 +26,7 @@ const ImageFit = ({
             <Image
                 preload={preload}
                 fill
-                sizes="100%"
+                sizes={width}
                 alt={alt}
                 src={src}
                 style={{

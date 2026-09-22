@@ -27,6 +27,11 @@ const nextConfig: NextConfig = {
     },
     images: {
         remotePatterns: [],
+        deviceSizes: [640, 828, 1200, 1920],
+        imageSizes: [16, 32, 64, 128, 256],
+        formats: ["image/webp"],
+        qualities: [75],
+        minimumCacheTTL: 31536000,
     },
     webpack: (config: WebpackConfig) => {
         config.module.rules.push({
