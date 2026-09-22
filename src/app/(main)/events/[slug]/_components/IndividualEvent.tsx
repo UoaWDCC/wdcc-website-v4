@@ -10,7 +10,12 @@ const IndividualEvent = ({ event }: { event: Event }) => {
                 <p className="text-md whitespace-pre-line">{event.page.description}</p>
 
                 <div className="relative aspect-square w-full">
-                    <Image fill src={event.page.image.src} alt={event.page.image.alt} />
+                    <Image
+                        fill
+                        sizes="(min-width: 1024px) 550px, 100vw"
+                        src={event.page.image.src}
+                        alt={event.page.image.alt}
+                    />
                 </div>
             </div>
             <EventPartners partners={event.partners} />
