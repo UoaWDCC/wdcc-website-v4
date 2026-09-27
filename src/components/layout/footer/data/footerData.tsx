@@ -121,7 +121,7 @@ export const footerData: FooterData = {
     friends: [
         {
             label: "UOACS",
-            href: "https://uoacs.org",
+            href: "https://uoacs.co.nz",
             external: true,
         },
         {
