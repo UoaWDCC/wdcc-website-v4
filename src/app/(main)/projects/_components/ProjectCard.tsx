@@ -18,7 +18,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
         >
             <div className="center-content bg-blue-brand relative h-60 w-full">
                 {project.icon ? (
-                    <SuspenseImage fill className="object-cover" src={project.icon.src} alt={project.icon.alt} />
+                    <SuspenseImage
+                        fill
+                        sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover"
+                        src={project.icon.src}
+                        alt={project.icon.alt}
+                    />
                 ) : (
                     <WDCCLogo className="w-40 fill-white" />
                 )}

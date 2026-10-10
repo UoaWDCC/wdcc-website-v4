@@ -32,7 +32,14 @@ const EventPartners = ({ partners }: { partners: Event["partners"] }) => {
                 <div className="flex flex-wrap gap-4">
                     {partners.map((partner, index) => (
                         <Link href={partner.href} target="_" key={index}>
-                            <ImageFit key={partner.alt} src={partner.src} alt="" height="100px" width="300px" />
+                            <ImageFit
+                                key={partner.alt}
+                                src={partner.src}
+                                alt=""
+                                height="100px"
+                                width="300px"
+                                unoptimized
+                            />
                         </Link>
                     ))}
                 </div>

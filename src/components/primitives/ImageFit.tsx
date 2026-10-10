@@ -10,6 +10,7 @@ export type ImageFitProps = {
     className?: string;
     objectFit?: "cover" | "contain";
     preload?: boolean;
+    unoptimized?: boolean;
 };
 
 const ImageFit = ({
@@ -20,11 +21,13 @@ const ImageFit = ({
     className,
     objectFit = "contain",
     preload = false,
+    unoptimized = false,
 }: ImageFitProps) => {
     return (
         <div className={cn("", className)} style={{ position: "relative", minWidth: width, minHeight: height }}>
             <Image
                 preload={preload}
+                unoptimized={unoptimized}
                 fill
                 sizes={width}
                 alt={alt}
