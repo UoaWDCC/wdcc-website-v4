@@ -25,3 +25,8 @@ export function isNullish(value: unknown): value is null | undefined {
 export function hasKey<O extends object>(obj: O, key: PropertyKey): key is keyof O {
     return key in obj;
 }
+
+/** True for a file uploaded to Payload, which serves uploads from /api/<collection>/file. */
+export function isUpload(src: unknown): boolean {
+    return typeof src === "string" && src.startsWith("/api/");
+}

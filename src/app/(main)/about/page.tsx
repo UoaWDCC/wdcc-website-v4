@@ -1,6 +1,7 @@
 import Image from "next/image";
 import StandardPageLayout from "@/components/layout/pagelayouts/StandardPageLayout";
 import { getAboutPage } from "@/payload/globals/aboutpage/getAboutPage";
+import { isUpload } from "@/utils/misc";
 import { AboutPageHeader, ClubStory, GenInfo, NestedDiv, OurPeople, Quote, WhyJoin } from "./_components";
 
 export default async function AboutPage() {
@@ -35,6 +36,7 @@ export default async function AboutPage() {
                 width={600}
                 height={400}
                 src={aboutData.endImage.image}
+                unoptimized={isUpload(aboutData.endImage.image)}
                 alt={aboutData.endImage.imageAlt}
                 className="responsive-fullwidth w-full"
             />

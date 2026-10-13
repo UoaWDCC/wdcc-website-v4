@@ -1,10 +1,11 @@
 import { AboutPage } from "@/types/pages/AboutPage";
 import placeholder from "@/assets/image/600x400.png";
 import { AboutPage as CmsAboutPage, Media } from "@/payload/payload-types";
+import { type ImageSize, sizedUrl } from "@/utils/payload";
 
 export function parseAboutPage(CmsAboutPage: CmsAboutPage): AboutPage {
     // TODO: need to move this to all parsers
-    const getImageUrl = (image?: Media) => image?.url ?? placeholder;
+    const getImageUrl = (image?: Media, size: ImageSize = "medium") => sizedUrl(image, size) ?? placeholder;
     const getImageAlt = (image?: Media) => image?.url ?? "placeholder";
 
     return {
@@ -42,7 +43,7 @@ export function parseAboutPage(CmsAboutPage: CmsAboutPage): AboutPage {
             subscript: CmsAboutPage.quoteSection.subscript,
         },
         endImage: {
-            image: getImageUrl(CmsAboutPage.endImage.image as Media),
+            image: getImageUrl(CmsAboutPage.endImage.image as Media, "large"),
             imageAlt: getImageAlt(CmsAboutPage.endImage.image as Media),
         },
     };

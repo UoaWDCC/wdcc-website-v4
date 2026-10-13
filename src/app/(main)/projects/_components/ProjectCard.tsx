@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Project } from "@/types/models/Project";
 import WDCCLogo from "@/assets/svg/WDCCLogo";
 import SuspenseImage from "@/components/misc/SuspenseImage";
+import { isUpload } from "@/utils/misc";
 import { ProjectTag } from "./ProjectTag";
 
 type ProjectCardProps = {
@@ -18,7 +19,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
         >
             <div className="center-content bg-blue-brand relative h-60 w-full">
                 {project.icon ? (
-                    <SuspenseImage fill className="object-cover" src={project.icon.src} alt={project.icon.alt} />
+                    <SuspenseImage
+                        fill
+                        className="object-cover"
+                        src={project.icon.src}
+                        unoptimized={isUpload(project.icon.src)}
+                        alt={project.icon.alt}
+                    />
                 ) : (
                     <WDCCLogo className="w-40 fill-white" />
                 )}

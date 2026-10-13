@@ -31,7 +31,6 @@ const nextConfig: NextConfig = {
         imageSizes: [16, 32, 64, 128, 256],
         formats: ["image/webp"],
         qualities: [75],
-        minimumCacheTTL: 31536000,
     },
     webpack: (config: WebpackConfig) => {
         config.module.rules.push({

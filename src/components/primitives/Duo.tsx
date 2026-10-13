@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import Image from "next/image";
 import { ImageType } from "@/types/misc/Image";
 import placeholder from "@/assets/image/600x400.png";
-import { cn } from "@/utils/misc";
+import { cn, isUpload } from "@/utils/misc";
 
 type DuoProps = {
     children: ReactNode;
@@ -26,6 +26,7 @@ export default function Duo({ children, image, imgFirst = false }: DuoProps) {
                     width={600}
                     height={400}
                     src={image?.src ?? placeholder}
+                    unoptimized={isUpload(image?.src)}
                     alt={image?.alt ?? "Image missing alt :( - please email us about this issue"}
                     className="h-auto w-full rounded-[16px]"
                 />

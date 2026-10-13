@@ -1,5 +1,6 @@
 import { ExecutiveTeam } from "@/types/models/ExecutiveTeam";
 import { ExecTeam as CmsExecTeam, Executive, Media } from "@/payload/payload-types";
+import { sizedUrl } from "@/utils/payload";
 
 /**
  * Parses a populated ExecTeam CMS document into frontend-friendly team data.
@@ -16,7 +17,7 @@ export function parseExecTeam(cmsExecTeam: CmsExecTeam): ExecutiveTeam[] {
             return {
                 name: exec.name,
                 role: entry.role,
-                image: image?.url ?? undefined,
+                image: sizedUrl(image, "small"),
                 description: exec.description,
                 joined: exec.joined,
                 id: entry.id,

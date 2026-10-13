@@ -8,7 +8,7 @@ export function parseProject(cms: CMSProject): Project {
         slug: cms.slug,
         year: cms.year,
         client: cms.client,
-        icon: media(cms.thumbnail),
+        icon: media(cms.thumbnail, "medium"),
         name: {
             title: cms.name,
             extended: cms.extendedName ?? undefined,
@@ -16,7 +16,7 @@ export function parseProject(cms: CMSProject): Project {
         description: cms.description,
         brief: {
             description: cms.extendedDescription,
-            image: media(cms.image),
+            image: media(cms.image, "medium"),
         },
         primaryLink: cms.primaryLink && {
             label: cms.primaryLink.label,
@@ -31,16 +31,16 @@ export function parseProject(cms: CMSProject): Project {
         team: {
             techlead: {
                 name: cms.techlead.name,
-                image: isNullish(cms.techlead.image) ? undefined : media(cms.techlead.image),
+                image: isNullish(cms.techlead.image) ? undefined : media(cms.techlead.image, "small"),
             },
             manager: {
                 name: cms.manager.name,
-                image: isNullish(cms.manager.image) ? undefined : media(cms.manager.image),
+                image: isNullish(cms.manager.image) ? undefined : media(cms.manager.image, "small"),
             },
             members:
                 cms.members?.map((member) => ({
                     ...member,
-                    image: isNullish(member.image) ? undefined : media(member.image),
+                    image: isNullish(member.image) ? undefined : media(member.image, "small"),
                 })) ?? [],
         },
     };
