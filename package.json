@@ -22,7 +22,8 @@
         "clear:modules": "rimraf node_modules",
         "nuke": "rimraf .next && rimraf node_modules",
         "typegen": "payload generate:types",
-        "migrate:execs": "npx tsx --env-file=.env scripts/migrate-execs.ts"
+        "migrate:execs": "npx tsx --env-file=.env scripts/migrate-execs.ts",
+        "media:resize": "npx tsx --env-file=.env scripts/regenerate-media-sizes.ts"
     },
     "dependencies": {
         "@next/bundle-analyzer": "^15.5.9",

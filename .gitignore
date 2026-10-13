@@ -43,3 +43,6 @@ next-env.d.ts
 .vscode
 
 TODO.md
+
+# originals saved by `pnpm media:resize`
+/media-backup

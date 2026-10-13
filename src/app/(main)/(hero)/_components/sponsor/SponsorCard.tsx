@@ -16,7 +16,6 @@ const SponsorCard = ({ tier, ...image }: SponsorCardProps) => {
         <ImageFit
             {...image}
             width={`${tierWidth[tier ?? "gold"]}px`}
-            unoptimized
             className="drop-shadow-[0px_0px_8px_var(--background)]"
         />
     );

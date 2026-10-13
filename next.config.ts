@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 import withBundleAnalyzer from "@next/bundle-analyzer";
 import { withPayload } from "@payloadcms/next/withPayload";
-import { IMAGE_CACHE_SECONDS } from "./src/utils/consts";
 
 // This type is made-up to satisfy TypeScript, feel free to adjust as needed
 type WebpackConfig = {
@@ -32,8 +31,6 @@ const nextConfig: NextConfig = {
         imageSizes: [16, 32, 64, 128, 256],
         formats: ["image/webp"],
         qualities: [75],
-        // 1 year was not honoured: images expired after ~4 hours.
-        minimumCacheTTL: IMAGE_CACHE_SECONDS,
     },
     webpack: (config: WebpackConfig) => {
         config.module.rules.push({

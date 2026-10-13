@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Event } from "@/types/models/Event";
 import ImageFit from "@/components/primitives/ImageFit";
+import { isUpload } from "@/utils/misc";
 
 const IndividualEvent = ({ event }: { event: Event }) => {
     return (
@@ -14,6 +15,7 @@ const IndividualEvent = ({ event }: { event: Event }) => {
                         fill
                         sizes="(min-width: 1024px) 550px, 100vw"
                         src={event.page.image.src}
+                        unoptimized={isUpload(event.page.image.src)}
                         alt={event.page.image.alt}
                     />
                 </div>
@@ -32,14 +34,7 @@ const EventPartners = ({ partners }: { partners: Event["partners"] }) => {
                 <div className="flex flex-wrap gap-4">
                     {partners.map((partner, index) => (
                         <Link href={partner.href} target="_" key={index}>
-                            <ImageFit
-                                key={partner.alt}
-                                src={partner.src}
-                                alt=""
-                                height="100px"
-                                width="300px"
-                                unoptimized
-                            />
+                            <ImageFit key={partner.alt} src={partner.src} alt="" height="100px" width="300px" />
                         </Link>
                     ))}
                 </div>

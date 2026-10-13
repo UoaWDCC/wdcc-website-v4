@@ -1,6 +1,6 @@
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image, { type StaticImageData } from "next/image";
-import { cn } from "@/utils/misc";
+import { cn, isUpload } from "@/utils/misc";
 
 export type ImageFitProps = {
     src: string | StaticImageData | StaticImport;
@@ -10,7 +10,6 @@ export type ImageFitProps = {
     className?: string;
     objectFit?: "cover" | "contain";
     preload?: boolean;
-    unoptimized?: boolean;
 };
 
 const ImageFit = ({
@@ -21,13 +20,12 @@ const ImageFit = ({
     className,
     objectFit = "contain",
     preload = false,
-    unoptimized = false,
 }: ImageFitProps) => {
     return (
         <div className={cn("", className)} style={{ position: "relative", minWidth: width, minHeight: height }}>
             <Image
                 preload={preload}
-                unoptimized={unoptimized}
+                unoptimized={isUpload(src)}
                 fill
                 sizes={width}
                 alt={alt}
