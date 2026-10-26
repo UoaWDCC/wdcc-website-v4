@@ -5,7 +5,7 @@ import { CircleAnimation } from "./CircleAnimation";
 
 export const HeroSubHeading = ({ blurb }: { blurb: string }) => {
     return (
-        <motion.p {...animation.slideUp} className="text-md leading-tight text-blue-700 sm:text-lg">
+        <motion.p {...animation.slideUp} className="text-md leading-tight text-blue-600 sm:text-lg">
             {blurb}{" "}
             <CircleAnimation className="italic underline">
                 <span className="font-normal italic underline">help them shine</span>

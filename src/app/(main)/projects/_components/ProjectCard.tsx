@@ -27,7 +27,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                         alt={project.icon.alt}
                     />
                 ) : (
-                    <WDCCLogo className="w-40 fill-white" />
+                    <WDCCLogo className="w-40 brightness-0 invert" />
                 )}
             </div>
             <div className="flex flex-col gap-6 px-12 py-10">

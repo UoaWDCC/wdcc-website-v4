@@ -61,6 +61,16 @@ const navbarLine = tv({
     },
 });
 
+const navbarLogo = tv({
+    base: "transition duration-150 hover:opacity-70 lg:block w-30",
+    variants: {
+        color: {
+            dark: "brightness-0 invert",
+            light: "",
+        },
+    },
+});
+
 export type NavbarProps = {
     variant?: VariantProps<typeof navbar>;
     className?: string;
@@ -128,7 +138,7 @@ export default function NavigationBar({ variant = { color: "light" } }: NavbarPr
                     />
                 </div>
                 <Anchor href="/">
-                    <WDCCLogo className="fill-current transition duration-150 hover:opacity-70 lg:block" />
+                    <WDCCLogo className={navbarLogo({ ...variant })} />
                 </Anchor>
                 <div className="flex w-full items-center justify-end gap-8 font-semibold whitespace-nowrap lg:gap-12">
                     {/* Links */}
