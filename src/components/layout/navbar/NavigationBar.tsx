@@ -62,7 +62,7 @@ const navbarLine = tv({
 });
 
 const navbarLogo = tv({
-    base: "transition duration-150 hover:opacity-70 lg:block w-30",
+    base: "w-30 transition duration-150 hover:opacity-70 lg:block",
     variants: {
         color: {
             dark: "brightness-0 invert",

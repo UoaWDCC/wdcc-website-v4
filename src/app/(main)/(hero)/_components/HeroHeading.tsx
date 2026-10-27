@@ -18,7 +18,8 @@ export const HeroHeading = ({ title }: { title: string }) => {
                 Aotearoa’s
                 <em> largest </em>
                 <span className="bg-linear-to-br/oklch from-orange-500 to-purple-600 bg-clip-text text-transparent">
-                    technology and design </span>
+                    technology and design{" "}
+                </span>
                 student society.
             </motion.h1>
         </div>

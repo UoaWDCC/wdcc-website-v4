@@ -11,7 +11,7 @@ type SignupCardProps = {
 };
 const SignupCard = ({ SignUpCard }: SignupCardProps) => {
     return (
-        <div className="bg-blue-500 flex w-full flex-col items-center justify-center gap-10 rounded-2xl px-12 py-10 md:px-16 md:py-12">
+        <div className="flex w-full flex-col items-center justify-center gap-10 rounded-2xl bg-blue-500 px-12 py-10 md:px-16 md:py-12">
             <div className="flex w-full flex-col justify-between gap-8 md:flex-row">
                 <h2 className="flex-1 text-2xl leading-[1.1] font-bold text-white md:text-3xl">{SignUpCard.title}</h2>
                 <p className="text-md flex-1 leading-[1.3] text-white">

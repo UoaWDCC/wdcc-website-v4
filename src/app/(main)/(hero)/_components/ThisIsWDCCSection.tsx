@@ -12,9 +12,7 @@ type ThisIsWDCCProps = {
 const ThisIsWDCC = ({ ThisIsWDCC }: ThisIsWDCCProps) => {
     return (
         <div className="flex flex-col gap-10">
-            <h2 className="text-5xl tracking-tight leading-none font-extrabold text-blue-500">
-                This is WDCC.
-            </h2>
+            <h2 className="text-5xl leading-none font-extrabold tracking-tight text-blue-500">This is WDCC.</h2>
             <p className="text-lg leading-tight text-blue-600 md:w-[80%]">{ThisIsWDCC.description}</p>
             <div className="flex flex-col gap-8 lg:flex-row">
                 {ThisIsWDCC.whatWeDo.columns.map((column) => (

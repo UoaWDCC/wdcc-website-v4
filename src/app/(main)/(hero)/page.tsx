@@ -12,7 +12,7 @@ export default async function HeroPage() {
 
     return (
         <ThreePageLayout>
-            <div className="fixed -z-20 h-[60vh] w-full bg-linear-to-b/oklch from-blue-100  to-white"></div>
+            <div className="fixed -z-20 h-[60vh] w-full bg-linear-to-b/oklch from-blue-100 to-white"></div>
             <View className="fixed -z-10 size-full scale-150" background>
                 <BackgroundEffect />
             </View>

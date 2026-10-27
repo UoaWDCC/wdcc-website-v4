@@ -1,10 +1,10 @@
 import React from "react";
 import * as motion from "motion/react-client";
+import Arrow from "@/assets/svg/Arrow";
 import { Button } from "@/components/primitives/Button";
 import { animation } from "@/utils/animations";
 import { primarySocial } from "../_data/primarySocial.data";
 import { SocialLink } from "./SocialLink";
-import Arrow from "@/assets/svg/Arrow";
 
 type HeroLinksProps = {
     memberButton: {

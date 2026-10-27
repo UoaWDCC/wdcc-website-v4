@@ -34,8 +34,8 @@ const Hero = ({ hero }: WDCCHeroProps) => {
     const camera = useRef<PerspectiveCameraType>(null);
 
     return (
-        <div ref={ref} className="relative flex w-full flex-col text-left gap-20">
-            <div className="flex flex-col gap-10 text-left w-full">
+        <div ref={ref} className="relative flex w-full flex-col gap-20 text-left">
+            <div className="flex w-full flex-col gap-10 text-left">
                 <HeroHeading title={hero.title} />
                 <div className="flex flex-col gap-6">
                     <HeroSubHeading blurb={hero.blurb} />
