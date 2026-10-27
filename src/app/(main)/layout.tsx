@@ -4,25 +4,35 @@ import { figtree } from "@/assets/fonts";
 import "@/assets/global.css";
 import { ReduceMotionProvider, ScrollProvider, WebGLProvider } from "@/components/contexts";
 
+
 // SEO
 export const metadata: Metadata = {
-    title: "Web Development & Consulting Club",
+    title: "Web, Design & Coding Club",
     icons: {
         icon: "./favicon.ico",
     },
     description:
-        "WDCC (Web Development & Consulting Club Incorporated) is a not-for-profit organisation, that aims to bridge the gap between university knowledge and real-world industry practices.",
+        "WDCC (Web, Design & Coding Club) is a not-for-profit organisation, that aims to bridge the gap between university knowledge and real-world industry practices.",
 
-    keywords: ["Web Development & Consulting Club", "WDCC", "WDCC website", "WDCC UOA", "WDCCUoa", "UOA", "UoA WDCC"],
+    keywords: [
+        "Web Development & Consulting Club",
+        "Web, Design & Coding Club",
+        "WDCC",
+        "WDCC website",
+        "WDCC UOA",
+        "WDCCUoa",
+        "UOA",
+        "UoA WDCC",
+    ],
 
     // Description display for when you post the link on social media
     openGraph: {
-        title: "Web Development & Consulting Club",
+        title: "Web, Design & Coding Club",
         description:
-            "WDCC (Web Development & Consulting Club Incorporated) is a not-for-profit organisation, that aims to bridge the gap between university knowledge and real-world industry practices.",
+            "WDCC (Web, Design & Coding Club) is a not-for-profit organisation, that aims to bridge the gap between university knowledge and real-world industry practices.",
         url: "https://wdcc.co.nz/",
         images: "https://wdcc.co.nz/images/og-image.png",
-        siteName: "Web Development & Consulting Club",
+        siteName: "Web, Design & Coding Club",
     },
 };
 
