@@ -4,7 +4,6 @@ import { figtree } from "@/assets/fonts";
 import "@/assets/global.css";
 import { ReduceMotionProvider, ScrollProvider, WebGLProvider } from "@/components/contexts";
 
-
 // SEO
 export const metadata: Metadata = {
     title: "Web, Design & Coding Club",
