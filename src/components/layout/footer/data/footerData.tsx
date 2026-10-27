@@ -1,6 +1,7 @@
 import { social } from "@/assets/svg/socials";
 import { FooterData } from "./footerTypes";
 
+
 export const footerData: FooterData = {
     columns: [
         {
@@ -131,7 +132,7 @@ export const footerData: FooterData = {
         },
         {
             label: "DEVS",
-            href: "https://www.instagram.com/devsuoa/",
+            href: "https://www.devsuoa.com/",
             external: true,
         },
         {
