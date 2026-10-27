@@ -131,7 +131,7 @@ export const footerData: FooterData = {
         },
         {
             label: "DEVS",
-            href: "https://www.instagram.com/devsuoa/",
+            href: "https://www.devsuoa.com/",
             external: true,
         },
         {

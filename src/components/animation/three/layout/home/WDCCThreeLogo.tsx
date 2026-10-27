@@ -67,11 +67,8 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
         if (!parentComponent) return;
 
         const handlePointerMove = (event: MouseEvent) => {
-            if (!parentComponent) return;
-            const rect = parentComponent.getBoundingClientRect();
-
-            pointer.current.x = -((event.pageY - rect.top) / window.innerHeight) * (2 * CONSTAINT) + 1 * CONSTAINT; // Target rotation on X
-            pointer.current.y = (event.pageX / window.innerWidth) * (2 * CONSTAINT) - 1 * CONSTAINT; // Target rotation on Y
+            pointer.current.x = -(event.clientY / window.innerHeight) * (2 * CONSTAINT) + 1 * CONSTAINT; // Target rotation on X
+            pointer.current.y = (event.clientX / window.innerWidth) * (2 * CONSTAINT) - 1 * CONSTAINT; // Target rotation on Y
         };
 
         const handleMouseEnter = () => {
@@ -104,7 +101,7 @@ const WDCCThreeHero = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) 
     return (
         <>
             <Float rotationIntensity={1} floatIntensity={0.25} speed={2}>
-                <group ref={group} position={[0, 0.5, 0]}>
+                <group ref={group} position={[0, 0, 0]}>
                     <WDCCThreeLogo />
                 </group>
                 <HeroImages />

@@ -8,8 +8,8 @@ type ClubStoryProps = {
 export default function ClubStory({ clubStory }: ClubStoryProps) {
     return (
         <Duo image={{ src: clubStory.image, alt: clubStory.imageAlt }} imgFirst>
-            <h3 className="text-md font-bold">{clubStory.title}</h3>
-            <p className="leading-[1.3] whitespace-pre-line">{clubStory.content}</p>
+            <h3 className="text-4xl leading-none font-extrabold tracking-tight text-blue-500">{clubStory.title}</h3>
+            <p className="text-md leading-[1.35] whitespace-pre-line">{clubStory.content}</p>
         </Duo>
     );
 }

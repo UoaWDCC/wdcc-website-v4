@@ -1,3 +1,6 @@
+import roleCardDesigner from "@/assets/image/roles/role_card_designer.webp";
+import roleCardDev from "@/assets/image/roles/role_card_dev.webp";
+
 export const roleCardsCopy = {
     rolesSection: {
         title: "Project Roles",
@@ -6,6 +9,7 @@ export const roleCardsCopy = {
                 color: "blue" as const,
                 title: "Developer",
                 slug: "developer",
+                graphic: roleCardDev,
                 description:
                     "WDCC Developers are the heart of every project team. You could work on anything - from adding a brand-new CMS through to keyframing in CSS.",
             },
@@ -13,6 +17,7 @@ export const roleCardsCopy = {
                 color: "purple" as const,
                 title: "Designer",
                 slug: "designer",
+                graphic: roleCardDesigner,
                 description:
                     "WDCC Designers are a step beyond theory. You'll navigate genuine design problems with a real-world project backed by a large technical team.",
             },

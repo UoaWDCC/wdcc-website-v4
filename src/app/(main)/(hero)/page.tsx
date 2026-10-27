@@ -12,11 +12,11 @@ export default async function HeroPage() {
 
     return (
         <ThreePageLayout>
-            <div className="absolute -z-20 h-[60vh] w-full bg-linear-to-b from-blue-50 to-white"></div>
+            <div className="fixed -z-20 h-[60vh] w-full bg-linear-to-b/oklch from-blue-100 to-white"></div>
             <View className="fixed -z-10 size-full scale-150" background>
                 <BackgroundEffect />
             </View>
-            <main className="responsive-body flex-col items-center justify-center gap-24 py-44">
+            <main className="responsive-body flex-col items-center justify-center gap-24 py-48">
                 <Hero hero={heroData.Hero} />
                 <div className="flex flex-col gap-36">
                     <ThisIsWDCC ThisIsWDCC={heroData.ThisIsWDCC} />

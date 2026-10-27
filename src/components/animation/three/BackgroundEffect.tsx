@@ -8,8 +8,8 @@ import { DoubleSide, Euler, Group, Mesh } from "three";
 import { TrianglePlane } from "./primitives/TrianglePlane";
 
 // triangle instance settings
-const RADIUS = 32;
-const COUNT = 64;
+const RADIUS = 48;
+const COUNT = 192;
 const RAD_INCREMENT = (Math.PI * 2) / COUNT;
 
 const initialiseTriangleObjectData = (i: number) => {
@@ -77,7 +77,7 @@ const TRIANGLEOBJ = forwardRef<updateHandler, TriangleObject>(({ position, rotat
         <group position={position} rotation={[0, faceRotation, 0]}>
             <mesh ref={meshRef} rotation={rotation}>
                 <TrianglePlane />
-                <meshBasicMaterial color={color} side={DoubleSide} />
+                <meshBasicMaterial color={color} side={DoubleSide} transparent opacity={0.15} />
             </mesh>
         </group>
     );

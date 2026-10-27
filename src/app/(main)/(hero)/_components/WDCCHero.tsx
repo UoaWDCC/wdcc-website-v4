@@ -35,17 +35,17 @@ const Hero = ({ hero }: HeroProps) => {
     const camera = useRef<PerspectiveCameraType>(null);
 
     return (
-        <div ref={ref} className="relative flex w-full flex-col items-center justify-center gap-20">
-            <div className="flex w-[clamp(300px,100%,1000px)] flex-col items-center gap-10 self-center px-8 text-center">
+        <div ref={ref} className="relative flex w-full flex-col gap-20">
+            <div className="flex max-w-[800px] flex-col gap-6">
                 <HeroHeading title={hero.title} />
-                <div className="flex flex-col items-center gap-6 self-center">
+                <div className="flex flex-col gap-6">
                     <HeroSubHeading blurb={hero.blurb} />
                     <HeroLinks memberButton={hero.memberButton} />
                 </div>
             </div>
             <View
                 fallback={<Image src={HeroFallback} height={500} width={1000} alt="WDCC hero" />}
-                className="flex h-[250px] w-dvw flex-col items-center justify-center md:h-[400px] lg:h-[600px]"
+                className="flex h-[250px] w-dvw flex-col items-center justify-center self-center md:h-[400px] lg:h-[600px]"
             >
                 <WDCCThreeHero parentRef={ref} />
                 <CommonLight />

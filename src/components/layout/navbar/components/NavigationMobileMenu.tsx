@@ -70,7 +70,7 @@ const NavigationMobileMenu = ({ links, className, variant }: NavbarProps) => {
                 <div className="flex flex-col items-start gap-4">
                     <div className="flex w-full items-center justify-between">
                         <Anchor href="/">
-                            <WDCCLogo className="fill-white transition duration-150 hover:opacity-70 lg:block" />
+                            <WDCCLogo className="brightness-0 invert transition duration-150 hover:opacity-70 lg:block" />
                         </Anchor>
                         <button onClick={handleToggle}>
                             <ExitIcon className="stroke-white transition duration-300 hover:stroke-blue-200" />
