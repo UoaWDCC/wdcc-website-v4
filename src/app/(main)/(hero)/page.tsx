@@ -16,7 +16,7 @@ export default async function HeroPage() {
             <View className="fixed -z-10 size-full scale-150" background>
                 <BackgroundEffect />
             </View>
-            <main className="responsive-body flex-col items-center justify-center gap-24 py-56">
+            <main className="responsive-body flex-col items-center justify-center gap-24 py-48">
                 <Hero hero={heroData.Hero} />
                 <div className="flex flex-col gap-36">
                     <ThisIsWDCC ThisIsWDCC={heroData.ThisIsWDCC} />

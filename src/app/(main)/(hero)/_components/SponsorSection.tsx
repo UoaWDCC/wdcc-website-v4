@@ -12,7 +12,7 @@ type SponsorSectionProps = {
 export const SponsorSection = ({ SponsorSection }: SponsorSectionProps) => {
     return (
         <div className="flex flex-col items-center justify-center gap-10">
-            <h2 className="text-3xl leading-none font-bold text-balance">{SponsorSection.title}</h2>
+            <h2 className="text-5xl tracking-tight leading-none font-extrabold text-blue-500 w-full">{SponsorSection.title}</h2>
             <div className="flex w-full flex-col items-center justify-center">
                 {sponsorTierOrder
                     .filter((tier) => SponsorSection[tier].sponsors.length > 0)

@@ -4,6 +4,7 @@ import { Button } from "@/components/primitives/Button";
 import { animation } from "@/utils/animations";
 import { primarySocial } from "../_data/primarySocial.data";
 import { SocialLink } from "./SocialLink";
+import Arrow from "@/assets/svg/Arrow";
 
 type HeroLinksProps = {
     memberButton: {
@@ -14,9 +15,9 @@ type HeroLinksProps = {
 
 export const HeroLinks = ({ memberButton }: HeroLinksProps) => {
     return (
-        <motion.div {...animation.slideUp} className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <motion.div {...animation.slideUp} className="flex flex-col gap-4 sm:flex-row">
             <Button variant={{ style: "primary", color: "blue" }} href={memberButton.href}>
-                {memberButton.label}
+                {memberButton.label} <Arrow />
             </Button>
             <div className="flex gap-4">
                 {primarySocial.map((social) => (
