@@ -1,10 +1,13 @@
 import Arrow from "@/assets/svg/Arrow";
 import { StandardPageLayout } from "@/components/layout";
 import { Button, Duo } from "@/components/primitives";
+import { getHeroPage } from "@/payload/globals/heropage/getHeroPage";
+import { SponsorSection } from "@/app/(main)/(hero)/_components/SponsorSection";
 import { NestedDiv } from "../_components";
 import SponsorPageHeader from "./_components/SponsorPageHeader";
 
-export default function SponsorPage() {
+export default async function SponsorPage() {
+    const heroData = await getHeroPage();
     return (
         <StandardPageLayout>
             <SponsorPageHeader />
@@ -14,14 +17,14 @@ export default function SponsorPage() {
             >
                 <Duo>
                     <h3 className="text-2xl font-bold">Why sponsor us?</h3>
-                    <p className="whitespace-pre-line">{`Since WDCC's founding in 2019, we have grown to over 1000 members and hosted numerous successful events, making us the leading tech club in Aotearoa New Zealand.`}</p>
+                    <p className="whitespace-pre-line">{`Since WDCC's founding in 2019, we have grown to over 1000 members and hosted numerous successful events, making us one of the leading tech club's in Aotearoa New Zealand.`}</p>
                     <p className="whitespace-pre-line">
                         {`Not only do we provide social and educational events for our members to network and learn, but we also offer projects for them to put those skills to practice and gain valuable experience working in a team.`}
                     </p>
                 </Duo>
                 <Duo imgFirst>
                     <h3 className="text-2xl font-bold">What do you get out of it?</h3>
-                    <p className="whitespace-pre-line">{`You totally get the opportunity to put your organisation's name on our website, social media, and event materials, showcasing your support for the tech community and gaining exposure to our members and beyond!`}</p>
+                    <p className="whitespace-pre-line">{`You get the opportunity to put your organisation's name on our website, social media, and event materials, showcasing your support for the tech community and gaining exposure to our members and beyond!`}</p>
                     <p className="whitespace-pre-line">{`We also frequently collaborate directly with our sponsors on events and initiatives, providing even more opportunities for visibility and engagement.`}</p>
                 </Duo>
                 <Duo>
@@ -42,12 +45,11 @@ export default function SponsorPage() {
                         </Button>
                     </div>
                 </Duo>
-
-                <div>
-                    <h2 className="text-2xl font-bold">Our Current Sponsors</h2>
+                <div className="flex flex-col gap-6">
                     <p className="whitespace-pre-line">
-                        {`<Insert sponsors component here? Might need some refactoring> We are grateful to our sponsors for their support, which allows us to continue providing valuable opportunities for our members and the wider tech community.`}
+                        {`We are grateful to our sponsors for their support, which allows us to continue providing valuable opportunities for our members and the wider tech community.`}
                     </p>
+                    <SponsorSection SponsorSection={heroData.SponsorSection} />
                 </div>
             </NestedDiv>
         </StandardPageLayout>
