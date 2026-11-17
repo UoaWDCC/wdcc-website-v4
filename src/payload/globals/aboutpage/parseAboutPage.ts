@@ -6,7 +6,7 @@ import { type ImageSize, sizedUrl } from "@/utils/payload";
 export function parseAboutPage(CmsAboutPage: CmsAboutPage): AboutPage {
     // TODO: need to move this to all parsers
     const getImageUrl = (image?: Media, size: ImageSize = "medium") => sizedUrl(image, size) ?? placeholder;
-    const getImageAlt = (image?: Media) => image?.url ?? "placeholder";
+    const getImageAlt = (image?: Media) => image?.alt ?? "placeholder";
 
     return {
         header: {
